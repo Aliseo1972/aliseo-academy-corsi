@@ -20,7 +20,8 @@ import {
   MapPin,
   CheckCircle2,
   ArrowRight,
-  ExternalLink
+  ExternalLink,
+  Play
 } from 'lucide-react';
 import { courses, categories } from './data/courses';
 import { Course } from './types';
@@ -244,7 +245,7 @@ const CourseModal = ({ course, onClose }: { course: Course; onClose: () => void 
   );
 };
 
-const AboutSection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about') => void }) => {
+const AboutSection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08') => void }) => {
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -380,19 +381,1305 @@ const AboutSection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'abo
                   Esplora i nostri corsi
                   <ArrowRight className="w-5 h-5" />
                 </button>
-                <a 
-                  href="https://aliseo-academy-eccellenz-hd07985.gamma.site/"
-                  target="_blank"
-                  rel="noreferrer"
+                <button 
+                  onClick={() => {
+                    setCurrentView('gwo-training');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-900 border-2 border-slate-900 rounded-2xl font-bold hover:bg-slate-900 hover:text-white transition-all shadow-xl shadow-slate-200"
+                >
+                  Corsi GWO Training
+                  <Shield className="w-5 h-5" />
+                </button>
+                <button 
+                  onClick={() => {
+                    setCurrentView('mobile-center');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                   className="inline-flex items-center gap-2 px-8 py-4 bg-brand text-brand-dark rounded-2xl font-bold hover:opacity-90 transition-all shadow-xl shadow-brand/20"
                 >
                   Centro Formativo Mobile
-                  <ExternalLink className="w-5 h-5" />
-                </a>
+                  <Play className="w-5 h-5" />
+                </button>
               </div>
             </div>
           </section>
         </div>
+      </div>
+    </motion.div>
+  );
+};
+
+const GWOTrainingSection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08') => void }) => {
+  const trainingModules = [
+    {
+      title: "GWO BST – First Aid – (FA)",
+      description: "Corso di sicurezza base Primo Soccorso",
+      content: "Comprensione dell'importanza di eseguire il Primo Soccorso in modo sicuro ed efficace, in conformità con i requisiti legislativi locali. Identificazione dei segnali e dei sintomi di lesioni gravi e minori, nonché di malattie relative al corpo umano. Comprensione e gestione di un'emergenza in turbina eolica. Esecuzione corretta del Primo Soccorso ed uso delle attrezzature, tra cui il Defibrillatore Automatico Esterno (DAE)",
+      objectives: "L'obiettivo del modulo BST è quello di consentire ai partecipanti di effettuare in modo sicuro ed efficace il Primo Soccorso nell'industria eolica, in conformità con gli standard GWO, attraverso una formazione teorica e pratica. Inoltre, questa formazione permetterà al discente di eseguire la rianimazione cardiopolmonare e di utilizzare un defibrillatore automatico esterno (DAE).",
+      target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
+      requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche",
+      duration: "16 ore",
+      validity: "2 anni"
+    },
+    {
+      title: "GWO BST – Manual Handling – (MH)",
+      description: "Corso di sicurezza per la movimentazione manuale dei carichi",
+      content: "Valutazione e identificazione dei rischi di sviluppo di lesioni muscolo-scheletriche. Comprensione delle pratiche di sicurezza della movimentazione manuale, compresa la corretta movimentazione delle attrezzature in conformità con i requisiti legislativi locali. Identificazione dei segni e dei sintomi di infortuni legati a tecniche di movimentazione manuale inadeguate",
+      objectives: "Lo scopo di questo modulo è quello di incoraggiare una movimentazione manuale positiva ed un comportamento ergonomico. Animare i partecipanti a valutare i rischi e a pianificare il lavoro. Allenare la loro capacità di eseguire la movimentazione manuale dei carichi in modo sicuro e corretto nell'industria/ambiente delle turbine eoliche.",
+      target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
+      requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche",
+      duration: "4 ore",
+      validity: "2 anni"
+    },
+    {
+      title: "GWO BST – Fire Awareness – (WAV)",
+      description: "Corso di sicurezza base per Attività Antincendio",
+      content: "Sviluppo e diffusione del fuoco. Cause degli incendi nelle turbine eoliche e pericoli connessi. Identificazione dei segni di incendio in una turbina eolica. Piani di emergenza in turbine eoliche, incluso il rilevamento del fumo e le procedure di evacuazione di emergenza. Azioni, funzionamento ed estinzione degli incendi per mezzo delle attrezzature antincendio in una turbina eolica.",
+      objectives: "Il partecipante può utilizzare i dispositivi di protezione individuale per la lotta antincendio come previsto, distinguere le diverse aree di intervento e applicare la corretta modalità per la risoluzione dell’emergenza. Identificazione di situazioni pericolose e uso sicuro dei dispositivi per l’estinzione (DM. 10/03/1998).",
+      target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
+      requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro, scarpe antinfortunistiche ed antincendio.",
+      duration: "4 ore",
+      validity: "2 anni"
+    },
+    {
+      title: "GWO BST - Working at Heights – (WAH)",
+      description: "Corso di sicurezza base per attività in quota",
+      content: "I pericoli e i rischi associati al lavoro in altezza, specifici dei generatori di turbine eoliche. Comprendere la legislazione nazionale vigente in materia di lavoro in quota. Identificazione delle marcature standard europee/globali dei DPI. Ispezione, manutenzione e custodia dei DPI. L'uso dei DPI pertinenti",
+      objectives: "Gli obiettivi di questo corso sono quelli di fornire ai partecipanti le conoscenze e le competenze di base necessarie, attraverso una formazione teorica e pratica, per utilizzare i DPI di base ed eseguire un lavoro sicuro in quota. Inoltre, i discenti acquisiranno le competenze basiche per portare a termine un salvataggio in quota in conformità con gli standard GWO",
+      target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
+      requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche.",
+      duration: "16 ore",
+      validity: "2 anni"
+    },
+    {
+      title: "GWO BST – Sea Survival – (SS)",
+      description: "Corso di sicurezza base sopravvivenza in mare",
+      content: "Comprensione dei requisiti legislativi locali e delle regole in vigore nei parchi eolici offshore. Identificazione e trattamento delle fasi di shock da freddo e ipotermia relative alle esposizioni del corpo umano in un ambiente eolico offshore. Identificazione dei vantaggi e dei limiti della LSA (Life-Saving Appliance) personale e dei DPI. Comprensione dei principi del GMDSS (Global Maritime Distress and Safety Systems) e del SAR (Search and Rescue). Comportamento sicuro e responsabile su impianti, navi e WTG durante le normali operazioni e in caso di emergenze ed evacuazione. Assistenza dell'equipaggio della nave in situazioni di uomo in mare.",
+      objectives: "Gli obiettivi del modulo BST Sea Survival sono, attraverso una formazione teorica e pratica, di dare ai partecipanti la capacità di agire in sicurezza e di intraprendere le corrette azioni preventive in tutti gli aspetti delle operazioni offshore, da terra alla nave di installazione o WTG e viceversa, sia durante le normali operazioni che in caso di emergenza in un ambiente di energia eolica offshore.",
+      target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
+      requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche, tuta di salvataggio e muta",
+      duration: "8 ore",
+      validity: "2 anni"
+    },
+    {
+      title: "GWO BTT – Mechanical – (BTTM)",
+      description: "Corso di sicurezza per attività di manutenzione meccanica",
+      content: "Comprensione dei componenti principali, dei sistemi meccanici e del funzionamento di base delle turbine eoliche. Comprensione dei rischi e dei pericoli associati alla meccanica. Comprensione dei collegamenti bullonati e saldati e relativa ispezione. Istruzione del funzionamento dei sistemi frenanti, del sistema di imbardata, di raffreddamento e lubrificazione e loro relativa ispezione. Uso corretto degli strumenti.",
+      objectives: "L'obiettivo di questo modulo BTT Mechanical è quello di fornire ai partecipanti le conoscenze e le competenze per svolgere attività meccaniche di base (sotto la supervisione di un tecnico esperto), utilizzando procedure di lavoro sicure e i corretti DPI.",
+      target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
+      requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche",
+      duration: "14 ore",
+      validity: "2 anni"
+    },
+    {
+      title: "GWO BTT – Electrical Module – (BTTE)",
+      description: "Corso di sicurezza per attività manutentive elettriche",
+      content: "Comprensione dei componenti elettrici, dei diversi tipi di sensori e del funzionamento di base delle turbine eoliche. Comprensione dei rischi e dei pericoli associati al lavoro elettrico. Comprensione teorica di un semplice schema elettrico e pratica del suo montaggio su un circuito. Uso corretto degli strumenti per effettuare misurazioni sicure.",
+      objectives: "Lo scopo di questo modulo elettrico BTT è quello di fornire ai partecipanti le conoscenze e le abilità per eseguire operazioni elettriche di base (sotto la supervisione di un tecnico esperto), utilizzando procedure di lavoro sicure e i corretti DPI.",
+      target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
+      requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche",
+      duration: "10 ore",
+      validity: "2 anni"
+    },
+    {
+      title: "GWO BTT – Hydraulic Module – (BTTH)",
+      description: "Corso di sicurezza per attività manutentive Idrauliche",
+      content: "Comprensione dei componenti principali, dei sistemi idraulici e del funzionamento di base delle turbine eoliche. Comprensione dei rischi e dei pericoli associati all'idraulica. Istruzione del funzionamento dei diversi tipi di pompe ed attuatori, valvole, accumulatori e sensori, e loro relativa ispezione. Uso corretto degli strumenti per misurare la pressione idraulica.",
+      objectives: "L'obiettivo del Modulo Idraulico BTT è quello di fornire ai partecipanti le conoscenze e le abilità per svolgere attività idrauliche di base (sotto la supervisione di un tecnico esperto), utilizzando procedure di lavoro sicure e i corretti DPI.",
+      target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
+      requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche",
+      duration: "10 ore",
+      validity: "2 anni"
+    },
+    {
+      title: "GWO BTT – Installation – (BTTI)",
+      description: "Corso di sicurezza per attività di installazione e manutenzione",
+      content: "Comprensione delle principali attività di installazione, delle liste di controllo durante l'intero processo, dei rischi e dei pericoli associati. Principi e norme per la movimentazione e lo stoccaggio di merci in loco o in un'area di stoccaggio prima e dopo l'installazione. Principi di base dell'attrezzatura di sollevamento. Preparazione dei componenti principali prima dell'installazione. Comprensione del completamento meccanico, elettrico ed idraulico. Principi di funzionamento dei generatori esterni durante l'installazione. Comprensione del passaggio di consegne alla messa in servizio.",
+      objectives: "Lo scopo di questo modulo di installazione BTT è di fornire ai partecipanti le conoscenze e le abilità per eseguire le attività basiche di installazione (sotto la supervisione di un tecnico esperto), utilizzando procedure di lavoro sicure e i corretti DPI.",
+      target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
+      requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche",
+      duration: "18 ore",
+      validity: "2 anni"
+    },
+    {
+      title: "GWO ART – Nacelle, Tower & Basement Rescue – (NTBR)",
+      description: "Corso di sicurezza avanzato per attività di salvataggio all’interno della Navicella, dei Trami e nel Basamento",
+      content: "Valutazione e determinazione della miglior strategia di salvataggio e di evacuazione (ovvero il metodo di salvataggio pertinente, la tecnica, le attrezzature certificate ed il personale necessario) in vari scenari: dalla navicella, dalla torre e/o dal basamento di una turbina eolica. Utilizzo corretto e sicuro di una barella di salvataggio, di una tavola spinale e di un sistema di salvataggio a discesa/sollevamento, sia manuale che motorizzato. Identificazione e selezione adeguata di punti di ancoraggio certificati e strutturali, rilevanti per vari scenari di salvataggio. Spiegazione del concetto di angolo di sollevamento, fattore angolare e deviazione.",
+      objectives: "Lo scopo di questo modulo è di permettere al partecipante al corso di eseguire operazioni di salvataggio di persone ferite nella navicella, nella torre e/o nel basamento di una turbina eolica, utilizzando attrezzature, metodi e tecniche di salvataggio standard del settore, che superano quelli del lavoro in quota GWO.",
+      target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
+      requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche",
+      duration: "14 ore",
+      validity: "2 anni"
+    },
+    {
+      title: "GWO ART – Hub, Spinner & Inside Blade – (HSIBR)",
+      description: "Corso di sicurezza avanzato per attività di salvataggio all’interno dell’Hub, dello Spinner ed all’interno della Pala",
+      content: "Valutazione e determinazione della miglior strategia di salvataggio e di evacuazione (ovvero il metodo di salvataggio pertinente, la tecnica, le attrezzature certificate ed il personale necessario) in vari scenari: dall’Hub, dallo Spinner e/o dall’interno di una pala di una turbina eolica. Utilizzo corretto e sicuro di una barella di salvataggio, di una tavola spinale e di un sistema di salvataggio a discesa/sollevamento, sia manuale che motorizzato. Identificazione e selezione adeguata di punti di ancoraggio certificati e strutturali, rilevanti per vari scenari di salvataggio. Spiegazione del concetto di angolo di sollevamento, fattore angolare e deviazione.",
+      objectives: "L'obiettivo di questo modulo è quello di permettere ai partecipanti al corso di eseguire operazioni di salvataggio nell’Hub, nello Spinner e all'interno della pala di una turbina eolica, utilizzando attrezzature, metodi e tecniche di salvataggio standard del settore, superiori a quelli del GWO Working at Heights.",
+      target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
+      requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche",
+      duration: "8 ore",
+      validity: "2 anni"
+    },
+    {
+      title: "GWO BST – Working at Heights & Manual Handling (Combined)",
+      description: "Corso combinato GWO Working at Heights e Manual Handling",
+      content: "Il modulo Working at Heights fornisce le competenze per lavorare in altezza utilizzando correttamente i DPI anticaduta e applicando le procedure di sicurezza ed evacuazione. Il modulo Manual Handling insegna le corrette tecniche di sollevamento e movimentazione dei carichi per prevenire infortuni e sovraccarichi muscolo-scheletrici.",
+      objectives: "Il corso combina teoria e pratica secondo gli standard Global Wind Organisation (GWO), preparando i partecipanti ad operare in modo sicuro ed efficiente nel settore eolico.",
+      target: "Tecnici che operano nel settore eolico e devono svolgere attività in quota e movimentare carichi in sicurezza durante le operazioni su turbine eoliche.",
+      requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche",
+      duration: "16 ore (2 giorni)",
+      validity: "2 anni"
+    }
+  ];
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="max-w-6xl mx-auto px-4 py-20"
+    >
+      <div className="text-center mb-16">
+        <h1 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900 uppercase mb-4">
+          GWO <span className="text-brand">Trainings</span>
+        </h1>
+        <div className="w-20 h-1.5 bg-brand mx-auto rounded-full" />
+        <p className="text-slate-500 mt-6 text-lg max-w-3xl mx-auto">
+          Corsi di formazione certificati Global Wind Organisation per la sicurezza e la manutenzione nel settore eolico.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {trainingModules.map((module, index) => (
+          <div key={index} className="bg-white rounded-3xl border border-slate-100 p-8 shadow-xl shadow-slate-200/50 flex flex-col h-full">
+            <div className="flex items-start justify-between mb-6">
+              <div className="w-12 h-12 bg-brand/10 rounded-2xl flex items-center justify-center text-brand shrink-0">
+                <Shield className="w-6 h-6" />
+              </div>
+              <div className="px-4 py-1.5 bg-slate-100 rounded-full text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                {module.duration}
+              </div>
+            </div>
+            
+            <h2 className="text-xl font-black text-slate-900 uppercase tracking-tight mb-2">
+              {module.title}
+            </h2>
+            <p className="text-brand font-bold text-sm mb-6 uppercase tracking-tight">
+              {module.description}
+            </p>
+
+            <div className="space-y-6 flex-grow">
+              <div>
+                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Contenuto</h4>
+                <p className="text-slate-600 text-sm leading-relaxed">{module.content}</p>
+              </div>
+              <div>
+                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Obiettivi formativi</h4>
+                <p className="text-slate-600 text-sm leading-relaxed">{module.objectives}</p>
+              </div>
+              <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-50">
+                <div>
+                  <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Requisiti</h4>
+                  <p className="text-slate-700 text-xs font-medium">{module.requirements}</p>
+                </div>
+                <div>
+                  <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Validità</h4>
+                  <p className="text-slate-700 text-xs font-medium">{module.validity}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-16">
+        <button 
+          onClick={() => {
+            setCurrentView('home');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-brand hover:text-brand-dark transition-all shadow-xl shadow-slate-200"
+        >
+          Torna alla Home
+          <ArrowRight className="w-5 h-5" />
+        </button>
+        <a 
+          href="mailto:commerciale@aliseogroup.it"
+          className="inline-flex items-center gap-2 px-8 py-4 bg-brand text-brand-dark rounded-2xl font-bold hover:bg-slate-900 hover:text-white transition-all shadow-xl shadow-slate-200"
+        >
+          RICHIEDI INFO SU CORSI NON A CATALOGO
+          <Mail className="w-5 h-5" />
+        </a>
+      </div>
+    </motion.div>
+  );
+};
+
+const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08') => void }) => {
+  const [expandedCourse, setExpandedCourse] = useState<number | null>(null);
+
+  const courses8108 = [
+    {
+      title: "Corso Primo Soccorso Aziendale – 16 ore (Gruppo A)",
+      preview: "Il Corso di Primo Soccorso Aziendale da 16 ore è destinato ai lavoratori incaricati dal datore di lavoro di svolgere il ruolo di addetti al primo soccorso nelle aziende classificate nel Gruppo A, secondo quanto previsto dal D.M. 388/2003 e dal D.Lgs. 81/08.",
+      fullDescription: `
+        Il Corso di Primo Soccorso Aziendale da 16 ore è destinato ai lavoratori incaricati dal datore di lavoro di svolgere il ruolo di addetti al primo soccorso nelle aziende classificate nel Gruppo A, secondo quanto previsto dal D.M. 388/2003 e dal D.Lgs. 81/08.
+
+        L’obiettivo del corso è fornire ai partecipanti le conoscenze teoriche e le competenze pratiche necessarie per gestire le emergenze sanitarie in azienda, intervenendo in modo tempestivo ed efficace in attesa dell’arrivo dei soccorsi sanitari.
+
+        Durante il percorso formativo i partecipanti imparano a riconoscere un’emergenza sanitaria, attivare correttamente il sistema di emergenza (118/112), prestare i primi interventi di assistenza e gestire situazioni critiche come perdita di coscienza, arresto respiratorio, emorragie, traumi, ustioni e altre emergenze mediche.
+
+        Il corso prevede una parte teorica e una significativa componente pratica, con esercitazioni su manichino e simulazioni di intervento, per sviluppare capacità operative concrete.
+
+        Programma del corso:
+        - Allertare il sistema di soccorso
+        - Riconoscere un’emergenza sanitaria
+        - Attuare interventi di primo soccorso
+        - Acquisire conoscenze generali sui traumi in ambiente di lavoro
+        - Acquisire conoscenze generali sulle patologie specifiche in ambiente di lavoro
+        - Tecniche di intervento pratico e simulazioni
+
+        Destinatari:
+        Lavoratori designati dal datore di lavoro come addetti al primo soccorso nelle aziende appartenenti al Gruppo A.
+
+        Durata:
+        16 ore di formazione con moduli teorici e pratici.
+
+        Aggiornamento:
+        È previsto un aggiornamento obbligatorio ogni 3 anni della durata di 6 ore, con particolare attenzione alle esercitazioni pratiche.
+
+        Attestato:
+        Al termine del corso, previa frequenza minima e verifica dell’apprendimento, viene rilasciato attestato di formazione valido ai sensi della normativa vigente.
+      `,
+      duration: "16 ore",
+      group: "Gruppo A"
+    },
+    {
+      title: "Corso Primo Soccorso Aziendale – 12 ore (Gruppi B e C)",
+      preview: "Il Corso di Primo Soccorso Aziendale da 12 ore è rivolto ai lavoratori incaricati dal datore di lavoro di svolgere il ruolo di addetti al primo soccorso nelle aziende classificate nei Gruppi B e C, in conformità a quanto previsto dal D.M. 388/2003 e dal D.Lgs. 81/08.",
+      fullDescription: `
+        Il Corso di Primo Soccorso Aziendale da 12 ore è rivolto ai lavoratori incaricati dal datore di lavoro di svolgere il ruolo di addetti al primo soccorso nelle aziende classificate nei Gruppi B e C, in conformità a quanto previsto dal D.M. 388/2003 e dal D.Lgs. 81/08.
+
+        Il percorso formativo ha l’obiettivo di fornire ai partecipanti le competenze necessarie per gestire le emergenze sanitarie in ambito lavorativo, intervenendo in modo rapido e corretto in attesa dell’arrivo dei soccorsi sanitari. Gli addetti al primo soccorso rappresentano infatti una figura fondamentale per garantire una gestione efficace delle emergenze all’interno dell’azienda.
+
+        Durante il corso vengono affrontati i principali temi legati alla gestione delle emergenze sanitarie, al riconoscimento delle situazioni di pericolo per la salute dei lavoratori e alle prime manovre di assistenza in caso di malore o infortunio.
+
+        Particolare attenzione è dedicata anche alla parte pratica, con esercitazioni e simulazioni che consentono ai partecipanti di acquisire sicurezza nell’applicazione delle principali tecniche di primo intervento.
+
+        Programma del corso:
+        - Allertare il sistema di soccorso (118/112)
+        - Riconoscere un’emergenza sanitaria in azienda
+        - Attuare gli interventi di primo soccorso
+        - Conoscenze generali sui traumi in ambiente di lavoro
+        - Conoscenze generali sulle patologie specifiche in ambiente di lavoro
+        - Tecniche di intervento pratico e simulazioni
+
+        Destinatari:
+        Lavoratori designati dal datore di lavoro come addetti al primo soccorso nelle aziende appartenenti ai Gruppi B e C.
+
+        Durata:
+        12 ore di formazione, articolate tra contenuti teorici ed esercitazioni pratiche.
+
+        Aggiornamento:
+        La normativa prevede un aggiornamento obbligatorio ogni 3 anni della durata di 4 ore, con particolare attenzione alle esercitazioni pratiche.
+
+        Attestato:
+        Al termine del corso, previa partecipazione alle attività formative e verifica finale dell’apprendimento, viene rilasciato attestato valido ai sensi del D.Lgs. 81/08 e del D.M. 388/2003.
+      `,
+      duration: "12 ore",
+      group: "Gruppi B e C"
+    },
+    {
+      title: "Aggiornamento Primo Soccorso Aziendale – 6 ore (Gruppo A)",
+      preview: "Il Corso di Aggiornamento Primo Soccorso Aziendale da 6 ore è rivolto ai lavoratori incaricati del ruolo di addetti al primo soccorso nelle aziende appartenenti al Gruppo A, come previsto dal D.M. 388/2003 e dal D.Lgs. 81/08.",
+      fullDescription: `
+        Il Corso di Aggiornamento Primo Soccorso Aziendale da 6 ore è rivolto ai lavoratori incaricati del ruolo di addetti al primo soccorso nelle aziende appartenenti al Gruppo A, come previsto dal D.M. 388/2003 e dal D.Lgs. 81/08.
+
+        La normativa stabilisce che gli addetti al primo soccorso debbano effettuare un aggiornamento obbligatorio ogni 3 anni, con l’obiettivo di mantenere aggiornate le competenze operative e garantire un intervento efficace in caso di emergenza sanitaria in azienda.
+
+        Il corso di aggiornamento si concentra in particolare sul ripasso delle tecniche di primo soccorso e sulle esercitazioni pratiche, fondamentali per intervenive tempestivamente in situazioni di malore o infortunio in attesa dell’arrivo dei soccorsi sanitari.
+
+        Durante la formazione vengono riprese e consolidate le principali procedure di intervento, con simulazioni pratiche che permettono ai partecipanti di mantenere manualità, sicurezza e capacità decisionale nelle situazioni di emergenza.
+
+        Programma del corso:
+        - Ripasso delle procedure di allertamento del sistema di soccorso (118/112)
+        - Tecniche di primo intervento in caso di emergenza sanitaria
+        - Gestione di emorragie, traumi e malori improvvisi
+        - Interventi di primo soccorso nelle principali situazioni di rischio in azienda
+        - Esercitazioni pratiche e simulazioni di emergenza
+
+        Destinatari:
+        Addetti al primo soccorso già formati che devono effettuare l’aggiornamento periodico triennale previsto dalla normativa per le aziende del Gruppo A.
+
+        Durata:
+        6 ore di aggiornamento, con forte componente pratica.
+
+        Attestato:
+        Al termine del corso viene rilasciato attestato di aggiornamento valido ai sensi del D.Lgs. 81/08 e del D.M. 388/2003.
+      `,
+      duration: "6 ore",
+      group: "Gruppo A"
+    },
+    {
+      title: "Aggiornamento Primo Soccorso Aziendale – 4 ore (Gruppi B e C)",
+      preview: "Il Corso di Aggiornamento Primo Soccorso Aziendale da 4 ore è destinato ai lavoratori incaricati del ruolo di addetti al primo soccorso nelle aziende appartenenti ai Gruppi B e C, in conformità a quanto previsto dal D.M. 388/2003 e dal D.Lgs. 81/08.",
+      fullDescription: `
+        Il Corso di Aggiornamento Primo Soccorso Aziendale da 4 ore è destinato ai lavoratori incaricati del ruolo di addetti al primo soccorso nelle aziende appartenenti ai Gruppi B e C, in conformità a quanto previsto dal D.M. 388/2003 e dal D.Lgs. 81/08.
+
+        La normativa stabilisce che gli addetti al primo soccorso debbano effettuare un aggiornamento obbligatorio ogni 3 anni, al fine di mantenere aggiornate le competenze e garantire un intervento tempestivo ed efficace in caso di emergenza sanitaria sul luogo di lavoro.
+
+        Il corso è incentrato principalmente sul ripasso delle principali tecniche di primo soccorso e sulle esercitazioni pratiche, fondamentali per gestire situazioni di malore o infortunio in azienda in attesa dell’arrivo dei soccorsi sanitari.
+
+        Durante la formazione vengono consolidate le procedure di intervento e le capacità operative degli addetti, attraverso simulazioni e attività pratiche che permettono di mantenere sicurezza e prontezza nelle situazioni di emergenza.
+
+        Programma del corso:
+        - Ripasso delle procedure di allertamento del sistema di soccorso (118/112)
+        - Tecniche di primo intervento nelle emergenze sanitarie
+        - Gestione di traumi, emorragie e malori improvvisi
+        - Interventi di primo soccorso nelle principali situazioni di rischio in azienda
+        - Esercitazioni pratiche e simulazioni di emergenza
+
+        Destinatari:
+        Addetti al primo soccorso già formati che devono effettuare l’aggiornamento triennale previsto dalla normativa per le aziende dei Gruppi B e C.
+
+        Durata:
+        4 ore di aggiornamento, con particolare attenzione alle attività pratiche.
+
+        Attestato:
+        Al termine del corso viene rilasciato attestato di aggiornamento valido ai sensi del D.Lgs. 81/08 e del D.M. 388/2003.
+      `,
+      duration: "4 ore",
+      group: "Gruppi B e C"
+    },
+    {
+      title: "Corso BLSD – Uso del Defibrillatore (5 ore)",
+      preview: "Il Corso BLSD (Basic Life Support and Defibrillation) da 5 ore fornisce le competenze necessarie per intervenire tempestivamente in caso di arresto cardiaco improvviso, utilizzando correttamente il defibrillatore semiautomatico esterno (DAE) e applicando le manovre di rianimazione cardiopolmonare.",
+      fullDescription: `
+        Il Corso BLSD (Basic Life Support and Defibrillation) da 5 ore fornisce le competenze necessarie per intervenire tempestivamente in caso di arresto cardiaco improvviso, utilizzando correttamente il defibrillatore semiautomatico esterno (DAE) e applicando le manovre di rianimazione cardiopolmonare.
+
+        L’obiettivo del corso è insegnare ai partecipanti come riconoscere rapidamente un arresto cardiaco, attivare il sistema di emergenza sanitaria e intervenire con massaggio cardiaco e defibrillazione precoce, azioni fondamentali per aumentare le possibilità di sopravvivenza della persona colpita.
+
+        Durante il percorso formativo vengono affrontati i principali aspetti teorici legati alla gestione dell’emergenza, ma soprattutto viene dedicato ampio spazio alle esercitazioni pratiche su manichino con simulazione dell’utilizzo del DAE, per permettere ai partecipanti di acquisire sicurezza e prontezza nell’intervento.
+
+        Il corso segue le linee guida internazionali sulla rianimazione cardiopolmonare e prepara i partecipanti ad agire in modo efficace in contesti lavorativi, pubblici o privati, fino all’arrivo dei soccorsi avanzati.
+
+        Programma del corso:
+        - Riconoscimento dell’arresto cardiaco
+        - Attivazione del sistema di emergenza (118/112)
+        - Tecniche di rianimazione cardiopolmonare (RCP) nell’adulto
+        - Utilizzo del defibrillatore semiautomatico esterno (DAE)
+        - Gestione delle vie aeree e posizione laterale di sicurezza
+        - Simulazioni pratiche di intervento con manichino e DAE
+
+        Destinatari:
+        Lavoratori, addetti alla sicurezza, personale aziendale e cittadini che desiderano acquisire le competenze per intervenire in caso di arresto cardiaco e utilizzare il defibrillatore.
+
+        Durata:
+        5 ore di formazione, con forte componente pratica.
+
+        Attestato:
+        Al termine del corso, previa partecipazione alle esercitazioni e verifica delle competenze, viene rilasciato attestato di abilitazione all’uso del defibrillatore (BLSD) secondo la normativa e le linee guida vigenti.
+      `,
+      duration: "5 ore",
+      group: "BLSD"
+    },
+    {
+      title: "Corso Antincendio Livello 3 (ex Alto Rischio) – 16 ore",
+      preview: "Il Corso Antincendio Livello 3 (L3) – 16 ore è destinato ai lavoratori incaricati dal datore di lavoro di svolgere il ruolo di addetti alla prevenzione incendi e gestione delle emergenze, nelle aziende e attività classificate a livello di rischio elevato, secondo quanto previsto dal D.Lgs. 81/08 e dal D.M. 2 settembre 2021 (Decreto Controlli).",
+      fullDescription: `
+        Il Corso Antincendio Livello 3 (L3) – 16 ore è destinato ai lavoratori incaricati dal datore di lavoro di svolgere il ruolo di addetti alla prevenzione incendi e gestione delle emergenze, nelle aziende e attività classificate a livello di rischio elevato, secondo quanto previsto dal D.Lgs. 81/08 e dal D.M. 2 settembre 2021 (Decreto Controlli).
+
+        Con l’entrata in vigore della nuova normativa antincendio, la precedente classificazione “Alto Rischio” è stata sostituita dalla nuova denominazione Livello 3 (L3).
+
+        Il corso ha l’obiettivo di fornire ai partecipanti le conoscenze teoriche e le competenze pratiche necessarie per prevenire gli incendi, gestire correttamente le situazioni di emergenza e coordinare le prime azioni di intervento in caso di incendio, fino all’arrivo dei Vigili del Fuoco.
+
+        Durante la formazione vengono approfonditi i principi della prevenzione incendi, la gestione delle procedure di emergenza e l’utilizzo dei principali mezzi di estinzione, con esercitazioni pratiche che permettono ai partecipanti di acquisire dimestichezza con le attrezzature antincendio.
+
+        Programma del corso:
+        - Principi sulla combustione e sull’incendio
+        - Misure di prevenzione e protezione antincendio
+        - Gestione dell’emergenza e procedure di evacuazione
+        - Ruoli e compiti degli addetti antincendio
+        - Presidi e impianti antincendio presenti in azienda
+        - Tecniche di utilizzo degli estintori e altri mezzi di spegnimento
+        - Esercitazioni pratiche di spegnimento
+
+        Destinatari:
+        Lavoratori designati dal datore di lavoro come addetti antincendio nelle attività classificate Livello 3 (L3), ovvero quelle con rischio incendio elevato.
+
+        Durata:
+        16 ore di formazione, suddivise tra moduli teorici ed esercitazioni pratiche.
+
+        Attestato e idoneità tecnica:
+        Al termine del corso viene rilasciato attestato di frequenza.
+        Per alcune attività classificate a Livello 3 (L3) può essere richiesta anche la valutazione di idoneità tecnica presso il Corpo Nazionale dei Vigili del Fuoco, come previsto dalla normativa vigente.
+      `,
+      duration: "16 ore",
+      group: "Livello 3 (L3)"
+    },
+    {
+      title: "Corso Antincendio Livello 2 (L2) – 8 ore",
+      preview: "Il Corso Antincendio Livello 2 (L2) – 8 ore è destinato ai lavoratori incaricati di svolgere il ruolo di addetti alla prevenzione incendi e gestione delle emergenze nelle attività classificate a livello di rischio incendio medio.",
+      fullDescription: `
+        Il Corso Antincendio Livello 2 (L2) – 8 ore è destinato ai lavoratori incaricati di svolgere il ruolo di addetti alla prevenzione incendi e gestione delle emergenze nelle attività classificate a livello di rischio incendio medio.
+
+        (ex rischio medio)
+
+        Il corso è conforme al D.Lgs. 81/08 e al D.M. 2 settembre 2021, che ha introdotto la nuova classificazione dei corsi antincendio nei livelli L1, L2 e L3.
+
+        L’obiettivo della formazione è fornire ai partecipanti le competenze per prevenire l’insorgere di incendi, gestire correttamente le procedure di emergenza e utilizzare i dispositivi antincendio presenti in azienda, intervenendo nelle prime fasi dell’evento.
+
+        Durante il corso vengono approfonditi i principi della prevenzione incendi e le modalità di gestione delle emergenze, con esercitazioni pratiche sull’uso degli estintori e delle attrezzature di spegnimento.
+
+        Programma del corso:
+        - Principi della combustione e dinamica dell’incendio
+        - Principali cause di incendio nei luoghi di lavoro
+        - Misure di prevenzione e protezione antincendio
+        - Procedure di emergenza e gestione dell’evacuazione
+        - Presidi e impianti antincendio
+        - Tecniche di utilizzo degli estintori
+        - Esercitazioni pratiche di spegnimento
+
+        Destinatari:
+        Lavoratori designati dal datore di lavoro come addetti antincendio nelle attività classificate Livello 2 (L2).
+
+        Durata:
+        8 ore di formazione, con moduli teorici ed esercitazioni pratiche.
+
+        Aggiornamento:
+        È previsto aggiornamento ogni 5 anni della durata di 5 ore.
+
+        Attestato:
+        Al termine del corso viene rilasciato attestato valido ai sensi del D.Lgs. 81/08 e del D.M. 2 settembre 2021.
+      `,
+      duration: "8 ore",
+      group: "Livello 2 (L2)"
+    },
+    {
+      title: "Corso Antincendio Livello 1 (L1) – 4 ore",
+      preview: "Il Corso Antincendio Livello 1 (L1) – 4 ore è rivolto ai lavoratori incaricati dal datore di lavoro di svolgere il ruolo di addetti alla prevenzione incendi, lotta antincendio e gestione delle emergenze, nelle attività classificate a livello di rischio incendio basso.",
+      fullDescription: `
+        Il Corso Antincendio Livello 1 (L1) – 4 ore è rivolto ai lavoratori incaricati dal datore di lavoro di svolgere il ruolo di addetti alla prevenzione incendi, lotta antincendio e gestione delle emergenze, nelle attività classificate a livello di rischio incendio basso.
+
+        (ex rischio basso)
+
+        Il corso è conforme a quanto previsto dal D.Lgs. 81/08 e dal D.M. 2 settembre 2021, che ha introdotto la nuova classificazione dei livelli di rischio incendio sostituendo la precedente suddivisione in basso, medio e alto rischio.
+
+        L’obiettivo del percorso formativo è fornire ai partecipanti le conoscenze di base sulla prevenzione degli incendi e sulle procedure da adottare in caso di emergenza, oltre alle competenze pratiche per utilizzare correttamente i principali mezzi di estinzione portatili.
+
+        Programma del corso:
+        - Principi della combustione e dell’incendio
+        - Principali cause di incendio in azienda
+        - Misure di prevenzione e protezione antincendio
+        - Procedure da adottare in caso di incendio
+        - Uso degli estintori portatili
+        - Esercitazioni pratiche di spegnimento
+
+        Destinatari:
+        Lavoratori designati dal datore di lavoro come addetti antincendio in attività classificate Livello 1 (L1).
+
+        Durata:
+        4 ore di formazione, con parte teorica ed esercitazioni pratiche.
+
+        Aggiornamento:
+        La normativa prevede aggiornamento quinquennale della durata di 2 ore.
+
+        Attestato:
+        Al termine del corso viene rilasciato attestato di formazione valido ai sensi del D.Lgs. 81/08 e del D.M. 2 settembre 2021.
+      `,
+      duration: "4 ore",
+      group: "Livello 1 (L1)"
+    },
+    {
+      title: "Aggiornamento Antincendio Livello 3 (L3) – 8 ore",
+      preview: "Il Corso di Aggiornamento Antincendio Livello 3 (L3) – 8 ore è rivolto agli addetti antincendio operanti in attività a rischio incendio elevato, che devono effettuare l’aggiornamento quinquennale previsto dal D.M. 2 settembre 2021.",
+      fullDescription: `
+        Il Corso di Aggiornamento Antincendio Livello 3 (L3) – 8 ore è rivolto agli addetti antincendio operanti in attività a rischio incendio elevato, che devono effettuare l’aggiornamento quinquennale previsto dal D.M. 2 settembre 2021.
+
+        Il corso consente di aggiornare e consolidare le competenze necessarie per gestire situazioni di emergenza complesse e utilizzare correttamente i sistemi e le attrezzature antincendio.
+
+        Durata:
+        8 ore, con ampia parte pratica.
+      `,
+      duration: "8 ore",
+      group: "Livello 3 (L3)"
+    },
+    {
+      title: "Aggiornamento Antincendio Livello 2 (L2) – 5 ore",
+      preview: "Il Corso di Aggiornamento Antincendio Livello 2 (L2) – 5 ore è destinato agli addetti antincendio delle attività classificate Livello 2, che devono effettuare l’aggiornamento obbligatorio ogni 5 anni previsto dal D.M. 2 settembre 2021.",
+      fullDescription: `
+        Il Corso di Aggiornamento Antincendio Livello 2 (L2) – 5 ore è destinato agli addetti antincendio delle attività classificate Livello 2, che devono effettuare l’aggiornamento obbligatorio ogni 5 anni previsto dal D.M. 2 settembre 2021.
+
+        Il percorso formativo permette di ripassare le procedure di prevenzione incendi, la gestione delle emergenze e l’utilizzo dei presidi antincendio, con una forte componente pratica.
+
+        Durata:
+        5 ore, con parte teorica e prove pratiche.
+      `,
+      duration: "5 ore",
+      group: "Livello 2 (L2)"
+    },
+    {
+      title: "Aggiornamento Antincendio Livello 1 (L1) – 2 ore",
+      preview: "Il Corso di Aggiornamento Antincendio Livello 1 (L1) – 2 ore è rivolto agli addetti antincendio che devono effettuare l’aggiornamento periodico quinquennale, previsto dal D.M. 2 settembre 2021.",
+      fullDescription: `
+        Il Corso di Aggiornamento Antincendio Livello 1 (L1) – 2 ore è rivolto agli addetti antincendio che devono effettuare l’aggiornamento periodico quinquennale, previsto dal D.M. 2 settembre 2021.
+
+        Il corso consente di mantenere aggiornate le competenze operative degli addetti antincendio, con particolare attenzione alle esercitazioni pratiche sull’utilizzo dei mezzi di spegnimento e al ripasso delle procedure di gestione delle emergenze.
+
+        Durata:
+        2 ore, con prevalenza di esercitazioni pratiche.
+      `,
+      duration: "2 ore",
+      group: "Livello 1 (L1)"
+    },
+    {
+      title: "Corso Attività in Spazi Confinati – 12 ore",
+      preview: "Il Corso per Attività in Spazi Confinati o Ambienti Sospetti di Inquinamento è rivolto ai lavoratori che operano in ambienti caratterizzati da spazi limitati, ventilazione insufficiente e possibile presenza di atmosfere pericolose, come previsto dal D.Lgs. 81/08 e dal D.P.R. 177/2011.",
+      fullDescription: `
+        Il Corso per Attività in Spazi Confinati o Ambienti Sospetti di Inquinamento è rivolto ai lavoratori che operano in ambienti caratterizzati da spazi limitati, ventilazione insufficiente e possibile presenza di atmosfere pericolose, come previsto dal D.Lgs. 81/08 e dal D.P.R. 177/2011.
+
+        Con l’introduzione del nuovo Accordo Stato-Regioni sulla formazione in materia di salute e sicurezza sul lavoro, la formazione per le attività in spazi confinati prevede una durata minima di 12 ore, con una parte teorica e una significativa componente pratica.
+
+        Gli spazi confinati possono presentare rischi particolarmente gravi legati alla presenza di gas tossici, atmosfere esplosive, carenza di ossigeno o difficoltà di evacuazione. Tra gli ambienti più comuni rientrano cisterne, silos, serbatoi, pozzi, condotte, gallerie, canalizzazioni e vasche.
+
+        Il corso ha l’obiettivo di fornire ai partecipanti le competenze necessarie per riconoscere i rischi presenti negli spazi confinati e operare in sicurezza, applicando correttamente le procedure di accesso, monitoraggio dell’atmosfera, utilizzo dei dispositivi di protezione e gestione delle emergenze.
+
+        Durante la formazione vengono inoltre approfonditi gli aspetti organizzativi e le procedure operative previste per le imprese che svolgono attività in ambienti confinati, con esercitazioni pratiche sull’utilizzo delle attrezzature di sicurezza e dei sistemi di recupero.
+
+        Programma del corso:
+        - Normativa di riferimento e obblighi previsti dal D.Lgs. 81/08 e dal D.P.R. 177/2011
+        - Definizione e caratteristiche degli spazi confinati e ambienti sospetti di inquinamento
+        - Analisi dei principali rischi: atmosfere pericolose, gas tossici, carenza di ossigeno, incendio ed esplosione
+        - Procedure di accesso, lavoro e controllo negli spazi confinati
+        - Utilizzo dei dispositivi di protezione individuale (DPI) e delle attrezzature di sicurezza
+        - Strumenti di rilevazione e monitoraggio dell’atmosfera
+        - Gestione delle emergenze e procedure di recupero degli operatori
+        - Esercitazioni pratiche e simulazioni operative
+
+        Destinatari:
+        Lavoratori, preposti e operatori che svolgono attività in ambienti confinati o sospetti di inquinamento.
+
+        Durata:
+        12 ore di formazione, con moduli teorici e pratici come previsto dal nuovo Accordo Stato-Regioni sulla formazione in materia di sicurezza sul lavoro.
+
+        Attestato:
+        Al termine del corso, previa partecipazione alle attività formative e verifica dell’apprendimento, viene rilasciato attestato di formazione valido ai sensi del D.Lgs. 81/08, del D.P.R. 177/2011 e del nuovo Accordo Stato-Regioni.
+      `,
+      duration: "12 ore",
+      group: "Spazi Confinati"
+    },
+    {
+      title: "Corso Attività in Spazi Confinati Avanzato – Preposti (16 ore)",
+      preview: "Il Corso Attività in Spazi Confinati Avanzato per Preposti è rivolto ai lavoratori che svolgono funzioni di coordinamento e supervisione delle attività in ambienti confinati o sospetti di inquinamento.",
+      fullDescription: `
+        Il Corso Attività in Spazi Confinati Avanzato per Preposti è rivolto ai lavoratori che svolgono funzioni di coordinamento e supervisione delle attività in ambienti confinati o sospetti di inquinamento, come previsto dal D.Lgs. 81/08, dal D.P.R. 177/2011 e dal nuovo Accordo Stato-Regioni sulla formazione in materia di salute e sicurezza sul lavoro.
+
+        Gli spazi confinati sono ambienti caratterizzati da accessi limitati, ventilazione insufficiente e potenziale presenza di gas tossici, atmosfere esplosive, carenza di ossigeno o altri fattori di rischio elevato. Tra gli esempi più comuni rientrano cisterne, silos, serbatoi, pozzi, condotte, vasche, gallerie e canalizzazioni.
+
+        Il corso avanzato è pensato per i preposti che devono vigilare e coordinare le attività operative, garantendo il rispetto delle procedure di sicurezza e la corretta gestione delle emergenze durante i lavori in spazi confinati.
+
+        Secondo il nuovo Accordo Stato-Regioni, il percorso formativo prevede una durata minima di 16 ore, con approfondimenti tecnici e una significativa componente pratica dedicata alla gestione operativa delle attività e alle procedure di emergenza e recupero.
+
+        Durante il corso vengono affrontati i principali aspetti organizzativi, tecnici e gestionali necessari per pianificare e controllare le attività in ambienti confinati, con particolare attenzione alla valutazione dei rischi, al coordinamento degli operatori e all’utilizzo delle attrezzature di sicurezza.
+
+        Programma del corso:
+        - Normativa di riferimento: D.Lgs. 81/08, D.P.R. 177/2011 e Accordo Stato-Regioni
+        - Ruolo e responsabilità del preposto nelle attività in spazi confinati
+        - Identificazione e valutazione dei rischi negli ambienti confinati
+        - Procedure di lavoro e sistemi di autorizzazione all’accesso
+        - Pianificazione delle attività e coordinamento degli operatori
+        - Utilizzo dei dispositivi di protezione individuale (DPI) e delle attrezzature di sicurezza
+        - Monitoraggio dell’atmosfera e utilizzo degli strumenti di rilevazione gas
+        - Gestione delle emergenze e procedure di evacuazione e recupero
+        - Esercitazioni pratiche e simulazioni operative
+
+        Destinatari:
+        Preposti, capisquadra, responsabili di cantiere e operatori con funzioni di supervisione che coordinano attività in ambienti confinati o sospetti di inquinamento.
+
+        Durata:
+        16 ore di formazione, articolate tra moduli teorici ed esercitazioni pratiche, come previsto dal nuovo Accordo Stato-Regioni sulla formazione in materia di sicurezza sul lavoro.
+
+        Attestato:
+        Al termine del corso, previa frequenza e verifica dell’apprendimento, viene rilasciato attestato di formazione valido ai sensi del D.Lgs. 81/08, del D.P.R. 177/2011 e del nuovo Accordo Stato-Regioni.
+      `,
+      duration: "16 ore",
+      group: "Spazi Confinati"
+    },
+    {
+      title: "Aggiornamento Attività in Spazi Confinati – 4 ore",
+      preview: "Il Corso di Aggiornamento per Attività in Spazi Confinati o Ambienti Sospetti di Inquinamento è rivolto ai lavoratori e ai preposti che operano in ambienti confinati e che devono mantenere aggiornate le competenze.",
+      fullDescription: `
+        Il Corso di Aggiornamento per Attività in Spazi Confinati o Ambienti Sospetti di Inquinamento è rivolto ai lavoratori e ai preposti che operano in ambienti confinati e che devono mantenere aggiornate le competenze necessarie per lavorare in sicurezza, come previsto dal D.Lgs. 81/08, dal D.P.R. 177/2011 e dal nuovo Accordo Stato-Regioni sulla formazione in materia di salute e sicurezza sul lavoro.
+
+        Gli spazi confinati sono ambienti caratterizzati da accessi limitati, ventilazione insufficiente e possibile presenza di atmosfere pericolose, gas tossici, carenza di ossigeno o rischio di incendio ed esplosione. Esempi tipici sono cisterne, serbatoi, silos, pozzi, condotte, vasche, gallerie e canalizzazioni.
+
+        L’aggiornamento formativo ha l’obiettivo di rafforzare e aggiornare le competenze operative dei lavoratori, con particolare attenzione alle procedure di sicurezza, alla gestione delle emergenze e all’utilizzo delle attrezzature e dei dispositivi di protezione individuale impiegati durante le attività in ambienti confinati.
+
+        Il corso prevede un ripasso dei principali rischi e delle procedure operative, con esercitazioni pratiche utili a mantenere la capacità di intervento e la corretta applicazione delle misure di sicurezza durante le attività lavorative.
+
+        Programma del corso:
+        - Aggiornamento normativo su lavori in spazi confinati
+        - Ripasso dei principali rischi negli ambienti confinati
+        - Procedure di accesso e lavoro in sicurezza
+        - Utilizzo e controllo dei dispositivi di protezione individuale (DPI)
+        - Monitoraggio dell’atmosfera e strumenti di rilevazione gas
+        - Gestione delle emergenze e procedure di recupero
+        - Esercitazioni pratiche e simulazioni operative
+
+        Destinatari:
+        Lavoratori, operatori e preposti che svolgono attività in ambienti confinati o sospetti di inquinamento e che devono effettuare l’aggiornamento periodico della formazione.
+
+        Durata:
+        4 ore di aggiornamento, con particolare attenzione alle esercitazioni pratiche, in conformità al nuovo Accordo Stato-Regioni sulla formazione in materia di sicurezza sul lavoro.
+
+        Attestato:
+        Al termine del corso viene rilasciato attestato di aggiornamento valido ai sensi del D.Lgs. 81/08, del D.P.R. 177/2011 e del nuovo Accordo Stato-Regioni.
+      `,
+      duration: "4 ore",
+      group: "Spazi Confinati"
+    },
+    {
+      title: "Aggiornamento Attività in Spazi Confinati Avanzato – Preposti (8 ore)",
+      preview: "Il Corso di Aggiornamento per Attività in Spazi Confinati Avanzato è rivolto ai preposti, capisquadra e responsabili operativi che coordinano o supervisionano attività svolte in ambienti confinati.",
+      fullDescription: `
+        Il Corso di Aggiornamento per Attività in Spazi Confinati Avanzato è rivolto ai preposti, capisquadra e responsabili operativi che coordinano o supervisionano attività svolte in ambienti confinati o sospetti di inquinamento.
+
+        Il percorso formativo è previsto dal D.Lgs. 81/08, dal D.P.R. 177/2011 e dal nuovo Accordo Stato-Regioni sulla formazione in materia di salute e sicurezza sul lavoro, che stabilisce l’obbligo di aggiornamento periodico della formazione per mantenere adeguate le competenze necessarie a gestire in sicurezza attività ad alto rischio.
+
+        Gli spazi confinati presentano rischi particolarmente elevati, legati alla possibile presenza di gas tossici, atmosfere esplosive, carenza di ossigeno o difficoltà di evacuazione. Per questo motivo il ruolo del preposto è fondamentale nel coordinamento delle attività, nella verifica delle procedure di sicurezza e nella gestione delle emergenze.
+
+        Il corso di aggiornamento consente di approfondire e consolidare le competenze tecniche e organizzative necessarie per la supervisione delle attività in ambienti confinati, con particolare attenzione alla gestione operativa dei lavori, alla verifica delle condizioni di sicurezza e alle procedure di emergenza e recupero.
+
+        Particolare rilevanza è dedicata alle esercitazioni pratiche, finalizzate a mantenere elevato il livello di preparazione degli operatori e a garantire un’efficace gestione delle situazioni di emergenza.
+
+        Programma del corso:
+        - Aggiornamento normativo su lavori in spazi confinati
+        - Ruolo e responsabilità del preposto nelle attività in ambienti confinati
+        - Analisi e aggiornamento dei principali rischi operativi
+        - Procedure di lavoro e sistemi di autorizzazione all’accesso
+        - Coordinamento degli operatori e verifica delle condizioni di sicurezza
+        - Utilizzo e controllo dei dispositivi di protezione individuale (DPI)
+        - Monitoraggio dell’atmosfera e strumenti di rilevazione gas
+        - Gestione delle emergenze e procedure di recupero
+        - Esercitazioni pratiche e simulazioni operative
+
+        Destinatari:
+        Preposti, capisquadra e responsabili operativi che coordinano o supervisionano attività in ambienti confinati o sospetti di inquinamento.
+
+        Durata:
+        8 ore di aggiornamento, con moduli teorici ed esercitazioni pratiche, in conformità al nuovo Accordo Stato-Regioni sulla formazione in materia di sicurezza sul lavoro.
+
+        Attestato:
+        Al termine del corso viene rilasciato attestato di aggiornamento valido ai sensi del D.Lgs. 81/08, del D.P.R. 177/2011 e del nuovo Accordo Stato-Regioni.
+      `,
+      duration: "8 ore",
+      group: "Spazi Confinati"
+    },
+    {
+      title: "Corso DPI per Lavori in Quota e Uso dei DPI di III Categoria – 8 ore",
+      preview: "Il Corso DPI per Lavori in Quota e utilizzo dei Dispositivi di Protezione Individuale di III Categoria è rivolto ai lavoratori che svolgono attività con rischio di caduta dall’alto.",
+      fullDescription: `
+        Il Corso DPI per Lavori in Quota e utilizzo dei Dispositivi di Protezione Individuale di III Categoria è rivolto ai lavoratori che svolgono attività con rischio di caduta dall’alto, come previsto dal D.Lgs. 81/08 e dal nuovo Accordo Stato-Regioni sulla formazione in materia di salute e sicurezza sul lavoro.
+
+        I DPI di III categoria sono dispositivi progettati per proteggere i lavoratori da rischi gravi o mortali, tra cui la caduta dall’alto. Tra questi rientrano, ad esempio, imbracature di sicurezza, sistemi anticaduta, cordini, dissipatori di energia, dispositivi retrattili e linee vita.
+
+        Il corso ha l’obiettivo di fornire ai partecipanti le conoscenze teoriche e le competenze pratiche necessarie per lavorare in sicurezza in quota, utilizzando correttamente i DPI anticaduta e applicando le procedure operative previste dalla normativa.
+
+        Durante la formazione vengono affrontati i principali rischi legati ai lavori in quota, le modalità di scelta, utilizzo e controllo dei DPI anticaduta e le corrette procedure di accesso e posizionamento in sicurezza.
+
+        Il percorso formativo prevede inoltre esercitazioni pratiche, fondamentali per acquisire dimestichezza con l’utilizzo delle attrezzature anticaduta e con le tecniche di lavoro e di recupero in caso di emergenza.
+
+        Programma del corso:
+        - Normativa di riferimento su lavori in quota e DPI
+        - Classificazione e caratteristiche dei DPI di III categoria
+        - Analisi dei rischi nei lavori in quota
+        - Sistemi di protezione contro le cadute dall’alto
+        - Scelta, utilizzo e verifica dei DPI anticaduta
+        - Linee vita e sistemi di ancoraggio
+        - Procedure di lavoro in sicurezza
+        - Gestione delle emergenze e tecniche di recupero
+        - Esercitazioni pratiche sull’utilizzo dei DPI anticaduta
+
+        Destinatari:
+        Lavoratori che svolgono attività in quota o che devono utilizzare DPI anticaduta di III categoria durante le attività lavorative.
+
+        Durata:
+        8 ore di formazione, con moduli teorici ed esercitazioni pratiche.
+
+        Attestato:
+        Al termine del corso, previa partecipazione alle attività formative e verifica dell’apprendimento, viene rilasciato attestato di formazione valido ai sensi del D.Lgs. 81/08 e del nuovo Accordo Stato-Regioni sulla formazione in materia di sicurezza sul lavoro.
+      `,
+      duration: "8 ore",
+      group: "Lavori in Quota"
+    },
+    {
+      title: "Aggiornamento DPI di III Categoria e Lavori in Quota – 4 ore",
+      preview: "Il Corso di Aggiornamento DPI di III Categoria e Lavori in Quota è rivolto ai lavoratori che utilizzano dispositivi di protezione individuale anticaduta durante lo svolgimento di attività con rischio di caduta dall’alto.",
+      fullDescription: `
+        Il Corso di Aggiornamento DPI di III Categoria e Lavori in Quota è rivolto ai lavoratori che utilizzano dispositivi di protezione individuale anticaduta durante lo svolgimento di attività con rischio di caduta dall’alto.
+
+        La formazione è prevista dal D.Lgs. 81/08, in particolare dall’art. 77 relativo all’uso dei DPI, e dal nuovo Accordo Stato-Regioni sulla formazione in materia di salute e sicurezza sul lavoro, che stabilisce l’obbligo di aggiornamento periodico della formazione per mantenere adeguate le competenze operative dei lavoratori.
+
+        I DPI di III categoria sono dispositivi destinati a proteggere i lavoratori da rischi gravi o mortali, come le cadute dall’alto. Tra questi rientrano imbracature di sicurezza, cordini con dissipatore, dispositivi retrattili, sistemi di ancoraggio e linee vita.
+
+        Il corso di aggiornamento consente di riprendere e rafforzare le competenze relative all’utilizzo corretto dei sistemi anticaduta, con particolare attenzione alle procedure operative, alla verifica dei dispositivi e alla gestione delle situazioni di emergenza.
+
+        La formazione prevede inoltre esercitazioni pratiche, fondamentali per mantenere la capacità di utilizzare correttamente le attrezzature anticaduta e operare in sicurezza durante i lavori in quota.
+
+        Programma del corso:
+        - Aggiornamento normativo su lavori in quota e DPI
+        - Ripasso dei principali rischi legati alle cadute dall’alto
+        - Tipologie e caratteristiche dei DPI di III categoria
+        - Controllo, manutenzione e corretta vestizione dei DPI anticaduta
+        - Sistemi di ancoraggio e linee vita
+        - Procedure operative per il lavoro in sicurezza in quota
+        - Gestione delle emergenze e procedure di recupero
+        - Esercitazioni pratiche sull’utilizzo dei DPI anticaduta
+
+        Destinatari:
+        Lavoratori che svolgono attività in quota e utilizzano dispositivi di protezione individuale di III categoria contro le cadute dall’alto.
+
+        Durata:
+        4 ore di aggiornamento, con una parte teorica e una significativa componente pratica.
+
+        Attestato:
+        Al termine del corso viene rilasciato attestato di aggiornamento valido ai sensi del D.Lgs. 81/08 e del nuovo Accordo Stato-Regioni sulla formazione in materia di sicurezza sul lavoro.
+      `,
+      duration: "4 ore",
+      group: "Lavori in Quota"
+    },
+    {
+      title: "Corso Lavori su Funi – 32 ore",
+      preview: "Il Corso Lavori su Funi è rivolto ai lavoratori che svolgono attività in quota mediante sistemi di accesso e posizionamento tramite funi.",
+      fullDescription: `
+        Il Corso Lavori su Funi è rivolto ai lavoratori che svolgono attività in quota mediante sistemi di accesso e posizionamento tramite funi, come previsto dal D.Lgs. 81/08 (art. 116 e Allegato XXI) e dal nuovo Accordo Stato-Regioni sulla formazione in materia di salute e sicurezza sul lavoro.
+
+        I lavori su fune rappresentano una tecnica utilizzata quando non è possibile o risulta più rischioso utilizzare ponteggi, piattaforme di lavoro elevabili o altre attrezzature di accesso. Questa modalità operativa consente di effettuare interventi in sicurezza su facciate, strutture industriali, coperture, pareti rocciose, silos, torri, tralicci e altre strutture in quota.
+
+        Il corso ha l’obiettivo di fornire ai partecipanti le competenze tecniche e pratiche necessarie per operare in sicurezza mediante sistemi su fune, con particolare attenzione alla prevenzione delle cadute dall’alto, all’utilizzo corretto delle attrezzature e alla gestione delle situazioni di emergenza.
+
+        La formazione prevede una parte teorica dedicata alla normativa, alla valutazione dei rischi e all’organizzazione delle attività, e una ampia componente pratica dedicata alle tecniche operative di accesso, posizionamento, movimentazione e recupero su fune.
+
+        Programma del corso:
+        - Normativa di riferimento sui lavori in quota e su funi
+        - Analisi dei rischi e misure di prevenzione e protezione
+        - DPI di III categoria e attrezzature per lavori su funi
+        - Nodi, ancoraggi e sistemi di sicurezza
+        - Tecniche di accesso, discesa e risalita su fune
+        - Tecniche di posizionamento e movimentazione in quota
+        - Procedure operative e organizzazione delle attività
+        - Gestione delle emergenze e tecniche di recupero
+        - Esercitazioni pratiche su strutture dedicate
+
+        Destinatari:
+        Lavoratori che svolgono attività in quota mediante sistemi di accesso e posizionamento tramite funi.
+
+        Durata:
+        32 ore di formazione, suddivise tra moduli teorici ed esercitazioni pratiche, come previsto dalla normativa vigente.
+
+        Attestato:
+        Al termine del corso, previa frequenza e verifica dell’apprendimento, viene rilasciato attestato di formazione valido ai sensi del D.Lgs. 81/08 (art. 116 e Allegato XXI).
+      `,
+      duration: "32 ore",
+      group: "Lavori su Funi"
+    },
+    {
+      title: "Aggiornamento Corso Lavori su Funi – 8 ore",
+      preview: "Il Corso di Aggiornamento per Lavori su Funi è rivolto ai lavoratori che svolgono attività in quota mediante sistemi di accesso e posizionamento tramite funi e che devono mantenere aggiornate le proprie competenze.",
+      fullDescription: `
+        Il Corso di Aggiornamento per Lavori su Funi è rivolto ai lavoratori che svolgono attività in quota mediante sistemi di accesso e posizionamento tramite funi e che devono mantenere aggiornate le proprie competenze operative per lavorare in sicurezza.
+
+        La formazione è prevista dal D.Lgs. 81/08 (art. 116 e Allegato XXI) e dalle disposizioni sulla formazione in materia di salute e sicurezza sul lavoro, che stabiliscono l’obbligo di aggiornamento periodico per gli operatori addetti ai lavori su funi.
+
+        I lavori su fune vengono utilizzati in numerosi ambiti operativi, come manutenzioni su edifici, lavori su facciate, interventi su strutture industriali, torri, tralicci, coperture e siti naturali, quando non è possibile o risulta più rischioso utilizzare altre attrezzature di accesso come ponteggi o piattaforme elevabili.
+
+        Il corso di aggiornamento ha l’obiettivo di rafforzare e aggiornare le competenze tecniche e operative degli operatori, con particolare attenzione all’utilizzo corretto delle attrezzature, alla verifica dei dispositivi di sicurezza e alla gestione delle emergenze durante le attività in quota.
+
+        La formazione prevede una parte teorica di aggiornamento normativo e tecnico e una significativa componente pratica, finalizzata a mantenere l’abilità nell’utilizzo delle tecniche operative su fune e nelle procedure di recupero.
+
+        Programma del corso:
+        - Aggiornamento normativo sui lavori in quota e su funi
+        - Ripasso dei principali rischi legati ai lavori su fune
+        - Controllo e utilizzo dei DPI di III categoria e delle attrezzature
+        - Verifica degli ancoraggi e dei sistemi di sicurezza
+        - Tecniche operative di accesso, posizionamento e movimentazione su fune
+        - Procedure di lavoro in sicurezza
+        - Gestione delle emergenze e tecniche di recupero
+        - Esercitazioni pratiche su strutture dedicate
+
+        Destinatari:
+        Lavoratori già formati che svolgono attività mediante sistemi di accesso e posizionamento tramite funi.
+
+        Durata:
+        8 ore di aggiornamento, con una parte teorica e una significativa componente pratica.
+
+        Attestato:
+        Al termine del corso viene rilasciato attestato di aggiornamento valido ai sensi del D.Lgs. 81/08 (art. 116 e Allegato XXI).
+      `,
+      duration: "8 ore",
+      group: "Lavori su Funi"
+    },
+    {
+      title: "Corso Preposto per Lavori su Funi – 8 ore",
+      preview: "Il Corso Preposto per Lavori su Funi è rivolto ai lavoratori che svolgono funzioni di sorveglianza, coordinamento e controllo delle attività operative svolte mediante sistemi di accesso e posizionamento tramite funi.",
+      fullDescription: `
+        Il Corso Preposto per Lavori su Funi è rivolto ai lavoratori che svolgono funzioni di sorveglianza, coordinamento e controllo delle attività operative svolte mediante sistemi di accesso e posizionamento tramite funi.
+
+        Il percorso formativo è previsto dal D.Lgs. 81/08 (art. 19 e art. 116) e dall’Allegato XXI, che disciplina la formazione degli operatori e dei preposti addetti ai lavori su funi. Il preposto ha un ruolo fondamentale nel garantire il rispetto delle procedure di sicurezza e nel vigilare sull’operato degli operatori durante le attività in quota.
+
+        I lavori su fune vengono utilizzati in diversi contesti operativi, come manutenzioni su edifici, interventi su facciate, strutture industriali, torri, tralicci, coperture e siti naturali, quando non è possibile utilizzare altre attrezzature di accesso come ponteggi o piattaforme di lavoro elevabili.
+
+        Il corso ha l’obiettivo di fornire ai partecipanti le competenze organizzative, tecniche e gestionali necessarie per coordinare e supervisionare le attività svolte su funi, assicurando l’applicazione delle corrette procedure operative e delle misure di sicurezza previste dalla normativa.
+
+        Durante la formazione vengono approfonditi il ruolo e le responsabilità del preposto, l’organizzazione delle attività di lavoro, la gestione dei rischi e il controllo dell’utilizzo delle attrezzature e dei DPI di III categoria, con particolare attenzione alla gestione delle emergenze e alle procedure di recupero.
+
+        Programma del corso:
+        - Normativa di riferimento sui lavori su funi
+        - Ruolo, compiti e responsabilità del preposto
+        - Organizzazione e pianificazione delle attività su funi
+        - Analisi e gestione dei rischi nei lavori in quota
+        - Verifica e controllo dei DPI di III categoria e delle attrezzature
+        - Sistemi di ancoraggio e procedure operative
+        - Vigilanza sull’applicazione delle procedure di sicurezza
+        - Gestione delle emergenze e tecniche di recupero
+        - Esercitazioni pratiche
+
+        Destinatari:
+        Lavoratori con funzione di preposto o caposquadra che coordinano attività svolte mediante sistemi di accesso e posizionamento tramite funi.
+
+        Durata:
+        8 ore di formazione, con moduli teorici ed esercitazioni pratiche.
+
+        Attestato:
+        Al termine del corso, previa partecipazione alle attività formative e verifica dell’apprendimento, viene rilasciato attestato valido ai sensi del D.Lgs. 81/08 (art. 116 e Allegato XXI).
+      `,
+      duration: "8 ore",
+      group: "Lavori su Funi"
+    },
+    {
+      title: "Aggiornamento Preposto per Lavori su Funi – 4 ore",
+      preview: "Il Corso di Aggiornamento Preposto per Lavori su Funi è rivolto ai lavoratori che svolgono funzioni di preposto o caposquadra nelle attività eseguite mediante sistemi di accesso e posizionamento tramite funi.",
+      fullDescription: `
+        Il Corso di Aggiornamento Preposto per Lavori su Funi è rivolto ai lavoratori che svolgono funzioni di preposto o caposquadra nelle attività eseguite mediante sistemi di accesso e posizionamento tramite funi, e che devono mantenere aggiornate le proprie competenze in materia di sicurezza.
+
+        La formazione è prevista dal D.Lgs. 81/08, in particolare dagli artt. 19 e 116, e dall’Allegato XXI, che disciplina la formazione degli operatori e dei preposti addetti ai lavori su funi. Il preposto ha il compito di sovrintendere alle attività lavorative, verificare il rispetto delle procedure di sicurezza e garantire il corretto utilizzo delle attrezzature e dei DPI di III categoria.
+
+        Il corso di aggiornamento ha l’obiettivo di rafforzare e aggiornare le competenze tecniche, organizzative e di vigilanza del preposto, con particolare attenzione alla gestione delle attività operative in quota, alla valutazione dei rischi e alla corretta applicazione delle procedure di sicurezza.
+
+        Durante la formazione vengono ripresi i principali aspetti normativi e operativi relativi ai lavori su fune, con approfondimenti sulla gestione delle emergenze, sulle tecniche di recupero e sul coordinamento degli operatori durante le attività in quota.
+
+        Programma del corso:
+        - Aggiornamento normativo sui lavori su funi
+        - Ruolo e responsabilità del preposto nelle attività in quota
+        - Analisi e aggiornamento dei principali rischi operativi
+        - Verifica dell’utilizzo dei DPI di III categoria e delle attrezzature
+        - Controllo delle procedure di lavoro e dei sistemi di ancoraggio
+        - Coordinamento degli operatori durante le attività su funi
+        - Gestione delle emergenze e procedure di recupero
+        - Simulazioni ed esercitazioni pratiche
+
+        Destinatari:
+        Preposti e capisquadra che coordinano o supervisionano attività svolte mediante sistemi di accesso e posizionamento tramite funi.
+
+        Durata:
+        4 ore di aggiornamento, con moduli teorici ed esercitazioni pratiche.
+
+        Attestato:
+        Al termine del corso viene rilasciato attestato di aggiornamento valido ai sensi del D.Lgs. 81/08 (artt. 19 e 116 e Allegato XXI).
+      `,
+      duration: "4 ore",
+      group: "Lavori su Funi"
+    },
+    {
+      title: "Corso Ponteggi – Addetti al Montaggio, Smontaggio e Trasformazione (28 ore)",
+      preview: "Il Corso Ponteggi – 28 ore è rivolto ai lavoratori addetti alle operazioni di montaggio, smontaggio e trasformazione dei ponteggi, come previsto dal D.Lgs. 81/08.",
+      fullDescription: `
+        Il Corso Ponteggi – 28 ore è rivolto ai lavoratori addetti alle operazioni di montaggio, smontaggio e trasformazione dei ponteggi, come previsto dal D.Lgs. 81/08 (art. 136 e Allegato XXI).
+
+        La normativa stabilisce che i lavoratori che operano sui ponteggi debbano ricevere una formazione teorica e pratica specifica, finalizzata a garantire lo svolgimento delle attività in sicurezza e a prevenire i rischi legati ai lavori in quota.
+
+        Il corso ha l’obiettivo di fornire ai partecipanti le conoscenze tecniche e operative necessarie per montare, smontare e trasformare correttamente i ponteggi, nel rispetto delle procedure previste dalla normativa e delle indicazioni contenute nel Pi.M.U.S. (Piano di Montaggio, Uso e Smontaggio dei ponteggi).
+
+        Durante la formazione vengono approfonditi i principali aspetti normativi, la valutazione dei rischi nei lavori in quota, l’utilizzo dei dispositivi di protezione individuale (DPI) e le corrette tecniche operative per la gestione dei ponteggi.
+
+        Il percorso formativo prevede una parte teorica e una ampia componente pratica, con esercitazioni dedicate al montaggio e allo smontaggio delle strutture, all’utilizzo dei sistemi di sicurezza e alle procedure operative previste in cantiere.
+
+        Programma del corso:
+        - Normativa di riferimento sui lavori in quota e sui ponteggi
+        - Analisi dei rischi nelle attività di montaggio e smontaggio
+        - Tipologie di ponteggi e componenti strutturali
+        - Pi.M.U.S. (Piano di Montaggio, Uso e Smontaggio dei ponteggi)
+        - Dispositivi di protezione individuale per i lavori in quota
+        - Tecniche di montaggio, smontaggio e trasformazione dei ponteggi
+        - Misure di prevenzione e protezione nei lavori in quota
+        - Esercitazioni pratiche su strutture dedicate
+
+        Destinatari:
+        Lavoratori che svolgono attività di montaggio, smontaggio e trasformazione dei ponteggi nei cantieri temporanei o mobili.
+
+        Durata:
+        28 ore di formazione, suddivise tra moduli teorici e prove pratiche, come previsto dal D.Lgs. 81/08 (art. 136 e Allegato XXI).
+
+        Attestato:
+        Al termine del corso, previa frequenza e verifica dell’apprendimento, viene rilasciato attestato di formazione valido ai sensi del D.Lgs. 81/08 per addetti al montaggio, smontaggio e trasformazione dei ponteggi.
+      `,
+      duration: "28 ore",
+      group: "Ponteggi"
+    },
+    {
+      title: "Aggiornamento Corso Ponteggi – 4 ore",
+      preview: "Il Corso di Aggiornamento per Addetti al Montaggio, Smontaggio e Trasformazione dei Ponteggi è rivolto ai lavoratori che operano nei cantieri temporanei o mobili.",
+      fullDescription: `
+        Il Corso di Aggiornamento per Addetti al Montaggio, Smontaggio e Trasformazione dei Ponteggi è rivolto ai lavoratori che operano nei cantieri temporanei o mobili e che devono mantenere aggiornata la propria formazione per svolgere in sicurezza le attività sui ponteggi.
+
+        La formazione è prevista dal D.Lgs. 81/08 (art. 136 e Allegato XXI), che stabilisce l’obbligo per gli addetti ai ponteggi di effettuare un aggiornamento periodico della durata minima di 4 ore ogni 4 anni, al fine di mantenere adeguate le competenze tecniche e operative.
+
+        Il corso di aggiornamento consente di riprendere e approfondire le procedure di sicurezza, le corrette tecniche di montaggio e smontaggio dei ponteggi e l’utilizzo dei dispositivi di protezione individuale nei lavori in quota.
+
+        Durante la formazione vengono inoltre affrontati gli aggiornamenti normativi e le buone pratiche operative per la gestione delle attività in cantiere, con esercitazioni pratiche finalizzate a mantenere la manualità e la corretta applicazione delle procedure di sicurezza.
+
+        Programma del corso:
+        - Aggiornamento normativo sui lavori in quota e sui ponteggi
+        - Ripasso dei principali rischi nelle attività di montaggio e smontaggio
+        - Procedure operative per il montaggio, smontaggio e trasformazione dei ponteggi
+        - Utilizzo dei DPI per i lavori in quota
+        - Pi.M.U.S. (Piano di Montaggio, Uso e Smontaggio dei ponteggi)
+        - Verifica delle condizioni di sicurezza delle strutture
+        - Esercitazioni pratiche su ponteggi
+
+        Destinatari:
+        Lavoratori addetti al montaggio, smontaggio e trasformazione dei ponteggi che devono effettuare l’aggiornamento periodico della formazione.
+
+        Durata:
+        4 ore di aggiornamento, con una parte teorica e una componente pratica.
+
+        Attestato:
+        Al termine del corso viene rilasciato attestato di aggiornamento valido ai sensi del D.Lgs. 81/08 (art. 136 e Allegato XXI).
+      `,
+      duration: "4 ore",
+      group: "Ponteggi"
+    },
+    {
+      title: "Corso Evacuatore di Emergenza – 8 ore",
+      preview: "Il Corso Evacuatore di Emergenza – 8 ore è rivolto ai lavoratori incaricati di supportare le operazioni di evacuazione durante le situazioni di emergenza.",
+      fullDescription: `
+        Il Corso Evacuatore di Emergenza – 8 ore è rivolto ai lavoratori incaricati di supportare le operazioni di evacuazione durante le situazioni di emergenza, con particolare attenzione all’assistenza di persone con mobilità ridotta, disabilità o difficoltà di evacuazione presenti nei luoghi di lavoro.
+
+        La formazione è prevista nell’ambito della gestione delle emergenze nei luoghi di lavoro secondo il Decreto Legislativo 81/2008, che stabilisce l’obbligo per il datore di lavoro di organizzare adeguate procedure di emergenza ed evacuazione per garantire la sicurezza di tutti i lavoratori e delle persone presenti.
+
+        Il corso ha l’obiettivo di fornire ai partecipanti le competenze operative necessarie per gestire correttamente le procedure di evacuazione, collaborando con gli addetti alle emergenze e applicando le indicazioni contenute nel Piano di Emergenza ed Evacuazione aziendale.
+
+        Durante la formazione vengono affrontati gli aspetti organizzativi della gestione delle emergenze, le tecniche di evacuazione assistita e l’utilizzo delle attrezzature dedicate, come sedie di evacuazione e dispositivi di trasporto su scale, fondamentali per garantire un’evacuazione sicura anche in presenza di persone con mobilità ridotta.
+
+        Il corso prevede una parte teorica e una significativa componente pratica, con simulazioni di evacuazione e utilizzo delle attrezzature.
+
+        Programma del corso:
+        - Normativa sulla gestione delle emergenze nei luoghi di lavoro
+        - Organizzazione delle procedure di evacuazione
+        - Ruolo e compiti dell’evacuatore di emergenza
+        - Tecniche di evacuazione assistita
+        - Gestione delle persone con mobilità ridotta o disabilità
+        - Utilizzo della sedia di evacuazione e delle attrezzature dedicate
+        - Comunicazione e coordinamento durante l’emergenza
+        - Esercitazioni pratiche e simulazioni di evacuazione
+
+        Destinatari:
+        Lavoratori incaricati di supportare le procedure di evacuazione e assistenza alle persone durante le emergenze, in particolare in contesti in cui sono presenti persone con mobilità ridotta.
+
+        Durata:
+        8 ore di formazione, con moduli teorici ed esercitazioni pratiche.
+
+        Attestato:
+        Al termine del corso viene rilasciato attestato di partecipazione alla formazione sulla gestione dell’evacuazione di emergenza, in conformità al D.Lgs. 81/08.
+      `,
+      duration: "8 ore",
+      group: "Emergenze"
+    },
+    {
+      title: "Aggiornamento Evacuatore di Emergenza – 4 ore",
+      preview: "Il Corso di Aggiornamento Evacuatore di Emergenza – 4 ore è rivolto ai lavoratori incaricati di supportare le operazioni di evacuazione durante le situazioni di emergenza.",
+      fullDescription: `
+        Il Corso di Aggiornamento Evacuatore di Emergenza – 4 ore è rivolto ai lavoratori incaricati di supportare le operazioni di evacuazione durante le situazioni di emergenza, con particolare attenzione all’assistenza di persone con mobilità ridotta o disabilità presenti nei luoghi di lavoro.
+
+        La formazione rientra tra le attività previste dal Decreto Legislativo 81/2008, che stabilisce l’obbligo per il datore di lavoro di organizzare adeguate procedure di emergenza ed evacuazione e di garantire la sicurezza di tutti i lavoratori e delle persone presenti.
+
+        Il corso di aggiornamento ha l’obiettivo di mantenere e rafforzare le competenze operative degli evacuatori di emergenza, attraverso il ripasso delle procedure di evacuazione, delle tecniche di assistenza alle persone con difficoltà di movimento e dell’utilizzo delle attrezzature dedicate.
+
+        Durante la formazione vengono inoltre approfondite le procedure operative previste nel Piano di Emergenza ed Evacuazione aziendale, con esercitazioni pratiche finalizzate a migliorare la capacità di intervento e la gestione delle situazioni di emergenza.
+
+        Programma del corso:
+        - Aggiornamento normativo sulla gestione delle emergenze nei luoghi di lavoro
+        - Ripasso delle procedure di evacuazione
+        - Ruolo e responsabilità dell’evacuatore di emergenza
+        - Tecniche di evacuazione assistita
+        - Gestione delle persone con mobilità ridotta o disabilità
+        - Utilizzo delle sedie di evacuazione e delle attrezzature dedicate
+        - Comunicazione e coordinamento durante l’emergenza
+        - Esercitazioni pratiche e simulazioni di evacuazione
+
+        Destinatari:
+        Lavoratori incaricati di supportare le procedure di evacuazione durante le emergenze e che devono effettuare l’aggiornamento periodico della formazione.
+
+        Durata:
+        4 ore di aggiornamento, con moduli teorici ed esercitazioni pratiche.
+
+        Attestato:
+        Al termine del corso viene rilasciato attestato di aggiornamento della formazione per evacuatore di emergenza, in conformità al Decreto Legislativo 81/2008.
+      `,
+      duration: "4 ore",
+      group: "Emergenze"
+    },
+    {
+      title: "Corso Respirazione e Utilizzo dell’Autorespiratore (APVR) – 8 ore",
+      preview: "Il Corso Respirazione e Utilizzo dell’Autorespiratore (APVR) – 8 ore è rivolto ai lavoratori che operano in ambienti in cui possono essere presenti atmosfere pericolose.",
+      fullDescription: `
+        Il Corso Respirazione e Utilizzo dell’Autorespiratore (APVR) – 8 ore è rivolto ai lavoratori che operano in ambienti in cui possono essere presenti atmosfere pericolose, carenza di ossigeno o sostanze tossiche, e che devono utilizzare dispositivi di protezione delle vie respiratorie per svolgere le attività in sicurezza.
+
+        La formazione è prevista dal Decreto Legislativo 81/2008, in particolare dall’art. 77 relativo all’uso dei Dispositivi di Protezione Individuale (DPI), che stabilisce l’obbligo di fornire ai lavoratori formazione e addestramento adeguati per l’utilizzo dei DPI di III categoria.
+
+        Il corso ha l’obiettivo di fornire ai partecipanti le conoscenze teoriche e le competenze pratiche necessarie per utilizzare correttamente gli autorespiratori e gli altri dispositivi di protezione delle vie respiratorie, garantendo la sicurezza degli operatori durante le attività svolte in ambienti a rischio.
+
+        Durante la formazione vengono approfonditi i principali rischi legati alla presenza di gas tossici, vapori pericolosi, atmosfere contaminate o carenza di ossigeno, nonché le modalità di utilizzo, controllo e manutenzione degli autorespiratori e dei dispositivi di protezione respiratoria.
+
+        Il percorso formativo prevede inoltre esercitazioni pratiche, fondamentali per acquisire dimestichezza con l’utilizzo delle attrezzature, la vestizione dei dispositivi e le procedure operative in situazioni di emergenza.
+
+        Programma del corso:
+        - Normativa di riferimento sull’uso dei DPI
+        - Rischi legati alle atmosfere pericolose e alla carenza di ossigeno
+        - Tipologie di dispositivi di protezione delle vie respiratorie
+        - Caratteristiche e funzionamento degli autorespiratori (APVR)
+        - Procedure di utilizzo, controllo e manutenzione dei dispositivi
+        - Vestizione e verifica dell’efficienza dell’autorespiratore
+        - Procedure operative in ambienti a rischio
+        - Gestione delle emergenze
+        - Esercitazioni pratiche con autorespiratori
+
+        Destinatari:
+        Lavoratori che operano in ambienti a rischio di atmosfere pericolose o contaminazione dell’aria e che devono utilizzare autorespiratori o altri dispositivi di protezione delle vie respiratorie.
+
+        Durata:
+        8 ore di formazione, con moduli teorici ed esercitazioni pratiche.
+
+        Attestato:
+        Al termine del corso, previa partecipazione alle attività formative e verifica dell’apprendimento, viene rilasciato attestato di formazione sull’utilizzo dei dispositivi di protezione delle vie respiratorie, in conformità al Decreto Legislativo 81/2008.
+      `,
+      duration: "8 ore",
+      group: "DPI III Categoria"
+    },
+    {
+      title: "Aggiornamento Respirazione e Utilizzo dell’Autorespiratore (APVR) – 4 ore",
+      preview: "Il Corso di Aggiornamento Respirazione e Utilizzo dell’Autorespiratore (APVR) – 4 ore è rivolto ai lavoratori che utilizzano dispositivi di protezione delle vie respiratorie.",
+      fullDescription: `
+        Il Corso di Aggiornamento Respirazione e Utilizzo dell’Autorespiratore (APVR) – 4 ore è rivolto ai lavoratori che utilizzano dispositivi di protezione delle vie respiratorie, in particolare autorespiratori, durante attività svolte in ambienti con atmosfere potenzialmente pericolose o carenza di ossigeno.
+
+        La formazione rientra tra gli obblighi previsti dal Decreto Legislativo 81/2008, in particolare dall’art. 77 relativo all’uso dei Dispositivi di Protezione Individuale (DPI), che stabilisce la necessità di fornire ai lavoratori formazione e addestramento adeguati e aggiornati per l’utilizzo dei DPI di III categoria.
+
+        Il corso di aggiornamento ha l’obiettivo di mantenere e rafforzare le competenze operative degli operatori, attraverso il ripasso delle procedure di utilizzo degli autorespiratori, la verifica delle condizioni di sicurezza e l’addestramento pratico all’impiego dei dispositivi di protezione delle vie respiratorie.
+
+        Durante la formazione vengono inoltre analizzati i principali rischi legati alla presenza di gas tossici, vapori pericolosi o atmosfere contaminate, con particolare attenzione alle procedure di sicurezza e alle modalità di intervento in caso di emergenza.
+
+        Il percorso prevede una significativa componente pratica, con esercitazioni dedicate alla vestizione, al controllo e all’utilizzo degli autorespiratori in condizioni operative simulate.
+
+        Programma del corso:
+        - Aggiornamento normativo sull’utilizzo dei DPI
+        - Ripasso dei rischi legati alle atmosfere pericolose
+        - Tipologie di dispositivi di protezione delle vie respiratorie
+        - Verifica e controllo degli autorespiratori (APVR)
+        - Procedure di utilizzo e manutenzione dei dispositivi
+        - Vestizione e controllo funzionale dell’autorespiratore
+        - Procedure operative in ambienti a rischio
+        - Gestione delle emergenze
+        - Esercitazioni pratiche
+
+        Destinatari:
+        Lavoratori che utilizzano autorespiratori o dispositivi di protezione delle vie respiratorie durante attività svolte in ambienti a rischio.
+
+        Durata:
+        4 ore di aggiornamento, con moduli teorici ed esercitazioni pratiche.
+
+        Attestato:
+        Al termine del corso viene rilasciato attestato di aggiornamento sull’utilizzo dei dispositivi di protezione delle vie respiratorie, in conformità al Decreto Legislativo 81/2008.
+      `,
+      duration: "4 ore",
+      group: "DPI III Categoria"
+    }
+  ];
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="max-w-6xl mx-auto px-4 py-20"
+    >
+      <div className="text-center mb-16">
+        <h1 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900 uppercase mb-4">
+          Corsi <span className="text-brand">D.Lgs 81/08</span>
+        </h1>
+        <div className="w-20 h-1.5 bg-brand mx-auto rounded-full" />
+        <p className="text-slate-500 mt-6 text-lg max-w-3xl mx-auto">
+          Formazione obbligatoria per la sicurezza sul lavoro in conformità al Decreto Legislativo 81/08.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
+        {courses8108.map((course, index) => (
+          <div key={index} className="bg-white rounded-3xl border border-slate-100 p-8 shadow-xl shadow-slate-200/50 flex flex-col">
+            <div className="flex items-start justify-between mb-6">
+              <div className="w-12 h-12 bg-brand/10 rounded-2xl flex items-center justify-center text-brand shrink-0">
+                <Shield className="w-6 h-6" />
+              </div>
+              <div className="flex gap-2">
+                <div className="px-4 py-1.5 bg-slate-100 rounded-full text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                  {course.duration}
+                </div>
+                <div className="px-4 py-1.5 bg-brand/10 rounded-full text-[10px] font-bold text-brand uppercase tracking-widest">
+                  {course.group}
+                </div>
+              </div>
+            </div>
+            
+            <h2 className="text-2xl font-black text-slate-900 uppercase tracking-tight mb-4">
+              {course.title}
+            </h2>
+            
+            <p className="text-slate-600 leading-relaxed mb-6">
+              {course.preview}
+            </p>
+
+            <div className="mt-auto">
+              <button 
+                onClick={() => setExpandedCourse(expandedCourse === index ? null : index)}
+                className="inline-flex items-center gap-2 text-brand font-bold hover:opacity-80 transition-all uppercase text-sm tracking-wider"
+              >
+                {expandedCourse === index ? "Chiudi descrizione" : "Scopri di più"}
+                <ArrowRight className={`w-4 h-4 transition-transform ${expandedCourse === index ? 'rotate-90' : ''}`} />
+              </button>
+            </div>
+
+            <AnimatePresence>
+              {expandedCourse === index && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="overflow-hidden"
+                >
+                  <div className="pt-8 mt-8 border-t border-slate-100">
+                    <div className="prose prose-slate max-w-none">
+                      {course.fullDescription.split('\n').map((line, i) => (
+                        <p key={i} className="text-slate-600 text-sm leading-relaxed mb-4 whitespace-pre-line">
+                          {line.trim()}
+                        </p>
+                      ))}
+                    </div>
+                    <div className="mt-8 pt-8 border-t border-slate-100">
+                      <a 
+                        href={`mailto:commerciale@aliseogroup.it?subject=Richiesta Info: ${course.title}`}
+                        className="inline-flex items-center justify-center w-full py-4 bg-brand text-brand-dark rounded-2xl font-bold hover:bg-slate-900 hover:text-white transition-all shadow-lg shadow-brand/20"
+                      >
+                        Richiedi Info
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-16">
+        <button 
+          onClick={() => {
+            setCurrentView('home');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-brand hover:text-brand-dark transition-all shadow-xl shadow-slate-200"
+        >
+          Torna alla Home
+          <ArrowRight className="w-5 h-5" />
+        </button>
+        <a 
+          href="mailto:commerciale@aliseogroup.it"
+          className="inline-flex items-center gap-2 px-8 py-4 bg-brand text-brand-dark rounded-2xl font-bold hover:bg-slate-900 hover:text-white transition-all shadow-xl shadow-slate-200"
+        >
+          RICHIEDI INFO SU CORSI NON A CATALOGO
+          <Mail className="w-5 h-5" />
+        </a>
+      </div>
+    </motion.div>
+  );
+};
+
+const MobileCenterSection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08') => void }) => {
+  const videos = [
+    {
+      title: "VIDEO SPAZI CONFINATI",
+      url: "https://www.canva.com/design/DAG0jCPmYDA/AAb2A9TWl3AR7Wh-lGoAnQ/watch?utm_content=DAG0jCPmYDA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h05389da50f"
+    },
+    {
+      title: "VIDEO RECUPERO DA TERRA",
+      url: "https://www.canva.com/design/DAGz4vgFbwA/a0km4a-y430DuUEiAyS9tA/watch?embed&meta"
+    }
+  ];
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="max-w-4xl mx-auto px-4 py-20"
+    >
+      <div className="text-center mb-16">
+        <h1 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900 uppercase mb-4">
+          Centro Formativo <span className="text-brand">Mobile</span>
+        </h1>
+        <div className="w-20 h-1.5 bg-brand mx-auto rounded-full" />
+        <p className="text-slate-500 mt-6 text-lg max-w-2xl mx-auto">
+          Esplora le nostre unità mobili di addestramento attraverso i video dimostrativi.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-6 max-w-2xl mx-auto">
+        {videos.map((video, index) => (
+          <a
+            key={index}
+            href={video.url}
+            target="_blank"
+            rel="noreferrer"
+            className="group relative bg-white rounded-3xl border border-slate-100 p-8 shadow-xl shadow-slate-200/50 hover:border-brand transition-all flex items-center justify-between overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-brand/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative flex items-center gap-6">
+              <div className="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center text-brand group-hover:scale-110 transition-transform">
+                <Play className="w-8 h-8 fill-current" />
+              </div>
+              <h2 className="text-xl md:text-2xl font-black text-slate-900 uppercase tracking-tight">
+                {video.title}
+              </h2>
+            </div>
+            <ArrowRight className="relative w-8 h-8 text-slate-300 group-hover:text-brand group-hover:translate-x-2 transition-all" />
+          </a>
+        ))}
+      </div>
+
+      <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-16">
+        <button 
+          onClick={() => {
+            setCurrentView('home');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          className="inline-flex items-center gap-2 px-8 py-4 bg-slate-100 text-slate-600 rounded-2xl font-bold hover:bg-slate-200 transition-all"
+        >
+          Torna alla Home
+        </button>
+        <a 
+          href="mailto:commerciale@aliseogroup.it"
+          className="inline-flex items-center gap-2 px-8 py-4 bg-brand text-brand-dark rounded-2xl font-bold hover:bg-slate-900 hover:text-white transition-all shadow-xl shadow-slate-200"
+        >
+          RICHIEDI INFO SU CORSI NON A CATALOGO
+          <Mail className="w-5 h-5" />
+        </a>
       </div>
     </motion.div>
   );
@@ -404,7 +1691,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [currentView, setCurrentView] = useState<'home' | 'about'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08'>('home');
 
   const filteredCourses = useMemo(() => {
     return courses.filter(course => {
@@ -485,16 +1772,42 @@ export default function App() {
               >
                 Chi Siamo
               </button>
-              <a href="mailto:commerciale@aliseogroup.it" className="text-sm font-medium text-slate-600 hover:text-brand transition-colors">Contatti</a>
-              <a 
-                href="https://aliseo-academy-eccellenz-hd07985.gamma.site/"
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm font-bold text-brand hover:opacity-80 transition-colors flex items-center gap-1"
+              <button 
+                onClick={() => {
+                  document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="text-sm font-medium text-slate-600 hover:text-brand transition-colors cursor-pointer"
+              >
+                Contatti
+              </button>
+              <button 
+                onClick={() => {
+                  setCurrentView('dlgs-81-08');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="text-sm font-bold text-slate-600 hover:text-brand transition-colors cursor-pointer"
+              >
+                Corsi D.Lgs 81/08
+              </button>
+              <button 
+                onClick={() => {
+                  setCurrentView('gwo-training');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="text-sm font-bold text-slate-600 hover:text-brand transition-colors cursor-pointer"
+              >
+                Corsi GWO Training
+              </button>
+              <button 
+                onClick={() => {
+                  setCurrentView('mobile-center');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="text-sm font-bold text-brand hover:opacity-80 transition-colors flex items-center gap-1 cursor-pointer"
               >
                 Centro Formativo Mobile
-                <ExternalLink className="w-3 h-3" />
-              </a>
+                <Play className="w-3 h-3" />
+              </button>
               <button className="px-6 py-2.5 bg-brand text-brand-dark rounded-full text-sm font-semibold hover:opacity-90 transition-all shadow-lg shadow-brand/20">
                 Area Riservata
               </button>
@@ -555,16 +1868,46 @@ export default function App() {
                 >
                   Chi Siamo
                 </button>
-                <a href="mailto:commerciale@aliseogroup.it" className="block text-lg font-medium text-slate-900">Contatti</a>
-                <a 
-                  href="https://aliseo-academy-eccellenz-hd07985.gamma.site/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="block text-lg font-bold text-brand flex items-center gap-2"
+                <button 
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="block w-full text-left text-lg font-medium text-slate-900"
+                >
+                  Contatti
+                </button>
+                <button 
+                  onClick={() => {
+                    setCurrentView('dlgs-81-08');
+                    setIsMenuOpen(false);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="block w-full text-left text-lg font-bold text-slate-900"
+                >
+                  Corsi D.Lgs 81/08
+                </button>
+                <button 
+                  onClick={() => {
+                    setCurrentView('gwo-training');
+                    setIsMenuOpen(false);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="block w-full text-left text-lg font-bold text-slate-900"
+                >
+                  Corsi GWO Training
+                </button>
+                <button 
+                  onClick={() => {
+                    setCurrentView('mobile-center');
+                    setIsMenuOpen(false);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="block w-full text-left text-lg font-bold text-brand flex items-center gap-2"
                 >
                   Centro Formativo Mobile
-                  <ExternalLink className="w-4 h-4" />
-                </a>
+                  <Play className="w-4 h-4" />
+                </button>
                 <button className="w-full py-3 bg-brand text-brand-dark rounded-xl font-semibold">
                   Area Riservata
                 </button>
@@ -632,21 +1975,42 @@ export default function App() {
               >
                 Corsi per Professionisti
               </button>
-              <a 
-                href="mailto:commerciale@aliseogroup.it"
-                className="px-8 py-4 bg-white/10 text-white border border-white/10 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all backdrop-blur-sm"
+              <button 
+                onClick={() => {
+                  document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="px-8 py-4 bg-white/10 text-white border border-white/10 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all backdrop-blur-sm cursor-pointer"
               >
                 Contattaci
-              </a>
-              <a 
-                href="https://aliseo-academy-eccellenz-hd07985.gamma.site/"
-                target="_blank"
-                rel="noreferrer"
+              </button>
+              <button 
+                onClick={() => {
+                  setCurrentView('dlgs-81-08');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="px-8 py-4 bg-white text-slate-900 border-2 border-slate-900 rounded-2xl font-bold text-lg hover:bg-slate-900 hover:text-white transition-all shadow-lg"
+              >
+                Corsi D.Lgs 81/08
+              </button>
+              <button 
+                onClick={() => {
+                  setCurrentView('gwo-training');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="px-8 py-4 bg-white text-slate-900 border-2 border-slate-900 rounded-2xl font-bold text-lg hover:bg-slate-900 hover:text-white transition-all shadow-lg"
+              >
+                Corsi GWO Training
+              </button>
+              <button 
+                onClick={() => {
+                  setCurrentView('mobile-center');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
                 className="px-8 py-4 bg-brand text-brand-dark rounded-2xl font-bold text-lg hover:opacity-90 transition-all flex items-center gap-2 shadow-xl shadow-brand/20"
               >
-                <ExternalLink className="w-5 h-5" />
+                <Play className="w-5 h-5" />
                 Centro Formativo Mobile
-              </a>
+              </button>
             </motion.div>
           </div>
         </div>
@@ -716,8 +2080,14 @@ export default function App() {
         )}
       </main>
     </>
-  ) : (
+  ) : currentView === 'about' ? (
     <AboutSection setCurrentView={setCurrentView} />
+  ) : currentView === 'mobile-center' ? (
+    <MobileCenterSection setCurrentView={setCurrentView} />
+  ) : currentView === 'gwo-training' ? (
+    <GWOTrainingSection setCurrentView={setCurrentView} />
+  ) : (
+    <DLGS8108Section setCurrentView={setCurrentView} />
   )}
 
   {/* Footer */}
@@ -752,7 +2122,7 @@ export default function App() {
               </div>
             </div>
 
-            <div>
+            <div id="contacts">
               <h4 className="text-white font-bold mb-6">Contatti</h4>
               <ul className="space-y-4 text-sm">
                 <li className="flex items-start gap-3">
@@ -800,15 +2170,40 @@ export default function App() {
                   </button>
                 </li>
                 <li>
-                  <a 
-                    href="https://aliseo-academy-eccellenz-hd07985.gamma.site/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-brand transition-colors flex items-center gap-2"
+                  <button 
+                    onClick={() => {
+                      setCurrentView('dlgs-81-08');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="hover:text-brand transition-colors flex items-center gap-2 cursor-pointer"
+                  >
+                    Corsi D.Lgs 81/08
+                    <Shield className="w-3 h-3" />
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => {
+                      setCurrentView('gwo-training');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="hover:text-brand transition-colors flex items-center gap-2 cursor-pointer"
+                  >
+                    Corsi GWO Training
+                    <Shield className="w-3 h-3" />
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => {
+                      setCurrentView('mobile-center');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="hover:text-brand transition-colors flex items-center gap-2 cursor-pointer"
                   >
                     Centro Formativo Mobile
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
+                    <Play className="w-3 h-3" />
+                  </button>
                 </li>
                 <li><a href="#" className="hover:text-brand transition-colors">Privacy Policy</a></li>
                 <li><a href="#" className="hover:text-brand transition-colors">Termini e Condizioni</a></li>
