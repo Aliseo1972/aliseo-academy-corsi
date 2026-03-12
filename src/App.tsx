@@ -413,6 +413,7 @@ const AboutSection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'abo
 
 const GallerySection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery') => void }) => {
   const photos = [
+    "https://raw.githubusercontent.com/Aliseo1972/aliseo-academy-corsi/main/foto-test.jpg",
     "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/109ddbd40509449f98fbd1b95fa87c33.jpg",
     "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/623db9facc1e37d256286ad012a621cf.jpg",
     "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/48fbd7ea51389a22632142f92125b4d3.jpg",
