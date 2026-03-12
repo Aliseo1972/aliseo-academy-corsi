@@ -21,7 +21,8 @@ import {
   CheckCircle2,
   ArrowRight,
   ExternalLink,
-  Play
+  Play,
+  Truck
 } from 'lucide-react';
 import { courses, categories } from './data/courses';
 import { Course } from './types';
@@ -245,7 +246,7 @@ const CourseModal = ({ course, onClose }: { course: Course; onClose: () => void 
   );
 };
 
-const AboutSection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08') => void }) => {
+const AboutSection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery') => void }) => {
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -410,7 +411,100 @@ const AboutSection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'abo
   );
 };
 
-const GWOTrainingSection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08') => void }) => {
+const GallerySection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery') => void }) => {
+  const photos = [
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/109ddbd40509449f98fbd1b95fa87c33.jpg",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/623db9facc1e37d256286ad012a621cf.jpg",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/48fbd7ea51389a22632142f92125b4d3.jpg",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/6830b15208d08bcfbe6b1a5a5fed833b.jpg",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/ce5f401bc1ead0265ce9af272803e565.jpg",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/ec1837b838e2020d5a40b1c67e099929.jpg",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/24198bf85c902eb9e90bf5abe3bdb069.jpg",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/6705040ec31c92f11d2f1cbdf81de976.jpg",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/fbec4c5d34fc817ca45c688f185a76c6.jpg",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/b3fb681d44f025510001dbdcaa230f7a.jpg",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/0c39fd6d59a6d9531f05beec5bfef44e.jpg",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/0adbcb67a941a17c6562c11ea4f06179.jpg",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/563d1bc450ca83dba070f114d8be1a5f.jpg",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/e8b2815d8721c9e4e1b6f591437244cd.jpg",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/6767bded65728fb3502b7339ffd42423.jpg",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/b504ad24c6fc2501d7c517828c536970.jpg",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/87d61cd8c6c0ff726d9cafd2774836bf.jpg",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/eff093fc79b43b6e6a852fd4165edcd9.jpg",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/d13c85e311c44c32f48b2929f1b65560.jpg",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/0bc5237fc46e848bbf053e3fe9a4aa28.jpg",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/1672879bd08ced072cf3dd5e4243f147.jpg",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/a13539c9fd3aefdcab94af11705e1dd8.png",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/3eb82d587a9d51e041dce23846a69c8d.png",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/5866332039d6a309cdcc4b51f081f55d.png",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/59050f8de63165c31ce03380a48acfbf.png",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/a614b7a621d8e8b7b585fff78f4471a7.png",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/a6f0a7bbca729ae254a0258055dfc9bd.png",
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/b31b33ac29aa05d338df9bf24fce1641.png"
+  ];
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="min-h-screen bg-slate-50 pt-32 pb-20"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <motion.h1 
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            className="text-4xl md:text-5xl font-black text-slate-900 mb-6 uppercase tracking-tight"
+          >
+            Galleria <span className="text-brand">Foto</span>
+          </motion.h1>
+          <div className="w-24 h-1.5 bg-brand mx-auto mb-8"></div>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            Esplora le immagini dei nostri centri formativi e delle attività di addestramento.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {photos.map((photo, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.05 }}
+              className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-200 group relative"
+            >
+              <img 
+                src={photo} 
+                alt={`Galleria foto ${index + 1}`}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <Search className="w-8 h-8 text-white" />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <button 
+            onClick={() => {
+              setCurrentView('home');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold hover:bg-brand hover:text-brand-dark transition-all uppercase tracking-wider shadow-lg"
+          >
+            Torna alla Home
+          </button>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+const GWOTrainingSection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery') => void }) => {
   const trainingModules = [
     {
       title: "GWO BST – First Aid – (FA)",
@@ -608,7 +702,7 @@ const GWOTrainingSection = ({ setCurrentView }: { setCurrentView: (view: 'home' 
           href="mailto:commerciale@aliseogroup.it"
           className="inline-flex items-center gap-2 px-8 py-4 bg-brand text-brand-dark rounded-2xl font-bold hover:bg-slate-900 hover:text-white transition-all shadow-xl shadow-slate-200"
         >
-          RICHIEDI INFO SU CORSI NON A CATALOGO
+          Richiedi info sui Corsi
           <Mail className="w-5 h-5" />
         </a>
       </div>
@@ -616,7 +710,7 @@ const GWOTrainingSection = ({ setCurrentView }: { setCurrentView: (view: 'home' 
   );
 };
 
-const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08') => void }) => {
+const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery') => void }) => {
   const [expandedCourse, setExpandedCourse] = useState<number | null>(null);
 
   const courses8108 = [
@@ -1612,7 +1706,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: 'home' | '
   );
 };
 
-const MobileCenterSection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08') => void }) => {
+const MobileCenterSection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery') => void }) => {
   const videos = [
     {
       title: "VIDEO SPAZI CONFINATI",
@@ -1661,6 +1755,25 @@ const MobileCenterSection = ({ setCurrentView }: { setCurrentView: (view: 'home'
             <ArrowRight className="relative w-8 h-8 text-slate-300 group-hover:text-brand group-hover:translate-x-2 transition-all" />
           </a>
         ))}
+
+        <button
+          onClick={() => {
+            setCurrentView('gallery');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          className="group relative bg-white rounded-3xl border border-slate-100 p-8 shadow-xl shadow-slate-200/50 hover:border-brand transition-all flex items-center justify-between overflow-hidden"
+        >
+          <div className="absolute inset-0 bg-brand/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+          <div className="relative flex items-center gap-6">
+            <div className="w-16 h-16 bg-brand rounded-2xl flex items-center justify-center text-brand-dark group-hover:scale-110 transition-transform">
+              <Search className="w-8 h-8" />
+            </div>
+            <h2 className="text-xl md:text-2xl font-black text-slate-900 uppercase tracking-tight text-left">
+              Galleria Foto
+            </h2>
+          </div>
+          <ArrowRight className="relative w-8 h-8 text-slate-300 group-hover:text-brand group-hover:translate-x-2 transition-all" />
+        </button>
       </div>
 
       <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-16">
@@ -1677,7 +1790,7 @@ const MobileCenterSection = ({ setCurrentView }: { setCurrentView: (view: 'home'
           href="mailto:commerciale@aliseogroup.it"
           className="inline-flex items-center gap-2 px-8 py-4 bg-brand text-brand-dark rounded-2xl font-bold hover:bg-slate-900 hover:text-white transition-all shadow-xl shadow-slate-200"
         >
-          RICHIEDI INFO SU CORSI NON A CATALOGO
+          Richiedi info
           <Mail className="w-5 h-5" />
         </a>
       </div>
@@ -1691,11 +1804,15 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery'>('home');
+  const [showCookieBanner, setShowCookieBanner] = useState(true);
 
   const filteredCourses = useMemo(() => {
     return courses.filter(course => {
-      const matchesCategory = selectedCategory === "Tutti i corsi" || course.category === selectedCategory;
+      const matchesCategory = 
+        (selectedCategory === "Tutti i corsi" && course.category !== "Corsi per Professionisti") || 
+        (selectedCategory === "Corsi E-learning" && course.category !== "Corsi per Professionisti") ||
+        course.category === selectedCategory;
       const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesCategory && matchesSearch;
     });
@@ -1714,34 +1831,72 @@ export default function App() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-20 items-center">
-            <div className="flex items-center gap-3">
+          <div className="flex justify-between h-20 items-center gap-4">
+            <div className="flex items-center gap-4 2xl:gap-8">
               <div 
                 onClick={() => setCurrentView('home')}
-                className="flex items-center gap-2 group cursor-pointer"
+                className="flex-shrink-0 flex items-center gap-2 group cursor-pointer"
               >
-                <svg 
-                  width="40" 
-                  height="40" 
-                  viewBox="0 0 40 40" 
-                  fill="none" 
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="drop-shadow-sm"
-                >
-                  <circle cx="20" cy="20" r="20" fill="black"/>
-                  <path d="M20 10V20L30 24" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M10 26L18 20L14 32" stroke="#E2E831" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M30 26L22 20L34 14" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div className="flex flex-col -space-y-1">
-                  <span className="text-xl font-black tracking-tighter text-slate-900 uppercase">Aliseo</span>
-                  <span className="text-sm font-bold tracking-[0.2em] text-brand uppercase">Academy</span>
+                <img 
+                  src="https://aliseogroup.my.canva.site/logo-sito/_assets/media/6b84cdbe6502e325caca62beb9c2d9b2.png" 
+                  alt="Aliseo Academy Logo" 
+                  className="h-10 2xl:h-12 w-auto object-contain"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    const fallback = e.currentTarget.parentElement?.querySelector('.logo-fallback');
+                    if (fallback) fallback.classList.remove('hidden');
+                  }}
+                />
+                <div className="logo-fallback hidden flex flex-col -space-y-1">
+                  <span className="text-lg 2xl:text-xl font-black tracking-tighter text-slate-900 uppercase">Aliseo</span>
+                  <span className="text-[10px] 2xl:text-sm font-bold tracking-[0.2em] text-brand uppercase">Academy</span>
                 </div>
+              </div>
+
+              {/* Primary Quick Menu (Requested items next to logo) */}
+              <div className="hidden lg:flex items-center space-x-6 2xl:space-x-10 border-l border-slate-100 pl-6 2xl:pl-10">
+                <button 
+                  onClick={() => setCurrentView('about')}
+                  className="text-[15px] 2xl:text-base font-semibold text-slate-600 hover:text-brand transition-colors whitespace-nowrap"
+                >
+                  Chi Siamo
+                </button>
+                <button 
+                  onClick={() => {
+                    setCurrentView('home');
+                    setSelectedCategory("Corsi per Professionisti");
+                    setTimeout(() => {
+                      document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                  }}
+                  className="text-[15px] 2xl:text-base font-bold text-slate-600 hover:text-brand transition-colors whitespace-nowrap"
+                >
+                  Corsi per Professionisti
+                </button>
+                <button 
+                  onClick={() => {
+                    document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="text-[15px] 2xl:text-base font-semibold text-slate-600 hover:text-brand transition-colors whitespace-nowrap"
+                >
+                  Contatti
+                </button>
+                <button 
+                  onClick={() => {
+                    setCurrentView('mobile-center');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="text-[15px] 2xl:text-base font-bold text-slate-600 hover:text-brand flex items-center gap-1 whitespace-nowrap"
+                >
+                  Centro Mobile
+                  <Play className="w-3.5 h-3.5" />
+                </button>
               </div>
             </div>
             
-            {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8">
+            {/* Desktop Menu (Full) */}
+            <div className="hidden xl:flex items-center space-x-4 2xl:space-x-8">
               <button 
                 onClick={() => {
                   setCurrentView('home');
@@ -1753,32 +1908,6 @@ export default function App() {
                 className="text-sm font-medium text-slate-600 hover:text-brand transition-colors cursor-pointer"
               >
                 Corsi
-              </button>
-              <button 
-                onClick={() => {
-                  setCurrentView('home');
-                  setSelectedCategory("Corsi per Professionisti");
-                  setTimeout(() => {
-                    document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' });
-                  }, 100);
-                }}
-                className="text-sm font-bold text-brand hover:opacity-80 transition-colors cursor-pointer"
-              >
-                Corsi per Professionisti
-              </button>
-              <button 
-                onClick={() => setCurrentView('about')}
-                className={`text-sm font-medium transition-colors cursor-pointer ${currentView === 'about' ? 'text-brand' : 'text-slate-600 hover:text-brand'}`}
-              >
-                Chi Siamo
-              </button>
-              <button 
-                onClick={() => {
-                  document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="text-sm font-medium text-slate-600 hover:text-brand transition-colors cursor-pointer"
-              >
-                Contatti
               </button>
               <button 
                 onClick={() => {
@@ -1794,27 +1923,14 @@ export default function App() {
                   setCurrentView('gwo-training');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="text-sm font-bold text-slate-600 hover:text-brand transition-colors cursor-pointer"
+                className={`text-sm font-bold transition-colors cursor-pointer ${currentView === 'gwo-training' ? 'text-brand' : 'text-slate-600 hover:text-brand'}`}
               >
                 Corsi GWO Training
-              </button>
-              <button 
-                onClick={() => {
-                  setCurrentView('mobile-center');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                className="text-sm font-bold text-brand hover:opacity-80 transition-colors flex items-center gap-1 cursor-pointer"
-              >
-                Centro Formativo Mobile
-                <Play className="w-3 h-3" />
-              </button>
-              <button className="px-6 py-2.5 bg-brand text-brand-dark rounded-full text-sm font-semibold hover:opacity-90 transition-all shadow-lg shadow-brand/20">
-                Area Riservata
               </button>
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="md:hidden">
+            <div className="xl:hidden">
               <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2 text-slate-600">
                 {isMenuOpen ? <X /> : <Menu />}
               </button>
@@ -1829,7 +1945,7 @@ export default function App() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white border-b border-slate-100 overflow-hidden"
+              className="xl:hidden bg-white border-b border-slate-100 overflow-hidden"
             >
               <div className="px-4 py-6 space-y-4">
                 <button 
@@ -1854,7 +1970,7 @@ export default function App() {
                       document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' });
                     }, 100);
                   }}
-                  className="block w-full text-left text-lg font-bold text-brand"
+                  className={`block w-full text-left text-lg font-bold ${selectedCategory === "Corsi per Professionisti" ? 'text-brand' : 'text-slate-900'}`}
                 >
                   Corsi per Professionisti
                 </button>
@@ -1893,7 +2009,7 @@ export default function App() {
                     setIsMenuOpen(false);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="block w-full text-left text-lg font-bold text-slate-900"
+                  className={`block w-full text-left text-lg font-bold ${currentView === 'gwo-training' ? 'text-brand' : 'text-slate-900'}`}
                 >
                   Corsi GWO Training
                 </button>
@@ -1908,9 +2024,6 @@ export default function App() {
                   Centro Formativo Mobile
                   <Play className="w-4 h-4" />
                 </button>
-                <button className="w-full py-3 bg-brand text-brand-dark rounded-xl font-semibold">
-                  Area Riservata
-                </button>
               </div>
             </motion.div>
           )}
@@ -1920,97 +2033,149 @@ export default function App() {
       {/* Hero Section */}
       {currentView === 'home' ? (
         <>
-          <header className="relative py-20 lg:py-32 overflow-hidden bg-brand-dark">
+          <header className="relative py-24 lg:py-40 overflow-hidden bg-brand-dark">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,#E2E831,transparent_70%)]" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-3xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="flex flex-col">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-brand text-sm font-medium mb-6 w-fit"
+              >
+                <CheckCircle2 className="w-4 h-4" />
+                Formazione Certificata AIFES
+              </motion.div>
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="text-5xl lg:text-6xl font-bold text-brand mb-6 leading-[1.1] tracking-tight font-mono"
+              >
+                Aliseo Academy: Eccellenza nella Formazione
+              </motion.h1>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-xl text-slate-400 mb-10 leading-relaxed max-w-xl"
+              >
+                Soluzioni di formazione all'avanguardia per aziende e professionisti. 
+                Semplifica la conformità normativa con i nostri corsi certificati.
+              </motion.p>
+              
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="space-y-8"
+              >
+                {/* Main Actions */}
+                <div className="flex flex-wrap gap-4">
+                  <a 
+                    href="https://wa.me/393274789581"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 min-w-[240px] px-8 py-4 bg-brand text-brand-dark rounded-2xl font-bold text-lg hover:opacity-90 transition-all flex items-center justify-center group shadow-xl shadow-brand/20"
+                  >
+                    Contattaci su Whatsapp
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                  <button 
+                    onClick={() => {
+                      setSelectedCategory("Corsi E-learning");
+                      document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="flex-1 min-w-[240px] px-8 py-4 bg-white/10 text-white border border-white/20 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all backdrop-blur-sm"
+                  >
+                    Corsi E-learning
+                  </button>
+                </div>
+
+                {/* Quick Access Grid */}
+                <div className="flex flex-wrap gap-4 pt-6 border-t border-white/10">
+                  <button 
+                    onClick={() => {
+                      setCurrentView('dlgs-81-08');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="flex-1 min-w-[280px] flex items-center gap-4 p-6 bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl transition-all text-left group"
+                  >
+                    <Shield className="w-8 h-8 text-brand shrink-0 group-hover:scale-110 transition-transform" />
+                    <div>
+                      <div className="text-white font-bold text-lg">Corsi D.Lgs 81/08</div>
+                      <div className="text-slate-400 text-sm">Formazione obbligatoria</div>
+                    </div>
+                  </button>
+                  <button 
+                    onClick={() => {
+                      setCurrentView('gwo-training');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="flex-1 min-w-[280px] flex items-center gap-4 p-6 bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl transition-all text-left group"
+                  >
+                    <BookOpen className="w-8 h-8 text-brand shrink-0 group-hover:scale-110 transition-transform" />
+                    <div>
+                      <div className="text-white font-bold text-lg">Corsi GWO Training</div>
+                      <div className="text-slate-400 text-sm">Standard internazionali</div>
+                    </div>
+                  </button>
+                  <button 
+                    onClick={() => {
+                      setCurrentView('home');
+                      setSelectedCategory("Corsi per Professionisti");
+                      setTimeout(() => {
+                        document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    }}
+                    className="flex-1 min-w-[280px] flex items-center gap-4 p-6 bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl transition-all text-left group"
+                  >
+                    <Euro className="w-8 h-8 text-brand shrink-0 group-hover:scale-110 transition-transform" />
+                    <div>
+                      <div className="text-white font-bold text-lg">Corsi per Professionisti</div>
+                      <div className="text-slate-400 text-sm">Alta formazione</div>
+                    </div>
+                  </button>
+                  <button 
+                    onClick={() => {
+                      setCurrentView('mobile-center');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="w-full flex items-center gap-6 p-6 bg-brand/10 hover:bg-brand/20 border border-brand/20 rounded-2xl transition-all text-left group"
+                  >
+                    <div className="p-4 bg-brand text-brand-dark rounded-2xl group-hover:scale-105 transition-transform">
+                      <Play className="w-8 h-8 fill-current" />
+                    </div>
+                    <div>
+                      <div className="text-brand font-black text-xl lg:text-2xl uppercase tracking-tighter">Centro Formativo Mobile</div>
+                      <div className="text-brand/70 text-sm font-bold uppercase tracking-widest">L'unico in Italia • Scopri di più</div>
+                    </div>
+                  </button>
+                </div>
+              </motion.div>
+            </div>
+            
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-brand text-sm font-medium mb-6"
+              initial={{ opacity: 0, scale: 0.9, x: 20 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="relative lg:ml-auto"
             >
-              <CheckCircle2 className="w-4 h-4" />
-              Formazione Certificata AIFES
-            </motion.div>
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-5xl lg:text-7xl font-bold text-brand mb-6 leading-[1.1] tracking-tight font-mono"
-            >
-              Aliseo Academy: Eccellenza nella Formazione e Sicurezza sul Lavoro
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-xl text-slate-400 mb-10 leading-relaxed"
-            >
-              Aliseo Group offre soluzioni di formazione all'avanguardia per aziende e professionisti. 
-              Semplifica la conformità normativa con i nostri corsi certificati.
-            </motion.p>
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="flex flex-wrap gap-4"
-            >
-              <a 
-                href="https://wa.me/393274789581"
-                target="_blank"
-                rel="noreferrer"
-                className="px-8 py-4 bg-brand text-brand-dark rounded-2xl font-bold text-lg hover:opacity-90 transition-all flex items-center group shadow-xl shadow-brand/20"
-              >
-                Whatsapp
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <button 
-                onClick={() => {
-                  setSelectedCategory("Corsi per Professionisti");
-                  document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="px-8 py-4 bg-white text-brand border-2 border-brand rounded-2xl font-bold text-lg hover:bg-brand/5 transition-all shadow-lg"
-              >
-                Corsi per Professionisti
-              </button>
-              <button 
-                onClick={() => {
-                  document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="px-8 py-4 bg-white/10 text-white border border-white/10 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all backdrop-blur-sm cursor-pointer"
-              >
-                Contattaci
-              </button>
-              <button 
-                onClick={() => {
-                  setCurrentView('dlgs-81-08');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                className="px-8 py-4 bg-white text-slate-900 border-2 border-slate-900 rounded-2xl font-bold text-lg hover:bg-slate-900 hover:text-white transition-all shadow-lg"
-              >
-                Corsi D.Lgs 81/08
-              </button>
-              <button 
-                onClick={() => {
-                  setCurrentView('gwo-training');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                className="px-8 py-4 bg-white text-slate-900 border-2 border-slate-900 rounded-2xl font-bold text-lg hover:bg-slate-900 hover:text-white transition-all shadow-lg"
-              >
-                Corsi GWO Training
-              </button>
-              <button 
-                onClick={() => {
-                  setCurrentView('mobile-center');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                className="px-8 py-4 bg-brand text-brand-dark rounded-2xl font-bold text-lg hover:opacity-90 transition-all flex items-center gap-2 shadow-xl shadow-brand/20"
-              >
-                <Play className="w-5 h-5" />
-                Centro Formativo Mobile
-              </button>
+              <div className="absolute -inset-4 bg-brand/20 blur-3xl rounded-full animate-pulse" />
+              <div className="relative rounded-3xl overflow-hidden border-4 border-brand/30 shadow-2xl shadow-brand/20 bg-white/5">
+                <img 
+                  src="https://i.ibb.co/6RMG179f/Homepage.png" 
+                  alt="Aliseo Academy Training"
+                  className="w-full h-auto block"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1200";
+                  }}
+                />
+              </div>
             </motion.div>
           </div>
         </div>
@@ -2021,7 +2186,9 @@ export default function App() {
       <main id="catalog" className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
           <div className="max-w-xl">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4 tracking-tight">Catalogo Corsi in e-learning</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
+              {selectedCategory === "Corsi per Professionisti" ? "Corsi per Professionisti" : "Catalogo Corsi in e-learning"}
+            </h2>
             <p className="text-slate-500 text-lg">
               Scegli tra oltre 50 corsi specializzati. Filtra per categoria o cerca il corso specifico per le tue esigenze.
             </p>
@@ -2041,12 +2208,12 @@ export default function App() {
 
         {/* Categories */}
         <div className="flex flex-wrap gap-2 mb-12">
-          {categories.map((cat) => (
+          {categories.filter(cat => cat !== "Corsi per Professionisti").map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
               className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
-                selectedCategory === cat 
+                selectedCategory === cat || (cat === "Tutti i corsi" && selectedCategory === "Corsi E-learning")
                 ? "bg-brand text-brand-dark shadow-lg shadow-brand/20" 
                 : "bg-white text-slate-600 border border-slate-200 hover:border-brand hover:text-brand"
               }`}
@@ -2086,6 +2253,8 @@ export default function App() {
     <MobileCenterSection setCurrentView={setCurrentView} />
   ) : currentView === 'gwo-training' ? (
     <GWOTrainingSection setCurrentView={setCurrentView} />
+  ) : currentView === 'gallery' ? (
+    <GallerySection setCurrentView={setCurrentView} />
   ) : (
     <DLGS8108Section setCurrentView={setCurrentView} />
   )}
@@ -2095,20 +2264,19 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             <div className="space-y-6">
-              <div className="flex items-center gap-2">
-                <svg 
-                  width="32" 
-                  height="32" 
-                  viewBox="0 0 40 40" 
-                  fill="none" 
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="20" cy="20" r="20" fill="black"/>
-                  <path d="M20 10V20L30 24" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M10 26L18 20L14 32" stroke="#E2E831" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M30 26L22 20L34 14" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div className="flex flex-col -space-y-1">
+              <div className="flex items-center gap-2 mb-6">
+                <img 
+                  src="https://aliseogroup.my.canva.site/logo-sito/_assets/media/6b84cdbe6502e325caca62beb9c2d9b2.png" 
+                  alt="Aliseo Academy Logo" 
+                  className="h-10 w-auto object-contain brightness-0 invert"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    const fallback = e.currentTarget.parentElement?.querySelector('.logo-fallback-footer');
+                    if (fallback) fallback.classList.remove('hidden');
+                  }}
+                />
+                <div className="logo-fallback-footer hidden flex flex-col -space-y-1">
                   <span className="text-lg font-black tracking-tighter text-white uppercase leading-none">Aliseo</span>
                   <span className="text-[10px] font-bold tracking-[0.2em] text-brand uppercase leading-none">Academy</span>
                 </div>
@@ -2139,7 +2307,7 @@ export default function App() {
                 </li>
                 <li className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-brand shrink-0" />
-                  <span>via paolo Veronese 26,<br />50059 Empoli (FI)</span>
+                  <span>Viale Bruno Buozzi 14,<br />50059 Empoli (FI)</span>
                 </li>
               </ul>
             </div>
@@ -2206,6 +2374,7 @@ export default function App() {
                   </button>
                 </li>
                 <li><a href="#" className="hover:text-brand transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-brand transition-colors">Cookie Policy</a></li>
                 <li><a href="#" className="hover:text-brand transition-colors">Termini e Condizioni</a></li>
               </ul>
             </div>
@@ -2213,34 +2382,89 @@ export default function App() {
             <div>
               <h4 className="text-white font-bold mb-6">Newsletter</h4>
               <p className="text-sm mb-4">Rimani aggiornato sulle ultime novità normative e nuovi corsi.</p>
-              <div className="flex gap-2">
-                <input 
-                  type="email" 
-                  placeholder="Email" 
-                  value={newsletterEmail}
-                  onChange={(e) => setNewsletterEmail(e.target.value)}
-                  className="bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm outline-none focus:border-brand w-full"
-                />
-                <button 
-                  onClick={() => {
-                    if (newsletterEmail) {
-                      window.location.href = `mailto:commerciale@aliseogroup.it?subject=Iscrizione Newsletter&body=Richiesta iscrizione per: ${newsletterEmail}`;
-                    }
-                  }}
-                  className="bg-brand text-brand-dark p-2 rounded-lg hover:opacity-90 transition-colors"
-                >
-                  <ArrowRight className="w-5 h-5" />
-                </button>
+              <div className="flex flex-col gap-3">
+                <div className="flex gap-2">
+                  <input 
+                    type="email" 
+                    placeholder="Email" 
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
+                    className="bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm outline-none focus:border-brand w-full"
+                  />
+                  <button 
+                    onClick={() => {
+                      if (newsletterEmail) {
+                        window.location.href = `mailto:commerciale@aliseogroup.it?subject=Iscrizione Newsletter&body=Richiesta iscrizione per: ${newsletterEmail}`;
+                      }
+                    }}
+                    className="bg-brand text-brand-dark p-2 rounded-lg hover:opacity-90 transition-colors"
+                  >
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                </div>
+                <label className="flex items-start gap-2 cursor-pointer group">
+                  <input type="checkbox" className="mt-1 accent-brand" />
+                  <span className="text-[10px] leading-tight group-hover:text-slate-300 transition-colors">
+                    Accetto la <a href="#" className="text-brand hover:underline">Privacy Policy</a> per l'invio di comunicazioni commerciali.
+                  </span>
+                </label>
               </div>
             </div>
           </div>
           
-          <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs uppercase tracking-widest">
-            <p>© 2024 Aliseo Group S.r.l. - P.IVA 06477040486</p>
-            <p>Sito realizzato con cura per la vostra sicurezza</p>
+          <div className="pt-8 border-t border-white/5 text-[11px] leading-relaxed">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <p className="font-bold text-white mb-1">Aliseo Group S.r.l.</p>
+                <p>Sede Legale: Viale Bruno Buozzi 14, 50059 Empoli (FI)</p>
+                <p>P.IVA e C.F.: 06477040486 | REA: FI-631245</p>
+                <p>Capitale Sociale: € 10.000,00 i.v.</p>
+              </div>
+              <div className="md:text-right flex flex-col justify-end">
+                <p>© {new Date().getFullYear()} Aliseo Academy. Tutti i diritti riservati.</p>
+                <p>Sito realizzato in conformità al GDPR (UE 2016/679).</p>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
+
+      {/* Cookie Banner */}
+      <AnimatePresence>
+        {showCookieBanner && (
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            className="fixed bottom-0 left-0 right-0 z-[100] p-4"
+          >
+            <div className="max-w-4xl mx-auto bg-slate-900 border border-white/10 rounded-2xl shadow-2xl p-6 md:p-8 backdrop-blur-xl">
+              <div className="flex flex-col md:flex-row items-center gap-6">
+                <div className="flex-grow">
+                  <h5 className="text-white font-bold mb-2">Informativa sui Cookie</h5>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    Utilizziamo i cookie per migliorare la tua esperienza sul nostro sito. Alcuni sono necessari per il funzionamento, altri ci aiutano a capire come utilizzi il sito. Puoi accettarli tutti o gestire le tue preferenze. Consulta la nostra <a href="#" className="text-brand hover:underline">Cookie Policy</a>.
+                  </p>
+                </div>
+                <div className="flex gap-3 shrink-0 w-full md:w-auto">
+                  <button 
+                    onClick={() => setShowCookieBanner(false)}
+                    className="flex-1 md:flex-none px-6 py-2.5 text-sm font-bold text-slate-300 hover:text-white transition-colors"
+                  >
+                    Personalizza
+                  </button>
+                  <button 
+                    onClick={() => setShowCookieBanner(false)}
+                    className="flex-1 md:flex-none px-8 py-2.5 bg-brand text-brand-dark rounded-xl text-sm font-bold hover:opacity-90 transition-all shadow-lg shadow-brand/20"
+                  >
+                    Accetta Tutti
+                  </button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

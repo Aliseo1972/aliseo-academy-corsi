@@ -1279,6 +1279,1462 @@ export const courses: Course[] = [
       { title: "Risk Assessment", duration: "15h" },
       { title: "DUVRI e gestione dei rischi interferenti", duration: "10h" }
     ]
+  },
+  {
+    id: "aggiornamento-rspp-40",
+    title: "Aggiornamento per RSPP - Responsabile del Servizio Prevenzione e Protezione",
+    lessons: 142,
+    duration: "40h",
+    price: "170,80 € + iva",
+    category: "Corsi per Professionisti",
+    description: "Il Corso di Aggiornamento per Responsabile del Servizio Prevenzione e Protezione (RSPP) è progettato per garantire l'adeguato aggiornamento quinquennale richiesto dalla normativa vigente (D.Lgs. 81/2008 e Accordo Stato-Regioni 17/04/2025).",
+    fullDescription: [
+      "Il Corso di Aggiornamento per Responsabile del Servizio Prevenzione e Protezione (RSPP) è progettato per garantire l'adeguato aggiornamento quinquennale richiesto dalla normativa vigente (D.Lgs. 81/2008 e Accordo Stato-Regioni 17/04/2025).",
+      "La durata complessiva è di 40 ore, suddivise in 139 moduli formativi, e si conclude con un test finale a risposta multipla. Il corso è accessibile per 120 giorni dalla data di attivazione.",
+      "Il corso consente ai Responsabili del Servizio di Prevenzione e Protezione di aggiornare le proprie competenze normative, gestionali e tecniche in materia di salute e sicurezza sul lavoro, garantendo conformità alle disposizioni del D.Lgs. 81/2008 e migliorando la capacità di valutare e prevenire i rischi in azienda."
+    ],
+    objectives: [
+      "Conoscere il quadro legislativo della sicurezza, i ruoli e le responsabilità del sistema prevenzionistico",
+      "Comprendere il funzionamento degli organi di vigilanza",
+      "Applicare il Testo Unico nei cantieri",
+      "Gestire correttamente la valutazione dei rischi, il DVR, il DUVRI e le misure di prevenzione e protezione"
+    ],
+    references: [
+      "N.A.S.R. 17/04/2025 Aggiornamento quinquennale di: ASPP/RSPP ex art. 32 D.Lgs. 81/08; Coordinatore della Sicurezza (CSP/CSE) ex art. 98 D.Lgs. 81/08",
+      "Aggiornamento triennale di Formatore SSL ai sensi del D.I. 06/03/2013",
+      "Aggiornamento Professionista HSE - UNI 11720"
+    ],
+    recipients: "RSPP esterni o interni, Responsabili del Servizio di Prevenzione e Protezione, già abilitati, che devono mantenere valida la propria qualifica attraverso l’aggiornamento periodico previsto dalla normativa.",
+    syllabus: [
+      { 
+        title: "Documento Progettuale", 
+        duration: "0m", 
+        lessons: ["Documento Progettuale"] 
+      },
+      { 
+        title: "L’approccio alla Prevenzione nel D.Lgs. 81/2008", 
+        duration: "1h 5m", 
+        lessons: [
+          "1-Introduzione al D.lgs. 81/08 e alla valutazione dei rischi",
+          "2-Definizione di concetti base della salute e sicurezza nei luoghi di lavoro",
+          "3-Principi del D.lgs. 81/08: Informazione ai lavoratori",
+          "4-Principi del D.lgs. 81/08: Formazione dei lavoratori e dei loro rappresentanti"
+        ] 
+      },
+      { 
+        title: "Il Sistema Legislativo: Esame delle Normative di Riferimento", 
+        duration: "2h 2m", 
+        lessons: [
+          "1-Introduzione alla storia legislativa a tema salute e sicurezza sul lavoro",
+          "2-L’evoluzione dell’approccio alla salute e sicurezza sul lavoro, istituzione dell’assicurazione, il Codice civile",
+          "3-La Costituzione, il Codice penale, i DPR degli anni ’50",
+          "4-Lo Statuto dei lavoratori, principi cardine dell’art. 2087 del CC, la legislazione degli anni ’80 e ’90",
+          "5-Struttura e contenuti del D.lgs. 81/08",
+          "6-Il quadro giuridico europeo, i profili di responsabilità amministrativa",
+          "7. La legislazione relativa a categorie particolari di lavoratori",
+          "8-Il quadro legislativo antincendio"
+        ] 
+      },
+      { 
+        title: "Prevenzione della Violenza e delle Molestie sul Luogo di Lavoro", 
+        duration: "27m", 
+        lessons: [
+          "1. La Convenzione 190 e la Raccomandazione 206 ILO",
+          "2-La Convenzione 190 e la Raccomandazione 206 ILO"
+        ] 
+      },
+      { 
+        title: "Inserimento di Lavoratori Disabili e loro Tutela", 
+        duration: "1h 11m", 
+        lessons: [
+          "1-Collocamento mirato e obbligatorio, percentuali di invalidità, quote obbligatorie di assunzione",
+          "2-Accertamento commissione medica",
+          "3-Ruolo del medico competente, requisiti di salute e sicurezza degli ambienti di lavoro",
+          "4-La normativa antidiscriminatoria italiana (D.Lgs. 216/2003) e comunitaria (Direttiva 2000/78)",
+          "5-Soluzioni ragionevoli per la parità di trattamento e la L. 99/2013"
+        ] 
+      },
+      { 
+        title: "Il Sistema Istituzionale della Prevenzione", 
+        duration: "24m", 
+        lessons: [
+          "1-Il sistema istituzionale, comitato per le politiche attive e le attività di vigilanza",
+          "2. Enti con compiti in materia di salute e sicurezza"
+        ] 
+      },
+      { 
+        title: "Il Sistema di Vigilanza e Assistenza", 
+        duration: "2h 13m", 
+        lessons: [
+          "1-Organi di controllo e vigilanza",
+          "2-Sistema delle prescrizioni e delle sanzioni: esempi di sentenze",
+          "3-Il ruolo di ASL, INL, VV.F., INAIL, ARPA",
+          "4-Organismi normatori, controlli e verifiche sulle attrezzature, obblighi generali del DdL",
+          "5-Obblighi specifici del DdL",
+          "6-Modalità di effettuazione delle verifiche periodiche",
+          "7-Modalità e tariffe per le verifiche, suddivisione dei gruppi di attrezzature, impianti esclusi",
+          "8-Impianti e apparecchiature elettriche",
+          "9-Informazione, assistenza e consulenza, collaborazione con organismi paritetici"
+        ] 
+      },
+      { 
+        title: "I Soggetti del Sistema di Prevenzione Aziendale", 
+        duration: "4h 2m", 
+        lessons: [
+          "1-Introduzione alle figure principali della sicurezza in azienda",
+          "2-Datore di Lavoro e Dirigente per la sicurezza",
+          "3-Individuazione del Datore di Lavoro",
+          "4-Requisiti e adempimenti per la delega di funzione",
+          "5-Responsabilità amministrativa",
+          "6-Modelli di organizzazione e gestione, obbligo formativo del DdL",
+          "7-Incapacità tecnica del DdL, obbligo di formazione preventiva del personale",
+          "8-Responsabilità civile e penale del DdL: esempi di sentenze",
+          "9-Il ruolo del Preposto",
+          "10-Il ruolo del Responsabile del Servizio di Prevenzione e Protezione",
+          "11-RSPP interno o esterno, ruolo del ASPP, individuazione e valutazione dei rischi",
+          "12-Elaborazione delle misure preventive e delle procedure",
+          "13-Il ruolo del Medico Competente e del Rappresentante dei Lavoratori per la Sicurezza",
+          "14-Individuazione e segnalazione dei rischi",
+          "15-Comunicazione funzionale ed efficace",
+          "16-Ruolo proattivo del RLS",
+          "17-Il ruolo dei Lavoratori e degli Addetti alle Emergenze",
+          "18-Obblighi dei progettisti"
+        ] 
+      },
+      { 
+        title: "Il Processo di Valutazione dei Rischi - parte 1", 
+        duration: "4h 15m", 
+        lessons: [
+          "1-Concetti di pericolo, rischio, danno, prevenzione e protezione",
+          "2-Principio di precauzione",
+          "3-Infortuni: definizione, condizioni necessarie ed esempi",
+          "4-Infortuni: infortunio in itinere e tutela INAIL",
+          "5-Malattie professionali: definizione",
+          "6-Dati statistici INAIL sugli infortuni",
+          "7-Dati statistici INAIL sulle malattie professionali, cause degli infortuni",
+          "8-Fattori oggettivi e soggettivi degli infortuni sul lavoro",
+          "9-Valutazione dei rischi: DVR, modalità di effettuazione e oggetto della valutazione",
+          "10-Valutazione dei rischi",
+          "11-Valutazione dei rischi: riferimenti e obblighi normativi",
+          "12-Valutazione dei rischi",
+          "13-Fasi della valutazione dei rischi",
+          "14-Fasi della valutazione dei rischi",
+          "15-Applicazione delle procedure standardizzate per la valutazione dei rischi"
+        ] 
+      },
+      { 
+        title: "Il Processo di Valutazione dei Rischi - parte 2", 
+        duration: "2h 1m", 
+        lessons: [
+          "1-Valutazione dei rischi da interferenze",
+          "2-Luoghi di lavoro e stress lavoro-correlato",
+          "3-Movimentazione manuale dei carichi e movimenti ripetitivi",
+          "4-Lavoro al videoterminale",
+          "5-Attrezzature di lavoro, rischi meccanici e da esposizione a vibrazioni",
+          "6-Rischio elettrico e campi elettromagnetici",
+          "7-Rischio chimico",
+          "8-Contenuti e organizzazione del DVR"
+        ] 
+      },
+      { 
+        title: "Il Processo di Valutazione dei Rischi - parte 3", 
+        duration: "1h 36m", 
+        lessons: [
+          "1-Sicurezza o produzione?",
+          "2-I costi della NON sicurezza",
+          "3-I costi degli infortuni",
+          "4-Costi palesi e costi nascosti",
+          "5-MOG di tipo volontario - D.Lgs. 231/01",
+          "6-MOG di tipo volontario",
+          "7. MOG di tipo volontario: 231 e 81/08, sanzioni interdittive"
+        ] 
+      },
+      { 
+        title: "I Dispositivi di Protezione Collettiva e Individuale", 
+        duration: "28m", 
+        lessons: [
+          "1-DPI per la protezione degli occhi",
+          "2-DPI per la protezione di mani e vie respiratorie"
+        ] 
+      },
+      { 
+        title: "La Gestione delle Emergenze", 
+        duration: "2h 11m", 
+        lessons: [
+          "1-Gestione delle emergenze",
+          "2-Rischio incendio e cenni di primo soccorso",
+          "3-Addetti alla gestione delle emergenze",
+          "4-Normativa antincendio e piano di emergenza ed evacuazione (PEE)",
+          "5-Contenuti del PEE",
+          "6-Gestione della sicurezza antincendio in esercizio ed in emergenza",
+          "7-Esempio di PEE e procedure per la gestione delle emergenze"
+        ] 
+      },
+      { 
+        title: "La Sorveglianza Sanitaria", 
+        duration: "1h 17m", 
+        lessons: [
+          "1-Introduzione alla sorveglianza sanitaria",
+          "2-Sorveglianza sanitaria: principi fondamentali",
+          "3-Sorveglianza sanitaria: visite mediche",
+          "4-Sorveglianza sanitaria: attività di prevenzione",
+          "5-Sorveglianza sanitaria: titoli, ruolo e compiti del medico competente",
+          "6-Sorveglianza sanitaria: sorveglianza preventiva",
+          "7-Tutela per le lavoratrici madri"
+        ] 
+      },
+      { 
+        title: "Consultazione e Partecipazione - Informazione, Formazione e Addestramento", 
+        duration: "3h 32m", 
+        lessons: [
+          "1-Introduzione alla comunicazione nei luoghi di lavoro, stili comunicativi",
+          "2-Comunicazione assertiva e destinatari della formazione",
+          "3-Difficoltà dei discenti, contenuto e motivazione della formazione",
+          "4-Metodo e processo formativo, la formazione nel D.Lgs. 81/08",
+          "5-Cultura della sicurezza e formazione, formazione dei preposti e degli RLS",
+          "6-Valutazione dei rischi e formazione per l’utilizzo dei macchinari",
+          "7-Formazione dei lavoratori: generale, specifica e aggiornamento",
+          "8-Formazione e addestramento, qualifiche dei formatori, formazione particolare",
+          "9-Formazione per le attrezzature di lavoro, per il DdL e i dirigenti",
+          "10-Formazione degli addetti alle emergenze",
+          "11-Comunicare in azienda: strumenti di intelligenza artificiale, comunicazione empatica",
+          "12-Comunicare in azienda: gestione delle riunioni",
+          "13-Comunicare in azienda: responsabilità, condivisione e disponibilità",
+          "14-Comunicare in azienda: feedback, barriere linguistiche e di linguaggio"
+        ] 
+      },
+      { 
+        title: "Il ruolo e le responsabilità del RSPP", 
+        duration: "1h 39m", 
+        lessons: [
+          "1. Ruolo e responsabilità del RSPP",
+          "2. Esempi di sentenze e casi giuridici con responsabilità penale del RSPP",
+          "3. Tracciabilità dell’operato del RSPP, responsabilità civile e assicurazioni, gradi di giudizio e condizionale",
+          "4. 10 regole fondamentali per l’attività del RSPP - Parte 1",
+          "5. 10 regole fondamentali per l’attività del RSPP - Parte 2",
+          "6. 10 regole fondamentali per l’attività del RSPP - Parte 3"
+        ] 
+      },
+      { 
+        title: "Il processo di valutazione dei rischi (Risk Assessment): metodologia e norme tecniche", 
+        duration: "3h 39m", 
+        lessons: [
+          "1. Percorso storico della normativa sulla sicurezza - Parte 1",
+          "2. Percorso storico della normativa sulla sicurezza - Parte 2",
+          "3. Definizioni delle figure e dei concetti della SSL",
+          "4. Misure generali di tutela, oggetto e contenuti della valutazione dei rischi",
+          "5. Norme e standard nazionali e internazionali",
+          "6. ISO 31000: principi, struttura, processo, identificazione e trattamento del rischio",
+          "7. Descrizioni delle tecniche della norma UNI CEI EN IEC 31010",
+          "8. UNI EN ISO 12100: fasi del processo di Risk Assessment",
+          "9. ISO/TR 14121-2: metodi per l’analisi del rischio",
+          "10. Metodo grafico, metodo a matrice e metodo ibrido",
+          "11. Esempio pratico di DVR - Parte 1",
+          "12. Esempio pratico di DVR - Parte 2",
+          "13. Esempio pratico di DVR - Parte 3",
+          "14. ISO 45001: come funziona un sistema di gestione"
+        ] 
+      },
+      { 
+        title: "Il DUVRI: come redigerlo per valutare e gestire i rischi interferenti", 
+        duration: "2h 37m", 
+        lessons: [
+          "1. Interferenze lavorative nell’evoluzione della normativa, committente e appaltatore",
+          "2. Prevenzione e protezione, cooperazione e coordinamento",
+          "3. Interferenze e rischi interferenti, DUVRI nei cantieri temporanei e mobili",
+          "4. Reperire le informazioni per elaborare il DUVRI, definizione DUVRI",
+          "5. Caratteristiche e contenuti del DUVRI - Parte 1",
+          "6. Caratteristiche e contenuti del DUVRI - Parte 2",
+          "7. Interferenze con gli utenti esterni, casi nei quali non è obbligatorio il DUVRI",
+          "8. Esempio pratico di DUVRI (modello INAIL) - Parte 1",
+          "9. Esempio pratico di DUVRI (modello INAIL) - Parte 2",
+          "10. Esempio pratico di DUVRI (modello INAIL) - Parte 3",
+          "11. Esempio pratico di DUVRI (modello INAIL) - Parte 4"
+        ] 
+      },
+      { 
+        title: "Quiz di verifica finale", 
+        duration: "1h 15m", 
+        lessons: ["Quiz di Verifica dell'apprendimento - Corso Aggiornamento RSPP 40 ore"] 
+      },
+      { 
+        title: "Questionario di Gradimento", 
+        duration: "0m", 
+        lessons: ["Questionario di gradimento - Aggiornamento per RSPP - Responsabile del Servizio Prevenzione e Protezione"] 
+      }
+    ]
+  },
+  {
+    id: "sa-8000-8",
+    title: "La Responsabilità sociale d’impresa e lo standard SA 8000: Principi, requisiti e applicazione",
+    lessons: 17,
+    duration: "8h",
+    price: "48,80 € + iva",
+    category: "Corsi per Professionisti",
+    description: "La Responsabilità Sociale d’impresa implica che un’organizzazione certificata SA 8000 abbia verificato che tutti gli attori che si interfacciano con essa adottino comportamenti socialmente responsabili.",
+    fullDescription: [
+      "La Responsabilità Sociale d’impresa implica che un’organizzazione certificata SA 8000 abbia verificato che tutti gli attori che si interfacciano con essa adottino comportamenti socialmente responsabili.",
+      "Il corso presenta 11 moduli di lavoro con contenuti multimediali. Ha una durata complessiva di 8 ore con test intermedi e test finale a risposta multipla con una sola risposta corretta in modalità e-learning.",
+      "Il corso sarà fruibile per 120 giorni dalla data di attivazione.",
+      "Il corso fornisce un panoramica su Social Accountability (SA 8000:2014), Responsabilità Sociale delle Organizzazioni (ISO 26000) e Corporate Social Responsibility (CSR), approfondendo la gestione dei sistemi organizzativi, l’integrazione dei principi di responsabilità sociale in azienda e le metodologie per audit interni e valutazione della conformità."
+    ],
+    objectives: [
+      "Riconoscere gli elementi essenziali dei sistemi SA 8000",
+      "Interpretare i requisiti dello standard e comprendere gli impatti organizzativi della responsabilità sociale",
+      "Valutare il ruolo dei codici di condotta e del bilancio sociale",
+      "Orientarsi nei processi di integrazione tra responsabilità sociale d’impresa e SA 8000 nelle organizzazioni"
+    ],
+    references: [
+      "UNI EN ISO 26000 e SA 8000 - N.A.S.R. 17/04/2025 Aggiornamento quinquennale di: ASPP/RSPP ex art. 32 D.Lgs. 81/08; Coordinatore della Sicurezza (CSP/CSE) ex art. 98 D.Lgs. 81/08",
+      "Aggiornamento triennale di Formatore SSL ai sensi del D.I. 06/03/2013",
+      "Aggiornamento Professionista HSE - UNI 11720"
+    ],
+    recipients: "Professionisti e figure aziendali che operano nei sistemi di gestione, nella sicurezza sul lavoro, nelle risorse umane e nelle attività legate alla responsabilità sociale, tra cui consulenti, auditor interni, addetti alla qualità, tecnici della sicurezza, dirigenti, datori di lavoro e collaboratori coinvolti nella gestione etica dell’organizzazione.",
+    syllabus: [
+      { title: "Documento Progettuale", duration: "0m", lessons: ["Documento Progettuale"] },
+      { title: "La responsabilità sociale d’impresa: La Social Accountability SA 8000", duration: "39m", lessons: ["La Social Accountability - SA 8000"] },
+      { title: "La Social Accountability SA 8000:2014", duration: "55m", lessons: ["Transizione allo standard SA 8000-2014", "Standard Internazionale elaborato da Social Accountability 8000"] },
+      { title: "Responsabilità sociale delle organizzazioni", duration: "50m", lessons: ["Linee guida UNI ISO 26000-2010 Responsabilità Sociale delle Organizzazioni", "Guida alla Responsabilità Sociale", "Manuale Responsabilità Sociale Esempi: Pastificio Garofalo", "Manuale Responsabilità Sociale Esempi: Calzaturificio Olip"] },
+      { title: "Video Approfondimento CSR", duration: "47m", lessons: ["L'Auditor interno dei sistemi di Corporate Social Responsability - CSR"] },
+      { title: "Test di Verifica Video Approfondimento CSR", duration: "30m", lessons: ["Test di Verifica dell'apprendimento - Video Approfondimento CSR"] },
+      { title: "Video Approfondimento Matrice di Materialità", duration: "42m", lessons: ["La Matrice di Materialità"] },
+      { title: "Test di Verifica Video Approfondimento Matrice di Materialità", duration: "30m", lessons: ["Test di Verifica dell'apprendimento - Video Approfondimento La Matrice di Materialità"] },
+      { title: "Video Approfondimento Integrazione SA 8000", duration: "40m", lessons: ["Il processo di integrazione con la SA 8000"] },
+      { title: "Test di Verifica Video Approfondimento Integrazione SA 8000", duration: "30m", lessons: ["Test di Verifica dell'apprendimento - Video Approfondimento Il processo di integrazione con la SA 8000"] },
+      { title: "Video Approfondimento Principi SA 8000", duration: "1h 3m", lessons: ["I Principi della SA 8000"] },
+      { title: "Quiz di Verifica FInale", duration: "2h 20m", lessons: ["Quiz di Verifica dell'apprendimento - La Responsabilità Sociale d'Impresa: UNI EN ISO 26000 E SA 8000 8 ORE"] },
+      { title: "Questionario di Gradimento", duration: "0m", lessons: ["Questionario di gradimento - La Responsabilità Sociale d'Impresa: UNI EN ISO 26000 E SA 8000"] }
+    ]
+  },
+  {
+    id: "dlgs-231-01-8",
+    title: "Responsabilità amministrativa degli enti ex D.Lgs. 231/2001 e progettazione dei modelli organizzativi",
+    lessons: 10,
+    duration: "8h",
+    price: "67,10 € + iva",
+    category: "Corsi per Professionisti",
+    description: "Il corso fornisce una panoramica completa sulla responsabilità amministrativa degli enti ai sensi del D.Lgs. 231/2001, analizzandone i principi, gli impatti sulla governance aziendale e le ricadute organizzative.",
+    fullDescription: [
+      "Il corso fornisce una panoramica completa sulla responsabilità amministrativa degli enti ai sensi del D.Lgs. 231/2001, analizzandone i principi, gli impatti sulla governance aziendale e le ricadute organizzative.",
+      "Approfondisce il ruolo dei modelli organizzativi (MOG), dell’Organismo di Vigilanza e degli strumenti di valutazione dei rischi, evidenziando il collegamento tra gestione aziendale, compliance normativa e tutela della salute e sicurezza sul lavoro.",
+      "Il corso presenta 7 moduli di lavoro con contenuti multimediali. Ha una durata complessiva di 8 ore con test intermedi e test finale a risposta multipla con una sola risposta corretta in modalità e-learning.",
+      "Il corso sarà fruibile per 120 giorni dalla data di attivazione."
+    ],
+    objectives: [
+      "Analizzare il contesto organizzativo e contribuire alla progettazione e all’aggiornamento dei modelli di organizzazione, gestione e controllo",
+      "Applicare i principi base della gestione del rischio",
+      "Supportare le attività dell’Organismo di Vigilanza, garantendo una corretta attuazione del Modello 231"
+    ],
+    references: [
+      "D.Lgs. 231/01- N.A.S.R. 17/04/2025 Aggiornamento quinquennale di: ASPP/RSPP ex art. 32 D.Lgs. 81/08; Coordinatore della Sicurezza (CSP/CSE) ex art. 98 D.Lgs. 81/08",
+      "Aggiornamento triennale di Formatore SSL ai sensi del D.I. 06/03/2013",
+      "Aggiornamento Professionista HSE - UNI 11720"
+    ],
+    recipients: "Professionisti e figure aziendali coinvolte nei sistemi di gestione e nelle attività di controllo interno, tra cui consulenti, tecnici della sicurezza, datori di lavoro, dirigenti, lavoratori, amministratori di società, ASPP e RSPP.",
+    syllabus: [
+      { title: "Documento Progettuale", duration: "0m", lessons: ["Documento Progettuale"] },
+      { 
+        title: "Moduli Didattici", 
+        duration: "1h 45m", 
+        lessons: [
+          "01 - Corporate Governance e Responsabilità - D.Lgs. 231-01",
+          "02 - Guida Generale al D.Lgs. 231-01"
+        ] 
+      },
+      { 
+        title: "Video Approfondimenti", 
+        duration: "3h 54m", 
+        lessons: [
+          "01-Video Approfondimento D.Lgs 231-01 e gli impatti nella gestione aziendale",
+          "02-Video Approfondimento La Responsabilità Amministrativa degli enti",
+          "03-Video Approfondimento Strumenti e soluzioni per valutazione rischi MOG e ODV",
+          "04 Video Approfondimento D.Lgs. 231/01 parte 1",
+          "05 Video Approfondimento D.Lgs. 231/01 parte 2"
+        ] 
+      },
+      { 
+        title: "Test di Verifica FInale", 
+        duration: "2h 20m", 
+        lessons: ["Test di verifica dell'apprendimento - La Responsabilità Amministrativa d’Impresa: D.Lgs. 231/01"] 
+      },
+      { title: "Questionario di Gradimento", duration: "0m", lessons: ["Questionario di gradimento"] }
+    ]
+  },
+  {
+    id: "modulo-a-rspp-aspp",
+    title: "Modulo A - Formazione di base propedeutica per RSPP e ASPP",
+    lessons: 116,
+    duration: "28h",
+    price: "109,80 € + iva",
+    category: "Corsi per Professionisti",
+    description: "Il Modulo A fornisce la formazione di base propedeutica per RSPP e ASPP, offrendo le conoscenze fondamentali sulla salute e sicurezza sul lavoro.",
+    fullDescription: [
+      "Il Modulo A fornisce la formazione di base propedeutica per RSPP e ASPP, offrendo le conoscenze fondamentali sulla salute e sicurezza sul lavoro.",
+      "La durata complessiva del corso è di 28 ore, suddivise in 108 moduli formativi, e comprende test intermedi e test finale a risposta multipla.",
+      "Il corso è accessibile per 120 giorni dalla data di attivazione.",
+      "Il Modulo A approfondisce il quadro normativo del D.Lgs. 81/08, i soggetti del sistema di prevenzione, i ruoli, le responsabilità e gli organi di vigilanza. Costituisce il percorso propedeutico e obbligatorio per l’accesso ai Moduli B e C per ASPP e RSPP."
+    ],
+    objectives: [
+      "Comprendere il sistema di prevenzione previsto dal D.Lgs. 81 del 2008",
+      "Approfondire i principi della prevenzione e l’organizzazione dei sistemi di vigilanza",
+      "Analizzare il processo di valutazione dei rischi",
+      "Integrare la sicurezza nei modelli organizzativi aziendali"
+    ],
+    references: [
+      "D.Lgs. 81/2008",
+      "Accordo Stato-Regioni 17/04/2025"
+    ],
+    recipients: "Il Modulo A è rivolto a chi intende avviare il percorso per RSPP e ASPP, oltre a dirigenti, preposti, responsabili dei sistemi di gestione, auditor, consulenti e professionisti del settore.",
+    syllabus: [
+      { title: "Documento Progettuale", duration: "0m", lessons: ["Documento Progettuale"] },
+      { 
+        title: "L’approccio alla Prevenzione nel D.Lgs. 81/2008", 
+        duration: "1h 7m", 
+        lessons: [
+          "1-Introduzione al D.lgs. 81/08 e alla valutazione dei rischi",
+          "2-Definizione di concetti base della salute e sicurezza nei luoghi di lavoro",
+          "3-Principi del D.lgs. 81/08: Informazione ai lavoratori",
+          "4-Principi del D.lgs. 81/08: Formazione dei lavoratori e dei loro rappresentanti"
+        ] 
+      },
+      { 
+        title: "Il Sistema Legislativo: Esame delle Normative di Riferimento", 
+        duration: "2h 7m", 
+        lessons: [
+          "1-Introduzione alla storia legislativa a tema salute e sicurezza sul lavoro",
+          "2-L’evoluzione dell’approccio alla salute e sicurezza sul lavoro, istituzione dell’assicurazione, il Codice civile",
+          "3-La Costituzione, il Codice penale, i DPR degli anni ’50",
+          "4-Lo Statuto dei lavoratori, principi cardine dell’art. 2087 del CC, la legislazione degli anni ’80 e ’90",
+          "5-Struttura e contenuti del D.lgs. 81/08",
+          "6-Il quadro giuridico europeo, i profili di responsabilità amministrativa",
+          "7. La legislazione relativa a categorie particolari di lavoratori",
+          "8-Il quadro legislativo antincendio"
+        ] 
+      },
+      { 
+        title: "Prevenzione della Violenza e delle Molestie sul Luogo di Lavoro", 
+        duration: "28m", 
+        lessons: [
+          "1. La Convenzione 190 e la Raccomandazione 206 ILO",
+          "2-La Convenzione 190 e la Raccomandazione 206 ILO"
+        ] 
+      },
+      { 
+        title: "Inserimento di Lavoratori Disabili e loro Tutela", 
+        duration: "1h 15m", 
+        lessons: [
+          "1-Collocamento mirato e obbligatorio, percentuali di invalidità, quote obbligatorie di assunzione",
+          "2-Accertamento commissione medica",
+          "3-Ruolo del medico competente, requisiti di salute e sicurezza degli ambienti di lavoro",
+          "4-La normativa antidiscriminatoria italiana (D.Lgs. 216/2003) e comunitaria (Direttiva 2000/78)",
+          "5-Soluzioni ragionevoli per la parità di trattamento e la L. 99/2013"
+        ] 
+      },
+      { 
+        title: "Il Sistema Istituzionale della Prevenzione", 
+        duration: "25m", 
+        lessons: [
+          "1-Il sistema istituzionale, comitato per le politiche attive e le attività di vigilanza",
+          "2. Enti con compiti in materia di salute e sicurezza"
+        ] 
+      },
+      { 
+        title: "Il Sistema di Vigilanza e Assistenza", 
+        duration: "2h 19m", 
+        lessons: [
+          "1-Organi di controllo e vigilanza",
+          "2-Sistema delle prescrizioni e delle sanzioni: esempi di sentenze",
+          "3-Il ruolo di ASL, INL, VV.F., INAIL, ARPA",
+          "4-Organismi normatori, controlli e verifiche sulle attrezzature, obblighi generali del DdL",
+          "5-Obblighi specifici del DdL",
+          "6-Modalità di effettuazione delle verifiche periodiche",
+          "7-Modalità e tariffe per le verifiche, suddivisione dei gruppi di attrezzature, impianti esclusi",
+          "8-Impianti e apparecchiature elettriche",
+          "9-Informazione, assistenza e consulenza, collaborazione con organismi paritetici"
+        ] 
+      },
+      { title: "Quiz intermedio Unità didattica A1", duration: "3m", lessons: ["Quiz di verifica dell'apprendimento | Unità didattica A1"] },
+      { 
+        title: "I Soggetti del Sistema di Prevenzione Aziendale", 
+        duration: "4h 14m", 
+        lessons: [
+          "1-Introduzione alle figure principali della sicurezza in azienda",
+          "2-Datore di Lavoro e Dirigente per la sicurezza",
+          "3-Individuazione del Datore di Lavoro",
+          "4-Requisiti e adempimenti per la delega di funzione",
+          "5-Responsabilità amministrativa",
+          "6-Modelli di organizzazione e gestione, obbligo formativo del DdL",
+          "7-Incapacità tecnica del DdL, obbligo di formazione preventiva del personale",
+          "8-Responsabilità civile e penale del DdL: esempi di sentenze",
+          "9-Il ruolo del Preposto",
+          "10-Il ruolo del Responsabile del Servizio di Prevenzione e Protezione",
+          "11-RSPP interno o esterno, ruolo del ASPP, individuazione e valutazione dei rischi",
+          "12-Elaborazione delle misure preventive e delle procedure",
+          "13-Il ruolo del Medico Competente e del Rappresentante dei Lavoratori per la Sicurezza",
+          "14-Individuazione e segnalazione dei rischi",
+          "15-Comunicazione funzionale ed efficace",
+          "16-Ruolo proattivo del RLS",
+          "17-Il ruolo dei Lavoratori e degli Addetti alle Emergenze",
+          "18-Obblighi dei progettisti"
+        ] 
+      },
+      { title: "Quiz intermedio Unità didattica A2", duration: "3m", lessons: ["Quiz di verifica dell'apprendimento | Unità didattica A2"] },
+      { 
+        title: "Il Processo di Valutazione dei Rischi - parte 1", 
+        duration: "4h 25m", 
+        lessons: [
+          "1-Concetti di pericolo, rischio, danno, prevenzione e protezione",
+          "2-Principio di precauzione",
+          "3-Infortuni: definizione, condizioni necessarie ed esempi",
+          "4-Infortuni: infortunio in itinere e tutela INAIL",
+          "5-Malattie professionali: definizione",
+          "6-Dati statistici INAIL sugli infortuni",
+          "7-Dati statistici INAIL sulle malattie professionali, cause degli infortuni",
+          "8-Fattori oggettivi e soggettivi degli infortuni sul lavoro",
+          "9-Valutazione dei rischi: DVR, modalità di effettuazione e oggetto della valutazione",
+          "10-Valutazione dei rischi",
+          "11-Valutazione dei rischi: riferimenti e obblighi normativi",
+          "12-Valutazione dei rischi",
+          "13-Fasi della valutazione dei rischi",
+          "14-Fasi della valutazione dei rischi",
+          "15-Applicazione delle procedure standardizzate per la valutazione dei rischi"
+        ] 
+      },
+      { 
+        title: "Il Processo di Valutazione dei Rischi - parte 2", 
+        duration: "2h 6m", 
+        lessons: [
+          "1-Valutazione dei rischi da interferenze",
+          "2-Luoghi di lavoro e stress lavoro-correlato",
+          "3-Movimentazione manuale dei carichi e movimenti ripetitivi",
+          "4-Lavoro al videoterminale",
+          "5-Attrezzature di lavoro, rischi meccanici e da esposizione a vibrazioni",
+          "6-Rischio elettrico e campi elettromagnetici",
+          "7-Rischio chimico",
+          "8-Contenuti e organizzazione del DVR"
+        ] 
+      },
+      { 
+        title: "Il Processo di Valutazione dei Rischi - parte 3", 
+        duration: "1h 41m", 
+        lessons: [
+          "1-Sicurezza o produzione?",
+          "2-I costi della NON sicurezza",
+          "3-I costi degli infortuni",
+          "4-Costi palesi e costi nascosti",
+          "5-MOG di tipo volontario - D.Lgs. 231/01",
+          "6-MOG di tipo volontario",
+          "7. MOG di tipo volontario: 231 e 81/08, sanzioni interdittive"
+        ] 
+      },
+      { title: "Quiz intermedio Unità didattica A3", duration: "3m", lessons: ["Quiz di verifica dell'apprendimento | Unità didattica A3"] },
+      { 
+        title: "I Dispositivi di Protezione Collettiva e Individuale", 
+        duration: "30m", 
+        lessons: [
+          "1-DPI per la protezione degli occhi",
+          "2-DPI per la protezione di mani e vie respiratorie"
+        ] 
+      },
+      { 
+        title: "La Gestione delle Emergenze", 
+        duration: "2h 15m", 
+        lessons: [
+          "1-Gestione delle emergenze",
+          "2-Rischio incendio e cenni di primo soccorso",
+          "3-Addetti alla gestione delle emergenze",
+          "4-Normativa antincendio e piano di emergenza ed evacuazione (PEE)",
+          "5-Contenuti del PEE",
+          "6-Gestione della sicurezza antincendio in esercizio ed in emergenza",
+          "7-Esempio di PEE e procedure per la gestione delle emergenze"
+        ] 
+      },
+      { 
+        title: "La Sorveglianza Sanitaria", 
+        duration: "1h 22m", 
+        lessons: [
+          "1-Introduzione alla sorveglianza sanitaria",
+          "2-Sorveglianza sanitaria: principi fondamentali",
+          "3-Sorveglianza sanitaria: visite mediche",
+          "4-Sorveglianza sanitaria: attività di prevenzione",
+          "5-Sorveglianza sanitaria: titoli, ruolo e compiti del medico competente",
+          "6-Sorveglianza sanitaria: sorveglianza preventiva",
+          "7-Tutela per le lavoratrici madri"
+        ] 
+      },
+      { title: "Quiz intermedio Unità didattica A4", duration: "3m", lessons: ["Quiz di verifica dell'apprendimento | Unità didattica A4"] },
+      { 
+        title: "Consultazione e Partecipazione - Informazione, Formazione e Addestramento", 
+        duration: "3h 41m", 
+        lessons: [
+          "1-Introduzione alla comunicazione nei luoghi di lavoro, stili comunicativi",
+          "2-Comunicazione assertiva e destinatari della formazione",
+          "3-Difficoltà dei discenti, contenuto e motivazione della formazione",
+          "4-Metodo e processo formativo, la formazione nel D.Lgs. 81/08",
+          "5-Cultura della sicurezza e formazione, formazione dei preposti e degli RLS",
+          "6-Valutazione dei rischi e formazione per l’utilizzo dei macchinari",
+          "7-Formazione dei lavoratori: generale, specifica e aggiornamento",
+          "8-Formazione e addestramento, qualifiche dei formatori, formazione particolare",
+          "9-Formazione per le attrezzature di lavoro, per il DdL e i dirigenti",
+          "10-Formazione degli addetti alle emergenze",
+          "11-Comunicare in azienda: strumenti di intelligenza artificiale, comunicazione empatica",
+          "12-Comunicare in azienda: gestione delle riunioni",
+          "13-Comunicare in azienda: responsabilità, condivisione e disponibilità",
+          "14-Comunicare in azienda: feedback, barriere linguistiche e di linguaggio"
+        ] 
+      },
+      { title: "Quiz intermedio Unità didattica A5", duration: "3m", lessons: ["Quiz di verifica dell'apprendimento | Unità didattica A5"] },
+      { title: "Quiz di Verifica Finale", duration: "1h 15m", lessons: ["Quiz di verifica finale Modulo A - Formazione di base propedeutica per RSPP e ASPP"] },
+      { title: "Questionario di Gradimento", duration: "0m", lessons: ["Questionario di gradimento - Modulo A - Formazione di base propedeutica per RSPP e ASPP"] }
+    ]
+  },
+  {
+    id: "risk-assessment-8",
+    title: "Risk Assessment per la sicurezza sul lavoro: Responsabilità, strumenti e tecniche di analisi",
+    lessons: 34,
+    duration: "8h",
+    price: "91,50 € + iva",
+    category: "Corsi per Professionisti",
+    description: "Il corso per la Valutazione dei Rischi è progettato per fornire ai professionisti della sicurezza le competenze avanzate necessarie per condurre valutazioni dei rischi efficaci.",
+    fullDescription: [
+      "Il corso per la Valutazione dei Rischi è progettato per fornire ai professionisti della sicurezza le competenze avanzate necessarie per condurre valutazioni dei rischi efficaci e conformi alle normative vigenti.",
+      "Il corso fornisce le competenze per identificare, analizzare e gestire i rischi sul lavoro, applicando metodologie conformi alle normative vigenti e agli standard internazionali di gestione del rischio.",
+      "La durata complessiva è di 8 ore, suddivise in 31 moduli formativi, e si conclude con un test finale a risposta multipla.",
+      "Il corso è accessibile per 120 giorni dalla data di attivazione."
+    ],
+    objectives: [
+      "Applicare correttamente i principali metodi di valutazione del rischio",
+      "Supportare il datore di lavoro nelle scelte di prevenzione e protezione",
+      "Identificare, analizzare e gestire i rischi sul lavoro secondo standard internazionali"
+    ],
+    references: [
+      "T.U. 81/08",
+      "UNI EN ISO 12100",
+      "ISO/TR 14121-2",
+      "Aggiornamento quinquennale RSPP/ASPP/CSP/CSE",
+      "Aggiornamento triennale Formatore SSL",
+      "Aggiornamento Professionista HSE - UNI 11720"
+    ],
+    recipients: "RSPP, ASPP, consulenti, tecnici della prevenzione, datori di lavoro, dirigenti, coordinatori per la sicurezza nei cantieri, HSE Manager e formatori sulla sicurezza.",
+    syllabus: [
+      { title: "Documento Progettuale", duration: "0m", lessons: ["Documento Progettuale"] },
+      { 
+        title: "Il ruolo e le responsabilità del RSPP", 
+        duration: "1h 39m", 
+        lessons: [
+          "1. Ruolo e responsabilità del RSPP",
+          "2. Esempi di sentenze e casi giuridici con responsabilità penale del RSPP",
+          "3. Tracciabilità dell’operato del RSPP, responsabilità civile e assicurazioni",
+          "4. 10 regole fondamentali per l’attività del RSPP - Parte 1",
+          "5. 10 regole fondamentali per l’attività del RSPP - Parte 2",
+          "6. 10 regole fondamentali per l’attività del RSPP - Parte 3"
+        ] 
+      },
+      { 
+        title: "Il processo di valutazione dei rischi (Risk Assessment)", 
+        duration: "3h 39m", 
+        lessons: [
+          "1. Percorso storico della normativa sulla sicurezza - Parte 1",
+          "2. Percorso storico della normativa sulla sicurezza - Parte 2",
+          "3. Definizioni delle figure e dei concetti della SSL",
+          "4. Misure generali di tutela, oggetto e contenuti della valutazione dei rischi",
+          "5. Norme e standard nazionali e internazionali",
+          "6. ISO 31000: principi, struttura, processo",
+          "7. Descrizioni delle tecniche della norma UNI CEI EN IEC 31010",
+          "8. UNI EN ISO 12100: fasi del processo di Risk Assessment",
+          "9. ISO/TR 14121-2: metodi per l’analisi del rischio",
+          "10. Metodo grafico, metodo a matrice e metodo ibrido",
+          "11. Esempio pratico di DVR - Parte 1",
+          "12. Esempio pratico di DVR - Parte 2",
+          "13. Esempio pratico di DVR - Parte 3",
+          "14. ISO 45001: come funziona un sistema di gestione"
+        ] 
+      },
+      { 
+        title: "Il DUVRI: come redigerlo per valutare e gestire i rischi interferenti", 
+        duration: "2h 37m", 
+        lessons: [
+          "1. Interferenze lavorative nell’evoluzione della normativa",
+          "2. Prevenzione e protezione, cooperazione e coordinamento",
+          "3. Interferenze e rischi interferenti, DUVRI nei cantieri",
+          "4. Reperire le informazioni per elaborare il DUVRI",
+          "5. Caratteristiche e contenuti del DUVRI - Parte 1",
+          "6. Caratteristiche e contenuti del DUVRI - Parte 2",
+          "7. Interferenze con gli utenti esterni",
+          "8. Esempio pratico di DUVRI (modello INAIL) - Parte 1",
+          "9. Esempio pratico di DUVRI (modello INAIL) - Parte 2",
+          "10. Esempio pratico di DUVRI (modello INAIL) - Parte 3",
+          "11. Esempio pratico di DUVRI (modello INAIL) - Parte 4"
+        ] 
+      },
+      { 
+        title: "Quiz di Verifica", 
+        duration: "36m", 
+        lessons: ["Quiz di Verifica dell'apprendimento - Corso Risk Assessment 8 ore"] 
+      },
+      { title: "Questionario di Gradimento", duration: "0m", lessons: ["Questionario di gradimento - Risk Assessment"] }
+    ]
+  },
+  {
+    id: "aggiornamento-aspp-20",
+    title: "Aggiornamento per ASPP - Addetto al Servizio Prevenzione e Protezione",
+    lessons: 87,
+    duration: "20h",
+    price: "85,40 € + iva",
+    category: "Corsi per Professionisti",
+    description: "Il Corso di Aggiornamento per Addetto al Servizio Prevenzione e Protezione (ASPP) è progettato per garantire l'adeguato aggiornamento quinquennale richiesto dalla normativa vigente.",
+    fullDescription: [
+      "Il Corso di Aggiornamento per Addetto al Servizio Prevenzione e Protezione (ASPP) è progettato per garantire l'adeguato aggiornamento quinquennale richiesto dalla normativa vigente (D.lgs. 81/2008 e Accordo Stato-Regioni del 7 luglio 2016).",
+      "L’Aggiornamento ASPP permette agli Addetti al Servizio di Prevenzione e Protezione di mantenere aggiornate le proprie competenze in materia di salute e sicurezza sul lavoro, assicurando l’applicazione corretta delle normative.",
+      "La durata complessiva è di 20 ore, suddivise in 84 moduli formativi, e si conclude con un test finale a risposta multipla.",
+      "Il corso è accessibile per 120 giorni dalla data di attivazione."
+    ],
+    objectives: [
+      "Comprendere il quadro legislativo della sicurezza",
+      "Conoscere i ruoli e le responsabilità delle figure del sistema prevenzionistico",
+      "Comprendere il funzionamento degli organi di vigilanza",
+      "Assicurare l'applicazione corretta delle normative e la gestione delle misure preventive"
+    ],
+    references: [
+      "D.Lgs. 81/2008",
+      "Accordo Stato-Regioni 07/07/2016",
+      "N.A.S.R. 17/04/2025 Aggiornamento quinquennale ASPP/RSPP/CSP/CSE",
+      "Aggiornamento triennale Formatore SSL",
+      "Aggiornamento Professionista HSE - UNI 11720"
+    ],
+    recipients: "ASPP esterni o interni, Addetti al Servizio di Prevenzione e Protezione, già abilitati, che devono mantenere valida la propria qualifica attraverso l’aggiornamento periodico.",
+    syllabus: [
+      { title: "Documento Progettuale", duration: "0m", lessons: ["Documento Progettuale"] },
+      { 
+        title: "1-L’approccio alla Prevenzione nel D.Lgs. 81/2008", 
+        duration: "1h 5m", 
+        lessons: [
+          "1-Introduzione al D.lgs. 81/08 e alla valutazione dei rischi",
+          "2-Definizione di concetti base della salute e sicurezza nei luoghi di lavoro",
+          "3-Principi del D.lgs. 81/08: Informazione ai lavoratori",
+          "4-Principi del D.lgs. 81/08: Formazione dei lavoratori e dei loro rappresentanti"
+        ] 
+      },
+      { 
+        title: "2-Il Sistema Legislativo: Esame delle Normative di Riferimento", 
+        duration: "2h 2m", 
+        lessons: [
+          "1-Introduzione alla storia legislativa a tema salute e sicurezza sul lavoro",
+          "2-L’evoluzione dell’approccio alla salute e sicurezza sul lavoro, istituzione dell’assicurazione, il Codice civile",
+          "3-La Costituzione, il Codice penale, i DPR degli anni ’50",
+          "4-Lo Statuto dei lavoratori, principi cardine dell’art. 2087 del CC, la legislazione degli anni ’80 e ’90",
+          "5-Struttura e contenuti del D.lgs. 81/08",
+          "6-Il quadro giuridico europeo, i profili di responsabilità amministrativa",
+          "7. La legislazione relativa a categorie particolari di lavoratori",
+          "8-Il quadro legislativo antincendio"
+        ] 
+      },
+      { 
+        title: "3-Il sistema di prevenzione aziendale", 
+        duration: "4h 2m", 
+        lessons: [
+          "1-Introduzione alle figure principali della sicurezza in azienda",
+          "2-Datore di Lavoro e Dirigente per la sicurezza",
+          "3-Individuazione del Datore di Lavoro",
+          "4-Requisiti e adempimenti per la delega di funzione",
+          "5-Responsabilità amministrativa",
+          "6-Modelli di organizzazione e gestione, obbligo formativo del DdL",
+          "7-Incapacità tecnica del DdL, obbligo di formazione preventiva del personale",
+          "8-Responsabilità civile e penale del DdL: esempi di sentenze",
+          "9-Il ruolo del Preposto",
+          "10-Il ruolo del Responsabile del Servizio di Prevenzione e Protezione",
+          "11-RSPP interno o esterno, ruolo del ASPP, individuazione e valutazione dei rischi",
+          "12-Elaborazione delle misure preventive e delle procedure",
+          "13-Il ruolo del Medico Competente e del Rappresentante dei Lavoratori per la Sicurezza",
+          "14-Individuazione e segnalazione dei rischi",
+          "15-Comunicazione funzionale ed efficace",
+          "16-Ruolo proattivo del RLS",
+          "17-Il ruolo dei Lavoratori e degli Addetti alle Emergenze",
+          "18-Obblighi dei progettisti"
+        ] 
+      },
+      { 
+        title: "4-Valutazione dei rischi - Parte 1: fondamenti", 
+        duration: "2h 26m", 
+        lessons: [
+          "1-Concetti di pericolo, rischio, danno, prevenzione e protezione",
+          "2-Principio di precauzione",
+          "3-Valutazione dei rischi: DVR, modalità di effettuazione e oggetto della valutazione",
+          "4-Valutazione dei rischi",
+          "5-Valutazione dei rischi: riferimenti e obblighi normativi",
+          "6-Valutazione dei rischi",
+          "7-Fasi della valutazione dei rischi",
+          "8-Fasi della valutazione dei rischi"
+        ] 
+      },
+      { 
+        title: "5-Valutazione dei rischi - Parte 2: rischi specifici", 
+        duration: "1h 50m", 
+        lessons: [
+          "1-Valutazione dei rischi da interferenze",
+          "2-Luoghi di lavoro e stress lavoro-correlato",
+          "3-Movimentazione manuale dei carichi e movimenti ripetitivi",
+          "4-Lavoro al videoterminale",
+          "5-Attrezzature di lavoro, rischi meccanici e da esposizione a vibrazioni",
+          "6-Rischio elettrico e campi elettromagnetici",
+          "7-Rischio chimico"
+        ] 
+      },
+      { 
+        title: "6-Prevenzione della Violenza e delle Molestie sul Luogo di Lavoro", 
+        duration: "27m", 
+        lessons: [
+          "1. La Convenzione 190 e la Raccomandazione 206 ILO",
+          "2-La Convenzione 190 e la Raccomandazione 206 ILO"
+        ] 
+      },
+      { 
+        title: "7-Inserimento di Lavoratori Disabili e loro Tutela", 
+        duration: "1h 11m", 
+        lessons: [
+          "1-Collocamento mirato e obbligatorio, percentuali di invalidità, quote obbligatorie di assunzione",
+          "2-Accertamento commissione medica",
+          "3-Ruolo del medico competente, requisiti di salute e sicurezza degli ambienti di lavoro",
+          "4-La normativa antidiscriminatoria italiana (D.Lgs. 216/2003) e comunitaria (Direttiva 2000/78)",
+          "5-Soluzioni ragionevoli per la parità di trattamento e la L. 99/2013"
+        ] 
+      },
+      { 
+        title: "8-Dispositivi di protezione e sorveglianza sanitaria", 
+        duration: "1h 46m", 
+        lessons: [
+          "1-DPI per la protezione degli occhi",
+          "2-DPI per la protezione di mani e vie respiratorie",
+          "3-Introduzione alla sorveglianza sanitaria",
+          "4-Sorveglianza sanitaria: principi fondamentali",
+          "5-Sorveglianza sanitaria: visite mediche",
+          "6-Sorveglianza sanitaria: attività di prevenzione",
+          "7-Sorveglianza sanitaria: titoli, ruolo e compiti del medico competente",
+          "8-Sorveglianza sanitaria: sorveglianza preventiva",
+          "9-Tutela per le lavoratrici madri"
+        ] 
+      },
+      { 
+        title: "9-Gestione delle emergenze", 
+        duration: "2h 11m", 
+        lessons: [
+          "1-Gestione delle emergenze",
+          "2-Rischio incendio e cenni di primo soccorso",
+          "3-Addetti alla gestione delle emergenze",
+          "4-Normativa antincendio e piano di emergenza ed evacuazione (PEE)",
+          "5-Contenuti del PEE",
+          "6-Gestione della sicurezza antincendio in esercizio ed in emergenza",
+          "7-Esempio di PEE e procedure per la gestione delle emergenze"
+        ] 
+      },
+      { 
+        title: "10-Norme tecniche e strumenti di valutazione", 
+        duration: "1h 59m", 
+        lessons: [
+          "1. ISO 31000: principi, struttura, processo",
+          "2. Descrizioni delle tecniche della norma UNI CEI EN IEC 31010",
+          "3. UNI EN ISO 12100: fasi del processo di Risk Assessment",
+          "4. ISO/TR 14121-2: metodi per l’analisi del rischio",
+          "5. Metodo grafico, metodo a matrice e metodo ibrido",
+          "6. Esempio pratico di DVR - Parte 1",
+          "7. Esempio pratico di DVR - Parte 2",
+          "8. Esempio pratico di DVR - Parte 3"
+        ] 
+      },
+      { 
+        title: "11-Comunicazione e formazione", 
+        duration: "1h 59m", 
+        lessons: [
+          "1-Introduzione alla comunicazione nei luoghi di lavoro, stili comunicativi",
+          "2-Comunicazione assertiva e destinatari della formazione",
+          "3-Metodo e processo formativo, la formazione nel D.Lgs. 81/08",
+          "4-Cultura della sicurezza e formazione, formazione dei preposti e degli RLS",
+          "5-Formazione dei lavoratori: generale, specifica e aggiornamento",
+          "6-Formazione e addestramento, qualifiche dei formatori, formazione particolare",
+          "7-Comunicare in azienda: strumenti di intelligenza artificiale, comunicazione empatica",
+          "8-Comunicare in azienda: feedback, barriere linguistiche e di linguaggio"
+        ] 
+      },
+      { 
+        title: "Quiz di Verifica", 
+        duration: "45m", 
+        lessons: ["Quiz di Verifica dell'apprendimento - Aggiornamento ASPP 20 ore"] 
+      },
+      { title: "Questionario di Gradimento", duration: "0m", lessons: ["Questionario di gradimento - Aggiornamento per ASPP | Addetto al Servizio Prevenzione e Protezione | 20 Ore"] }
+    ]
+  },
+  {
+    id: "coordinatore-sicurezza-giuridico-28",
+    title: "Coordinatori per la Sicurezza in fase di progettazione e di esecuzione - Modulo Giuridico",
+    lessons: 139,
+    duration: "28h",
+    price: "115,90 € + iva",
+    category: "Corsi per Professionisti",
+    description: "Il Modulo Giuridico Coordinatore CSP/CSE fornisce le conoscenze legislative e normative essenziali per chi vuole abilitarsi al ruolo di Coordinatore.",
+    fullDescription: [
+      "Il Modulo Giuridico Coordinatore CSP/CSE fornisce le conoscenze legislative e normative essenziali per chi vuole abilitarsi al ruolo di Coordinatori CSP/CSE.",
+      "Approfondisce ruoli, responsabilità e obblighi previsti dal D.Lgs. 81/2008, garantendo una corretta gestione della sicurezza e la conformità alle norme vigenti.",
+      "La durata complessiva è di 32 ore (coprendo le 28 ore minime richieste), suddivise in 135 moduli formativi, e comprende test intermedi e test finale a risposta multipla.",
+      "Il corso è accessibile per 120 giorni dalla data di attivazione."
+    ],
+    objectives: [
+      "Fornire conoscenze essenziali sul quadro normativo e giuridico in materia di salute e sicurezza",
+      "Approfondire responsabilità e ruoli di committente, CSP, CSE, imprese e lavoratori",
+      "Comprendere il sistema sanzionatorio e le implicazioni legali",
+      "Analizzare i contenuti del Titolo IV del D.Lgs. 81/08 sui cantieri temporanei o mobili"
+    ],
+    references: [
+      "D.Lgs. 81/2008 Art. 98",
+      "Accordo Stato Regioni 17/04/2025"
+    ],
+    recipients: "Laureati in Architettura, Ingegneria, Geologia, Scienze Agrarie/Forestali o professionisti con Laurea triennale specifica e comprovata esperienza nel settore costruzioni.",
+    syllabus: [
+      { title: "Documento Progettuale", duration: "0m", lessons: ["Documento Progettuale"] },
+      { 
+        title: "L’approccio alla Prevenzione nel D.Lgs. 81/2008", 
+        duration: "1h 5m", 
+        lessons: [
+          "1-Introduzione al D.lgs. 81/08 e alla valutazione dei rischi",
+          "2-Definizione di concetti base della salute e sicurezza nei luoghi di lavoro",
+          "3-Principi del D.lgs. 81/08: Informazione ai lavoratori",
+          "4-Principi del D.lgs. 81/08: Formazione dei lavoratori e dei loro rappresentanti"
+        ] 
+      },
+      { 
+        title: "Il Sistema Legislativo: Esame delle Normative di Riferimento", 
+        duration: "2h 2m", 
+        lessons: [
+          "1-Introduzione alla storia legislativa a tema salute e sicurezza sul lavoro",
+          "2-L’evoluzione dell’approccio alla salute e sicurezza sul lavoro, istituzione dell’assicurazione, il Codice civile",
+          "3-La Costituzione, il Codice penale, i DPR degli anni ’50",
+          "4-Lo Statuto dei lavoratori, principi cardine dell’art. 2087 del CC, la legislazione degli anni ’80 e ’90",
+          "5-Struttura e contenuti del D.lgs. 81/08",
+          "6-Il quadro giuridico europeo, i profili di responsabilità amministrativa",
+          "7. La legislazione relativa a categorie particolari di lavoratori",
+          "8-Il quadro legislativo antincendio"
+        ] 
+      },
+      { 
+        title: "Prevenzione della Violenza e delle Molestie sul Luogo di Lavoro", 
+        duration: "27m", 
+        lessons: [
+          "1. La Convenzione 190 e la Raccomandazione 206 ILO",
+          "2-La Convenzione 190 e la Raccomandazione 206 ILO"
+        ] 
+      },
+      { 
+        title: "Inserimento di Lavoratori Disabili e loro Tutela", 
+        duration: "1h 11m", 
+        lessons: [
+          "1-Collocamento mirato e obbligatorio, percentuali di invalidità, quote obbligatorie di assunzione",
+          "2-Accertamento commissione medica",
+          "3-Ruolo del medico competente, requisiti di salute e sicurezza degli ambienti di lavoro",
+          "4-La normativa antidiscriminatoria italiana (D.Lgs. 216/2003) e comunitaria (Direttiva 2000/78)",
+          "5-Soluzioni ragionevoli per la parità di trattamento e la L. 99/2013"
+        ] 
+      },
+      { 
+        title: "Il Sistema Istituzionale della Prevenzione", 
+        duration: "24m", 
+        lessons: [
+          "1-Il sistema istituzionale, comitato per le politiche attive e le attività di vigilanza",
+          "2. Enti con compiti in materia di salute e sicurezza"
+        ] 
+      },
+      { 
+        title: "Il Sistema di Vigilanza e Assistenza", 
+        duration: "2h 13m", 
+        lessons: [
+          "1-Organi di controllo e vigilanza",
+          "2-Sistema delle prescrizioni e delle sanzioni: esempi di sentenze",
+          "3-Il ruolo di ASL, INL, VV.F., INAIL, ARPA",
+          "4-Organismi normatori, controlli e verifiche sulle attrezzature, obblighi generali del DdL",
+          "5-Obblighi specifici del DdL",
+          "6-Modalità di effettuazione delle verifiche periodiche",
+          "7-Modalità e tariffe per le verifiche, suddivisione dei gruppi di attrezzature, impianti esclusi",
+          "8-Impianti e apparecchiature elettriche",
+          "9-Informazione, assistenza e consulenza, collaborazione con organismi paritetici"
+        ] 
+      },
+      { 
+        title: "I Soggetti del Sistema di Prevenzione Aziendale", 
+        duration: "4h 2m", 
+        lessons: [
+          "1-Introduzione alle figure principali della sicurezza in azienda",
+          "2-Datore di Lavoro e Dirigente per la sicurezza",
+          "3-Individuazione del Datore di Lavoro",
+          "4-Requisiti e adempimenti per la delega di funzione",
+          "5-Responsabilità amministrativa",
+          "6-Modelli di organizzazione e gestione, obbligo formativo del DdL",
+          "7-Incapacità tecnica del DdL, obbligo di formazione preventiva del personale",
+          "8-Responsabilità civile e penale del DdL: esempi di sentenze",
+          "9-Il ruolo del Preposto",
+          "10-Il ruolo del Responsabile del Servizio di Prevenzione e Protezione",
+          "11-RSPP interno o esterno, ruolo del ASPP, individuazione e valutazione dei rischi",
+          "12-Elaborazione delle misure preventive e delle procedure",
+          "13-Il ruolo del Medico Competente e del Rappresentante dei Lavoratori per la Sicurezza",
+          "14-Individuazione e segnalazione dei rischi",
+          "15-Comunicazione funzionale ed efficace",
+          "16-Ruolo proattivo del RLS",
+          "17-Il ruolo dei Lavoratori e degli Addetti alle Emergenze",
+          "18-Obblighi dei progettisti"
+        ] 
+      },
+      { 
+        title: "Il Processo di Valutazione dei Rischi - parte 1", 
+        duration: "4h 15m", 
+        lessons: [
+          "1-Concetti di pericolo, rischio, danno, prevenzione e protezione",
+          "2-Principio di precauzione",
+          "3-Infortuni: definizione, condizioni necessarie ed esempi",
+          "4-Infortuni: infortunio in itinere e tutela INAIL",
+          "5-Malattie professionali: definizione",
+          "6-Dati statistici INAIL sugli infortuni",
+          "7-Dati statistici INAIL sulle malattie professionali, cause degli infortuni",
+          "8-Fattori oggettivi e soggettivi degli infortuni sul lavoro",
+          "9-Valutazione dei rischi: DVR, modalità di effettuazione e oggetto della valutazione",
+          "10-Valutazione dei rischi",
+          "11-Valutazione dei rischi: riferimenti e obblighi normativi",
+          "12-Valutazione dei rischi",
+          "13-Fasi della valutazione dei rischi",
+          "14-Fasi della valutazione dei rischi",
+          "15-Applicazione delle procedure standardizzate per la valutazione dei rischi"
+        ] 
+      },
+      { 
+        title: "Il Processo di Valutazione dei Rischi - parte 2", 
+        duration: "2h 1m", 
+        lessons: [
+          "1-Valutazione dei rischi da interferenze",
+          "2-Luoghi di lavoro e stress lavoro-correlato",
+          "3-Movimentazione manuale dei carichi e movimenti ripetitivi",
+          "4-Lavoro al videoterminale",
+          "5-Attrezzature di lavoro, rischi meccanici e da esposizione a vibrazioni",
+          "6-Rischio elettrico e campi elettromagnetici",
+          "7-Rischio chimico",
+          "8-Contenuti e organizzazione del DVR"
+        ] 
+      },
+      { 
+        title: "Il Processo di Valutazione dei Rischi - parte 3", 
+        duration: "1h 36m", 
+        lessons: [
+          "1-Sicurezza o produzione?",
+          "2-I costi della NON sicurezza",
+          "3-I costi degli infortuni",
+          "4-Costi palesi e costi nascosti",
+          "5-MOG di tipo volontario - D.Lgs. 231/01",
+          "6-MOG di tipo volontario",
+          "7. MOG di tipo volontario: 231 e 81/08, sanzioni interdittive"
+        ] 
+      },
+      { 
+        title: "I Dispositivi di Protezione Collettiva e Individuale", 
+        duration: "28m", 
+        lessons: [
+          "1-DPI per la protezione degli occhi",
+          "2-DPI per la protezione di mani e vie respiratorie"
+        ] 
+      },
+      { 
+        title: "La Gestione delle Emergenze", 
+        duration: "2h 11m", 
+        lessons: [
+          "1-Gestione delle emergenze",
+          "2-Rischio incendio e cenni di primo soccorso",
+          "3-Addetti alla gestione delle emergenze",
+          "4-Normativa antincendio e piano di emergenza ed evacuazione (PEE)",
+          "5-Contenuti del PEE",
+          "6-Gestione della sicurezza antincendio in esercizio ed in emergenza",
+          "7-Esempio di PEE e procedure per la gestione delle emergenze"
+        ] 
+      },
+      { 
+        title: "La Sorveglianza Sanitaria", 
+        duration: "1h 17m", 
+        lessons: [
+          "1-Introduzione alla sorveglianza sanitaria",
+          "2-Sorveglianza sanitaria: principi fondamentali",
+          "3-Sorveglianza sanitaria: visite mediche",
+          "4-Sorveglianza sanitaria: attività di prevenzione",
+          "5-Sorveglianza sanitaria: titoli, ruolo e compiti del medico competente",
+          "6-Sorveglianza sanitaria: sorveglianza preventiva",
+          "7-Tutela per le lavoratrici madri"
+        ] 
+      },
+      { 
+        title: "Consultazione e Partecipazione - Informazione, Formazione e Addestramento", 
+        duration: "3h 32m", 
+        lessons: [
+          "1-Introduzione alla comunicazione nei luoghi di lavoro, stili comunicativi",
+          "2-Comunicazione assertiva e destinatari della formazione",
+          "3-Difficoltà dei discenti, contenuto e motivazione della formazione",
+          "4-Metodo e processo formativo, la formazione nel D.Lgs. 81/08",
+          "5-Cultura della sicurezza e formazione, formazione dei preposti e degli RLS",
+          "6-Valutazione dei rischi e formazione per l’utilizzo dei macchinari",
+          "7-Formazione dei lavoratori: generale, specifica e aggiornamento",
+          "8-Formazione e addestramento, qualifiche dei formatori, formazione particolare",
+          "9-Formazione per le attrezzature di lavoro, per il DdL e i dirigenti",
+          "10-Formazione degli addetti alle emergenze",
+          "11-Comunicare in azienda: strumenti di intelligenza artificiale, comunicazione empatica",
+          "12-Comunicare in azienda: gestione delle riunioni",
+          "13-Comunicare in azienda: responsabilità, condivisione e disponibilità",
+          "14-Comunicare in azienda: feedback, barriere linguistiche e di linguaggio"
+        ] 
+      },
+      { 
+        title: "Quiz di Verifica", 
+        duration: "30m", 
+        lessons: ["Quiz di verifica Coordinatori per la Sicurezza in fase di Progettazione e di Esecuzione"] 
+      },
+      { 
+        title: "Modulo Cantieri", 
+        duration: "5h 51m", 
+        lessons: [
+          "01-Normativa e principi generali",
+          "02-Progettazione sicurezza del cantiere, campo di applicazione della norma",
+          "03-Definizioni figure della sicurezza in cantiere",
+          "04-Valutazione dei rischi, prevenzione e protezione",
+          "05-Contenuti minimi del POS",
+          "06-Coordinatori della sicurezza in cantiere",
+          "07-Contenuti minimi del PSC - Parte 1",
+          "08-Contenuti minimi del PSC - Parte 2",
+          "09-Principali rischi dell’attività di cantiere",
+          "10-Misure generali di tutela - Parte 1",
+          "11-Misure generali di tutela - Parte 2",
+          "12-Misure generali di tutela - Parte 3",
+          "13-Misure generali di tutela - Parte 4",
+          "14-Misure generali di tutela - Parte 5",
+          "15-Obblighi del Datore di Lavoro",
+          "16-Ruolo del committente e del responsabile dei lavori",
+          "17-Idoneità tecnico-professionale e responsabilità penale",
+          "18-Piano Operativo di Sicurezza",
+          "19-Attrezzature di lavoro, opere provvisionali, PiMUS",
+          "20-Vigilanza del Datore di Lavoro e del preposto, multilinguismo e multiculturalità",
+          "21-Gestione di tutti i rischi del cantiere: CSP e CSE",
+          "22-Strumenti informatici per la comunicazione",
+          "23-I 3 livelli della comunicazione",
+          "24-Empatia e contesto relazionale nella comunicazione",
+          "25-Limiti del linguaggio e tecniche di comunicazione efficace",
+          "26-Il tempo nella comunicazione, percezione del rischio, responsabilizzazione lavoratori",
+          "27-Ascolto, chiarezza e completezza della comunicazione, messaggistica su smartphone"
+        ] 
+      },
+      { 
+        title: "Quiz di verifica", 
+        duration: "1h 50m", 
+        lessons: ["Quiz di verifica dell'apprendimento Formazione per Datore di Lavoro-Modulo Cantieri"] 
+      },
+      { title: "Questionario di Gradimento", duration: "0m", lessons: ["Questionario di gradimento - Coordinatori per la Sicurezza in fase di progettazione e di esecuzione - Modulo Giuridico ( 28 ore)"] }
+    ]
+  },
+  {
+    id: "aggiornamento-coordinatore-sicurezza-40",
+    title: "Aggiornamento Coordinatori per la Sicurezza nei Cantieri CSP - CSE",
+    lessons: 169,
+    duration: "40h",
+    price: "244,00 € + iva",
+    category: "Corsi per Professionisti",
+    description: "Il corso aggiorna i Coordinatori per la Sicurezza su normative, ruoli e responsabilità nei cantieri, fornendo strumenti pratici per gestire la sicurezza.",
+    fullDescription: [
+      "Il corso aggiorna i Coordinatori per la Sicurezza su normative, ruoli e responsabilità nei cantieri, fornendo strumenti pratici per gestire la sicurezza, valutare i rischi e garantire la conformità alle disposizioni del D.Lgs. 81/2008.",
+      "La durata complessiva del corso è di 40 ore, suddivise in 166 moduli formativi, e comprende test intermedi e test finale a risposta multipla.",
+      "Il corso è accessibile per 120 giorni dalla data di attivazione.",
+      "Al termine, verrà rilasciato un certificato di formazione valido ai fini di legge."
+    ],
+    objectives: [
+      "Fornire un aggiornamento completo sulle più recenti disposizioni legislative e regolamentari",
+      "Integrare le norme di buona tecnica e i criteri operativi per la gestione in sicurezza delle attività di cantiere"
+    ],
+    references: [
+      "N.A.S.R. 17/04/2025 Aggiornamento quinquennale di: ASPP/RSPP ex art. 32 D.Lgs. 81/08; Coordinatore della Sicurezza (CSP/CSE) ex art. 98 D.Lgs. 81/08",
+      "Aggiornamento triennale di Formatore SSL ai sensi del D.I. 06/03/2013",
+      "Aggiornamento Professionista HSE - UNI 11720"
+    ],
+    recipients: "Coordinatori per la Sicurezza nei cantieri temporanei o mobili (CSP/CSE) già abilitati, nonché ai professionisti che operano nel settore dei cantieri e che necessitano di assolvere all’obbligo di aggiornamento periodico.",
+    syllabus: [
+      { title: "Documento Progettuale", duration: "0m", lessons: ["Documento Progettuale"] },
+      { 
+        title: "L’approccio alla Prevenzione nel D.Lgs. 81/2008", 
+        duration: "1h 5m", 
+        lessons: [
+          "1-Introduzione al D.lgs. 81/08 e alla valutazione dei rischi",
+          "2-Definizione di concetti base della salute e sicurezza nei luoghi di lavoro",
+          "3-Principi del D.lgs. 81/08: Informazione ai lavoratori",
+          "4-Principi del D.lgs. 81/08: Formazione dei lavoratori e dei loro rappresentanti"
+        ] 
+      },
+      { 
+        title: "Il Sistema Legislativo: Esame delle Normative di Riferimento", 
+        duration: "2h 2m", 
+        lessons: [
+          "1-Introduzione alla storia legislativa a tema salute e sicurezza sul lavoro",
+          "2-L’evoluzione dell’approccio alla salute e sicurezza sul lavoro, istituzione dell’assicurazione, il Codice civile",
+          "3-La Costituzione, il Codice penale, i DPR degli anni ’50",
+          "4-Lo Statuto dei lavoratori, principi cardine dell’art. 2087 del CC, la legislazione degli anni ’80 e ’90",
+          "5-Struttura e contenuti del D.lgs. 81/08",
+          "6-Il quadro giuridico europeo, i profili di responsabilità amministrativa",
+          "7. La legislazione relativa a categorie particolari di lavoratori",
+          "8-Il quadro legislativo antincendio"
+        ] 
+      },
+      { 
+        title: "Prevenzione della Violenza e delle Molestie sul Luogo di Lavoro", 
+        duration: "27m", 
+        lessons: [
+          "1. La Convenzione 190 e la Raccomandazione 206 ILO",
+          "2-La Convenzione 190 e la Raccomandazione 206 ILO"
+        ] 
+      },
+      { 
+        title: "Inserimento di Lavoratori Disabili e loro Tutela", 
+        duration: "1h 11m", 
+        lessons: [
+          "1-Collocamento mirato e obbligatorio, percentuali di invalidità, quote obbligatorie di assunzione",
+          "2-Accertamento commissione medica",
+          "3-Ruolo del medico competente, requisiti di salute e sicurezza degli ambienti di lavoro",
+          "4-La normativa antidiscriminatoria italiana (D.Lgs. 216/2003) e comunitaria (Direttiva 2000/78)",
+          "5-Soluzioni ragionevoli per la parità di trattamento e la L. 99/2013"
+        ] 
+      },
+      { 
+        title: "Il Sistema Istituzionale della Prevenzione", 
+        duration: "24m", 
+        lessons: [
+          "1-Il sistema istituzionale, comitato per le politiche attive e le attività di vigilanza",
+          "2. Enti con compiti in materia di salute e sicurezza"
+        ] 
+      },
+      { 
+        title: "Il Sistema di Vigilanza e Assistenza", 
+        duration: "2h 13m", 
+        lessons: [
+          "1-Organi di controllo e vigilanza",
+          "2-Sistema delle prescrizioni e delle sanzioni: esempi di sentenze",
+          "3-Il ruolo di ASL, INL, VV.F., INAIL, ARPA",
+          "4-Organismi normatori, controlli e verifiche sulle attrezzature, obblighi generali del DdL",
+          "5-Obblighi specifici del DdL",
+          "6-Modalità di effettuazione delle verifiche periodiche",
+          "7-Modalità e tariffe per le verifiche, suddivisione dei gruppi di attrezzature, impianti esclusi",
+          "8-Impianti e apparecchiature elettriche",
+          "9-Informazione, assistenza e consulenza, collaborazione con organismi paritetici"
+        ] 
+      },
+      { 
+        title: "I Soggetti del Sistema di Prevenzione Aziendale", 
+        duration: "4h 2m", 
+        lessons: [
+          "1-Introduzione alle figure principali della sicurezza in azienda",
+          "2-Datore di Lavoro e Dirigente per la sicurezza",
+          "3-Individuazione del Datore di Lavoro",
+          "4-Requisiti e adempimenti per la delega di funzione",
+          "5-Responsabilità amministrativa",
+          "6-Modelli di organizzazione e gestione, obbligo formativo del DdL",
+          "7-Incapacità tecnica del DdL, obbligo di formazione preventiva del personale",
+          "8-Responsabilità civile e penale del DdL: esempi di sentenze",
+          "9-Il ruolo del Preposto",
+          "10-Il ruolo del Responsabile del Servizio di Prevenzione e Protezione",
+          "11-RSPP interno o esterno, ruolo del ASPP, individuazione e valutazione dei rischi",
+          "12-Elaborazione delle misure preventive e delle procedure",
+          "13-Il ruolo del Medico Competente e del Rappresentante dei Lavoratori per la Sicurezza",
+          "14-Individuazione e segnalazione dei rischi",
+          "15-Comunicazione funzionale ed efficace",
+          "16-Ruolo proattivo del RLS",
+          "17-Il ruolo dei Lavoratori e degli Addetti alle Emergenze",
+          "18-Obblighi dei progettisti"
+        ] 
+      },
+      { 
+        title: "Il Processo di Valutazione dei Rischi - parte 1", 
+        duration: "4h 15m", 
+        lessons: [
+          "1-Concetti di pericolo, rischio, danno, prevenzione e protezione",
+          "2-Principio di precauzione",
+          "3-Infortuni: definizione, condizioni necessarie ed esempi",
+          "4-Infortuni: infortunio in itinere e tutela INAIL",
+          "5-Malattie professionali: definizione",
+          "6-Dati statistici INAIL sugli infortuni",
+          "7-Dati statistici INAIL sulle malattie professionali, cause degli infortuni",
+          "8-Fattori oggettivi e soggettivi degli infortuni sul lavoro",
+          "9-Valutazione dei rischi: DVR, modalità di effettuazione e oggetto della valutazione",
+          "10-Valutazione dei rischi",
+          "11-Valutazione dei rischi: riferimenti e obblighi normativi",
+          "12-Valutazione dei rischi",
+          "13-Fasi della valutazione dei rischi",
+          "14-Fasi della valutazione dei rischi",
+          "15-Applicazione delle procedure standardizzate per la valutazione dei rischi"
+        ] 
+      },
+      { 
+        title: "Il Processo di Valutazione dei Rischi - parte 2", 
+        duration: "2h 1m", 
+        lessons: [
+          "1-Valutazione dei rischi da interferenze",
+          "2-Luoghi di lavoro e stress lavoro-correlato",
+          "3-Movimentazione manuale dei carichi e movimenti ripetitivi",
+          "4-Lavoro al videoterminale",
+          "5-Attrezzature di lavoro, rischi meccanici e da esposizione a vibrazioni",
+          "6-Rischio elettrico e campi elettromagnetici",
+          "7-Rischio chimico",
+          "8-Contenuti e organizzazione del DVR"
+        ] 
+      },
+      { 
+        title: "Il Processo di Valutazione dei Rischi - parte 3", 
+        duration: "1h 36m", 
+        lessons: [
+          "1-Sicurezza o produzione?",
+          "2-I costi della NON sicurezza",
+          "3-I costi degli infortuni",
+          "4-Costi palesi e costi nascosti",
+          "5-MOG di tipo volontario - D.Lgs. 231/01",
+          "6-MOG di tipo volontario",
+          "7. MOG di tipo volontario: 231 e 81/08, sanzioni interdittive"
+        ] 
+      },
+      { 
+        title: "I Dispositivi di Protezione Collettiva e Individuale", 
+        duration: "28m", 
+        lessons: [
+          "1-DPI per la protezione degli occhi",
+          "2-DPI per la protezione di mani e vie respiratorie"
+        ] 
+      },
+      { 
+        title: "La Gestione delle Emergenze", 
+        duration: "2h 11m", 
+        lessons: [
+          "1-Gestione delle emergenze",
+          "2-Rischio incendio e cenni di primo soccorso",
+          "3-Addetti alla gestione delle emergenze",
+          "4-Normativa antincendio e piano di emergenza ed evacuazione (PEE)",
+          "5-Contenuti del PEE",
+          "6-Gestione della sicurezza antincendio in esercizio ed in emergenza",
+          "7-Esempio di PEE e procedure per la gestione delle emergenze"
+        ] 
+      },
+      { 
+        title: "La Sorveglianza Sanitaria", 
+        duration: "1h 17m", 
+        lessons: [
+          "1-Introduzione alla sorveglianza sanitaria",
+          "2-Sorveglianza sanitaria: principi fondamentali",
+          "3-Sorveglianza sanitaria: visite mediche",
+          "4-Sorveglianza sanitaria: attività di prevenzione",
+          "5-Sorveglianza sanitaria: titoli, ruolo e compiti del medico competente",
+          "6-Sorveglianza sanitaria: sorveglianza preventiva",
+          "7-Tutela per le lavoratrici madri"
+        ] 
+      },
+      { 
+        title: "Consultazione e Partecipazione - Informazione, Formazione e Addestramento", 
+        duration: "3h 32m", 
+        lessons: [
+          "1-Introduzione alla comunicazione nei luoghi di lavoro, stili comunicativi",
+          "2-Comunicazione assertiva e destinatari della formazione",
+          "3-Difficoltà dei discenti, contenuto e motivazione della formazione",
+          "4-Metodo e processo formativo, la formazione nel D.Lgs. 81/08",
+          "5-Cultura della sicurezza e formazione, formazione dei preposti e degli RLS",
+          "6-Valutazione dei rischi e formazione per l’utilizzo dei macchinari",
+          "7-Formazione dei lavoratori: generale, specifica e aggiornamento",
+          "8-Formazione e addestramento, qualifiche dei formatori, formazione particolare",
+          "9-Formazione per le attrezzature di lavoro, per il DdL e i dirigenti",
+          "10-Formazione degli addetti alle emergenze",
+          "11-Comunicare in azienda: strumenti di intelligenza artificiale, comunicazione empatica",
+          "12-Comunicare in azienda: gestione delle riunioni",
+          "13-Comunicare in azienda: responsabilità, condivisione e disponibilità",
+          "14-Comunicare in azienda: feedback, barriere linguistiche e di linguaggio"
+        ] 
+      },
+      { 
+        title: "Modulo Cantieri", 
+        duration: "5h 51m", 
+        lessons: [
+          "01-Normativa e principi generali",
+          "02-Progettazione sicurezza del cantiere, campo di applicazione della norma",
+          "03-Definizioni figure della sicurezza in cantiere",
+          "04-Valutazione dei rischi, prevenzione e protezione",
+          "05-Contenuti minimi del POS",
+          "06-Coordinatori della sicurezza in cantiere",
+          "07-Contenuti minimi del PSC - Parte 1",
+          "08-Contenuti minimi del PSC - Parte 2",
+          "09-Principali rischi dell’attività di cantiere",
+          "10-Misure generali di tutela - Parte 1",
+          "11-Misure generali di tutela - Parte 2",
+          "12-Misure generali di tutela - Parte 3",
+          "13-Misure generali di tutela - Parte 4",
+          "14-Misure generali di tutela - Parte 5",
+          "15-Obblighi del Datore di Lavoro",
+          "16-Ruolo del committente e del responsabile dei lavori",
+          "17-Idoneità tecnico-professionale e responsabilità penale",
+          "18-Piano Operativo di Sicurezza",
+          "19-Attrezzature di lavoro, opere provvisionali, PiMUS",
+          "20-Vigilanza del Datore di Lavoro e del preposto, multilinguismo e multiculturalità",
+          "21-Gestione di tutti i rischi del cantiere: CSP e CSE",
+          "22-Strumenti informatici per la comunicazione",
+          "23-I 3 livelli della comunicazione",
+          "24-Empatia e contesto relazionale nella comunicazione",
+          "25-Limiti del linguaggio e tecniche di comunicazione efficace",
+          "26-Il tempo nella comunicazione, percezione del rischio, responsabilizzazione lavoratori",
+          "27-Ascolto, chiarezza e completezza della comunicazione, messaggistica su smartphone"
+        ] 
+      },
+      { 
+        title: "Il ruolo e le responsabilità del RSPP", 
+        duration: "1h 39m", 
+        lessons: [
+          "1. Ruolo e responsabilità del RSPP",
+          "2. Esempi di sentenze e casi giuridici con responsabilità penale del RSPP",
+          "3. Tracciabilità dell’operato del RSPP, responsabilità civile e assicurazioni",
+          "4. 10 regole fondamentali per l’attività del RSPP - Parte 1",
+          "5. 10 regole fondamentali per l’attività del RSPP - Parte 2",
+          "6. 10 regole fondamentali per l’attività del RSPP - Parte 3"
+        ] 
+      },
+      { 
+        title: "Il processo di valutazione dei rischi (Risk Assessment)", 
+        duration: "3h 39m", 
+        lessons: [
+          "1. Percorso storico della normativa sulla sicurezza - Parte 1",
+          "2. Percorso storico della normativa sulla sicurezza - Parte 2",
+          "3. Definizioni delle figure e dei concetti della SSL",
+          "4. Misure generali di tutela, oggetto e contenuti della valutazione dei rischi",
+          "5. Norme e standard nazionali e internazionali",
+          "6. ISO 31000: principi, struttura, processo",
+          "7. Descrizioni delle tecniche della norma UNI CEI EN IEC 31010",
+          "8. UNI EN ISO 12100: fasi del processo di Risk Assessment",
+          "9. ISO/TR 14121-2: metodi per l’analisi del rischio",
+          "10. Metodo grafico, metodo a matrice e metodo ibrido",
+          "11. Esempio pratico di DVR - Parte 1",
+          "12. Esempio pratico di DVR - Parte 2",
+          "13. Esempio pratico di DVR - Parte 3",
+          "14. ISO 45001: come funziona un sistema di gestione"
+        ] 
+      },
+      { 
+        title: "Il DUVRI: come redigerlo per valutare e gestire i rischi interferenti", 
+        duration: "2h 37m", 
+        lessons: [
+          "1. Interferenze lavorative nell’evoluzione della normativa",
+          "2. Prevenzione e protezione, cooperazione e coordinamento",
+          "3. Interferenze e rischi interferenti, DUVRI nei cantieri",
+          "4. Reperire le informazioni per elaborare il DUVRI",
+          "5. Caratteristiche e contenuti del DUVRI - Parte 1",
+          "6. Caratteristiche e contenuti del DUVRI - Parte 2",
+          "7. Interferenze con gli utenti esterni",
+          "8. Esempio pratico di DUVRI (modello INAIL) - Parte 1",
+          "9. Esempio pratico di DUVRI (modello INAIL) - Parte 2",
+          "10. Esempio pratico di DUVRI (modello INAIL) - Parte 3",
+          "11. Esempio pratico di DUVRI (modello INAIL) - Parte 4"
+        ] 
+      },
+      { 
+        title: "Quiz di Verifica", 
+        duration: "1h 0m", 
+        lessons: ["Quiz di Verifica dell'apprendimento - Aggiornamento Coordinatori per la Sicurezza nei Cantieri CSP - CSE"] 
+      },
+      { title: "Questionario di Gradimento", duration: "0m", lessons: ["Questionario di gradimento - Aggiornamento Coordinatori per la Sicurezza nei Cantieri CSP - CSE"] }
+    ]
   }
 ];
 
