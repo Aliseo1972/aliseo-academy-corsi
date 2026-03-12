@@ -1806,6 +1806,8 @@ export default function App() {
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery'>('home');
   const [showCookieBanner, setShowCookieBanner] = useState(true);
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
+  const [showCookieModal, setShowCookieModal] = useState(false);
 
   const filteredCourses = useMemo(() => {
     return courses.filter(course => {
@@ -2373,8 +2375,22 @@ export default function App() {
                     <Play className="w-3 h-3" />
                   </button>
                 </li>
-                <li><a href="#" className="hover:text-brand transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-brand transition-colors">Cookie Policy</a></li>
+                <li>
+                  <button 
+                    onClick={() => setShowPrivacyModal(true)}
+                    className="hover:text-brand transition-colors cursor-pointer"
+                  >
+                    Privacy Policy
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => setShowCookieModal(true)}
+                    className="hover:text-brand transition-colors cursor-pointer"
+                  >
+                    Cookie Policy
+                  </button>
+                </li>
                 <li><a href="#" className="hover:text-brand transition-colors">Termini e Condizioni</a></li>
               </ul>
             </div>
@@ -2405,7 +2421,7 @@ export default function App() {
                 <label className="flex items-start gap-2 cursor-pointer group">
                   <input type="checkbox" className="mt-1 accent-brand" />
                   <span className="text-[10px] leading-tight group-hover:text-slate-300 transition-colors">
-                    Accetto la <a href="#" className="text-brand hover:underline">Privacy Policy</a> per l'invio di comunicazioni commerciali.
+                    Accetto la <button onClick={(e) => { e.preventDefault(); setShowPrivacyModal(true); }} className="text-brand hover:underline">Privacy Policy</button> per l'invio di comunicazioni commerciali.
                   </span>
                 </label>
               </div>
@@ -2443,7 +2459,7 @@ export default function App() {
                 <div className="flex-grow">
                   <h5 className="text-white font-bold mb-2">Informativa sui Cookie</h5>
                   <p className="text-slate-400 text-sm leading-relaxed">
-                    Utilizziamo i cookie per migliorare la tua esperienza sul nostro sito. Alcuni sono necessari per il funzionamento, altri ci aiutano a capire come utilizzi il sito. Puoi accettarli tutti o gestire le tue preferenze. Consulta la nostra <a href="#" className="text-brand hover:underline">Cookie Policy</a>.
+                    Utilizziamo i cookie per migliorare la tua esperienza sul nostro sito. Alcuni sono necessari per il funzionamento, altri ci aiutano a capire come utilizzi il sito. Puoi accettarli tutti o gestire le tue preferenze. Consulta la nostra <button onClick={() => setShowCookieModal(true)} className="text-brand hover:underline">Cookie Policy</button>.
                   </p>
                 </div>
                 <div className="flex gap-3 shrink-0 w-full md:w-auto">
@@ -2462,6 +2478,111 @@ export default function App() {
                 </div>
               </div>
             </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Legal Modals */}
+      <AnimatePresence>
+        {(showPrivacyModal || showCookieModal) && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm"
+            onClick={() => { setShowPrivacyModal(false); setShowCookieModal(false); }}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="bg-white w-full max-w-4xl max-h-[80vh] overflow-y-auto rounded-3xl shadow-2xl p-8 md:p-12 relative"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button 
+                onClick={() => { setShowPrivacyModal(false); setShowCookieModal(false); }}
+                className="absolute top-6 right-6 p-2 hover:bg-slate-100 rounded-full transition-colors"
+              >
+                <X className="w-6 h-6 text-slate-400" />
+              </button>
+
+              <div className="prose prose-slate max-w-none">
+                {showPrivacyModal ? (
+                  <>
+                    <h2 className="text-3xl font-black text-slate-900 mb-6 uppercase tracking-tighter">Privacy Policy</h2>
+                    <p className="text-slate-600 mb-4">Ultimo aggiornamento: {new Date().toLocaleDateString('it-IT')}</p>
+                    
+                    <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">1. Titolare del Trattamento</h3>
+                    <p className="text-slate-600">
+                      Il Titolare del trattamento è <strong>Aliseo Group S.r.l.</strong>, con sede legale in Viale Bruno Buozzi 14, 50059 Empoli (FI). 
+                      Email di contatto: commerciale@aliseogroup.it
+                    </p>
+
+                    <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">2. Tipologia di dati raccolti</h3>
+                    <p className="text-slate-600">
+                      I dati personali raccolti tramite questo sito includono: nome, email, numero di telefono (se forniti volontariamente tramite i moduli di contatto) e dati di navigazione (indirizzo IP, tipo di browser).
+                    </p>
+
+                    <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">3. Finalità del trattamento</h3>
+                    <p className="text-slate-600">
+                      I dati sono trattati per le seguenti finalità:
+                    </p>
+                    <ul className="list-disc pl-6 text-slate-600 space-y-2">
+                      <li>Rispondere alle richieste di informazioni inviate tramite i moduli.</li>
+                      <li>Inviare comunicazioni commerciali e newsletter (previo consenso esplicito).</li>
+                      <li>Adempiere agli obblighi di legge.</li>
+                      <li>Migliorare l'esperienza di navigazione sul sito.</li>
+                    </ul>
+
+                    <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">4. Base giuridica</h3>
+                    <p className="text-slate-600">
+                      Il trattamento si basa sul consenso dell'interessato, sull'esecuzione di un contratto o di misure precontrattuali e sull'adempimento di obblighi legali.
+                    </p>
+
+                    <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">5. Diritti dell'interessato</h3>
+                    <p className="text-slate-600">
+                      Ai sensi del GDPR (UE 2016/679), l'utente ha il diritto di accedere ai propri dati, chiederne la rettifica, la cancellazione o la limitazione del trattamento. Può inoltre opporsi al trattamento e ha il diritto alla portabilità dei dati.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <h2 className="text-3xl font-black text-slate-900 mb-6 uppercase tracking-tighter">Cookie Policy</h2>
+                    <p className="text-slate-600 mb-4">Ultimo aggiornamento: {new Date().toLocaleDateString('it-IT')}</p>
+
+                    <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Cosa sono i cookie</h3>
+                    <p className="text-slate-600">
+                      I cookie sono piccoli file di testo che i siti visitati dall'utente inviano al suo terminale, dove vengono memorizzati per essere poi ritrasmessi agli stessi siti alla successiva visita del medesimo utente.
+                    </p>
+
+                    <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Tipologie di cookie utilizzati</h3>
+                    <div className="space-y-4">
+                      <div className="p-4 bg-slate-50 rounded-xl">
+                        <p className="font-bold text-slate-900">Cookie Tecnici</p>
+                        <p className="text-sm text-slate-600">Necessari per il corretto funzionamento del sito e per salvare le preferenze dell'utente (es. accettazione dei cookie).</p>
+                      </div>
+                      <div className="p-4 bg-slate-50 rounded-xl">
+                        <p className="font-bold text-slate-900">Cookie Analitici</p>
+                        <p className="text-sm text-slate-600">Utilizzati per raccogliere informazioni in forma aggregata sul numero degli utenti e su come questi visitano il sito.</p>
+                      </div>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Gestione dei cookie</h3>
+                    <p className="text-slate-600">
+                      L'utente può gestire le preferenze relative ai cookie direttamente all'interno del proprio browser ed impedire – ad esempio – che terze parti possano installarne. Tramite le preferenze del browser è inoltre possibile eliminare i cookie installati in passato.
+                    </p>
+                  </>
+                )}
+                
+                <div className="mt-12 pt-8 border-t border-slate-100 flex justify-end">
+                  <button 
+                    onClick={() => { setShowPrivacyModal(false); setShowCookieModal(false); }}
+                    className="px-8 py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-colors"
+                  >
+                    Ho capito
+                  </button>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
