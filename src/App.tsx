@@ -440,8 +440,7 @@ const GallerySection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'a
     "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/5866332039d6a309cdcc4b51f081f55d.png",
     "https://raw.githubusercontent.com/Aliseo1972/aliseo-academy-corsi/main/truck%20academy.jpg",
     "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/a614b7a621d8e8b7b585fff78f4471a7.png",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/a6f0a7bbca729ae254a0258055dfc9bd.png",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/b31b33ac29aa05d338df9bf24fce1641.png"
+    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/a6f0a7bbca729ae254a0258055dfc9bd.png"
   ];
 
   return (
