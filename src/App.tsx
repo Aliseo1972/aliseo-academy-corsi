@@ -2391,7 +2391,7 @@ export default function App() {
                     Cookie Policy
                   </button>
                 </li>
-                <li><a href="#" className="hover:text-brand transition-colors">Termini e Condizioni</a></li>
+                <li><a href="/termini.html" className="hover:text-brand transition-colors">Termini e Condizioni</a>
               </ul>
             </div>
 
