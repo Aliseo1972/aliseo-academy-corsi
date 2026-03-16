@@ -1710,7 +1710,7 @@ const MobileCenterSection = ({ setCurrentView }: { setCurrentView: (view: 'home'
   const videos = [
     {
       title: "VIDEO SPAZI CONFINATI",
-      url: "https://www.canva.com/design/DAG0jCPmYDA/AAb2A9TWl3AR7Wh-lGoAnQ/watch?utm_content=DAG0jCPmYDA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h05389da50f"
+      url: "/video/spazi-confinati.mp4"
     },
     {
       title: "VIDEO RECUPERO DA TERRA",
