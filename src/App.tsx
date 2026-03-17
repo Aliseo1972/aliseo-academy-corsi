@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Shield, 
@@ -12,6 +12,7 @@ import {
   Euro, 
   Search, 
   ChevronRight, 
+  ChevronLeft,
   Menu, 
   X, 
   Phone, 
@@ -412,36 +413,63 @@ const AboutSection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'abo
 };
 
 const GallerySection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery') => void }) => {
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
   const photos = [
-    "https://raw.githubusercontent.com/Aliseo1972/aliseo-academy-corsi/main/foto-test.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/109ddbd40509449f98fbd1b95fa87c33.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/623db9facc1e37d256286ad012a621cf.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/48fbd7ea51389a22632142f92125b4d3.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/6830b15208d08bcfbe6b1a5a5fed833b.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/ce5f401bc1ead0265ce9af272803e565.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/ec1837b838e2020d5a40b1c67e099929.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/24198bf85c902eb9e90bf5abe3bdb069.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/6705040ec31c92f11d2f1cbdf81de976.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/fbec4c5d34fc817ca45c688f185a76c6.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/b3fb681d44f025510001dbdcaa230f7a.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/0c39fd6d59a6d9531f05beec5bfef44e.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/0adbcb67a941a17c6562c11ea4f06179.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/563d1bc450ca83dba070f114d8be1a5f.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/e8b2815d8721c9e4e1b6f591437244cd.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/6767bded65728fb3502b7339ffd42423.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/b504ad24c6fc2501d7c517828c536970.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/87d61cd8c6c0ff726d9cafd2774836bf.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/eff093fc79b43b6e6a852fd4165edcd9.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/d13c85e311c44c32f48b2929f1b65560.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/0bc5237fc46e848bbf053e3fe9a4aa28.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/1672879bd08ced072cf3dd5e4243f147.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/a13539c9fd3aefdcab94af11705e1dd8.png",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/3eb82d587a9d51e041dce23846a69c8d.png",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/5866332039d6a309cdcc4b51f081f55d.png",
-    "https://raw.githubusercontent.com/Aliseo1972/aliseo-academy-corsi/main/truck%20academy.jpg",
-    "https://aliseogroup.my.canva.site/galleria-foto-sito-corsi/_assets/media/a614b7a621d8e8b7b585fff78f4471a7.png",
-    "https://raw.githubusercontent.com/Aliseo1972/aliseo-academy-corsi/main/truck_turbine.jpg"
+    "/foto1.jpg",
+    "/foto2.jpg",
+    "/foto3.jpg",
+    "/foto4.jpg",
+    "/foto5.jpg",
+    "/foto6.jpg",
+    "/foto7.jpg",
+    "/foto8.jpg",
+    "/foto9.jpg",
+    "/foto10.jpg",
+    "/foto11.jpg",
+    "/foto12.jpg",
+    "/foto13.jpg",
+    "/foto14.jpg",
+    "/foto15.jpg",
+    "/truck_turbine.jpg",
+    "/truck academy.jpg"
   ];
+
+  const handleNext = useCallback(() => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex + 1) % photos.length);
+    }
+  }, [selectedIndex, photos.length]);
+
+  const handlePrev = useCallback(() => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex - 1 + photos.length) % photos.length);
+    }
+  }, [selectedIndex, photos.length]);
+
+  const handleClose = useCallback(() => {
+    setSelectedIndex(null);
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedIndex === null) return;
+      if (e.key === 'ArrowRight') handleNext();
+      if (e.key === 'ArrowLeft') handlePrev();
+      if (e.key === 'Escape') handleClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedIndex, handleNext, handlePrev, handleClose]);
+
+  useEffect(() => {
+    if (selectedIndex !== null) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [selectedIndex]);
 
   return (
     <motion.div 
@@ -473,7 +501,8 @@ const GallerySection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'a
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-200 group relative"
+              onClick={() => setSelectedIndex(index)}
+              className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-200 group relative cursor-pointer"
             >
               <img 
                 src={photo} 
@@ -482,7 +511,9 @@ const GallerySection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'a
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <Search className="w-8 h-8 text-white" />
+                <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30">
+                  <Search className="w-6 h-6 text-white" />
+                </div>
               </div>
             </motion.div>
           ))}
@@ -500,6 +531,67 @@ const GallerySection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'a
           </button>
         </div>
       </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {selectedIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[300] bg-slate-950/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-10"
+            onClick={handleClose}
+          >
+            <button 
+              onClick={(e) => { e.stopPropagation(); handleClose(); }}
+              className="absolute top-6 right-6 z-[310] p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            <button 
+              onClick={(e) => { e.stopPropagation(); handlePrev(); }}
+              className="absolute left-6 top-1/2 -translate-y-1/2 z-[310] p-4 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors hidden md:block"
+            >
+              <ChevronLeft className="w-8 h-8" />
+            </button>
+
+            <button 
+              onClick={(e) => { e.stopPropagation(); handleNext(); }}
+              className="absolute right-6 top-1/2 -translate-y-1/2 z-[310] p-4 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors hidden md:block"
+            >
+              <ChevronRight className="w-8 h-8" />
+            </button>
+
+            <motion.div
+              key={selectedIndex}
+              initial={{ opacity: 0, scale: 0.9, x: 20 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              exit={{ opacity: 0, scale: 0.9, x: -20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="relative max-w-full max-h-full flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.2}
+              onDragEnd={(_, info) => {
+                if (info.offset.x > 100) handlePrev();
+                else if (info.offset.x < -100) handleNext();
+              }}
+            >
+              <img
+                src={photos[selectedIndex]}
+                alt={`Ingrandimento ${selectedIndex + 1}`}
+                className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl pointer-events-none"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute -bottom-12 left-0 right-0 text-center text-white/60 text-sm font-medium">
+                Immagine {selectedIndex + 1} di {photos.length}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 };
@@ -1706,11 +1798,14 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: 'home' | '
   );
 };
 
-const MobileCenterSection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery') => void }) => {
+const MobileCenterSection = ({ setCurrentView, setActiveVideo }: { 
+  setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery') => void,
+  setActiveVideo: (url: string | null) => void 
+}) => {
   const videos = [
     {
       title: "VIDEO SPAZI CONFINATI",
-      url: "/video/spazi-confinati.mp4"
+      url: "/spazi-confinati.mp4"
     },
     {
       title: "VIDEO RECUPERO DA TERRA",
@@ -1736,12 +1831,10 @@ const MobileCenterSection = ({ setCurrentView }: { setCurrentView: (view: 'home'
 
       <div className="grid grid-cols-1 gap-6 max-w-2xl mx-auto">
         {videos.map((video, index) => (
-          <a
+          <button
             key={index}
-            href={video.url}
-            target="_blank"
-            rel="noreferrer"
-            className="group relative bg-white rounded-3xl border border-slate-100 p-8 shadow-xl shadow-slate-200/50 hover:border-brand transition-all flex items-center justify-between overflow-hidden"
+            onClick={() => setActiveVideo(video.url)}
+            className="group relative bg-white rounded-3xl border border-slate-100 p-8 shadow-xl shadow-slate-200/50 hover:border-brand transition-all flex items-center justify-between overflow-hidden text-left w-full"
           >
             <div className="absolute inset-0 bg-brand/5 opacity-0 group-hover:opacity-100 transition-opacity" />
             <div className="relative flex items-center gap-6">
@@ -1753,7 +1846,7 @@ const MobileCenterSection = ({ setCurrentView }: { setCurrentView: (view: 'home'
               </h2>
             </div>
             <ArrowRight className="relative w-8 h-8 text-slate-300 group-hover:text-brand group-hover:translate-x-2 transition-all" />
-          </a>
+          </button>
         ))}
 
         <button
@@ -1808,6 +1901,8 @@ export default function App() {
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showCookieModal, setShowCookieModal] = useState(false);
+  const [showTermsModal, setShowTermsModal] = useState(false);
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   const filteredCourses = useMemo(() => {
     return courses.filter(course => {
@@ -2252,7 +2347,7 @@ export default function App() {
   ) : currentView === 'about' ? (
     <AboutSection setCurrentView={setCurrentView} />
   ) : currentView === 'mobile-center' ? (
-    <MobileCenterSection setCurrentView={setCurrentView} />
+    <MobileCenterSection setCurrentView={setCurrentView} setActiveVideo={setActiveVideo} />
   ) : currentView === 'gwo-training' ? (
     <GWOTrainingSection setCurrentView={setCurrentView} />
   ) : currentView === 'gallery' ? (
@@ -2392,10 +2487,13 @@ export default function App() {
                   </button>
                 </li>
                 <li>
-  <a href="/termini.html" className="hover:text-brand transition-colors">
-    Termini e Condizioni
-  </a>
-</li>
+                  <button 
+                    onClick={() => setShowTermsModal(true)}
+                    className="hover:text-brand transition-colors cursor-pointer"
+                  >
+                    Termini e Condizioni
+                  </button>
+                </li>
               </ul>
             </div>
 
@@ -2488,13 +2586,13 @@ export default function App() {
 
       {/* Legal Modals */}
       <AnimatePresence>
-        {(showPrivacyModal || showCookieModal) && (
+        {(showPrivacyModal || showCookieModal || showTermsModal) && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm"
-            onClick={() => { setShowPrivacyModal(false); setShowCookieModal(false); }}
+            onClick={() => { setShowPrivacyModal(false); setShowCookieModal(false); setShowTermsModal(false); }}
           >
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
@@ -2504,14 +2602,48 @@ export default function App() {
               onClick={(e) => e.stopPropagation()}
             >
               <button 
-                onClick={() => { setShowPrivacyModal(false); setShowCookieModal(false); }}
+                onClick={() => { setShowPrivacyModal(false); setShowCookieModal(false); setShowTermsModal(false); }}
                 className="absolute top-6 right-6 p-2 hover:bg-slate-100 rounded-full transition-colors"
               >
                 <X className="w-6 h-6 text-slate-400" />
               </button>
 
               <div className="prose prose-slate max-w-none">
-                {showPrivacyModal ? (
+                {showTermsModal ? (
+                  <>
+                    <h2 className="text-3xl font-black text-slate-900 mb-6 uppercase tracking-tighter">Termini e Condizioni</h2>
+                    
+                    <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">1. Oggetto</h3>
+                    <p className="text-slate-600">
+                      Il presente sito web è gestito da <strong>Aliseo Group S.r.l.</strong> e ha lo scopo di fornire informazioni sui servizi di formazione erogati.
+                    </p>
+
+                    <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">2. Servizi offerti</h3>
+                    <p className="text-slate-600">
+                      Aliseo Academy eroga corsi di formazione in materia di sicurezza sul lavoro e formazione per il settore eolico.
+                    </p>
+
+                    <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">3. Iscrizione ai corsi</h3>
+                    <p className="text-slate-600">
+                      L'iscrizione ai corsi avviene tramite contatto diretto con l'azienda o tramite i moduli presenti sul sito.
+                    </p>
+
+                    <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">4. Responsabilità</h3>
+                    <p className="text-slate-600">
+                      Le informazioni presenti sul sito sono fornite a scopo informativo e possono essere soggette a modifiche.
+                    </p>
+
+                    <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">5. Proprietà intellettuale</h3>
+                    <p className="text-slate-600">
+                      Tutti i contenuti del sito (testi, immagini, loghi) sono proprietà di <strong>Aliseo Group S.r.l.</strong> e non possono essere utilizzati senza autorizzazione.
+                    </p>
+
+                    <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">6. Legge applicabile</h3>
+                    <p className="text-slate-600">
+                      Le presenti condizioni sono regolate dalla legge italiana.
+                    </p>
+                  </>
+                ) : showPrivacyModal ? (
                   <>
                     <h2 className="text-3xl font-black text-slate-900 mb-6 uppercase tracking-tighter">Privacy Policy</h2>
                     <p className="text-slate-600 mb-4">Ultimo aggiornamento: {new Date().toLocaleDateString('it-IT')}</p>
@@ -2534,7 +2666,7 @@ export default function App() {
                     <ul className="list-disc pl-6 text-slate-600 space-y-2">
                       <li>Rispondere alle richieste di informazioni inviate tramite i moduli.</li>
                       <li>Inviare comunicazioni commerciali e newsletter (previo consenso esplicito).</li>
-                      <li>Adempiere agli obblighi di legge.</li>
+                      <li>Adempiere agli obbligo di legge.</li>
                       <li>Migliorare l'esperienza di navigazione sul sito.</li>
                     </ul>
 
@@ -2579,7 +2711,7 @@ export default function App() {
                 
                 <div className="mt-12 pt-8 border-t border-slate-100 flex justify-end">
                   <button 
-                    onClick={() => { setShowPrivacyModal(false); setShowCookieModal(false); }}
+                    onClick={() => { setShowPrivacyModal(false); setShowCookieModal(false); setShowTermsModal(false); }}
                     className="px-8 py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition-colors"
                   >
                     Ho capito
@@ -2587,6 +2719,44 @@ export default function App() {
                 </div>
               </div>
             </motion.div>
+          </motion.div>
+        )}
+
+        {activeVideo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[400] bg-slate-950/95 backdrop-blur-md flex items-center justify-center p-4 md:p-10"
+            onClick={() => setActiveVideo(null)}
+          >
+            <button 
+              onClick={() => setActiveVideo(null)}
+              className="absolute top-6 right-6 z-[410] p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <div className="relative w-full max-w-5xl aspect-video rounded-3xl overflow-hidden shadow-2xl bg-black" onClick={e => e.stopPropagation()}>
+              {activeVideo.includes('canva.com') ? (
+                <iframe 
+                  src={activeVideo}
+                  className="w-full h-full border-0"
+                  allow="autoplay; fullscreen"
+                  title="Video Player"
+                />
+              ) : (
+                <video 
+                  key={activeVideo}
+                  controls 
+                  autoPlay 
+                  className="w-full h-full"
+                  playsInline
+                >
+                  <source src={activeVideo} type="video/mp4" />
+                  Il tuo browser non supporta il tag video.
+                </video>
+              )}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
