@@ -27,6 +27,7 @@ import {
 } from 'lucide-react';
 import { courses, categories } from './data/courses';
 import { Course } from './types';
+import RLSPage from './components/RLSPage';
 
 const CourseCard = ({ course, onOpen }: { course: Course; onOpen: (course: Course) => void; key?: string | number }) => {
   return (
@@ -249,7 +250,7 @@ const CourseModal = ({ course, onClose }: { course: Course; onClose: () => void 
   );
 };
 
-const AboutSection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery') => void }) => {
+const AboutSection = ({ setCurrentView }: { setCurrentView: (view: any) => void }) => {
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -414,7 +415,7 @@ const AboutSection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'abo
   );
 };
 
-const GallerySection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery') => void }) => {
+const GallerySection = ({ setCurrentView }: { setCurrentView: (view: any) => void }) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const photos = [
@@ -598,7 +599,7 @@ const GallerySection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'a
   );
 };
 
-const GWOTrainingSection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery') => void }) => {
+const GWOTrainingSection = ({ setCurrentView }: { setCurrentView: (view: any) => void }) => {
   const [searchQuery, setSearchQuery] = useState("");
   
   const trainingModules = [
@@ -847,7 +848,7 @@ const GWOTrainingSection = ({ setCurrentView }: { setCurrentView: (view: 'home' 
   );
 };
 
-const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery') => void }) => {
+const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => void }) => {
   const [expandedCourse, setExpandedCourse] = useState<number | null>(null);
 
   const courses8108 = [
@@ -1844,7 +1845,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: 'home' | '
 };
 
 const MobileCenterSection = ({ setCurrentView, setActiveVideo }: { 
-  setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery') => void,
+  setCurrentView: (view: any) => void,
   setActiveVideo: (url: string | null) => void 
 }) => {
   const videos = [
@@ -2226,13 +2227,35 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'rls-page'>('home');
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showCookieModal, setShowCookieModal] = useState(false);
   const [showTermsModal, setShowTermsModal] = useState(false);
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const isPopState = useRef(false);
+
+  const navigateToView = (view: typeof currentView, category?: string) => {
+    setCurrentView(view);
+    if (category) setSelectedCategory(category);
+    
+    let path = '/';
+    if (view === 'rls-page') {
+      path = '/corso-rls-rappresentante-lavoratori-sicurezza';
+    }
+    
+    window.history.pushState({ view, category: category || selectedCategory }, '', path);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsMenuOpen(false);
+  };
+
+  const handleCourseOpen = (course: Course) => {
+    if (course.id === "50") {
+      navigateToView('rls-page');
+    } else {
+      setSelectedCourse(course);
+    }
+  };
 
   // Gestione della cronologia del browser per navigazione SPA e parametri URL
   useEffect(() => {
@@ -2269,18 +2292,23 @@ export default function App() {
     window.addEventListener('popstate', handlePopState);
     
     // Controllo iniziale al caricamento della pagina
-    const params = new URLSearchParams(window.location.search);
-    const courseId = params.get('corso');
-    if (courseId) {
-      const course = courses.find(c => c.id === courseId);
-      if (course) {
-        setSelectedCourse(course);
-        // Se il corso è per professionisti, cambiamo vista
-        if (course.category === "Corsi per Professionisti") {
-          setCurrentView('professionisti');
-          setSelectedCategory("Corsi per Professionisti");
-        } else {
-          setCurrentView('elearning');
+    const path = window.location.pathname;
+    if (path === '/corso-rls-rappresentante-lavoratori-sicurezza') {
+      setCurrentView('rls-page');
+    } else {
+      const params = new URLSearchParams(window.location.search);
+      const courseId = params.get('corso');
+      if (courseId) {
+        const course = courses.find(c => c.id === courseId);
+        if (course) {
+          setSelectedCourse(course);
+          // Se il corso è per professionisti, cambiamo vista
+          if (course.category === "Corsi per Professionisti") {
+            setCurrentView('professionisti');
+            setSelectedCategory("Corsi per Professionisti");
+          } else {
+            setCurrentView('elearning');
+          }
         }
       }
     }
@@ -2288,10 +2316,11 @@ export default function App() {
     // Stato iniziale se non presente
     if (!window.history.state) {
       const initialParams = new URLSearchParams(window.location.search);
+      const initialCourseId = initialParams.get('corso');
       window.history.replaceState({ 
         view: currentView, 
         category: selectedCategory,
-        courseId: courseId || null 
+        courseId: initialCourseId || null 
       }, '');
     }
 
@@ -2382,63 +2411,47 @@ export default function App() {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-3 xl:space-x-4 2xl:space-x-6">
               <button 
-                onClick={() => setCurrentView('about')}
+                onClick={() => navigateToView('about')}
                 className="text-[13px] xl:text-sm font-bold text-slate-600 hover:text-brand transition-colors whitespace-nowrap"
               >
                 Chi Siamo
               </button>
               <button 
-                onClick={() => {
-                  setCurrentView('professionisti');
-                  setSelectedCategory("Corsi per Professionisti");
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
+                onClick={() => navigateToView('professionisti', "Corsi per Professionisti")}
                 className={`text-[13px] xl:text-sm font-bold transition-colors whitespace-nowrap ${currentView === 'professionisti' ? 'text-brand' : 'text-slate-600 hover:text-brand'}`}
               >
                 Corsi per Professionisti
               </button>
               <button 
                 onClick={() => {
-                  document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' });
+                  const contacts = document.getElementById('contacts');
+                  if (contacts) contacts.scrollIntoView({ behavior: 'smooth' });
                 }}
                 className="text-[13px] xl:text-sm font-bold text-slate-600 hover:text-brand transition-colors whitespace-nowrap"
               >
                 Contatti
               </button>
               <button 
-                onClick={() => {
-                  setCurrentView('mobile-center');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
+                onClick={() => navigateToView('mobile-center')}
                 className={`text-[13px] xl:text-sm font-bold transition-colors flex items-center gap-1 whitespace-nowrap ${currentView === 'mobile-center' ? 'text-brand' : 'text-slate-600 hover:text-brand'}`}
               >
                 Centro Mobile
                 <Play className="w-3 h-3" />
               </button>
               <button 
-                onClick={() => {
-                  setCurrentView('elearning');
-                  setSelectedCategory("Tutti i corsi");
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
+                onClick={() => navigateToView('elearning', "Tutti i corsi")}
                 className={`text-[13px] xl:text-sm font-bold transition-colors whitespace-nowrap ${currentView === 'elearning' ? 'text-brand' : 'text-slate-600 hover:text-brand'}`}
               >
                 Corsi E-learning
               </button>
               <button 
-                onClick={() => {
-                  setCurrentView('dlgs-81-08');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
+                onClick={() => navigateToView('dlgs-81-08')}
                 className={`text-[13px] xl:text-sm font-bold transition-colors whitespace-nowrap ${currentView === 'dlgs-81-08' ? 'text-brand' : 'text-slate-600 hover:text-brand'}`}
               >
                 Corsi D.Lgs 81/08
               </button>
               <button 
-                onClick={() => {
-                  setCurrentView('gwo-training');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
+                onClick={() => navigateToView('gwo-training')}
                 className={`text-[13px] xl:text-sm font-bold transition-colors whitespace-nowrap ${currentView === 'gwo-training' ? 'text-brand' : 'text-slate-600 hover:text-brand'}`}
               >
                 Corsi GWO Training
@@ -2465,33 +2478,19 @@ export default function App() {
             >
               <div className="px-4 py-6 space-y-4">
                 <button 
-                  onClick={() => {
-                    setCurrentView('elearning');
-                    setSelectedCategory("Tutti i corsi");
-                    setIsMenuOpen(false);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
+                  onClick={() => navigateToView('elearning', "Tutti i corsi")}
                   className={`block w-full text-left text-lg font-bold ${currentView === 'elearning' ? 'text-brand' : 'text-slate-900'}`}
                 >
                   Corsi E-learning
                 </button>
                 <button 
-                  onClick={() => {
-                    setCurrentView('professionisti');
-                    setSelectedCategory("Corsi per Professionisti");
-                    setIsMenuOpen(false);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
+                  onClick={() => navigateToView('professionisti', "Corsi per Professionisti")}
                   className={`block w-full text-left text-lg font-bold ${currentView === 'professionisti' ? 'text-brand' : 'text-slate-900'}`}
                 >
                   Corsi per Professionisti
                 </button>
                 <button 
-                  onClick={() => {
-                    setCurrentView('about');
-                    setIsMenuOpen(false);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
+                  onClick={() => navigateToView('about')}
                   className="block w-full text-left text-lg font-bold text-slate-900"
                 >
                   Chi Siamo
@@ -2499,38 +2498,27 @@ export default function App() {
                 <button 
                   onClick={() => {
                     setIsMenuOpen(false);
-                    document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' });
+                    const contacts = document.getElementById('contacts');
+                    if (contacts) contacts.scrollIntoView({ behavior: 'smooth' });
                   }}
                   className="block w-full text-left text-lg font-bold text-slate-900"
                 >
                   Contatti
                 </button>
                 <button 
-                  onClick={() => {
-                    setCurrentView('dlgs-81-08');
-                    setIsMenuOpen(false);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
+                  onClick={() => navigateToView('dlgs-81-08')}
                   className="block w-full text-left text-lg font-bold text-slate-900"
                 >
                   Corsi D.Lgs 81/08
                 </button>
                 <button 
-                  onClick={() => {
-                    setCurrentView('gwo-training');
-                    setIsMenuOpen(false);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
+                  onClick={() => navigateToView('gwo-training')}
                   className={`block w-full text-left text-lg font-bold ${currentView === 'gwo-training' ? 'text-brand' : 'text-slate-900'}`}
                 >
                   Corsi GWO Training
                 </button>
                 <button 
-                  onClick={() => {
-                    setCurrentView('mobile-center');
-                    setIsMenuOpen(false);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
+                  onClick={() => navigateToView('mobile-center')}
                   className="block w-full text-left text-lg font-bold text-brand flex items-center gap-2"
                 >
                   Centro Formativo Mobile
@@ -2557,13 +2545,13 @@ export default function App() {
         )}
         {currentView === 'home' ? (
         <>
-          <HeroSection setCurrentView={setCurrentView} setSelectedCategory={setSelectedCategory} />
+          <HeroSection setCurrentView={navigateToView} setSelectedCategory={setSelectedCategory} />
           <CatalogSection 
             selectedCategory={selectedCategory}
             setSelectedCategory={setSelectedCategory}
             searchQuery={searchQuery}
             setSearchQuery={setSearchQuery}
-            setSelectedCourse={setSelectedCourse}
+            setSelectedCourse={handleCourseOpen}
           />
         </>
       ) : currentView === 'elearning' ? (
@@ -2572,7 +2560,7 @@ export default function App() {
           setSelectedCategory={setSelectedCategory}
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}
-          setSelectedCourse={setSelectedCourse}
+          setSelectedCourse={handleCourseOpen}
           isStandalone={true}
         />
       ) : currentView === 'professionisti' ? (
@@ -2581,19 +2569,21 @@ export default function App() {
           setSelectedCategory={setSelectedCategory}
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}
-          setSelectedCourse={setSelectedCourse}
+          setSelectedCourse={handleCourseOpen}
           isStandalone={true}
         />
       ) : currentView === 'about' ? (
-        <AboutSection setCurrentView={setCurrentView} />
+        <AboutSection setCurrentView={navigateToView} />
       ) : currentView === 'mobile-center' ? (
-        <MobileCenterSection setCurrentView={setCurrentView} setActiveVideo={setActiveVideo} />
+        <MobileCenterSection setCurrentView={navigateToView} setActiveVideo={setActiveVideo} />
       ) : currentView === 'gwo-training' ? (
-        <GWOTrainingSection setCurrentView={setCurrentView} />
+        <GWOTrainingSection setCurrentView={navigateToView} />
       ) : currentView === 'gallery' ? (
-        <GallerySection setCurrentView={setCurrentView} />
+        <GallerySection setCurrentView={navigateToView} />
+      ) : currentView === 'rls-page' ? (
+        <RLSPage />
       ) : (
-        <DLGS8108Section setCurrentView={setCurrentView} />
+        <DLGS8108Section setCurrentView={navigateToView} />
       )}
       </main>
 
@@ -2663,10 +2653,7 @@ export default function App() {
               <ul className="space-y-4 text-sm">
                 <li>
                   <button 
-                    onClick={() => {
-                      setCurrentView('home');
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
+                    onClick={() => navigateToView('home')}
                     className="hover:text-brand transition-colors cursor-pointer"
                   >
                     Tutti i Corsi
@@ -2674,10 +2661,7 @@ export default function App() {
                 </li>
                 <li>
                   <button 
-                    onClick={() => {
-                      setCurrentView('about');
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
+                    onClick={() => navigateToView('about')}
                     className="hover:text-brand transition-colors cursor-pointer"
                   >
                     Chi Siamo
@@ -2685,10 +2669,7 @@ export default function App() {
                 </li>
                 <li>
                   <button 
-                    onClick={() => {
-                      setCurrentView('dlgs-81-08');
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
+                    onClick={() => navigateToView('dlgs-81-08')}
                     className="hover:text-brand transition-colors flex items-center gap-2 cursor-pointer"
                   >
                     Corsi D.Lgs 81/08
@@ -2697,10 +2678,7 @@ export default function App() {
                 </li>
                 <li>
                   <button 
-                    onClick={() => {
-                      setCurrentView('gwo-training');
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
+                    onClick={() => navigateToView('gwo-training')}
                     className="hover:text-brand transition-colors flex items-center gap-2 cursor-pointer"
                   >
                     Corsi GWO Training
@@ -2709,10 +2687,7 @@ export default function App() {
                 </li>
                 <li>
                   <button 
-                    onClick={() => {
-                      setCurrentView('mobile-center');
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
+                    onClick={() => navigateToView('mobile-center')}
                     className="hover:text-brand transition-colors flex items-center gap-2 cursor-pointer"
                   >
                     Centro Formativo Mobile
