@@ -30,6 +30,12 @@ import { Course } from './types';
 import RLSPage from './components/RLSPage';
 import RLSUpdatePage from './components/RLSUpdatePage';
 import RLSUpdate8Page from './components/RLSUpdate8Page';
+import AntincendioL1Page from './components/AntincendioL1Page';
+import AntincendioL2Page from './components/AntincendioL2Page';
+import AntincendioL3Page from './components/AntincendioL3Page';
+import AntincendioUpdateL1Page from './components/AntincendioUpdateL1Page';
+import AntincendioUpdateL2Page from './components/AntincendioUpdateL2Page';
+import AntincendioUpdateL3Page from './components/AntincendioUpdateL3Page';
 
 const CourseCard = ({ course, onOpen }: { course: Course; onOpen: (course: Course) => void; key?: string | number }) => {
   return (
@@ -1019,6 +1025,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "BLSD"
     },
     {
+      id: "3",
       title: "Corso Antincendio Livello 3 (ex Alto Rischio) – 16 ore",
       preview: "Il Corso Antincendio Livello 3 (L3) – 16 ore è destinato ai lavoratori incaricati dal datore di lavoro di svolgere il ruolo di addetti alla prevenzione incendi e gestione delle emergenze, nelle aziende e attività classificate a livello di rischio elevato, secondo quanto previsto dal D.Lgs. 81/08 e dal D.M. 2 settembre 2021 (Decreto Controlli).",
       fullDescription: `
@@ -1053,6 +1060,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Livello 3 (L3)"
     },
     {
+      id: "2",
       title: "Corso Antincendio Livello 2 (L2) – 8 ore",
       preview: "Il Corso Antincendio Livello 2 (L2) – 8 ore è destinato ai lavoratori incaricati di svolgere il ruolo di addetti alla prevenzione incendi e gestione delle emergenze nelle attività classificate a livello di rischio incendio medio.",
       fullDescription: `
@@ -1091,6 +1099,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Livello 2 (L2)"
     },
     {
+      id: "1",
       title: "Corso Antincendio Livello 1 (L1) – 4 ore",
       preview: "Il Corso Antincendio Livello 1 (L1) – 4 ore è rivolto ai lavoratori incaricati dal datore di lavoro di svolgere il ruolo di addetti alla prevenzione incendi, lotta antincendio e gestione delle emergenze, nelle attività classificate a livello di rischio incendio basso.",
       fullDescription: `
@@ -1126,6 +1135,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Livello 1 (L1)"
     },
     {
+      id: "6",
       title: "Aggiornamento Antincendio Livello 3 (L3) – 8 ore",
       preview: "Il Corso di Aggiornamento Antincendio Livello 3 (L3) – 8 ore è rivolto agli addetti antincendio operanti in attività a rischio incendio elevato, che devono effettuare l’aggiornamento quinquennale previsto dal D.M. 2 settembre 2021.",
       fullDescription: `
@@ -1140,6 +1150,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Livello 3 (L3)"
     },
     {
+      id: "5",
       title: "Aggiornamento Antincendio Livello 2 (L2) – 5 ore",
       preview: "Il Corso di Aggiornamento Antincendio Livello 2 (L2) – 5 ore è destinato agli addetti antincendio delle attività classificate Livello 2, che devono effettuare l’aggiornamento obbligatorio ogni 5 anni previsto dal D.M. 2 settembre 2021.",
       fullDescription: `
@@ -1154,6 +1165,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Livello 2 (L2)"
     },
     {
+      id: "4",
       title: "Aggiornamento Antincendio Livello 1 (L1) – 2 ore",
       preview: "Il Corso di Aggiornamento Antincendio Livello 1 (L1) – 2 ore è rivolto agli addetti antincendio che devono effettuare l’aggiornamento periodico quinquennale, previsto dal D.M. 2 settembre 2021.",
       fullDescription: `
@@ -1757,70 +1769,96 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       </div>
 
       <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
-        {courses8108.map((course, index) => (
-          <div key={index} className="bg-white rounded-3xl border border-slate-100 p-8 shadow-xl shadow-slate-200/50 flex flex-col">
-            <div className="flex items-start justify-between mb-6">
-              <div className="w-12 h-12 bg-slate-900 rounded-2xl flex items-center justify-center text-brand shrink-0">
-                <Shield className="w-6 h-6" />
-              </div>
-              <div className="flex gap-2">
-                <div className="px-4 py-1.5 bg-slate-900 rounded-full text-[10px] font-bold text-brand uppercase tracking-widest">
-                  {course.duration}
-                </div>
-                <div className="px-4 py-1.5 bg-slate-900 rounded-full text-[10px] font-bold text-brand uppercase tracking-widest">
-                  {course.group}
-                </div>
-              </div>
-            </div>
-            
-            <h2 className="text-2xl font-black text-slate-900 uppercase tracking-tight mb-4">
-              {course.title}
-            </h2>
-            
-            <p className="text-slate-600 leading-relaxed mb-6">
-              {course.preview}
-            </p>
+        {courses8108.map((course, index) => {
+          const isAntincendio = ["1", "2", "3", "4", "5", "6"].includes(course.id || "");
+          
+          const handleNavigation = () => {
+            if (course.id === "1") setCurrentView('antincendio-l1');
+            else if (course.id === "2") setCurrentView('antincendio-l2');
+            else if (course.id === "3") setCurrentView('antincendio-l3');
+            else if (course.id === "4") setCurrentView('antincendio-update-l1');
+            else if (course.id === "5") setCurrentView('antincendio-update-l2');
+            else if (course.id === "6") setCurrentView('antincendio-update-l3');
+          };
 
-            <div className="mt-auto">
-              <button 
-                onClick={() => setExpandedCourse(expandedCourse === index ? null : index)}
-                className="inline-flex items-center gap-2 bg-slate-900 text-brand font-bold px-4 py-2 rounded-xl transition-all uppercase text-sm tracking-wider hover:scale-105 active:scale-95"
-              >
-                {expandedCourse === index ? "Chiudi descrizione" : "Scopri di più"}
-                <ArrowRight className={`w-4 h-4 transition-transform ${expandedCourse === index ? 'rotate-90' : ''}`} />
-              </button>
-            </div>
-
-            <AnimatePresence>
-              {expandedCourse === index && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="overflow-hidden"
-                >
-                  <div className="pt-8 mt-8 border-t border-slate-100">
-                    <div className="prose prose-slate max-w-none">
-                      {course.fullDescription.split('\n').map((line, i) => (
-                        <p key={i} className="text-slate-600 text-sm leading-relaxed mb-4 whitespace-pre-line">
-                          {line.trim()}
-                        </p>
-                      ))}
-                    </div>
-                    <div className="mt-8 pt-8 border-t border-slate-100">
-                      <a 
-                        href={`mailto:commerciale@aliseogroup.it?subject=Richiesta Info: ${course.title}`}
-                        className="inline-flex items-center justify-center w-full py-4 bg-brand text-brand-dark rounded-2xl font-bold hover:bg-slate-900 hover:text-white transition-all shadow-lg shadow-brand/20"
-                      >
-                        Richiedi Info
-                      </a>
-                    </div>
+          return (
+            <div 
+              key={index} 
+              onClick={() => isAntincendio && handleNavigation()}
+              className={`bg-white rounded-3xl border border-slate-100 p-8 shadow-xl shadow-slate-200/50 flex flex-col transition-all ${isAntincendio ? 'cursor-pointer hover:border-brand/50 group' : ''}`}
+            >
+              <div className="flex items-start justify-between mb-6">
+                <div className="w-12 h-12 bg-slate-900 rounded-2xl flex items-center justify-center text-brand shrink-0">
+                  <Shield className="w-6 h-6" />
+                </div>
+                <div className="flex gap-2">
+                  <div className="px-4 py-1.5 bg-slate-900 rounded-full text-[10px] font-bold text-brand uppercase tracking-widest">
+                    {course.duration}
                   </div>
-                </motion.div>
+                  <div className="px-4 py-1.5 bg-slate-900 rounded-full text-[10px] font-bold text-brand uppercase tracking-widest">
+                    {course.group}
+                  </div>
+                </div>
+              </div>
+              
+              <h2 className="text-2xl font-black text-slate-900 uppercase tracking-tight mb-4 group-hover:text-brand transition-colors">
+                {course.title}
+              </h2>
+              
+              <p className="text-slate-600 leading-relaxed mb-6">
+                {course.preview}
+              </p>
+
+              <div className="mt-auto">
+                <button 
+                  onClick={(e) => {
+                    if (isAntincendio) {
+                      e.stopPropagation();
+                      handleNavigation();
+                    } else {
+                      setExpandedCourse(expandedCourse === index ? null : index);
+                    }
+                  }}
+                  className="inline-flex items-center gap-2 bg-slate-900 text-brand font-bold px-4 py-2 rounded-xl transition-all uppercase text-sm tracking-wider hover:scale-105 active:scale-95"
+                >
+                  {isAntincendio ? "Scopri di più" : (expandedCourse === index ? "Chiudi descrizione" : "Scopri di più")}
+                  <ArrowRight className={`w-4 h-4 transition-transform ${(!isAntincendio && expandedCourse === index) ? 'rotate-90' : ''}`} />
+                </button>
+              </div>
+
+              {!isAntincendio && (
+                <AnimatePresence>
+                  {expandedCourse === index && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pt-8 mt-8 border-t border-slate-100">
+                        <div className="prose prose-slate max-w-none">
+                          {course.fullDescription.split('\n').map((line, i) => (
+                            <p key={i} className="text-slate-600 text-sm leading-relaxed mb-4 whitespace-pre-line">
+                              {line.trim()}
+                            </p>
+                          ))}
+                        </div>
+                        <div className="mt-8 pt-8 border-t border-slate-100">
+                          <a 
+                            href={`mailto:commerciale@aliseogroup.it?subject=Richiesta Info: ${course.title}`}
+                            className="inline-flex items-center justify-center w-full py-4 bg-brand text-brand-dark rounded-2xl font-bold hover:bg-slate-900 hover:text-white transition-all shadow-lg shadow-brand/20"
+                          >
+                            Richiedi Info
+                          </a>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               )}
-            </AnimatePresence>
-          </div>
-        ))}
+            </div>
+          );
+        })}
       </div>
 
       <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-16">
@@ -2229,7 +2267,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'rls-page' | 'rls-update-page' | 'rls-update-8-page'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'rls-page' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3'>('home');
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showCookieModal, setShowCookieModal] = useState(false);
@@ -2248,6 +2286,18 @@ export default function App() {
       path = '/corso-rls-aggiornamento-4-ore';
     } else if (view === 'rls-update-8-page') {
       path = '/corso-rls-aggiornamento-8-ore';
+    } else if (view === 'antincendio-l1') {
+      path = '/corso-antincendio-livello-1-rischio-basso';
+    } else if (view === 'antincendio-l2') {
+      path = '/corso-antincendio-livello-2-rischio-medio';
+    } else if (view === 'antincendio-l3') {
+      path = '/corso-antincendio-livello-3-rischio-alto';
+    } else if (view === 'antincendio-update-l1') {
+      path = '/aggiornamento-antincendio-livello-1';
+    } else if (view === 'antincendio-update-l2') {
+      path = '/aggiornamento-antincendio-livello-2';
+    } else if (view === 'antincendio-update-l3') {
+      path = '/aggiornamento-antincendio-livello-3';
     }
     
     window.history.pushState({ view, category: category || selectedCategory }, '', path);
@@ -2262,6 +2312,18 @@ export default function App() {
       navigateToView('rls-update-page');
     } else if (course.id === "49") {
       navigateToView('rls-update-8-page');
+    } else if (course.id === "1") {
+      navigateToView('antincendio-l1');
+    } else if (course.id === "2") {
+      navigateToView('antincendio-l2');
+    } else if (course.id === "3") {
+      navigateToView('antincendio-l3');
+    } else if (course.id === "4") {
+      navigateToView('antincendio-update-l1');
+    } else if (course.id === "5") {
+      navigateToView('antincendio-update-l2');
+    } else if (course.id === "6") {
+      navigateToView('antincendio-update-l3');
     } else {
       setSelectedCourse(course);
     }
@@ -2309,6 +2371,18 @@ export default function App() {
       setCurrentView('rls-update-page');
     } else if (path === '/corso-rls-aggiornamento-8-ore') {
       setCurrentView('rls-update-8-page');
+    } else if (path === '/corso-antincendio-livello-1-rischio-basso') {
+      setCurrentView('antincendio-l1');
+    } else if (path === '/corso-antincendio-livello-2-rischio-medio') {
+      setCurrentView('antincendio-l2');
+    } else if (path === '/corso-antincendio-livello-3-rischio-alto') {
+      setCurrentView('antincendio-l3');
+    } else if (path === '/aggiornamento-antincendio-livello-1') {
+      setCurrentView('antincendio-update-l1');
+    } else if (path === '/aggiornamento-antincendio-livello-2') {
+      setCurrentView('antincendio-update-l2');
+    } else if (path === '/aggiornamento-antincendio-livello-3') {
+      setCurrentView('antincendio-update-l3');
     } else {
       const params = new URLSearchParams(window.location.search);
       const courseId = params.get('corso');
@@ -2600,6 +2674,18 @@ export default function App() {
         <RLSUpdatePage onNavigate={navigateToView} />
       ) : currentView === 'rls-update-8-page' ? (
         <RLSUpdate8Page onNavigate={navigateToView} />
+      ) : currentView === 'antincendio-l1' ? (
+        <AntincendioL1Page onNavigate={navigateToView} />
+      ) : currentView === 'antincendio-l2' ? (
+        <AntincendioL2Page onNavigate={navigateToView} />
+      ) : currentView === 'antincendio-l3' ? (
+        <AntincendioL3Page onNavigate={navigateToView} />
+      ) : currentView === 'antincendio-update-l1' ? (
+        <AntincendioUpdateL1Page onNavigate={navigateToView} />
+      ) : currentView === 'antincendio-update-l2' ? (
+        <AntincendioUpdateL2Page onNavigate={navigateToView} />
+      ) : currentView === 'antincendio-update-l3' ? (
+        <AntincendioUpdateL3Page onNavigate={navigateToView} />
       ) : (
         <DLGS8108Section setCurrentView={navigateToView} />
       )}
