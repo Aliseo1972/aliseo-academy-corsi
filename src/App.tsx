@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useMemo, useEffect, useCallback } from 'react';
+import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Shield, 
@@ -39,16 +39,18 @@ const CourseCard = ({ course, onOpen }: { course: Course; onOpen: (course: Cours
       className="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col h-full transition-all hover:shadow-xl hover:border-brand/20 group"
     >
       <div className="flex justify-between items-start mb-4">
-        <span className="px-3 py-1 bg-brand/10 text-brand-dark text-xs font-semibold rounded-full uppercase tracking-wider">
+        <span className="px-3 py-1 bg-slate-900 text-brand text-xs font-semibold rounded-full uppercase tracking-wider">
           {course.category}
         </span>
-        <div className="p-2 bg-slate-50 rounded-lg group-hover:bg-brand/10 transition-colors">
-          <BookOpen className="w-5 h-5 text-slate-400 group-hover:text-brand" />
+        <div className="p-2 bg-slate-900 rounded-lg group-hover:scale-110 transition-transform">
+          <BookOpen className="w-5 h-5 text-brand" />
         </div>
       </div>
       
-      <h3 className="text-lg font-bold text-slate-900 mb-4 flex-grow leading-tight group-hover:text-brand transition-colors">
-        {course.title}
+      <h3 className="text-lg font-bold text-slate-900 mb-4 flex-grow leading-tight">
+        <span className="group-hover:bg-slate-900 group-hover:text-brand px-2 py-1 -mx-2 rounded-lg transition-all inline-block">
+          {course.title}
+        </span>
       </h3>
       
       <div className="space-y-3 mb-6">
@@ -56,7 +58,7 @@ const CourseCard = ({ course, onOpen }: { course: Course; onOpen: (course: Cours
           <Clock className="w-4 h-4 mr-2 text-slate-400" />
           <span>{course.duration} • {course.lessons} lezioni</span>
         </div>
-        <div className="flex items-center text-brand font-bold text-lg">
+        <div className="inline-flex items-center bg-slate-900 px-3 py-1.5 rounded-lg text-price-yellow font-bold text-lg w-fit">
           <Euro className="w-5 h-5 mr-1" />
           <span>{course.price}</span>
         </div>
@@ -115,11 +117,11 @@ const CourseModal = ({ course, onClose }: { course: Course; onClose: () => void 
                 <p className="text-slate-900 font-bold">{course.lessons}</p>
               </div>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-brand/10 rounded-xl border border-brand/20">
-              <Euro className="w-5 h-5 text-brand" />
+            <div className="flex items-center gap-2 px-4 py-2 bg-slate-900 rounded-xl border border-slate-800">
+              <Euro className="w-5 h-5 text-price-yellow" />
               <div className="text-sm">
-                <p className="text-brand-dark font-medium uppercase text-[10px] tracking-wider opacity-60">Prezzo</p>
-                <p className="text-brand-dark font-bold">{course.price}</p>
+                <p className="text-slate-400 font-medium uppercase text-[10px] tracking-wider opacity-60">Prezzo</p>
+                <p className="text-price-yellow font-bold">{course.price}</p>
               </div>
             </div>
           </div>
@@ -597,6 +599,8 @@ const GallerySection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'a
 };
 
 const GWOTrainingSection = ({ setCurrentView }: { setCurrentView: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery') => void }) => {
+  const [searchQuery, setSearchQuery] = useState("");
+  
   const trainingModules = [
     {
       title: "GWO BST – First Aid – (FA)",
@@ -720,6 +724,15 @@ const GWOTrainingSection = ({ setCurrentView }: { setCurrentView: (view: 'home' 
     }
   ];
 
+  const filteredModules = useMemo(() => {
+    return trainingModules.filter(module => 
+      module.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      module.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      module.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      module.objectives.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }, [searchQuery]);
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -728,7 +741,7 @@ const GWOTrainingSection = ({ setCurrentView }: { setCurrentView: (view: 'home' 
     >
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900 uppercase mb-4">
-          GWO <span className="text-brand">Trainings</span>
+          GWO <span className="text-brand text-outline">Trainings</span>
         </h1>
         <div className="w-20 h-1.5 bg-brand mx-auto rounded-full" />
         <p className="text-slate-500 mt-6 text-lg max-w-3xl mx-auto">
@@ -736,48 +749,80 @@ const GWOTrainingSection = ({ setCurrentView }: { setCurrentView: (view: 'home' 
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {trainingModules.map((module, index) => (
-          <div key={index} className="bg-white rounded-3xl border border-slate-100 p-8 shadow-xl shadow-slate-200/50 flex flex-col h-full">
-            <div className="flex items-start justify-between mb-6">
-              <div className="w-12 h-12 bg-brand/10 rounded-2xl flex items-center justify-center text-brand shrink-0">
-                <Shield className="w-6 h-6" />
-              </div>
-              <div className="px-4 py-1.5 bg-slate-100 rounded-full text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                {module.duration}
-              </div>
-            </div>
-            
-            <h2 className="text-xl font-black text-slate-900 uppercase tracking-tight mb-2">
-              {module.title}
-            </h2>
-            <p className="text-brand font-bold text-sm mb-6 uppercase tracking-tight">
-              {module.description}
-            </p>
-
-            <div className="space-y-6 flex-grow">
-              <div>
-                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Contenuto</h4>
-                <p className="text-slate-600 text-sm leading-relaxed">{module.content}</p>
-              </div>
-              <div>
-                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Obiettivi formativi</h4>
-                <p className="text-slate-600 text-sm leading-relaxed">{module.objectives}</p>
-              </div>
-              <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-50">
-                <div>
-                  <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Requisiti</h4>
-                  <p className="text-slate-700 text-xs font-medium">{module.requirements}</p>
-                </div>
-                <div>
-                  <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Validità</h4>
-                  <p className="text-slate-700 text-xs font-medium">{module.validity}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
+      <div className="mb-12 max-w-2xl mx-auto">
+        <div className="relative">
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
+          <input 
+            type="text" 
+            placeholder="Cerca tra i moduli GWO..." 
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full pl-12 pr-4 py-4 bg-white border border-slate-200 rounded-2xl focus:ring-2 focus:ring-brand focus:border-transparent outline-none transition-all shadow-sm"
+          />
+        </div>
       </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <AnimatePresence mode="popLayout">
+          {filteredModules.map((module, index) => (
+            <motion.div 
+              layout
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              key={module.title} 
+              className="bg-white rounded-3xl border border-slate-100 p-8 shadow-xl shadow-slate-200/50 flex flex-col h-full"
+            >
+              <div className="flex items-start justify-between mb-6">
+                <div className="w-12 h-12 bg-slate-900 rounded-2xl flex items-center justify-center text-brand shrink-0">
+                  <Shield className="w-6 h-6" />
+                </div>
+                <div className="px-4 py-1.5 bg-slate-900 rounded-full text-[10px] font-bold text-brand uppercase tracking-widest">
+                  {module.duration}
+                </div>
+              </div>
+              
+              <h2 className="text-xl font-black text-slate-900 uppercase tracking-tight mb-2">
+                {module.title}
+              </h2>
+              <p className="text-slate-900 font-bold text-sm mb-6 uppercase tracking-tight text-outline-yellow">
+                {module.description}
+              </p>
+
+              <div className="space-y-6 flex-grow">
+                <div>
+                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Contenuto</h4>
+                  <p className="text-slate-600 text-sm leading-relaxed">{module.content}</p>
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Obiettivi formativi</h4>
+                  <p className="text-slate-600 text-sm leading-relaxed">{module.objectives}</p>
+                </div>
+                <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-50">
+                  <div>
+                    <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Requisiti</h4>
+                    <p className="text-slate-700 text-xs font-medium">{module.requirements}</p>
+                  </div>
+                  <div>
+                    <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Validità</h4>
+                    <p className="text-slate-700 text-xs font-medium">{module.validity}</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </div>
+
+      {filteredModules.length === 0 && (
+        <div className="text-center py-20">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-slate-100 rounded-full mb-6">
+            <Search className="w-10 h-10 text-slate-400" />
+          </div>
+          <h3 className="text-xl font-bold text-slate-900 mb-2">Nessun modulo trovato</h3>
+          <p className="text-slate-500">Prova a cambiare la tua ricerca.</p>
+        </div>
+      )}
 
       <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-16">
         <button 
@@ -1712,14 +1757,14 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: 'home' | '
         {courses8108.map((course, index) => (
           <div key={index} className="bg-white rounded-3xl border border-slate-100 p-8 shadow-xl shadow-slate-200/50 flex flex-col">
             <div className="flex items-start justify-between mb-6">
-              <div className="w-12 h-12 bg-brand/10 rounded-2xl flex items-center justify-center text-brand shrink-0">
+              <div className="w-12 h-12 bg-slate-900 rounded-2xl flex items-center justify-center text-brand shrink-0">
                 <Shield className="w-6 h-6" />
               </div>
               <div className="flex gap-2">
-                <div className="px-4 py-1.5 bg-slate-100 rounded-full text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                <div className="px-4 py-1.5 bg-slate-900 rounded-full text-[10px] font-bold text-brand uppercase tracking-widest">
                   {course.duration}
                 </div>
-                <div className="px-4 py-1.5 bg-brand/10 rounded-full text-[10px] font-bold text-brand uppercase tracking-widest">
+                <div className="px-4 py-1.5 bg-slate-900 rounded-full text-[10px] font-bold text-brand uppercase tracking-widest">
                   {course.group}
                 </div>
               </div>
@@ -1736,7 +1781,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: 'home' | '
             <div className="mt-auto">
               <button 
                 onClick={() => setExpandedCourse(expandedCourse === index ? null : index)}
-                className="inline-flex items-center gap-2 text-brand font-bold hover:opacity-80 transition-all uppercase text-sm tracking-wider"
+                className="inline-flex items-center gap-2 bg-slate-900 text-brand font-bold px-4 py-2 rounded-xl transition-all uppercase text-sm tracking-wider hover:scale-105 active:scale-95"
               >
                 {expandedCourse === index ? "Chiudi descrizione" : "Scopri di più"}
                 <ArrowRight className={`w-4 h-4 transition-transform ${expandedCourse === index ? 'rotate-90' : ''}`} />
@@ -1891,29 +1936,405 @@ const MobileCenterSection = ({ setCurrentView, setActiveVideo }: {
   );
 };
 
+const HeroSection = ({ setCurrentView, setSelectedCategory }: { 
+  setCurrentView: (view: any) => void;
+  setSelectedCategory: (cat: string) => void;
+}) => {
+  return (
+    <header className="relative py-24 lg:py-40 overflow-hidden bg-brand-dark">
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,#fefd06,transparent_70%)]" />
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-16 items-center">
+          <div className="flex flex-col">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-brand text-sm font-medium mb-6 w-fit"
+            >
+              <CheckCircle2 className="w-4 h-4" />
+              Formazione Certificata AIFES
+            </motion.div>
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-5xl lg:text-6xl font-bold text-brand mb-6 leading-[1.1] tracking-tight font-mono"
+            >
+              Aliseo Academy: Eccellenza nella Formazione
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-xl text-slate-400 mb-10 leading-relaxed max-w-xl"
+            >
+              Soluzioni di formazione all'avanguardia per aziende e professionisti. 
+              Semplifica la conformità normativa con i nostri corsi certificati.
+            </motion.p>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="space-y-8"
+            >
+              <div className="flex flex-wrap gap-4">
+                <a 
+                  href="https://wa.me/393274789581"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex-1 min-w-[240px] px-8 py-4 bg-brand text-brand-dark rounded-2xl font-bold text-lg hover:opacity-90 transition-all flex items-center justify-center group shadow-xl shadow-brand/20"
+                >
+                  Contattaci su Whatsapp
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+                <button 
+                  onClick={() => {
+                    setCurrentView('elearning');
+                    setSelectedCategory("Tutti i corsi");
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="flex-1 min-w-[240px] px-8 py-4 bg-white/10 text-white border border-white/20 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all backdrop-blur-sm"
+                >
+                  Corsi E-learning
+                </button>
+              </div>
+
+              <div className="flex flex-wrap gap-4 pt-6 border-t border-white/10">
+                <button 
+                  onClick={() => {
+                    setCurrentView('dlgs-81-08');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="flex-1 min-w-[280px] flex items-center gap-4 p-6 bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl transition-all text-left group"
+                >
+                  <Shield className="w-8 h-8 text-brand shrink-0 group-hover:scale-110 transition-transform" />
+                  <div>
+                    <div className="text-white font-bold text-lg">Corsi D.Lgs 81/08</div>
+                    <div className="text-slate-400 text-sm">Formazione obbligatoria</div>
+                  </div>
+                </button>
+                <button 
+                  onClick={() => {
+                    setCurrentView('gwo-training');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="flex-1 min-w-[280px] flex items-center gap-4 p-6 bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl transition-all text-left group"
+                >
+                  <BookOpen className="w-8 h-8 text-brand shrink-0 group-hover:scale-110 transition-transform" />
+                  <div>
+                    <div className="text-white font-bold text-lg">Corsi GWO Training</div>
+                    <div className="text-slate-400 text-sm">Standard internazionali</div>
+                  </div>
+                </button>
+                <button 
+                  onClick={() => {
+                    setCurrentView('professionisti');
+                    setSelectedCategory("Corsi per Professionisti");
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="flex-1 min-w-[280px] flex items-center gap-4 p-6 bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl transition-all text-left group"
+                >
+                  <Euro className="w-8 h-8 text-brand shrink-0 group-hover:scale-110 transition-transform" />
+                  <div>
+                    <div className="text-white font-bold text-lg">Corsi per Professionisti</div>
+                    <div className="text-slate-400 text-sm">Alta formazione</div>
+                  </div>
+                </button>
+                <button 
+                  onClick={() => {
+                    setCurrentView('mobile-center');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="w-full flex items-center gap-6 p-6 bg-brand/10 hover:bg-brand/20 border border-brand/20 rounded-2xl transition-all text-left group"
+                >
+                  <div className="p-4 bg-brand text-brand-dark rounded-2xl group-hover:scale-105 transition-transform">
+                    <Play className="w-8 h-8 fill-current" />
+                  </div>
+                  <div>
+                    <div className="text-brand font-black text-xl lg:text-2xl uppercase tracking-tighter">Centro Formativo Mobile</div>
+                    <div className="text-brand/70 text-sm font-bold uppercase tracking-widest">L'unico in Italia • Scopri di più</div>
+                  </div>
+                </button>
+              </div>
+            </motion.div>
+          </div>
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, x: 20 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="relative lg:-mr-16 xl:-mr-32 space-y-8"
+          >
+            <div className="absolute -inset-4 bg-brand/20 blur-3xl rounded-full animate-pulse" />
+            
+            {/* Main Hero Image */}
+            <div className="relative rounded-3xl overflow-hidden border-4 border-brand/30 shadow-2xl shadow-brand/20 bg-white/5">
+              <img 
+                src="https://i.ibb.co/6RMG179f/Homepage.png" 
+                alt="Aliseo Academy Training"
+                className="w-full h-auto block"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1200";
+                }}
+              />
+            </div>
+
+            {/* Second Hero Image (from gallery) */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="relative rounded-3xl overflow-hidden border-4 border-brand/30 shadow-2xl shadow-brand/20 bg-white/5"
+            >
+              <img 
+                src="/foto10.jpg" 
+                alt="Aliseo Academy Training Activity"
+                className="w-full h-auto block"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=1200";
+                }}
+              />
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+const CatalogSection = ({ 
+  selectedCategory, 
+  setSelectedCategory, 
+  searchQuery, 
+  setSearchQuery,
+  setSelectedCourse,
+  isStandalone = false
+}: { 
+  selectedCategory: string;
+  setSelectedCategory: (cat: string) => void;
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
+  setSelectedCourse: (course: Course) => void;
+  isStandalone?: boolean;
+}) => {
+  const categories = [
+    "Tutti i corsi",
+    "Sicurezza lavoratori",
+    "Attrezzature",
+    "Dirigente - Preposto",
+    "Utilizzo diisocianati",
+    "Datore di lavoro",
+    "HACCP",
+    "RLS",
+    "Privacy e protezione dei dati"
+  ];
+
+  const filteredCourses = useMemo(() => {
+    return courses.filter(course => {
+      const matchesCategory = 
+        (selectedCategory === "Tutti i corsi" && course.category !== "Corsi per Professionisti" && course.category !== "Soft Skills") || 
+        (selectedCategory === "Corsi E-learning" && course.category !== "Corsi per Professionisti" && course.category !== "Soft Skills") ||
+        course.category === selectedCategory;
+      
+      const matchesSearch = 
+        course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        (course.description?.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        (course.category.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        (course.objectives?.some(obj => obj.toLowerCase().includes(searchQuery.toLowerCase()))) ||
+        (course.syllabus?.some(mod => mod.title.toLowerCase().includes(searchQuery.toLowerCase()))) ||
+        (course.fullDescription?.some(p => p.toLowerCase().includes(searchQuery.toLowerCase())));
+      
+      return matchesCategory && matchesSearch;
+    });
+  }, [selectedCategory, searchQuery]);
+
+  return (
+    <main id="catalog" className={`flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${isStandalone ? 'py-24' : 'py-16 lg:py-24'}`}>
+      <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
+        <div className="max-w-xl">
+          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
+            {selectedCategory === "Corsi per Professionisti" ? "Corsi per Professionisti" : "Catalogo Corsi in e-learning"}
+          </h2>
+          <p className="text-slate-500 text-lg">
+            Scegli tra oltre 50 corsi specializzati. Filtra per categoria o cerca il corso specifico per le tue esigenze.
+          </p>
+        </div>
+        
+        <div className="relative w-full lg:w-96">
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
+          <input 
+            type="text" 
+            placeholder="Cerca un corso..." 
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full pl-12 pr-4 py-4 bg-white border border-slate-200 rounded-2xl focus:ring-2 focus:ring-brand focus:border-transparent outline-none transition-all shadow-sm"
+          />
+        </div>
+      </div>
+
+      <div className="flex flex-wrap gap-2 mb-12">
+        {categories.filter(cat => cat !== "Corsi per Professionisti").map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setSelectedCategory(cat)}
+            className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
+              selectedCategory === cat || (cat === "Tutti i corsi" && selectedCategory === "Corsi E-learning")
+              ? "bg-brand text-brand-dark shadow-lg shadow-brand/20" 
+              : "bg-white text-slate-600 border border-slate-200 hover:border-brand hover:text-brand"
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <AnimatePresence mode="popLayout">
+          {filteredCourses.map((course) => (
+            <CourseCard 
+              key={course.id} 
+              course={course} 
+              onOpen={(c) => setSelectedCourse(c)}
+            />
+          ))}
+        </AnimatePresence>
+      </div>
+
+      {filteredCourses.length === 0 && (
+        <div className="text-center py-20">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-slate-100 rounded-full mb-6">
+            <Search className="w-10 h-10 text-slate-400" />
+          </div>
+          <h3 className="text-xl font-bold text-slate-900 mb-2">Nessun corso trovato</h3>
+          <p className="text-slate-500">Prova a cambiare i filtri o la tua ricerca.</p>
+        </div>
+      )}
+    </main>
+  );
+};
+
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState("Tutti i corsi");
   const [searchQuery, setSearchQuery] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti'>('home');
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showCookieModal, setShowCookieModal] = useState(false);
   const [showTermsModal, setShowTermsModal] = useState(false);
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const isPopState = useRef(false);
 
-  const filteredCourses = useMemo(() => {
-    return courses.filter(course => {
-      const matchesCategory = 
-        (selectedCategory === "Tutti i corsi" && course.category !== "Corsi per Professionisti") || 
-        (selectedCategory === "Corsi E-learning" && course.category !== "Corsi per Professionisti") ||
-        course.category === selectedCategory;
-      const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase());
-      return matchesCategory && matchesSearch;
-    });
-  }, [selectedCategory, searchQuery]);
+  // Gestione della cronologia del browser per navigazione SPA e parametri URL
+  useEffect(() => {
+    const handlePopState = (event: PopStateEvent) => {
+      isPopState.current = true;
+      
+      // Se c'è uno stato nella cronologia, lo usiamo
+      if (event.state) {
+        setCurrentView(event.state.view || 'home');
+        setSelectedCategory(event.state.category || 'Tutti i corsi');
+        
+        if (event.state.courseId) {
+          const course = courses.find(c => c.id === event.state.courseId);
+          if (course) setSelectedCourse(course);
+        } else {
+          setSelectedCourse(null);
+        }
+      } else {
+        // Altrimenti controlliamo i parametri URL
+        const params = new URLSearchParams(window.location.search);
+        const courseId = params.get('corso');
+        if (courseId) {
+          const course = courses.find(c => c.id === courseId);
+          if (course) setSelectedCourse(course);
+        } else {
+          setSelectedCourse(null);
+        }
+      }
+      
+      setIsMenuOpen(false);
+      setTimeout(() => { isPopState.current = false; }, 0);
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    
+    // Controllo iniziale al caricamento della pagina
+    const params = new URLSearchParams(window.location.search);
+    const courseId = params.get('corso');
+    if (courseId) {
+      const course = courses.find(c => c.id === courseId);
+      if (course) {
+        setSelectedCourse(course);
+        // Se il corso è per professionisti, cambiamo vista
+        if (course.category === "Corsi per Professionisti") {
+          setCurrentView('professionisti');
+          setSelectedCategory("Corsi per Professionisti");
+        } else {
+          setCurrentView('elearning');
+        }
+      }
+    }
+
+    // Stato iniziale se non presente
+    if (!window.history.state) {
+      const initialParams = new URLSearchParams(window.location.search);
+      window.history.replaceState({ 
+        view: currentView, 
+        category: selectedCategory,
+        courseId: courseId || null 
+      }, '');
+    }
+
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Sincronizza lo stato con la cronologia e l'URL quando cambia
+  useEffect(() => {
+    if (!isPopState.current) {
+      const params = new URLSearchParams(window.location.search);
+      const currentCourseIdInUrl = params.get('corso');
+      
+      const newState = { 
+        view: currentView, 
+        category: selectedCategory,
+        courseId: selectedCourse?.id || null 
+      };
+
+      // Aggiorna il parametro URL 'corso'
+      if (selectedCourse) {
+        params.set('corso', selectedCourse.id);
+      } else {
+        params.delete('corso');
+      }
+
+      const searchString = params.toString();
+      const newUrl = searchString ? `?${searchString}` : window.location.pathname;
+      
+      const currentState = window.history.state;
+      if (currentState?.view !== newState.view || 
+          currentState?.category !== newState.category ||
+          currentState?.courseId !== newState.courseId ||
+          currentCourseIdInUrl !== (selectedCourse?.id || null)) {
+        
+        window.history.pushState(newState, '', newUrl);
+      }
+    }
+  }, [currentView, selectedCategory, selectedCourse]);
+
+  // Scroll to top on view change
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentView]);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -1929,89 +2350,87 @@ export default function App() {
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-20 items-center gap-4">
-            <div className="flex items-center gap-4 2xl:gap-8">
-              <div 
-                onClick={() => setCurrentView('home')}
-                className="flex-shrink-0 flex items-center gap-2 group cursor-pointer"
-              >
-                <img 
-                  src="https://aliseogroup.my.canva.site/logo-sito/_assets/media/6b84cdbe6502e325caca62beb9c2d9b2.png" 
-                  alt="Aliseo Academy Logo" 
-                  className="h-10 2xl:h-12 w-auto object-contain"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    const fallback = e.currentTarget.parentElement?.querySelector('.logo-fallback');
-                    if (fallback) fallback.classList.remove('hidden');
-                  }}
-                />
-                <div className="logo-fallback hidden flex flex-col -space-y-1">
-                  <span className="text-lg 2xl:text-xl font-black tracking-tighter text-slate-900 uppercase">Aliseo</span>
-                  <span className="text-[10px] 2xl:text-sm font-bold tracking-[0.2em] text-brand uppercase">Academy</span>
-                </div>
-              </div>
-
-              {/* Primary Quick Menu (Requested items next to logo) */}
-              <div className="hidden lg:flex items-center space-x-6 2xl:space-x-10 border-l border-slate-100 pl-6 2xl:pl-10">
-                <button 
-                  onClick={() => setCurrentView('about')}
-                  className="text-[15px] 2xl:text-base font-semibold text-slate-600 hover:text-brand transition-colors whitespace-nowrap"
-                >
-                  Chi Siamo
-                </button>
-                <button 
-                  onClick={() => {
-                    setCurrentView('home');
-                    setSelectedCategory("Corsi per Professionisti");
-                    setTimeout(() => {
-                      document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
-                  }}
-                  className="text-[15px] 2xl:text-base font-bold text-slate-600 hover:text-brand transition-colors whitespace-nowrap"
-                >
-                  Corsi per Professionisti
-                </button>
-                <button 
-                  onClick={() => {
-                    document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="text-[15px] 2xl:text-base font-semibold text-slate-600 hover:text-brand transition-colors whitespace-nowrap"
-                >
-                  Contatti
-                </button>
-                <button 
-                  onClick={() => {
-                    setCurrentView('mobile-center');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
-                  className="text-[15px] 2xl:text-base font-bold text-slate-600 hover:text-brand flex items-center gap-1 whitespace-nowrap"
-                >
-                  Centro Mobile
-                  <Play className="w-3.5 h-3.5" />
-                </button>
+            <div 
+              onClick={() => setCurrentView('home')}
+              className="flex-shrink-0 flex items-center gap-0 group cursor-pointer"
+            >
+              <img 
+                src="https://aliseogroup.my.canva.site/logo-sito/_assets/media/6b84cdbe6502e325caca62beb9c2d9b2.png" 
+                alt="Aliseo Academy Logo" 
+                className="h-10 2xl:h-12 w-auto object-contain"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  const fallback = e.currentTarget.parentElement?.querySelector('.logo-fallback');
+                  if (fallback) fallback.classList.remove('hidden');
+                }}
+              />
+              <img 
+                src="/simbolo-logo.png" 
+                alt="Simbolo Aliseo" 
+                className="h-40 2xl:h-48 w-auto object-contain -ml-12"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+              <div className="logo-fallback hidden flex flex-col -space-y-1">
+                <span className="text-lg 2xl:text-xl font-black tracking-tighter text-slate-900 uppercase">Aliseo</span>
+                <span className="text-[10px] 2xl:text-sm font-bold tracking-[0.2em] text-brand uppercase">Academy</span>
               </div>
             </div>
-            
-            {/* Desktop Menu (Full) */}
-            <div className="hidden xl:flex items-center space-x-4 2xl:space-x-8">
+
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center space-x-3 xl:space-x-4 2xl:space-x-6">
+              <button 
+                onClick={() => setCurrentView('about')}
+                className="text-[13px] xl:text-sm font-bold text-slate-600 hover:text-brand transition-colors whitespace-nowrap"
+              >
+                Chi Siamo
+              </button>
               <button 
                 onClick={() => {
-                  setCurrentView('home');
-                  setSelectedCategory("Tutti i corsi");
-                  setTimeout(() => {
-                    document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' });
-                  }, 100);
+                  setCurrentView('professionisti');
+                  setSelectedCategory("Corsi per Professionisti");
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="text-sm font-medium text-slate-600 hover:text-brand transition-colors cursor-pointer"
+                className={`text-[13px] xl:text-sm font-bold transition-colors whitespace-nowrap ${currentView === 'professionisti' ? 'text-brand' : 'text-slate-600 hover:text-brand'}`}
               >
-                Corsi
+                Corsi per Professionisti
+              </button>
+              <button 
+                onClick={() => {
+                  document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="text-[13px] xl:text-sm font-bold text-slate-600 hover:text-brand transition-colors whitespace-nowrap"
+              >
+                Contatti
+              </button>
+              <button 
+                onClick={() => {
+                  setCurrentView('mobile-center');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className={`text-[13px] xl:text-sm font-bold transition-colors flex items-center gap-1 whitespace-nowrap ${currentView === 'mobile-center' ? 'text-brand' : 'text-slate-600 hover:text-brand'}`}
+              >
+                Centro Mobile
+                <Play className="w-3 h-3" />
+              </button>
+              <button 
+                onClick={() => {
+                  setCurrentView('elearning');
+                  setSelectedCategory("Tutti i corsi");
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className={`text-[13px] xl:text-sm font-bold transition-colors whitespace-nowrap ${currentView === 'elearning' ? 'text-brand' : 'text-slate-600 hover:text-brand'}`}
+              >
+                Corsi E-learning
               </button>
               <button 
                 onClick={() => {
                   setCurrentView('dlgs-81-08');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="text-sm font-bold text-slate-600 hover:text-brand transition-colors cursor-pointer"
+                className={`text-[13px] xl:text-sm font-bold transition-colors whitespace-nowrap ${currentView === 'dlgs-81-08' ? 'text-brand' : 'text-slate-600 hover:text-brand'}`}
               >
                 Corsi D.Lgs 81/08
               </button>
@@ -2020,14 +2439,14 @@ export default function App() {
                   setCurrentView('gwo-training');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className={`text-sm font-bold transition-colors cursor-pointer ${currentView === 'gwo-training' ? 'text-brand' : 'text-slate-600 hover:text-brand'}`}
+                className={`text-[13px] xl:text-sm font-bold transition-colors whitespace-nowrap ${currentView === 'gwo-training' ? 'text-brand' : 'text-slate-600 hover:text-brand'}`}
               >
                 Corsi GWO Training
               </button>
-            </div>
+            </nav>
 
             {/* Mobile Menu Button */}
-            <div className="xl:hidden">
+            <div className="lg:hidden">
               <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2 text-slate-600">
                 {isMenuOpen ? <X /> : <Menu />}
               </button>
@@ -2047,27 +2466,23 @@ export default function App() {
               <div className="px-4 py-6 space-y-4">
                 <button 
                   onClick={() => {
-                    setCurrentView('home');
+                    setCurrentView('elearning');
                     setSelectedCategory("Tutti i corsi");
                     setIsMenuOpen(false);
-                    setTimeout(() => {
-                      document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="block w-full text-left text-lg font-medium text-slate-900"
+                  className={`block w-full text-left text-lg font-bold ${currentView === 'elearning' ? 'text-brand' : 'text-slate-900'}`}
                 >
-                  Corsi
+                  Corsi E-learning
                 </button>
                 <button 
                   onClick={() => {
-                    setCurrentView('home');
+                    setCurrentView('professionisti');
                     setSelectedCategory("Corsi per Professionisti");
                     setIsMenuOpen(false);
-                    setTimeout(() => {
-                      document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className={`block w-full text-left text-lg font-bold ${selectedCategory === "Corsi per Professionisti" ? 'text-brand' : 'text-slate-900'}`}
+                  className={`block w-full text-left text-lg font-bold ${currentView === 'professionisti' ? 'text-brand' : 'text-slate-900'}`}
                 >
                   Corsi per Professionisti
                 </button>
@@ -2077,7 +2492,7 @@ export default function App() {
                     setIsMenuOpen(false);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="block w-full text-left text-lg font-medium text-slate-900"
+                  className="block w-full text-left text-lg font-bold text-slate-900"
                 >
                   Chi Siamo
                 </button>
@@ -2086,7 +2501,7 @@ export default function App() {
                     setIsMenuOpen(false);
                     document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="block w-full text-left text-lg font-medium text-slate-900"
+                  className="block w-full text-left text-lg font-bold text-slate-900"
                 >
                   Contatti
                 </button>
@@ -2127,241 +2542,67 @@ export default function App() {
         </AnimatePresence>
       </nav>
 
-      {/* Hero Section */}
-      {currentView === 'home' ? (
-        <>
-          <header className="relative py-24 lg:py-40 overflow-hidden bg-brand-dark">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,#E2E831,transparent_70%)]" />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="flex flex-col">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-brand text-sm font-medium mb-6 w-fit"
-              >
-                <CheckCircle2 className="w-4 h-4" />
-                Formazione Certificata AIFES
-              </motion.div>
-              <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                className="text-5xl lg:text-6xl font-bold text-brand mb-6 leading-[1.1] tracking-tight font-mono"
-              >
-                Aliseo Academy: Eccellenza nella Formazione
-              </motion.h1>
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="text-xl text-slate-400 mb-10 leading-relaxed max-w-xl"
-              >
-                Soluzioni di formazione all'avanguardia per aziende e professionisti. 
-                Semplifica la conformità normativa con i nostri corsi certificati.
-              </motion.p>
-              
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="space-y-8"
-              >
-                {/* Main Actions */}
-                <div className="flex flex-wrap gap-4">
-                  <a 
-                    href="https://wa.me/393274789581"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex-1 min-w-[240px] px-8 py-4 bg-brand text-brand-dark rounded-2xl font-bold text-lg hover:opacity-90 transition-all flex items-center justify-center group shadow-xl shadow-brand/20"
-                  >
-                    Contattaci su Whatsapp
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </a>
-                  <button 
-                    onClick={() => {
-                      setSelectedCategory("Corsi E-learning");
-                      document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="flex-1 min-w-[240px] px-8 py-4 bg-white/10 text-white border border-white/20 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all backdrop-blur-sm"
-                  >
-                    Corsi E-learning
-                  </button>
-                </div>
-
-                {/* Quick Access Grid */}
-                <div className="flex flex-wrap gap-4 pt-6 border-t border-white/10">
-                  <button 
-                    onClick={() => {
-                      setCurrentView('dlgs-81-08');
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="flex-1 min-w-[280px] flex items-center gap-4 p-6 bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl transition-all text-left group"
-                  >
-                    <Shield className="w-8 h-8 text-brand shrink-0 group-hover:scale-110 transition-transform" />
-                    <div>
-                      <div className="text-white font-bold text-lg">Corsi D.Lgs 81/08</div>
-                      <div className="text-slate-400 text-sm">Formazione obbligatoria</div>
-                    </div>
-                  </button>
-                  <button 
-                    onClick={() => {
-                      setCurrentView('gwo-training');
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="flex-1 min-w-[280px] flex items-center gap-4 p-6 bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl transition-all text-left group"
-                  >
-                    <BookOpen className="w-8 h-8 text-brand shrink-0 group-hover:scale-110 transition-transform" />
-                    <div>
-                      <div className="text-white font-bold text-lg">Corsi GWO Training</div>
-                      <div className="text-slate-400 text-sm">Standard internazionali</div>
-                    </div>
-                  </button>
-                  <button 
-                    onClick={() => {
-                      setCurrentView('home');
-                      setSelectedCategory("Corsi per Professionisti");
-                      setTimeout(() => {
-                        document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' });
-                      }, 100);
-                    }}
-                    className="flex-1 min-w-[280px] flex items-center gap-4 p-6 bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl transition-all text-left group"
-                  >
-                    <Euro className="w-8 h-8 text-brand shrink-0 group-hover:scale-110 transition-transform" />
-                    <div>
-                      <div className="text-white font-bold text-lg">Corsi per Professionisti</div>
-                      <div className="text-slate-400 text-sm">Alta formazione</div>
-                    </div>
-                  </button>
-                  <button 
-                    onClick={() => {
-                      setCurrentView('mobile-center');
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="w-full flex items-center gap-6 p-6 bg-brand/10 hover:bg-brand/20 border border-brand/20 rounded-2xl transition-all text-left group"
-                  >
-                    <div className="p-4 bg-brand text-brand-dark rounded-2xl group-hover:scale-105 transition-transform">
-                      <Play className="w-8 h-8 fill-current" />
-                    </div>
-                    <div>
-                      <div className="text-brand font-black text-xl lg:text-2xl uppercase tracking-tighter">Centro Formativo Mobile</div>
-                      <div className="text-brand/70 text-sm font-bold uppercase tracking-widest">L'unico in Italia • Scopri di più</div>
-                    </div>
-                  </button>
-                </div>
-              </motion.div>
-            </div>
-            
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, x: 20 }}
-              animate={{ opacity: 1, scale: 1, x: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="relative lg:ml-auto"
+      {/* Main Content */}
+      <main className="flex-grow">
+        {currentView !== 'home' && (
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+            <button 
+              onClick={() => window.history.back()}
+              className="flex items-center gap-2 text-slate-500 hover:text-brand transition-colors font-bold uppercase tracking-tight text-sm group"
             >
-              <div className="absolute -inset-4 bg-brand/20 blur-3xl rounded-full animate-pulse" />
-              <div className="relative rounded-3xl overflow-hidden border-4 border-brand/30 shadow-2xl shadow-brand/20 bg-white/5">
-                <img 
-                  src="https://i.ibb.co/6RMG179f/Homepage.png" 
-                  alt="Aliseo Academy Training"
-                  className="w-full h-auto block"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1200";
-                  }}
-                />
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </header>
-
-
-      {/* Course Explorer */}
-      <main id="catalog" className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
-          <div className="max-w-xl">
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
-              {selectedCategory === "Corsi per Professionisti" ? "Corsi per Professionisti" : "Catalogo Corsi in e-learning"}
-            </h2>
-            <p className="text-slate-500 text-lg">
-              Scegli tra oltre 50 corsi specializzati. Filtra per categoria o cerca il corso specifico per le tue esigenze.
-            </p>
-          </div>
-          
-          <div className="relative w-full lg:w-96">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
-            <input 
-              type="text" 
-              placeholder="Cerca un corso..." 
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 bg-white border border-slate-200 rounded-2xl focus:ring-2 focus:ring-brand focus:border-transparent outline-none transition-all shadow-sm"
-            />
-          </div>
-        </div>
-
-        {/* Categories */}
-        <div className="flex flex-wrap gap-2 mb-12">
-          {categories.filter(cat => cat !== "Corsi per Professionisti").map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
-                selectedCategory === cat || (cat === "Tutti i corsi" && selectedCategory === "Corsi E-learning")
-                ? "bg-brand text-brand-dark shadow-lg shadow-brand/20" 
-                : "bg-white text-slate-600 border border-slate-200 hover:border-brand hover:text-brand"
-              }`}
-            >
-              {cat}
+              <ChevronLeft className="w-5 h-5 transition-transform group-hover:-translate-x-1" />
+              Torna Indietro
             </button>
-          ))}
-        </div>
-
-        {/* Course Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <AnimatePresence mode="popLayout">
-            {filteredCourses.map((course) => (
-              <CourseCard 
-                key={course.id} 
-                course={course} 
-                onOpen={(c) => setSelectedCourse(c)}
-              />
-            ))}
-          </AnimatePresence>
-        </div>
-
-        {filteredCourses.length === 0 && (
-          <div className="text-center py-20">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-slate-100 rounded-full mb-6">
-              <Search className="w-10 h-10 text-slate-400" />
-            </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-2">Nessun corso trovato</h3>
-            <p className="text-slate-500">Prova a cambiare i filtri o la tua ricerca.</p>
           </div>
         )}
+        {currentView === 'home' ? (
+        <>
+          <HeroSection setCurrentView={setCurrentView} setSelectedCategory={setSelectedCategory} />
+          <CatalogSection 
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            setSelectedCourse={setSelectedCourse}
+          />
+        </>
+      ) : currentView === 'elearning' ? (
+        <CatalogSection 
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+          setSelectedCourse={setSelectedCourse}
+          isStandalone={true}
+        />
+      ) : currentView === 'professionisti' ? (
+        <CatalogSection 
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+          setSelectedCourse={setSelectedCourse}
+          isStandalone={true}
+        />
+      ) : currentView === 'about' ? (
+        <AboutSection setCurrentView={setCurrentView} />
+      ) : currentView === 'mobile-center' ? (
+        <MobileCenterSection setCurrentView={setCurrentView} setActiveVideo={setActiveVideo} />
+      ) : currentView === 'gwo-training' ? (
+        <GWOTrainingSection setCurrentView={setCurrentView} />
+      ) : currentView === 'gallery' ? (
+        <GallerySection setCurrentView={setCurrentView} />
+      ) : (
+        <DLGS8108Section setCurrentView={setCurrentView} />
+      )}
       </main>
-    </>
-  ) : currentView === 'about' ? (
-    <AboutSection setCurrentView={setCurrentView} />
-  ) : currentView === 'mobile-center' ? (
-    <MobileCenterSection setCurrentView={setCurrentView} setActiveVideo={setActiveVideo} />
-  ) : currentView === 'gwo-training' ? (
-    <GWOTrainingSection setCurrentView={setCurrentView} />
-  ) : currentView === 'gallery' ? (
-    <GallerySection setCurrentView={setCurrentView} />
-  ) : (
-    <DLGS8108Section setCurrentView={setCurrentView} />
-  )}
 
   {/* Footer */}
       <footer className="bg-slate-900 text-slate-400 py-20 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             <div className="space-y-6">
-              <div className="flex items-center gap-2 mb-6">
+              <div className="flex items-center gap-0 mb-6">
                 <img 
                   src="https://aliseogroup.my.canva.site/logo-sito/_assets/media/6b84cdbe6502e325caca62beb9c2d9b2.png" 
                   alt="Aliseo Academy Logo" 
@@ -2371,6 +2612,14 @@ export default function App() {
                     e.currentTarget.style.display = 'none';
                     const fallback = e.currentTarget.parentElement?.querySelector('.logo-fallback-footer');
                     if (fallback) fallback.classList.remove('hidden');
+                  }}
+                />
+                <img 
+                  src="/simbolo-logo.png" 
+                  alt="Simbolo Aliseo" 
+                  className="h-40 w-auto object-contain brightness-0 invert -ml-12"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
                   }}
                 />
                 <div className="logo-fallback-footer hidden flex flex-col -space-y-1">

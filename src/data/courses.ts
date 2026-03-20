@@ -2735,6 +2735,42 @@ export const courses: Course[] = [
       },
       { title: "Questionario di Gradimento", duration: "0m", lessons: ["Questionario di gradimento - Aggiornamento Coordinatori per la Sicurezza nei Cantieri CSP - CSE"] }
     ]
+  },
+  {
+    id: "soft-1",
+    title: "Comunicazione Efficace e Leadership",
+    lessons: 12,
+    duration: "4h",
+    price: "55,00 €",
+    category: "Soft Skills",
+    description: "Sviluppa le tue abilità comunicative e impara a guidare un team con successo attraverso tecniche di leadership moderna.",
+    objectives: ["Migliorare la comunicazione interpersonale", "Gestire i conflitti", "Ispirare e motivare il team"],
+    references: ["Best Practices di Management"],
+    recipients: "Manager, Team Leader e chiunque voglia migliorare le proprie soft skills",
+    syllabus: [
+      { title: "Fondamenti della comunicazione", lessonsCount: 3, duration: "1h" },
+      { title: "Leadership e stili di comando", lessonsCount: 3, duration: "1h" },
+      { title: "Gestione dei conflitti", lessonsCount: 3, duration: "1h" },
+      { title: "Motivazione e feedback", lessonsCount: 3, duration: "1h" }
+    ]
+  },
+  {
+    id: "soft-2",
+    title: "Gestione del Tempo e dello Stress",
+    lessons: 10,
+    duration: "3h",
+    price: "45,00 €",
+    category: "Soft Skills",
+    description: "Impara a organizzare la tua giornata lavorativa in modo efficiente e a gestire lo stress per una maggiore produttività e benessere.",
+    objectives: ["Tecniche di time management", "Identificare le priorità", "Strategie di coping per lo stress"],
+    references: ["Metodologie Agile e Lean"],
+    recipients: "Professionisti e dipendenti di ogni settore",
+    syllabus: [
+      { title: "Analisi del tempo e ladri di tempo", lessonsCount: 3, duration: "1h" },
+      { title: "Matrice di Eisenhower e priorità", lessonsCount: 3, duration: "1h" },
+      { title: "Tecniche di rilassamento e focus", lessonsCount: 3, duration: "1h" },
+      { title: "Test di autovalutazione", lessonsCount: 1, duration: "15m" }
+    ]
   }
 ];
 
@@ -2748,6 +2784,5 @@ export const categories: string[] = [
   "Datore di lavoro",
   "HACCP",
   "RLS",
-  "Privacy e protezione dei dati",
-  "Corsi per Professionisti"
+  "Privacy e protezione dei dati"
 ];

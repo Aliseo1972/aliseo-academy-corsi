@@ -6,8 +6,9 @@
   --font-serif: "Playfair Display", serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   
-  --color-brand: #E2E831;
+  --color-brand: #fefd06;
   --color-brand-dark: #141414;
+  --color-price-yellow: #fefd06;
 }
 
 @layer base {
@@ -19,6 +20,15 @@
 @layer components {
   .glass-card {
     @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-sm;
+  }
+  
+  .text-outline {
+    -webkit-text-stroke: 0.8px black;
+    text-shadow: 0 0 2px black;
+  }
+
+  .text-outline-yellow {
+    -webkit-text-stroke: 0.6px #fefd06;
   }
 }
 
