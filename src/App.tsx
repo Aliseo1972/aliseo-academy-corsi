@@ -28,6 +28,8 @@ import {
 import { courses, categories } from './data/courses';
 import { Course } from './types';
 import RLSPage from './components/RLSPage';
+import RLSUpdatePage from './components/RLSUpdatePage';
+import RLSUpdate8Page from './components/RLSUpdate8Page';
 
 const CourseCard = ({ course, onOpen }: { course: Course; onOpen: (course: Course) => void; key?: string | number }) => {
   return (
@@ -2227,7 +2229,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'rls-page'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'rls-page' | 'rls-update-page' | 'rls-update-8-page'>('home');
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showCookieModal, setShowCookieModal] = useState(false);
@@ -2242,6 +2244,10 @@ export default function App() {
     let path = '/';
     if (view === 'rls-page') {
       path = '/corso-rls-rappresentante-lavoratori-sicurezza';
+    } else if (view === 'rls-update-page') {
+      path = '/corso-rls-aggiornamento-4-ore';
+    } else if (view === 'rls-update-8-page') {
+      path = '/corso-rls-aggiornamento-8-ore';
     }
     
     window.history.pushState({ view, category: category || selectedCategory }, '', path);
@@ -2252,6 +2258,10 @@ export default function App() {
   const handleCourseOpen = (course: Course) => {
     if (course.id === "50") {
       navigateToView('rls-page');
+    } else if (course.id === "48") {
+      navigateToView('rls-update-page');
+    } else if (course.id === "49") {
+      navigateToView('rls-update-8-page');
     } else {
       setSelectedCourse(course);
     }
@@ -2295,6 +2305,10 @@ export default function App() {
     const path = window.location.pathname;
     if (path === '/corso-rls-rappresentante-lavoratori-sicurezza') {
       setCurrentView('rls-page');
+    } else if (path === '/corso-rls-aggiornamento-4-ore') {
+      setCurrentView('rls-update-page');
+    } else if (path === '/corso-rls-aggiornamento-8-ore') {
+      setCurrentView('rls-update-8-page');
     } else {
       const params = new URLSearchParams(window.location.search);
       const courseId = params.get('corso');
@@ -2581,7 +2595,11 @@ export default function App() {
       ) : currentView === 'gallery' ? (
         <GallerySection setCurrentView={navigateToView} />
       ) : currentView === 'rls-page' ? (
-        <RLSPage />
+        <RLSPage onNavigate={navigateToView} />
+      ) : currentView === 'rls-update-page' ? (
+        <RLSUpdatePage onNavigate={navigateToView} />
+      ) : currentView === 'rls-update-8-page' ? (
+        <RLSUpdate8Page onNavigate={navigateToView} />
       ) : (
         <DLGS8108Section setCurrentView={navigateToView} />
       )}

@@ -1,32 +1,32 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, MessageSquare, ShieldCheck, GraduationCap, Briefcase, Scale } from 'lucide-react';
+import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, MessageSquare, ShieldCheck, GraduationCap, Scale } from 'lucide-react';
 import { courses } from '../data/courses';
 
-interface RLSPageProps {
+interface RLSUpdatePageProps {
   onNavigate: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'rls-page' | 'rls-update-page' | 'rls-update-8-page') => void;
 }
 
-const RLSPage: React.FC<RLSPageProps> = ({ onNavigate }) => {
-  const course = courses.find(c => c.id === "50") || courses.find(c => c.title.includes("RLS"));
+const RLSUpdatePage: React.FC<RLSUpdatePageProps> = ({ onNavigate }) => {
+  const course = courses.find(c => c.id === "48") || courses.find(c => c.title.includes("RLS") && c.title.includes("4 ore"));
 
   useEffect(() => {
     window.scrollTo(0, 0);
     // Update meta tags
-    document.title = "Corso RLS: Rappresentante dei Lavoratori per la Sicurezza | Formazione Sicurezza";
+    document.title = "Corso RLS Aggiornamento 4 Ore: Formazione Obbligatoria e Sicurezza | Aliseo Academy";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Corso di formazione per RLS (Rappresentante dei Lavoratori per la Sicurezza). Formazione completa secondo il D.Lgs 81/08. Programma, durata e requisiti.");
+      metaDescription.setAttribute('content', "Corso di aggiornamento annuale per RLS (4 ore) per aziende fino a 50 dipendenti. Formazione obbligatoria D.Lgs 81/08. Programma aggiornato e attestato valido.");
     }
   }, []);
 
-  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20RLS&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20RLS%20(Rappresentante%20dei%20Lavoratori%20per%20la%20Sicurezza).%0APotrei%20avere%20maggiori%20informazioni%20su%20modalit%C3%A0%2C%20tempi%20e%20disponibilit%C3%A0%3F%0A%0AGrazie.";
+  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20RLS%20Aggiornamento%204%20ore&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20RLS%20aggiornamento%204%20ore%20(Rappresentante%20dei%20Lavoratori%20per%20la%20Sicurezza).%0APotrei%20avere%20maggiori%20informazioni%20su%20modalit%C3%A0%2C%20tempi%20e%20disponibilit%C3%A0%3F%0A%0AGrazie.";
 
   if (!course) return <div className="py-20 text-center">Corso non trovato</div>;
 
   return (
     <div className="bg-white min-h-screen">
-      {/* Hero Section per la Pagina Dedicata */}
+      {/* Hero Section */}
       <section className="relative pt-20 pb-16 bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,184,0,0.1),transparent_50%)]" />
@@ -39,7 +39,7 @@ const RLSPage: React.FC<RLSPageProps> = ({ onNavigate }) => {
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-brand text-xs font-bold uppercase tracking-wider mb-6"
             >
               <ShieldCheck className="w-4 h-4" />
-              Sicurezza sul Lavoro - D.Lgs 81/08
+              Aggiornamento Annuale Obbligatorio
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ const RLSPage: React.FC<RLSPageProps> = ({ onNavigate }) => {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6"
             >
-              Corso RLS: <span className="text-brand">Rappresentante dei Lavoratori</span> per la Sicurezza
+              Corso RLS <span className="text-brand">Aggiornamento 4 Ore</span>: Formazione e Sicurezza
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,7 @@ const RLSPage: React.FC<RLSPageProps> = ({ onNavigate }) => {
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              La figura chiave per la tutela della salute e sicurezza nei luoghi di lavoro. Un percorso formativo completo e certificato secondo le normative vigenti.
+              Mantenimento delle competenze per il Rappresentante dei Lavoratori per la Sicurezza in aziende fino a 50 dipendenti.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -103,26 +103,20 @@ const RLSPage: React.FC<RLSPageProps> = ({ onNavigate }) => {
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  Perché il Corso RLS è Fondamentale?
+                  L'importanza dell'Aggiornamento RLS 4 Ore
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Il <strong>Rappresentante dei Lavoratori per la Sicurezza (RLS)</strong> è una figura obbligatoria prevista dal <strong>D.Lgs 81/08</strong>, il Testo Unico sulla Salute e Sicurezza sul Lavoro. Questa figura rappresenta il punto di incontro tra i lavoratori e il datore di lavoro per tutto ciò che concerne la prevenzione dei rischi e la tutela della salute in azienda. La sua presenza è fondamentale per garantire che le istanze dei lavoratori in materia di sicurezza siano ascoltate e integrate nei processi decisionali aziendali.
+                    Il <strong>corso di aggiornamento RLS da 4 ore</strong> è un appuntamento annuale fondamentale per tutti i Rappresentanti dei Lavoratori per la Sicurezza operanti in aziende che impiegano fino a 50 dipendenti. Secondo quanto stabilito dal <strong>D.Lgs 81/08</strong>, la formazione dell'RLS non si esaurisce con il corso abilitante iniziale di 32 ore, ma richiede un mantenimento costante delle competenze attraverso moduli di aggiornamento periodico. Questo percorso di 4 ore è specificamente progettato per rispondere alle esigenze delle piccole e medie imprese, dove il ruolo dell'RLS è cruciale per la gestione quotidiana della prevenzione.
                   </p>
                   <p>
-                    Il nostro corso di formazione per RLS è strutturato per fornire non solo le nozioni giuridiche e normative necessarie, ma anche gli strumenti pratici per esercitare il ruolo con efficacia. Essere un RLS significa avere la responsabilità di consultare il datore di lavoro sulla valutazione dei rischi, partecipare alle riunioni periodiche e promuovere la cultura della sicurezza tra i colleghi. Il percorso formativo copre aspetti che vanno dalla legislazione vigente alle tecniche di comunicazione interpersonale, essenziali per mediare tra le diverse figure del sistema di prevenzione aziendale.
+                    Durante le 4 ore di formazione, i partecipanti avranno l'opportunità di approfondire le novità legislative più recenti, analizzare casi studio di infortuni e quasi-infortuni, e discutere le migliori pratiche per il miglioramento continuo dei livelli di sicurezza aziendale. Il programma si focalizza sull'evoluzione del quadro normativo, con particolare attenzione alle recenti modifiche introdotte per rafforzare la tutela dei lavoratori in contesti operativi dinamici. Verranno inoltre trattati temi legati alle nuove tecnologie e ai rischi emergenti, come quelli derivanti dalla digitalizzazione dei processi produttivi e dal lavoro agile.
                   </p>
                   <p>
-                    In un contesto lavorativo in continua evoluzione, la sicurezza non è solo un obbligo di legge, ma un valore aziendale che aumenta la produttività e riduce i costi sociali derivanti dagli infortuni. Il corso affronta temi cruciali come la gestione delle emergenze, l'uso corretto dei Dispositivi di Protezione Individuale (DPI) e la comprensione dei rischi specifici legati alle diverse mansioni. Approfondiremo inoltre il concetto di benessere organizzativo e la prevenzione dello stress lavoro-correlato, temi sempre più centrali nella moderna gestione delle risorse umane.
+                    Un aspetto centrale dell'aggiornamento riguarda le tecniche di consultazione e partecipazione. L'RLS deve essere in grado di interfacciarsi efficacemente con il Datore di Lavoro e il Medico Competente, portando il punto di vista dei lavoratori nella valutazione dei rischi. Il corso fornisce strumenti per migliorare la capacità di analisi del Documento di Valutazione dei Rischi (DVR) e per proporre soluzioni tecniche e organizzative che riducano l'esposizione ai pericoli. La sicurezza sul lavoro, infatti, non è un concetto statico, ma un processo in divenire che richiede vigilanza e proattività.
                   </p>
                   <p>
-                    La formazione continua è essenziale: il ruolo dell'RLS richiede un aggiornamento costante per restare al passo con le nuove tecnologie e le modifiche legislative. Partecipare a questo corso garantisce una preparazione solida, riconosciuta a livello nazionale, che permette di operare con competenza e autorevolezza all'interno di qualsiasi realtà produttiva, sia essa una piccola impresa o una grande multinazionale. La nostra metodologia didattica favorisce l'apprendimento attraverso esempi concreti e scenari operativi verosimili.
-                  </p>
-                  <p>
-                    Scegliere la nostra formazione significa affidarsi a esperti del settore che utilizzano metodologie didattiche attive, casi studio reali e simulazioni pratiche. Il nostro obiettivo è trasformare l'obbligo formativo in un'opportunità di crescita professionale per il lavoratore e di miglioramento per l'intera organizzazione aziendale. Al termine del percorso, l'RLS sarà in grado di analizzare i rischi, proporre soluzioni migliorative e collaborare attivamente alla stesura del Documento di Valutazione dei Rischi (DVR).
-                  </p>
-                  <p>
-                    Oltre agli aspetti tecnici, il corso dedica ampio spazio alle relazioni industriali e al ruolo del sindacato nella sicurezza sul lavoro. Comprendere le dinamiche di consultazione e partecipazione è vitale per un RLS che voglia incidere realmente sulle condizioni di lavoro. Forniremo dispense aggiornate, accesso a materiali digitali e un supporto costante da parte dei nostri docenti qualificati, esperti in igiene e sicurezza industriale.
+                    Partecipare al corso di aggiornamento RLS 4 ore non è solo un adempimento burocratico, ma una reale occasione di crescita professionale. Un RLS ben formato è un valore aggiunto per l'azienda, capace di prevenire costi derivanti da infortuni e malattie professionali, migliorando al contempo il clima lavorativo e la produttività. La nostra metodologia didattica, basata su un approccio pratico e interattivo, permette di trasformare le ore di lezione in un momento di confronto costruttivo tra professionisti della sicurezza. Al termine del corso, verrà rilasciato un attestato di frequenza valido ai fini di legge, certificando l'avvenuto aggiornamento delle competenze necessarie per svolgere questo delicato incarico con la massima serietà e competenza.
                   </p>
                 </div>
               </article>
@@ -200,7 +194,7 @@ const RLSPage: React.FC<RLSPageProps> = ({ onNavigate }) => {
               <div className="bg-slate-900 rounded-3xl p-8 sticky top-24 shadow-2xl shadow-slate-200">
                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                   <GraduationCap className="w-6 h-6 text-brand" />
-                  Dettagli Formazione
+                  Dettagli Aggiornamento
                 </h3>
                 
                 <div className="space-y-6">
@@ -231,7 +225,7 @@ const RLSPage: React.FC<RLSPageProps> = ({ onNavigate }) => {
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Destinatari</p>
                       <p className="text-white font-bold text-sm leading-tight">
-                        {course.recipients || "Lavoratori eletti o designati come RLS"}
+                        {course.recipients || "RLS in aziende fino a 50 dipendenti"}
                       </p>
                     </div>
                   </div>
@@ -243,7 +237,7 @@ const RLSPage: React.FC<RLSPageProps> = ({ onNavigate }) => {
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Normativa</p>
                       <p className="text-white font-bold text-sm leading-tight">
-                        {course.references || "D.Lgs 81/08 e s.m.i."}
+                        {course.references?.[0] || "Art. 37 D.Lgs. 81/08"}
                       </p>
                     </div>
                   </div>
@@ -273,7 +267,7 @@ const RLSPage: React.FC<RLSPageProps> = ({ onNavigate }) => {
                   Certificazione
                 </h4>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Al termine del corso e al superamento del test finale, verrà rilasciato un attestato di formazione valido a norma di legge su tutto il territorio nazionale.
+                  Al termine del corso e al superamento del test finale, verrà rilasciato un attestato di aggiornamento valido a norma di legge su tutto il territorio nazionale.
                 </p>
               </div>
 
@@ -300,7 +294,7 @@ const RLSPage: React.FC<RLSPageProps> = ({ onNavigate }) => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <button 
-              onClick={() => onNavigate('rls-update-page')}
+              onClick={() => onNavigate('rls-page')}
               className="group p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-brand/30 hover:bg-white transition-all text-left"
             >
               <div className="flex justify-between items-start mb-4">
@@ -309,11 +303,11 @@ const RLSPage: React.FC<RLSPageProps> = ({ onNavigate }) => {
                 </div>
                 <ChevronRight className="w-5 h-5 text-slate-300 group-hover:text-brand group-hover:translate-x-1 transition-all" />
               </div>
-              <h3 className="font-bold text-slate-900 mb-2">Aggiornamento RLS - 4 ore</h3>
-              <p className="text-sm text-slate-500 mb-4">Per aziende fino a 50 dipendenti. Aggiornamento annuale obbligatorio.</p>
+              <h3 className="font-bold text-slate-900 mb-2">Corso RLS (Base 32h)</h3>
+              <p className="text-sm text-slate-500 mb-4">Formazione abilitante per Rappresentante dei Lavoratori per la Sicurezza.</p>
               <div className="flex items-center gap-4 text-xs font-bold text-slate-400">
-                <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> 4h</span>
-                <span className="flex items-center gap-1"><Euro className="w-3.5 h-3.5" /> 48,80 €</span>
+                <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> 32h</span>
+                <span className="flex items-center gap-1"><Euro className="w-3.5 h-3.5" /> 390,40 €</span>
               </div>
             </button>
 
@@ -342,7 +336,7 @@ const RLSPage: React.FC<RLSPageProps> = ({ onNavigate }) => {
       <section className="py-20 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6">
-            Hai bisogno di maggiori informazioni sul corso RLS?
+            Hai bisogno di maggiori informazioni sull'aggiornamento RLS?
           </h2>
           <p className="text-lg text-slate-600 mb-10">
             Il nostro team di esperti è pronto a rispondere a ogni tua domanda e a guidarti nella scelta del percorso formativo più adatto alle tue esigenze aziendali.
@@ -362,4 +356,4 @@ const RLSPage: React.FC<RLSPageProps> = ({ onNavigate }) => {
   );
 };
 
-export default RLSPage;
+export default RLSUpdatePage;

@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-<url>
-<loc>https://aliseoacademy.com/</loc>
-<priority>1.0</priority>
-</url>
-
+  <url>
+    <loc>https://aliseoacademy.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://aliseoacademy.com/corso-rls-rappresentante-lavoratori-sicurezza</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aliseoacademy.com/corso-rls-aggiornamento-4-ore</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aliseoacademy.com/corso-rls-aggiornamento-8-ore</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
