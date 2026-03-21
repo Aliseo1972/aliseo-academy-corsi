@@ -36,6 +36,10 @@ import AntincendioL3Page from './components/AntincendioL3Page';
 import AntincendioUpdateL1Page from './components/AntincendioUpdateL1Page';
 import AntincendioUpdateL2Page from './components/AntincendioUpdateL2Page';
 import AntincendioUpdateL3Page from './components/AntincendioUpdateL3Page';
+import PrimoSoccorsoGruppoAPage from './components/PrimoSoccorsoGruppoAPage';
+import PrimoSoccorsoGruppoBCPage from './components/PrimoSoccorsoGruppoBCPage';
+import AggiornamentoPrimoSoccorsoGruppoAPage from './components/AggiornamentoPrimoSoccorsoGruppoAPage';
+import AggiornamentoPrimoSoccorsoGruppoBCPage from './components/AggiornamentoPrimoSoccorsoGruppoBCPage';
 
 const CourseCard = ({ course, onOpen }: { course: Course; onOpen: (course: Course) => void; key?: string | number }) => {
   return (
@@ -861,6 +865,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
 
   const courses8108 = [
     {
+      id: "ps-a",
       title: "Corso Primo Soccorso Aziendale – 16 ore (Gruppo A)",
       preview: "Il Corso di Primo Soccorso Aziendale da 16 ore è destinato ai lavoratori incaricati dal datore di lavoro di svolgere il ruolo di addetti al primo soccorso nelle aziende classificate nel Gruppo A, secondo quanto previsto dal D.M. 388/2003 e dal D.Lgs. 81/08.",
       fullDescription: `
@@ -896,6 +901,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Gruppo A"
     },
     {
+      id: "ps-bc",
       title: "Corso Primo Soccorso Aziendale – 12 ore (Gruppi B e C)",
       preview: "Il Corso di Primo Soccorso Aziendale da 12 ore è rivolto ai lavoratori incaricati dal datore di lavoro di svolgere il ruolo di addetti al primo soccorso nelle aziende classificate nei Gruppi B e C, in conformità a quanto previsto dal D.M. 388/2003 e dal D.Lgs. 81/08.",
       fullDescription: `
@@ -931,6 +937,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Gruppi B e C"
     },
     {
+      id: "aggiornamento-ps-a",
       title: "Aggiornamento Primo Soccorso Aziendale – 6 ore (Gruppo A)",
       preview: "Il Corso di Aggiornamento Primo Soccorso Aziendale da 6 ore è rivolto ai lavoratori incaricati del ruolo di addetti al primo soccorso nelle aziende appartenenti al Gruppo A, come previsto dal D.M. 388/2003 e dal D.Lgs. 81/08.",
       fullDescription: `
@@ -962,6 +969,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Gruppo A"
     },
     {
+      id: "aggiornamento-ps-bc",
       title: "Aggiornamento Primo Soccorso Aziendale – 4 ore (Gruppi B e C)",
       preview: "Il Corso di Aggiornamento Primo Soccorso Aziendale da 4 ore è destinato ai lavoratori incaricati del ruolo di addetti al primo soccorso nelle aziende appartenenti ai Gruppi B e C, in conformità a quanto previsto dal D.M. 388/2003 e dal D.Lgs. 81/08.",
       fullDescription: `
@@ -1770,7 +1778,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
 
       <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
         {courses8108.map((course, index) => {
-          const isAntincendio = ["1", "2", "3", "4", "5", "6"].includes(course.id || "");
+          const isSpecialPage = ["1", "2", "3", "4", "5", "6", "ps-a", "ps-bc", "aggiornamento-ps-a", "aggiornamento-ps-bc"].includes(course.id || "");
           
           const handleNavigation = () => {
             if (course.id === "1") setCurrentView('antincendio-l1');
@@ -1779,13 +1787,17 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
             else if (course.id === "4") setCurrentView('antincendio-update-l1');
             else if (course.id === "5") setCurrentView('antincendio-update-l2');
             else if (course.id === "6") setCurrentView('antincendio-update-l3');
+            else if (course.id === "ps-a") setCurrentView('corso-primo-soccorso-gruppo-a');
+            else if (course.id === "ps-bc") setCurrentView('primo-soccorso-bc');
+            else if (course.id === "aggiornamento-ps-a") setCurrentView('aggiornamento-ps-a');
+            else if (course.id === "aggiornamento-ps-bc") setCurrentView('aggiornamento-ps-bc');
           };
 
           return (
             <div 
               key={index} 
-              onClick={() => isAntincendio && handleNavigation()}
-              className={`bg-white rounded-3xl border border-slate-100 p-8 shadow-xl shadow-slate-200/50 flex flex-col transition-all ${isAntincendio ? 'cursor-pointer hover:border-brand/50 group' : ''}`}
+              onClick={() => isSpecialPage && handleNavigation()}
+              className={`bg-white rounded-3xl border border-slate-100 p-8 shadow-xl shadow-slate-200/50 flex flex-col transition-all ${isSpecialPage ? 'cursor-pointer hover:border-brand/50 group' : ''}`}
             >
               <div className="flex items-start justify-between mb-6">
                 <div className="w-12 h-12 bg-slate-900 rounded-2xl flex items-center justify-center text-brand shrink-0">
@@ -1812,7 +1824,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
               <div className="mt-auto">
                 <button 
                   onClick={(e) => {
-                    if (isAntincendio) {
+                    if (isSpecialPage) {
                       e.stopPropagation();
                       handleNavigation();
                     } else {
@@ -1821,12 +1833,12 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
                   }}
                   className="inline-flex items-center gap-2 bg-slate-900 text-brand font-bold px-4 py-2 rounded-xl transition-all uppercase text-sm tracking-wider hover:scale-105 active:scale-95"
                 >
-                  {isAntincendio ? "Scopri di più" : (expandedCourse === index ? "Chiudi descrizione" : "Scopri di più")}
-                  <ArrowRight className={`w-4 h-4 transition-transform ${(!isAntincendio && expandedCourse === index) ? 'rotate-90' : ''}`} />
+                  {isSpecialPage ? "Scopri di più" : (expandedCourse === index ? "Chiudi descrizione" : "Scopri di più")}
+                  <ArrowRight className={`w-4 h-4 transition-transform ${(!isSpecialPage && expandedCourse === index) ? 'rotate-90' : ''}`} />
                 </button>
               </div>
 
-              {!isAntincendio && (
+              {!isSpecialPage && (
                 <AnimatePresence>
                   {expandedCourse === index && (
                     <motion.div
@@ -2267,7 +2279,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'rls-page' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'rls-page' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc'>('home');
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showCookieModal, setShowCookieModal] = useState(false);
@@ -2298,6 +2310,14 @@ export default function App() {
       path = '/aggiornamento-antincendio-livello-2';
     } else if (view === 'antincendio-update-l3') {
       path = '/aggiornamento-antincendio-livello-3';
+    } else if (view === 'corso-primo-soccorso-gruppo-a') {
+      path = '/corso-primo-soccorso-gruppo-a';
+    } else if (view === 'primo-soccorso-bc') {
+      path = '/corso-primo-soccorso-gruppo-b-c';
+    } else if (view === 'aggiornamento-ps-a') {
+      path = '/aggiornamento-primo-soccorso-gruppo-a';
+    } else if (view === 'aggiornamento-ps-bc') {
+      path = '/aggiornamento-primo-soccorso-gruppo-b-c';
     }
     
     window.history.pushState({ view, category: category || selectedCategory }, '', path);
@@ -2324,6 +2344,14 @@ export default function App() {
       navigateToView('antincendio-update-l2');
     } else if (course.id === "6") {
       navigateToView('antincendio-update-l3');
+    } else if (course.id === "ps-a") {
+      navigateToView('corso-primo-soccorso-gruppo-a');
+    } else if (course.id === "ps-bc") {
+      navigateToView('primo-soccorso-bc');
+    } else if (course.id === "aggiornamento-ps-a") {
+      navigateToView('aggiornamento-ps-a');
+    } else if (course.id === "aggiornamento-ps-bc") {
+      navigateToView('aggiornamento-ps-bc');
     } else {
       setSelectedCourse(course);
     }
@@ -2686,6 +2714,14 @@ export default function App() {
         <AntincendioUpdateL2Page onNavigate={navigateToView} />
       ) : currentView === 'antincendio-update-l3' ? (
         <AntincendioUpdateL3Page onNavigate={navigateToView} />
+      ) : currentView === 'corso-primo-soccorso-gruppo-a' ? (
+        <PrimoSoccorsoGruppoAPage onNavigate={navigateToView} />
+      ) : currentView === 'primo-soccorso-bc' ? (
+        <PrimoSoccorsoGruppoBCPage onNavigate={navigateToView} />
+      ) : currentView === 'aggiornamento-ps-a' ? (
+        <AggiornamentoPrimoSoccorsoGruppoAPage onNavigate={navigateToView} />
+      ) : currentView === 'aggiornamento-ps-bc' ? (
+        <AggiornamentoPrimoSoccorsoGruppoBCPage onNavigate={navigateToView} />
       ) : (
         <DLGS8108Section setCurrentView={navigateToView} />
       )}

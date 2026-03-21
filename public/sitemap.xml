@@ -50,4 +50,24 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://aliseoacademy.com/corso-primo-soccorso-gruppo-a</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aliseoacademy.com/corso-primo-soccorso-gruppo-b-c</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aliseoacademy.com/aggiornamento-primo-soccorso-gruppo-a</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aliseoacademy.com/aggiornamento-primo-soccorso-gruppo-b-c</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
