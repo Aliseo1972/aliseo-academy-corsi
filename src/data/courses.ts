@@ -117,7 +117,7 @@ export const courses: Course[] = [
   },
   {
     id: "74",
-    title: "Dirigente",
+    title: "Corso Dirigente",
     lessons: 37,
     duration: "12h",
     price: "195,20 €",
@@ -139,6 +139,42 @@ export const courses: Course[] = [
       { title: "Lo Stress lavoro Correlato", lessonsCount: 5, duration: "57m" },
       { title: "Quiz di Verifica", lessonsCount: 1, duration: "16m" },
       { title: "Questionario di Gradimento", lessonsCount: 1, duration: "9m" }
+    ]
+  },
+  {
+    id: "75",
+    title: "Aggiornamento Dirigente",
+    lessons: 18,
+    duration: "6h",
+    price: "73,20 €",
+    category: "Dirigente - Preposto",
+    description: "Aggiornamento quinquennale obbligatorio per la figura del dirigente ai sensi del D.Lgs 81/08.",
+    objectives: ["Evoluzione normativa", "Giurisprudenza", "Sistemi di gestione"],
+    references: ["Art. 37 D.Lgs. 81/08", "Accordo Stato-Regioni 17/04/2025 (Rep. Atti n. 59/CSR)"],
+    recipients: "Dirigenti che hanno già effettuato la formazione base",
+    syllabus: [
+      { title: "Novità legislative e giurisprudenziali", lessonsCount: 4, duration: "2h" },
+      { title: "Sistemi di gestione della sicurezza (SGSL)", lessonsCount: 4, duration: "1h 30m" },
+      { title: "Modelli organizzativi e responsabilità", lessonsCount: 5, duration: "1h 30m" },
+      { title: "Cultura della sicurezza in azienda", lessonsCount: 5, duration: "1h" }
+    ]
+  },
+  {
+    id: "77",
+    title: "Aggiornamento Preposto",
+    lessons: 15,
+    duration: "6h",
+    price: "73,20 €",
+    category: "Dirigente - Preposto",
+    description: "Aggiornamento biennale obbligatorio per la figura del preposto ai sensi del D.Lgs 81/08.",
+    objectives: ["Ruolo e responsabilità", "Tecniche di vigilanza", "Gestione delle emergenze"],
+    references: ["Art. 37 D.Lgs. 81/08", "Accordo Stato-Regioni 17/04/2025 (Rep. Atti n. 59/CSR)"],
+    recipients: "Preposti che hanno già effettuato la formazione base",
+    syllabus: [
+      { title: "Principali soggetti coinvolti e i relativi obblighi", lessonsCount: 4, duration: "1h 30m" },
+      { title: "Definizione e individuazione dei fattori di rischio", lessonsCount: 4, duration: "1h 30m" },
+      { title: "Incidenti e infortuni mancati", lessonsCount: 4, duration: "1h 30m" },
+      { title: "Tecniche di comunicazione e sensibilizzazione", lessonsCount: 3, duration: "1h 30m" }
     ]
   },
   {
@@ -334,25 +370,6 @@ export const courses: Course[] = [
     ]
   },
   {
-    id: "75",
-    title: "Dirigente - Aggiornamento",
-    lessons: 23,
-    duration: "6h",
-    price: "73,20 €",
-    category: "Dirigente - Preposto",
-    description: "Aggiornamento quinquennale obbligatorio per la figura del dirigente.",
-    objectives: ["Evoluzione normativa", "Giurisprudenza", "Sistemi di gestione"],
-    references: ["Art. 37 D.Lgs. 81/08", "Accordo Stato-Regioni 17/04/2025 (Rep. Atti n. 59/CSR)"],
-    recipients: "Dirigenti",
-    syllabus: [
-      { title: "Novità legislative e giurisprudenziali", lessonsCount: 6, duration: "2h" },
-      { title: "Sistemi di gestione della sicurezza (SGSL)", lessonsCount: 6, duration: "1h 30m" },
-      { title: "Modelli organizzativi e responsabilità", lessonsCount: 6, duration: "1h 30m" },
-      { title: "Cultura della sicurezza in azienda", lessonsCount: 4, duration: "50m" },
-      { title: "Test di valutazione", lessonsCount: 1, duration: "10m" }
-    ]
-  },
-  {
     id: "22",
     title: "Formazione specifica per lavoratore - rischio basso del settore uffici",
     lessons: 22,
@@ -449,7 +466,7 @@ export const courses: Course[] = [
   },
   {
     id: "76",
-    title: "Formazione particolare aggiuntiva per il Preposto (Moduli da 1 a 5)",
+    title: "Corso Preposto",
     lessons: 20,
     duration: "5h",
     price: "61,00 €",
@@ -502,25 +519,6 @@ export const courses: Course[] = [
       { title: "Dispositivi di comando e sicurezza", lessonsCount: 4, duration: "1h" },
       { title: "Procedure operative e salvataggio", lessonsCount: 3, duration: "50m" },
       { title: "Test di valutazione", lessonsCount: 1, duration: "10m" }
-    ]
-  },
-  {
-    id: "77",
-    title: "Formazione particolare aggiuntiva per il Preposto - Aggiornamento",
-    lessons: 22,
-    duration: "6h",
-    price: "73,20 €",
-    category: "Dirigente - Preposto",
-    description: "Aggiornamento biennale obbligatorio per la figura del preposto.",
-    objectives: ["Nuovi compiti di vigilanza", "Analisi dei comportamenti", "Aggiornamenti tecnici"],
-    references: ["Art. 37 D.Lgs. 81/08", "Accordo Stato-Regioni 17/04/2025 (Rep. Atti n. 59/CSR)"],
-    recipients: "Preposti",
-    syllabus: [
-      { title: "Evoluzione normativa per il preposto", lessonsCount: 5, duration: "1h 30m" },
-      { title: "Tecniche di vigilanza e controllo", lessonsCount: 6, duration: "2h" },
-      { title: "Gestione delle emergenze e criticità", lessonsCount: 5, duration: "1h 30m" },
-      { title: "Comunicazione efficace con i lavoratori", lessonsCount: 5, duration: "50m" },
-      { title: "Test di verifica finale", lessonsCount: 1, duration: "10m" }
     ]
   },
   {

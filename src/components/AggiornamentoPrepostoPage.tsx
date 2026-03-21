@@ -1,57 +1,58 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, MessageSquare, ShieldCheck, GraduationCap, Briefcase, Scale, Laptop, Globe, Award, Zap } from 'lucide-react';
+import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Laptop, Globe, Zap, Award, Scale, CalendarClock } from 'lucide-react';
 import { courses } from '../data/courses';
 
-interface CorsoPrepostoPageProps {
+interface AggiornamentoPrepostoPageProps {
   onNavigate: (view: any) => void;
 }
 
-const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => {
-  const course = courses.find(c => c.id === "76") || {
-    title: "Corso Preposto",
-    duration: "8h",
-    price: "120,00 €",
-    description: "Formazione obbligatoria per la figura del preposto ai sensi del D.Lgs 81/08.",
+const AggiornamentoPrepostoPage: React.FC<AggiornamentoPrepostoPageProps> = ({ onNavigate }) => {
+  // Find the course in the data if available (ID 77)
+  const course = courses.find(c => c.id === "77") || {
+    title: "Preposto - Aggiornamento",
+    duration: "6h",
+    price: "73,20 €",
+    description: "Aggiornamento obbligatorio per la figura del preposto ai sensi del D.Lgs 81/08.",
     objectives: ["Ruolo e responsabilità", "Tecniche di vigilanza", "Gestione delle emergenze"],
-    references: ["Art. 37 D.Lgs. 81/08", "Accordo Stato-Regioni 21/12/2011"],
-    recipients: "Lavoratori che svolgono funzioni di preposto",
+    references: ["Art. 37 D.Lgs. 81/08", "Accordo Stato-Regioni 17/04/2025 (Rep. Atti n. 59/CSR)"],
+    recipients: "Preposti che hanno già effettuato la formazione base",
     syllabus: [
-      { title: "Principali soggetti coinvolti e i relativi obblighi", duration: "2h" },
-      { title: "Definizione e individuazione dei fattori di rischio", duration: "2h" },
-      { title: "Incidenti e infortuni mancati", duration: "2h" },
-      { title: "Tecniche di comunicazione e sensibilizzazione dei lavoratori", duration: "2h" }
+      { title: "Principali soggetti coinvolti e i relativi obblighi", duration: "1h 30m" },
+      { title: "Definizione e individuazione dei fattori di rischio", duration: "1h 30m" },
+      { title: "Incidenti e infortuni mancati", duration: "1h 30m" },
+      { title: "Tecniche di comunicazione e sensibilizzazione", duration: "1h 30m" }
     ]
   };
 
   useEffect(() => {
     window.scrollTo(0, 0);
     // Update meta tags
-    document.title = "Corso Preposto Online Obbligatorio | Aliseo Academy";
+    document.title = "Aggiornamento Preposto Obbligatorio Online | Aliseo Academy";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Corso preposto obbligatorio per aziende secondo D.Lgs 81/08. Formazione 100% online in e-learning con Aliseo Academy.");
+      metaDescription.setAttribute('content', "Aggiornamento preposto obbligatorio per aziende secondo D.Lgs 81/08. Corso online in e-learning con Aliseo Academy.");
     }
   }, []);
 
-  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Preposto%20Online&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20Preposto%20obbligatorio%20in%20modalit%C3%A0%20e-learning.%0APotrei%20avere%20maggiori%20informazioni%20sull'attivazione%3F%0A%0AGrazie.";
+  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20aggiornamento%20Preposto&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20di%20aggiornamento%20Preposto%20(6%20ore).%0APotrei%20avere%20maggiori%20informazioni%20sull'attivazione%20in%20e-learning%3F%0A%0AGrazie.";
 
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
       <section className="relative pt-20 pb-16 bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,184,0,0.1),transparent_50%)]" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-brand text-xs font-bold uppercase tracking-wider mb-6"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6"
             >
               <Laptop className="w-4 h-4" />
-              Formazione E-learning - D.Lgs 81/08
+              Aggiornamento E-learning - D.Lgs 81/08
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -59,7 +60,7 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6"
             >
-              Corso <span className="text-brand">Preposto</span>
+              Aggiornamento Preposto <span className="text-brand">Sicurezza sul Lavoro</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -67,7 +68,7 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              La formazione obbligatoria per i preposti aziendali ai sensi del <strong>D.Lgs 81/08</strong> e dell'<strong>Accordo Stato-Regioni</strong>. Un percorso essenziale per chi esercita funzioni di vigilanza e controllo.
+              Il percorso di <strong>aggiornamento preposto obbligatorio</strong> per garantire la continuità della vigilanza operativa in azienda. Formazione flessibile 100% online.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -90,7 +91,7 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
               <div className="flex items-center gap-4 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm w-fit">
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5 text-brand" />
-                  <span className="text-white font-bold">{course.duration}</span>
+                  <span className="text-white font-bold">6 ore</span>
                 </div>
                 <div className="w-px h-6 bg-white/10" />
                 <div className="flex items-center gap-2">
@@ -115,31 +116,76 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  L'importanza della Formazione Preposto
+                  Perché aggiornare la formazione del Preposto?
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Il <strong>corso preposto obbligatorio</strong> rappresenta un pilastro fondamentale della sicurezza aziendale, come stabilito in modo inequivocabile dal <strong>corso preposto D.Lgs 81/08</strong>. La figura del preposto riveste un ruolo di vigilanza attiva e costante, garantendo che le direttive impartite dal datore di lavoro e dai dirigenti in materia di salute e sicurezza siano effettivamente applicate dai lavoratori durante lo svolgimento delle loro mansioni quotidiane. Questa responsabilità non è meramente formale, ma richiede una <strong>formazione preposto aziende</strong> specifica e approfondita, che vada ben oltre la formazione generale dei lavoratori, focalizzandosi sulle capacità critiche di supervisione, controllo operativo e intervento immediato in caso di situazioni di pericolo o comportamenti non conformi.
+                    L'<strong>aggiornamento preposto obbligatorio</strong> è un adempimento normativo di cruciale importanza per la sicurezza operativa di ogni azienda. La figura del preposto, infatti, rappresenta l'anello di congiunzione tra le direttive strategiche dei dirigenti e l'esecuzione pratica dei lavoratori. Il <strong>corso aggiornamento preposto D.Lgs 81/08</strong> mira a rinfrescare e potenziare le capacità di vigilanza e controllo, garantendo che chi sovrintende alle attività lavorative sia sempre al passo con le ultime disposizioni legislative e le migliori prassi di prevenzione.
                   </p>
                   <p>
-                    Aliseo Academy propone una <strong>formazione online</strong> di altissima qualità, meticolosamente progettata per fornire ai preposti non solo le conoscenze normative indispensabili, ma anche le competenze relazionali, psicologiche e comunicative necessarie per gestire il proprio team con autorevolezza e in totale sicurezza. La nostra modalità <strong>e-learning</strong> permette di contestualizzare l'apprendimento direttamente nell'ambiente di lavoro abituale, rendendo l'apprendimento molto più efficace, immediato e pertinente alle specifiche sfide del settore di riferimento, senza la necessità di trasferte o interruzioni prolungate dell'attività.
+                    L'<strong>aggiornamento preposto sicurezza</strong> non deve essere vissuto come un mero obbligo burocratico, ma come un'opportunità per affinare le tecniche di comunicazione e sensibilizzazione dei lavoratori. Un preposto aggiornato è in grado di riconoscere tempestivamente i comportamenti a rischio e di intervenire con autorevolezza per correggere le prassi non conformi, riducendo drasticamente la probabilità di infortuni e "near miss". Aliseo Academy offre un percorso di aggiornamento di 6 ore, meticolosamente strutturato per fornire strumenti pratici e immediatamente applicabili nel contesto lavorativo quotidiano.
                   </p>
                   <p>
-                    Grazie alla nostra piattaforma all'avanguardia, portiamo un'aula didattica completa, tecnologicamente avanzata e perfettamente attrezzata direttamente sui dispositivi dei vostri collaboratori. Questo approccio è l'ideale per svolgere la formazione con la massima flessibilità, permettendo ai preposti di confrontarsi con scenari reali, simulazioni operative e analisi dei rischi attraverso materiali multimediali interattivi, ottimizzando così i tempi di produzione e riducendo l'impatto organizzativo per l'azienda.
+                    La scelta della modalità <strong>e-learning</strong> per l'aggiornamento dei preposti risponde alla necessità delle aziende di ottimizzare i tempi e le risorse. La nostra piattaforma online permette ai preposti di accedere ai contenuti formativi in modo flessibile, gestendo lo studio nei momenti di minore carico lavorativo. Questo approccio garantisce una formazione di alta qualità senza la necessità di lunghe assenze dal reparto o dal cantiere, mantenendo alta la produttività aziendale pur garantendo la massima tutela legale e la sicurezza dei lavoratori.
                   </p>
                   <p>
-                    La normativa vigente, rafforzata dalle recenti modifiche legislative, richiede che il preposto riceva una formazione particolare aggiuntiva rispetto a quella prevista per i lavoratori. Questo percorso formativo deve essere aggiornato periodicamente con cadenza biennale per garantire che le competenze rimangano costantemente allineate all'evoluzione dei rischi, delle tecnologie e delle procedure di sicurezza. I nostri docenti, professionisti esperti in sicurezza industriale e prevenzione, guidano i partecipanti attraverso casi studio reali, analisi di infortuni mancati (near miss) e dinamiche di gruppo, promuovendo una cultura della prevenzione proattiva che trasforma il preposto in un vero leader della sicurezza.
+                    Investire nella formazione continua del personale di supervisione significa promuovere una cultura della sicurezza proattiva e condivisa. Le recenti modifiche normative hanno ulteriormente rafforzato il ruolo del preposto, rendendo l'aggiornamento periodico ancora più determinante per evitare sanzioni e, soprattutto, per proteggere la salute di tutti i collaboratori. Con Aliseo Academy, avrai la certezza di un percorso formativo certificato, aggiornato alle più recenti interpretazioni dell'Accordo Stato-Regioni e supportato da tutor esperti pronti a chiarire ogni dubbio normativo o tecnico.
                   </p>
                   <p>
-                    Investire seriamente nella formazione dei preposti significa ridurre drasticamente la probabilità di infortuni sul lavoro e l'insorgenza di malattie professionali, proteggendo il capitale umano e la continuità operativa dell'impresa. Un preposto ben formato e consapevole è in grado di riconoscere i segnali deboli di pericolo prima che questi si trasformino in incidenti gravi, intervenendo con tempestività e fermezza per correggere prassi lavorative rischiose. Aliseo Academy si impegna a fornire un supporto costante e personalizzato alle aziende, garantendo il rilascio di attestati validi a norma di legge e una preparazione d'eccellenza riconosciuta e apprezzata su tutto il territorio nazionale.
-                  </p>
-                  <p>
-                    La nostra metodologia didattica privilegia l'interazione e il confronto, trasformando ogni sessione formativa in un momento di crescita professionale e consapevolezza. Grazie all'esperienza maturata sul campo, siamo in grado di adattare i contenuti del corso alle specificità di ogni realtà aziendale, dai piccoli laboratori artigianali ai grandi complessi industriali. Scegliere Aliseo Academy significa affidarsi a un partner che mette la sicurezza al centro del business, fornendo strumenti concreti per la gestione quotidiana della prevenzione e la tutela della salute di ogni lavoratore.
+                    Il programma del corso affronta in modo dinamico l'analisi dei rischi specifici, la gestione delle emergenze e le responsabilità civili e penali connesse al ruolo. Al termine delle 6 ore di formazione online, il preposto riceverà un attestato valido a norma di legge su tutto il territorio nazionale, confermando la propria idoneità a svolgere le delicate funzioni di vigilanza e controllo affidategli dal datore di lavoro.
                   </p>
                 </div>
               </article>
 
-              {/* Course Content Sections */}
+              {/* Strategic Block - E-learning Focus */}
+              <section className="bg-blue-50 border border-blue-100 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-black text-slate-900 mb-6 uppercase tracking-tight">
+                    Vantaggi dell'Aggiornamento <span className="text-blue-600">Online</span>
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="flex gap-4">
+                      <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm shrink-0">
+                        <Zap className="w-6 h-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-slate-900 mb-1">Flessibilità Totale</h4>
+                        <p className="text-slate-600 text-sm leading-relaxed">Accedi alla piattaforma 24/7. Studia secondo i tuoi ritmi e le tue disponibilità.</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4">
+                      <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm shrink-0">
+                        <Laptop className="w-6 h-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-slate-900 mb-1">Nessuna Trasferta</h4>
+                        <p className="text-slate-600 text-sm leading-relaxed">Risparmia tempo e costi logistici. La formazione arriva direttamente sul tuo dispositivo.</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4">
+                      <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm shrink-0">
+                        <Award className="w-6 h-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-slate-900 mb-1">Attestato Normativo</h4>
+                        <p className="text-slate-600 text-sm leading-relaxed">Rilascio immediato dell'attestato valido ai sensi del D.Lgs 81/08 dopo il test finale.</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4">
+                      <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm shrink-0">
+                        <Globe className="w-6 h-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-slate-900 mb-1">Validità Nazionale</h4>
+                        <p className="text-slate-600 text-sm leading-relaxed">Formazione accreditata e riconosciuta da tutti gli organi di controllo in Italia.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              {/* Detailed Sections */}
               <div className="space-y-12">
                 {/* A chi è rivolto */}
                 <section>
@@ -149,8 +195,26 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
                   </h3>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                     <p className="text-slate-600 leading-relaxed">
-                      Il corso è destinato a tutti i lavoratori che, in ragione delle competenze professionali e nei limiti di poteri gerarchici e funzionali adeguati alla natura dell'incarico conferitogli, sovrintendono alla attività lavorativa e garantiscono l'attuazione delle direttive ricevute, controllandone la corretta esecuzione da parte dei lavoratori ed esercitando un funzionale potere di iniziativa. Tipicamente: capisquadra, capiofficina, caporeparto, responsabili di linea, etc.
+                      Il corso è destinato a tutti i lavoratori che ricoprono il ruolo di <strong>Preposto</strong> (capisquadra, capiofficina, responsabili di reparto, etc.) e che hanno già frequentato il corso di formazione base particolare aggiuntiva. L'aggiornamento è necessario per mantenere l'abilitazione allo svolgimento delle funzioni di vigilanza e controllo.
                     </p>
+                  </div>
+                </section>
+
+                {/* Quando è necessario */}
+                <section>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <div className="w-1.5 h-6 bg-brand rounded-full" />
+                    Quando è necessario l'aggiornamento
+                  </h3>
+                  <div className="bg-brand/5 border border-brand/10 rounded-3xl p-8">
+                    <div className="flex gap-4 items-start">
+                      <CalendarClock className="w-8 h-8 text-brand shrink-0" />
+                      <div>
+                        <p className="text-slate-700 font-medium leading-relaxed">
+                          Secondo le disposizioni dell'Accordo Stato-Regioni e le recenti integrazioni normative, l'aggiornamento per il preposto deve essere effettuato con cadenza <strong>biennale</strong>. È fondamentale non far scadere l'attestato per non incorrere in sanzioni e per garantire la piena validità della copertura assicurativa e legale dell'azienda.
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </section>
 
@@ -162,12 +226,12 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      "Conoscere i principali soggetti coinvolti e i relativi obblighi",
-                      "Individuare i fattori di rischio e le misure di prevenzione",
-                      "Apprendere le tecniche di vigilanza e controllo",
-                      "Gestire le relazioni e la comunicazione con i lavoratori",
-                      "Intervenire correttamente in caso di emergenza o pericolo",
-                      "Analizzare le cause di infortuni e mancati infortuni"
+                      "Ripassare i compiti e le responsabilità del preposto",
+                      "Aggiornare le conoscenze sui rischi specifici",
+                      "Migliorare le capacità di vigilanza operativa",
+                      "Approfondire le tecniche di comunicazione efficace",
+                      "Analizzare casi studio di infortuni e mancati infortuni",
+                      "Gestire correttamente le situazioni di emergenza"
                     ].map((obj, i) => (
                       <div key={i} className="flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
@@ -181,22 +245,23 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma Didattico
+                    Programma Didattico (6 ore)
                   </h3>
                   <div className="space-y-4">
-                    {course.syllabus?.map((module, i) => (
+                    {[
+                      { title: "Modulo 1: Quadro Normativo e Responsabilità", content: "Evoluzione della normativa, il ruolo del preposto dopo le recenti riforme, responsabilità civili e penali." },
+                      { title: "Modulo 2: Gestione dei Rischi e Vigilanza", content: "Individuazione dei fattori di rischio, misure di prevenzione e protezione, tecniche di controllo dei comportamenti." },
+                      { title: "Modulo 3: Comunicazione e Leadership", content: "Come sensibilizzare i lavoratori, gestione dei conflitti, promozione della cultura della sicurezza in reparto." },
+                      { title: "Modulo 4: Analisi degli Infortuni e Emergenze", content: "Analisi delle cause di infortunio, gestione dei near miss, procedure di intervento in caso di pericolo grave e immediato." }
+                    ].map((module, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-brand/30 transition-all shadow-sm">
-                        <div className="flex justify-between items-start">
-                          <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 rounded-full bg-slate-900 text-brand flex items-center justify-center font-bold">
-                              {String(i + 1).padStart(2, '0')}
-                            </div>
-                            <h4 className="font-bold text-slate-900 text-lg">{module.title}</h4>
+                        <div className="flex items-center gap-4 mb-3">
+                          <div className="w-10 h-10 rounded-full bg-slate-900 text-brand flex items-center justify-center font-bold shrink-0">
+                            {String(i + 1).padStart(2, '0')}
                           </div>
-                          <span className="text-xs font-bold text-slate-400 uppercase tracking-wider bg-slate-50 px-3 py-1 rounded-full border border-slate-100">
-                            {module.duration}
-                          </span>
+                          <h4 className="font-bold text-slate-900 text-lg">{module.title}</h4>
                         </div>
+                        <p className="text-slate-500 text-sm leading-relaxed ml-14">{module.content}</p>
                       </div>
                     ))}
                   </div>
@@ -209,29 +274,26 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
                     Quadro Normativo
                   </h3>
                   <div className="bg-slate-900 text-white rounded-3xl p-8">
-                    <p className="text-slate-400 mb-6">
-                      La formazione del preposto è regolata da disposizioni legislative rigorose per garantire standard di sicurezza uniformi:
-                    </p>
                     <ul className="space-y-4">
                       <li className="flex items-start gap-3">
                         <Scale className="w-6 h-6 text-brand shrink-0" />
                         <div>
-                          <p className="font-bold">Art. 37 D.Lgs. 81/08</p>
-                          <p className="text-sm text-slate-400">Stabilisce l'obbligo di formazione particolare aggiuntiva per i preposti.</p>
+                          <p className="font-bold">D.Lgs. 81/08 - Art. 37</p>
+                          <p className="text-sm text-slate-400">Stabilisce l'obbligo di formazione e aggiornamento per i preposti.</p>
                         </div>
                       </li>
                       <li className="flex items-start gap-3">
                         <FileText className="w-6 h-6 text-brand shrink-0" />
                         <div>
                           <p className="font-bold">Accordo Stato-Regioni 21/12/2011</p>
-                          <p className="text-sm text-slate-400">Definisce contenuti, durata e modalità della formazione.</p>
+                          <p className="text-sm text-slate-400">Definisce i contenuti minimi e la durata dell'aggiornamento.</p>
                         </div>
                       </li>
                       <li className="flex items-start gap-3">
                         <ShieldCheck className="w-6 h-6 text-brand shrink-0" />
                         <div>
                           <p className="font-bold">Legge 215/2021</p>
-                          <p className="text-sm text-slate-400">Recenti aggiornamenti che rafforzano il ruolo e l'obbligo formativo del preposto.</p>
+                          <p className="text-sm text-slate-400">Rafforza l'obbligo di aggiornamento biennale per la figura del preposto.</p>
                         </div>
                       </li>
                     </ul>
@@ -256,7 +318,7 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">{course.duration}</p>
+                      <p className="text-white font-bold">6 ore</p>
                     </div>
                   </div>
 
@@ -265,7 +327,7 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
                       <Laptop className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Metodologia</p>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
                       <p className="text-white font-bold">E-learning (Online)</p>
                     </div>
                   </div>
@@ -275,18 +337,18 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
                       <Globe className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Copertura</p>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Validità</p>
                       <p className="text-white font-bold">Nazionale</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Award className="w-5 h-5 text-brand" />
+                      <CalendarClock className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold">Attestato Normativo</p>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Frequenza</p>
+                      <p className="text-white font-bold text-sm">Ogni 2 anni</p>
                     </div>
                   </div>
                 </div>
@@ -306,28 +368,6 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
                     </a>
                   </div>
                 </div>
-              </div>
-
-              {/* Strategic Block */}
-              <div className="bg-brand/5 border border-brand/10 rounded-3xl p-8 space-y-6">
-                <h4 className="font-bold text-slate-900 flex items-center gap-2">
-                  <Zap className="w-5 h-5 text-brand" />
-                  Vantaggi E-learning
-                </h4>
-                <ul className="space-y-4">
-                  {[
-                    "Formazione 100% online certificata",
-                    "Accesso immediato h24 alla piattaforma",
-                    "Nessun costo di trasferta o logistica",
-                    "Flessibilità totale per i dipendenti",
-                    "Attestato valido a norma di legge"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-slate-700 font-medium">
-                      <CheckCircle2 className="w-4 h-4 text-brand shrink-0 mt-0.5" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
               </div>
             </div>
           </div>
@@ -379,7 +419,7 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
             </button>
 
             <button 
-              onClick={() => onNavigate('aggiornamento-preposto')}
+              onClick={() => onNavigate('corso-preposto')}
               className="group p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-brand/30 hover:bg-white transition-all text-left shadow-sm"
             >
               <div className="flex justify-between items-start mb-4">
@@ -388,11 +428,11 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
                 </div>
                 <ChevronRight className="w-5 h-5 text-slate-300 group-hover:text-brand group-hover:translate-x-1 transition-all" />
               </div>
-              <h3 className="font-bold text-slate-900 mb-2">Aggiornamento Preposto</h3>
-              <p className="text-sm text-slate-500 mb-4">Aggiornamento obbligatorio per la figura del preposto ai sensi del D.Lgs 81/08.</p>
+              <h3 className="font-bold text-slate-900 mb-2">Corso Preposto</h3>
+              <p className="text-sm text-slate-500 mb-4">Formazione obbligatoria per la figura del preposto ai sensi del D.Lgs 81/08.</p>
               <div className="flex items-center gap-4 text-xs font-bold text-slate-400">
-                <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> 6h</span>
-                <span className="flex items-center gap-1"><Euro className="w-3.5 h-3.5" /> 73,20 €</span>
+                <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> 8h</span>
+                <span className="flex items-center gap-1"><Euro className="w-3.5 h-3.5" /> 120,00 €</span>
               </div>
             </button>
           </div>
@@ -400,13 +440,13 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
       </section>
 
       {/* Final CTA */}
-      <section className="py-20">
+      <section className="py-20 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 uppercase tracking-tight">
-            Pronto a formare i tuoi <span className="text-brand">Preposti</span>?
+            Vigilanza <span className="text-brand">Efficace</span> e Sicura
           </h2>
           <p className="text-lg text-slate-600 mb-10">
-            Soluzioni su misura per la tua impresa: garantisci la massima sicurezza con una formazione professionale, flessibile e certificata 100% online.
+            Soluzioni su misura per la tua impresa: assicura ai tuoi preposti la migliore formazione online. Attiva subito l'aggiornamento in e-learning e mantieni la tua azienda protetta e in regola.
           </p>
           <div className="flex flex-col items-center gap-2">
             <span className="text-slate-500 text-sm font-bold">Ti rispondiamo entro 24 ore</span>
@@ -423,4 +463,4 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
   );
 };
 
-export default CorsoPrepostoPage;
+export default AggiornamentoPrepostoPage;

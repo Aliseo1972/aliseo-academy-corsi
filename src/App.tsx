@@ -44,6 +44,9 @@ import FormazioneGeneralePage from './components/FormazioneGeneralePage';
 import FormazioneSpecificaBassoPage from './components/FormazioneSpecificaBassoPage';
 import FormazioneSpecificaMedioAltoPage from './components/FormazioneSpecificaMedioAltoPage';
 import CorsoPrepostoPage from './components/CorsoPrepostoPage';
+import CorsoDirigentePage from './components/CorsoDirigentePage';
+import AggiornamentoDirigentePage from './components/AggiornamentoDirigentePage';
+import AggiornamentoPrepostoPage from './components/AggiornamentoPrepostoPage';
 
 const CourseCard = ({ course, onOpen }: { course: Course; onOpen: (course: Course) => void; key?: string | number }) => {
   return (
@@ -2370,7 +2373,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'rls-page' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'rls-page' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto'>('home');
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showCookieModal, setShowCookieModal] = useState(false);
@@ -2417,6 +2420,12 @@ export default function App() {
       path = '/corso-formazione-lavoratori-rischio-medio-alto';
     } else if (view === 'corso-preposto') {
       path = '/corso-preposto';
+    } else if (view === 'corso-dirigente') {
+      path = '/corso-dirigente';
+    } else if (view === 'aggiornamento-dirigente') {
+      path = '/aggiornamento-dirigente';
+    } else if (view === 'aggiornamento-preposto') {
+      path = '/aggiornamento-preposto';
     }
     
     window.history.pushState({ view, category: category || selectedCategory }, '', path);
@@ -2459,6 +2468,12 @@ export default function App() {
       navigateToView('corso-formazione-lavoratori-rischio-medio-alto');
     } else if (course.id === "76") {
       navigateToView('corso-preposto');
+    } else if (course.id === "74") {
+      navigateToView('corso-dirigente');
+    } else if (course.id === "75") {
+      navigateToView('aggiornamento-dirigente');
+    } else if (course.id === "77") {
+      navigateToView('aggiornamento-preposto');
     } else {
       setSelectedCourse(course);
     }
@@ -2526,6 +2541,12 @@ export default function App() {
       setCurrentView('corso-formazione-lavoratori-rischio-medio-alto');
     } else if (path === '/corso-preposto') {
       setCurrentView('corso-preposto');
+    } else if (path === '/corso-dirigente') {
+      setCurrentView('corso-dirigente');
+    } else if (path === '/aggiornamento-dirigente') {
+      setCurrentView('aggiornamento-dirigente');
+    } else if (path === '/aggiornamento-preposto') {
+      setCurrentView('aggiornamento-preposto');
     } else {
       const params = new URLSearchParams(window.location.search);
       const courseId = params.get('corso');
@@ -2845,6 +2866,12 @@ export default function App() {
         <FormazioneSpecificaMedioAltoPage onNavigate={navigateToView} />
       ) : currentView === 'corso-preposto' ? (
         <CorsoPrepostoPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-dirigente' ? (
+        <CorsoDirigentePage onNavigate={navigateToView} />
+      ) : currentView === 'aggiornamento-dirigente' ? (
+        <AggiornamentoDirigentePage onNavigate={navigateToView} />
+      ) : currentView === 'aggiornamento-preposto' ? (
+        <AggiornamentoPrepostoPage onNavigate={navigateToView} />
       ) : (
         <DLGS8108Section setCurrentView={navigateToView} />
       )}
