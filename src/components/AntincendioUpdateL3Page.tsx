@@ -100,10 +100,10 @@ const AntincendioUpdateL3Page: React.FC<AntincendioUpdateL3PageProps> = ({ onNav
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    L'<strong>aggiornamento antincendio obbligatorio aziende</strong> di Livello 3 (L3) è destinato a contesti lavorativi complessi dove il rischio di incendio è elevato. Aliseo Academy offre una formazione specifica che risponde ai requisiti del DM 02/09/2021, garantendo che il personale incaricato sia sempre pronto a gestire emergenze critiche con la massima competenza e freddezza.
+                    L'<strong>aggiornamento antincendio obbligatorio aziende</strong> di Livello 3 (L3) è destinato a contesti lavorativi complessi dove il rischio di incendio è elevato. Aliseo Academy eroga questa <strong>formazione in presenza conforme D.Lgs 81/08</strong> in tutta Italia, garantendo che il personale incaricato sia sempre pronto a gestire emergenze critiche con la massima competenza e <strong>sessioni pratiche con docenti qualificati</strong>.
                   </p>
                   <p>
-                    Per le attività classificate a <strong>Livello 3 (ex rischio alto)</strong>, l'aggiornamento ha una durata di 8 ore e si focalizza principalmente sulla parte pratica. È fondamentale che un addetto, anche se opera in un ambiente ad alto rischio, sappia come reagire prontamente in caso di emergenza, come utilizzare un estintore senza esitazioni e come guidare i colleghi verso le uscite di sicurezza.
+                    La nostra metodologia didattica privilegia l'addestramento sul campo, con la possibilità di organizzare la <strong>formazione presso sede cliente</strong>. Grazie al <strong>centro formativo mobile Aliseo</strong> (Safety Truck), portiamo direttamente in azienda simulatori di fumo, vasche di spegnimento e attrezzature all'avanguardia, permettendo agli addetti di testare le proprie capacità in un ambiente controllato ma estremamente realistico.
                   </p>
                   <p>
                     Il corso di aggiornamento proposto da Aliseo Academy permette di ripassare i concetti chiave della prevenzione incendi e di testare nuovamente le proprie abilità manuali attraverso <strong>prove pratiche di spegnimento</strong>. Spesso, con il passare degli anni, la confidenza con i mezzi di estinzione può diminuire; l'aggiornamento serve proprio a rinfrescare la memoria e a garantire che, in caso di necessità reale, l'intervento sia efficace e sicuro.

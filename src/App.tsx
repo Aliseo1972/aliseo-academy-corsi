@@ -40,6 +40,10 @@ import PrimoSoccorsoGruppoAPage from './components/PrimoSoccorsoGruppoAPage';
 import PrimoSoccorsoGruppoBCPage from './components/PrimoSoccorsoGruppoBCPage';
 import AggiornamentoPrimoSoccorsoGruppoAPage from './components/AggiornamentoPrimoSoccorsoGruppoAPage';
 import AggiornamentoPrimoSoccorsoGruppoBCPage from './components/AggiornamentoPrimoSoccorsoGruppoBCPage';
+import FormazioneGeneralePage from './components/FormazioneGeneralePage';
+import FormazioneSpecificaBassoPage from './components/FormazioneSpecificaBassoPage';
+import FormazioneSpecificaMedioAltoPage from './components/FormazioneSpecificaMedioAltoPage';
+import CorsoPrepostoPage from './components/CorsoPrepostoPage';
 
 const CourseCard = ({ course, onOpen }: { course: Course; onOpen: (course: Course) => void; key?: string | number }) => {
   return (
@@ -1757,6 +1761,90 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       `,
       duration: "4 ore",
       group: "DPI III Categoria"
+    },
+    {
+      id: "19",
+      title: "Corso Formazione Generale Lavoratori – 4 ore",
+      preview: "Il Corso di Formazione Generale Lavoratori da 4 ore è obbligatorio per tutti i lavoratori di ogni settore aziendale, come previsto dall'Art. 37 del D.Lgs. 81/08 e dall'Accordo Stato-Regioni.",
+      fullDescription: `
+        Il Corso di Formazione Generale Lavoratori da 4 ore è obbligatorio per tutti i lavoratori di ogni settore aziendale, come previsto dall'Art. 37 del D.Lgs. 81/08 e dall'Accordo Stato-Regioni.
+
+        L'obiettivo del corso è fornire i concetti base della sicurezza sul lavoro, i diritti e i doveri dei lavoratori, e l'organizzazione della prevenzione in azienda. Rappresenta il primo passo fondamentale per la creazione di una cultura della sicurezza condivisa.
+
+        Programma del corso:
+        - Concetti di rischio, danno, prevenzione e protezione
+        - Organizzazione della prevenzione aziendale
+        - Diritti, doveri e sanzioni per i vari soggetti aziendali
+        - Organi di vigilanza, controllo e assistenza
+
+        Destinatari:
+        Tutti i lavoratori neoassunti o che non hanno mai ricevuto la formazione generale.
+
+        Durata:
+        4 ore (modulo unico).
+
+        Aggiornamento:
+        Non previsto per il modulo generale, ma è obbligatorio l'aggiornamento quinquennale della formazione specifica (6 ore).
+      `,
+      duration: "4 ore",
+      group: "Sicurezza Lavoratori"
+    },
+    {
+      id: "20",
+      title: "Corso Formazione Specifica Lavoratori Rischio Basso – 4 ore",
+      preview: "Il Corso di Formazione Specifica Rischio Basso da 4 ore è rivolto ai lavoratori di aziende operanti in settori a basso rischio (uffici, commercio, servizi), in conformità all'Art. 37 del D.Lgs. 81/08.",
+      fullDescription: `
+        Il Corso di Formazione Specifica Rischio Basso da 4 ore è rivolto ai lavoratori di aziende operanti in settori a basso rischio (uffici, commercio, servizi), in conformità all'Art. 37 del D.Lgs. 81/08.
+
+        Il corso approfondisce i rischi specifici legati all'ambiente di lavoro "ufficio" e alle attività del settore terziario, focalizzandosi su ergonomia, stress lavoro-correlato e sicurezza elettrica.
+
+        Programma del corso:
+        - Rischi infortuni e meccanici generali
+        - Ergonomia della postazione di lavoro e videoterminali
+        - Stress lavoro-correlato e benessere organizzativo
+        - Microclima, illuminazione e ambiente di lavoro
+        - Procedure di emergenza e primo soccorso
+
+        Destinatari:
+        Lavoratori di aziende a rischio basso (commercio, uffici, servizi, turismo).
+
+        Durata:
+        4 ore (da aggiungere alle 4 ore di formazione generale).
+
+        Aggiornamento:
+        Obbligatorio ogni 5 anni (durata 6 ore).
+      `,
+      duration: "4 ore",
+      group: "Sicurezza Lavoratori"
+    },
+    {
+      id: "formazione-medio-alto",
+      title: "Corso Formazione Specifica Lavoratori Rischio Medio/Alto – 8/12 ore",
+      preview: "Il Corso di Formazione Specifica Rischio Medio/Alto (8-12 ore) è obbligatorio per i lavoratori di settori complessi come industria, edilizia, sanità e chimica, secondo l'Art. 37 del D.Lgs. 81/08.",
+      fullDescription: `
+        Il Corso di Formazione Specifica Rischio Medio/Alto (8-12 ore) è obbligatorio per i lavoratori di settori complessi come industria, edilizia, sanità e chimica, secondo l'Art. 37 del D.Lgs. 81/08.
+
+        La formazione analizza nel dettaglio i pericoli reali del cantiere, della fabbrica o del reparto, fornendo gli strumenti pratici per mitigare i rischi e utilizzare correttamente i DPI di III categoria.
+
+        Programma del corso:
+        - Rischi meccanici, elettrici e tecnologici
+        - Agenti chimici, fisici e biologici
+        - Movimentazione manuale dei carichi e merci
+        - Utilizzo di macchine e attrezzature specifiche
+        - Lavori in quota e ambienti confinati
+        - Procedure operative di sicurezza e DPI
+
+        Destinatari:
+        Lavoratori di aziende a rischio medio (8 ore) o alto (12 ore).
+
+        Durata:
+        8 o 12 ore (da aggiungere alle 4 ore di formazione generale).
+
+        Aggiornamento:
+        Obbligatorio ogni 5 anni (durata 6 ore).
+      `,
+      duration: "8 - 12 ore",
+      group: "Sicurezza Lavoratori"
     }
   ];
 
@@ -1778,7 +1866,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
 
       <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
         {courses8108.map((course, index) => {
-          const isSpecialPage = ["1", "2", "3", "4", "5", "6", "ps-a", "ps-bc", "aggiornamento-ps-a", "aggiornamento-ps-bc"].includes(course.id || "");
+          const isSpecialPage = ["1", "2", "3", "4", "5", "6", "ps-a", "ps-bc", "aggiornamento-ps-a", "aggiornamento-ps-bc", "19", "20", "formazione-medio-alto"].includes(course.id || "");
           
           const handleNavigation = () => {
             if (course.id === "1") setCurrentView('antincendio-l1');
@@ -1791,6 +1879,9 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
             else if (course.id === "ps-bc") setCurrentView('primo-soccorso-bc');
             else if (course.id === "aggiornamento-ps-a") setCurrentView('aggiornamento-ps-a');
             else if (course.id === "aggiornamento-ps-bc") setCurrentView('aggiornamento-ps-bc');
+            else if (course.id === "19") setCurrentView('corso-formazione-lavoratori-generale');
+            else if (course.id === "20") setCurrentView('corso-formazione-lavoratori-rischio-basso');
+            else if (course.id === "formazione-medio-alto") setCurrentView('corso-formazione-lavoratori-rischio-medio-alto');
           };
 
           return (
@@ -2279,7 +2370,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'rls-page' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'rls-page' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto'>('home');
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showCookieModal, setShowCookieModal] = useState(false);
@@ -2318,6 +2409,14 @@ export default function App() {
       path = '/aggiornamento-primo-soccorso-gruppo-a';
     } else if (view === 'aggiornamento-ps-bc') {
       path = '/aggiornamento-primo-soccorso-gruppo-b-c';
+    } else if (view === 'corso-formazione-lavoratori-generale') {
+      path = '/corso-formazione-lavoratori-generale';
+    } else if (view === 'corso-formazione-lavoratori-rischio-basso') {
+      path = '/corso-formazione-lavoratori-rischio-basso';
+    } else if (view === 'corso-formazione-lavoratori-rischio-medio-alto') {
+      path = '/corso-formazione-lavoratori-rischio-medio-alto';
+    } else if (view === 'corso-preposto') {
+      path = '/corso-preposto';
     }
     
     window.history.pushState({ view, category: category || selectedCategory }, '', path);
@@ -2352,6 +2451,14 @@ export default function App() {
       navigateToView('aggiornamento-ps-a');
     } else if (course.id === "aggiornamento-ps-bc") {
       navigateToView('aggiornamento-ps-bc');
+    } else if (course.id === "19") {
+      navigateToView('corso-formazione-lavoratori-generale');
+    } else if (course.id === "20") {
+      navigateToView('corso-formazione-lavoratori-rischio-basso');
+    } else if (course.id === "formazione-medio-alto") {
+      navigateToView('corso-formazione-lavoratori-rischio-medio-alto');
+    } else if (course.id === "76") {
+      navigateToView('corso-preposto');
     } else {
       setSelectedCourse(course);
     }
@@ -2411,6 +2518,14 @@ export default function App() {
       setCurrentView('antincendio-update-l2');
     } else if (path === '/aggiornamento-antincendio-livello-3') {
       setCurrentView('antincendio-update-l3');
+    } else if (path === '/corso-formazione-lavoratori-generale') {
+      setCurrentView('corso-formazione-lavoratori-generale');
+    } else if (path === '/corso-formazione-lavoratori-rischio-basso') {
+      setCurrentView('corso-formazione-lavoratori-rischio-basso');
+    } else if (path === '/corso-formazione-lavoratori-rischio-medio-alto') {
+      setCurrentView('corso-formazione-lavoratori-rischio-medio-alto');
+    } else if (path === '/corso-preposto') {
+      setCurrentView('corso-preposto');
     } else {
       const params = new URLSearchParams(window.location.search);
       const courseId = params.get('corso');
@@ -2722,6 +2837,14 @@ export default function App() {
         <AggiornamentoPrimoSoccorsoGruppoAPage onNavigate={navigateToView} />
       ) : currentView === 'aggiornamento-ps-bc' ? (
         <AggiornamentoPrimoSoccorsoGruppoBCPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-formazione-lavoratori-generale' ? (
+        <FormazioneGeneralePage onNavigate={navigateToView} />
+      ) : currentView === 'corso-formazione-lavoratori-rischio-basso' ? (
+        <FormazioneSpecificaBassoPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-formazione-lavoratori-rischio-medio-alto' ? (
+        <FormazioneSpecificaMedioAltoPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-preposto' ? (
+        <CorsoPrepostoPage onNavigate={navigateToView} />
       ) : (
         <DLGS8108Section setCurrentView={navigateToView} />
       )}

@@ -55,7 +55,7 @@ const RLSPage: React.FC<RLSPageProps> = ({ onNavigate }) => {
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              La figura chiave per la tutela della salute e sicurezza nei luoghi di lavoro. Un percorso formativo completo e certificato secondo le normative vigenti.
+              La figura chiave per la tutela della salute e sicurezza nei luoghi di lavoro. Un percorso di <strong>formazione in presenza conforme D.Lgs 81/08</strong> completo e certificato.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -110,13 +110,13 @@ const RLSPage: React.FC<RLSPageProps> = ({ onNavigate }) => {
                     Il <strong>Rappresentante dei Lavoratori per la Sicurezza (RLS)</strong> è una figura centrale nel sistema di prevenzione, rendendo il <strong>corso RLS obbligatorio aziende</strong> un pilastro fondamentale del <strong>D.Lgs 81/08</strong>, il Testo Unico sulla Salute e Sicurezza sul Lavoro. Questa figura rappresenta il punto di incontro tra i lavoratori e il datore di lavoro per tutto ciò che concerne la prevenzione dei rischi e la tutela della salute in azienda. La sua presenza è fondamentale per garantire che le istanze dei lavoratori in materia di sicurezza siano ascoltate e integrate nei processi decisionali aziendali.
                   </p>
                   <p>
-                    Il nostro <strong>corso RLS online valido legge</strong> è strutturato per fornire non solo le nozioni giuridiche e normative necessarie, ma anche gli strumenti pratici per esercitare il ruolo con efficacia. Essere un RLS significa avere la responsabilità di consultare il datore di lavoro sulla valutazione dei rischi, partecipare alle riunioni periodiche e promuovere la cultura della sicurezza tra i colleghi. Il percorso formativo copre aspetti che vanno dalla legislazione vigente alle tecniche di comunicazione interpersonale, essenziali per mediare tra le diverse figure del sistema di prevenzione aziendale.
+                    Il nostro <strong>corso RLS in presenza</strong> è strutturato per fornire non solo le nozioni giuridiche e normative necessarie, ma anche gli strumenti pratici per esercitare il ruolo con efficacia. Organizziamo <strong>corsi in tutta Italia</strong>, garantendo una copertura capillare per le aziende che necessitano di una formazione di qualità direttamente sul campo. Essere un RLS significa avere la responsabilità di consultare il datore di lavoro sulla valutazione dei rischi, partecipare alle riunioni periodiche e promuovere la cultura della sicurezza tra i colleghi.
                   </p>
                   <p>
-                    In un contesto lavorativo in continua evoluzione, la sicurezza non è solo un obbligo di legge, ma un valore aziendale che aumenta la produttività e riduce i costi sociali derivanti dagli infortuni. Il corso affronta temi cruciali come la gestione delle emergenze, l'uso corretto dei Dispositivi di Protezione Individuale (DPI) e la comprensione dei rischi specifici legati alle diverse mansioni. Approfondiremo inoltre il concetto di benessere organizzativo e la prevenzione dello stress lavoro-correlato, temi sempre più centrali nella moderna gestione delle risorse umane.
+                    Aliseo Academy si distingue per la capacità di erogare <strong>formazione presso sede cliente</strong>, adattando i contenuti alle specifiche realtà produttive. Grazie al nostro <strong>centro formativo mobile Aliseo</strong> (Safety Truck), portiamo un'aula multimediale e attrezzata direttamente nel vostro piazzale, offrendo un'esperienza immersiva senza che i lavoratori debbano lasciare il sito aziendale. In un contesto lavorativo in continua evoluzione, la sicurezza non è solo un obbligo di legge, ma un valore aziendale.
                   </p>
                   <p>
-                    La formazione continua è essenziale: il ruolo dell'RLS richiede un aggiornamento costante per restare al passo con le nuove tecnologie e le modifiche legislative. Partecipare a questo corso garantisce una preparazione solida, riconosciuta a livello nazionale, che permette di operare con competenza e autorevolezza all'interno di qualsiasi realtà produttiva, sia essa una piccola impresa o una grande multinazionale. La nostra metodologia didattica favorisce l'apprendimento attraverso esempi concreti e scenari operativi verosimili.
+                    La nostra metodologia didattica prevede <strong>sessioni pratiche con docenti qualificati</strong>, esperti in igiene e sicurezza industriale, che favoriscono l'apprendimento attraverso esempi concreti e scenari operativi verosimili. La formazione continua è essenziale: il ruolo dell'RLS richiede un aggiornamento costante per restare al passo con le nuove tecnologie e le modifiche legislative. Partecipare a questo corso garantisce una preparazione solida, riconosciuta a livello nazionale.
                   </p>
                   <p>
                     Scegliere la nostra formazione significa affidarsi a esperti del settore che utilizzano metodologie didattiche attive, casi studio reali e simulazioni pratiche. Il nostro obiettivo è trasformare l'obbligo formativo in un'opportunità di crescita professionale per il lavoratore e di miglioramento per l'intera organizzazione aziendale. Al termine del percorso, l'RLS sarà in grado di analizzare i rischi, proporre soluzioni migliorative e collaborare attivamente alla stesura del Documento di Valutazione dei Rischi (DVR).
@@ -220,7 +220,7 @@ const RLSPage: React.FC<RLSPageProps> = ({ onNavigate }) => {
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Metodologia</p>
-                      <p className="text-white font-bold">E-learning / Aula</p>
+                      <p className="text-white font-bold">Presenza / On-site</p>
                     </div>
                   </div>
 

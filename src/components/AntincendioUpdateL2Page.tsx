@@ -100,10 +100,10 @@ const AntincendioUpdateL2Page: React.FC<AntincendioUpdateL2PageProps> = ({ onNav
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    L'<strong>aggiornamento antincendio ogni 5 anni</strong> è un requisito fondamentale per garantire che le squadre di emergenza aziendali mantengano un elevato standard di preparazione. Per le attività di Livello 2 (L2), la normativa vigente (DM 02/09/2021) impone questa periodicità per rinfrescare sia le conoscenze teoriche che le abilità pratiche necessarie a gestire situazioni di rischio medio.
+                    L'<strong>aggiornamento antincendio ogni 5 anni</strong> per il Livello 2 (L2) è un requisito fondamentale per garantire che le squadre di emergenza aziendali mantengano un elevato standard di preparazione. Aliseo Academy eroga questa <strong>formazione in presenza conforme D.Lgs 81/08</strong> in tutta Italia, focalizzandosi sul ripasso delle abilità pratiche necessarie a gestire situazioni di rischio medio.
                   </p>
                   <p>
-                    Per le attività classificate a <strong>Livello 2 (ex rischio medio)</strong>, l'aggiornamento ha una durata di 5 ore e si focalizza principalmente sulla parte pratica. È fondamentale che un addetto, anche se opera in un ambiente a medio rischio, sappia come reagire prontamente in caso di emergenza, come utilizzare un estintore senza esitazioni e come guidare i colleghi verso le uscite di sicurezza.
+                    Le nostre <strong>sessioni pratiche con docenti qualificati</strong> possono essere svolte direttamente presso la vostra azienda grazie alla <strong>formazione presso sede cliente</strong>. In alternativa, il <strong>centro formativo mobile Aliseo</strong> (Safety Truck) offre una soluzione logistica d'avanguardia, portando simulatori di fuoco e attrezzature certificate ovunque sia necessario, per un addestramento efficace e senza interruzioni della produttività.
                   </p>
                   <p>
                     Il corso di aggiornamento proposto da Aliseo Academy permette di ripassare i concetti chiave della prevenzione incendi e di testare nuovamente le proprie abilità manuali attraverso <strong>prove pratiche di spegnimento</strong>. Spesso, con il passare degli anni, la confidenza con i mezzi di estinzione può diminuire; l'aggiornamento serve proprio a rinfrescare la memoria e a garantire che, in caso di necessità reale, l'intervento sia efficace e sicuro.

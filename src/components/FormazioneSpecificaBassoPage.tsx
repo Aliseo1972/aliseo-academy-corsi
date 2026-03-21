@@ -1,39 +1,39 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, MessageSquare, ShieldCheck, GraduationCap, HeartPulse, Scale, Truck, MapPin, Mail, AlertCircle } from 'lucide-react';
+import { Clock, BookOpen, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Truck, MapPin, Monitor, Video } from 'lucide-react';
 
-interface AggiornamentoPrimoSoccorsoGruppoBCPageProps {
+interface FormazioneSpecificaBassoPageProps {
   onNavigate: (view: any) => void;
 }
 
-const AggiornamentoPrimoSoccorsoGruppoBCPage: React.FC<AggiornamentoPrimoSoccorsoGruppoBCPageProps> = ({ onNavigate }) => {
+const FormazioneSpecificaBassoPage: React.FC<FormazioneSpecificaBassoPageProps> = ({ onNavigate }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Aggiornamento Primo Soccorso Gruppo B-C - Rinnovo 4 ore | Aliseo Academy";
+    document.title = "Corso Formazione Specifica Lavoratori Rischio Basso | Sicurezza Lavoro Aliseo Academy";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Aggiornamento triennale obbligatorio primo soccorso Gruppo B-C (4 ore) per aziende. Formazione presso sede cliente e Safety Truck Aliseo.");
+      metaDescription.setAttribute('content', "Formazione lavoratori rischio basso (4 ore) obbligatoria per uffici e servizi. Corso sicurezza lavoro D.Lgs 81/08 certificato in modalità e-learning. Formazione lavoratori aziende online.");
     }
   }, []);
 
-  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20aggiornamento%20Primo%20Soccorso%20Gruppo%20B-C&body=Buongiorno%2C%0A%0ASono%20interessato%20all'aggiornamento%20Primo%20Soccorso%20Aziendale%20Gruppo%20B-C%20(4%20ore).%0APotrei%20avere%20maggiori%20informazioni%20su%20modalit%C3%A0%2C%20prossime%20date%20e%20costi%3F%0A%0AGrazie.";
+  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Formazione%20Specifica%20Rischio%20Basso&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20Formazione%20Specifica%20Lavoratori%20Rischio%20Basso%20(4%20ore).%0APotrei%20avere%20maggiori%20informazioni%20su%20modalit%C3%A0%2C%20prossime%20date%20e%20costi%3F%0A%0AGrazie.";
 
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
       <section className="relative pt-20 pb-16 bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(34,197,94,0.1),transparent_50%)]" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-bold uppercase tracking-wider mb-6"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6"
             >
-              <HeartPulse className="w-4 h-4" />
-              Aggiornamento Obbligatorio - DM 388/2003
+              <ShieldCheck className="w-4 h-4" />
+              Art. 37 D.Lgs 81/08 - Rischio Basso
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -41,7 +41,7 @@ const AggiornamentoPrimoSoccorsoGruppoBCPage: React.FC<AggiornamentoPrimoSoccors
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6"
             >
-              Aggiornamento Primo Soccorso <span className="text-brand">Gruppo B-C</span>
+              Corso Formazione <span className="text-brand">Specifica Rischio Basso</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -49,7 +49,7 @@ const AggiornamentoPrimoSoccorsoGruppoBCPage: React.FC<AggiornamentoPrimoSoccors
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Rinnovo triennale obbligatorio per addetti al primo soccorso in aziende dei Gruppi B e C. Formazione pratica e teorica di 4 ore.
+              Formazione obbligatoria di 4 ore per lavoratori di settori a basso rischio (uffici, commercio, servizi).
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -59,17 +59,17 @@ const AggiornamentoPrimoSoccorsoGruppoBCPage: React.FC<AggiornamentoPrimoSoccors
             >
               <div>
                 <p className="text-slate-400 text-sm mb-3 font-medium">
-                  Organizza l'aggiornamento presso la tua azienda in tutta Italia.
+                  Disponibile interamente in modalità E-learning con accesso immediato.
                 </p>
                 <div className="flex flex-col gap-2">
                   <p className="text-brand text-xs font-bold uppercase tracking-wider">
-                    Preventivi personalizzati entro 24 ore
+                    Ti rispondiamo entro 24 ore
                   </p>
                   <a 
                     href={mailtoLink}
                     className="px-8 py-4 bg-brand text-slate-900 font-black uppercase tracking-tight rounded-2xl hover:bg-brand-light transition-all flex items-center gap-2 group shadow-xl shadow-brand/20 w-fit"
                   >
-                    Richiedi informazioni aggiornamento
+                    Ricevi informazioni sul corso
                     <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </a>
                 </div>
@@ -82,7 +82,7 @@ const AggiornamentoPrimoSoccorsoGruppoBCPage: React.FC<AggiornamentoPrimoSoccors
                 <div className="w-px h-6 bg-white/10" />
                 <div className="flex items-center gap-2">
                   <Scale className="w-5 h-5 text-brand" />
-                  <span className="text-white font-bold text-sm">D.Lgs 81/08 & DM 388</span>
+                  <span className="text-white font-bold text-sm">D.Lgs 81/08 Art. 37</span>
                 </div>
               </div>
             </motion.div>
@@ -99,23 +99,20 @@ const AggiornamentoPrimoSoccorsoGruppoBCPage: React.FC<AggiornamentoPrimoSoccors
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  L'Aggiornamento Primo Soccorso Obbligatorio per i Gruppi B e C
+                  Formazione Specifica Rischio Basso: Cosa Prevede la Legge
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    L'<strong>aggiornamento primo soccorso obbligatorio</strong> è un adempimento normativo essenziale per tutte le aziende classificate nei Gruppi B e C. Aliseo Academy eroga questa <strong>formazione in presenza conforme D.Lgs 81/08</strong> e al <strong>DM 388/2003</strong> in <strong>tutta Italia</strong>, garantendo che gli addetti mantengano la necessaria prontezza operativa attraverso <strong>sessioni pratiche con docenti qualificati</strong> (medici e infermieri esperti).
+                    Il <strong>corso sicurezza lavoratori obbligatorio</strong> per il rischio basso è il completamento necessario della formazione generale. Mentre la parte generale fornisce i concetti base, la formazione specifica si focalizza sui rischi reali legati alla mansione e al settore lavorativo. Secondo l'<strong>Art. 37 del D.Lgs 81/08</strong>, questa formazione deve essere erogata a tutti i dipendenti di aziende classificate a <strong>formazione lavoratori rischio basso</strong> (settori ATECO come commercio, uffici, studi professionali, turismo).
                   </p>
                   <p>
-                    La nostra offerta si distingue per la flessibilità: organizziamo la <strong>formazione presso sede cliente</strong> per minimizzare l'impatto sull'operatività aziendale. Inoltre, grazie al <strong>centro formativo mobile Aliseo</strong> (Safety Truck), possiamo portare un'aula didattica completa e attrezzata direttamente nel vostro piazzale, offrendo un ambiente ideale per l'addestramento pratico sulle manovre salvavita e l'uso dei presidi medici.
+                    La <strong>formazione lavoratori aziende</strong> a rischio basso ha una durata minima di 4 ore. Questo percorso formativo analizza i rischi specifici dell'ambiente di lavoro "ufficio" o "negozio", come l'utilizzo di videoterminali, la movimentazione manuale dei carichi leggeri, lo stress lavoro-correlato e i rischi elettrici di base. Per settori più complessi, è invece necessaria la <strong>formazione lavoratori rischio medio alto</strong>.
                   </p>
                   <p>
-                    L'<strong>aggiornamento primo soccorso gruppo B-C</strong> affronta le manovre fondamentali di rianimazione cardiopolmonare (RCP), la gestione delle ostruzioni delle vie aeree e il trattamento delle emergenze mediche più comuni. In un contesto lavorativo, la rapidità del primo intervento può fare la differenza tra un infortunio gestito correttamente e una tragedia. Rinnovare le proprie competenze ogni tre anni assicura che gli addetti non dimentichino i protocolli vitali e siano aggiornati sulle ultime tecniche di soccorso.
+                    Un <strong>corso sicurezza lavoro D.Lgs 81/08</strong> efficace deve essere calato nella realtà quotidiana dei lavoratori. Aliseo Academy progetta i propri corsi e-learning per essere interattivi e pratici, evitando la pura teoria e concentrandosi su comportamenti sicuri e prevenzione attiva. La nostra formazione online aiuta a ridurre gli infortuni e le malattie professionali, migliorando il benessere organizzativo.
                   </p>
                   <p>
-                    Aliseo Academy offre la massima flessibilità organizzativa, permettendo di svolgere la <strong>formazione presso la sede del cliente</strong> in tutta Italia. Questo servizio "in-company" è ideale per le aziende che desiderano minimizzare i tempi di inattività dei dipendenti, permettendo loro di formarsi direttamente nel proprio ambiente di lavoro. La nostra rete di istruttori qualificati garantisce standard elevati e uniformi, indipendentemente dalla localizzazione geografica della tua impresa.
-                  </p>
-                  <p>
-                    Inoltre, Aliseo Academy mette a disposizione il proprio <strong>centro formativo mobile</strong> (Safety Truck). Questa soluzione innovativa porta un'aula didattica itinerante e tutte le attrezzature di addestramento (manichini, simulatori DAE, presidi medici) direttamente nel piazzale della tua azienda. È la scelta perfetta per chi non dispone di spazi interni adeguati ma vuole garantire ai propri dipendenti un'esperienza formativa di alto livello tecnologico e pratico.
+                    Per le aziende con personale distribuito o con esigenze di flessibilità, Aliseo Academy propone la fruizione tramite <strong>piattaforma e-learning</strong> dedicata. Questa modalità permette di seguire il corso da remoto mantenendo un alto standard qualitativo e garantendo la stessa validità legale della formazione in aula. È la soluzione ideale per ottimizzare i tempi di lavoro senza rinunciare alla qualità formativa, eliminando i costi di trasferta e le complessità logistiche.
                   </p>
                 </div>
               </article>
@@ -125,34 +122,34 @@ const AggiornamentoPrimoSoccorsoGruppoBCPage: React.FC<AggiornamentoPrimoSoccors
                 <div className="absolute top-0 right-0 w-64 h-64 bg-brand/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
                 <div className="relative z-10">
                   <h3 className="text-2xl md:text-3xl font-black mb-6 uppercase tracking-tight">
-                    Formazione <span className="text-brand">Flessibile e Innovativa</span>
+                    Vantaggi dell'<span className="text-brand">E-learning Aliseo</span>
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="space-y-4">
                       <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
-                        <MapPin className="w-6 h-6 text-brand" />
+                        <Monitor className="w-6 h-6 text-brand" />
                       </div>
-                      <h4 className="font-bold text-lg">In tutta Italia</h4>
+                      <h4 className="font-bold text-lg">Online 24/7</h4>
                       <p className="text-slate-400 text-sm leading-relaxed">
-                        Organizziamo sessioni di aggiornamento su tutto il territorio nazionale, garantendo rapidità e professionalità.
+                        Formazione flessibile e interattiva. Accedi ai contenuti quando vuoi, da qualsiasi dispositivo connesso.
                       </p>
                     </div>
                     <div className="space-y-4">
                       <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
-                        <Users className="w-6 h-6 text-brand" />
+                        <ShieldCheck className="w-6 h-6 text-brand" />
                       </div>
-                      <h4 className="font-bold text-lg">Presso sede cliente</h4>
+                      <h4 className="font-bold text-lg">Certificazione</h4>
                       <p className="text-slate-400 text-sm leading-relaxed">
-                        I nostri docenti vengono da te. Riduciamo i disagi logistici e contestualizziamo la formazione nella tua realtà.
+                        Attestato valido a norma di legge rilasciato immediatamente al superamento del test finale online.
                       </p>
                     </div>
                     <div className="space-y-4">
                       <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
-                        <Truck className="w-6 h-6 text-brand" />
+                        <Clock className="w-6 h-6 text-brand" />
                       </div>
-                      <h4 className="font-bold text-lg">Safety Truck</h4>
+                      <h4 className="font-bold text-lg">Risparmio</h4>
                       <p className="text-slate-400 text-sm leading-relaxed">
-                        Il centro mobile Aliseo porta la tecnologia e la pratica direttamente nel tuo piazzale aziendale.
+                        Ottimizza i costi aziendali eliminando le spese di trasferta e riducendo i tempi di assenza dal lavoro.
                       </p>
                     </div>
                   </div>
@@ -164,15 +161,11 @@ const AggiornamentoPrimoSoccorsoGruppoBCPage: React.FC<AggiornamentoPrimoSoccors
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    A chi è rivolto
+                    Destinatari
                   </h3>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                     <p className="text-slate-600 leading-relaxed">
-                      L'aggiornamento è rivolto ai lavoratori già formati come <strong>addetti al primo soccorso in aziende dei Gruppi B e C</strong>. 
-                      <br /><br />
-                      - <strong>Gruppo B</strong>: Aziende con 3 o più lavoratori non classificate nel Gruppo A.
-                      <br />
-                      - <strong>Gruppo C</strong>: Aziende con meno di 3 lavoratori non classificate nel Gruppo A.
+                      Lavoratori di aziende classificate a <strong>Rischio Basso</strong> secondo i settori ATECO (es. uffici, commercio al dettaglio, servizi, studi professionali, turismo). La formazione specifica deve essere preceduta dal modulo di formazione generale (4 ore).
                     </p>
                   </div>
                 </section>
@@ -180,37 +173,49 @@ const AggiornamentoPrimoSoccorsoGruppoBCPage: React.FC<AggiornamentoPrimoSoccors
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Quando è necessario l'aggiornamento
+                    Argomenti Trattati
                   </h3>
-                  <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm flex items-start gap-4">
-                    <AlertCircle className="w-6 h-6 text-brand shrink-0 mt-1" />
-                    <div>
-                      <p className="text-slate-700 font-medium mb-2">Cadenza Triennale</p>
-                      <p className="text-slate-600 text-sm leading-relaxed">
-                        La normativa vigente (DM 388/2003) impone che l'aggiornamento della formazione per gli addetti al primo soccorso avvenga <strong>ogni 3 anni</strong>. È responsabilità del datore di lavoro monitorare le scadenze degli attestati per garantire la conformità normativa e la sicurezza aziendale.
-                      </p>
-                    </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {[
+                      "Rischi infortuni e meccanici",
+                      "Rischi elettrici e attrezzature",
+                      "Microclima e illuminazione",
+                      "Utilizzo di Videoterminali (VDT)",
+                      "Movimentazione manuale carichi",
+                      "Stress lavoro-correlato",
+                      "Segnaletica di sicurezza",
+                      "Procedure di emergenza"
+                    ].map((obj, i) => (
+                      <div key={i} className="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
+                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
+                        <span className="text-sm font-medium text-slate-700">{obj}</span>
+                      </div>
+                    ))}
                   </div>
                 </section>
 
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma del corso
+                    Programma Didattico
                   </h3>
                   <div className="space-y-4">
                     {[
                       { 
-                        title: "Richiami Teorici", 
-                        content: "Allertamento del sistema di soccorso, riconoscimento dell'emergenza, accertamento delle condizioni dell'infortunato." 
+                        title: "Modulo 1: Analisi dei Rischi Specifici", 
+                        content: "Identificazione dei pericoli tipici del settore a basso rischio. Infortuni comuni e misure di prevenzione." 
                       },
                       { 
-                        title: "Protocolli di Intervento", 
-                        content: "Gestione delle emorragie, dei traumi, dei malori improvvisi e delle ostruzioni delle vie aeree." 
+                        title: "Modulo 2: Ergonomia e Videoterminali", 
+                        content: "Corretta postura, pause, regolazione della postazione di lavoro per chi opera al computer." 
                       },
                       { 
-                        title: "Addestramento Pratico", 
-                        content: "Esercitazioni di rianimazione cardiopolmonare (RCP) su manichino, posizionamento dell'infortunato e tecniche di primo soccorso." 
+                        title: "Modulo 3: Rischi Psicosociali", 
+                        content: "Gestione dello stress, benessere organizzativo e prevenzione del burnout." 
+                      },
+                      { 
+                        title: "Modulo 4: Emergenza e Primo Soccorso", 
+                        content: "Cenni sulle procedure di evacuazione e comportamento in caso di emergenza sanitaria." 
                       }
                     ].map((item, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
@@ -228,7 +233,7 @@ const AggiornamentoPrimoSoccorsoGruppoBCPage: React.FC<AggiornamentoPrimoSoccors
               <div className="bg-slate-900 rounded-3xl p-8 sticky top-24">
                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                   <GraduationCap className="w-6 h-6 text-brand" />
-                  Scheda Aggiornamento
+                  Scheda Corso
                 </h3>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
@@ -246,7 +251,7 @@ const AggiornamentoPrimoSoccorsoGruppoBCPage: React.FC<AggiornamentoPrimoSoccors
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Destinatari</p>
-                      <p className="text-white font-bold text-sm">Addetti PS Gruppo B-C (Rinnovo)</p>
+                      <p className="text-white font-bold text-sm">Lavoratori Rischio Basso</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -255,7 +260,7 @@ const AggiornamentoPrimoSoccorsoGruppoBCPage: React.FC<AggiornamentoPrimoSoccors
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Normativa</p>
-                      <p className="text-white font-bold text-sm">D.Lgs 81/08, DM 388/03</p>
+                      <p className="text-white font-bold text-sm">Art. 37 D.Lgs 81/08</p>
                     </div>
                   </div>
                 </div>
@@ -264,7 +269,7 @@ const AggiornamentoPrimoSoccorsoGruppoBCPage: React.FC<AggiornamentoPrimoSoccors
                     Ti rispondiamo entro 24 ore
                   </p>
                   <p className="text-white/60 text-[10px] mb-4 text-center uppercase tracking-widest">
-                    Sicurezza e conformità per la tua azienda
+                    Soluzioni su misura per la tua azienda
                   </p>
                   <a 
                     href={mailtoLink}
@@ -281,10 +286,10 @@ const AggiornamentoPrimoSoccorsoGruppoBCPage: React.FC<AggiornamentoPrimoSoccors
               <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                 <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
                   <FileText className="w-5 h-5 text-brand" />
-                  Rinnovo
+                  Aggiornamento
                 </h4>
                 <p className="text-sm text-slate-600">
-                  L'attestato rilasciato rinnova l'abilitazione per altri 3 anni, in piena conformità con le normative vigenti sulla sicurezza sul lavoro.
+                  L'aggiornamento della formazione specifica è obbligatorio ogni 5 anni con un modulo di 6 ore.
                 </p>
               </div>
             </div>
@@ -301,10 +306,10 @@ const AggiornamentoPrimoSoccorsoGruppoBCPage: React.FC<AggiornamentoPrimoSoccors
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Corso Base Gruppo B-C", desc: "Formazione 12 ore", view: 'primo-soccorso-bc', icon: HeartPulse },
-              { title: "Aggiornamento A", desc: "Rinnovo triennale 6 ore", view: 'aggiornamento-ps-a', icon: Clock },
+              { title: "Formazione Generale", desc: "Modulo base 4h", view: 'corso-formazione-lavoratori-generale', icon: GraduationCap },
+              { title: "Rischio Medio/Alto", desc: "Formazione Specifica 8-12h", view: 'corso-formazione-lavoratori-rischio-medio-alto', icon: ShieldCheck },
               { title: "Corso RLS", desc: "Rappresentante Lavoratori", view: 'rls-page', icon: Users },
-              { title: "Antincendio L2", desc: "Rischio Medio", view: 'antincendio-l2', icon: ShieldCheck },
+              { title: "Antincendio L1", desc: "Rischio Basso", view: 'antincendio-l1', icon: Clock },
             ].map((item, i) => (
               <button 
                 key={i}
@@ -328,4 +333,4 @@ const AggiornamentoPrimoSoccorsoGruppoBCPage: React.FC<AggiornamentoPrimoSoccors
   );
 };
 
-export default AggiornamentoPrimoSoccorsoGruppoBCPage;
+export default FormazioneSpecificaBassoPage;
