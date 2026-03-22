@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Laptop, Globe, Zap, Award, Scale, CalendarClock } from 'lucide-react';
 import { courses } from '../data/courses';
+import OnlineLearningBenefits from './OnlineLearningBenefits';
 
 interface AggiornamentoPrepostoPageProps {
   onNavigate: (view: any) => void;
@@ -137,53 +138,7 @@ const AggiornamentoPrepostoPage: React.FC<AggiornamentoPrepostoPageProps> = ({ o
                 </div>
               </article>
 
-              {/* Strategic Block - E-learning Focus */}
-              <section className="bg-blue-50 border border-blue-100 rounded-3xl p-8 md:p-12 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-                <div className="relative z-10">
-                  <h3 className="text-2xl font-black text-slate-900 mb-6 uppercase tracking-tight">
-                    Vantaggi dell'Aggiornamento <span className="text-blue-600">Online</span>
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="flex gap-4">
-                      <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm shrink-0">
-                        <Zap className="w-6 h-6 text-blue-600" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-slate-900 mb-1">Flessibilità Totale</h4>
-                        <p className="text-slate-600 text-sm leading-relaxed">Accedi alla piattaforma 24/7. Studia secondo i tuoi ritmi e le tue disponibilità.</p>
-                      </div>
-                    </div>
-                    <div className="flex gap-4">
-                      <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm shrink-0">
-                        <Laptop className="w-6 h-6 text-blue-600" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-slate-900 mb-1">Nessuna Trasferta</h4>
-                        <p className="text-slate-600 text-sm leading-relaxed">Risparmia tempo e costi logistici. La formazione arriva direttamente sul tuo dispositivo.</p>
-                      </div>
-                    </div>
-                    <div className="flex gap-4">
-                      <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm shrink-0">
-                        <Award className="w-6 h-6 text-blue-600" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-slate-900 mb-1">Attestato Normativo</h4>
-                        <p className="text-slate-600 text-sm leading-relaxed">Rilascio immediato dell'attestato valido ai sensi del D.Lgs 81/08 dopo il test finale.</p>
-                      </div>
-                    </div>
-                    <div className="flex gap-4">
-                      <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-sm shrink-0">
-                        <Globe className="w-6 h-6 text-blue-600" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-slate-900 mb-1">Validità Nazionale</h4>
-                        <p className="text-slate-600 text-sm leading-relaxed">Formazione accreditata e riconosciuta da tutti gli organi di controllo in Italia.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
+              <OnlineLearningBenefits />
 
               {/* Detailed Sections */}
               <div className="space-y-12">
@@ -374,12 +329,12 @@ const AggiornamentoPrepostoPage: React.FC<AggiornamentoPrepostoPageProps> = ({ o
         </div>
       </section>
 
-      {/* Altri percorsi Dirigente e Preposto */}
+      {/* Potrebbero interessarti anche */}
       <section className="py-16 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-black text-slate-900 mb-8 flex items-center gap-3">
             <div className="w-2 h-6 bg-brand rounded-full" />
-            Altri percorsi Dirigente e Preposto
+            Potrebbero interessarti anche
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <button 

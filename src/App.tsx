@@ -41,7 +41,10 @@ import PrimoSoccorsoGruppoBCPage from './components/PrimoSoccorsoGruppoBCPage';
 import AggiornamentoPrimoSoccorsoGruppoAPage from './components/AggiornamentoPrimoSoccorsoGruppoAPage';
 import AggiornamentoPrimoSoccorsoGruppoBCPage from './components/AggiornamentoPrimoSoccorsoGruppoBCPage';
 import FormazioneGeneralePage from './components/FormazioneGeneralePage';
-import FormazioneSpecificaBassoPage from './components/FormazioneSpecificaBassoPage';
+import FormazioneLavoratoriRischioMedioPage from './components/FormazioneLavoratoriRischioMedioPage';
+import FormazioneLavoratoriRischioAltoPage from './components/FormazioneLavoratoriRischioAltoPage';
+import AggiornamentoFormazioneLavoratoriPage from './components/AggiornamentoFormazioneLavoratoriPage';
+import FormazioneLavoratoriRischioBassoPage from './components/FormazioneLavoratoriRischioBassoPage';
 import FormazioneSpecificaMedioAltoPage from './components/FormazioneSpecificaMedioAltoPage';
 import CorsoPrepostoPage from './components/CorsoPrepostoPage';
 import CorsoDirigentePage from './components/CorsoDirigentePage';
@@ -2373,7 +2376,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'rls-page' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto'>('home');
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showCookieModal, setShowCookieModal] = useState(false);
@@ -2386,7 +2389,7 @@ export default function App() {
     if (category) setSelectedCategory(category);
     
     let path = '/';
-    if (view === 'rls-page') {
+    if (view === 'corso-rls-rappresentante-lavoratori-sicurezza') {
       path = '/corso-rls-rappresentante-lavoratori-sicurezza';
     } else if (view === 'rls-update-page') {
       path = '/corso-rls-aggiornamento-4-ore';
@@ -2435,7 +2438,7 @@ export default function App() {
 
   const handleCourseOpen = (course: Course) => {
     if (course.id === "50") {
-      navigateToView('rls-page');
+      navigateToView('corso-rls-rappresentante-lavoratori-sicurezza');
     } else if (course.id === "48") {
       navigateToView('rls-update-page');
     } else if (course.id === "49") {
@@ -2516,7 +2519,7 @@ export default function App() {
     // Controllo iniziale al caricamento della pagina
     const path = window.location.pathname;
     if (path === '/corso-rls-rappresentante-lavoratori-sicurezza') {
-      setCurrentView('rls-page');
+      setCurrentView('corso-rls-rappresentante-lavoratori-sicurezza');
     } else if (path === '/corso-rls-aggiornamento-4-ore') {
       setCurrentView('rls-update-page');
     } else if (path === '/corso-rls-aggiornamento-8-ore') {
@@ -2832,7 +2835,7 @@ export default function App() {
         <GWOTrainingSection setCurrentView={navigateToView} />
       ) : currentView === 'gallery' ? (
         <GallerySection setCurrentView={navigateToView} />
-      ) : currentView === 'rls-page' ? (
+      ) : currentView === 'corso-rls-rappresentante-lavoratori-sicurezza' ? (
         <RLSPage onNavigate={navigateToView} />
       ) : currentView === 'rls-update-page' ? (
         <RLSUpdatePage onNavigate={navigateToView} />
@@ -2861,7 +2864,13 @@ export default function App() {
       ) : currentView === 'corso-formazione-lavoratori-generale' ? (
         <FormazioneGeneralePage onNavigate={navigateToView} />
       ) : currentView === 'corso-formazione-lavoratori-rischio-basso' ? (
-        <FormazioneSpecificaBassoPage onNavigate={navigateToView} />
+        <FormazioneLavoratoriRischioBassoPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-formazione-lavoratori-rischio-medio' ? (
+        <FormazioneLavoratoriRischioMedioPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-formazione-lavoratori-rischio-alto' ? (
+        <FormazioneLavoratoriRischioAltoPage onNavigate={navigateToView} />
+      ) : currentView === 'aggiornamento-formazione-lavoratori' ? (
+        <AggiornamentoFormazioneLavoratoriPage onNavigate={navigateToView} />
       ) : currentView === 'corso-formazione-lavoratori-rischio-medio-alto' ? (
         <FormazioneSpecificaMedioAltoPage onNavigate={navigateToView} />
       ) : currentView === 'corso-preposto' ? (

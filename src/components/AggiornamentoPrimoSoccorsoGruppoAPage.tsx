@@ -299,7 +299,7 @@ const AggiornamentoPrimoSoccorsoGruppoAPage: React.FC<AggiornamentoPrimoSoccorso
             {[
               { title: "Corso Base Gruppo A", desc: "Formazione 16 ore", view: 'corso-primo-soccorso-gruppo-a', icon: HeartPulse },
               { title: "Aggiornamento B-C", desc: "Rinnovo triennale 4 ore", view: 'aggiornamento-ps-bc', icon: Clock },
-              { title: "Corso RLS", desc: "Rappresentante Lavoratori", view: 'rls-page', icon: Users },
+              { title: "Corso RLS", desc: "Rappresentante Lavoratori", view: 'corso-rls-rappresentante-lavoratori-sicurezza', icon: Users },
               { title: "Antincendio L2", desc: "Rischio Medio", view: 'antincendio-l2', icon: ShieldCheck },
             ].map((item, i) => (
               <button 

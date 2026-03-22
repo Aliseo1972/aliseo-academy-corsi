@@ -1,22 +1,23 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, MessageSquare, ShieldCheck, GraduationCap, HeartPulse, Scale, Truck, MapPin } from 'lucide-react';
+import { Clock, BookOpen, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Monitor, Shield, ArrowRight } from 'lucide-react';
+import OnlineLearningBenefits from './OnlineLearningBenefits';
 
-interface PrimoSoccorsoGruppoAPageProps {
+interface FormazioneLavoratoriRischioBassoPageProps {
   onNavigate: (view: any) => void;
 }
 
-const PrimoSoccorsoGruppoAPage: React.FC<PrimoSoccorsoGruppoAPageProps> = ({ onNavigate }) => {
+const FormazioneLavoratoriRischioBassoPage: React.FC<FormazioneLavoratoriRischioBassoPageProps> = ({ onNavigate }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Corso Primo Soccorso Gruppo A Aziendale - Formazione 16 ore | Aliseo Academy";
+    document.title = "Corso Formazione Lavoratori Rischio Basso | Aliseo Academy";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Corso primo soccorso aziendale Gruppo A (16 ore) obbligatorio per aziende ad alto rischio. Formazione on-site in tutta Italia con Aliseo Academy.");
+      metaDescription.setAttribute('content', "Corso formazione lavoratori rischio basso obbligatorio secondo D.Lgs 81/08. Formazione online in e-learning con Aliseo Academy.");
     }
   }, []);
 
-  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Primo%20Soccorso%20Gruppo%20A&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20Primo%20Soccorso%20Aziendale%20Gruppo%20A%20(16%20ore).%0APotrei%20avere%20maggiori%20informazioni%20su%20modalit%C3%A0%2C%20prossime%20date%20e%20costi%3F%0A%0AGrazie.";
+  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Formazione%20Lavoratori%20Rischio%20Basso&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20Corso%20Formazione%20Lavoratori%20Rischio%20Basso%20(4%20ore).%0APotrei%20avere%20maggiori%20informazioni%20su%20modalit%C3%A0%2C%20costi%20e%20attivazione%20online%3F%0A%0AGrazie.";
 
   return (
     <div className="bg-white min-h-screen">
@@ -30,10 +31,10 @@ const PrimoSoccorsoGruppoAPage: React.FC<PrimoSoccorsoGruppoAPageProps> = ({ onN
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-6"
             >
-              <HeartPulse className="w-4 h-4" />
-              Sicurezza sul Lavoro - DM 388/2003
+              <ShieldCheck className="w-4 h-4" />
+              Formazione Obbligatoria D.Lgs 81/08
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -41,7 +42,7 @@ const PrimoSoccorsoGruppoAPage: React.FC<PrimoSoccorsoGruppoAPageProps> = ({ onN
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6"
             >
-              Corso Primo Soccorso <span className="text-brand">Aziendale Gruppo A</span>
+              Corso Formazione <span className="text-brand">Lavoratori Rischio Basso</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -49,7 +50,8 @@ const PrimoSoccorsoGruppoAPage: React.FC<PrimoSoccorsoGruppoAPageProps> = ({ onN
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Formazione obbligatoria per addetti al primo soccorso in aziende classificate nel Gruppo A (alto rischio) secondo il D.Lgs 81/08.
+              Percorso formativo specifico di 4 ore per dipendenti di aziende a basso rischio. 
+              Disponibile interamente online in modalità e-learning.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -59,17 +61,17 @@ const PrimoSoccorsoGruppoAPage: React.FC<PrimoSoccorsoGruppoAPageProps> = ({ onN
             >
               <div>
                 <p className="text-slate-400 text-sm mb-3 font-medium">
-                  Richiedi informazioni per organizzare il corso presso la tua azienda.
+                  Validità nazionale e attestato immediato a norma di legge.
                 </p>
                 <div className="flex flex-col gap-2">
                   <p className="text-brand text-xs font-bold uppercase tracking-wider">
-                    Servizio disponibile in tutta Italia
+                    Ti rispondiamo entro 24 ore
                   </p>
                   <a 
                     href={mailtoLink}
                     className="px-8 py-4 bg-brand text-slate-900 font-black uppercase tracking-tight rounded-2xl hover:bg-brand-light transition-all flex items-center gap-2 group shadow-xl shadow-brand/20 w-fit"
                   >
-                    Richiedi preventivo gratuito
+                    Ricevi informazioni sul corso
                     <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </a>
                 </div>
@@ -77,12 +79,12 @@ const PrimoSoccorsoGruppoAPage: React.FC<PrimoSoccorsoGruppoAPageProps> = ({ onN
               <div className="flex items-center gap-4 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm w-fit">
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5 text-brand" />
-                  <span className="text-white font-bold">16 ore</span>
+                  <span className="text-white font-bold">4 ore</span>
                 </div>
                 <div className="w-px h-6 bg-white/10" />
                 <div className="flex items-center gap-2">
                   <Scale className="w-5 h-5 text-brand" />
-                  <span className="text-white font-bold text-sm">D.Lgs 81/08 & DM 388</span>
+                  <span className="text-white font-bold text-sm">Accordo Stato-Regioni 2011</span>
                 </div>
               </div>
             </motion.div>
@@ -99,65 +101,28 @@ const PrimoSoccorsoGruppoAPage: React.FC<PrimoSoccorsoGruppoAPageProps> = ({ onN
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  Formazione Primo Soccorso Obbligatoria: Il Gruppo A
+                  Sicurezza sul Lavoro: Formazione Lavoratori Rischio Basso
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Il <strong>corso primo soccorso aziende</strong> per il Gruppo A rappresenta il livello più approfondito di formazione sanitaria previsto per i luoghi di lavoro. Secondo il <strong>D.Lgs 81/08</strong> e il <strong>DM 388/2003</strong>, le aziende appartenenti a questa categoria sono quelle caratterizzate da un elevato indice di inabilità o da particolari rischi legati all'attività svolta (es. centrali termoelettriche, impianti nucleari, aziende estrattive, aziende con oltre 5 dipendenti ad alto indice INAIL).
+                    Il <strong>Corso Formazione Lavoratori Rischio Basso</strong> rappresenta un pilastro fondamentale della sicurezza sul lavoro in Italia. Ai sensi del <strong>D.Lgs 81/08</strong>, ogni lavoratore deve ricevere una formazione adeguata e specifica in relazione ai rischi presenti nel proprio ambiente di lavoro. Per le aziende classificate a rischio basso, come uffici, studi professionali, negozi e attività di servizi, il percorso formativo è studiato per fornire le competenze necessarie a prevenire infortuni e malattie professionali senza appesantire eccessivamente l'operatività aziendale.
                   </p>
                   <p>
-                    Il <strong>corso primo soccorso obbligatorio aziende</strong> non è solo un adempimento normativo, ma un investimento fondamentale nella tutela della vita umana all'interno del contesto lavorativo. Un addetto al primo soccorso adeguatamente formato è in grado di riconoscere tempestivamente un'emergenza sanitaria, allertare correttamente i soccorsi professionali e attuare le manovre salvavita necessarie per stabilizzare l'infortunato in attesa dell'ambulanza.
+                    La <strong>formazione lavoratori rischio basso</strong> non è solo un obbligo di legge, ma un'opportunità per migliorare la cultura della sicurezza all'interno dell'organizzazione. Un lavoratore consapevole è un lavoratore più sicuro e produttivo. Il <strong>corso sicurezza lavoratori rischio basso</strong> offerto da Aliseo Academy è progettato per essere estremamente pratico e focalizzato sui rischi reali che si incontrano quotidianamente in questi settori, come l'uso dei videoterminali, la postura corretta, lo stress lavoro-correlato e la gestione delle emergenze di base.
                   </p>
                   <p>
-                    Il <strong>primo soccorso gruppo A aziende</strong> richiede un percorso formativo della durata di 16 ore, suddiviso in moduli teorici e pratici. Aliseo Academy propone un approccio didattico moderno, che integra le nozioni mediche con esercitazioni realistiche. I nostri docenti, professionisti del settore sanitario, guidano i partecipanti nell'apprendimento delle tecniche di rianimazione cardiopolmonare (RCP), nell'uso del defibrillatore e nella gestione di traumi, emorragie e malori improvvisi.
+                    Il <strong>corso lavoratori D.Lgs 81/08</strong> per il rischio basso ha una durata di 4 ore, che si aggiungono alle 4 ore di formazione generale obbligatoria per tutti i settori. Questo modulo specifico approfondisce le tematiche legate all'ambiente di lavoro "ufficio" o "servizi", analizzando i pericoli meno evidenti ma comunque impattanti sulla salute a lungo termine. La normativa di riferimento, l'Accordo Stato-Regioni del 21/12/2011, definisce chiaramente i contenuti e le modalità di erogazione di questa formazione.
                   </p>
                   <p>
-                    Affidarsi ad Aliseo Academy significa scegliere un partner esperto nella sicurezza sul lavoro. Offriamo la possibilità di svolgere il corso direttamente presso la <strong>sede del cliente</strong>, ottimizzando i tempi e i costi per l'azienda. Grazie alla nostra presenza capillare, garantiamo la <strong>formazione in tutta Italia</strong>, assicurando standard qualitativi elevati e uniformi su tutto il territorio nazionale.
+                    Scegliere la modalità e-learning per la formazione lavoratori rischio basso offre numerosi vantaggi. Aliseo Academy mette a disposizione una piattaforma online moderna e intuitiva, accessibile 24 ore su 24, 7 giorni su 7. Questo permette ai lavoratori di seguire le lezioni nei momenti di minor carico lavorativo, garantendo la massima flessibilità sia per l'azienda che per il dipendente. La validità dell'attestato rilasciato è garantita su tutto il territorio nazionale, rispettando rigorosamente i requisiti previsti dalla legge.
                   </p>
                   <p>
-                    Un elemento distintivo della nostra offerta è l'utilizzo del <strong>Safety Truck Aliseo</strong>, il nostro centro formativo mobile all'avanguardia. Questa unità speciale ci permette di portare l'aula e le attrezzature di addestramento direttamente on-site, offrendo un'esperienza formativa immersiva e pratica senza che i dipendenti debbano allontanarsi dal luogo di lavoro. È la soluzione ideale per aziende con turnazioni complesse o situate in zone logisticamente sfidanti.
+                    Investire nella formazione con Aliseo Academy significa scegliere la qualità e l'affidabilità di un partner esperto. La nostra missione è rendere la sicurezza sul lavoro un valore condiviso, accessibile e semplice da gestire grazie alle tecnologie digitali più avanzate. Ogni modulo è curato da esperti del settore per assicurare un apprendimento efficace e duraturo.
                   </p>
                 </div>
               </article>
 
-              {/* Strategic Block */}
-              <section className="bg-slate-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-brand/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-                <div className="relative z-10">
-                  <h3 className="text-2xl md:text-3xl font-black mb-6 uppercase tracking-tight">
-                    Perché scegliere <span className="text-brand">Aliseo Academy</span>?
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div className="space-y-4">
-                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
-                        <MapPin className="w-6 h-6 text-brand" />
-                      </div>
-                      <h4 className="font-bold text-lg">In tutta Italia</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">
-                        Organizziamo sessioni formative in ogni regione, garantendo flessibilità e rapidità di intervento per aziende multi-sede.
-                      </p>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
-                        <Users className="w-6 h-6 text-brand" />
-                      </div>
-                      <h4 className="font-bold text-lg">Presso la tua sede</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">
-                        I nostri docenti vengono da te. Riduciamo i tempi di trasferta e personalizziamo l'addestramento sui tuoi rischi specifici.
-                      </p>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
-                        <Truck className="w-6 h-6 text-brand" />
-                      </div>
-                      <h4 className="font-bold text-lg">Safety Truck</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">
-                        Il nostro centro mobile attrezzato porta la tecnologia e la pratica direttamente nel tuo piazzale aziendale.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </section>
+              <OnlineLearningBenefits />
 
               {/* Detailed Sections */}
               <div className="space-y-12">
@@ -168,7 +133,7 @@ const PrimoSoccorsoGruppoAPage: React.FC<PrimoSoccorsoGruppoAPageProps> = ({ onN
                   </h3>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                     <p className="text-slate-600 leading-relaxed">
-                      Il corso è destinato ai lavoratori designati dal datore di lavoro come <strong>addetti al primo soccorso</strong> in aziende classificate nel <strong>Gruppo A</strong>. Questa categoria include aziende con oltre 5 dipendenti ad alto indice infortunistico INAIL, centrali termoelettriche, impianti nucleari, aziende estrattive e altre attività con rischi specifici elevati.
+                      Il corso è destinato a tutti i lavoratori, sia neoassunti che già in forza, impiegati in aziende la cui classe di rischio ATECO è definita "bassa". Tra queste rientrano uffici, banche, assicurazioni, commercio al dettaglio, attività artigianali non produttive e servizi alla persona. È fondamentale che la formazione avvenga all'inizio del rapporto di lavoro o in occasione di cambiamenti di mansione.
                     </p>
                   </div>
                 </section>
@@ -180,12 +145,12 @@ const PrimoSoccorsoGruppoAPage: React.FC<PrimoSoccorsoGruppoAPageProps> = ({ onN
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      "Riconoscere un'emergenza sanitaria",
-                      "Allertare correttamente il sistema di soccorso",
-                      "Attuare manovre di rianimazione (BLS)",
-                      "Gestire traumi e ferite sul lavoro",
-                      "Conoscere i rischi specifici dell'attività",
-                      "Utilizzare i presidi medici aziendali"
+                      "Conoscenza dei rischi specifici del settore",
+                      "Apprendimento delle procedure di prevenzione",
+                      "Sensibilizzazione sui comportamenti sicuri",
+                      "Conformità normativa D.Lgs 81/08",
+                      "Identificazione dei pericoli in ufficio",
+                      "Gestione corretta delle emergenze"
                     ].map((obj, i) => (
                       <div key={i} className="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
@@ -198,25 +163,25 @@ const PrimoSoccorsoGruppoAPage: React.FC<PrimoSoccorsoGruppoAPageProps> = ({ onN
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma Dettagliato
+                    Programma dettagliato
                   </h3>
                   <div className="space-y-4">
                     {[
                       { 
-                        title: "Modulo 1: Allertamento e Riconoscimento", 
-                        content: "Cause e circostanze dell'infortunio, comunicazione con il sistema di emergenza (118/112), accertamento delle condizioni psicofisiche dell'infortunato, funzioni vitali." 
+                        title: "Modulo 1: Rischi dell'ambiente di lavoro", 
+                        content: "Analisi di illuminazione, microclima, ergonomia e spazi di lavoro comuni." 
                       },
                       { 
-                        title: "Modulo 2: Interventi di Primo Soccorso", 
-                        content: "Sostenimento delle funzioni vitali, posizionamento dell'infortunato, rianimazione cardiopolmonare, manovre di disostruzione delle vie aeree." 
+                        title: "Modulo 2: Videoterminali e Postura", 
+                        content: "Corretto utilizzo del PC, regolazione della sedia e prevenzione disturbi muscolo-scheletrici." 
                       },
                       { 
-                        title: "Modulo 3: Conoscenze su Traumi e Patologie", 
-                        content: "Cenni di anatomia e fisiologia, lussazioni, fratture, emorragie, shock, ustioni, avvelenamenti, intossicazioni, patologie specifiche del settore." 
+                        title: "Modulo 3: Rischi Elettrici e Incendio", 
+                        content: "Prevenzione dei rischi elettrici di base e comportamento in caso di principio di incendio." 
                       },
                       { 
-                        title: "Modulo 4: Esercitazioni Pratiche", 
-                        content: "Tecniche di comunicazione con il sistema di emergenza, tecniche di primo soccorso nelle sindromi cerebrali acute, tecniche di rianimazione cardiopolmonare su manichino, tecniche di tamponamento emorragico." 
+                        title: "Modulo 4: Stress e Benessere", 
+                        content: "Gestione dello stress lavoro-correlato e promozione del benessere organizzativo." 
                       }
                     ].map((item, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
@@ -224,6 +189,18 @@ const PrimoSoccorsoGruppoAPage: React.FC<PrimoSoccorsoGruppoAPageProps> = ({ onN
                         <p className="text-sm text-slate-500 leading-relaxed">{item.content}</p>
                       </div>
                     ))}
+                  </div>
+                </section>
+
+                <section>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <div className="w-1.5 h-6 bg-brand rounded-full" />
+                    Normativa di riferimento
+                  </h3>
+                  <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
+                    <p className="text-slate-600 leading-relaxed">
+                      La normativa di riferimento principale è il <strong>D.Lgs 81/08</strong> (Testo Unico sulla Sicurezza), integrato dall'<strong>Accordo Stato-Regioni del 21/12/2011</strong> e successive modifiche. Aliseo Academy assicura che ogni contenuto sia costantemente aggiornato rispetto alle ultime evoluzioni legislative e tecniche.
+                    </p>
                   </div>
                 </section>
               </div>
@@ -243,7 +220,7 @@ const PrimoSoccorsoGruppoAPage: React.FC<PrimoSoccorsoGruppoAPageProps> = ({ onN
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">16 ore</p>
+                      <p className="text-white font-bold">4 ore</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -252,7 +229,7 @@ const PrimoSoccorsoGruppoAPage: React.FC<PrimoSoccorsoGruppoAPageProps> = ({ onN
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Destinatari</p>
-                      <p className="text-white font-bold text-sm">Addetti Primo Soccorso Gruppo A</p>
+                      <p className="text-white font-bold text-sm">Lavoratori Rischio Basso</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -261,7 +238,7 @@ const PrimoSoccorsoGruppoAPage: React.FC<PrimoSoccorsoGruppoAPageProps> = ({ onN
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Normativa</p>
-                      <p className="text-white font-bold text-sm">D.Lgs 81/08, DM 388/03</p>
+                      <p className="text-white font-bold text-sm">D.Lgs 81/08</p>
                     </div>
                   </div>
                 </div>
@@ -287,10 +264,10 @@ const PrimoSoccorsoGruppoAPage: React.FC<PrimoSoccorsoGruppoAPageProps> = ({ onN
               <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                 <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
                   <FileText className="w-5 h-5 text-brand" />
-                  Validità
+                  Aggiornamento
                 </h4>
                 <p className="text-sm text-slate-600">
-                  L'attestato rilasciato ha validità triennale. Al termine dei 3 anni è necessario frequentare un corso di aggiornamento di 6 ore.
+                  L'aggiornamento della formazione specifica è obbligatorio ogni 5 anni con un modulo di 6 ore.
                 </p>
               </div>
             </div>
@@ -305,12 +282,14 @@ const PrimoSoccorsoGruppoAPage: React.FC<PrimoSoccorsoGruppoAPageProps> = ({ onN
             <div className="w-2 h-6 bg-brand rounded-full" />
             Potrebbero interessarti anche
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Gruppo B-C", desc: "Corso base 12 ore", view: 'primo-soccorso-bc', icon: HeartPulse },
-              { title: "Aggiornamento A", desc: "Rinnovo triennale 6 ore", view: 'aggiornamento-ps-a', icon: Clock },
+              { title: "Formazione Generale", desc: "Modulo base 4h", view: 'corso-formazione-lavoratori-generale', icon: GraduationCap },
+              { title: "Rischio Medio", desc: "Formazione Specifica 8h", view: 'corso-formazione-lavoratori-rischio-medio', icon: ShieldCheck },
+              { title: "Rischio Alto", desc: "Formazione Specifica 12h", view: 'corso-formazione-lavoratori-rischio-alto', icon: Shield },
+              { title: "Aggiornamento", desc: "Rinnovo Quinquennale 6h", view: 'aggiornamento-formazione-lavoratori', icon: Clock },
+              { title: "Corso Preposto", desc: "Responsabile Sicurezza", view: 'corso-preposto', icon: Users },
               { title: "Corso RLS", desc: "Rappresentante Lavoratori", view: 'corso-rls-rappresentante-lavoratori-sicurezza', icon: Users },
-              { title: "Antincendio L2", desc: "Rischio Medio", view: 'antincendio-l2', icon: ShieldCheck },
             ].map((item, i) => (
               <button 
                 key={i}
@@ -334,4 +313,4 @@ const PrimoSoccorsoGruppoAPage: React.FC<PrimoSoccorsoGruppoAPageProps> = ({ onN
   );
 };
 
-export default PrimoSoccorsoGruppoAPage;
+export default FormazioneLavoratoriRischioBassoPage;

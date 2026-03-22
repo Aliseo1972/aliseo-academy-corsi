@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Truck, MapPin, Monitor, Video } from 'lucide-react';
+import OnlineLearningBenefits from './OnlineLearningBenefits';
+import { Clock, BookOpen, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Truck, MapPin, Monitor, Video, Shield } from 'lucide-react';
 
 interface FormazioneGeneralePageProps {
   onNavigate: (view: any) => void;
@@ -9,10 +10,10 @@ interface FormazioneGeneralePageProps {
 const FormazioneGeneralePage: React.FC<FormazioneGeneralePageProps> = ({ onNavigate }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Corso Formazione Generale Lavoratori (4 ore) | Sicurezza Aziendale Aliseo Academy";
+    document.title = "Corso Formazione Generale Lavoratori | Aliseo Academy";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Corso sicurezza lavoratori obbligatorio (4 ore) per aziende. Formazione generale a norma D.Lgs 81/08 disponibile interamente in e-learning. Ottimizza la sicurezza della tua impresa con la flessibilità dell'online.");
+      metaDescription.setAttribute('content', "Corso formazione generale lavoratori obbligatorio (4 ore) secondo D.Lgs 81/08. Formazione online in e-learning con Aliseo Academy.");
     }
   }, []);
 
@@ -120,44 +121,7 @@ const FormazioneGeneralePage: React.FC<FormazioneGeneralePageProps> = ({ onNavig
                 </div>
               </article>
 
-              {/* Strategic Block */}
-              <section className="bg-slate-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-brand/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-                <div className="relative z-10">
-                  <h3 className="text-2xl md:text-3xl font-black mb-6 uppercase tracking-tight">
-                    Vantaggi della <span className="text-brand">Formazione Online</span>
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div className="space-y-4">
-                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
-                        <Monitor className="w-6 h-6 text-brand" />
-                      </div>
-                      <h4 className="font-bold text-lg">Accesso 24/7</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">
-                        Piattaforma LMS certificata disponibile in ogni momento. I lavoratori gestiscono i tempi di studio in autonomia.
-                      </p>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
-                        <ShieldCheck className="w-6 h-6 text-brand" />
-                      </div>
-                      <h4 className="font-bold text-lg">Tracciamento</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">
-                        Monitoraggio costante dei progressi e test di verifica intermedi per garantire l'effettivo apprendimento.
-                      </p>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
-                        <Clock className="w-6 h-6 text-brand" />
-                      </div>
-                      <h4 className="font-bold text-lg">Zero Trasferte</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">
-                        Nessun costo di spostamento o interruzione prolungata dell'attività lavorativa. Massima efficienza aziendale.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </section>
+              <OnlineLearningBenefits />
 
               {/* Detailed Sections */}
               <div className="space-y-12">
@@ -305,12 +269,14 @@ const FormazioneGeneralePage: React.FC<FormazioneGeneralePageProps> = ({ onNavig
             <div className="w-2 h-6 bg-brand rounded-full" />
             Potrebbero interessarti anche
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { title: "Rischio Basso", desc: "Formazione Specifica 4h", view: 'corso-formazione-lavoratori-rischio-basso', icon: ShieldCheck },
-              { title: "Rischio Medio/Alto", desc: "Formazione Specifica 8-12h", view: 'corso-formazione-lavoratori-rischio-medio-alto', icon: ShieldCheck },
-              { title: "Corso RLS", desc: "Rappresentante Lavoratori", view: 'rls-page', icon: Users },
-              { title: "Antincendio L1", desc: "Rischio Basso", view: 'antincendio-l1', icon: Clock },
+              { title: "Rischio Medio", desc: "Formazione Specifica 8h", view: 'corso-formazione-lavoratori-rischio-medio', icon: ShieldCheck },
+              { title: "Rischio Alto", desc: "Formazione Specifica 12h", view: 'corso-formazione-lavoratori-rischio-alto', icon: Shield },
+              { title: "Aggiornamento", desc: "Rinnovo Quinquennale 6h", view: 'aggiornamento-formazione-lavoratori', icon: Clock },
+              { title: "Corso Preposto", desc: "Responsabile Sicurezza", view: 'corso-preposto', icon: Users },
+              { title: "Corso RLS", desc: "Rappresentante Lavoratori", view: 'corso-rls-rappresentante-lavoratori-sicurezza', icon: Users },
             ].map((item, i) => (
               <button 
                 key={i}

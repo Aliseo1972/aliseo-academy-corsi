@@ -228,7 +228,7 @@ const AntincendioL2Page: React.FC<AntincendioL2PageProps> = ({ onNavigate }) => 
               { title: "Livello 1 (L1)", desc: "Rischio Basso - 4 ore", view: 'antincendio-l1', icon: Flame },
               { title: "Livello 3 (L3)", desc: "Rischio Alto - 16 ore", view: 'antincendio-l3', icon: Flame },
               { title: "Aggiornamento L2", desc: "Rinnovamento - 5 ore", view: 'antincendio-update-l2', icon: Clock },
-              { title: "Corso RLS", desc: "Base 32 ore", view: 'rls-page', icon: Users },
+              { title: "Corso RLS", desc: "Base 32 ore", view: 'corso-rls-rappresentante-lavoratori-sicurezza', icon: Users },
               { title: "Aggiornamento RLS", desc: "4 ore - Aziende < 50 dip.", view: 'rls-update-page', icon: Clock },
               { title: "Aggiornamento RLS", desc: "8 ore - Aziende > 50 dip.", view: 'rls-update-8-page', icon: Clock }
             ].map((item, i) => (

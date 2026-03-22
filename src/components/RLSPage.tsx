@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
+import OnlineLearningBenefits from './OnlineLearningBenefits';
 import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, MessageSquare, ShieldCheck, GraduationCap, Briefcase, Scale } from 'lucide-react';
 import { courses } from '../data/courses';
 
 interface RLSPageProps {
-  onNavigate: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'rls-page' | 'rls-update-page' | 'rls-update-8-page') => void;
+  onNavigate: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page') => void;
 }
 
 const RLSPage: React.FC<RLSPageProps> = ({ onNavigate }) => {
@@ -126,6 +127,8 @@ const RLSPage: React.FC<RLSPageProps> = ({ onNavigate }) => {
                   </p>
                 </div>
               </article>
+
+              <OnlineLearningBenefits />
 
               {/* Course Content Sections */}
               <div className="space-y-12">

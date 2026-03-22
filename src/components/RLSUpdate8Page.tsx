@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
+import OnlineLearningBenefits from './OnlineLearningBenefits';
 import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, MessageSquare, ShieldCheck, GraduationCap, Scale } from 'lucide-react';
 import { courses } from '../data/courses';
 
 interface RLSUpdate8PageProps {
-  onNavigate: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'rls-page' | 'rls-update-page' | 'rls-update-8-page') => void;
+  onNavigate: (view: 'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page') => void;
 }
 
 const RLSUpdate8Page: React.FC<RLSUpdate8PageProps> = ({ onNavigate }) => {
@@ -120,6 +121,8 @@ const RLSUpdate8Page: React.FC<RLSUpdate8PageProps> = ({ onNavigate }) => {
                   </p>
                 </div>
               </article>
+
+              <OnlineLearningBenefits />
 
               {/* Course Content Sections */}
               <div className="space-y-12">
@@ -294,7 +297,7 @@ const RLSUpdate8Page: React.FC<RLSUpdate8PageProps> = ({ onNavigate }) => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <button 
-              onClick={() => onNavigate('rls-page')}
+              onClick={() => onNavigate('corso-rls-rappresentante-lavoratori-sicurezza')}
               className="group p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-brand/30 hover:bg-white transition-all text-left"
             >
               <div className="flex justify-between items-start mb-4">

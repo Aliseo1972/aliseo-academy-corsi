@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
+import OnlineLearningBenefits from './OnlineLearningBenefits';
 import { Clock, BookOpen, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Truck, MapPin, Monitor, Video } from 'lucide-react';
 
 interface FormazioneSpecificaBassoPageProps {
@@ -117,44 +118,7 @@ const FormazioneSpecificaBassoPage: React.FC<FormazioneSpecificaBassoPageProps> 
                 </div>
               </article>
 
-              {/* Strategic Block */}
-              <section className="bg-slate-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-brand/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-                <div className="relative z-10">
-                  <h3 className="text-2xl md:text-3xl font-black mb-6 uppercase tracking-tight">
-                    Vantaggi dell'<span className="text-brand">E-learning Aliseo</span>
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div className="space-y-4">
-                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
-                        <Monitor className="w-6 h-6 text-brand" />
-                      </div>
-                      <h4 className="font-bold text-lg">Online 24/7</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">
-                        Formazione flessibile e interattiva. Accedi ai contenuti quando vuoi, da qualsiasi dispositivo connesso.
-                      </p>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
-                        <ShieldCheck className="w-6 h-6 text-brand" />
-                      </div>
-                      <h4 className="font-bold text-lg">Certificazione</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">
-                        Attestato valido a norma di legge rilasciato immediatamente al superamento del test finale online.
-                      </p>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
-                        <Clock className="w-6 h-6 text-brand" />
-                      </div>
-                      <h4 className="font-bold text-lg">Risparmio</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">
-                        Ottimizza i costi aziendali eliminando le spese di trasferta e riducendo i tempi di assenza dal lavoro.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </section>
+              <OnlineLearningBenefits />
 
               {/* Detailed Sections */}
               <div className="space-y-12">
@@ -308,7 +272,7 @@ const FormazioneSpecificaBassoPage: React.FC<FormazioneSpecificaBassoPageProps> 
             {[
               { title: "Formazione Generale", desc: "Modulo base 4h", view: 'corso-formazione-lavoratori-generale', icon: GraduationCap },
               { title: "Rischio Medio/Alto", desc: "Formazione Specifica 8-12h", view: 'corso-formazione-lavoratori-rischio-medio-alto', icon: ShieldCheck },
-              { title: "Corso RLS", desc: "Rappresentante Lavoratori", view: 'rls-page', icon: Users },
+              { title: "Corso RLS", desc: "Rappresentante Lavoratori", view: 'corso-rls-rappresentante-lavoratori-sicurezza', icon: Users },
               { title: "Antincendio L1", desc: "Rischio Basso", view: 'antincendio-l1', icon: Clock },
             ].map((item, i) => (
               <button 

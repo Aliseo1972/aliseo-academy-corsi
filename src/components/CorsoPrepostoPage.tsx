@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, MessageSquare, ShieldCheck, GraduationCap, Briefcase, Scale, Laptop, Globe, Award, Zap } from 'lucide-react';
 import { courses } from '../data/courses';
+import OnlineLearningBenefits from './OnlineLearningBenefits';
 
 interface CorsoPrepostoPageProps {
   onNavigate: (view: any) => void;
@@ -138,6 +139,8 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
                   </p>
                 </div>
               </article>
+
+              <OnlineLearningBenefits />
 
               {/* Course Content Sections */}
               <div className="space-y-12">
@@ -334,12 +337,12 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
         </div>
       </section>
 
-      {/* Altri percorsi Dirigente e Preposto */}
+      {/* Potrebbero interessarti anche */}
       <section className="py-16 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-black text-slate-900 mb-8 flex items-center gap-3">
             <div className="w-2 h-6 bg-brand rounded-full" />
-            Altri percorsi Dirigente e Preposto
+            Potrebbero interessarti anche
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <button 

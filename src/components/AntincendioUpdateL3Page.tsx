@@ -216,7 +216,7 @@ const AntincendioUpdateL3Page: React.FC<AntincendioUpdateL3PageProps> = ({ onNav
               { title: "Aggiornamento L1", desc: "Rischio Basso - 2 ore", view: 'antincendio-update-l1', icon: Clock },
               { title: "Aggiornamento L2", desc: "Rischio Medio - 5 ore", view: 'antincendio-update-l2', icon: Clock },
               { title: "Livello 3 (L3)", desc: "Base - 16 ore", view: 'antincendio-l3', icon: Flame },
-              { title: "Corso RLS", desc: "Base 32 ore", view: 'rls-page', icon: Users },
+              { title: "Corso RLS", desc: "Base 32 ore", view: 'corso-rls-rappresentante-lavoratori-sicurezza', icon: Users },
               { title: "Aggiornamento RLS", desc: "4 ore - Aziende < 50 dip.", view: 'rls-update-page', icon: Clock },
               { title: "Aggiornamento RLS", desc: "8 ore - Aziende > 50 dip.", view: 'rls-update-8-page', icon: Clock }
             ].map((item, i) => (
