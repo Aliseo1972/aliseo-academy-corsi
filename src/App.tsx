@@ -46,6 +46,23 @@ import FormazioneLavoratoriRischioAltoPage from './components/FormazioneLavorato
 import AggiornamentoFormazioneLavoratoriPage from './components/AggiornamentoFormazioneLavoratoriPage';
 import FormazioneLavoratoriRischioBassoPage from './components/FormazioneLavoratoriRischioBassoPage';
 import FormazioneSpecificaMedioAltoPage from './components/FormazioneSpecificaMedioAltoPage';
+import CorsoHaccpPage from './components/CorsoHaccpPage';
+import HaccpAddettoManipolazionePage from './components/HaccpAddettoManipolazionePage';
+import HaccpResponsabileAggiornamentoPage from './components/HaccpResponsabileAggiornamentoPage';
+import HaccpAddettoManipolazioneAggiornamentoPage from './components/HaccpAddettoManipolazioneAggiornamentoPage';
+import HaccpResponsabilePage from './components/HaccpResponsabilePage';
+import HaccpAddettoNonManipolazionePage from './components/HaccpAddettoNonManipolazionePage';
+import CorsoDatoreLavoroPage from './components/CorsoDatoreLavoroPage';
+import CorsoDatoreLavoroRsppBassoPage from './components/CorsoDatoreLavoroRsppBassoPage';
+import CorsoDatoreLavoroRsppMedioPage from './components/CorsoDatoreLavoroRsppMedioPage';
+import CorsoDatoreLavoroRsppAltoPage from './components/CorsoDatoreLavoroRsppAltoPage';
+import AggiornamentoDatoreLavoroRsppPage from './components/AggiornamentoDatoreLavoroRsppPage';
+import CorsoFormazioneDatoreLavoroPage from './components/CorsoFormazioneDatoreLavoroPage';
+import CorsoDatoreLavoroModuloCantieriPage from './components/CorsoDatoreLavoroModuloCantieriPage';
+import CorsoDiisocianatiPage from './components/CorsoDiisocianatiPage';
+import CorsoDiisocianatiBasePage from './components/CorsoDiisocianatiBasePage';
+import CorsoDiisocianatiIntermedioPage from './components/CorsoDiisocianatiIntermedioPage';
+import CorsoDiisocianatiAvanzatoPage from './components/CorsoDiisocianatiAvanzatoPage';
 import CorsoPrepostoPage from './components/CorsoPrepostoPage';
 import CorsoDirigentePage from './components/CorsoDirigentePage';
 import AggiornamentoDirigentePage from './components/AggiornamentoDirigentePage';
@@ -2376,7 +2393,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto' | 'corso-haccp' | 'corso-haccp-addetto-manipolazione' | 'corso-haccp-responsabile-aggiornamento' | 'corso-haccp-addetto-manipolazione-aggiornamento' | 'corso-haccp-responsabile' | 'corso-haccp-addetto-non-manipolazione' | 'corso-datore-di-lavoro' | 'corso-datore-di-lavoro-rspp-basso' | 'corso-datore-di-lavoro-rspp-medio' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-diisocianati' | 'corso-diisocianati-base' | 'corso-diisocianati-intermedio' | 'corso-diisocianati-avanzato'>('home');
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showCookieModal, setShowCookieModal] = useState(false);
@@ -2429,6 +2446,40 @@ export default function App() {
       path = '/aggiornamento-dirigente';
     } else if (view === 'aggiornamento-preposto') {
       path = '/aggiornamento-preposto';
+    } else if (view === 'corso-haccp') {
+      path = '/corso-haccp';
+    } else if (view === 'corso-haccp-addetto-manipolazione') {
+      path = '/corso-haccp-addetto-manipolazione';
+    } else if (view === 'corso-haccp-responsabile-aggiornamento') {
+      path = '/corso-haccp-responsabile-aggiornamento';
+    } else if (view === 'corso-haccp-addetto-manipolazione-aggiornamento') {
+      path = '/corso-haccp-addetto-manipolazione-aggiornamento';
+    } else if (view === 'corso-haccp-responsabile') {
+      path = '/corso-haccp-responsabile';
+    } else if (view === 'corso-haccp-addetto-non-manipolazione') {
+      path = '/corso-haccp-addetto-non-manipolazione';
+    } else if (view === 'corso-datore-di-lavoro') {
+      path = '/corso-datore-di-lavoro';
+    } else if (view === 'corso-datore-di-lavoro-rspp-basso') {
+      path = '/corso-datore-di-lavoro-rspp-basso';
+    } else if (view === 'corso-datore-di-lavoro-rspp-medio') {
+      path = '/corso-datore-di-lavoro-rspp-medio';
+    } else if (view === 'corso-datore-di-lavoro-rspp-alto') {
+      path = '/corso-datore-di-lavoro-rspp-alto';
+    } else if (view === 'aggiornamento-datore-di-lavoro-rspp') {
+      path = '/aggiornamento-datore-di-lavoro-rspp';
+    } else if (view === 'corso-formazione-datore-di-lavoro') {
+      path = '/corso-formazione-datore-di-lavoro';
+    } else if (view === 'corso-datore-di-lavoro-modulo-cantieri') {
+      path = '/corso-datore-di-lavoro-modulo-cantieri';
+    } else if (view === 'corso-diisocianati') {
+      path = '/corso-diisocianati';
+    } else if (view === 'corso-diisocianati-base') {
+      path = '/corso-diisocianati-base';
+    } else if (view === 'corso-diisocianati-intermedio') {
+      path = '/corso-diisocianati-intermedio';
+    } else if (view === 'corso-diisocianati-avanzato') {
+      path = '/corso-diisocianati-avanzato';
     }
     
     window.history.pushState({ view, category: category || selectedCategory }, '', path);
@@ -2477,6 +2528,36 @@ export default function App() {
       navigateToView('aggiornamento-dirigente');
     } else if (course.id === "77") {
       navigateToView('aggiornamento-preposto');
+    } else if (course.id === "78") {
+      navigateToView('corso-haccp-addetto-manipolazione');
+    } else if (course.id === "80") {
+      navigateToView('corso-haccp-responsabile-aggiornamento');
+    } else if (course.id === "81") {
+      navigateToView('corso-haccp-addetto-manipolazione-aggiornamento');
+    } else if (course.id === "82") {
+      navigateToView('corso-haccp-responsabile');
+    } else if (course.id === "86") {
+      navigateToView('corso-haccp-addetto-non-manipolazione');
+    } else if (course.id === "70") {
+      navigateToView('corso-datore-di-lavoro-rspp-basso');
+    } else if (course.id === "71") {
+      navigateToView('corso-datore-di-lavoro-rspp-medio');
+    } else if (course.id === "69") {
+      navigateToView('corso-datore-di-lavoro-rspp-alto');
+    } else if (course.id === "68") {
+      navigateToView('aggiornamento-datore-di-lavoro-rspp');
+    } else if (course.id === "65") {
+      navigateToView('corso-formazione-datore-di-lavoro');
+    } else if (course.id === "64") {
+      navigateToView('corso-datore-di-lavoro-modulo-cantieri');
+    } else if (course.id === "52") {
+      navigateToView('corso-diisocianati-base');
+    } else if (course.id === "53") {
+      navigateToView('corso-diisocianati-intermedio');
+    } else if (course.id === "51") {
+      navigateToView('corso-diisocianati-avanzato');
+    } else if (["65", "64", "68", "69", "70", "71"].includes(course.id)) {
+      navigateToView('corso-datore-di-lavoro');
     } else {
       setSelectedCourse(course);
     }
@@ -2550,6 +2631,40 @@ export default function App() {
       setCurrentView('aggiornamento-dirigente');
     } else if (path === '/aggiornamento-preposto') {
       setCurrentView('aggiornamento-preposto');
+    } else if (path === '/corso-haccp') {
+      setCurrentView('corso-haccp');
+    } else if (path === '/corso-haccp-addetto-manipolazione') {
+      setCurrentView('corso-haccp-addetto-manipolazione');
+    } else if (path === '/corso-haccp-responsabile-aggiornamento') {
+      setCurrentView('corso-haccp-responsabile-aggiornamento');
+    } else if (path === '/corso-haccp-addetto-manipolazione-aggiornamento') {
+      setCurrentView('corso-haccp-addetto-manipolazione-aggiornamento');
+    } else if (path === '/corso-haccp-responsabile') {
+      setCurrentView('corso-haccp-responsabile');
+    } else if (path === '/corso-haccp-addetto-non-manipolazione') {
+      setCurrentView('corso-haccp-addetto-non-manipolazione');
+    } else if (path === '/corso-datore-di-lavoro') {
+      setCurrentView('corso-datore-di-lavoro');
+    } else if (path === '/corso-datore-di-lavoro-rspp-basso') {
+      setCurrentView('corso-datore-di-lavoro-rspp-basso');
+    } else if (path === '/corso-datore-di-lavoro-rspp-medio') {
+      setCurrentView('corso-datore-di-lavoro-rspp-medio');
+    } else if (path === '/corso-datore-di-lavoro-rspp-alto') {
+      setCurrentView('corso-datore-di-lavoro-rspp-alto');
+    } else if (path === '/aggiornamento-datore-di-lavoro-rspp') {
+      setCurrentView('aggiornamento-datore-di-lavoro-rspp');
+    } else if (path === '/corso-formazione-datore-di-lavoro') {
+      setCurrentView('corso-formazione-datore-di-lavoro');
+    } else if (path === '/corso-datore-di-lavoro-modulo-cantieri') {
+      setCurrentView('corso-datore-di-lavoro-modulo-cantieri');
+    } else if (path === '/corso-diisocianati') {
+      setCurrentView('corso-diisocianati');
+    } else if (path === '/corso-diisocianati-base') {
+      setCurrentView('corso-diisocianati-base');
+    } else if (path === '/corso-diisocianati-intermedio') {
+      setCurrentView('corso-diisocianati-intermedio');
+    } else if (path === '/corso-diisocianati-avanzato') {
+      setCurrentView('corso-diisocianati-avanzato');
     } else {
       const params = new URLSearchParams(window.location.search);
       const courseId = params.get('corso');
@@ -2881,6 +2996,40 @@ export default function App() {
         <AggiornamentoDirigentePage onNavigate={navigateToView} />
       ) : currentView === 'aggiornamento-preposto' ? (
         <AggiornamentoPrepostoPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-haccp' ? (
+        <CorsoHaccpPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-haccp-addetto-manipolazione' ? (
+        <HaccpAddettoManipolazionePage onNavigate={navigateToView} />
+      ) : currentView === 'corso-haccp-responsabile-aggiornamento' ? (
+        <HaccpResponsabileAggiornamentoPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-haccp-addetto-manipolazione-aggiornamento' ? (
+        <HaccpAddettoManipolazioneAggiornamentoPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-haccp-responsabile' ? (
+        <HaccpResponsabilePage onNavigate={navigateToView} />
+      ) : currentView === 'corso-haccp-addetto-non-manipolazione' ? (
+        <HaccpAddettoNonManipolazionePage onNavigate={navigateToView} />
+      ) : currentView === 'corso-datore-di-lavoro' ? (
+        <CorsoDatoreLavoroPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-datore-di-lavoro-rspp-basso' ? (
+        <CorsoDatoreLavoroRsppBassoPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-datore-di-lavoro-rspp-medio' ? (
+        <CorsoDatoreLavoroRsppMedioPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-datore-di-lavoro-rspp-alto' ? (
+        <CorsoDatoreLavoroRsppAltoPage onNavigate={navigateToView} />
+      ) : currentView === 'aggiornamento-datore-di-lavoro-rspp' ? (
+        <AggiornamentoDatoreLavoroRsppPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-formazione-datore-di-lavoro' ? (
+        <CorsoFormazioneDatoreLavoroPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-datore-di-lavoro-modulo-cantieri' ? (
+        <CorsoDatoreLavoroModuloCantieriPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-diisocianati' ? (
+        <CorsoDiisocianatiPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-diisocianati-base' ? (
+        <CorsoDiisocianatiBasePage onNavigate={navigateToView} />
+      ) : currentView === 'corso-diisocianati-intermedio' ? (
+        <CorsoDiisocianatiIntermedioPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-diisocianati-avanzato' ? (
+        <CorsoDiisocianatiAvanzatoPage onNavigate={navigateToView} />
       ) : (
         <DLGS8108Section setCurrentView={navigateToView} />
       )}
