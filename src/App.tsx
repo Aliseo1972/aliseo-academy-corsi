@@ -63,6 +63,12 @@ import CorsoDiisocianatiPage from './components/CorsoDiisocianatiPage';
 import CorsoDiisocianatiBasePage from './components/CorsoDiisocianatiBasePage';
 import CorsoDiisocianatiIntermedioPage from './components/CorsoDiisocianatiIntermedioPage';
 import CorsoDiisocianatiAvanzatoPage from './components/CorsoDiisocianatiAvanzatoPage';
+import CorsoLavoratoriRischioBassoUfficiPage from './components/CorsoLavoratoriRischioBassoUfficiPage';
+import FormazioneGeneraleSpecificaBassoPage from './components/FormazioneGeneraleSpecificaBassoPage';
+import FormazioneGeneraleSpecificaBassoUfficiPage from './components/FormazioneGeneraleSpecificaBassoUfficiPage';
+import AggiornamentoLavoratoriPage from './components/AggiornamentoLavoratoriPage';
+import CorsoPrivacyIncaricatoPage from './components/CorsoPrivacyIncaricatoPage';
+import CorsoPrivacySanitarioPage from './components/CorsoPrivacySanitarioPage';
 import CorsoPrepostoPage from './components/CorsoPrepostoPage';
 import CorsoDirigentePage from './components/CorsoDirigentePage';
 import AggiornamentoDirigentePage from './components/AggiornamentoDirigentePage';
@@ -2393,7 +2399,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto' | 'corso-haccp' | 'corso-haccp-addetto-manipolazione' | 'corso-haccp-responsabile-aggiornamento' | 'corso-haccp-addetto-manipolazione-aggiornamento' | 'corso-haccp-responsabile' | 'corso-haccp-addetto-non-manipolazione' | 'corso-datore-di-lavoro' | 'corso-datore-di-lavoro-rspp-basso' | 'corso-datore-di-lavoro-rspp-medio' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-diisocianati' | 'corso-diisocianati-base' | 'corso-diisocianati-intermedio' | 'corso-diisocianati-avanzato'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto' | 'corso-haccp' | 'corso-haccp-addetto-manipolazione' | 'corso-haccp-responsabile-aggiornamento' | 'corso-haccp-addetto-manipolazione-aggiornamento' | 'corso-haccp-responsabile' | 'corso-haccp-addetto-non-manipolazione' | 'corso-datore-di-lavoro' | 'corso-datore-di-lavoro-rspp-basso' | 'corso-datore-di-lavoro-rspp-medio' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-diisocianati' | 'corso-diisocianati-base' | 'corso-diisocianati-intermedio' | 'corso-diisocianati-avanzato' | 'corso-lavoratori-rischio-basso-uffici' | 'corso-lavoratori-generale-specifica-basso' | 'corso-lavoratori-generale-specifica-basso-uffici' | 'aggiornamento-lavoratori' | 'corso-privacy-incaricato-trattamento-dati' | 'corso-privacy-sanitario'>('home');
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showCookieModal, setShowCookieModal] = useState(false);
@@ -2480,6 +2486,18 @@ export default function App() {
       path = '/corso-diisocianati-intermedio';
     } else if (view === 'corso-diisocianati-avanzato') {
       path = '/corso-diisocianati-avanzato';
+    } else if (view === 'corso-lavoratori-rischio-basso-uffici') {
+      path = '/corso-lavoratori-rischio-basso-uffici';
+    } else if (view === 'corso-lavoratori-generale-specifica-basso') {
+      path = '/corso-lavoratori-generale-specifica-basso';
+    } else if (view === 'corso-lavoratori-generale-specifica-basso-uffici') {
+      path = '/corso-lavoratori-generale-specifica-basso-uffici';
+    } else if (view === 'aggiornamento-lavoratori') {
+      path = '/aggiornamento-lavoratori';
+    } else if (view === 'corso-privacy-incaricato-trattamento-dati') {
+      path = '/corso-privacy-incaricato-trattamento-dati';
+    } else if (view === 'corso-privacy-sanitario') {
+      path = '/corso-privacy-sanitario';
     }
     
     window.history.pushState({ view, category: category || selectedCategory }, '', path);
@@ -2556,6 +2574,18 @@ export default function App() {
       navigateToView('corso-diisocianati-intermedio');
     } else if (course.id === "51") {
       navigateToView('corso-diisocianati-avanzato');
+    } else if (course.id === "22") {
+      navigateToView('corso-lavoratori-rischio-basso-uffici');
+    } else if (course.id === "21") {
+      navigateToView('corso-lavoratori-generale-specifica-basso');
+    } else if (course.id === "24") {
+      navigateToView('corso-lavoratori-generale-specifica-basso-uffici');
+    } else if (course.id === "18") {
+      navigateToView('aggiornamento-lavoratori');
+    } else if (course.id === "72") {
+      navigateToView('corso-privacy-incaricato-trattamento-dati');
+    } else if (course.id === "73") {
+      navigateToView('corso-privacy-sanitario');
     } else if (["65", "64", "68", "69", "70", "71"].includes(course.id)) {
       navigateToView('corso-datore-di-lavoro');
     } else {
@@ -2665,6 +2695,18 @@ export default function App() {
       setCurrentView('corso-diisocianati-intermedio');
     } else if (path === '/corso-diisocianati-avanzato') {
       setCurrentView('corso-diisocianati-avanzato');
+    } else if (path === '/corso-lavoratori-rischio-basso-uffici') {
+      setCurrentView('corso-lavoratori-rischio-basso-uffici');
+    } else if (path === '/corso-lavoratori-generale-specifica-basso') {
+      setCurrentView('corso-lavoratori-generale-specifica-basso');
+    } else if (path === '/corso-lavoratori-generale-specifica-basso-uffici') {
+      setCurrentView('corso-lavoratori-generale-specifica-basso-uffici');
+    } else if (path === '/aggiornamento-lavoratori') {
+      setCurrentView('aggiornamento-lavoratori');
+    } else if (path === '/corso-privacy-incaricato-trattamento-dati') {
+      setCurrentView('corso-privacy-incaricato-trattamento-dati');
+    } else if (path === '/corso-privacy-sanitario') {
+      setCurrentView('corso-privacy-sanitario');
     } else {
       const params = new URLSearchParams(window.location.search);
       const courseId = params.get('corso');
@@ -3030,6 +3072,18 @@ export default function App() {
         <CorsoDiisocianatiIntermedioPage onNavigate={navigateToView} />
       ) : currentView === 'corso-diisocianati-avanzato' ? (
         <CorsoDiisocianatiAvanzatoPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-lavoratori-rischio-basso-uffici' ? (
+        <CorsoLavoratoriRischioBassoUfficiPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-lavoratori-generale-specifica-basso' ? (
+        <FormazioneGeneraleSpecificaBassoPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-lavoratori-generale-specifica-basso-uffici' ? (
+        <FormazioneGeneraleSpecificaBassoUfficiPage onNavigate={navigateToView} />
+      ) : currentView === 'aggiornamento-lavoratori' ? (
+        <AggiornamentoLavoratoriPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-privacy-incaricato-trattamento-dati' ? (
+        <CorsoPrivacyIncaricatoPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-privacy-sanitario' ? (
+        <CorsoPrivacySanitarioPage onNavigate={navigateToView} />
       ) : (
         <DLGS8108Section setCurrentView={navigateToView} />
       )}
@@ -3409,6 +3463,25 @@ export default function App() {
               <X className="w-6 h-6" />
             </button>
             <div className="relative w-full max-w-5xl aspect-video rounded-3xl overflow-hidden shadow-2xl bg-black" onClick={e => e.stopPropagation()}>
+              <div className="w-full h-full flex flex-col items-center justify-center p-8 text-center bg-slate-900 border border-white/10">
+                <div className="w-20 h-20 rounded-full bg-brand/10 flex items-center justify-center mb-6">
+                  <Play className="w-10 h-10 text-brand opacity-50" />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-black text-white mb-4 uppercase tracking-tight">
+                  Video temporaneamente non disponibile
+                </h3>
+                <p className="text-slate-400 text-lg max-w-md mx-auto mb-8 leading-relaxed">
+                  Il contenuto video è momentaneamente in aggiornamento per motivi di privacy. 
+                  Per maggiori informazioni sul Centro Formativo Mobile puoi contattarci direttamente.
+                </p>
+                <a 
+                  href="mailto:commerciale@aliseogroup.it"
+                  className="px-8 py-4 bg-brand text-slate-900 font-black uppercase tracking-tight rounded-2xl hover:bg-brand-light transition-all shadow-xl shadow-brand/20"
+                >
+                  Contattaci
+                </a>
+              </div>
+              {/* Video originali temporaneamente rimossi per privacy
               {activeVideo.includes('canva.com') ? (
                 <iframe 
                   src={activeVideo}
@@ -3428,6 +3501,7 @@ export default function App() {
                   Il tuo browser non supporta il tag video.
                 </video>
               )}
+              */}
             </div>
           </motion.div>
         )}

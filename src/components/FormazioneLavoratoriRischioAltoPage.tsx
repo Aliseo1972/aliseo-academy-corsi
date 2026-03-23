@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Clock, BookOpen, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Monitor, Shield, ArrowRight } from 'lucide-react';
-import OnlineLearningBenefits from './OnlineLearningBenefits';
 
 interface FormazioneLavoratoriRischioAltoPageProps {
   onNavigate: (view: any) => void;
@@ -13,11 +12,11 @@ const FormazioneLavoratoriRischioAltoPage: React.FC<FormazioneLavoratoriRischioA
     document.title = "Corso Formazione Lavoratori Rischio Alto | Aliseo Academy";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Corso formazione lavoratori rischio alto obbligatorio secondo D.Lgs 81/08. Formazione online in e-learning con Aliseo Academy.");
+      metaDescription.setAttribute('content', "Corso formazione lavoratori rischio alto obbligatorio secondo D.Lgs 81/08. Formazione specifica con docente qualificato con Aliseo Academy.");
     }
   }, []);
 
-  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20Corso%20Formazione%20Lavoratori%20Rischio%20Alto&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20Corso%20Formazione%20Lavoratori%20Rischio%20Alto%20(12%20ore).%0APotrei%20avere%20maggiori%20informazioni%20su%20modalit%C3%A0%2C%20costi%20e%20attivazione%20online%3F%0A%0AGrazie.";
+  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20Corso%20Formazione%20Lavoratori%20Rischio%20Alto&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20Corso%20Formazione%20Lavoratori%20Rischio%20Alto%20(12%20ore).%0APotrei%20avere%20maggiori%20informazioni%20su%20modalit%C3%A0%20e%20costi%3F%0A%0AGrazie.";
 
   return (
     <div className="bg-white min-h-screen">
@@ -50,8 +49,8 @@ const FormazioneLavoratoriRischioAltoPage: React.FC<FormazioneLavoratoriRischioA
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Percorso formativo specifico di 12 ore per dipendenti di aziende a rischio alto. 
-              Disponibile interamente online in modalità e-learning certificata.
+              Il corso di formazione specifica per lavoratori a rischio alto viene erogato in presenza oppure in videoconferenza sincrona con docente qualificato, nel rispetto della normativa vigente.
+              La modalità di erogazione (presenza o videoconferenza sincrona) viene definita in base alle esigenze aziendali. Su richiesta, è possibile organizzare sessioni dedicate o inserimenti in classi già pianificate.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -111,7 +110,7 @@ const FormazioneLavoratoriRischioAltoPage: React.FC<FormazioneLavoratoriRischioA
                     La complessità degli ambienti di lavoro a rischio elevato richiede un <strong>corso sicurezza lavoratori rischio alto</strong> che non si limiti alla teoria, ma che analizzi nel dettaglio i pericoli concreti. Durante il percorso, vengono esaminati i rischi legati all'uso di macchinari complessi, l'esposizione ad agenti cancerogeni o biologici, i lavori in quota, gli spazi confinati e le atmosfere esplosive. Il <strong>corso lavoratori D.Lgs 81/08</strong> di Aliseo Academy è progettato per trasformare gli obblighi normativi in competenze operative reali, riducendo drasticamente il tasso di infortuni gravi.
                   </p>
                   <p>
-                    L'Accordo Stato-Regioni del 21/12/2011 stabilisce i contenuti minimi e le modalità di erogazione per questa tipologia di rischio. Aliseo Academy offre la possibilità di seguire la formazione specifica in modalità e-learning, garantendo la massima flessibilità organizzativa. Questa soluzione permette alle aziende di formare il personale senza bloccare i cantieri o le linee di produzione, ottimizzando i tempi e riducendo i costi logistici. La nostra piattaforma online è studiata per mantenere alto il livello di attenzione attraverso moduli interattivi e test di verifica costanti.
+                    L'Accordo Stato-Regioni del 21/12/2011 stabilisce i contenuti minimi e le modalità di erogazione per questa tipologia di rischio. Il corso di formazione specifica per lavoratori a rischio alto viene erogato in presenza oppure in videoconferenza sincrona con docente qualificato, nel rispetto della normativa vigente. La modalità di erogazione (presenza o videoconferenza sincrona) viene definita in base alle esigenze aziendali. Su richiesta, è possibile organizzare sessioni dedicate o inserimenti in classi già pianificate.
                   </p>
                   <p>
                     La validità della formazione lavoratori rischio alto erogata da Aliseo Academy è riconosciuta su tutto il territorio nazionale. Al termine del corso, previo superamento dell'esame finale, viene rilasciato un attestato certificato che attesta l'avvenuta formazione secondo gli standard di legge. Questo documento è fondamentale per la conformità aziendale e deve essere rinnovato ogni 5 anni con un modulo di aggiornamento specifico di 6 ore.
@@ -122,7 +121,43 @@ const FormazioneLavoratoriRischioAltoPage: React.FC<FormazioneLavoratoriRischioA
                 </div>
               </article>
 
-              <OnlineLearningBenefits />
+              <section className="bg-slate-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-brand/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
+                <div className="relative z-10">
+                  <h3 className="text-2xl md:text-3xl font-black mb-6 uppercase tracking-tight">
+                    Qualità della <span className="text-brand">Formazione</span>
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="space-y-4">
+                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
+                        <Users className="w-6 h-6 text-brand" />
+                      </div>
+                      <h4 className="font-bold text-lg">Docenti Esperti</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">
+                        Formatori qualificati con esperienza pluriennale nella sicurezza sul lavoro per settori ad alto rischio.
+                      </p>
+                    </div>
+                    <div className="space-y-4">
+                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
+                        <ShieldCheck className="w-6 h-6 text-brand" />
+                      </div>
+                      <h4 className="font-bold text-lg">Conformità</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">
+                        Programmi didattici pienamente conformi all'Accordo Stato-Regioni e costantemente aggiornati.
+                      </p>
+                    </div>
+                    <div className="space-y-4">
+                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
+                        <Clock className="w-6 h-6 text-brand" />
+                      </div>
+                      <h4 className="font-bold text-lg">Sincronia</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">
+                        Interazione diretta con il docente in tempo reale, sia in aula che in videoconferenza.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
               {/* Detailed Sections */}
               <div className="space-y-12">

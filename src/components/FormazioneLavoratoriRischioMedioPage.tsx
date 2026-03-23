@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Clock, BookOpen, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Monitor, Shield, ArrowRight } from 'lucide-react';
-import OnlineLearningBenefits from './OnlineLearningBenefits';
 
 interface FormazioneLavoratoriRischioMedioPageProps {
   onNavigate: (view: any) => void;
@@ -13,11 +12,11 @@ const FormazioneLavoratoriRischioMedioPage: React.FC<FormazioneLavoratoriRischio
     document.title = "Corso Formazione Lavoratori Rischio Medio | Aliseo Academy";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Corso formazione lavoratori rischio medio obbligatorio secondo D.Lgs 81/08. Formazione online in e-learning con Aliseo Academy.");
+      metaDescription.setAttribute('content', "Corso formazione lavoratori rischio medio obbligatorio secondo D.Lgs 81/08. Formazione specifica con docente qualificato con Aliseo Academy.");
     }
   }, []);
 
-  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20Corso%20Formazione%20Lavoratori%20Rischio%20Medio&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20Corso%20Formazione%20Lavoratori%20Rischio%20Medio%20(8%20ore).%0APotrei%20avere%20maggiori%20informazioni%20su%20modalit%C3%A0%2C%20costi%20e%20attivazione%20online%3F%0A%0AGrazie.";
+  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20Corso%20Formazione%20Lavoratori%20Rischio%20Medio&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20Corso%20Formazione%20Lavoratori%20Rischio%20Medio%20(8%20ore).%0APotrei%20avere%20maggiori%20informazioni%20su%20modalit%C3%A0%20e%20costi%3F%0A%0AGrazie.";
 
   return (
     <div className="bg-white min-h-screen">
@@ -50,8 +49,8 @@ const FormazioneLavoratoriRischioMedioPage: React.FC<FormazioneLavoratoriRischio
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Percorso formativo specifico di 8 ore per dipendenti di aziende a rischio medio. 
-              Disponibile interamente online in modalità e-learning certificata.
+              Il corso di formazione specifica per lavoratori a rischio medio viene erogato in presenza oppure in modalità conforme alla normativa vigente, con docente qualificato.
+              La modalità di erogazione (presenza o videoconferenza sincrona) viene definita in base alle esigenze aziendali. Su richiesta, è possibile organizzare sessioni dedicate o inserimenti in classi già pianificate.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -114,7 +113,7 @@ const FormazioneLavoratoriRischioMedioPage: React.FC<FormazioneLavoratoriRischio
                     Partecipare a un <strong>corso lavoratori D.Lgs 81/08</strong> per il rischio medio significa non solo adempiere a un obbligo normativo, ma investire concretamente nella salute del capitale umano. Un dipendente ben formato è in grado di riconoscere tempestivamente le situazioni di pericolo, riducendo drasticamente la probabilità di infortuni sul lavoro e l'insorgenza di malattie professionali. La nostra metodologia didattica privilegia l'interattività, rendendo i contenuti facilmente assimilabili e applicabili nel contesto operativo reale.
                   </p>
                   <p>
-                    Aliseo Academy propone il corso in modalità e-learning, offrendo una soluzione moderna ed efficiente per le imprese. La nostra piattaforma online permette ai lavoratori di gestire la propria formazione in totale autonomia, eliminando i vincoli di orario e i costi logistici legati agli spostamenti. La flessibilità dell'e-learning consente di conciliare perfettamente l'aggiornamento professionale con le esigenze produttive aziendali, mantenendo sempre altissimi standard qualitativi.
+                    Il corso di formazione specifica per lavoratori a rischio medio viene erogato in presenza oppure in modalità conforme alla normativa vigente, con docente qualificato. La modalità di erogazione (presenza o videoconferenza sincrona) viene definita in base alle esigenze aziendali. Su richiesta, è possibile organizzare sessioni dedicate o inserimenti in classi già pianificate.
                   </p>
                   <p>
                     Ogni modulo del corso è costantemente aggiornato rispetto alle ultime evoluzioni legislative e tecniche. Al termine del percorso e al superamento del test di verifica, viene rilasciato un attestato certificato con validità nazionale, fondamentale per dimostrare la conformità dell'azienda durante le ispezioni degli organi di vigilanza. Affidarsi ad Aliseo Academy significa scegliere un partner esperto nella sicurezza sul lavoro, capace di guidare l'impresa verso una gestione virtuosa e sicura.
@@ -122,7 +121,43 @@ const FormazioneLavoratoriRischioMedioPage: React.FC<FormazioneLavoratoriRischio
                 </div>
               </article>
 
-              <OnlineLearningBenefits />
+              <section className="bg-slate-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-brand/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
+                <div className="relative z-10">
+                  <h3 className="text-2xl md:text-3xl font-black mb-6 uppercase tracking-tight">
+                    Qualità della <span className="text-brand">Formazione</span>
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="space-y-4">
+                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
+                        <Users className="w-6 h-6 text-brand" />
+                      </div>
+                      <h4 className="font-bold text-lg">Docenti Esperti</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">
+                        Formatori qualificati con esperienza pluriennale nella sicurezza sul lavoro per settori a rischio medio.
+                      </p>
+                    </div>
+                    <div className="space-y-4">
+                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
+                        <ShieldCheck className="w-6 h-6 text-brand" />
+                      </div>
+                      <h4 className="font-bold text-lg">Conformità</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">
+                        Programmi didattici pienamente conformi all'Accordo Stato-Regioni e costantemente aggiornati.
+                      </p>
+                    </div>
+                    <div className="space-y-4">
+                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
+                        <Clock className="w-6 h-6 text-brand" />
+                      </div>
+                      <h4 className="font-bold text-lg">Sincronia</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">
+                        Interazione diretta con il docente in tempo reale, sia in aula che in videoconferenza.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
               {/* Detailed Sections */}
               <div className="space-y-12">
