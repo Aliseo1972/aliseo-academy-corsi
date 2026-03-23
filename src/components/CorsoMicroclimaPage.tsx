@@ -1,29 +1,29 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Laptop, Globe, Award, Monitor } from 'lucide-react';
+import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Laptop, Globe, Award, Thermometer, Monitor } from 'lucide-react';
 import { courses } from '../data/courses';
 import OnlineLearningBenefits from './OnlineLearningBenefits';
 
-interface CorsoLavoratoriRischioBassoUfficiPageProps {
+interface CorsoMicroclimaPageProps {
   onNavigate: (view: any) => void;
 }
 
-const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBassoUfficiPageProps> = ({ onNavigate }) => {
-  const course = courses.find(c => c.id === "22") || {
-    duration: "4h",
-    price: "48,80 €",
+const CorsoMicroclimaPage: React.FC<CorsoMicroclimaPageProps> = ({ onNavigate }) => {
+  const course = courses.find(c => c.id === "39") || {
+    duration: "2h",
+    price: "24,40 €",
   };
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Corso Sicurezza Lavoratori Rischio Basso Uffici Online | Aliseo Academy";
+    document.title = "Corso Formazione Lavoratori Rischio Microclimatico Online | Aliseo Academy";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Corso di formazione specifica per lavoratori a rischio basso settore uffici. Formazione obbligatoria online conforme al D.Lgs 81/08.");
+      metaDescription.setAttribute('content', "Corso di formazione specifica per lavoratori sul rischio microclimatico. Formazione obbligatoria online conforme al D.Lgs 81/08 su temperatura, umidità e comfort termico.");
     }
   }, []);
 
-  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Lavoratori%20Rischio%20Basso%20Uffici&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20Formazione%20Specifica%20Lavoratori%20Rischio%20Basso%20Settore%20Uffici%20Online.%0APotrei%20avere%20maggiori%20informazioni%3F%0A%0AGrazie.";
+  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Microclima&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20Formazione%20per%20lavoratori%20-%20Rischio%20Microclimatico.%0APotrei%20avere%20maggiori%20informazioni%3F%0A%0AGrazie.";
 
   return (
     <div className="bg-white min-h-screen">
@@ -39,8 +39,8 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
               animate={{ opacity: 1, y: 0 }}
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6"
             >
-              <ShieldCheck className="w-4 h-4" />
-              Sicurezza Lavoratori - Rischio Basso
+              <Thermometer className="w-4 h-4" />
+              Sicurezza Lavoratori - Rischio Microclimatico
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -48,23 +48,15 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6"
             >
-              Corso Lavoratori <span className="text-brand">Rischio Basso Uffici</span> Online
+              Corso Formazione <span className="text-brand">Lavoratori Rischio Microclimatico</span> Online
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-slate-400 leading-relaxed mb-4"
+              className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Corso di formazione specifica per lavoratori a rischio basso del settore uffici, obbligatorio ai sensi del D.Lgs. 81/08. Il percorso è erogato interamente in modalità e-learning certificata, conforme alla normativa vigente.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.25 }}
-              className="text-lg text-slate-500 leading-relaxed mb-8"
-            >
-              Valido per personale amministrativo, impiegati e lavoratori che operano in ambienti d’ufficio.
+              Formazione specifica obbligatoria sulla gestione dei rischi legati a temperatura, umidità e correnti d'aria ai sensi del D.Lgs. 81/08. Percorso 100% online.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -100,20 +92,20 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  La Formazione Specifica per il Settore Uffici
+                  Descrizione del corso
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    La sicurezza sul lavoro non riguarda solo i cantieri o le fabbriche. Anche l'ambiente d'ufficio presenta rischi specifici che, se trascurati, possono portare a disturbi muscolo-scheletrici, affaticamento visivo e stress. Il **corso di formazione specifica per lavoratori a rischio basso del settore uffici** è progettato per rispondere a queste esigenze, fornendo ai dipendenti gli strumenti per operare in modo sano e sicuro.
+                    Il rischio microclimatico rappresenta una delle componenti fondamentali della valutazione dei rischi negli ambienti di lavoro, influenzando direttamente il benessere psicofisico, la salute e la produttività dei lavoratori. Il microclima è l'insieme dei parametri fisici (temperatura, umidità, velocità dell'aria) che caratterizzano l'ambiente di lavoro e che determinano gli scambi termici tra l'individuo e l'ambiente circostante.
                   </p>
                   <p>
-                    Secondo il **D.Lgs 81/08** e l'Accordo Stato-Regioni, ogni lavoratore deve ricevere una formazione adeguata ai rischi presenti nella propria mansione. Per chi lavora in ufficio, i rischi principali sono legati all'uso prolungato dei **videoterminali (VDT)**, alla postura scorretta e a fattori ambientali come l'illuminazione e il microclima. La formazione online di Aliseo Academy affronta questi temi in modo pratico e interattivo, permettendo ai lavoratori di apprendere come regolare la propria postazione, come gestire le pause e come prevenire l'insorgenza di patologie professionali.
+                    Questo corso di formazione specialistica, erogato interamente in modalità e-learning da Aliseo Academy, approfondisce le dinamiche del comfort termico e dello stress termico. La normativa vigente, in particolare il D.Lgs. 81/08, impone al datore di lavoro l'obbligo di valutare e gestire i rischi derivanti da condizioni microclimatiche sfavorevoli, sia in ambienti "moderati" (uffici, negozi) che in ambienti "severi" (celle frigorifere, fonderie, cantieri all'aperto).
                   </p>
                   <p>
-                    Scegliere la modalità **e-learning** per la formazione sulla sicurezza offre numerosi vantaggi. Le aziende possono formare il proprio personale senza interrompere le attività lavorative, poiché ogni dipendente può seguire le lezioni secondo i propri ritmi e orari. La nostra piattaforma garantisce un monitoraggio costante dell'apprendimento attraverso test intermedi e un quiz finale, assicurando che le competenze vengano effettivamente acquisite.
+                    Attraverso il nostro percorso formativo online, i lavoratori impareranno a riconoscere i segnali di disagio termico e a comprendere le misure di prevenzione e protezione da adottare. Si analizzeranno i parametri microclimatici fondamentali, come la temperatura dell'aria, l'umidità relativa e la velocità dell'aria, e come questi interagiscano con l'attività metabolica e l'abbigliamento del lavoratore.
                   </p>
                   <p>
-                    L'adempimento agli obblighi formativi è fondamentale non solo per la tutela della salute dei lavoratori, ma anche per la conformità legale dell'azienda. La mancanza di formazione specifica può esporre il datore di lavoro a pesanti sanzioni. Con Aliseo Academy, avrai la certezza di un percorso formativo aggiornato alle ultime normative, con il rilascio di un attestato valido su tutto il territorio nazionale. Investire nella sicurezza d'ufficio significa migliorare il benessere dei dipendenti e, di conseguenza, la produttività aziendale.
+                    La formazione e-learning offre il vantaggio di poter gestire i tempi di studio in modo autonomo, garantendo al contempo contenuti aggiornati e certificati. Il corso include moduli dedicati agli effetti sulla salute derivanti dall'esposizione a temperature estreme (colpi di calore, ipotermia) e alle strategie per ottimizzare la ventilazione e il microclima negli spazi chiusi. Al termine del corso, il superamento del test finale permetterà il rilascio di un attestato valido ai fini di legge, documentando l'assolvimento degli obblighi formativi previsti dal Testo Unico sulla Sicurezza.
                   </p>
                 </div>
               </article>
@@ -128,12 +120,16 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
                     Destinatari
                   </h3>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
+                    <p className="text-slate-600 mb-6">
+                      Il corso è rivolto a tutti i lavoratori che operano in ambienti dove le condizioni microclimatiche possono rappresentare un rischio per la salute o un fattore di disagio significativo.
+                    </p>
                     <ul className="space-y-3">
                       {[
-                        "Impiegati amministrativi e contabili",
-                        "Addetti al front-office e segreteria",
-                        "Personale che utilizza il computer per più di 20 ore settimanali",
-                        "Lavoratori di aziende classificate a rischio basso (uffici, servizi)"
+                        "Lavoratori in ambienti d'ufficio e terziario",
+                        "Operatori in ambienti industriali (officine, magazzini)",
+                        "Lavoratori in ambienti severi caldi (fonderie, lavanderie industriali)",
+                        "Lavoratori in ambienti severi freddi (celle frigorifere, logistica del freddo)",
+                        "Personale che opera in cantieri all'aperto esposto ad agenti atmosferici"
                       ].map((item, i) => (
                         <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
                           <Users className="w-5 h-5 text-brand shrink-0" />
@@ -147,14 +143,16 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Obiettivi del corso
+                    Obiettivi formativi
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      "Riconoscere i rischi legati all'ambiente d'ufficio",
-                      "Apprendere l'ergonomia della postazione di lavoro",
-                      "Prevenire i disturbi legati all'uso dei VDT",
-                      "Conoscere le procedure di emergenza e primo soccorso"
+                      "Definire i parametri del microclima",
+                      "Valutare il benessere termico globale",
+                      "Prevenire lo stress da calore e da freddo",
+                      "Conoscere le misure di protezione collettiva",
+                      "Gestire correttamente la ventilazione",
+                      "Riconoscere i sintomi di malessere termico"
                     ].map((obj, i) => (
                       <div key={i} className="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
@@ -171,10 +169,11 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
                   </h3>
                   <div className="space-y-4">
                     {[
-                      { title: "Ergonomia della postazione", desc: "Regolazione di sedia, scrivania e monitor per una postura corretta." },
-                      { title: "Uso dei videoterminali (VDT)", desc: "Rischi per la vista e l'apparato muscolo-scheletrico, pause obbligatorie." },
-                      { title: "Microclima e illuminazione", desc: "Gestione della temperatura, umidità e luce nell'ambiente di lavoro." },
-                      { title: "Fattori di rischio trasversali", desc: "Stress lavoro-correlato, organizzazione del lavoro e benessere." }
+                      { title: "Introduzione al rischio microclimatico", desc: "Definizioni, concetti di comfort e stress termico negli ambienti di lavoro." },
+                      { title: "Parametri microclimatici", desc: "Temperatura, umidità relativa, velocità dell'aria e calore radiante." },
+                      { title: "Effetti sulla salute", desc: "Patologie da calore (colpo di calore, disidratazione) e da freddo (congelamento, ipotermia)." },
+                      { title: "Misure di prevenzione e protezione", desc: "Interventi tecnici, organizzativi e dispositivi di protezione individuale (DPI)." },
+                      { title: "Quiz di Verifica", lessonsCount: 1, duration: "15m" }
                     ].map((item, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
                         <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
@@ -190,19 +189,22 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
                     Quadro Normativo
                   </h3>
                   <div className="bg-slate-900 text-white rounded-3xl p-8">
+                    <div className="text-slate-400 text-sm mb-6 leading-relaxed">
+                      Il D.Lgs. 81/2008 inquadra il microclima tra gli agenti fisici (Titolo VIII) e ne stabilisce i requisiti minimi per i luoghi di lavoro nell'Allegato IV. Il datore di lavoro ha l'obbligo di garantire condizioni di comfort termico e di proteggere i lavoratori dai rischi di stress termico.
+                    </div>
                     <ul className="space-y-4">
                       <li className="flex items-start gap-3">
                         <Scale className="w-6 h-6 text-brand shrink-0" />
                         <div>
-                          <p className="font-bold">D.Lgs 81/08 - Testo Unico Sicurezza</p>
-                          <p className="text-sm text-slate-400">Art. 37: Obblighi di formazione e addestramento dei lavoratori.</p>
+                          <p className="font-bold">D.Lgs 81/08 - Titolo VIII</p>
+                          <p className="text-sm text-slate-400">Agenti fisici: valutazione e gestione dei rischi microclimatici.</p>
                         </div>
                       </li>
                       <li className="flex items-start gap-3">
                         <FileText className="w-6 h-6 text-brand shrink-0" />
                         <div>
-                          <p className="font-bold">Accordo Stato-Regioni</p>
-                          <p className="text-sm text-slate-400">Definizione dei contenuti minimi e della durata della formazione specifica.</p>
+                          <p className="font-bold">Allegato IV D.Lgs 81/08</p>
+                          <p className="text-sm text-slate-400">Requisiti dei luoghi di lavoro: temperatura, umidità e aerazione.</p>
                         </div>
                       </li>
                     </ul>
@@ -235,6 +237,15 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
                       <p className="text-white font-bold">E-learning</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                      <Euro className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
+                      <p className="text-white font-bold">{course.price} + IVA</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -273,9 +284,9 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Sicurezza Lavoratori", desc: "Pagina principale formazione", view: 'dlgs-81-08', icon: ShieldCheck },
-              { title: "Formazione Generale", desc: "Corso base 4h", view: 'corso-formazione-lavoratori-generale', icon: BookOpen },
-              { title: "Corso Preposto", desc: "Responsabile Sicurezza 8h", view: 'corso-preposto', icon: Users },
+              { title: "Rischio Videoterminali", desc: "Formazione specifica VDT", view: 'corso-videoterminali', icon: Laptop },
+              { title: "Rischio Basso Uffici", desc: "Formazione specifica uffici", view: 'corso-lavoratori-rischio-basso-uffici', icon: Monitor },
+              { title: "Aggiornamento Lavoratori", desc: "Aggiornamento quinquennale 6h", view: 'aggiornamento-lavoratori', icon: Clock },
             ].map((item, i) => (
               <button 
                 key={i}
@@ -299,4 +310,4 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
   );
 };
 
-export default CorsoLavoratoriRischioBassoUfficiPage;
+export default CorsoMicroclimaPage;

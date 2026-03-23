@@ -73,6 +73,21 @@ import CorsoPrepostoPage from './components/CorsoPrepostoPage';
 import CorsoDirigentePage from './components/CorsoDirigentePage';
 import AggiornamentoDirigentePage from './components/AggiornamentoDirigentePage';
 import AggiornamentoPrepostoPage from './components/AggiornamentoPrepostoPage';
+import CorsoVideoterminaliPage from './components/CorsoVideoterminaliPage';
+import CorsoMicroclimaPage from './components/CorsoMicroclimaPage';
+import CorsoRumorePage from './components/CorsoRumorePage';
+import CorsoVibrazioniPage from './components/CorsoVibrazioniPage';
+import CorsoCarrelliTeoricoPage from './components/CorsoCarrelliTeoricoPage';
+import CorsoPLETeoricoPage from './components/CorsoPLETeoricoPage';
+import CorsoTrattoriTeoricoPage from './components/CorsoTrattoriTeoricoPage';
+import CorsoMacchineMovimentoTerraTeoricoPage from './components/CorsoMacchineMovimentoTerraTeoricoPage';
+import CorsoGruAutocarroTeoricoPage from './components/CorsoGruAutocarroTeoricoPage';
+import CorsoGruMobiliTeoricoPage from './components/CorsoGruMobiliTeoricoPage';
+import CorsoGruTorreTeoricoPage from './components/CorsoGruTorreTeoricoPage';
+import CorsoPompeCalcestruzzoTeoricoPage from './components/CorsoPompeCalcestruzzoTeoricoPage';
+import CorsoPesPavPeiPage from './components/CorsoPesPavPeiPage';
+import AggiornamentoPesPavPeiPage from './components/AggiornamentoPesPavPeiPage';
+import CorsoAtmosfereEsplosiveAtexPage from './components/CorsoAtmosfereEsplosiveAtexPage';
 
 const CourseCard = ({ course, onOpen }: { course: Course; onOpen: (course: Course) => void; key?: string | number }) => {
   return (
@@ -2399,7 +2414,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto' | 'corso-haccp' | 'corso-haccp-addetto-manipolazione' | 'corso-haccp-responsabile-aggiornamento' | 'corso-haccp-addetto-manipolazione-aggiornamento' | 'corso-haccp-responsabile' | 'corso-haccp-addetto-non-manipolazione' | 'corso-datore-di-lavoro' | 'corso-datore-di-lavoro-rspp-basso' | 'corso-datore-di-lavoro-rspp-medio' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-diisocianati' | 'corso-diisocianati-base' | 'corso-diisocianati-intermedio' | 'corso-diisocianati-avanzato' | 'corso-lavoratori-rischio-basso-uffici' | 'corso-lavoratori-generale-specifica-basso' | 'corso-lavoratori-generale-specifica-basso-uffici' | 'aggiornamento-lavoratori' | 'corso-privacy-incaricato-trattamento-dati' | 'corso-privacy-sanitario'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto' | 'corso-haccp' | 'corso-haccp-addetto-manipolazione' | 'corso-haccp-responsabile-aggiornamento' | 'corso-haccp-addetto-manipolazione-aggiornamento' | 'corso-haccp-responsabile' | 'corso-haccp-addetto-non-manipolazione' | 'corso-datore-di-lavoro' | 'corso-datore-di-lavoro-rspp-basso' | 'corso-datore-di-lavoro-rspp-medio' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-diisocianati' | 'corso-diisocianati-base' | 'corso-diisocianati-intermedio' | 'corso-diisocianati-avanzato' | 'corso-lavoratori-rischio-basso-uffici' | 'corso-lavoratori-generale-specifica-basso' | 'corso-lavoratori-generale-specifica-basso-uffici' | 'aggiornamento-lavoratori' | 'corso-privacy-incaricato-trattamento-dati' | 'corso-privacy-sanitario' | 'corso-videoterminali' | 'corso-microclima' | 'corso-rumore' | 'corso-vibrazioni' | 'corso-carrelli-elevatori-teorico' | 'corso-ple-teorico' | 'corso-trattori-agricoli-teorico' | 'corso-macchine-movimento-terra-teorico' | 'corso-gru-autocarro-teorico' | 'corso-gru-mobili-teorico' | 'corso-gru-torre-teorico' | 'corso-pompe-calcestruzzo-teorico' | 'corso-pes-pav-pei' | 'aggiornamento-pes-pav-pei' | 'corso-atmosfere-esplosive-atex'>('home');
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showCookieModal, setShowCookieModal] = useState(false);
@@ -2498,6 +2513,36 @@ export default function App() {
       path = '/corso-privacy-incaricato-trattamento-dati';
     } else if (view === 'corso-privacy-sanitario') {
       path = '/corso-privacy-sanitario';
+    } else if (view === 'corso-videoterminali') {
+      path = '/corso-videoterminali';
+    } else if (view === 'corso-microclima') {
+      path = '/corso-microclima';
+    } else if (view === 'corso-rumore') {
+      path = '/corso-rumore';
+    } else if (view === 'corso-vibrazioni') {
+      path = '/corso-vibrazioni';
+    } else if (view === 'corso-carrelli-elevatori-teorico') {
+      path = '/corso-carrelli-elevatori-teorico';
+    } else if (view === 'corso-ple-teorico') {
+      path = '/corso-ple-teorico';
+    } else if (view === 'corso-trattori-agricoli-teorico') {
+      path = '/corso-trattori-agricoli-teorico';
+    } else if (view === 'corso-macchine-movimento-terra-teorico') {
+      path = '/corso-macchine-movimento-terra-teorico';
+    } else if (view === 'corso-gru-autocarro-teorico') {
+      path = '/corso-gru-autocarro-teorico';
+    } else if (view === 'corso-gru-mobili-teorico') {
+      path = '/corso-gru-mobili-teorico';
+    } else if (view === 'corso-gru-torre-teorico') {
+      path = '/corso-gru-torre-teorico';
+    } else if (view === 'corso-pompe-calcestruzzo-teorico') {
+      path = '/corso-pompe-calcestruzzo-teorico';
+    } else if (view === 'corso-pes-pav-pei') {
+      path = '/corso-pes-pav-pei';
+    } else if (view === 'aggiornamento-pes-pav-pei') {
+      path = '/aggiornamento-pes-pav-pei';
+    } else if (view === 'corso-atmosfere-esplosive-atex') {
+      path = '/corso-atmosfere-esplosive-atex';
     }
     
     window.history.pushState({ view, category: category || selectedCategory }, '', path);
@@ -2586,6 +2631,36 @@ export default function App() {
       navigateToView('corso-privacy-incaricato-trattamento-dati');
     } else if (course.id === "73") {
       navigateToView('corso-privacy-sanitario');
+    } else if (course.id === "23") {
+      navigateToView('corso-videoterminali');
+    } else if (course.id === "39") {
+      navigateToView('corso-microclima');
+    } else if (course.id === "34") {
+      navigateToView('corso-rumore');
+    } else if (course.id === "47") {
+      navigateToView('corso-vibrazioni');
+    } else if (course.id === "54") {
+      navigateToView('corso-carrelli-elevatori-teorico');
+    } else if (course.id === "60") {
+      navigateToView('corso-ple-teorico');
+    } else if (course.id === "62") {
+      navigateToView('corso-trattori-agricoli-teorico');
+    } else if (course.id === "58") {
+      navigateToView('corso-macchine-movimento-terra-teorico');
+    } else if (course.id === "57") {
+      navigateToView('corso-gru-autocarro-teorico');
+    } else if (course.id === "56") {
+      navigateToView('corso-gru-mobili-teorico');
+    } else if (course.id === "55") {
+      navigateToView('corso-gru-torre-teorico');
+    } else if (course.id === "61") {
+      navigateToView('corso-pompe-calcestruzzo-teorico');
+    } else if (course.id === "25") {
+      navigateToView('corso-pes-pav-pei');
+    } else if (course.id === "26") {
+      navigateToView('aggiornamento-pes-pav-pei');
+    } else if (course.id === "30") {
+      navigateToView('corso-atmosfere-esplosive-atex');
     } else if (["65", "64", "68", "69", "70", "71"].includes(course.id)) {
       navigateToView('corso-datore-di-lavoro');
     } else {
@@ -3084,6 +3159,36 @@ export default function App() {
         <CorsoPrivacyIncaricatoPage onNavigate={navigateToView} />
       ) : currentView === 'corso-privacy-sanitario' ? (
         <CorsoPrivacySanitarioPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-videoterminali' ? (
+        <CorsoVideoterminaliPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-microclima' ? (
+        <CorsoMicroclimaPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-rumore' ? (
+        <CorsoRumorePage onNavigate={navigateToView} />
+      ) : currentView === 'corso-vibrazioni' ? (
+        <CorsoVibrazioniPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-carrelli-elevatori-teorico' ? (
+        <CorsoCarrelliTeoricoPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-ple-teorico' ? (
+        <CorsoPLETeoricoPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-trattori-agricoli-teorico' ? (
+        <CorsoTrattoriTeoricoPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-macchine-movimento-terra-teorico' ? (
+        <CorsoMacchineMovimentoTerraTeoricoPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-gru-autocarro-teorico' ? (
+        <CorsoGruAutocarroTeoricoPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-gru-mobili-teorico' ? (
+        <CorsoGruMobiliTeoricoPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-gru-torre-teorico' ? (
+        <CorsoGruTorreTeoricoPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-pompe-calcestruzzo-teorico' ? (
+        <CorsoPompeCalcestruzzoTeoricoPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-pes-pav-pei' ? (
+        <CorsoPesPavPeiPage onNavigate={navigateToView} />
+      ) : currentView === 'aggiornamento-pes-pav-pei' ? (
+        <AggiornamentoPesPavPeiPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-atmosfere-esplosive-atex' ? (
+        <CorsoAtmosfereEsplosiveAtexPage onNavigate={navigateToView} />
       ) : (
         <DLGS8108Section setCurrentView={navigateToView} />
       )}

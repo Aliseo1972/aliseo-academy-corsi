@@ -1098,25 +1098,6 @@ export const courses: Course[] = [
     ]
   },
   {
-    id: "37",
-    title: "Formazione per lavoratori - Rischio Lavori in Quota",
-    lessons: 22,
-    duration: "4h",
-    price: "48,80 €",
-    category: "Sicurezza lavoratori",
-    description: "Prevenzione delle cadute dall'alto per attività sopra i 2 metri.",
-    objectives: ["Sistemi anticaduta", "Scale e trabattelli", "Punti di ancoraggio"],
-    references: ["Titolo IV D.Lgs. 81/08", "Accordo Stato-Regioni 21/12/2011"],
-    recipients: "Edili, manutentori, antennisti",
-    syllabus: [
-      { title: "Normativa sui lavori in quota", lessonsCount: 5, duration: "1h" },
-      { title: "DPI di III categoria: imbracature e cordini", lessonsCount: 6, duration: "1h" },
-      { title: "Sistemi di ancoraggio e linee vita", lessonsCount: 6, duration: "1h" },
-      { title: "Procedure di emergenza e recupero", lessonsCount: 4, duration: "50m" },
-      { title: "Test finale", lessonsCount: 1, duration: "10m" }
-    ]
-  },
-  {
     id: "25",
     title: "Addetto ai lavori elettrici (PES PAV PEI)",
     lessons: 58,

@@ -1,29 +1,30 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Laptop, Globe, Award, Monitor } from 'lucide-react';
+import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Laptop, Globe, Award, AlertTriangle, Monitor, Volume2, Info, Zap, Shield, RefreshCw } from 'lucide-react';
 import { courses } from '../data/courses';
 import OnlineLearningBenefits from './OnlineLearningBenefits';
 
-interface CorsoLavoratoriRischioBassoUfficiPageProps {
+interface AggiornamentoPesPavPeiPageProps {
   onNavigate: (view: any) => void;
 }
 
-const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBassoUfficiPageProps> = ({ onNavigate }) => {
-  const course = courses.find(c => c.id === "22") || {
-    duration: "4h",
-    price: "48,80 €",
+const AggiornamentoPesPavPeiPage: React.FC<AggiornamentoPesPavPeiPageProps> = ({ onNavigate }) => {
+  const course = courses.find(c => c.id === "26") || {
+    duration: "6h",
+    price: "73,20 €",
+    lessons: 21,
   };
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Corso Sicurezza Lavoratori Rischio Basso Uffici Online | Aliseo Academy";
+    document.title = "Aggiornamento PES PAV PEI Online | Sicurezza Elettrica | Aliseo Academy";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Corso di formazione specifica per lavoratori a rischio basso settore uffici. Formazione obbligatoria online conforme al D.Lgs 81/08.");
+      metaDescription.setAttribute('content', "Corso di aggiornamento PES PAV PEI online. Formazione periodica obbligatoria conforme alla norma CEI 11-27 e al D.Lgs. 81/08 in modalità e-learning.");
     }
   }, []);
 
-  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Lavoratori%20Rischio%20Basso%20Uffici&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20Formazione%20Specifica%20Lavoratori%20Rischio%20Basso%20Settore%20Uffici%20Online.%0APotrei%20avere%20maggiori%20informazioni%3F%0A%0AGrazie.";
+  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20aggiornamento%20PES%20PAV%20PEI&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20Addetto%20ai%20lavori%20elettrici%20(PES%20PAV%20PEI)%20-%20Aggiornamento%20Online.%0APotrei%20avere%20maggiori%20informazioni%3F%0A%0AGrazie.";
 
   return (
     <div className="bg-white min-h-screen">
@@ -39,8 +40,8 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
               animate={{ opacity: 1, y: 0 }}
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6"
             >
-              <ShieldCheck className="w-4 h-4" />
-              Sicurezza Lavoratori - Rischio Basso
+              <RefreshCw className="w-4 h-4" />
+              Aggiornamento Quinquennale - Norma CEI 11-27
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -48,24 +49,17 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6"
             >
-              Corso Lavoratori <span className="text-brand">Rischio Basso Uffici</span> Online
+              Aggiornamento <span className="text-brand">PES PAV PEI</span> online, fruibile in e-learning su piattaforma certificata, valido ai fini normativi.
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-slate-400 leading-relaxed mb-4"
+              className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Corso di formazione specifica per lavoratori a rischio basso del settore uffici, obbligatorio ai sensi del D.Lgs. 81/08. Il percorso è erogato interamente in modalità e-learning certificata, conforme alla normativa vigente.
+              Mantieni la tua qualifica per i lavori elettrici con l'aggiornamento periodico obbligatorio. Formazione conforme alla norma CEI 11-27 e al D.Lgs. 81/08.
             </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.25 }}
-              className="text-lg text-slate-500 leading-relaxed mb-8"
-            >
-              Valido per personale amministrativo, impiegati e lavoratori che operano in ambienti d’ufficio.
-            </motion.p>
+            
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -81,7 +75,7 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
                     href={mailtoLink}
                     className="px-8 py-4 bg-brand text-slate-900 font-black uppercase tracking-tight rounded-2xl hover:bg-brand-light transition-all flex items-center gap-2 group shadow-xl shadow-brand/20 w-fit"
                   >
-                    Ricevi informazioni sul corso
+                    Ricevi informazioni sull'aggiornamento
                     <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </a>
                 </div>
@@ -100,20 +94,26 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  La Formazione Specifica per il Settore Uffici
+                  Descrizione del corso
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    La sicurezza sul lavoro non riguarda solo i cantieri o le fabbriche. Anche l'ambiente d'ufficio presenta rischi specifici che, se trascurati, possono portare a disturbi muscolo-scheletrici, affaticamento visivo e stress. Il **corso di formazione specifica per lavoratori a rischio basso del settore uffici** è progettato per rispondere a queste esigenze, fornendo ai dipendenti gli strumenti per operare in modo sano e sicuro.
+                    La sicurezza nei lavori elettrici richiede una vigilanza costante e un aggiornamento continuo delle competenze. La norma tecnica <strong>CEI 11-27</strong> prevede che il personale qualificato come Persona Esperta (PES), Persona Avvertita (PAV) o Persona Idonea (PEI) debba seguire percorsi di aggiornamento periodico per mantenere la propria idoneità operativa e la conoscenza delle evoluzioni normative e tecnologiche.
                   </p>
                   <p>
-                    Secondo il **D.Lgs 81/08** e l'Accordo Stato-Regioni, ogni lavoratore deve ricevere una formazione adeguata ai rischi presenti nella propria mansione. Per chi lavora in ufficio, i rischi principali sono legati all'uso prolungato dei **videoterminali (VDT)**, alla postura scorretta e a fattori ambientali come l'illuminazione e il microclima. La formazione online di Aliseo Academy affronta questi temi in modo pratico e interattivo, permettendo ai lavoratori di apprendere come regolare la propria postazione, come gestire le pause e come prevenire l'insorgenza di patologie professionali.
+                    <strong>Il corso di aggiornamento è disponibile in modalità e-learning asincrona, accessibile in qualsiasi momento</strong>. Questa flessibilità è fondamentale per i professionisti del settore elettrico, che possono così assolvere all'obbligo formativo senza allontanarsi dal cantiere o dall'officina per lunghi periodi. La nostra piattaforma di e-learning offre contenuti multimediali interattivi, casi studio reali e approfondimenti tecnici che rendono l'aggiornamento un'esperienza formativa di alto livello.
                   </p>
                   <p>
-                    Scegliere la modalità **e-learning** per la formazione sulla sicurezza offre numerosi vantaggi. Le aziende possono formare il proprio personale senza interrompere le attività lavorative, poiché ogni dipendente può seguire le lezioni secondo i propri ritmi e orari. La nostra piattaforma garantisce un monitoraggio costante dell'apprendimento attraverso test intermedi e un quiz finale, assicurando che le competenze vengano effettivamente acquisite.
+                    Durante il percorso di aggiornamento, vengono analizzate le novità introdotte dalle ultime edizioni della norma CEI 11-27, con un focus particolare sulla gestione del rischio elettrico in scenari complessi. Si approfondiscono le procedure di manutenzione, l'uso corretto dei nuovi Dispositivi di Protezione Individuale (DPI) e l'analisi degli infortuni più comuni, al fine di trarre insegnamenti pratici per la prevenzione quotidiana.
+                  </p>
+                  <p className="bg-blue-50 p-6 rounded-2xl border-l-4 border-blue-500 font-medium italic">
+                    "Su richiesta, il corso può essere organizzato anche in presenza presso la sede aziendale, con docente qualificato. L’attivazione delle sessioni in presenza è subordinata al raggiungimento di un numero minimo di partecipanti."
                   </p>
                   <p>
-                    L'adempimento agli obblighi formativi è fondamentale non solo per la tutela della salute dei lavoratori, ma anche per la conformità legale dell'azienda. La mancanza di formazione specifica può esporre il datore di lavoro a pesanti sanzioni. Con Aliseo Academy, avrai la certezza di un percorso formativo aggiornato alle ultime normative, con il rilascio di un attestato valido su tutto il territorio nazionale. Investire nella sicurezza d'ufficio significa migliorare il benessere dei dipendenti e, di conseguenza, la produttività aziendale.
+                    Aliseo Academy garantisce che ogni corso di aggiornamento rispetti rigorosamente i requisiti previsti dal <strong>D.Lgs. 81/08</strong> e dalle norme CEI. Al termine del percorso, previo superamento del test finale, viene rilasciato un attestato di aggiornamento valido a tutti gli effetti di legge, indispensabile per il datore di lavoro per confermare o rinnovare le nomine PES, PAV e PEI dei propri dipendenti.
+                  </p>
+                  <p>
+                    Investire nell'aggiornamento continuo non è solo un obbligo di legge, ma una scelta strategica per ridurre gli infortuni e aumentare l'efficienza operativa. Un operatore consapevole delle ultime procedure di sicurezza è un operatore più sicuro e produttivo, capace di gestire con professionalità anche le situazioni di emergenza legate al rischio elettrico.
                   </p>
                 </div>
               </article>
@@ -128,12 +128,16 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
                     Destinatari
                   </h3>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
+                    <p className="text-slate-600 mb-6">
+                      Il corso è destinato al personale che ha già acquisito la qualifica PES, PAV o PEI e deve assolvere all'obbligo di aggiornamento periodico (consigliato ogni 5 anni).
+                    </p>
                     <ul className="space-y-3">
                       {[
-                        "Impiegati amministrativi e contabili",
-                        "Addetti al front-office e segreteria",
-                        "Personale che utilizza il computer per più di 20 ore settimanali",
-                        "Lavoratori di aziende classificate a rischio basso (uffici, servizi)"
+                        "Personale già qualificato PES (Persona Esperta)",
+                        "Personale già qualificato PAV (Persona Avvertita)",
+                        "Personale già idoneo PEI (Persona Idonea ai lavori sotto tensione)",
+                        "Responsabili tecnici e preposti ai lavori elettrici",
+                        "Datori di lavoro che intendono aggiornare le competenze del proprio staff"
                       ].map((item, i) => (
                         <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
                           <Users className="w-5 h-5 text-brand shrink-0" />
@@ -147,14 +151,16 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Obiettivi del corso
+                    Obiettivi formativi
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      "Riconoscere i rischi legati all'ambiente d'ufficio",
-                      "Apprendere l'ergonomia della postazione di lavoro",
-                      "Prevenire i disturbi legati all'uso dei VDT",
-                      "Conoscere le procedure di emergenza e primo soccorso"
+                      "Aggiornare le conoscenze sulla norma CEI 11-27",
+                      "Analizzare le novità legislative in materia di sicurezza elettrica",
+                      "Approfondire le procedure per lavori fuori e sotto tensione",
+                      "Revisionare l'uso dei DPI e delle attrezzature di lavoro",
+                      "Analizzare casi reali di infortuni per scopi preventivi",
+                      "Rinnovare l'idoneità ai lavori elettrici"
                     ].map((obj, i) => (
                       <div key={i} className="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
@@ -171,10 +177,12 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
                   </h3>
                   <div className="space-y-4">
                     {[
-                      { title: "Ergonomia della postazione", desc: "Regolazione di sedia, scrivania e monitor per una postura corretta." },
-                      { title: "Uso dei videoterminali (VDT)", desc: "Rischi per la vista e l'apparato muscolo-scheletrico, pause obbligatorie." },
-                      { title: "Microclima e illuminazione", desc: "Gestione della temperatura, umidità e luce nell'ambiente di lavoro." },
-                      { title: "Fattori di rischio trasversali", desc: "Stress lavoro-correlato, organizzazione del lavoro e benessere." }
+                      { title: "Evoluzione Normativa", desc: "Aggiornamenti sulle ultime edizioni della norma CEI 11-27 e CEI 64-8." },
+                      { title: "Revisione delle Procedure", desc: "Approfondimento sulle procedure di messa in sicurezza e pianificazione del lavoro." },
+                      { title: "Nuove Tecnologie e DPI", desc: "Analisi di nuovi strumenti di misura e dispositivi di protezione individuale per il rischio elettrico." },
+                      { title: "Analisi degli Infortuni", desc: "Studio di casi reali, dinamiche di infortunio e misure correttive adottate." },
+                      { title: "Lavori Sotto Tensione in BT", desc: "Aggiornamento specifico sulle tecniche e le attrezzature per lavori sotto tensione." },
+                      { title: "Verifica Finale", desc: "Test di valutazione per il rilascio dell'attestato di aggiornamento." }
                     ].map((item, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
                         <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
@@ -190,19 +198,22 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
                     Quadro Normativo
                   </h3>
                   <div className="bg-slate-900 text-white rounded-3xl p-8">
+                    <div className="text-slate-400 text-sm mb-6 leading-relaxed">
+                      L'aggiornamento è un requisito fondamentale per garantire la conformità continua ai dettami della sicurezza sul lavoro.
+                    </div>
                     <ul className="space-y-4">
                       <li className="flex items-start gap-3">
                         <Scale className="w-6 h-6 text-brand shrink-0" />
                         <div>
-                          <p className="font-bold">D.Lgs 81/08 - Testo Unico Sicurezza</p>
-                          <p className="text-sm text-slate-400">Art. 37: Obblighi di formazione e addestramento dei lavoratori.</p>
+                          <p className="font-bold">D.Lgs 81/08 - Art. 37</p>
+                          <p className="text-sm text-slate-400">Sancisce l'obbligo di aggiornamento periodico della formazione dei lavoratori.</p>
                         </div>
                       </li>
                       <li className="flex items-start gap-3">
-                        <FileText className="w-6 h-6 text-brand shrink-0" />
+                        <Shield className="w-6 h-6 text-brand shrink-0" />
                         <div>
-                          <p className="font-bold">Accordo Stato-Regioni</p>
-                          <p className="text-sm text-slate-400">Definizione dei contenuti minimi e della durata della formazione specifica.</p>
+                          <p className="font-bold">Norma CEI 11-27 (V Edizione)</p>
+                          <p className="text-sm text-slate-400">Specifica la necessità di aggiornamento per mantenere le qualifiche PES, PAV e PEI.</p>
                         </div>
                       </li>
                     </ul>
@@ -230,23 +241,42 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Laptop className="w-5 h-5 text-brand" />
+                      <BookOpen className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
-                      <p className="text-white font-bold">E-learning</p>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Lezioni</p>
+                      <p className="text-white font-bold">{course.lessons} Moduli</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Award className="w-5 h-5 text-brand" />
+                      <Laptop className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
+                      <p className="text-white font-bold">E-learning Asincrono</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                      <Euro className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
+                      <p className="text-white font-bold">{course.price} + IVA</p>
                     </div>
                   </div>
                 </div>
+                
+                <div className="mt-8 p-4 bg-white/5 rounded-2xl border border-white/10">
+                  <div className="flex gap-3 items-start">
+                    <Info className="w-5 h-5 text-brand shrink-0 mt-0.5" />
+                    <p className="text-xs text-slate-400 leading-relaxed">
+                      Corso di aggiornamento per il mantenimento delle qualifiche PES, PAV e PEI.
+                    </p>
+                  </div>
+                </div>
+
                 <div className="mt-10 pt-8 border-t border-white/10">
                   <p className="text-slate-400 text-sm mb-1 text-center">
                     Ti rispondiamo entro 24 ore
@@ -273,9 +303,9 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Sicurezza Lavoratori", desc: "Pagina principale formazione", view: 'dlgs-81-08', icon: ShieldCheck },
-              { title: "Formazione Generale", desc: "Corso base 4h", view: 'corso-formazione-lavoratori-generale', icon: BookOpen },
-              { title: "Corso Preposto", desc: "Responsabile Sicurezza 8h", view: 'corso-preposto', icon: Users },
+              { title: "Corso PES PAV PEI", desc: "Formazione completa 16h", view: 'corso-pes-pav-pei', icon: Zap },
+              { title: "Aggiornamento Lavoratori", desc: "Aggiornamento quinquennale 6h", view: 'aggiornamento-lavoratori', icon: Clock },
+              { title: "Rischio Videoterminali", desc: "Formazione specifica VDT", view: 'corso-videoterminali', icon: Monitor },
             ].map((item, i) => (
               <button 
                 key={i}
@@ -299,4 +329,4 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
   );
 };
 
-export default CorsoLavoratoriRischioBassoUfficiPage;
+export default AggiornamentoPesPavPeiPage;
