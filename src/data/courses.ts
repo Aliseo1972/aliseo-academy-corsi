@@ -144,7 +144,7 @@ export const courses: Course[] = [
   {
     id: "75",
     title: "Aggiornamento Dirigente",
-    lessons: 18,
+    lessons: 23,
     duration: "6h",
     price: "73,20 €",
     category: "Dirigente - Preposto",
@@ -153,16 +153,17 @@ export const courses: Course[] = [
     references: ["Art. 37 D.Lgs. 81/08", "Accordo Stato-Regioni 17/04/2025 (Rep. Atti n. 59/CSR)"],
     recipients: "Dirigenti che hanno già effettuato la formazione base",
     syllabus: [
-      { title: "Novità legislative e giurisprudenziali", lessonsCount: 4, duration: "2h" },
-      { title: "Sistemi di gestione della sicurezza (SGSL)", lessonsCount: 4, duration: "1h 30m" },
-      { title: "Modelli organizzativi e responsabilità", lessonsCount: 5, duration: "1h 30m" },
-      { title: "Cultura della sicurezza in azienda", lessonsCount: 5, duration: "1h" }
+      { title: "Evoluzione della normativa e giurisprudenza", lessonsCount: 5, duration: "1h 30m" },
+      { title: "Il sistema istituzionale e gli organi di vigilanza", lessonsCount: 4, duration: "1h" },
+      { title: "Modelli di organizzazione e gestione (MOG) e responsabilità", lessonsCount: 5, duration: "1h 30m" },
+      { title: "Valutazione dei rischi e gestione delle emergenze", lessonsCount: 5, duration: "1h" },
+      { title: "Leadership, comunicazione e cultura della sicurezza", lessonsCount: 4, duration: "1h" }
     ]
   },
   {
     id: "77",
     title: "Aggiornamento Preposto",
-    lessons: 15,
+    lessons: 22,
     duration: "6h",
     price: "73,20 €",
     category: "Dirigente - Preposto",
@@ -171,10 +172,10 @@ export const courses: Course[] = [
     references: ["Art. 37 D.Lgs. 81/08", "Accordo Stato-Regioni 17/04/2025 (Rep. Atti n. 59/CSR)"],
     recipients: "Preposti che hanno già effettuato la formazione base",
     syllabus: [
-      { title: "Principali soggetti coinvolti e i relativi obblighi", lessonsCount: 4, duration: "1h 30m" },
-      { title: "Definizione e individuazione dei fattori di rischio", lessonsCount: 4, duration: "1h 30m" },
-      { title: "Incidenti e infortuni mancati", lessonsCount: 4, duration: "1h 30m" },
-      { title: "Tecniche di comunicazione e sensibilizzazione", lessonsCount: 3, duration: "1h 30m" }
+      { title: "Principali soggetti coinvolti e i relativi obblighi", lessonsCount: 6, duration: "1h 30m" },
+      { title: "Definizione e individuazione dei fattori di rischio", lessonsCount: 6, duration: "1h 30m" },
+      { title: "Incidenti e infortuni mancati", lessonsCount: 5, duration: "1h 30m" },
+      { title: "Tecniche di comunicazione e sensibilizzazione", lessonsCount: 5, duration: "1h 30m" }
     ]
   },
   {

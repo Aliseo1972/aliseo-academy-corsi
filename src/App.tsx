@@ -1236,6 +1236,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Livello 1 (L1)"
     },
     {
+      id: "corso-spazi-confinati",
       title: "Corso Attività in Spazi Confinati – 12 ore",
       preview: "Il Corso per Attività in Spazi Confinati o Ambienti Sospetti di Inquinamento è rivolto ai lavoratori che operano in ambienti caratterizzati da spazi limitati, ventilazione insufficiente e possibile presenza di atmosfere pericolose, come previsto dal D.Lgs. 81/08 e dal D.P.R. 177/2011.",
       fullDescription: `

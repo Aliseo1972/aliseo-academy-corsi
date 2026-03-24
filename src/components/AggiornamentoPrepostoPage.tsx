@@ -19,10 +19,10 @@ const AggiornamentoPrepostoPage: React.FC<AggiornamentoPrepostoPageProps> = ({ o
     references: ["Art. 37 D.Lgs. 81/08", "Accordo Stato-Regioni 17/04/2025 (Rep. Atti n. 59/CSR)"],
     recipients: "Preposti che hanno già effettuato la formazione base",
     syllabus: [
-      { title: "Principali soggetti coinvolti e i relativi obblighi", duration: "1h 30m" },
-      { title: "Definizione e individuazione dei fattori di rischio", duration: "1h 30m" },
-      { title: "Incidenti e infortuni mancati", duration: "1h 30m" },
-      { title: "Tecniche di comunicazione e sensibilizzazione", duration: "1h 30m" }
+      { title: "Principali soggetti coinvolti e i relativi obblighi", duration: "1h 30m", lessonsCount: 6 },
+      { title: "Definizione e individuazione dei fattori di rischio", duration: "1h 30m", lessonsCount: 6 },
+      { title: "Incidenti e infortuni mancati", duration: "1h 30m", lessonsCount: 5 },
+      { title: "Tecniche di comunicazione e sensibilizzazione", duration: "1h 30m", lessonsCount: 5 }
     ]
   };
 
@@ -93,6 +93,11 @@ const AggiornamentoPrepostoPage: React.FC<AggiornamentoPrepostoPageProps> = ({ o
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5 text-brand" />
                   <span className="text-white font-bold">6 ore</span>
+                </div>
+                <div className="w-px h-6 bg-white/10" />
+                <div className="flex items-center gap-2">
+                  <BookOpen className="w-5 h-5 text-brand" />
+                  <span className="text-white font-bold">22 lezioni</span>
                 </div>
                 <div className="w-px h-6 bg-white/10" />
                 <div className="flex items-center gap-2">
@@ -200,21 +205,26 @@ const AggiornamentoPrepostoPage: React.FC<AggiornamentoPrepostoPageProps> = ({ o
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma Didattico (6 ore)
+                    Programma Didattico (6 ore - 22 lezioni)
                   </h3>
                   <div className="space-y-4">
                     {[
-                      { title: "Modulo 1: Quadro Normativo e Responsabilità", content: "Evoluzione della normativa, il ruolo del preposto dopo le recenti riforme, responsabilità civili e penali." },
-                      { title: "Modulo 2: Gestione dei Rischi e Vigilanza", content: "Individuazione dei fattori di rischio, misure di prevenzione e protezione, tecniche di controllo dei comportamenti." },
-                      { title: "Modulo 3: Comunicazione e Leadership", content: "Come sensibilizzare i lavoratori, gestione dei conflitti, promozione della cultura della sicurezza in reparto." },
-                      { title: "Modulo 4: Analisi degli Infortuni e Emergenze", content: "Analisi delle cause di infortunio, gestione dei near miss, procedure di intervento in caso di pericolo grave e immediato." }
+                      { title: "Modulo 1: Quadro Normativo e Responsabilità", content: "Evoluzione della normativa, il ruolo del preposto dopo le recenti riforme, responsabilità civili e penali.", lessons: 6 },
+                      { title: "Modulo 2: Gestione dei Rischi e Vigilanza", content: "Individuazione dei fattori di rischio, misure di prevenzione e protezione, tecniche di controllo dei comportamenti.", lessons: 6 },
+                      { title: "Modulo 3: Comunicazione e Leadership", content: "Come sensibilizzare i lavoratori, gestione dei conflitti, promozione della cultura della sicurezza in reparto.", lessons: 5 },
+                      { title: "Modulo 4: Analisi degli Infortuni e Emergenze", content: "Analisi delle cause di infortunio, gestione dei near miss, procedure di intervento in caso di pericolo grave e immediato.", lessons: 5 }
                     ].map((module, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-brand/30 transition-all shadow-sm">
-                        <div className="flex items-center gap-4 mb-3">
-                          <div className="w-10 h-10 rounded-full bg-slate-900 text-brand flex items-center justify-center font-bold shrink-0">
-                            {String(i + 1).padStart(2, '0')}
+                        <div className="flex items-center justify-between mb-3">
+                          <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-full bg-slate-900 text-brand flex items-center justify-center font-bold shrink-0">
+                              {String(i + 1).padStart(2, '0')}
+                            </div>
+                            <h4 className="font-bold text-slate-900 text-lg">{module.title}</h4>
                           </div>
-                          <h4 className="font-bold text-slate-900 text-lg">{module.title}</h4>
+                          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider bg-slate-50 px-2 py-1 rounded-md border border-slate-100">
+                            {module.lessons} lezioni
+                          </span>
                         </div>
                         <p className="text-slate-500 text-sm leading-relaxed ml-14">{module.content}</p>
                       </div>
@@ -274,6 +284,16 @@ const AggiornamentoPrepostoPage: React.FC<AggiornamentoPrepostoPageProps> = ({ o
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
                       <p className="text-white font-bold">6 ore</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                      <BookOpen className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Lezioni</p>
+                      <p className="text-white font-bold">22 moduli</p>
                     </div>
                   </div>
 

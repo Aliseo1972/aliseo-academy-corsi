@@ -19,10 +19,11 @@ const AggiornamentoDirigentePage: React.FC<AggiornamentoDirigentePageProps> = ({
     references: ["Art. 37 D.Lgs. 81/08", "Accordo Stato-Regioni 17/04/2025 (Rep. Atti n. 59/CSR)"],
     recipients: "Dirigenti che hanno già effettuato la formazione base",
     syllabus: [
-      { title: "Novità legislative e giurisprudenziali", duration: "2h" },
-      { title: "Sistemi di gestione della sicurezza (SGSL)", duration: "1h 30m" },
-      { title: "Modelli organizzativi e responsabilità", duration: "1h 30m" },
-      { title: "Cultura della sicurezza in azienda", duration: "1h" }
+      { title: "Evoluzione della normativa e giurisprudenza", duration: "1h 30m", lessons: 5 },
+      { title: "Il sistema istituzionale e gli organi di vigilanza", duration: "1h", lessons: 4 },
+      { title: "Modelli di organizzazione e gestione (MOG) e responsabilità", duration: "1h 30m", lessons: 5 },
+      { title: "Valutazione dei rischi e gestione delle emergenze", duration: "1h", lessons: 5 },
+      { title: "Leadership, comunicazione e cultura della sicurezza", duration: "1h", lessons: 4 }
     ]
   };
 
@@ -93,6 +94,11 @@ const AggiornamentoDirigentePage: React.FC<AggiornamentoDirigentePageProps> = ({
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5 text-brand" />
                   <span className="text-white font-bold">6 ore</span>
+                </div>
+                <div className="w-px h-6 bg-white/10" />
+                <div className="flex items-center gap-2">
+                  <BookOpen className="w-5 h-5 text-brand" />
+                  <span className="text-white font-bold">23 lezioni</span>
                 </div>
                 <div className="w-px h-6 bg-white/10" />
                 <div className="flex items-center gap-2">
@@ -200,21 +206,27 @@ const AggiornamentoDirigentePage: React.FC<AggiornamentoDirigentePageProps> = ({
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma Didattico (6 ore)
+                    Programma Didattico (6 ore - 23 lezioni)
                   </h3>
                   <div className="space-y-4">
                     {[
-                      { title: "Modulo 1: Evoluzione Normativa", content: "Analisi delle modifiche al D.Lgs. 81/08, nuove direttive europee, aggiornamenti tecnici e standard di sicurezza." },
-                      { title: "Modulo 2: Responsabilità e Giurisprudenza", content: "Esame delle sentenze più significative della Cassazione in materia di infortuni sul lavoro e responsabilità dirigenziale." },
-                      { title: "Modulo 3: Sistemi di Gestione (SGSL)", content: "Implementazione e audit dei sistemi di gestione secondo la norma UNI ISO 45001:2018." },
-                      { title: "Modulo 4: Leadership e Soft Skills", content: "Tecniche di coinvolgimento dei lavoratori, gestione dei conflitti e promozione della cultura della sicurezza." }
+                      { title: "Modulo 1: Evoluzione della normativa e giurisprudenza", content: "Analisi delle modifiche al D.Lgs. 81/08, nuove direttive europee, aggiornamenti tecnici e standard di sicurezza.", lessons: 5 },
+                      { title: "Modulo 2: Il sistema istituzionale e gli organi di vigilanza", content: "Organizzazione del sistema di prevenzione nazionale, ruolo degli organi di controllo e modalità di ispezione.", lessons: 4 },
+                      { title: "Modulo 3: Modelli di organizzazione e gestione (MOG) e responsabilità", content: "Implementazione dei modelli 231, responsabilità civile e penale del dirigente, delega di funzioni.", lessons: 5 },
+                      { title: "Modulo 4: Valutazione dei rischi e gestione delle emergenze", content: "Criteri di valutazione, gestione dei rischi emergenti (stress, digitalizzazione), piani di emergenza e continuità operativa.", lessons: 5 },
+                      { title: "Modulo 5: Leadership, comunicazione e cultura della sicurezza", content: "Tecniche di coinvolgimento dei lavoratori, gestione dei conflitti e promozione di una cultura della sicurezza proattiva.", lessons: 4 }
                     ].map((module, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-brand/30 transition-all shadow-sm">
-                        <div className="flex items-center gap-4 mb-3">
-                          <div className="w-10 h-10 rounded-full bg-slate-900 text-brand flex items-center justify-center font-bold shrink-0">
-                            {String(i + 1).padStart(2, '0')}
+                        <div className="flex items-center justify-between mb-3">
+                          <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-full bg-slate-900 text-brand flex items-center justify-center font-bold shrink-0">
+                              {String(i + 1).padStart(2, '0')}
+                            </div>
+                            <h4 className="font-bold text-slate-900 text-lg">{module.title}</h4>
                           </div>
-                          <h4 className="font-bold text-slate-900 text-lg">{module.title}</h4>
+                          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider bg-slate-50 px-2 py-1 rounded-md border border-slate-100">
+                            {module.lessons} lezioni
+                          </span>
                         </div>
                         <p className="text-slate-500 text-sm leading-relaxed ml-14">{module.content}</p>
                       </div>
@@ -274,6 +286,16 @@ const AggiornamentoDirigentePage: React.FC<AggiornamentoDirigentePageProps> = ({
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
                       <p className="text-white font-bold">6 ore</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                      <BookOpen className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Lezioni</p>
+                      <p className="text-white font-bold">23 moduli</p>
                     </div>
                   </div>
 
