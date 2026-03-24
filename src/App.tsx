@@ -88,6 +88,17 @@ import CorsoPompeCalcestruzzoTeoricoPage from './components/CorsoPompeCalcestruz
 import CorsoPesPavPeiPage from './components/CorsoPesPavPeiPage';
 import AggiornamentoPesPavPeiPage from './components/AggiornamentoPesPavPeiPage';
 import CorsoAtmosfereEsplosiveAtexPage from './components/CorsoAtmosfereEsplosiveAtexPage';
+import CorsoSpaziConfinatiPage from './components/CorsoSpaziConfinatiPage';
+import CorsoSpaziConfinatiPrepostiPage from './components/CorsoSpaziConfinatiPrepostiPage';
+import AggiornamentoSpaziConfinatiPage from './components/AggiornamentoSpaziConfinatiPage';
+import AggiornamentoSpaziConfinatiPrepostiPage from './components/AggiornamentoSpaziConfinatiPrepostiPage';
+import CorsoDPITerzaCategoriaLavoriQuotaPage from './components/CorsoDPITerzaCategoriaLavoriQuotaPage';
+import AggiornamentoDPITerzaCategoriaLavoriQuotaPage from './components/AggiornamentoDPITerzaCategoriaLavoriQuotaPage';
+import CorsoLavoriSuFuniPage from './components/CorsoLavoriSuFuniPage';
+import AggiornamentoLavoriSuFuniPage from './components/AggiornamentoLavoriSuFuniPage';
+import CorsoPrepostoLavoriSuFuniPage from './components/CorsoPrepostoLavoriSuFuniPage';
+import AggiornamentoPrepostoLavoriSuFuniPage from './components/AggiornamentoPrepostoLavoriSuFuniPage';
+import CorsoPonteggiPage from './components/CorsoPonteggiPage';
 
 const CourseCard = ({ course, onOpen }: { course: Course; onOpen: (course: Course) => void; key?: string | number }) => {
   return (
@@ -1273,6 +1284,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Spazi Confinati"
     },
     {
+      id: "corso-spazi-confinati-preposti",
       title: "Corso Attività in Spazi Confinati Avanzato – Preposti (16 ore)",
       preview: "Il Corso Attività in Spazi Confinati Avanzato per Preposti è rivolto ai lavoratori che svolgono funzioni di coordinamento e supervisione delle attività in ambienti confinati o sospetti di inquinamento.",
       fullDescription: `
@@ -1310,6 +1322,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Spazi Confinati"
     },
     {
+      id: "aggiornamento-spazi-confinati",
       title: "Aggiornamento Attività in Spazi Confinati – 4 ore",
       preview: "Il Corso di Aggiornamento per Attività in Spazi Confinati o Ambienti Sospetti di Inquinamento è rivolto ai lavoratori e ai preposti che operano in ambienti confinati e che devono mantenere aggiornate le competenze.",
       fullDescription: `
@@ -1343,6 +1356,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Spazi Confinati"
     },
     {
+      id: "aggiornamento-spazi-confinati-preposti",
       title: "Aggiornamento Attività in Spazi Confinati Avanzato – Preposti (8 ore)",
       preview: "Il Corso di Aggiornamento per Attività in Spazi Confinati Avanzato è rivolto ai preposti, capisquadra e responsabili operativi che coordinano o supervisionano attività svolte in ambienti confinati.",
       fullDescription: `
@@ -1380,6 +1394,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Spazi Confinati"
     },
     {
+      id: "corso-dpi-terza-categoria-lavori-quota",
       title: "Corso DPI per Lavori in Quota e Uso dei DPI di III Categoria – 8 ore",
       preview: "Il Corso DPI per Lavori in Quota e utilizzo dei Dispositivi di Protezione Individuale di III Categoria è rivolto ai lavoratori che svolgono attività con rischio di caduta dall’alto.",
       fullDescription: `
@@ -1417,6 +1432,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Lavori in Quota"
     },
     {
+      id: "aggiornamento-dpi-terza-categoria-lavori-quota",
       title: "Aggiornamento DPI di III Categoria e Lavori in Quota – 4 ore",
       preview: "Il Corso di Aggiornamento DPI di III Categoria e Lavori in Quota è rivolto ai lavoratori che utilizzano dispositivi di protezione individuale anticaduta durante lo svolgimento di attività con rischio di caduta dall’alto.",
       fullDescription: `
@@ -1453,6 +1469,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Lavori in Quota"
     },
     {
+      id: "corso-lavori-su-funi",
       title: "Corso Lavori su Funi – 32 ore",
       preview: "Il Corso Lavori su Funi è rivolto ai lavoratori che svolgono attività in quota mediante sistemi di accesso e posizionamento tramite funi.",
       fullDescription: `
@@ -1488,6 +1505,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Lavori su Funi"
     },
     {
+      id: "aggiornamento-lavori-su-funi",
       title: "Aggiornamento Corso Lavori su Funi – 8 ore",
       preview: "Il Corso di Aggiornamento per Lavori su Funi è rivolto ai lavoratori che svolgono attività in quota mediante sistemi di accesso e posizionamento tramite funi e che devono mantenere aggiornate le proprie competenze.",
       fullDescription: `
@@ -1524,6 +1542,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Lavori su Funi"
     },
     {
+      id: "corso-preposto-lavori-su-funi",
       title: "Corso Preposto per Lavori su Funi – 8 ore",
       preview: "Il Corso Preposto per Lavori su Funi è rivolto ai lavoratori che svolgono funzioni di sorveglianza, coordinamento e controllo delle attività operative svolte mediante sistemi di accesso e posizionamento tramite funi.",
       fullDescription: `
@@ -1561,6 +1580,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Lavori su Funi"
     },
     {
+      id: "aggiornamento-preposto-lavori-su-funi",
       title: "Aggiornamento Preposto per Lavori su Funi – 4 ore",
       preview: "Il Corso di Aggiornamento Preposto per Lavori su Funi è rivolto ai lavoratori che svolgono funzioni di preposto o caposquadra nelle attività eseguite mediante sistemi di accesso e posizionamento tramite funi.",
       fullDescription: `
@@ -1595,6 +1615,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Lavori su Funi"
     },
     {
+      id: "corso-ponteggi",
       title: "Corso Ponteggi – Addetti al Montaggio, Smontaggio e Trasformazione (28 ore)",
       preview: "Il Corso Ponteggi – 28 ore è rivolto ai lavoratori addetti alle operazioni di montaggio, smontaggio e trasformazione dei ponteggi, come previsto dal D.Lgs. 81/08.",
       fullDescription: `
@@ -1890,6 +1911,16 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       `,
       duration: "8 - 12 ore",
       group: "Sicurezza Lavoratori"
+    },
+    {
+      id: "corso-atmosfere-esplosive-atex",
+      title: "Corso Atmosfere Esplosive – ATEX",
+      preview: "Il Corso Atmosfere Esplosive – ATEX è rivolto ai lavoratori che operano in ambienti con rischio di esplosione, in conformità al D.Lgs. 81/08.",
+      fullDescription: `
+        Il Corso Atmosfere Esplosive – ATEX è rivolto ai lavoratori che operano in ambienti con rischio di esplosione, in conformità al D.Lgs. 81/08.
+      `,
+      duration: "8 ore",
+      group: "ATEX"
     }
   ];
 
@@ -1911,7 +1942,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
 
       <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
         {courses8108.map((course, index) => {
-          const isSpecialPage = ["1", "2", "3", "4", "5", "6", "ps-a", "ps-bc", "aggiornamento-ps-a", "aggiornamento-ps-bc", "19", "20", "formazione-medio-alto"].includes(course.id || "");
+          const isSpecialPage = ["1", "2", "3", "4", "5", "6", "ps-a", "ps-bc", "aggiornamento-ps-a", "aggiornamento-ps-bc", "19", "20", "formazione-medio-alto", "corso-spazi-confinati", "corso-spazi-confinati-preposti", "aggiornamento-spazi-confinati", "aggiornamento-spazi-confinati-preposti", "corso-dpi-terza-categoria-lavori-quota", "aggiornamento-dpi-terza-categoria-lavori-quota", "corso-lavoratori-rischio-basso-uffici", "corso-lavoratori-generale-specifica-basso", "corso-lavoratori-generale-specifica-basso-uffici", "aggiornamento-lavoratori", "corso-lavori-su-funi", "aggiornamento-lavori-su-funi", "corso-preposto-lavori-su-funi", "aggiornamento-preposto-lavori-su-funi", "corso-atmosfere-esplosive-atex", "corso-ponteggi"].includes(course.id || "");
           
           const handleNavigation = () => {
             if (course.id === "1") setCurrentView('antincendio-l1');
@@ -1927,6 +1958,18 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
             else if (course.id === "19") setCurrentView('corso-formazione-lavoratori-generale');
             else if (course.id === "20") setCurrentView('corso-formazione-lavoratori-rischio-basso');
             else if (course.id === "formazione-medio-alto") setCurrentView('corso-formazione-lavoratori-rischio-medio-alto');
+            else if (course.id === "corso-spazi-confinati") setCurrentView('corso-spazi-confinati');
+            else if (course.id === "corso-spazi-confinati-preposti") setCurrentView('corso-spazi-confinati-preposti');
+            else if (course.id === "aggiornamento-spazi-confinati") setCurrentView('aggiornamento-spazi-confinati');
+            else if (course.id === "aggiornamento-spazi-confinati-preposti") setCurrentView('aggiornamento-spazi-confinati-preposti');
+            else if (course.id === "corso-dpi-terza-categoria-lavori-quota") setCurrentView('corso-dpi-terza-categoria-lavori-quota');
+            else if (course.id === "aggiornamento-dpi-terza-categoria-lavori-quota") setCurrentView('aggiornamento-dpi-terza-categoria-lavori-quota');
+            else if (course.id === "corso-lavori-su-funi") setCurrentView('corso-lavori-su-funi');
+            else if (course.id === "aggiornamento-lavori-su-funi") setCurrentView('aggiornamento-lavori-su-funi');
+            else if (course.id === "corso-preposto-lavori-su-funi") setCurrentView('corso-preposto-lavori-su-funi');
+            else if (course.id === "aggiornamento-preposto-lavori-su-funi") setCurrentView('aggiornamento-preposto-lavori-su-funi');
+            else if (course.id === "corso-ponteggi") setCurrentView('corso-ponteggi');
+            else if (course.id === "corso-atmosfere-esplosive-atex") setCurrentView('corso-atmosfere-esplosive-atex');
           };
 
           return (
@@ -2415,7 +2458,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto' | 'corso-haccp' | 'corso-haccp-addetto-manipolazione' | 'corso-haccp-responsabile-aggiornamento' | 'corso-haccp-addetto-manipolazione-aggiornamento' | 'corso-haccp-responsabile' | 'corso-haccp-addetto-non-manipolazione' | 'corso-datore-di-lavoro' | 'corso-datore-di-lavoro-rspp-basso' | 'corso-datore-di-lavoro-rspp-medio' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-diisocianati' | 'corso-diisocianati-base' | 'corso-diisocianati-intermedio' | 'corso-diisocianati-avanzato' | 'corso-lavoratori-rischio-basso-uffici' | 'corso-lavoratori-generale-specifica-basso' | 'corso-lavoratori-generale-specifica-basso-uffici' | 'aggiornamento-lavoratori' | 'corso-privacy-incaricato-trattamento-dati' | 'corso-privacy-sanitario' | 'corso-videoterminali' | 'corso-microclima' | 'corso-rumore' | 'corso-vibrazioni' | 'corso-carrelli-elevatori-teorico' | 'corso-ple-teorico' | 'corso-trattori-agricoli-teorico' | 'corso-macchine-movimento-terra-teorico' | 'corso-gru-autocarro-teorico' | 'corso-gru-mobili-teorico' | 'corso-gru-torre-teorico' | 'corso-pompe-calcestruzzo-teorico' | 'corso-pes-pav-pei' | 'aggiornamento-pes-pav-pei' | 'corso-atmosfere-esplosive-atex'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto' | 'corso-haccp' | 'corso-haccp-addetto-manipolazione' | 'corso-haccp-responsabile-aggiornamento' | 'corso-haccp-addetto-manipolazione-aggiornamento' | 'corso-haccp-responsabile' | 'corso-haccp-addetto-non-manipolazione' | 'corso-datore-di-lavoro' | 'corso-datore-di-lavoro-rspp-basso' | 'corso-datore-di-lavoro-rspp-medio' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-diisocianati' | 'corso-diisocianati-base' | 'corso-diisocianati-intermedio' | 'corso-diisocianati-avanzato' | 'corso-lavoratori-rischio-basso-uffici' | 'corso-lavoratori-generale-specifica-basso' | 'corso-lavoratori-generale-specifica-basso-uffici' | 'aggiornamento-lavoratori' | 'corso-privacy-incaricato-trattamento-dati' | 'corso-privacy-sanitario' | 'corso-videoterminali' | 'corso-microclima' | 'corso-rumore' | 'corso-vibrazioni' | 'corso-carrelli-elevatori-teorico' | 'corso-ple-teorico' | 'corso-trattori-agricoli-teorico' | 'corso-macchine-movimento-terra-teorico' | 'corso-gru-autocarro-teorico' | 'corso-gru-mobili-teorico' | 'corso-gru-torre-teorico' | 'corso-pompe-calcestruzzo-teorico' | 'corso-pes-pav-pei' | 'aggiornamento-pes-pav-pei' | 'corso-atmosfere-esplosive-atex' | 'corso-spazi-confinati' | 'corso-spazi-confinati-preposti' | 'aggiornamento-spazi-confinati' | 'aggiornamento-spazi-confinati-preposti' | 'corso-dpi-terza-categoria-lavori-quota' | 'aggiornamento-dpi-terza-categoria-lavori-quota' | 'corso-lavori-su-funi' | 'aggiornamento-lavori-su-funi' | 'corso-preposto-lavori-su-funi'>('home');
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showCookieModal, setShowCookieModal] = useState(false);
@@ -2544,6 +2587,28 @@ export default function App() {
       path = '/aggiornamento-pes-pav-pei';
     } else if (view === 'corso-atmosfere-esplosive-atex') {
       path = '/corso-atmosfere-esplosive-atex';
+    } else if (view === 'corso-spazi-confinati') {
+      path = '/corso-spazi-confinati';
+    } else if (view === 'corso-spazi-confinati-preposti') {
+      path = '/corso-spazi-confinati-preposti';
+    } else if (view === 'aggiornamento-spazi-confinati') {
+      path = '/aggiornamento-spazi-confinati';
+    } else if (view === 'aggiornamento-spazi-confinati-preposti') {
+      path = '/aggiornamento-spazi-confinati-preposti';
+    } else if (view === 'corso-dpi-terza-categoria-lavori-quota') {
+      path = '/corso-dpi-terza-categoria-lavori-quota';
+    } else if (view === 'aggiornamento-dpi-terza-categoria-lavori-quota') {
+      path = '/aggiornamento-dpi-terza-categoria-lavori-quota';
+    } else if (view === 'corso-lavori-su-funi') {
+      path = '/corso-lavori-su-funi';
+    } else if (view === 'aggiornamento-lavori-su-funi') {
+      path = '/aggiornamento-lavori-su-funi';
+    } else if (view === 'corso-preposto-lavori-su-funi') {
+      path = '/corso-preposto-lavori-su-funi';
+    } else if (view === 'aggiornamento-preposto-lavori-su-funi') {
+      path = '/aggiornamento-preposto-lavori-su-funi';
+    } else if (view === 'corso-ponteggi') {
+      path = '/corso-ponteggi';
     }
     
     window.history.pushState({ view, category: category || selectedCategory }, '', path);
@@ -2662,6 +2727,28 @@ export default function App() {
       navigateToView('aggiornamento-pes-pav-pei');
     } else if (course.id === "30") {
       navigateToView('corso-atmosfere-esplosive-atex');
+    } else if (course.id === "corso-spazi-confinati") {
+      navigateToView('corso-spazi-confinati');
+    } else if (course.id === "corso-spazi-confinati-preposti") {
+      navigateToView('corso-spazi-confinati-preposti');
+    } else if (course.id === "aggiornamento-spazi-confinati") {
+      navigateToView('aggiornamento-spazi-confinati');
+    } else if (course.id === "aggiornamento-spazi-confinati-preposti") {
+      navigateToView('aggiornamento-spazi-confinati-preposti');
+    } else if (course.id === "corso-dpi-terza-categoria-lavori-quota") {
+      navigateToView('corso-dpi-terza-categoria-lavori-quota');
+    } else if (course.id === "aggiornamento-dpi-terza-categoria-lavori-quota") {
+      navigateToView('aggiornamento-dpi-terza-categoria-lavori-quota');
+    } else if (course.id === "corso-lavori-su-funi") {
+      navigateToView('corso-lavori-su-funi');
+    } else if (course.id === "aggiornamento-lavori-su-funi") {
+      navigateToView('aggiornamento-lavori-su-funi');
+    } else if (course.id === "corso-preposto-lavori-su-funi") {
+      navigateToView('corso-preposto-lavori-su-funi');
+    } else if (course.id === "aggiornamento-preposto-lavori-su-funi") {
+      navigateToView('aggiornamento-preposto-lavori-su-funi');
+    } else if (course.id === "corso-ponteggi") {
+      navigateToView('corso-ponteggi');
     } else if (["65", "64", "68", "69", "70", "71"].includes(course.id)) {
       navigateToView('corso-datore-di-lavoro');
     } else {
@@ -2783,6 +2870,30 @@ export default function App() {
       setCurrentView('corso-privacy-incaricato-trattamento-dati');
     } else if (path === '/corso-privacy-sanitario') {
       setCurrentView('corso-privacy-sanitario');
+    } else if (path === '/corso-atmosfere-esplosive-atex') {
+      setCurrentView('corso-atmosfere-esplosive-atex');
+    } else if (path === '/corso-spazi-confinati') {
+      setCurrentView('corso-spazi-confinati');
+    } else if (path === '/corso-spazi-confinati-preposti') {
+      setCurrentView('corso-spazi-confinati-preposti');
+    } else if (path === '/aggiornamento-spazi-confinati') {
+      setCurrentView('aggiornamento-spazi-confinati');
+    } else if (path === '/aggiornamento-spazi-confinati-preposti') {
+      setCurrentView('aggiornamento-spazi-confinati-preposti');
+    } else if (path === '/corso-dpi-terza-categoria-lavori-quota') {
+      setCurrentView('corso-dpi-terza-categoria-lavori-quota');
+    } else if (path === '/aggiornamento-dpi-terza-categoria-lavori-quota') {
+      setCurrentView('aggiornamento-dpi-terza-categoria-lavori-quota');
+    } else if (path === '/corso-lavori-su-funi') {
+      setCurrentView('corso-lavori-su-funi');
+    } else if (path === '/aggiornamento-lavori-su-funi') {
+      setCurrentView('aggiornamento-lavori-su-funi');
+    } else if (path === '/corso-preposto-lavori-su-funi') {
+      setCurrentView('corso-preposto-lavori-su-funi');
+    } else if (path === '/aggiornamento-preposto-lavori-su-funi') {
+      setCurrentView('aggiornamento-preposto-lavori-su-funi');
+    } else if (path === '/corso-ponteggi') {
+      setCurrentView('corso-ponteggi');
     } else {
       const params = new URLSearchParams(window.location.search);
       const courseId = params.get('corso');
@@ -3190,6 +3301,28 @@ export default function App() {
         <AggiornamentoPesPavPeiPage onNavigate={navigateToView} />
       ) : currentView === 'corso-atmosfere-esplosive-atex' ? (
         <CorsoAtmosfereEsplosiveAtexPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-spazi-confinati' ? (
+        <CorsoSpaziConfinatiPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-spazi-confinati-preposti' ? (
+        <CorsoSpaziConfinatiPrepostiPage onNavigate={navigateToView} />
+      ) : currentView === 'aggiornamento-spazi-confinati' ? (
+        <AggiornamentoSpaziConfinatiPage onNavigate={navigateToView} />
+      ) : currentView === 'aggiornamento-spazi-confinati-preposti' ? (
+        <AggiornamentoSpaziConfinatiPrepostiPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-dpi-terza-categoria-lavori-quota' ? (
+        <CorsoDPITerzaCategoriaLavoriQuotaPage onNavigate={navigateToView} />
+      ) : currentView === 'aggiornamento-dpi-terza-categoria-lavori-quota' ? (
+        <AggiornamentoDPITerzaCategoriaLavoriQuotaPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-lavori-su-funi' ? (
+        <CorsoLavoriSuFuniPage onNavigate={navigateToView} />
+      ) : currentView === 'aggiornamento-lavori-su-funi' ? (
+        <AggiornamentoLavoriSuFuniPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-preposto-lavori-su-funi' ? (
+        <CorsoPrepostoLavoriSuFuniPage onNavigate={navigateToView} />
+      ) : currentView === 'aggiornamento-preposto-lavori-su-funi' ? (
+        <AggiornamentoPrepostoLavoriSuFuniPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-ponteggi' ? (
+        <CorsoPonteggiPage onNavigate={navigateToView} />
       ) : (
         <DLGS8108Section setCurrentView={navigateToView} />
       )}
