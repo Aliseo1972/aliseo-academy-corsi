@@ -11,17 +11,17 @@ interface CorsoPrepostoPageProps {
 const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => {
   const course = courses.find(c => c.id === "76") || {
     title: "Corso Preposto",
-    duration: "8h",
-    price: "120,00 €",
-    description: "Formazione obbligatoria per la figura del preposto ai sensi del D.Lgs 81/08.",
+    duration: "5h",
+    price: "61,00 €",
+    description: "Formazione aggiuntiva per la figura del preposto ai sensi del D.Lgs 81/08.",
     objectives: ["Ruolo e responsabilità", "Tecniche di vigilanza", "Gestione delle emergenze"],
     references: ["Art. 37 D.Lgs. 81/08", "Accordo Stato-Regioni 21/12/2011"],
     recipients: "Lavoratori che svolgono funzioni di preposto",
     syllabus: [
-      { title: "Principali soggetti coinvolti e i relativi obblighi", duration: "2h" },
-      { title: "Definizione e individuazione dei fattori di rischio", duration: "2h" },
-      { title: "Incidenti e infortuni mancati", duration: "2h" },
-      { title: "Tecniche di comunicazione e sensibilizzazione dei lavoratori", duration: "2h" }
+      { title: "Principali soggetti coinvolti e i relativi obblighi", duration: "1h 30m" },
+      { title: "Definizione e individuazione dei fattori di rischio", duration: "1h 30m" },
+      { title: "Incidenti e infortuni mancati", duration: "1h" },
+      { title: "Tecniche di comunicazione e sensibilizzazione dei lavoratori", duration: "1h" }
     ]
   };
 
@@ -58,17 +58,25 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-2"
             >
               Corso <span className="text-brand">Preposto</span>
             </motion.h1>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15 }}
+              className="text-xl md:text-2xl font-bold text-slate-400 mb-6 tracking-tight"
+            >
+              Formazione particolare aggiuntiva per il Preposto (Moduli da 1 a 5)
+            </motion.div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              La formazione obbligatoria per i preposti aziendali ai sensi del <strong>D.Lgs 81/08</strong> e dell'<strong>Accordo Stato-Regioni</strong>. Un percorso essenziale per chi esercita funzioni di vigilanza e controllo.
+              Questo corso rappresenta una formazione aggiuntiva per il Preposto, utile per approfondire le competenze in materia di sicurezza sul lavoro secondo il D.Lgs. 81/08. <strong>Non sostituisce il corso obbligatorio completo per Preposti (12 ore)</strong>, necessario per l’abilitazione al ruolo.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -112,6 +120,110 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
             {/* Left Column: Course Details */}
             <div className="lg:col-span-2 space-y-16">
               
+              {/* Blocco Commerciale Informativo: Corso Completo 12h */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-slate-50 border border-slate-200 rounded-[2rem] p-8 md:p-10 shadow-sm"
+              >
+                <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-6 leading-tight">
+                  Vuoi ottenere l’abilitazione completa come <span className="text-brand">Preposto</span>?
+                </h2>
+                
+                <div className="prose prose-slate max-w-none mb-8">
+                  <p className="text-slate-600 text-lg leading-relaxed">
+                    Il corso presente in questa pagina rappresenta una formazione aggiuntiva utile per approfondire le competenze del Preposto, ma <strong>NON sostituisce il percorso obbligatorio</strong> previsto dalla normativa.
+                  </p>
+                  <p className="text-slate-600 text-lg leading-relaxed">
+                    Per essere nominato Preposto è necessario frequentare il <strong>corso completo di 12 ore</strong>, erogato in presenza oppure in videoconferenza sincrona con docente qualificato.
+                  </p>
+                </div>
+
+                {/* Box Evidenziato */}
+                <div className="bg-white border-2 border-brand/20 rounded-3xl p-6 md:p-8 mb-8 shadow-sm">
+                  <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <div className="w-2 h-6 bg-brand rounded-full" />
+                    Corso Preposto – Formazione Completa (12 ore)
+                  </h3>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <ul className="space-y-4">
+                      {[
+                        { text: "Durata: 12 ore", icon: Clock },
+                        { text: "Modalità: Videoconferenza sincrona (docente in diretta)", icon: Users },
+                        { text: "Validità: Conforme Accordo Stato-Regioni", icon: Scale },
+                        { text: "Attestato: Valido ai fini di legge", icon: Award }
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-center gap-3 text-slate-700 font-bold text-sm">
+                          <item.icon className="w-5 h-5 text-brand shrink-0" />
+                          {item.text}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="bg-slate-900 rounded-2xl p-6 flex flex-col justify-center items-center text-center">
+                      <span className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-1">Prezzo</span>
+                      <span className="text-3xl font-black text-brand">€ 220,00</span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4 text-slate-600 border-t border-slate-100 pt-6">
+                    <p className="font-bold text-slate-900 flex items-center gap-2">
+                      <Zap className="w-5 h-5 text-brand" />
+                      Modalità di partecipazione:
+                    </p>
+                    <p className="text-sm">La formazione in videoconferenza può essere organizzata:</p>
+                    <ul className="space-y-2 text-sm">
+                      <li className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-brand mt-1.5 shrink-0" />
+                        <span>in <strong>modalità dedicata</strong> per la tua azienda, al raggiungimento di un numero minimo di partecipanti</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-brand mt-1.5 shrink-0" />
+                        <span>oppure con <strong>inserimento in classi interaziendali</strong> già pianificate, ideali anche per singoli iscritti</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mb-10">
+                  <p className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <BookOpen className="w-5 h-5 text-brand" />
+                    Programma del corso:
+                  </p>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-slate-600 text-sm font-medium">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-brand" />
+                      Ruolo e responsabilità del Preposto
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-brand" />
+                      Vigilanza e controllo operativo
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-brand" />
+                      Individuazione dei rischi e prevenzione
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-brand" />
+                      Comunicazione e gestione del personale
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-brand" />
+                      Procedure di sicurezza e gestione delle emergenze
+                    </li>
+                  </ul>
+                </div>
+
+                <a 
+                  href="mailto:commerciale@aliseogroup.it?subject=Richiesta corso preposto 12 ore&body=Buongiorno,%0D%0A%0D%0ASono interessato al corso Preposto completo da 12 ore in videoconferenza.%0D%0A%0D%0APotrei ricevere maggiori informazioni su:%0D%0A- Prossime date disponibili%0D%0A- Modalità di partecipazione%0D%0A- Eventuali soluzioni per più partecipanti%0D%0A%0D%0AGrazie,%0D%0A"
+                  className="inline-flex items-center gap-3 px-8 py-5 bg-slate-900 text-white font-black uppercase tracking-tight rounded-2xl hover:bg-slate-800 transition-all shadow-xl group"
+                >
+                  Richiedi informazioni sul corso completo
+                  <ChevronRight className="w-5 h-5 text-brand transition-transform group-hover:translate-x-1" />
+                </a>
+              </motion.div>
+
               {/* SEO Text Section */}
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
@@ -120,7 +232,10 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Il <strong>corso preposto obbligatorio</strong> rappresenta un pilastro fondamentale della sicurezza aziendale, come stabilito in modo inequivocabile dal <strong>corso preposto D.Lgs 81/08</strong>. La figura del preposto riveste un ruolo di vigilanza attiva e costante, garantendo che le direttive impartite dal datore di lavoro e dai dirigenti in materia di salute e sicurezza siano effettivamente applicate dai lavoratori durante lo svolgimento delle loro mansioni quotidiane. Questa responsabilità non è meramente formale, ma richiede una <strong>formazione preposto aziende</strong> specifica e approfondita, che vada ben oltre la formazione generale dei lavoratori, focalizzandosi sulle capacità critiche di supervisione, controllo operativo e intervento immediato in caso di situazioni di pericolo o comportamenti non conformi.
+                    Questo percorso formativo è pensato come integrazione alla formazione obbligatoria del Preposto, offrendo un approfondimento pratico e normativo sui compiti di vigilanza e responsabilità. Non è valido come corso abilitante completo, per il quale è richiesta una formazione di 12 ore in presenza o videoconferenza sincrona.
+                  </p>
+                  <p>
+                    Il <strong>corso preposto</strong> rappresenta un pilastro fondamentale della sicurezza aziendale, come stabilito in modo inequivocabile dal <strong>D.Lgs 81/08</strong>. La figura del preposto riveste un ruolo di vigilanza attiva e costante, garantendo che le direttive impartite dal datore di lavoro e dai dirigenti in materia di salute e sicurezza siano effettivamente applicate dai lavoratori durante lo svolgimento delle loro mansioni quotidiane. Questa responsabilità non è meramente formale, ma richiede una <strong>formazione preposto aziende</strong> specifica e approfondita, che vada ben oltre la formazione generale dei lavoratori, focalizzandosi sulle capacità critiche di supervisione, controllo operativo e intervento immediato in caso di situazioni di pericolo o comportamenti non conformi.
                   </p>
                   <p>
                     Aliseo Academy propone una <strong>formazione online</strong> di altissima qualità, meticolosamente progettata per fornire ai preposti non solo le conoscenze normative indispensabili, ma anche le competenze relazionali, psicologiche e comunicative necessarie per gestire il proprio team con autorevolezza e in totale sicurezza. La nostra modalità <strong>e-learning</strong> permette di contestualizzare l'apprendimento direttamente nell'ambiente di lavoro abituale, rendendo l'apprendimento molto più efficace, immediato e pertinente alle specifiche sfide del settore di riferimento, senza la necessità di trasferte o interruzioni prolungate dell'attività.
@@ -152,7 +267,7 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
                   </h3>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                     <p className="text-slate-600 leading-relaxed">
-                      Il corso è destinato a tutti i lavoratori che, in ragione delle competenze professionali e nei limiti di poteri gerarchici e funzionali adeguati alla natura dell'incarico conferitogli, sovrintendono alla attività lavorativa e garantiscono l'attuazione delle direttive ricevute, controllandone la corretta esecuzione da parte dei lavoratori ed esercitando un funzionale potere di iniziativa. Tipicamente: capisquadra, capiofficina, caporeparto, responsabili di linea, etc.
+                      Il corso è destinato a <strong>preposti che hanno già ricevuto la formazione base obbligatoria</strong> o che necessitano di un <strong>approfondimento integrativo</strong> sulle proprie responsabilità e compiti di vigilanza. Si rivolge a tutti i lavoratori che sovrintendono all'attività lavorativa e garantiscono l'attuazione delle direttive ricevute, controllandone la corretta esecuzione (capisquadra, capiofficina, caporeparto, responsabili di linea, etc.).
                     </p>
                   </div>
                 </section>
@@ -359,7 +474,8 @@ const CorsoPrepostoPage: React.FC<CorsoPrepostoPageProps> = ({ onNavigate }) => 
               <p className="text-sm text-slate-500 mb-4">Formazione obbligatoria per dirigenti ai sensi del D.Lgs 81/08.</p>
               <div className="flex items-center gap-4 text-xs font-bold text-slate-400">
                 <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> 12h</span>
-                <span className="flex items-center gap-1"><Euro className="w-3.5 h-3.5" /> 160,00 €</span>
+                <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5" /> 37 lezioni</span>
+                <span className="flex items-center gap-1"><Euro className="w-3.5 h-3.5" /> 195,20 €</span>
               </div>
             </button>
 

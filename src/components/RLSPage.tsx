@@ -56,7 +56,7 @@ const RLSPage: React.FC<RLSPageProps> = ({ onNavigate }) => {
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              La figura chiave per la tutela della salute e sicurezza nei luoghi di lavoro. Un percorso di <strong>formazione in presenza conforme D.Lgs 81/08</strong> completo e certificato.
+              Il corso RLS è erogato in modalità e-learning e consente di acquisire le competenze necessarie per svolgere il ruolo di Rappresentante dei Lavoratori per la Sicurezza, nel rispetto del D.Lgs. 81/08.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -111,13 +111,13 @@ const RLSPage: React.FC<RLSPageProps> = ({ onNavigate }) => {
                     Il <strong>Rappresentante dei Lavoratori per la Sicurezza (RLS)</strong> è una figura centrale nel sistema di prevenzione, rendendo il <strong>corso RLS obbligatorio aziende</strong> un pilastro fondamentale del <strong>D.Lgs 81/08</strong>, il Testo Unico sulla Salute e Sicurezza sul Lavoro. Questa figura rappresenta il punto di incontro tra i lavoratori e il datore di lavoro per tutto ciò che concerne la prevenzione dei rischi e la tutela della salute in azienda. La sua presenza è fondamentale per garantire che le istanze dei lavoratori in materia di sicurezza siano ascoltate e integrate nei processi decisionali aziendali.
                   </p>
                   <p>
-                    Il nostro <strong>corso RLS in presenza</strong> è strutturato per fornire non solo le nozioni giuridiche e normative necessarie, ma anche gli strumenti pratici per esercitare il ruolo con efficacia. Organizziamo <strong>corsi in tutta Italia</strong>, garantendo una copertura capillare per le aziende che necessitano di una formazione di qualità direttamente sul campo. Essere un RLS significa avere la responsabilità di consultare il datore di lavoro sulla valutazione dei rischi, partecipare alle riunioni periodiche e promuovere la cultura della sicurezza tra i colleghi.
+                    Il nostro <strong>corso RLS in modalità e-learning</strong> è strutturato per fornire non solo le nozioni giuridiche e normative necessarie, ma anche gli strumenti pratici per esercitare il ruolo con efficacia. Il corso è accessibile comodamente online, garantendo una formazione di qualità ovunque ti trovi. Essere un RLS significa avere la responsabilità di consultare il datore di lavoro sulla valutazione dei rischi, partecipare alle riunioni periodiche e promuovere la cultura della sicurezza tra i colleghi.
                   </p>
                   <p>
-                    Aliseo Academy si distingue per la capacità di erogare <strong>formazione presso sede cliente</strong>, adattando i contenuti alle specifiche realtà produttive. Grazie al nostro <strong>centro formativo mobile Aliseo</strong> (Safety Truck), portiamo un'aula multimediale e attrezzata direttamente nel vostro piazzale, offrendo un'esperienza immersiva senza che i lavoratori debbano lasciare il sito aziendale. In un contesto lavorativo in continua evoluzione, la sicurezza non è solo un obbligo di legge, ma un valore aziendale.
+                    Aliseo Academy si distingue per la qualità della sua piattaforma e-learning, che permette di adattare i tempi di studio alle specifiche esigenze lavorative. La nostra formazione online offre un'esperienza immersiva e flessibile, permettendo ai lavoratori di formarsi senza allontanarsi dalla propria postazione. In un contesto lavorativo in continua evoluzione, la sicurezza non è solo un obbligo di legge, ma un valore aziendale.
                   </p>
                   <p>
-                    La nostra metodologia didattica prevede <strong>sessioni pratiche con docenti qualificati</strong>, esperti in igiene e sicurezza industriale, che favoriscono l'apprendimento attraverso esempi concreti e scenari operativi verosimili. La formazione continua è essenziale: il ruolo dell'RLS richiede un aggiornamento costante per restare al passo con le nuove tecnologie e le modifiche legislative. Partecipare a questo corso garantisce una preparazione solida, riconosciuta a livello nazionale.
+                    La nostra metodologia didattica prevede <strong>moduli interattivi con docenti qualificati</strong>, esperti in igiene e sicurezza industriale, che favoriscono l'apprendimento attraverso esempi concreti e scenari operativi verosimili. La formazione continua è essenziale: il ruolo dell'RLS richiede un aggiornamento costante per restare al passo con le nuove tecnologie e le modifiche legislative. Partecipare a questo corso garantisce una preparazione solida, riconosciuta a livello nazionale.
                   </p>
                   <p>
                     Scegliere la nostra formazione significa affidarsi a esperti del settore che utilizzano metodologie didattiche attive, casi studio reali e simulazioni pratiche. Il nostro obiettivo è trasformare l'obbligo formativo in un'opportunità di crescita professionale per il lavoratore e di miglioramento per l'intera organizzazione aziendale. Al termine del percorso, l'RLS sarà in grado di analizzare i rischi, proporre soluzioni migliorative e collaborare attivamente alla stesura del Documento di Valutazione dei Rischi (DVR).
@@ -219,11 +219,21 @@ const RLSPage: React.FC<RLSPageProps> = ({ onNavigate }) => {
 
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                      <FileText className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Lezioni</p>
+                      <p className="text-white font-bold">{course.lessons} moduli</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
                       <BookOpen className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Metodologia</p>
-                      <p className="text-white font-bold">Presenza / On-site</p>
+                      <p className="text-white font-bold">E-learning (Online)</p>
                     </div>
                   </div>
 

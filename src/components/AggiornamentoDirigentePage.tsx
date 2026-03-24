@@ -373,7 +373,8 @@ const AggiornamentoDirigentePage: React.FC<AggiornamentoDirigentePageProps> = ({
               <p className="text-sm text-slate-500 mb-4">Formazione obbligatoria per dirigenti ai sensi del D.Lgs 81/08.</p>
               <div className="flex items-center gap-4 text-xs font-bold text-slate-400">
                 <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> 12h</span>
-                <span className="flex items-center gap-1"><Euro className="w-3.5 h-3.5" /> 160,00 €</span>
+                <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5" /> 37 lezioni</span>
+                <span className="flex items-center gap-1"><Euro className="w-3.5 h-3.5" /> 195,20 €</span>
               </div>
             </button>
 
@@ -388,10 +389,11 @@ const AggiornamentoDirigentePage: React.FC<AggiornamentoDirigentePageProps> = ({
                 <ChevronRight className="w-5 h-5 text-slate-300 group-hover:text-brand group-hover:translate-x-1 transition-all" />
               </div>
               <h3 className="font-bold text-slate-900 mb-2">Corso Preposto</h3>
-              <p className="text-sm text-slate-500 mb-4">Formazione obbligatoria per la figura del preposto ai sensi del D.Lgs 81/08.</p>
+              <p className="text-sm text-slate-500 mb-4">Formazione aggiuntiva e integrativa per la figura del preposto ai sensi del D.Lgs 81/08.</p>
               <div className="flex items-center gap-4 text-xs font-bold text-slate-400">
-                <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> 8h</span>
-                <span className="flex items-center gap-1"><Euro className="w-3.5 h-3.5" /> 120,00 €</span>
+                <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> 5h</span>
+                <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5" /> 20 lezioni</span>
+                <span className="flex items-center gap-1"><Euro className="w-3.5 h-3.5" /> 61,00 €</span>
               </div>
             </button>
 

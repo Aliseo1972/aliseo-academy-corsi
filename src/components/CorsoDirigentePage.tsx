@@ -19,10 +19,13 @@ const CorsoDirigentePage: React.FC<CorsoDirigentePageProps> = ({ onNavigate }) =
     references: ["Art. 37 D.Lgs. 81/08", "Accordo Stato-Regioni 21/12/2011"],
     recipients: "Dirigenti aziendali",
     syllabus: [
-      { title: "Modulo Giuridico - Normativo", duration: "3h" },
-      { title: "Modulo Gestionale - Organizzazione della sicurezza", duration: "3h" },
-      { title: "Modulo Tecnico - Rischi e misure di prevenzione", duration: "3h" },
-      { title: "Modulo Relazionale - Comunicazione e formazione", duration: "3h" }
+      { title: "Modulo Giuridico Organizzativo", duration: "4h 5m", lessons: 13 },
+      { title: "Introduzione alla figura del Dirigente", duration: "23m", lessons: 1 },
+      { title: "Il Dirigente, Il dirigente Delegato, Il Dirigente di Fatto", duration: "1h 51m", lessons: 3 },
+      { title: "Risorse e Benessere Organizzativo", duration: "1h 46m", lessons: 3 },
+      { title: "Efficacia Personale e Organizzativa", duration: "1h 58m", lessons: 3 },
+      { title: "Guida allo Smart Working", duration: "1h 53m", lessons: 3 },
+      { title: "Lo Stress lavoro Correlato", duration: "57m", lessons: 5 }
     ]
   };
 
@@ -93,6 +96,11 @@ const CorsoDirigentePage: React.FC<CorsoDirigentePageProps> = ({ onNavigate }) =
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5 text-brand" />
                   <span className="text-white font-bold">12 ore</span>
+                </div>
+                <div className="w-px h-6 bg-white/10" />
+                <div className="flex items-center gap-2">
+                  <BookOpen className="w-5 h-5 text-brand" />
+                  <span className="text-white font-bold">37 lezioni</span>
                 </div>
                 <div className="w-px h-6 bg-white/10" />
                 <div className="flex items-center gap-2">
@@ -185,21 +193,27 @@ const CorsoDirigentePage: React.FC<CorsoDirigentePageProps> = ({ onNavigate }) =
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma Didattico
+                    Programma Didattico (12 ore - 37 lezioni)
                   </h3>
                   <div className="space-y-4">
                     {[
-                      { title: "Modulo 1: Giuridico - Normativo", content: "Sistema istituzionale della prevenzione, soggetti del sistema di prevenzione aziendale, responsabilità civile e penale, tutela assicurativa." },
-                      { title: "Modulo 2: Gestionale - Organizzazione della sicurezza", content: "Modelli di organizzazione e di gestione, organi di vigilanza e controllo, gestione degli appalti, documentazione obbligatoria." },
-                      { title: "Modulo 3: Tecnico - Individuazione e valutazione dei rischi", content: "Criteri e strumenti per la valutazione dei rischi, misure tecniche, organizzative e procedurali di prevenzione e protezione." },
-                      { title: "Modulo 4: Relazionale - Formazione e consultazione", content: "Tecniche di comunicazione, formazione e addestramento dei lavoratori, consultazione del RLS, cultura della sicurezza." }
+                      { title: "Modulo 1: Quadro Giuridico - Normativo", content: "Sistema istituzionale della prevenzione, soggetti del sistema di prevenzione aziendale, responsabilità civile e penale, tutela assicurativa.", lessons: 13 },
+                      { title: "Modulo 2: La Figura del Dirigente", content: "Definizione, ruoli, deleghe di funzioni e responsabilità specifiche del dirigente di fatto e di diritto.", lessons: 4 },
+                      { title: "Modulo 3: Organizzazione e Gestione della Sicurezza", content: "Modelli di organizzazione e di gestione (SGSL), organi di vigilanza e controllo, gestione degli appalti.", lessons: 5 },
+                      { title: "Modulo 4: Rischi Psicosociali e Benessere", content: "Analisi e gestione dello stress lavoro-correlato, benessere organizzativo e nuove modalità di lavoro (Smart Working).", lessons: 8 },
+                      { title: "Modulo 5: Efficacia Personale e Leadership", content: "Tecniche di comunicazione, leadership per la sicurezza e gestione delle risorse umane.", lessons: 7 }
                     ].map((module, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-brand/30 transition-all shadow-sm">
-                        <div className="flex items-center gap-4 mb-3">
-                          <div className="w-10 h-10 rounded-full bg-slate-900 text-brand flex items-center justify-center font-bold shrink-0">
-                            {String(i + 1).padStart(2, '0')}
+                        <div className="flex items-center justify-between mb-3">
+                          <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-full bg-slate-900 text-brand flex items-center justify-center font-bold shrink-0">
+                              {String(i + 1).padStart(2, '0')}
+                            </div>
+                            <h4 className="font-bold text-slate-900 text-lg">{module.title}</h4>
                           </div>
-                          <h4 className="font-bold text-slate-900 text-lg">{module.title}</h4>
+                          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider bg-slate-50 px-2 py-1 rounded-md border border-slate-100">
+                            {module.lessons} lezioni
+                          </span>
                         </div>
                         <p className="text-slate-500 text-sm leading-relaxed ml-14">{module.content}</p>
                       </div>
@@ -259,6 +273,16 @@ const CorsoDirigentePage: React.FC<CorsoDirigentePageProps> = ({ onNavigate }) =
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
                       <p className="text-white font-bold">12 ore</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                      <BookOpen className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Lezioni</p>
+                      <p className="text-white font-bold">37 moduli</p>
                     </div>
                   </div>
 
@@ -336,6 +360,7 @@ const CorsoDirigentePage: React.FC<CorsoDirigentePageProps> = ({ onNavigate }) =
               <p className="text-sm text-slate-500 mb-4">Aggiornamento quinquennale obbligatorio per la figura del dirigente.</p>
               <div className="flex items-center gap-4 text-xs font-bold text-slate-400">
                 <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> 6h</span>
+                <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5" /> 23 lezioni</span>
                 <span className="flex items-center gap-1"><Euro className="w-3.5 h-3.5" /> 73,20 €</span>
               </div>
             </button>
@@ -351,10 +376,11 @@ const CorsoDirigentePage: React.FC<CorsoDirigentePageProps> = ({ onNavigate }) =
                 <ChevronRight className="w-5 h-5 text-slate-300 group-hover:text-brand group-hover:translate-x-1 transition-all" />
               </div>
               <h3 className="font-bold text-slate-900 mb-2">Corso Preposto</h3>
-              <p className="text-sm text-slate-500 mb-4">Formazione obbligatoria per la figura del preposto ai sensi del D.Lgs 81/08.</p>
+              <p className="text-sm text-slate-500 mb-4">Formazione aggiuntiva e integrativa per la figura del preposto ai sensi del D.Lgs 81/08.</p>
               <div className="flex items-center gap-4 text-xs font-bold text-slate-400">
-                <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> 8h</span>
-                <span className="flex items-center gap-1"><Euro className="w-3.5 h-3.5" /> 120,00 €</span>
+                <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> 5h</span>
+                <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5" /> 20 lezioni</span>
+                <span className="flex items-center gap-1"><Euro className="w-3.5 h-3.5" /> 61,00 €</span>
               </div>
             </button>
 
@@ -372,6 +398,7 @@ const CorsoDirigentePage: React.FC<CorsoDirigentePageProps> = ({ onNavigate }) =
               <p className="text-sm text-slate-500 mb-4">Aggiornamento obbligatorio per la figura del preposto ai sensi del D.Lgs 81/08.</p>
               <div className="flex items-center gap-4 text-xs font-bold text-slate-400">
                 <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> 6h</span>
+                <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5" /> 22 lezioni</span>
                 <span className="flex items-center gap-1"><Euro className="w-3.5 h-3.5" /> 73,20 €</span>
               </div>
             </button>

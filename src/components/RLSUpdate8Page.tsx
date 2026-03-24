@@ -108,16 +108,16 @@ const RLSUpdate8Page: React.FC<RLSUpdate8PageProps> = ({ onNavigate }) => {
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Per le aziende con oltre 50 dipendenti, l'<strong>aggiornamento RLS 8 ore</strong> rappresenta un momento cruciale di verifica e crescita del sistema di prevenzione. Aliseo Academy eroga questa <strong>formazione in presenza conforme D.Lgs 81/08</strong> attraverso <strong>sessioni pratiche con docenti qualificati</strong>, capaci di approfondire le complessità gestionali tipiche delle grandi organizzazioni industriali e dei servizi.
+                    Per le aziende con oltre 50 dipendenti, l'<strong>aggiornamento RLS 8 ore</strong> rappresenta un momento cruciale di verifica e crescita del sistema di prevenzione. Aliseo Academy eroga questa <strong>formazione in modalità e-learning conforme D.Lgs 81/08</strong> attraverso <strong>moduli interattivi con docenti qualificati</strong>, capaci di approfondire le complessità gestionali tipiche delle grandi organizzazioni industriali e dei servizi.
                   </p>
                   <p>
-                    Garantiamo la copertura dei <strong>corsi in tutta Italia</strong>, con la possibilità di svolgere la <strong>formazione presso sede cliente</strong> per personalizzare i contenuti sui rischi specifici del sito produttivo. Inoltre, il nostro <strong>centro formativo mobile Aliseo</strong> (Safety Truck) offre una soluzione logistica d'avanguardia, portando un'aula multimediale e attrezzata direttamente presso la vostra azienda, eliminando la necessità di spostamenti del personale.
+                    Il corso è accessibile comodamente online, garantendo la massima flessibilità e permettendo di seguire le lezioni in base alle proprie disponibilità. La nostra piattaforma e-learning offre una soluzione logistica d'avanguardia, permettendo di fruire di una formazione professionale direttamente presso la propria postazione, eliminando la necessità di spostamenti del personale.
                   </p>
                   <p>
                     Un focus particolare è dedicato alle tecniche di audit e monitoraggio. L'RLS deve essere in grado di verificare l'applicazione delle procedure di sicurezza e di collaborare alla stesura e revisione del Documento di Valutazione dei Rischi (DVR) con una visione critica e costruttiva. Il corso approfondisce inoltre la gestione degli infortuni e dei mancati infortuni (near miss), strumenti fondamentali per prevenire il ripetersi di eventi avversi. La partecipazione dei lavoratori, mediata dall'RLS, è il motore principale per una sicurezza reale e non solo formale.
                   </p>
                   <p>
-                    Scegliere Aliseo Academy per l'aggiornamento RLS 8 ore significa affidarsi a docenti esperti che portano in aula casi reali e simulazioni operative. La nostra metodologia didattica favorisce il confronto tra i partecipanti, permettendo uno scambio di esperienze vitale per chi opera in contesti aziendali strutturati. Al termine del corso, verrà rilasciato un attestato di aggiornamento valido su tutto il territorio nazionale, certificando l'acquisizione di competenze avanzate per la tutela della salute e sicurezza nei luoghi di lavoro. Investire nella formazione dell'RLS significa investire nella stabilità e nella produttività dell'intera organizzazione aziendale.
+                    Scegliere Aliseo Academy per l'aggiornamento RLS 8 ore significa affidarsi a docenti esperti che portano online casi reali e simulazioni operative. La nostra metodologia didattica favorisce l'apprendimento flessibile, permettendo un approfondimento vitale per chi opera in contesti aziendali strutturati. Al termine del corso, verrà rilasciato un attestato di aggiornamento valido su tutto il territorio nazionale, certificando l'acquisizione di competenze avanzate per la tutela della salute e sicurezza nei luoghi di lavoro. Investire nella formazione dell'RLS significa investire nella stabilità e nella produttività dell'intera organizzazione aziendale.
                   </p>
                 </div>
               </article>
@@ -213,11 +213,21 @@ const RLSUpdate8Page: React.FC<RLSUpdate8PageProps> = ({ onNavigate }) => {
 
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                      <FileText className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Lezioni</p>
+                      <p className="text-white font-bold">{course.lessons} moduli</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
                       <BookOpen className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Metodologia</p>
-                      <p className="text-white font-bold">E-learning / Aula</p>
+                      <p className="text-white font-bold">E-learning (Online)</p>
                     </div>
                   </div>
 

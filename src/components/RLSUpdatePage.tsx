@@ -108,16 +108,16 @@ const RLSUpdatePage: React.FC<RLSUpdatePageProps> = ({ onNavigate }) => {
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    L'<strong>aggiornamento RLS annuale</strong> è un obbligo sancito dal <strong>D.Lgs 81/08</strong> per garantire che il Rappresentante dei Lavoratori per la Sicurezza mantenga competenze sempre allineate all'evoluzione normativa e tecnologica. Aliseo Academy propone una <strong>formazione in presenza conforme D.Lgs 81/08</strong>, privilegiando il confronto diretto e lo scambio di esperienze tra i partecipanti e i nostri <strong>docenti qualificati</strong>.
+                    L'<strong>aggiornamento RLS annuale</strong> è un obbligo sancito dal <strong>D.Lgs 81/08</strong> per garantire che il Rappresentante dei Lavoratori per la Sicurezza mantenga competenze sempre allineate all'evoluzione normativa e tecnologica. Aliseo Academy propone una <strong>formazione in modalità e-learning conforme D.Lgs 81/08</strong>, privilegiando la flessibilità e l'approfondimento costante attraverso i nostri <strong>docenti qualificati</strong>.
                   </p>
                   <p>
-                    Organizziamo <strong>corsi in tutta Italia</strong>, offrendo la massima flessibilità logistica: dalla <strong>formazione presso sede cliente</strong> all'utilizzo del nostro <strong>centro formativo mobile Aliseo</strong> (Safety Truck). Quest'ultima soluzione permette di allestire un'aula professionale direttamente nel piazzale della vostra azienda, riducendo al minimo l'impatto sull'operatività quotidiana e garantendo <strong>sessioni pratiche</strong> di alto valore didattico.
+                    Il corso è accessibile comodamente online, offrendo la massima flessibilità logistica e permettendo di seguire le lezioni in base alle proprie disponibilità. Questa soluzione permette di fruire di una formazione professionale direttamente dalla propria postazione, riducendo al minimo l'impatto sull'operatività quotidiana e garantendo <strong>moduli interattivi</strong> di alto valore didattico.
                   </p>
                   <p>
                     Un aspetto centrale dell'aggiornamento riguarda le tecniche di consultazione e partecipazione. L'RLS deve essere in grado di interfacciarsi efficacemente con il Datore di Lavoro e il Medico Competente, portando il punto di vista dei lavoratori nella valutazione dei rischi. Il corso fornisce strumenti per migliorare la capacità di analisi del Documento di Valutazione dei Rischi (DVR) e per proporre soluzioni tecniche e organizzative che riducano l'esposizione ai pericoli. La sicurezza sul lavoro, infatti, non è un concetto statico, ma un processo in divenire che richiede vigilanza e proattività.
                   </p>
                   <p>
-                    Partecipare al corso di aggiornamento RLS 4 ore non è solo un adempimento burocratico, ma una reale occasione di crescita professionale. Un RLS ben formato è un valore aggiunto per l'azienda, capace di prevenire costi derivanti da infortuni e malattie professionali, migliorando al contempo il clima lavorativo e la produttività. La nostra metodologia didattica, basata su un approccio pratico e interattivo, permette di trasformare le ore di lezione in un momento di confronto costruttivo tra professionisti della sicurezza. Al termine del corso, verrà rilasciato un attestato di frequenza valido ai fini di legge, certificando l'avvenuto aggiornamento delle competenze necessarie per svolgere questo delicato incarico con la massima serietà e competenza.
+                    Partecipare al corso di aggiornamento RLS 4 ore non è solo un adempimento burocratico, ma una reale occasione di crescita professionale. Un RLS ben formato è un valore aggiunto per l'azienda, capace di prevenire costi derivanti da infortuni e malattie professionali, migliorando al contempo il clima lavorativo e la produttività. La nostra metodologia didattica, basata su un approccio pratico e interattivo, permette di trasformare le ore di studio in un momento di crescita per i professionisti della sicurezza. Al termine del corso, verrà rilasciato un attestato di frequenza valido ai fini di legge, certificando l'avvenuto aggiornamento delle competenze necessarie per svolgere questo delicato incarico con la massima serietà e competenza.
                   </p>
                 </div>
               </article>
@@ -213,11 +213,21 @@ const RLSUpdatePage: React.FC<RLSUpdatePageProps> = ({ onNavigate }) => {
 
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                      <FileText className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Lezioni</p>
+                      <p className="text-white font-bold">{course.lessons} moduli</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
                       <BookOpen className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Metodologia</p>
-                      <p className="text-white font-bold">E-learning / Aula</p>
+                      <p className="text-white font-bold">E-learning (Online)</p>
                     </div>
                   </div>
 
