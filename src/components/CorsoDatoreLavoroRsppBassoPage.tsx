@@ -208,7 +208,7 @@ const CorsoDatoreLavoroRsppBassoPage: React.FC<CorsoDatoreLavoroRsppBassoPagePro
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Valida ai sensi di legge</p>
+                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
                     </div>
                   </div>
                 </div>

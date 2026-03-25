@@ -241,42 +241,24 @@ const AggiornamentoPesPavPeiPage: React.FC<AggiornamentoPesPavPeiPageProps> = ({
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <BookOpen className="w-5 h-5 text-brand" />
-                    </div>
-                    <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Lezioni</p>
-                      <p className="text-white font-bold">{course.lessons} Moduli</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
                       <Laptop className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
-                      <p className="text-white font-bold">E-learning Asincrono</p>
+                      <p className="text-white font-bold">E-learning</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Euro className="w-5 h-5 text-brand" />
+                      <Award className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
-                      <p className="text-white font-bold">{course.price} + IVA</p>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
+                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
                     </div>
                   </div>
                 </div>
                 
-                <div className="mt-8 p-4 bg-white/5 rounded-2xl border border-white/10">
-                  <div className="flex gap-3 items-start">
-                    <Info className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                    <p className="text-xs text-slate-400 leading-relaxed">
-                      Corso di aggiornamento per il mantenimento delle qualifiche PES, PAV e PEI.
-                    </p>
-                  </div>
-                </div>
-
                 <div className="mt-10 pt-8 border-t border-white/10">
                   <p className="text-slate-400 text-sm mb-1 text-center">
                     Ti rispondiamo entro 24 ore

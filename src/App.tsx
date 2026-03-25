@@ -99,6 +99,13 @@ import AggiornamentoLavoriSuFuniPage from './components/AggiornamentoLavoriSuFun
 import CorsoPrepostoLavoriSuFuniPage from './components/CorsoPrepostoLavoriSuFuniPage';
 import AggiornamentoPrepostoLavoriSuFuniPage from './components/AggiornamentoPrepostoLavoriSuFuniPage';
 import CorsoPonteggiPage from './components/CorsoPonteggiPage';
+import AggiornamentoCorsoPonteggiPage from './components/AggiornamentoCorsoPonteggiPage';
+import CorsoStressLavoroCorrelatoPage from './components/CorsoStressLavoroCorrelatoPage';
+import CorsoRischioBiologicoPage from './components/CorsoRischioBiologicoPage';
+import CorsoRischioChimicoPage from './components/CorsoRischioChimicoPage';
+import CorsoRischioAmiantoPage from './components/CorsoRischioAmiantoPage';
+import CorsoMovimentazioneManualePage from './components/CorsoMovimentazioneManualePage';
+import CorsoRischioElettricoPage from './components/CorsoRischioElettricoPage';
 
 const CourseCard = ({ course, onOpen }: { course: Course; onOpen: (course: Course) => void; key?: string | number }) => {
   return (
@@ -1652,6 +1659,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Ponteggi"
     },
     {
+      id: "aggiornamento-corso-ponteggi",
       title: "Aggiornamento Corso Ponteggi – 4 ore",
       preview: "Il Corso di Aggiornamento per Addetti al Montaggio, Smontaggio e Trasformazione dei Ponteggi è rivolto ai lavoratori che operano nei cantieri temporanei o mobili.",
       fullDescription: `
@@ -1942,7 +1950,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
 
       <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
         {courses8108.map((course, index) => {
-          const isSpecialPage = ["1", "2", "3", "4", "5", "6", "ps-a", "ps-bc", "aggiornamento-ps-a", "aggiornamento-ps-bc", "19", "20", "formazione-medio-alto", "corso-spazi-confinati", "corso-spazi-confinati-preposti", "aggiornamento-spazi-confinati", "aggiornamento-spazi-confinati-preposti", "corso-dpi-terza-categoria-lavori-quota", "aggiornamento-dpi-terza-categoria-lavori-quota", "corso-lavoratori-rischio-basso-uffici", "corso-lavoratori-generale-specifica-basso", "corso-lavoratori-generale-specifica-basso-uffici", "aggiornamento-lavoratori", "corso-lavori-su-funi", "aggiornamento-lavori-su-funi", "corso-preposto-lavori-su-funi", "aggiornamento-preposto-lavori-su-funi", "corso-atmosfere-esplosive-atex", "corso-ponteggi"].includes(course.id || "");
+          const isSpecialPage = ["1", "2", "3", "4", "5", "6", "ps-a", "ps-bc", "aggiornamento-ps-a", "aggiornamento-ps-bc", "19", "20", "formazione-medio-alto", "corso-spazi-confinati", "corso-spazi-confinati-preposti", "aggiornamento-spazi-confinati", "aggiornamento-spazi-confinati-preposti", "corso-dpi-terza-categoria-lavori-quota", "aggiornamento-dpi-terza-categoria-lavori-quota", "corso-lavoratori-rischio-basso-uffici", "corso-lavoratori-generale-specifica-basso", "corso-lavoratori-generale-specifica-basso-uffici", "aggiornamento-lavoratori", "corso-lavori-su-funi", "aggiornamento-lavori-su-funi", "corso-preposto-lavori-su-funi", "aggiornamento-preposto-lavori-su-funi", "corso-atmosfere-esplosive-atex", "corso-ponteggi", "aggiornamento-corso-ponteggi"].includes(course.id || "");
           
           const handleNavigation = () => {
             if (course.id === "1") setCurrentView('antincendio-l1');
@@ -1969,6 +1977,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
             else if (course.id === "corso-preposto-lavori-su-funi") setCurrentView('corso-preposto-lavori-su-funi');
             else if (course.id === "aggiornamento-preposto-lavori-su-funi") setCurrentView('aggiornamento-preposto-lavori-su-funi');
             else if (course.id === "corso-ponteggi") setCurrentView('corso-ponteggi');
+            else if (course.id === "aggiornamento-corso-ponteggi") setCurrentView('aggiornamento-corso-ponteggi');
             else if (course.id === "corso-atmosfere-esplosive-atex") setCurrentView('corso-atmosfere-esplosive-atex');
           };
 
@@ -2458,7 +2467,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto' | 'corso-haccp' | 'corso-haccp-addetto-manipolazione' | 'corso-haccp-responsabile-aggiornamento' | 'corso-haccp-addetto-manipolazione-aggiornamento' | 'corso-haccp-responsabile' | 'corso-haccp-addetto-non-manipolazione' | 'corso-datore-di-lavoro' | 'corso-datore-di-lavoro-rspp-basso' | 'corso-datore-di-lavoro-rspp-medio' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-diisocianati' | 'corso-diisocianati-base' | 'corso-diisocianati-intermedio' | 'corso-diisocianati-avanzato' | 'corso-lavoratori-rischio-basso-uffici' | 'corso-lavoratori-generale-specifica-basso' | 'corso-lavoratori-generale-specifica-basso-uffici' | 'aggiornamento-lavoratori' | 'corso-privacy-incaricato-trattamento-dati' | 'corso-privacy-sanitario' | 'corso-videoterminali' | 'corso-microclima' | 'corso-rumore' | 'corso-vibrazioni' | 'corso-carrelli-elevatori-teorico' | 'corso-ple-teorico' | 'corso-trattori-agricoli-teorico' | 'corso-macchine-movimento-terra-teorico' | 'corso-gru-autocarro-teorico' | 'corso-gru-mobili-teorico' | 'corso-gru-torre-teorico' | 'corso-pompe-calcestruzzo-teorico' | 'corso-pes-pav-pei' | 'aggiornamento-pes-pav-pei' | 'corso-atmosfere-esplosive-atex' | 'corso-spazi-confinati' | 'corso-spazi-confinati-preposti' | 'aggiornamento-spazi-confinati' | 'aggiornamento-spazi-confinati-preposti' | 'corso-dpi-terza-categoria-lavori-quota' | 'aggiornamento-dpi-terza-categoria-lavori-quota' | 'corso-lavori-su-funi' | 'aggiornamento-lavori-su-funi' | 'corso-preposto-lavori-su-funi'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto' | 'corso-haccp' | 'corso-haccp-addetto-manipolazione' | 'corso-haccp-responsabile-aggiornamento' | 'corso-haccp-addetto-manipolazione-aggiornamento' | 'corso-haccp-responsabile' | 'corso-haccp-addetto-non-manipolazione' | 'corso-datore-di-lavoro' | 'corso-datore-di-lavoro-rspp-basso' | 'corso-datore-di-lavoro-rspp-medio' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-diisocianati' | 'corso-diisocianati-base' | 'corso-diisocianati-intermedio' | 'corso-diisocianati-avanzato' | 'corso-lavoratori-rischio-basso-uffici' | 'corso-lavoratori-generale-specifica-basso' | 'corso-lavoratori-generale-specifica-basso-uffici' | 'aggiornamento-lavoratori' | 'corso-privacy-incaricato-trattamento-dati' | 'corso-privacy-sanitario' | 'corso-videoterminali' | 'corso-microclima' | 'corso-rumore' | 'corso-vibrazioni' | 'corso-carrelli-elevatori-teorico' | 'corso-ple-teorico' | 'corso-trattori-agricoli-teorico' | 'corso-macchine-movimento-terra-teorico' | 'corso-gru-autocarro-teorico' | 'corso-gru-mobili-teorico' | 'corso-gru-torre-teorico' | 'corso-pompe-calcestruzzo-teorico' | 'corso-pes-pav-pei' | 'aggiornamento-pes-pav-pei' | 'corso-atmosfere-esplosive-atex' | 'corso-spazi-confinati' | 'corso-spazi-confinati-preposti' | 'aggiornamento-spazi-confinati' | 'aggiornamento-spazi-confinati-preposti' | 'corso-dpi-terza-categoria-lavori-quota' | 'aggiornamento-dpi-terza-categoria-lavori-quota' | 'corso-lavori-su-funi' | 'aggiornamento-lavori-su-funi' | 'corso-preposto-lavori-su-funi' | 'corso-stress-lavoro-correlato' | 'corso-rischio-biologico' | 'corso-rischio-chimico' | 'corso-rischio-amianto' | 'corso-movimentazione-manuale-carichi' | 'corso-rischio-elettrico'>('home');
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showCookieModal, setShowCookieModal] = useState(false);
@@ -2609,6 +2618,20 @@ export default function App() {
       path = '/aggiornamento-preposto-lavori-su-funi';
     } else if (view === 'corso-ponteggi') {
       path = '/corso-ponteggi';
+    } else if (view === 'aggiornamento-corso-ponteggi') {
+      path = '/aggiornamento-corso-ponteggi';
+    } else if (view === 'corso-stress-lavoro-correlato') {
+      path = '/corso-stress-lavoro-correlato';
+    } else if (view === 'corso-rischio-biologico') {
+      path = '/corso-rischio-biologico';
+    } else if (view === 'corso-rischio-chimico') {
+      path = '/corso-rischio-chimico';
+    } else if (view === 'corso-rischio-amianto') {
+      path = '/corso-rischio-amianto';
+    } else if (view === 'corso-movimentazione-manuale-carichi') {
+      path = '/corso-movimentazione-manuale-carichi';
+    } else if (view === 'corso-rischio-elettrico') {
+      path = '/corso-rischio-elettrico';
     }
     
     window.history.pushState({ view, category: category || selectedCategory }, '', path);
@@ -2749,6 +2772,20 @@ export default function App() {
       navigateToView('aggiornamento-preposto-lavori-su-funi');
     } else if (course.id === "corso-ponteggi") {
       navigateToView('corso-ponteggi');
+    } else if (course.id === "aggiornamento-corso-ponteggi") {
+      navigateToView('aggiornamento-corso-ponteggi');
+    } else if (course.id === "46") {
+      navigateToView('corso-stress-lavoro-correlato');
+    } else if (course.id === "28") {
+      navigateToView('corso-rischio-biologico');
+    } else if (course.id === "31") {
+      navigateToView('corso-rischio-chimico');
+    } else if (course.id === "29") {
+      navigateToView('corso-rischio-amianto');
+    } else if (course.id === "40") {
+      navigateToView('corso-movimentazione-manuale-carichi');
+    } else if (course.id === "32") {
+      navigateToView('corso-rischio-elettrico');
     } else if (["65", "64", "68", "69", "70", "71"].includes(course.id)) {
       navigateToView('corso-datore-di-lavoro');
     } else {
@@ -2894,6 +2931,20 @@ export default function App() {
       setCurrentView('aggiornamento-preposto-lavori-su-funi');
     } else if (path === '/corso-ponteggi') {
       setCurrentView('corso-ponteggi');
+    } else if (path === '/aggiornamento-corso-ponteggi') {
+      setCurrentView('aggiornamento-corso-ponteggi');
+    } else if (path === '/corso-stress-lavoro-correlato') {
+      setCurrentView('corso-stress-lavoro-correlato');
+    } else if (path === '/corso-rischio-biologico') {
+      setCurrentView('corso-rischio-biologico');
+    } else if (path === '/corso-rischio-chimico') {
+      setCurrentView('corso-rischio-chimico');
+    } else if (path === '/corso-rischio-amianto') {
+      setCurrentView('corso-rischio-amianto');
+    } else if (path === '/corso-movimentazione-manuale-carichi') {
+      setCurrentView('corso-movimentazione-manuale-carichi');
+    } else if (path === '/corso-rischio-elettrico') {
+      setCurrentView('corso-rischio-elettrico');
     } else {
       const params = new URLSearchParams(window.location.search);
       const courseId = params.get('corso');
@@ -3323,6 +3374,56 @@ export default function App() {
         <AggiornamentoPrepostoLavoriSuFuniPage onNavigate={navigateToView} />
       ) : currentView === 'corso-ponteggi' ? (
         <CorsoPonteggiPage onNavigate={navigateToView} />
+      ) : currentView === 'aggiornamento-corso-ponteggi' ? (
+        <AggiornamentoCorsoPonteggiPage onNavigate={navigateToView} />
+      ) : currentView === 'corso-stress-lavoro-correlato' ? (
+        <CorsoStressLavoroCorrelatoPage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
+      ) : currentView === 'corso-rischio-biologico' ? (
+        <CorsoRischioBiologicoPage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
+      ) : currentView === 'corso-rischio-chimico' ? (
+        <CorsoRischioChimicoPage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
+      ) : currentView === 'corso-rischio-amianto' ? (
+        <CorsoRischioAmiantoPage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
+      ) : currentView === 'corso-movimentazione-manuale-carichi' ? (
+        <CorsoMovimentazioneManualePage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
+      ) : currentView === 'corso-rischio-elettrico' ? (
+        <CorsoRischioElettricoPage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
       ) : (
         <DLGS8108Section setCurrentView={navigateToView} />
       )}

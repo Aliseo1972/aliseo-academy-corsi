@@ -1,23 +1,22 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Monitor, Shield, ArrowRight, AlertCircle, Laptop, Award } from 'lucide-react';
-import OnlineLearningBenefits from './OnlineLearningBenefits';
+import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Truck, MapPin, AlertTriangle, Construction } from 'lucide-react';
 
-interface AggiornamentoFormazioneLavoratoriPageProps {
+interface AggiornamentoCorsoPonteggiPageProps {
   onNavigate: (view: any) => void;
 }
 
-const AggiornamentoFormazioneLavoratoriPage: React.FC<AggiornamentoFormazioneLavoratoriPageProps> = ({ onNavigate }) => {
+const AggiornamentoCorsoPonteggiPage: React.FC<AggiornamentoCorsoPonteggiPageProps> = ({ onNavigate }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Aggiornamento Formazione Lavoratori | Aliseo Academy";
+    document.title = "Aggiornamento Corso Ponteggi 4 ore - Formazione Obbligatoria | Aliseo Academy";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Aggiornamento formazione lavoratori obbligatorio secondo D.Lgs 81/08. Corso online in e-learning con Aliseo Academy.");
+      metaDescription.setAttribute('content', "Corso di Aggiornamento Ponteggi (4 ore) obbligatorio ai sensi del D.Lgs. 81/08. Mantieni aggiornate le competenze operative di montaggio e smontaggio in tutta Italia.");
     }
   }, []);
 
-  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20Aggiornamento%20Formazione%20Lavoratori&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20di%20Aggiornamento%20Formazione%20Lavoratori%20(6%20ore).%0APotrei%20avere%20maggiori%20informazioni%20su%20modalit%C3%A0%2C%20costi%20e%20attivazione%20online%3F%0A%0AGrazie.";
+  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20Aggiornamento%20Corso%20Ponteggi%204%20ore&body=Buongiorno%2C%0A%0ASono%20interessato%20all'aggiornamento%20Corso%20Ponteggi%20(4%20ore).%0APotrei%20avere%20maggiori%20informazioni%20su%20modalit%C3%A0%2C%20prossime%20date%20e%20costi%3F%0A%0AGrazie.";
 
   return (
     <div className="bg-white min-h-screen">
@@ -34,7 +33,7 @@ const AggiornamentoFormazioneLavoratoriPage: React.FC<AggiornamentoFormazioneLav
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6"
             >
               <ShieldCheck className="w-4 h-4" />
-              Aggiornamento Quinquennale Obbligatorio
+              Sicurezza sul Lavoro - D.Lgs 81/08
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -42,7 +41,7 @@ const AggiornamentoFormazioneLavoratoriPage: React.FC<AggiornamentoFormazioneLav
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6"
             >
-              Aggiornamento <span className="text-brand">Formazione Lavoratori</span>
+              Aggiornamento Corso <span className="text-brand">Ponteggi – 4 ore</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -50,8 +49,7 @@ const AggiornamentoFormazioneLavoratoriPage: React.FC<AggiornamentoFormazioneLav
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Corso di aggiornamento di 6 ore obbligatorio ogni 5 anni per tutti i settori di rischio. 
-              Formazione 100% online in modalità e-learning.
+              Corso di aggiornamento obbligatorio per addetti al montaggio, smontaggio e trasformazione dei ponteggi, secondo il D.Lgs. 81/08.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -61,17 +59,17 @@ const AggiornamentoFormazioneLavoratoriPage: React.FC<AggiornamentoFormazioneLav
             >
               <div>
                 <p className="text-slate-400 text-sm mb-3 font-medium">
-                  Validità nazionale e attestato immediato a norma di legge.
+                  Mantieni in regola la tua abilitazione con l'aggiornamento periodico obbligatorio.
                 </p>
                 <div className="flex flex-col gap-2">
                   <p className="text-brand text-xs font-bold uppercase tracking-wider">
-                    Ti rispondiamo entro 24 ore
+                    Servizio disponibile in tutta Italia
                   </p>
                   <a 
                     href={mailtoLink}
                     className="px-8 py-4 bg-brand text-slate-900 font-black uppercase tracking-tight rounded-2xl hover:bg-brand-light transition-all flex items-center gap-2 group shadow-xl shadow-brand/20 w-fit"
                   >
-                    Ricevi informazioni sul corso
+                    Richiedi preventivo gratuito
                     <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </a>
                 </div>
@@ -79,12 +77,12 @@ const AggiornamentoFormazioneLavoratoriPage: React.FC<AggiornamentoFormazioneLav
               <div className="flex items-center gap-4 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm w-fit">
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5 text-brand" />
-                  <span className="text-white font-bold">6 ore</span>
+                  <span className="text-white font-bold">4 ore</span>
                 </div>
                 <div className="w-px h-6 bg-white/10" />
                 <div className="flex items-center gap-2">
                   <Scale className="w-5 h-5 text-brand" />
-                  <span className="text-white font-bold text-sm">D.Lgs 81/08 Art. 37</span>
+                  <span className="text-white font-bold text-sm">D.Lgs 81/08</span>
                 </div>
               </div>
             </motion.div>
@@ -101,28 +99,65 @@ const AggiornamentoFormazioneLavoratoriPage: React.FC<AggiornamentoFormazioneLav
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  L'importanza dell'Aggiornamento Formazione Lavoratori
+                  L'Aggiornamento Obbligatorio per Addetti ai Ponteggi
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    L'<strong>aggiornamento formazione lavoratori</strong> è un pilastro fondamentale del sistema di prevenzione aziendale delineato dal <strong>D.Lgs 81/08</strong>. La normativa stabilisce che la formazione in materia di salute e sicurezza sul lavoro non sia un evento isolato, ma un processo continuo di apprendimento e sensibilizzazione. Per questo motivo, l'<strong>aggiornamento lavoratori obbligatorio</strong> deve essere effettuato con cadenza quinquennale, garantendo che le competenze acquisite rimangano attuali rispetto all'evoluzione dei rischi e delle tecnologie.
+                    Il <strong>corso di aggiornamento per addetti ai ponteggi</strong> è un adempimento normativo essenziale per tutti i lavoratori che operano nel montaggio, smontaggio e trasformazione di strutture provvisionali. Ai sensi del <strong>D.Lgs. 81/08 (art. 136 e Allegato XXI)</strong>, l'abilitazione ottenuta con il corso base deve essere rinnovata periodicamente per garantire che le competenze operative rimangano allineate ai più elevati standard di sicurezza.
                   </p>
                   <p>
-                    Il percorso di <strong>aggiornamento sicurezza lavoratori D.Lgs 81/08</strong> ha una durata minima di 6 ore per tutti i lavoratori, indipendentemente dal livello di rischio (basso, medio o alto) della propria azienda. Questo corso mira a rinfrescare i concetti base della sicurezza, analizzare le novità legislative e approfondire le buone pratiche per la prevenzione degli infortuni e delle malattie professionali. Aliseo Academy offre questo percorso interamente in modalità e-learning, permettendo una gestione agile e flessibile della compliance normativa.
+                    Lavorare sui ponteggi comporta rischi costanti legati alla stabilità delle strutture e alla protezione contro le cadute dall'alto. L'aggiornamento di 4 ore ha lo scopo di rinfrescare le procedure corrette, analizzare eventuali cambiamenti normativi e approfondire l'utilizzo dei dispositivi di protezione individuale (DPI) di III categoria, fondamentali per la salvaguardia della vita umana in cantiere.
                   </p>
                   <p>
-                    Non effettuare l'aggiornamento entro i termini previsti espone l'azienda a sanzioni severe e, soprattutto, priva i lavoratori di strumenti critici per la propria protezione. La sicurezza sul lavoro è una materia dinamica: nuovi macchinari, diverse procedure operative e l'emergere di rischi psicosociali o legati a nuovi agenti chimici richiedono una costante revisione delle conoscenze. Il nostro corso di aggiornamento è studiato per essere interattivo e coinvolgente, trasformando l'obbligo burocratico in un reale valore aggiunto per la sicurezza quotidiana.
+                    Durante la sessione formativa, i partecipanti hanno l'opportunità di confrontarsi su casi pratici, verificare l'integrità delle attrezzature e ripassare le sequenze operative sicure previste dal <strong>Pi.M.U.S.</strong>. La sicurezza non è un concetto statico: richiede attenzione costante e un ripasso sistematico delle manovre che, se eseguite in modo errato, possono portare a conseguenze drammatiche.
                   </p>
                   <p>
-                    La modalità e-learning di Aliseo Academy è progettata per rispondere alle esigenze delle aziende moderne. Grazie all'accesso online 24/7, i lavoratori possono seguire il corso senza interrompere i flussi produttivi, gestendo i moduli formativi in base alla propria disponibilità. La validità dell'attestato rilasciato è garantita su tutto il territorio nazionale, assicurando la piena conformità durante le ispezioni degli organi di vigilanza.
+                    Aliseo Academy supporta le aziende in <strong>tutta Italia</strong> nell'organizzazione di questi aggiornamenti obbligatori. Possiamo intervenire direttamente <strong>presso la tua sede</strong>, adattando il programma alle specifiche tipologie di ponteggio (a telai prefabbricati, tubi e giunti o multidirezionali) che la tua squadra utilizza quotidianamente.
                   </p>
                   <p>
-                    Affidarsi ad Aliseo Academy per l'aggiornamento della sicurezza significa scegliere un partner esperto che semplifica la gestione della formazione. I nostri contenuti sono costantemente revisionati da professionisti del settore per riflettere le ultime tendenze in ambito di prevenzione e protezione, garantendo un'esperienza formativa di alta qualità e di immediata applicazione pratica.
+                    Per un addestramento pratico ancora più efficace, il <strong>Safety Truck Aliseo</strong> rappresenta una risorsa senza pari. Questa unità mobile ci permette di portare un centro di formazione attrezzato ovunque sia necessario, garantendo che la parte pratica dell'aggiornamento venga svolta con attrezzature moderne e sotto la guida di istruttori esperti, senza che i tuoi lavoratori debbano affrontare lunghe trasferte.
                   </p>
                 </div>
               </article>
 
-              <OnlineLearningBenefits />
+              {/* Strategic Block */}
+              <section className="bg-slate-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-brand/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
+                <div className="relative z-10">
+                  <h3 className="text-2xl md:text-3xl font-black mb-6 uppercase tracking-tight">
+                    Perché scegliere <span className="text-brand">Aliseo Academy</span>?
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="space-y-4">
+                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
+                        <MapPin className="w-6 h-6 text-brand" />
+                      </div>
+                      <h4 className="font-bold text-lg">In tutta Italia</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">
+                        La nostra rete di formatori copre ogni regione, garantendo interventi rapidi e professionali.
+                      </p>
+                    </div>
+                    <div className="space-y-4">
+                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
+                        <Users className="w-6 h-6 text-brand" />
+                      </div>
+                      <h4 className="font-bold text-lg">Presso la tua sede</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">
+                        Riduciamo l'impatto sulla produttività svolgendo l'aggiornamento direttamente nei tuoi spazi aziendali.
+                      </p>
+                    </div>
+                    <div className="space-y-4">
+                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
+                        <Truck className="w-6 h-6 text-brand" />
+                      </div>
+                      <h4 className="font-bold text-lg">Safety Truck</h4>
+                      <p className="text-slate-400 text-sm leading-relaxed">
+                        L'eccellenza della formazione mobile: portiamo il campo prove direttamente nel tuo piazzale.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
               {/* Detailed Sections */}
               <div className="space-y-12">
@@ -132,24 +167,24 @@ const AggiornamentoFormazioneLavoratoriPage: React.FC<AggiornamentoFormazioneLav
                     A chi è rivolto
                   </h3>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
-                    <p className="text-slate-600 leading-relaxed">
-                      Il corso è destinato a tutti i lavoratori che hanno già completato il percorso di formazione generale e specifica (rischio basso, medio o alto). È obbligatorio per ogni dipendente, indipendentemente dal settore ATECO di appartenenza, che operi in un'azienda con almeno un lavoratore.
+                    <p className="text-slate-600 leading-relaxed mb-4">
+                      L'aggiornamento è destinato a:
                     </p>
-                  </div>
-                </section>
-
-                <section>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                    <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Quando è necessario l’aggiornamento
-                  </h3>
-                  <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
-                    <div className="flex items-start gap-4">
-                      <AlertCircle className="w-6 h-6 text-brand shrink-0 mt-1" />
-                      <p className="text-slate-600 leading-relaxed">
-                        L'aggiornamento deve essere effettuato <strong>ogni 5 anni</strong> a partire dalla data di rilascio dell'ultimo attestato di formazione specifica o dell'ultimo aggiornamento effettuato. La scadenza è perentoria e il mancato aggiornamento invalida l'abilitazione del lavoratore.
-                      </p>
-                    </div>
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {[
+                        "Lavoratori già formati (corso 28h)",
+                        "Addetti al montaggio ponteggi",
+                        "Addetti allo smontaggio ponteggi",
+                        "Addetti alla trasformazione ponteggi",
+                        "Operatori edili specializzati",
+                        "Manutentori di strutture in quota"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-center gap-2 text-slate-700 text-sm">
+                          <CheckCircle2 className="w-4 h-4 text-brand" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </section>
 
@@ -160,14 +195,12 @@ const AggiornamentoFormazioneLavoratoriPage: React.FC<AggiornamentoFormazioneLav
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      "Richiamo dei concetti base di prevenzione",
-                      "Aggiornamento sulle novità legislative",
-                      "Analisi di infortuni e mancati infortuni",
-                      "Approfondimento sui rischi emergenti",
-                      "Rafforzamento della cultura della sicurezza",
-                      "Revisione delle procedure di emergenza",
-                      "Focus su DPI e segnaletica",
-                      "Promozione del benessere organizzativo"
+                      "Aggiornare competenze operative",
+                      "Migliorare sicurezza nei lavori in quota",
+                      "Ripassare procedure corrette",
+                      "Verificare utilizzo DPI e attrezzature",
+                      "Gestire situazioni di emergenza",
+                      "Analizzare novità tecniche e normative"
                     ].map((obj, i) => (
                       <div key={i} className="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
@@ -180,25 +213,37 @@ const AggiornamentoFormazioneLavoratoriPage: React.FC<AggiornamentoFormazioneLav
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma dettagliato
+                    Programma Dettagliato
                   </h3>
                   <div className="space-y-4">
                     {[
                       { 
-                        title: "Modulo 1: Quadro Normativo e Giuridico", 
-                        content: "Evoluzione della normativa, responsabilità delle figure aziendali e sistema sanzionatorio." 
+                        title: "Modulo 1: Aggiornamenti Normativi", 
+                        content: "Revisione delle disposizioni del D.Lgs. 81/08. Nuove linee guida e norme tecniche di riferimento." 
                       },
                       { 
-                        title: "Modulo 2: Gestione della Sicurezza", 
-                        content: "Valutazione dei rischi, misure di prevenzione e protezione, importanza della segnalazione." 
+                        title: "Modulo 2: Richiamo Rischi Principali", 
+                        content: "Analisi dei rischi di caduta, ribaltamento e urto. Prevenzione attiva e passiva." 
                       },
                       { 
-                        title: "Modulo 3: Rischi Specifici e Novità", 
-                        content: "Focus sui rischi legati alle mansioni, nuovi agenti pericolosi e rischi psicosociali." 
+                        title: "Modulo 3: Procedure Operative", 
+                        content: "Ripasso delle sequenze di montaggio e smontaggio. Verifica degli ancoraggi e della stabilità." 
                       },
                       { 
-                        title: "Modulo 4: Comportamenti e Procedure", 
-                        content: "Uso dei DPI, procedure di emergenza, evacuazione e primo soccorso." 
+                        title: "Modulo 4: Utilizzo DPI di III Categoria", 
+                        content: "Corretto posizionamento, vestizione e controllo dei dispositivi anticaduta." 
+                      },
+                      { 
+                        title: "Modulo 5: PIMUS e Sicurezza", 
+                        content: "Applicazione pratica del Piano di Montaggio, Uso e Smontaggio. Gestione della documentazione." 
+                      },
+                      { 
+                        title: "Modulo 6: Gestione Emergenze", 
+                        content: "Procedure di primo intervento in caso di infortunio o sospensione in quota." 
+                      },
+                      { 
+                        title: "Modulo 7: Esercitazioni Pratiche", 
+                        content: "Prove pratiche di montaggio/smontaggio e simulazioni di sicurezza su strutture o Safety Truck." 
                       }
                     ].map((item, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
@@ -206,18 +251,6 @@ const AggiornamentoFormazioneLavoratoriPage: React.FC<AggiornamentoFormazioneLav
                         <p className="text-sm text-slate-500 leading-relaxed">{item.content}</p>
                       </div>
                     ))}
-                  </div>
-                </section>
-
-                <section>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                    <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Normativa di riferimento
-                  </h3>
-                  <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
-                    <p className="text-slate-600 leading-relaxed">
-                      Il corso risponde ai requisiti dell'<strong>Art. 37 del D.Lgs 81/08</strong> e dell'<strong>Accordo Stato-Regioni del 21/12/2011</strong>, che definisce la periodicità quinquennale e la durata minima di 6 ore per l'aggiornamento della formazione dei lavoratori di tutti i settori.
-                    </p>
                   </div>
                 </section>
               </div>
@@ -237,25 +270,25 @@ const AggiornamentoFormazioneLavoratoriPage: React.FC<AggiornamentoFormazioneLav
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">6 ore</p>
+                      <p className="text-white font-bold">4 ore</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Laptop className="w-5 h-5 text-brand" />
+                      <Users className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
-                      <p className="text-white font-bold text-sm">E-learning</p>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Destinatari</p>
+                      <p className="text-white font-bold text-sm">Addetti Ponteggi abilitati</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Award className="w-5 h-5 text-brand" />
+                      <Scale className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Normativa</p>
+                      <p className="text-white font-bold text-sm">D.Lgs 81/08</p>
                     </div>
                   </div>
                 </div>
@@ -264,7 +297,7 @@ const AggiornamentoFormazioneLavoratoriPage: React.FC<AggiornamentoFormazioneLav
                     Ti rispondiamo entro 24 ore
                   </p>
                   <p className="text-white/60 text-[10px] mb-4 text-center uppercase tracking-widest">
-                    Soluzioni su misura per la tua azienda
+                    Aggiornamento periodico obbligatorio
                   </p>
                   <a 
                     href={mailtoLink}
@@ -284,7 +317,7 @@ const AggiornamentoFormazioneLavoratoriPage: React.FC<AggiornamentoFormazioneLav
                   Validità
                 </h4>
                 <p className="text-sm text-slate-600">
-                  L'attestato rilasciato ha validità di 5 anni su tutto il territorio nazionale per qualsiasi settore ATECO.
+                  L'attestato rilasciato certifica l'aggiornamento obbligatorio per addetti ai ponteggi ai sensi del D.Lgs. 81/08.
                 </p>
               </div>
             </div>
@@ -299,14 +332,12 @@ const AggiornamentoFormazioneLavoratoriPage: React.FC<AggiornamentoFormazioneLav
             <div className="w-2 h-6 bg-brand rounded-full" />
             Potrebbero interessarti anche
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Formazione Generale", desc: "Modulo base 4h", view: 'corso-formazione-lavoratori-generale', icon: GraduationCap },
-              { title: "Rischio Basso", desc: "Formazione Specifica 4h", view: 'corso-formazione-lavoratori-rischio-basso', icon: ShieldCheck },
-              { title: "Rischio Medio", desc: "Formazione Specifica 8h", view: 'corso-formazione-lavoratori-rischio-medio', icon: ShieldCheck },
-              { title: "Rischio Alto", desc: "Formazione Specifica 12h", view: 'corso-formazione-lavoratori-rischio-alto', icon: Shield },
-              { title: "Corso Preposto", desc: "Responsabile Sicurezza", view: 'corso-preposto', icon: Users },
-              { title: "Corso RLS", desc: "Rappresentante Lavoratori", view: 'corso-rls-rappresentante-lavoratori-sicurezza', icon: Users },
+              { title: "Corso Ponteggi", desc: "Corso 28 ore", view: 'corso-ponteggi', icon: Construction },
+              { title: "DPI III Categoria", desc: "Lavori in Quota - 8 ore", view: 'corso-dpi-terza-categoria-lavori-quota', icon: ShieldCheck },
+              { title: "Lavori su Funi", desc: "Corso 32 ore", view: 'corso-lavori-su-funi', icon: Construction },
+              { title: "Spazi Confinati", desc: "Corso 8 ore", view: 'corso-spazi-confinati', icon: AlertTriangle },
             ].map((item, i) => (
               <button 
                 key={i}
@@ -330,4 +361,4 @@ const AggiornamentoFormazioneLavoratoriPage: React.FC<AggiornamentoFormazioneLav
   );
 };
 
-export default AggiornamentoFormazioneLavoratoriPage;
+export default AggiornamentoCorsoPonteggiPage;

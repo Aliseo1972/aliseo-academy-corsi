@@ -289,50 +289,26 @@ const AggiornamentoPrepostoPage: React.FC<AggiornamentoPrepostoPageProps> = ({ o
 
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <BookOpen className="w-5 h-5 text-brand" />
-                    </div>
-                    <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Lezioni</p>
-                      <p className="text-white font-bold">22 moduli</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
                       <Laptop className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
-                      <p className="text-white font-bold">E-learning (Online)</p>
+                      <p className="text-white font-bold">E-learning</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Globe className="w-5 h-5 text-brand" />
+                      <Award className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Validità</p>
-                      <p className="text-white font-bold">Nazionale</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <CalendarClock className="w-5 h-5 text-brand" />
-                    </div>
-                    <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Frequenza</p>
-                      <p className="text-white font-bold text-sm">Ogni 2 anni</p>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
+                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-10 pt-8 border-t border-white/10">
-                  <div className="flex justify-between items-center mb-6">
-                    <span className="text-slate-400 font-bold uppercase text-xs tracking-widest">Prezzo</span>
-                    <span className="text-3xl font-black text-brand">{course.price}</span>
-                  </div>
                   <div className="space-y-2">
                     <p className="text-slate-400 text-xs font-bold text-center">Ti rispondiamo entro 24 ore</p>
                     <a 

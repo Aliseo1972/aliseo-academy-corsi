@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import OnlineLearningBenefits from './OnlineLearningBenefits';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, MessageSquare, ShieldCheck, GraduationCap, Scale } from 'lucide-react';
+import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, MessageSquare, ShieldCheck, GraduationCap, Scale, Laptop, Award } from 'lucide-react';
 import { courses } from '../data/courses';
 
 interface RLSUpdatePageProps {
@@ -197,7 +197,7 @@ const RLSUpdatePage: React.FC<RLSUpdatePageProps> = ({ onNavigate }) => {
               <div className="bg-slate-900 rounded-3xl p-8 sticky top-24 shadow-2xl shadow-slate-200">
                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                   <GraduationCap className="w-6 h-6 text-brand" />
-                  Dettagli Aggiornamento
+                  Scheda Corso
                 </h3>
                 
                 <div className="space-y-6">
@@ -206,61 +206,33 @@ const RLSUpdatePage: React.FC<RLSUpdatePageProps> = ({ onNavigate }) => {
                       <Clock className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata Totale</p>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
                       <p className="text-white font-bold">{course.duration}</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <FileText className="w-5 h-5 text-brand" />
+                      <Laptop className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Lezioni</p>
-                      <p className="text-white font-bold">{course.lessons} moduli</p>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
+                      <p className="text-white font-bold">E-learning</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <BookOpen className="w-5 h-5 text-brand" />
+                      <Award className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Metodologia</p>
-                      <p className="text-white font-bold">E-learning (Online)</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Users className="w-5 h-5 text-brand" />
-                    </div>
-                    <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Destinatari</p>
-                      <p className="text-white font-bold text-sm leading-tight">
-                        {course.recipients || "RLS in aziende fino a 50 dipendenti"}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Scale className="w-5 h-5 text-brand" />
-                    </div>
-                    <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Normativa</p>
-                      <p className="text-white font-bold text-sm leading-tight">
-                        {course.references?.[0] || "Art. 37 D.Lgs. 81/08"}
-                      </p>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
+                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-10 pt-8 border-t border-white/10">
-                  <div className="flex justify-between items-center mb-6">
-                    <span className="text-slate-400 font-bold uppercase text-xs tracking-widest">Investimento</span>
-                    <span className="text-3xl font-black text-brand">{course.price}</span>
-                  </div>
                   <div className="space-y-2">
                     <p className="text-slate-400 text-xs font-bold text-center">Ti rispondiamo entro 24 ore</p>
                     <a 

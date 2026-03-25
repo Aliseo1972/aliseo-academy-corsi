@@ -222,11 +222,11 @@ const HaccpAddettoNonManipolazionePage: React.FC<HaccpAddettoNonManipolazionePag
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Users className="w-5 h-5 text-brand" />
+                      <Laptop className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Destinatari</p>
-                      <p className="text-white font-bold text-sm">Addetti Non Manipolazione</p>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
+                      <p className="text-white font-bold text-sm">E-learning</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -235,15 +235,11 @@ const HaccpAddettoNonManipolazionePage: React.FC<HaccpAddettoNonManipolazionePag
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Attestato HACCP</p>
+                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
                     </div>
                   </div>
                 </div>
                 <div className="mt-10 pt-8 border-t border-white/10">
-                  <div className="flex justify-between items-center mb-6">
-                    <span className="text-slate-400 font-bold uppercase text-xs tracking-widest">Prezzo</span>
-                    <span className="text-3xl font-black text-brand">{course.price}</span>
-                  </div>
                   <a 
                     href={mailtoLink}
                     className="block w-full py-4 bg-brand text-slate-900 text-center font-black uppercase tracking-tight rounded-2xl hover:bg-brand-light transition-all shadow-lg shadow-brand/20"

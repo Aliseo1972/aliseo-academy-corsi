@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import OnlineLearningBenefits from './OnlineLearningBenefits';
-import { Clock, BookOpen, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Truck, MapPin, Monitor, Video, Shield } from 'lucide-react';
+import { Clock, BookOpen, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Truck, MapPin, Monitor, Video, Shield, Laptop, Award } from 'lucide-react';
 
 interface FormazioneGeneralePageProps {
   onNavigate: (view: any) => void;
@@ -212,20 +212,20 @@ const FormazioneGeneralePage: React.FC<FormazioneGeneralePageProps> = ({ onNavig
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Users className="w-5 h-5 text-brand" />
+                      <Laptop className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Destinatari</p>
-                      <p className="text-white font-bold text-sm">Tutti i lavoratori</p>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
+                      <p className="text-white font-bold text-sm">E-learning</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Scale className="w-5 h-5 text-brand" />
+                      <Award className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Normativa</p>
-                      <p className="text-white font-bold text-sm">Art. 37 D.Lgs 81/08</p>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
+                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
                     </div>
                   </div>
                 </div>

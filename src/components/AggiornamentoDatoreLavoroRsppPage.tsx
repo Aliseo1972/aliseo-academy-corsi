@@ -177,7 +177,7 @@ const AggiornamentoDatoreLavoroRsppPage: React.FC<AggiornamentoDatoreLavoroRsppP
               <div className="bg-slate-900 rounded-3xl p-8 sticky top-24">
                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                   <GraduationCap className="w-6 h-6 text-brand" />
-                  Dettagli Corso
+                  Scheda Corso
                 </h3>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
@@ -204,7 +204,7 @@ const AggiornamentoDatoreLavoroRsppPage: React.FC<AggiornamentoDatoreLavoroRsppP
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Rinnovo abilitazione RSPP</p>
+                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
                     </div>
                   </div>
                 </div>
