@@ -2751,6 +2751,31 @@ export const courses: Course[] = [
       { title: "Tecniche di rilassamento e focus", lessonsCount: 3, duration: "1h" },
       { title: "Test di autovalutazione", lessonsCount: 1, duration: "15m" }
     ]
+  },
+  {
+    id: "blsd-dae",
+    title: "Corso BLSD – Uso del Defibrillatore (5 ore)",
+    lessons: 6,
+    duration: "5 ore",
+    price: "70,00 €",
+    category: "Sicurezza lavoratori",
+    description: "Il Corso BLSD (Basic Life Support and Defibrillation) da 5 ore fornisce le competenze necessarie per intervenire tempestivamente in caso di arresto cardiaco improvviso, utilizzando correttamente il defibrillatore semiautomatico esterno (DAE) e applicando le manovre di rianimazione cardiopolmonare.",
+    objectives: [
+      "Riconoscimento dell'arresto cardiaco",
+      "Attivazione del sistema di emergenza (118/112)",
+      "Tecniche di rianimazione cardiopolmonare (RCP) nell'adulto",
+      "Utilizzo del defibrillatore semiautomatico esterno (DAE)",
+      "Gestione delle vie aeree e posizione laterale di sicurezza"
+    ],
+    references: ["Linee guida internazionali sulla rianimazione cardiopolmonare", "D.Lgs. 81/08"],
+    recipients: "Lavoratori, addetti alla sicurezza, personale aziendale e cittadini.",
+    syllabus: [
+      { title: "Riconoscimento dell'arresto cardiaco e attivazione emergenza", duration: "1h" },
+      { title: "Tecniche di rianimazione cardiopolmonare (RCP)", duration: "1h 30m" },
+      { title: "Utilizzo del defibrillatore semiautomatico esterno (DAE)", duration: "1h" },
+      { title: "Gestione delle vie aeree e manovre di disostruzione", duration: "1h" },
+      { title: "Simulazioni pratiche di intervento con manichino e DAE", duration: "30m" }
+    ]
   }
 ];
 
