@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import DeliveryMethods from './DeliveryMethods';
 import { motion } from 'motion/react';
 import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, MessageSquare, ShieldCheck, GraduationCap, HeartPulse, Scale, Truck, MapPin, Mail, AlertCircle } from 'lucide-react';
 
@@ -120,44 +121,8 @@ const AggiornamentoPrimoSoccorsoGruppoAPage: React.FC<AggiornamentoPrimoSoccorso
                 </div>
               </article>
 
-              {/* Strategic Block */}
-              <section className="bg-slate-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-brand/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-                <div className="relative z-10">
-                  <h3 className="text-2xl md:text-3xl font-black mb-6 uppercase tracking-tight">
-                    La tua formazione, <span className="text-brand">ovunque tu sia</span>
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div className="space-y-4">
-                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
-                        <MapPin className="w-6 h-6 text-brand" />
-                      </div>
-                      <h4 className="font-bold text-lg">In tutta Italia</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">
-                        Copriamo l'intero territorio nazionale. Non importa dove si trovi la tua azienda, Aliseo Academy arriva da te.
-                      </p>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
-                        <Users className="w-6 h-6 text-brand" />
-                      </div>
-                      <h4 className="font-bold text-lg">Presso sede cliente</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">
-                        Massima comodità: i nostri istruttori svolgono il corso nei tuoi uffici o stabilimenti, personalizzando gli esempi sui tuoi rischi.
-                      </p>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
-                        <Truck className="w-6 h-6 text-brand" />
-                      </div>
-                      <h4 className="font-bold text-lg">Centro Mobile</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">
-                        Il Safety Truck Aliseo porta l'aula e le attrezzature pratiche direttamente nel tuo piazzale aziendale.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </section>
+              {/* Delivery Methods */}
+              <DeliveryMethods />
 
               {/* Detailed Sections */}
               <div className="space-y-12">

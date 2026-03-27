@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import OnlineLearningBenefits from './OnlineLearningBenefits';
 import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, MessageSquare, ShieldCheck, GraduationCap, Briefcase, Scale, Laptop, Award } from 'lucide-react';
 import { courses } from '../data/courses';
+import OnlineLearningBenefits from './OnlineLearningBenefits';
 
 interface CorsoStressLavoroCorrelatoPageProps {
   onNavigate: (view: any) => void;

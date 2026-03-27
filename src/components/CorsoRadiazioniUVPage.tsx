@@ -1,27 +1,27 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, MessageSquare, ShieldCheck, GraduationCap, Briefcase, Scale, Laptop, Award } from 'lucide-react';
+import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Laptop, Award, Zap, AlertTriangle, Sun, Radio } from 'lucide-react';
 import { courses } from '../data/courses';
 import OnlineLearningBenefits from './OnlineLearningBenefits';
 
-interface CorsoRischioBiologicoPageProps {
+interface CorsoRadiazioniUVPageProps {
   onNavigate: (view: any) => void;
   onOpenCourse: (courseId: string) => void;
 }
 
-const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ onNavigate, onOpenCourse }) => {
-  const course = courses.find(c => c.id === "28");
+const CorsoRadiazioniUVPage: React.FC<CorsoRadiazioniUVPageProps> = ({ onNavigate, onOpenCourse }) => {
+  const course = courses.find(c => c.id === "42");
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Corso Rischio Biologico | Formazione E-learning Sicurezza";
+    document.title = "Corso Radiazioni UV | Formazione E-learning Sicurezza sul Lavoro";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Corso di formazione online sul rischio Biologico. Protezione da virus, batteri e agenti biologici. Formazione e-learning certificata D.Lgs 81/08.");
+      metaDescription.setAttribute('content', "Corso di formazione online sul rischio da Radiazioni UV. Protezione dalle radiazioni solari e artificiali, misure di prevenzione per lavoratori all'aperto e DPI.");
     }
   }, []);
 
-  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Rischio%20Biologico&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20e-learning%20sul%20Rischio%20Biologico.%0APotrei%20avere%20maggiori%20informazioni%3F%0A%0AGrazie.";
+  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Radiazioni%20UV&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20e-learning%20sulle%20Radiazioni%20UV.%0APotrei%20avere%20maggiori%20informazioni%3F%0A%0AGrazie.";
 
   if (!course) return <div className="py-20 text-center font-bold text-slate-900">Corso non trovato</div>;
 
@@ -48,7 +48,7 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6"
             >
-              Corso <span className="text-brand">Rischio Biologico</span>
+              Corso <span className="text-brand">Radiazioni UV</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -56,7 +56,7 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Formazione specifica sulla protezione dagli agenti biologici nel luogo di lavoro. Un percorso completo per prevenire l'esposizione a virus, batteri e parassiti secondo il Titolo X del D.Lgs. 81/08.
+              Formazione specifica sui rischi derivanti dall'esposizione a radiazioni ultraviolette (solari e artificiali), con focus sulla protezione della pelle e degli occhi.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -103,23 +103,23 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  La Prevenzione del Rischio Biologico
+                  La Gestione del Rischio da Radiazioni UV
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Il <strong>Rischio Biologico</strong> rappresenta una minaccia invisibile ma estremamente concreta in molti settori lavorativi. Ai sensi del <strong>Titolo X del D.Lgs. 81/08</strong>, il rischio biologico deriva dall'esposizione ad agenti biologici quali microrganismi (virus, batteri, funghi), colture cellulari ed endoparassiti umani che potrebbero provocare infezioni, allergie o intossicazioni.
+                    Le <strong>radiazioni ultraviolette (UV)</strong> rappresentano un rischio significativo per molte categorie di lavoratori, sia in ambienti interni che, soprattutto, all'aperto. Sebbene i raggi UV siano invisibili, la loro energia è sufficiente a causare danni biologici immediati e a lungo termine. In ambito lavorativo, distinguiamo tra radiazioni UV di origine <strong>naturale</strong> (esposizione solare per chi lavora outdoor) e <strong>artificiale</strong> (saldatura, lampade germicide, processi industriali).
                   </p>
                   <p>
-                    Il nostro corso e-learning è strutturato per fornire ai lavoratori le conoscenze necessarie per identificare le sorgenti di rischio e adottare le misure di prevenzione e protezione più efficaci. La formazione analizza la classificazione degli agenti biologici in quattro gruppi di rischio, basata sulla pericolosità per l'uomo, sulla probabilità di propagazione nella comunità e sulla disponibilità di efficaci misure di profilassi o terapia.
+                    Il nostro corso e-learning sulle Radiazioni UV approfondisce le misure di prevenzione e protezione necessarie per tutelare la salute dei lavoratori. La normativa vigente (D.Lgs. 81/08) impone una valutazione rigorosa di questo rischio, identificando le mansioni maggiormente esposte e definendo i protocolli di sicurezza per minimizzare l'assorbimento di radiazioni.
                   </p>
                   <p>
-                    In contesti come laboratori, strutture sanitarie, servizi di pulizia, gestione dei rifiuti o agricoltura, la consapevolezza del rischio è la prima linea di difesa. Il corso approfondisce le modalità di trasmissione (per via aerea, per contatto, per ingestione) e l'importanza dell'igiene personale e ambientale. Un focus particolare è dedicato all'uso corretto dei <strong>Dispositivi di Protezione Individuale (DPI)</strong>, come guanti, mascherine e tute protettive, fondamentali per minimizzare l'esposizione.
+                    Il percorso formativo analizza gli effetti biologici delle radiazioni UV, che colpiscono principalmente la <strong>pelle</strong> (eritemi, ustioni, invecchiamento precoce e tumori cutanei) e gli <strong>occhi</strong> (fotocheratiti, congiuntiviti e danni retinici). Particolare enfasi viene posta sull'importanza della protezione collettiva (schermature, orari di lavoro flessibili per evitare i picchi solari) e individuale (indumenti tecnici, creme solari ad alta protezione, occhiali certificati).
                   </p>
                   <p>
-                    La metodologia didattica online permette di affrontare temi complessi attraverso moduli interattivi, video esplicativi e test di autovalutazione. Questo garantisce un apprendimento efficace e flessibile, permettendo ai lavoratori di formarsi senza allontanarsi dal proprio ambiente operativo. La prevenzione del rischio biologico non è solo un obbligo normativo, ma una componente essenziale della tutela della salute pubblica e della continuità aziendale.
+                    La metodologia didattica online permette di affrontare temi tecnici in modo chiaro e accessibile, fornendo consigli pratici su come gestire l'esposizione quotidiana. Per i lavoratori all'aperto, come agricoltori, edili e addetti alla manutenzione del verde, la consapevolezza del rischio è il primo passo per prevenire patologie croniche che possono manifestarsi anche a distanza di anni.
                   </p>
                   <p>
-                    Aliseo Academy garantisce una formazione di alto livello, costantemente aggiornata rispetto alle evoluzioni scientifiche e normative. Al termine del percorso, il lavoratore sarà in grado di collaborare attivamente alla gestione della sicurezza biologica in azienda, riconoscendo le situazioni di pericolo e applicando correttamente le procedure di decontaminazione e smaltimento sicuro.
+                    Aliseo Academy garantisce una formazione di qualità, curata da esperti in medicina del lavoro e sicurezza industriale. Al termine del corso, il partecipante sarà in grado di riconoscere le situazioni di pericolo e di utilizzare correttamente tutti gli strumenti di protezione a sua disposizione, garantendo una tutela completa della propria salute.
                   </p>
                 </div>
               </article>
@@ -135,19 +135,29 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
                   </h3>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {course.objectives?.map((obj, i) => (
-                        <li key={i} className="flex items-start gap-3 text-slate-600">
-                          <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                          <span>{obj}</span>
-                        </li>
-                      ))}
                       <li className="flex items-start gap-3 text-slate-600">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Classificazione degli agenti biologici (Gruppi 1, 2, 3, 4)</span>
+                        <span>Comprendere la natura delle radiazioni UV</span>
                       </li>
                       <li className="flex items-start gap-3 text-slate-600">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Procedure di emergenza e primo soccorso</span>
+                        <span>Identificare le sorgenti naturali e artificiali</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-slate-600">
+                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
+                        <span>Conoscere gli effetti biologici su pelle e occhi</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-slate-600">
+                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
+                        <span>Apprendere l'uso corretto dei DPI specifici</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-slate-600">
+                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
+                        <span>Gestire l'esposizione solare durante il lavoro</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-slate-600">
+                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
+                        <span>Conoscere l'importanza dell'idratazione e delle pause</span>
                       </li>
                     </ul>
                   </div>
@@ -164,7 +174,7 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
                     </div>
                     <div>
                       <p className="text-slate-600 leading-relaxed">
-                        Il corso è rivolto a <strong>tutti i lavoratori</strong> esposti o potenzialmente esposti ad agenti biologici, inclusi operatori sanitari, addetti alle pulizie, lavoratori del settore agricolo e dei servizi ambientali.
+                        Il corso è rivolto a <strong>lavoratori all'aperto</strong> (agricoltura, edilizia, pesca), addetti alla saldatura, operatori in laboratori con lampade UV e a chiunque sia esposto a radiazioni ultraviolette.
                       </p>
                     </div>
                   </div>
@@ -267,10 +277,10 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
       <section className="py-20 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6">
-            Necessiti di formazione specifica sul rischio biologico?
+            Proteggi i tuoi lavoratori dal rischio UV
           </h2>
           <p className="text-lg text-slate-600 mb-10">
-            Il nostro team è a disposizione per supportarti nella valutazione dei rischi e nella definizione dei percorsi formativi più idonei.
+            La prevenzione è fondamentale per evitare danni irreversibili alla salute. Contattaci per attivare subito il corso e-learning.
           </p>
           <div className="flex flex-col items-center gap-2">
             <span className="text-slate-500 text-sm font-bold">Ti rispondiamo entro 24 ore</span>
@@ -293,13 +303,13 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Rischio Chimico", desc: "Uso sicuro di sostanze e schede di sicurezza", view: 'corso-rischio-chimico', icon: ShieldCheck },
-              { id: "38", title: "Rischio Legionella", desc: "Prevenzione negli impianti idrici e aeraulici", icon: BookOpen },
-              { id: "27", title: "Agenti Cancerogeni", desc: "Gestione rischi sostanze cancerogene e mutagene", icon: Scale },
+              { title: "Radiazioni Ottiche Artificiali", desc: "Rischi da lampade, laser e saldatura", view: 'corso-radiazioni-ottiche-artificiali', icon: Radio },
+              { title: "Campi Elettromagnetici", desc: "Rischi da macchinari e trasmettitori", view: 'corso-campi-elettromagnetici', icon: Zap },
+              { title: "Rischio Elettrico", desc: "Prevenzione dei rischi da contatto elettrico", view: 'corso-rischio-elettrico', icon: AlertTriangle },
             ].map((item, i) => (
               <button 
                 key={i}
-                onClick={() => 'view' in item ? onNavigate(item.view) : onOpenCourse(item.id)}
+                onClick={() => onNavigate(item.view)}
                 className="group p-6 bg-white rounded-2xl border border-slate-200 hover:border-brand/30 hover:shadow-lg hover:shadow-brand/5 transition-all text-left flex flex-col h-full"
               >
                 <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center mb-4 group-hover:bg-brand/10 transition-colors">
@@ -319,4 +329,4 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
   );
 };
 
-export default CorsoRischioBiologicoPage;
+export default CorsoRadiazioniUVPage;

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import OnlineLearningBenefits from './OnlineLearningBenefits';
+import DeliveryMethods from './DeliveryMethods';
 import { Clock, BookOpen, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Truck, MapPin, Monitor, Video } from 'lucide-react';
 
 interface FormazioneSpecificaBassoPageProps {
@@ -118,7 +118,7 @@ const FormazioneSpecificaBassoPage: React.FC<FormazioneSpecificaBassoPageProps> 
                 </div>
               </article>
 
-              <OnlineLearningBenefits />
+              <DeliveryMethods />
 
               {/* Detailed Sections */}
               <div className="space-y-12">

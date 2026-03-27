@@ -1,27 +1,27 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, MessageSquare, ShieldCheck, GraduationCap, Briefcase, Scale, Laptop, Award } from 'lucide-react';
+import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Laptop, Award, AlertTriangle } from 'lucide-react';
 import { courses } from '../data/courses';
 import OnlineLearningBenefits from './OnlineLearningBenefits';
 
-interface CorsoRischioBiologicoPageProps {
+interface CorsoRischioRapinaPageProps {
   onNavigate: (view: any) => void;
   onOpenCourse: (courseId: string) => void;
 }
 
-const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ onNavigate, onOpenCourse }) => {
-  const course = courses.find(c => c.id === "28");
+const CorsoRischioRapinaPage: React.FC<CorsoRischioRapinaPageProps> = ({ onNavigate, onOpenCourse }) => {
+  const course = courses.find(c => c.id === "43");
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Corso Rischio Biologico | Formazione E-learning Sicurezza";
+    document.title = "Corso Rischio Rapina | Formazione E-learning Sicurezza";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Corso di formazione online sul rischio Biologico. Protezione da virus, batteri e agenti biologici. Formazione e-learning certificata D.Lgs 81/08.");
+      metaDescription.setAttribute('content', "Corso di formazione online sul rischio rapina e aggressione. Procedure comportamentali, prevenzione e gestione del panico. Formazione e-learning certificata.");
     }
   }, []);
 
-  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Rischio%20Biologico&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20e-learning%20sul%20Rischio%20Biologico.%0APotrei%20avere%20maggiori%20informazioni%3F%0A%0AGrazie.";
+  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Rischio%20Rapina&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20e-learning%20sul%20Rischio%20Rapina.%0APotrei%20avere%20maggiori%20informazioni%3F%0A%0AGrazie.";
 
   if (!course) return <div className="py-20 text-center font-bold text-slate-900">Corso non trovato</div>;
 
@@ -48,7 +48,7 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6"
             >
-              Corso <span className="text-brand">Rischio Biologico</span>
+              Corso <span className="text-brand">Rischio Rapina</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -56,7 +56,7 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Formazione specifica sulla protezione dagli agenti biologici nel luogo di lavoro. Un percorso completo per prevenire l'esposizione a virus, batteri e parassiti secondo il Titolo X del D.Lgs. 81/08.
+              Formazione specialistica sulle procedure comportamentali da adottare in caso di rapina o aggressione, finalizzata alla tutela dell'incolumità fisica e alla gestione dello stress post-evento.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -103,23 +103,23 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  La Prevenzione del Rischio Biologico
+                  La Gestione del Rischio Rapina e Aggressione
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Il <strong>Rischio Biologico</strong> rappresenta una minaccia invisibile ma estremamente concreta in molti settori lavorativi. Ai sensi del <strong>Titolo X del D.Lgs. 81/08</strong>, il rischio biologico deriva dall'esposizione ad agenti biologici quali microrganismi (virus, batteri, funghi), colture cellulari ed endoparassiti umani che potrebbero provocare infezioni, allergie o intossicazioni.
+                    Il <strong>rischio rapina</strong> rappresenta una minaccia significativa per la sicurezza e la salute dei lavoratori impiegati in settori a contatto con il pubblico e con la gestione di valori, come banche, uffici postali, gioiellerie, farmacie e attività commerciali. Oltre al pericolo immediato per l'incolumità fisica, l'evento criminoso comporta gravi conseguenze psicologiche, tra cui lo stress post-traumatico, che possono compromettere a lungo termine il benessere del lavoratore.
                   </p>
                   <p>
-                    Il nostro corso e-learning è strutturato per fornire ai lavoratori le conoscenze necessarie per identificare le sorgenti di rischio e adottare le misure di prevenzione e protezione più efficaci. La formazione analizza la classificazione degli agenti biologici in quattro gruppi di rischio, basata sulla pericolosità per l'uomo, sulla probabilità di propagazione nella comunità e sulla disponibilità di efficaci misure di profilassi o terapia.
+                    Il nostro corso e-learning sul Rischio Rapina è progettato per fornire strumenti pratici e conoscenze teoriche fondamentali per prevenire e gestire situazioni critiche. Il percorso formativo analizza le dinamiche tipiche di una rapina, aiutando i partecipanti a riconoscere i segnali premonitori e a comprendere l'importanza della prevenzione situazionale. La formazione si concentra sulle <strong>procedure comportamentali</strong> da adottare durante l'evento: mantenere la calma, evitare reazioni brusche o eroiche e collaborare con l'aggressore per minimizzare il rischio di violenza.
                   </p>
                   <p>
-                    In contesti come laboratori, strutture sanitarie, servizi di pulizia, gestione dei rifiuti o agricoltura, la consapevolezza del rischio è la prima linea di difesa. Il corso approfondisce le modalità di trasmissione (per via aerea, per contatto, per ingestione) e l'importanza dell'igiene personale e ambientale. Un focus particolare è dedicato all'uso corretto dei <strong>Dispositivi di Protezione Individuale (DPI)</strong>, come guanti, mascherine e tute protettive, fondamentali per minimizzare l'esposizione.
+                    Un modulo specifico è dedicato alla gestione del panico e alla comunicazione non verbale, elementi determinanti per non innescare escalation di aggressività. Vengono inoltre fornite indicazioni su come comportarsi immediatamente dopo l'evento, dalla richiesta di soccorso alla conservazione delle prove e alla descrizione dei malviventi, facilitando il lavoro delle forze dell'ordine.
                   </p>
                   <p>
-                    La metodologia didattica online permette di affrontare temi complessi attraverso moduli interattivi, video esplicativi e test di autovalutazione. Questo garantisce un apprendimento efficace e flessibile, permettendo ai lavoratori di formarsi senza allontanarsi dal proprio ambiente operativo. La prevenzione del rischio biologico non è solo un obbligo normativo, ma una componente essenziale della tutela della salute pubblica e della continuità aziendale.
+                    La metodologia didattica online permette di affrontare temi delicati attraverso simulazioni, video esplicativi e test di autovalutazione, garantendo un apprendimento efficace e flessibile. La formazione sul rischio rapina non è solo un adempimento normativo ai sensi del <strong>D.Lgs. 81/08</strong>, ma un investimento essenziale nella sicurezza psicofisica dei dipendenti, aumentando la loro consapevolezza e capacità di risposta in situazioni di emergenza.
                   </p>
                   <p>
-                    Aliseo Academy garantisce una formazione di alto livello, costantemente aggiornata rispetto alle evoluzioni scientifiche e normative. Al termine del percorso, il lavoratore sarà in grado di collaborare attivamente alla gestione della sicurezza biologica in azienda, riconoscendo le situazioni di pericolo e applicando correttamente le procedure di decontaminazione e smaltimento sicuro.
+                    Aliseo Academy garantisce una formazione di alto livello, curata da esperti in sicurezza e psicologia dell'emergenza. Al termine del corso, il partecipante sarà in grado di applicare protocolli di sicurezza consolidati, contribuendo a creare un ambiente di lavoro più protetto e resiliente. La prevenzione del rischio rapina richiede una vigilanza costante e una preparazione specifica; questo corso rappresenta il pilastro fondamentale per acquisire le competenze necessarie a gestire l'imprevedibile con professionalità e consapevolezza.
                   </p>
                 </div>
               </article>
@@ -135,19 +135,29 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
                   </h3>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {course.objectives?.map((obj, i) => (
-                        <li key={i} className="flex items-start gap-3 text-slate-600">
-                          <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                          <span>{obj}</span>
-                        </li>
-                      ))}
                       <li className="flex items-start gap-3 text-slate-600">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Classificazione degli agenti biologici (Gruppi 1, 2, 3, 4)</span>
+                        <span>Comprendere le dinamiche degli eventi criminosi</span>
                       </li>
                       <li className="flex items-start gap-3 text-slate-600">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Procedure di emergenza e primo soccorso</span>
+                        <span>Apprendere tecniche di prevenzione situazionale</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-slate-600">
+                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
+                        <span>Gestire il panico e lo stress durante l'evento</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-slate-600">
+                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
+                        <span>Adottare procedure comportamentali di sicurezza</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-slate-600">
+                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
+                        <span>Gestire correttamente la fase post-rapina</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-slate-600">
+                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
+                        <span>Conoscere i profili di responsabilità e normativa</span>
                       </li>
                     </ul>
                   </div>
@@ -164,7 +174,7 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
                     </div>
                     <div>
                       <p className="text-slate-600 leading-relaxed">
-                        Il corso è rivolto a <strong>tutti i lavoratori</strong> esposti o potenzialmente esposti ad agenti biologici, inclusi operatori sanitari, addetti alle pulizie, lavoratori del settore agricolo e dei servizi ambientali.
+                        Il corso è rivolto a <strong>lavoratori di banche, uffici postali, farmacie, gioiellerie</strong>, addetti alla vendita in centri commerciali e chiunque operi in attività a rischio di rapina o aggressione.
                       </p>
                     </div>
                   </div>
@@ -267,10 +277,10 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
       <section className="py-20 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6">
-            Necessiti di formazione specifica sul rischio biologico?
+            Necessiti di formazione sul rischio rapina?
           </h2>
           <p className="text-lg text-slate-600 mb-10">
-            Il nostro team è a disposizione per supportarti nella valutazione dei rischi e nella definizione dei percorsi formativi più idonei.
+            Il nostro team è a disposizione per supportarti nella valutazione dei rischi e nella definizione dei protocolli comportamentali.
           </p>
           <div className="flex flex-col items-center gap-2">
             <span className="text-slate-500 text-sm font-bold">Ti rispondiamo entro 24 ore</span>
@@ -293,13 +303,13 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Rischio Chimico", desc: "Uso sicuro di sostanze e schede di sicurezza", view: 'corso-rischio-chimico', icon: ShieldCheck },
-              { id: "38", title: "Rischio Legionella", desc: "Prevenzione negli impianti idrici e aeraulici", icon: BookOpen },
-              { id: "27", title: "Agenti Cancerogeni", desc: "Gestione rischi sostanze cancerogene e mutagene", icon: Scale },
+              { title: "Rischio Interferenze", desc: "Gestione della sicurezza in presenza di ditte esterne", view: 'corso-rischio-interferenze', icon: AlertTriangle },
+              { title: "Stress Lavoro Correlato", desc: "Valutazione e gestione dello stress occupazionale", view: 'corso-stress-lavoro-correlato', icon: ShieldCheck },
+              { title: "Movimentazione Carichi", desc: "Prevenzione delle patologie muscolo-scheletriche", view: 'corso-movimentazione-manuale-carichi', icon: BookOpen },
             ].map((item, i) => (
               <button 
                 key={i}
-                onClick={() => 'view' in item ? onNavigate(item.view) : onOpenCourse(item.id)}
+                onClick={() => onNavigate(item.view)}
                 className="group p-6 bg-white rounded-2xl border border-slate-200 hover:border-brand/30 hover:shadow-lg hover:shadow-brand/5 transition-all text-left flex flex-col h-full"
               >
                 <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center mb-4 group-hover:bg-brand/10 transition-colors">
@@ -319,4 +329,4 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
   );
 };
 
-export default CorsoRischioBiologicoPage;
+export default CorsoRischioRapinaPage;

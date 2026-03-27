@@ -1,27 +1,27 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, MessageSquare, ShieldCheck, GraduationCap, Briefcase, Scale, Laptop, Award } from 'lucide-react';
+import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Laptop, Award, Zap, Eye, AlertTriangle } from 'lucide-react';
 import { courses } from '../data/courses';
 import OnlineLearningBenefits from './OnlineLearningBenefits';
 
-interface CorsoRischioBiologicoPageProps {
+interface CorsoROAPageProps {
   onNavigate: (view: any) => void;
   onOpenCourse: (courseId: string) => void;
 }
 
-const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ onNavigate, onOpenCourse }) => {
-  const course = courses.find(c => c.id === "28");
+const CorsoROAPage: React.FC<CorsoROAPageProps> = ({ onNavigate, onOpenCourse }) => {
+  const course = courses.find(c => c.id === "41");
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Corso Rischio Biologico | Formazione E-learning Sicurezza";
+    document.title = "Corso Radiazioni Ottiche Artificiali (ROA) | Formazione E-learning Sicurezza";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Corso di formazione online sul rischio Biologico. Protezione da virus, batteri e agenti biologici. Formazione e-learning certificata D.Lgs 81/08.");
+      metaDescription.setAttribute('content', "Corso di formazione online sul rischio da Radiazioni Ottiche Artificiali (ROA). Effetti su occhi e pelle, DPI specifici e misure di prevenzione. Formazione certificata.");
     }
   }, []);
 
-  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Rischio%20Biologico&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20e-learning%20sul%20Rischio%20Biologico.%0APotrei%20avere%20maggiori%20informazioni%3F%0A%0AGrazie.";
+  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Radiazioni%20Ottiche%20Artificiali&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20e-learning%20sulle%20Radiazioni%20Ottiche%20Artificiali%20(ROA).%0APotrei%20avere%20maggiori%20informazioni%3F%0A%0AGrazie.";
 
   if (!course) return <div className="py-20 text-center font-bold text-slate-900">Corso non trovato</div>;
 
@@ -48,7 +48,7 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6"
             >
-              Corso <span className="text-brand">Rischio Biologico</span>
+              Corso <span className="text-brand">Radiazioni Ottiche Artificiali</span> (ROA)
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -56,7 +56,7 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Formazione specifica sulla protezione dagli agenti biologici nel luogo di lavoro. Un percorso completo per prevenire l'esposizione a virus, batteri e parassiti secondo il Titolo X del D.Lgs. 81/08.
+              Formazione specifica sui rischi derivanti dall'esposizione a sorgenti di radiazioni ottiche artificiali, con focus sulla protezione di occhi e pelle e l'uso corretto dei DPI.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -103,23 +103,23 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  La Prevenzione del Rischio Biologico
+                  La Gestione del Rischio ROA in Azienda
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Il <strong>Rischio Biologico</strong> rappresenta una minaccia invisibile ma estremamente concreta in molti settori lavorativi. Ai sensi del <strong>Titolo X del D.Lgs. 81/08</strong>, il rischio biologico deriva dall'esposizione ad agenti biologici quali microrganismi (virus, batteri, funghi), colture cellulari ed endoparassiti umani che potrebbero provocare infezioni, allergie o intossicazioni.
+                    Le <strong>Radiazioni Ottiche Artificiali (ROA)</strong> comprendono tutte le radiazioni elettromagnetiche nella gamma di lunghezze d'onda tra 100 nm e 1 mm, generate da sorgenti artificiali. Queste radiazioni si suddividono in ultraviolette, visibili e infrarosse. In ambito lavorativo, l'esposizione alle ROA è frequente in processi come la saldatura, l'uso di lampade ad alta intensità, laser industriali e forni fusori.
                   </p>
                   <p>
-                    Il nostro corso e-learning è strutturato per fornire ai lavoratori le conoscenze necessarie per identificare le sorgenti di rischio e adottare le misure di prevenzione e protezione più efficaci. La formazione analizza la classificazione degli agenti biologici in quattro gruppi di rischio, basata sulla pericolosità per l'uomo, sulla probabilità di propagazione nella comunità e sulla disponibilità di efficaci misure di profilassi o terapia.
+                    Il nostro corso e-learning sul Rischio ROA approfondisce gli obblighi previsti dal <strong>Capo V del Titolo VIII del D.Lgs. 81/08</strong>. La normativa impone al datore di lavoro di valutare i rischi derivanti dall'esposizione alle radiazioni ottiche, identificando le sorgenti "non giustificabili" e adottando misure tecniche e organizzative per ridurre l'esposizione al di sotto dei valori limite fissati dalla legge.
                   </p>
                   <p>
-                    In contesti come laboratori, strutture sanitarie, servizi di pulizia, gestione dei rifiuti o agricoltura, la consapevolezza del rischio è la prima linea di difesa. Il corso approfondisce le modalità di trasmissione (per via aerea, per contatto, per ingestione) e l'importanza dell'igiene personale e ambientale. Un focus particolare è dedicato all'uso corretto dei <strong>Dispositivi di Protezione Individuale (DPI)</strong>, come guanti, mascherine e tute protettive, fondamentali per minimizzare l'esposizione.
+                    Il percorso formativo analizza dettagliatamente gli effetti biologici delle ROA, con particolare attenzione ai danni acuti e cronici a carico degli <strong>occhi</strong> (fotocheratiti, cataratte, danni retinici) e della <strong>pelle</strong> (eritemi, ustioni, invecchiamento precoce e tumori cutanei). La formazione fornisce indicazioni pratiche sulla scelta e l'uso corretto dei Dispositivi di Protezione Individuale (DPI), come occhiali filtranti, schermi facciali e indumenti protettivi.
                   </p>
                   <p>
-                    La metodologia didattica online permette di affrontare temi complessi attraverso moduli interattivi, video esplicativi e test di autovalutazione. Questo garantisce un apprendimento efficace e flessibile, permettendo ai lavoratori di formarsi senza allontanarsi dal proprio ambiente operativo. La prevenzione del rischio biologico non è solo un obbligo normativo, ma una componente essenziale della tutela della salute pubblica e della continuità aziendale.
+                    La metodologia didattica online permette di affrontare temi tecnici e normativi complessi attraverso moduli interattivi, video esplicativi e test di autovalutazione. La formazione sul rischio ROA è essenziale per garantire che i lavoratori esposti siano consapevoli dei pericoli invisibili e sappiano adottare i comportamenti corretti per tutelare la propria salute a lungo termine.
                   </p>
                   <p>
-                    Aliseo Academy garantisce una formazione di alto livello, costantemente aggiornata rispetto alle evoluzioni scientifiche e normative. Al termine del percorso, il lavoratore sarà in grado di collaborare attivamente alla gestione della sicurezza biologica in azienda, riconoscendo le situazioni di pericolo e applicando correttamente le procedure di decontaminazione e smaltimento sicuro.
+                    Aliseo Academy garantisce una formazione di alto livello, curata da esperti in igiene industriale e sicurezza sul lavoro. Al termine del corso, il partecipante sarà in grado di identificare le sorgenti di rischio nel proprio ambiente di lavoro e di applicare correttamente i protocolli di sicurezza, contribuendo a un ambiente di lavoro più protetto e conforme alle normative vigenti.
                   </p>
                 </div>
               </article>
@@ -135,19 +135,29 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
                   </h3>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {course.objectives?.map((obj, i) => (
-                        <li key={i} className="flex items-start gap-3 text-slate-600">
-                          <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                          <span>{obj}</span>
-                        </li>
-                      ))}
                       <li className="flex items-start gap-3 text-slate-600">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Classificazione degli agenti biologici (Gruppi 1, 2, 3, 4)</span>
+                        <span>Identificare le sorgenti di ROA in azienda</span>
                       </li>
                       <li className="flex items-start gap-3 text-slate-600">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Procedure di emergenza e primo soccorso</span>
+                        <span>Comprendere gli effetti biologici su occhi e pelle</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-slate-600">
+                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
+                        <span>Conoscere i valori limite di esposizione (VLE)</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-slate-600">
+                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
+                        <span>Apprendere le misure di prevenzione e protezione</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-slate-600">
+                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
+                        <span>Scegliere e utilizzare correttamente i DPI</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-slate-600">
+                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
+                        <span>Conoscere gli obblighi normativi del D.Lgs. 81/08</span>
                       </li>
                     </ul>
                   </div>
@@ -164,7 +174,7 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
                     </div>
                     <div>
                       <p className="text-slate-600 leading-relaxed">
-                        Il corso è rivolto a <strong>tutti i lavoratori</strong> esposti o potenzialmente esposti ad agenti biologici, inclusi operatori sanitari, addetti alle pulizie, lavoratori del settore agricolo e dei servizi ambientali.
+                        Il corso è rivolto a <strong>lavoratori esposti a ROA</strong>, come saldatori, addetti a laboratori laser, operatori di forni industriali, e a chiunque operi in prossimità di sorgenti artificiali di radiazioni ottiche.
                       </p>
                     </div>
                   </div>
@@ -267,10 +277,10 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
       <section className="py-20 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6">
-            Necessiti di formazione specifica sul rischio biologico?
+            Necessiti di formazione sul rischio ROA?
           </h2>
           <p className="text-lg text-slate-600 mb-10">
-            Il nostro team è a disposizione per supportarti nella valutazione dei rischi e nella definizione dei percorsi formativi più idonei.
+            Il nostro team è a disposizione per supportarti nella valutazione dei rischi e nella scelta dei DPI più idonei per la tua attività.
           </p>
           <div className="flex flex-col items-center gap-2">
             <span className="text-slate-500 text-sm font-bold">Ti rispondiamo entro 24 ore</span>
@@ -293,13 +303,13 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Rischio Chimico", desc: "Uso sicuro di sostanze e schede di sicurezza", view: 'corso-rischio-chimico', icon: ShieldCheck },
-              { id: "38", title: "Rischio Legionella", desc: "Prevenzione negli impianti idrici e aeraulici", icon: BookOpen },
-              { id: "27", title: "Agenti Cancerogeni", desc: "Gestione rischi sostanze cancerogene e mutagene", icon: Scale },
+              { title: "Campi Elettromagnetici", desc: "Rischi legati a macchinari industriali e trasmettitori", view: 'corso-campi-elettromagnetici', icon: Zap },
+              { title: "Rischio Elettrico", desc: "Prevenzione dei rischi da contatto elettrico", view: 'corso-rischio-elettrico', icon: AlertTriangle },
+              { title: "DPI III Categoria", desc: "Uso corretto dei dispositivi salvavita", view: 'corso-dpi-terza-categoria-lavori-quota', icon: ShieldCheck },
             ].map((item, i) => (
               <button 
                 key={i}
-                onClick={() => 'view' in item ? onNavigate(item.view) : onOpenCourse(item.id)}
+                onClick={() => onNavigate(item.view)}
                 className="group p-6 bg-white rounded-2xl border border-slate-200 hover:border-brand/30 hover:shadow-lg hover:shadow-brand/5 transition-all text-left flex flex-col h-full"
               >
                 <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center mb-4 group-hover:bg-brand/10 transition-colors">
@@ -319,4 +329,4 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
   );
 };
 
-export default CorsoRischioBiologicoPage;
+export default CorsoROAPage;

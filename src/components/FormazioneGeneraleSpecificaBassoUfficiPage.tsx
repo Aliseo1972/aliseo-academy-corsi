@@ -104,6 +104,9 @@ const FormazioneGeneraleSpecificaBassoUfficiPage: React.FC<FormazioneGeneraleSpe
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
+                    Il corso è disponibile online in modalità e-learning. Per aziende o gruppi che desiderano organizzare la formazione anche in presenza con nostro docente, è possibile richiedere una soluzione dedicata contattandoci.
+                  </p>
+                  <p>
                     Il **corso di formazione generale e specifica per lavoratori a rischio basso del settore uffici** è il percorso formativo obbligatorio per eccellenza per tutto il personale amministrativo, tecnico e gestionale. Secondo il **D.Lgs 81/08** e l'Accordo Stato-Regioni del 2011, ogni nuovo assunto deve ricevere una formazione completa sulla sicurezza prima di iniziare le proprie attività o comunque entro 60 giorni dall'assunzione.
                   </p>
                   <p>

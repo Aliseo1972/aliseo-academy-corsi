@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
+import OnlineLearningBenefits from './OnlineLearningBenefits';
 import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Laptop, Globe, Award, AlertTriangle, Construction, ArrowRight } from 'lucide-react';
 
 interface CorsoDatoreLavoroPageProps {
@@ -99,6 +100,10 @@ const CorsoDatoreLavoroPage: React.FC<CorsoDatoreLavoroPageProps> = ({ onNavigat
           </div>
         </div>
       </section>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 mb-12 relative z-20">
+        <OnlineLearningBenefits />
+      </div>
 
       {/* How to Choose Section */}
       <section id="come-scegliere" className="py-24 bg-slate-50 border-y border-slate-100">

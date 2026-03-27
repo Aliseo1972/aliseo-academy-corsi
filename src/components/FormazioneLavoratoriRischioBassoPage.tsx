@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
+import DeliveryMethods from './DeliveryMethods';
 import { Clock, BookOpen, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Monitor, Shield, ArrowRight } from 'lucide-react';
-import OnlineLearningBenefits from './OnlineLearningBenefits';
 
 interface FormazioneLavoratoriRischioBassoPageProps {
   onNavigate: (view: any) => void;
@@ -10,14 +10,14 @@ interface FormazioneLavoratoriRischioBassoPageProps {
 const FormazioneLavoratoriRischioBassoPage: React.FC<FormazioneLavoratoriRischioBassoPageProps> = ({ onNavigate }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Corso Formazione Lavoratori Rischio Basso | Aliseo Academy";
+    document.title = "Corso Formazione Specifica Lavoratori Rischio Basso | Aliseo Academy";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Corso formazione lavoratori rischio basso obbligatorio secondo D.Lgs 81/08. Formazione online in e-learning con Aliseo Academy.");
+      metaDescription.setAttribute('content', "Corso formazione specifica lavoratori rischio basso obbligatorio secondo D.Lgs 81/08. Formazione in presenza, presso il cliente o tramite Safety Truck.");
     }
   }, []);
 
-  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Formazione%20Lavoratori%20Rischio%20Basso&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20Corso%20Formazione%20Lavoratori%20Rischio%20Basso%20(4%20ore).%0APotrei%20avere%20maggiori%20informazioni%20su%20modalit%C3%A0%2C%20costi%20e%20attivazione%20online%3F%0A%0AGrazie.";
+  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Formazione%20Specifica%20Lavoratori%20Rischio%20Basso&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20Corso%20Formazione%20Specifica%20Lavoratori%20Rischio%20Basso%20(4%20ore).%0APotrei%20avere%20maggiori%20informazioni%20su%20modalit%C3%A0%2C%20costi%20e%20prossime%20date%3F%0A%0AGrazie.";
 
   return (
     <div className="bg-white min-h-screen">
@@ -42,7 +42,7 @@ const FormazioneLavoratoriRischioBassoPage: React.FC<FormazioneLavoratoriRischio
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6"
             >
-              Corso Formazione <span className="text-brand">Lavoratori Rischio Basso</span>
+              Corso Formazione <span className="text-brand">Specifica Lavoratori Rischio Basso</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -50,8 +50,8 @@ const FormazioneLavoratoriRischioBassoPage: React.FC<FormazioneLavoratoriRischio
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Percorso formativo specifico di 4 ore per dipendenti di aziende a basso rischio. 
-              Disponibile interamente online in modalità e-learning.
+              Percorso formativo specifico di 4 ore per dipendenti di aziende a basso rischio (uffici, commercio, servizi). 
+              Formazione obbligatoria in conformità all'Art. 37 del D.Lgs. 81/08.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -101,9 +101,12 @@ const FormazioneLavoratoriRischioBassoPage: React.FC<FormazioneLavoratoriRischio
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  Sicurezza sul Lavoro: Formazione Lavoratori Rischio Basso
+                  Sicurezza sul Lavoro: Formazione Specifica Lavoratori Rischio Basso
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
+                  <p>
+                    Il corso è disponibile online in modalità e-learning. Per aziende o gruppi che desiderano organizzare la formazione anche in presenza con nostro docente, è possibile richiedere una soluzione dedicata contattandoci.
+                  </p>
                   <p>
                     Il <strong>Corso Formazione Lavoratori Rischio Basso</strong> rappresenta un pilastro fondamentale della sicurezza sul lavoro in Italia. Ai sensi del <strong>D.Lgs 81/08</strong>, ogni lavoratore deve ricevere una formazione adeguata e specifica in relazione ai rischi presenti nel proprio ambiente di lavoro. Per le aziende classificate a rischio basso, come uffici, studi professionali, negozi e attività di servizi, il percorso formativo è studiato per fornire le competenze necessarie a prevenire infortuni e malattie professionali senza appesantire eccessivamente l'operatività aziendale.
                   </p>
@@ -114,15 +117,15 @@ const FormazioneLavoratoriRischioBassoPage: React.FC<FormazioneLavoratoriRischio
                     Il <strong>corso lavoratori D.Lgs 81/08</strong> per il rischio basso ha una durata di 4 ore, che si aggiungono alle 4 ore di formazione generale obbligatoria per tutti i settori. Questo modulo specifico approfondisce le tematiche legate all'ambiente di lavoro "ufficio" o "servizi", analizzando i pericoli meno evidenti ma comunque impattanti sulla salute a lungo termine. La normativa di riferimento, l'Accordo Stato-Regioni del 21/12/2011, definisce chiaramente i contenuti e le modalità di erogazione di questa formazione.
                   </p>
                   <p>
-                    Scegliere la modalità e-learning per la formazione lavoratori rischio basso offre numerosi vantaggi. Aliseo Academy mette a disposizione una piattaforma online moderna e intuitiva, accessibile 24 ore su 24, 7 giorni su 7. Questo permette ai lavoratori di seguire le lezioni nei momenti di minor carico lavorativo, garantendo la massima flessibilità sia per l'azienda che per il dipendente. La validità dell'attestato rilasciato è garantita su tutto il territorio nazionale, rispettando rigorosamente i requisiti previsti dalla legge.
+                    Per le aziende che necessitano di formare il proprio personale, Aliseo Academy propone diverse soluzioni flessibili. La formazione può essere erogata presso i nostri centri formativi, direttamente presso la sede del cliente per ottimizzare i tempi, oppure tramite il nostro esclusivo Safety Truck, un'aula mobile completamente attrezzata che porta la formazione ovunque sia necessario. Questa varietà di opzioni garantisce la massima efficacia didattica e il rispetto rigoroso dei requisiti previsti dalla legge.
                   </p>
                   <p>
-                    Investire nella formazione con Aliseo Academy significa scegliere la qualità e l'affidabilità di un partner esperto. La nostra missione è rendere la sicurezza sul lavoro un valore condiviso, accessibile e semplice da gestire grazie alle tecnologie digitali più avanzate. Ogni modulo è curato da esperti del settore per assicurare un apprendimento efficace e duraturo.
+                    Investire nella formazione con Aliseo Academy significa scegliere la qualità e l'affidabilità di un partner esperto. La nostra missione è rendere la sicurezza sul lavoro un valore condiviso, accessibile e semplice da gestire. Ogni modulo è curato da esperti del settore per assicurare un apprendimento efficace e duraturo.
                   </p>
                 </div>
               </article>
 
-              <OnlineLearningBenefits />
+              <DeliveryMethods />
 
               {/* Detailed Sections */}
               <div className="space-y-12">

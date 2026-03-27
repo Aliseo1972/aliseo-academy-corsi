@@ -1,3 +1,4 @@
+import DeliveryMethods from './DeliveryMethods';
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, MessageSquare, ShieldCheck, GraduationCap, Flame, Scale } from 'lucide-react';
@@ -149,6 +150,7 @@ const AntincendioL1Page: React.FC<AntincendioL1PageProps> = ({ onNavigate }) => 
                   </div>
                 </section>
               </div>
+              <DeliveryMethods />
             </div>
 
             <div className="space-y-8">

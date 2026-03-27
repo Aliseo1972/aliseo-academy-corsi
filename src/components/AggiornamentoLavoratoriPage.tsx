@@ -104,6 +104,9 @@ const AggiornamentoLavoratoriPage: React.FC<AggiornamentoLavoratoriPageProps> = 
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
+                    Il corso è disponibile online in modalità e-learning. Per aziende o gruppi che desiderano organizzare la formazione anche in presenza con nostro docente, è possibile richiedere una soluzione dedicata contattandoci.
+                  </p>
+                  <p>
                     La sicurezza sul lavoro non è un concetto statico, ma un processo in continua evoluzione. Il **D.Lgs 81/08**, all'articolo 37, stabilisce chiaramente l'obbligo per il datore di lavoro di assicurare che ogni lavoratore riceva una formazione adeguata e specifica, che deve essere periodicamente ripetuta in relazione all'evoluzione dei rischi o all'insorgenza di nuovi rischi. L'Accordo Stato-Regioni del 21/12/2011 ha poi definito la periodicità quinquennale e la durata minima di 6 ore per questo aggiornamento.
                   </p>
                   <p>

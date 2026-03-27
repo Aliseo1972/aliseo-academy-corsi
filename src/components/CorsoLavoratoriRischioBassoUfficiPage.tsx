@@ -104,6 +104,9 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
+                    Il corso è disponibile online in modalità e-learning. Per aziende o gruppi che desiderano organizzare la formazione anche in presenza con nostro docente, è possibile richiedere una soluzione dedicata contattandoci.
+                  </p>
+                  <p>
                     La sicurezza sul lavoro non riguarda solo i cantieri o le fabbriche. Anche l'ambiente d'ufficio presenta rischi specifici che, se trascurati, possono portare a disturbi muscolo-scheletrici, affaticamento visivo e stress. Il **corso di formazione specifica per lavoratori a rischio basso del settore uffici** è progettato per rispondere a queste esigenze, fornendo ai dipendenti gli strumenti per operare in modo sano e sicuro.
                   </p>
                   <p>

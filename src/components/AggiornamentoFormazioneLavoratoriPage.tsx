@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
+import OnlineLearningBenefits from './OnlineLearningBenefits';
 import { motion } from 'motion/react';
 import { Clock, BookOpen, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Monitor, Shield, ArrowRight, AlertCircle, Laptop, Award } from 'lucide-react';
-import OnlineLearningBenefits from './OnlineLearningBenefits';
 
 interface AggiornamentoFormazioneLavoratoriPageProps {
   onNavigate: (view: any) => void;

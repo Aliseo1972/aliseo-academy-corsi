@@ -104,6 +104,9 @@ const FormazioneGeneraleSpecificaBassoPage: React.FC<FormazioneGeneraleSpecifica
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
+                    Il corso è disponibile online in modalità e-learning. Per aziende o gruppi che desiderano organizzare la formazione anche in presenza con nostro docente, è possibile richiedere una soluzione dedicata contattandoci.
+                  </p>
+                  <p>
                     Il **corso di formazione generale e specifica per lavoratori a rischio basso** rappresenta l'adempimento formativo primario per ogni nuovo inserimento lavorativo in azienda. Secondo quanto stabilito dal **D.Lgs 81/08** e dagli Accordi Stato-Regioni, la formazione sulla sicurezza è un diritto e un dovere del lavoratore, finalizzato a fornire le conoscenze necessarie per operare in modo consapevole e prevenire infortuni e malattie professionali.
                   </p>
                   <p>

@@ -42,7 +42,7 @@ const FormazioneGeneralePage: React.FC<FormazioneGeneralePageProps> = ({ onNavig
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6"
             >
-              Corso Formazione <span className="text-brand">Lavoratori Generale</span>
+              Corso Formazione <span className="text-brand">Generale Lavoratori</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -104,6 +104,9 @@ const FormazioneGeneralePage: React.FC<FormazioneGeneralePageProps> = ({ onNavig
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
+                    Il corso è disponibile online in modalità e-learning. Per aziende o gruppi che desiderano organizzare la formazione anche in presenza con nostro docente, è possibile richiedere una soluzione dedicata contattandoci.
+                  </p>
+                  <p>
                     Il <strong>corso sicurezza lavoratori obbligatorio</strong> rappresenta il primo passo fondamentale per ogni dipendente che entra a far parte di un'organizzazione. Secondo quanto stabilito dall'<strong>Art. 37 del D.Lgs 81/08</strong> e disciplinato dall'Accordo Stato-Regioni del 21/12/2011, ogni lavoratore deve ricevere una formazione sufficiente ed adeguata in materia di salute e sicurezza.
                   </p>
                   <p>
@@ -121,7 +124,7 @@ const FormazioneGeneralePage: React.FC<FormazioneGeneralePageProps> = ({ onNavig
                 </div>
               </article>
 
-              <OnlineLearningBenefits />
+             <OnlineLearningBenefits />
 
               {/* Detailed Sections */}
               <div className="space-y-12">

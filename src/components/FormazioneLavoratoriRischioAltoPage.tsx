@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
+import { DeliveryMethods } from './DeliveryMethods';
 import { Clock, BookOpen, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Monitor, Shield, ArrowRight } from 'lucide-react';
 
 interface FormazioneLavoratoriRischioAltoPageProps {
@@ -121,43 +122,7 @@ const FormazioneLavoratoriRischioAltoPage: React.FC<FormazioneLavoratoriRischioA
                 </div>
               </article>
 
-              <section className="bg-slate-900 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-brand/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-                <div className="relative z-10">
-                  <h3 className="text-2xl md:text-3xl font-black mb-6 uppercase tracking-tight">
-                    Qualità della <span className="text-brand">Formazione</span>
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div className="space-y-4">
-                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
-                        <Users className="w-6 h-6 text-brand" />
-                      </div>
-                      <h4 className="font-bold text-lg">Docenti Esperti</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">
-                        Formatori qualificati con esperienza pluriennale nella sicurezza sul lavoro per settori ad alto rischio.
-                      </p>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
-                        <ShieldCheck className="w-6 h-6 text-brand" />
-                      </div>
-                      <h4 className="font-bold text-lg">Conformità</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">
-                        Programmi didattici pienamente conformi all'Accordo Stato-Regioni e costantemente aggiornati.
-                      </p>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
-                        <Clock className="w-6 h-6 text-brand" />
-                      </div>
-                      <h4 className="font-bold text-lg">Sincronia</h4>
-                      <p className="text-slate-400 text-sm leading-relaxed">
-                        Interazione diretta con il docente in tempo reale, sia in aula che in videoconferenza.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </section>
+              <DeliveryMethods />
 
               {/* Detailed Sections */}
               <div className="space-y-12">
