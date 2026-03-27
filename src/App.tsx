@@ -41,6 +41,7 @@ import PrimoSoccorsoGruppoBCPage from './components/PrimoSoccorsoGruppoBCPage';
 import AggiornamentoPrimoSoccorsoGruppoAPage from './components/AggiornamentoPrimoSoccorsoGruppoAPage';
 import AggiornamentoPrimoSoccorsoGruppoBCPage from './components/AggiornamentoPrimoSoccorsoGruppoBCPage';
 import FormazioneGeneralePage from './components/FormazioneGeneralePage';
+import FormazioneGeneralePresenzaPage from './components/FormazioneGeneralePresenzaPage';
 import FormazioneLavoratoriRischioMedioPage from './components/FormazioneLavoratoriRischioMedioPage';
 import FormazioneLavoratoriRischioAltoPage from './components/FormazioneLavoratoriRischioAltoPage';
 import AggiornamentoFormazioneLavoratoriPage from './components/AggiornamentoFormazioneLavoratoriPage';
@@ -106,6 +107,21 @@ import CorsoRischioChimicoPage from './components/CorsoRischioChimicoPage';
 import CorsoRischioAmiantoPage from './components/CorsoRischioAmiantoPage';
 import CorsoMovimentazioneManualePage from './components/CorsoMovimentazioneManualePage';
 import CorsoRischioElettricoPage from './components/CorsoRischioElettricoPage';
+import CorsoRischioLegionellaPage from './components/CorsoRischioLegionellaPage';
+import CorsoAgentiCancerogeniPage from './components/CorsoAgentiCancerogeniPage';
+import CorsoRischioRapinaPage from './components/CorsoRischioRapinaPage';
+import CorsoRischioInterferenzePage from './components/CorsoRischioInterferenzePage';
+import CorsoROAPage from './components/CorsoROAPage';
+import CorsoCEMPage from './components/CorsoCEMPage';
+import CorsoRischioSismicoPage from './components/CorsoRischioSismicoPage';
+import CorsoRadiazioniUVPage from './components/CorsoRadiazioniUVPage';
+import CorsoScaricheAtmosferichePage from './components/CorsoScaricheAtmosferichePage';
+import CorsoRischioIncendioPage from './components/CorsoRischioIncendioPage';
+import CorsoEvacuatoreEmergenzaPage from './components/CorsoEvacuatoreEmergenzaPage';
+import AggiornamentoEvacuatoreEmergenzaPage from './components/AggiornamentoEvacuatoreEmergenzaPage';
+import CorsoAPVRPage from './components/CorsoAPVRPage';
+import AggiornamentoAPVRPage from './components/AggiornamentoAPVRPage';
+import CorsoBLSDPage from './components/CorsoBLSDPage';
 
 const CourseCard = ({ course, onOpen }: { course: Course; onOpen: (course: Course) => void; key?: string | number }) => {
   return (
@@ -1067,6 +1083,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Gruppi B e C"
     },
     {
+      id: "blsd-dae",
       title: "Corso BLSD – Uso del Defibrillatore (5 ore)",
       preview: "Il Corso BLSD (Basic Life Support and Defibrillation) da 5 ore fornisce le competenze necessarie per intervenire tempestivamente in caso di arresto cardiaco improvviso, utilizzando correttamente il defibrillatore semiautomatico esterno (DAE) e applicando le manovre di rianimazione cardiopolmonare.",
       fullDescription: `
@@ -1693,6 +1710,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Ponteggi"
     },
     {
+      id: "corso-evacuatore-emergenza",
       title: "Corso Evacuatore di Emergenza – 8 ore",
       preview: "Il Corso Evacuatore di Emergenza – 8 ore è rivolto ai lavoratori incaricati di supportare le operazioni di evacuazione durante le situazioni di emergenza.",
       fullDescription: `
@@ -1729,6 +1747,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Emergenze"
     },
     {
+      id: "aggiornamento-evacuatore-emergenza",
       title: "Aggiornamento Evacuatore di Emergenza – 4 ore",
       preview: "Il Corso di Aggiornamento Evacuatore di Emergenza – 4 ore è rivolto ai lavoratori incaricati di supportare le operazioni di evacuazione durante le situazioni di emergenza.",
       fullDescription: `
@@ -1763,6 +1782,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "Emergenze"
     },
     {
+      id: "corso-apvr",
       title: "Corso Respirazione e Utilizzo dell’Autorespiratore (APVR) – 8 ore",
       preview: "Il Corso Respirazione e Utilizzo dell’Autorespiratore (APVR) – 8 ore è rivolto ai lavoratori che operano in ambienti in cui possono essere presenti atmosfere pericolose.",
       fullDescription: `
@@ -1800,6 +1820,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "DPI III Categoria"
     },
     {
+      id: "aggiornamento-apvr",
       title: "Aggiornamento Respirazione e Utilizzo dell’Autorespiratore (APVR) – 4 ore",
       preview: "Il Corso di Aggiornamento Respirazione e Utilizzo dell’Autorespiratore (APVR) – 4 ore è rivolto ai lavoratori che utilizzano dispositivi di protezione delle vie respiratorie.",
       fullDescription: `
@@ -1837,98 +1858,152 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
       group: "DPI III Categoria"
     },
     {
-      id: "19",
-      title: "Corso Formazione Generale Lavoratori – 4 ore",
-      preview: "Il Corso di Formazione Generale Lavoratori da 4 ore è obbligatorio per tutti i lavoratori di ogni settore aziendale, come previsto dall'Art. 37 del D.Lgs. 81/08 e dall'Accordo Stato-Regioni.",
+      id: "corso-evacuatore-emergenza",
+      title: "Corso Evacuatore di Emergenza – 8 ore",
+      preview: "Il Corso Evacuatore di Emergenza – 8 ore è rivolto ai lavoratori incaricati di supportare le operazioni di evacuazione durante le situazioni di emergenza.",
       fullDescription: `
-        Il Corso di Formazione Generale Lavoratori da 4 ore è obbligatorio per tutti i lavoratori di ogni settore aziendale, come previsto dall'Art. 37 del D.Lgs. 81/08 e dall'Accordo Stato-Regioni.
+        Il Corso Evacuatore di Emergenza – 8 ore è rivolto ai lavoratori incaricati di supportare le operazioni di evacuazione durante le situazioni di emergenza, con particolare attenzione all’assistenza di persone con mobilità ridotta, disabilità o difficoltà di evacuazione presenti nei luoghi di lavoro.
 
-        L'obiettivo del corso è fornire i concetti base della sicurezza sul lavoro, i diritti e i doveri dei lavoratori, e l'organizzazione della prevenzione in azienda. Rappresenta il primo passo fondamentale per la creazione di una cultura della sicurezza condivisa.
+        La formazione è prevista nell’ambito della gestione delle emergenze nei luoghi di lavoro secondo il Decreto Legislativo 81/2008, che stabilisce l’obbligo per il datore di lavoro di organizzare adeguate procedure di emergenza ed evacuazione per garantire la sicurezza di tutti i lavoratori e delle persone presenti.
+
+        Il corso ha l’obiettivo di fornire ai partecipanti le competenze operative necessarie per gestire correttamente le procedure di evacuazione, collaborando con gli addetti alle emergenze e applicando le indicazioni contenute nel Piano di Emergenza ed Evacuazione aziendale.
+
+        Durante la formazione vengono affrontati gli aspetti organizzativi della gestione delle emergenze, le tecniche di evacuazione assistita e l’utilizzo delle attrezzature dedicate, come sedie di evacuazione e dispositivi di trasporto su scale, fondamentali per garantire un’evacuazione sicura anche in presenza di persone con mobilità ridotta.
+
+        Il corso prevede una parte teorica e una significativa componente pratica, con simulazioni di evacuazione e utilizzo delle attrezzature.
 
         Programma del corso:
-        - Concetti di rischio, danno, prevenzione e protezione
-        - Organizzazione della prevenzione aziendale
-        - Diritti, doveri e sanzioni per i vari soggetti aziendali
-        - Organi di vigilanza, controllo e assistenza
+        - Normativa sulla gestione delle emergenze nei luoghi di lavoro
+        - Organizzazione delle procedure di evacuazione
+        - Ruolo e compiti dell’evacuatore di emergenza
+        - Tecniche di evacuazione assistita
+        - Gestione delle persone con mobilità ridotta o disabilità
+        - Utilizzo della sedia di evacuazione e delle attrezzature dedicate
+        - Comunicazione e coordinamento durante l’emergenza
+        - Esercitazioni pratiche e simulazioni di evacuazione
 
         Destinatari:
-        Tutti i lavoratori neoassunti o che non hanno mai ricevuto la formazione generale.
+        Lavoratori incaricati di supportare le procedure di evacuazione e assistenza alle persone durante le emergenze, in particolare in contesti in cui sono presenti persone con mobilità ridotta.
 
         Durata:
-        4 ore (modulo unico).
+        8 ore di formazione, con moduli teorici ed esercitazioni pratiche.
 
-        Aggiornamento:
-        Non previsto per il modulo generale, ma è obbligatorio l'aggiornamento quinquennale della formazione specifica (6 ore).
-      `,
-      duration: "4 ore",
-      group: "Sicurezza Lavoratori"
-    },
-    {
-      id: "20",
-      title: "Corso Formazione Specifica Lavoratori Rischio Basso – 4 ore",
-      preview: "Il Corso di Formazione Specifica Rischio Basso da 4 ore è rivolto ai lavoratori di aziende operanti in settori a basso rischio (uffici, commercio, servizi), in conformità all'Art. 37 del D.Lgs. 81/08.",
-      fullDescription: `
-        Il Corso di Formazione Specifica Rischio Basso da 4 ore è rivolto ai lavoratori di aziende operanti in settori a basso rischio (uffici, commercio, servizi), in conformità all'Art. 37 del D.Lgs. 81/08.
-
-        Il corso approfondisce i rischi specifici legati all'ambiente di lavoro "ufficio" e alle attività del settore terziario, focalizzandosi su ergonomia, stress lavoro-correlato e sicurezza elettrica.
-
-        Programma del corso:
-        - Rischi infortuni e meccanici generali
-        - Ergonomia della postazione di lavoro e videoterminali
-        - Stress lavoro-correlato e benessere organizzativo
-        - Microclima, illuminazione e ambiente di lavoro
-        - Procedure di emergenza e primo soccorso
-
-        Destinatari:
-        Lavoratori di aziende a rischio basso (commercio, uffici, servizi, turismo).
-
-        Durata:
-        4 ore (da aggiungere alle 4 ore di formazione generale).
-
-        Aggiornamento:
-        Obbligatorio ogni 5 anni (durata 6 ore).
-      `,
-      duration: "4 ore",
-      group: "Sicurezza Lavoratori"
-    },
-    {
-      id: "formazione-medio-alto",
-      title: "Corso Formazione Specifica Lavoratori Rischio Medio/Alto – 8/12 ore",
-      preview: "Il Corso di Formazione Specifica Rischio Medio/Alto (8-12 ore) è obbligatorio per i lavoratori di settori complessi come industria, edilizia, sanità e chimica, secondo l'Art. 37 del D.Lgs. 81/08.",
-      fullDescription: `
-        Il Corso di Formazione Specifica Rischio Medio/Alto (8-12 ore) è obbligatorio per i lavoratori di settori complessi come industria, edilizia, sanità e chimica, secondo l'Art. 37 del D.Lgs. 81/08.
-
-        La formazione analizza nel dettaglio i pericoli reali del cantiere, della fabbrica o del reparto, fornendo gli strumenti pratici per mitigare i rischi e utilizzare correttamente i DPI di III categoria.
-
-        Programma del corso:
-        - Rischi meccanici, elettrici e tecnologici
-        - Agenti chimici, fisici e biologici
-        - Movimentazione manuale dei carichi e merci
-        - Utilizzo di macchine e attrezzature specifiche
-        - Lavori in quota e ambienti confinati
-        - Procedure operative di sicurezza e DPI
-
-        Destinatari:
-        Lavoratori di aziende a rischio medio (8 ore) o alto (12 ore).
-
-        Durata:
-        8 o 12 ore (da aggiungere alle 4 ore di formazione generale).
-
-        Aggiornamento:
-        Obbligatorio ogni 5 anni (durata 6 ore).
-      `,
-      duration: "8 - 12 ore",
-      group: "Sicurezza Lavoratori"
-    },
-    {
-      id: "corso-atmosfere-esplosive-atex",
-      title: "Corso Atmosfere Esplosive – ATEX",
-      preview: "Il Corso Atmosfere Esplosive – ATEX è rivolto ai lavoratori che operano in ambienti con rischio di esplosione, in conformità al D.Lgs. 81/08.",
-      fullDescription: `
-        Il Corso Atmosfere Esplosive – ATEX è rivolto ai lavoratori che operano in ambienti con rischio di esplosione, in conformità al D.Lgs. 81/08.
+        Attestato:
+        Al termine del corso viene rilasciato attestato di partecipazione alla formazione sulla gestione dell’evacuazione di emergenza, in conformità al D.Lgs. 81/08.
       `,
       duration: "8 ore",
-      group: "ATEX"
+      group: "Emergenze"
+    },
+    {
+      id: "aggiornamento-evacuatore-emergenza",
+      title: "Aggiornamento Evacuatore di Emergenza – 4 ore",
+      preview: "Il Corso di Aggiornamento Evacuatore di Emergenza – 4 ore è rivolto ai lavoratori incaricati di supportare le operazioni di evacuazione durante le situazioni di emergenza.",
+      fullDescription: `
+        Il Corso di Aggiornamento Evacuatore di Emergenza – 4 ore è rivolto ai lavoratori incaricati di supportare le operazioni di evacuazione durante le situazioni di emergenza, con particolare attenzione all’assistenza di persone con mobilità ridotta o disabilità presenti nei luoghi di lavoro.
+
+        La formazione rientra tra le attività previste dal Decreto Legislativo 81/2008, che stabilisce l’obbligo per il datore di lavoro di organizzare adeguate procedure di emergenza ed evacuazione e di garantire la sicurezza di tutti i lavoratori e delle persone presenti.
+
+        Il corso di aggiornamento ha l’obiettivo di mantenere e rafforzare le competenze operative degli evacuatori di emergenza, attraverso il ripasso delle procedure di evacuazione, delle tecniche di assistenza alle persone con difficoltà di movimento e dell’utilizzo delle attrezzature dedicate.
+
+        Durante la formazione vengono inoltre approfondite le procedure operative previste nel Piano di Emergenza ed Evacuazione aziendale, con esercitazioni pratiche finalizzate a migliorare la capacità di intervento e la gestione delle situazioni di emergenza.
+
+        Programma del corso:
+        - Aggiornamento normativo sulla gestione delle emergenze nei luoghi di lavoro
+        - Ripasso delle procedure di evacuazione
+        - Ruolo e responsabilità dell’evacuatore di emergenza
+        - Tecniche di evacuazione assistita
+        - Gestione delle persone con mobilità ridotta o disabilità
+        - Utilizzo delle sedie di evacuazione e delle attrezzature dedicate
+        - Comunicazione e coordinamento durante l’emergenza
+        - Esercitazioni pratiche e simulazioni di evacuazione
+
+        Destinatari:
+        Lavoratori incaricati di supportare le procedure di evacuazione durante le emergenze e che devono effettuare l’aggiornamento periodico della formazione.
+
+        Durata:
+        4 ore di aggiornamento, con moduli teorici ed esercitazioni pratiche.
+
+        Attestato:
+        Al termine del corso viene rilasciato attestato di aggiornamento della formazione per evacuatore di emergenza, in conformità al Decreto Legislativo 81/2008.
+      `,
+      duration: "4 ore",
+      group: "Emergenze"
+    },
+    {
+      id: "corso-apvr",
+      title: "Corso Respirazione e Utilizzo dell’Autorespiratore (APVR) – 8 ore",
+      preview: "Il Corso Respirazione e Utilizzo dell’Autorespiratore (APVR) – 8 ore è rivolto ai lavoratori che operano in ambienti in cui possono essere presenti atmosfere pericolose.",
+      fullDescription: `
+        Il Corso Respirazione e Utilizzo dell’Autorespiratore (APVR) – 8 ore è rivolto ai lavoratori che operano in ambienti in cui possono essere presenti atmosfere pericolose, carenza di ossigeno o sostanze tossiche, e che devono utilizzare dispositivi di protezione delle vie respiratorie per svolgere le attività in sicurezza.
+
+        La formazione è prevista dal Decreto Legislativo 81/2008, in particolare dall’art. 77 relativo all’uso dei Dispositivi di Protezione Individuale (DPI), che stabilisce l’obbligo di fornire ai lavoratori formazione e addestramento adeguati per l’utilizzo dei DPI di III categoria.
+
+        Il corso ha l’obiettivo di fornire ai partecipanti le conoscenze teoriche e le competenze pratiche necessarie per utilizzare correttamente gli autorespiratori e gli altri dispositivi di protezione delle vie respiratorie, garantendo la sicurezza degli operatori durante le attività svolte in ambienti a rischio.
+
+        Durante la formazione vengono approfonditi i principali rischi legati alla presenza di gas tossici, vapori pericolosi, atmosfere contaminate o carenza di ossigeno, nonché le modalità di utilizzo, controllo e manutenzione degli autorespiratori e dei dispositivi di protezione respiratoria.
+
+        Il percorso formativo prevede inoltre esercitazioni pratiche, fondamentali per acquisire dimestichezza con l’utilizzo delle attrezzature, la vestizione dei dispositivi e le procedure operative in situazioni di emergenza.
+
+        Programma del corso:
+        - Normativa di riferimento sull’uso dei DPI
+        - Rischi legati alle atmosfere pericolose e alla carenza di ossigeno
+        - Tipologie di dispositivi di protezione delle vie respiratorie
+        - Caratteristiche e funzionamento degli autorespiratori (APVR)
+        - Procedure di utilizzo, controllo e manutenzione dei dispositivi
+        - Vestizione e verifica dell’efficienza dell’autorespiratore
+        - Procedure operative in ambienti a rischio
+        - Gestione delle emergenze
+        - Esercitazioni pratiche con autorespiratori
+
+        Destinatari:
+        Lavoratori che operano in ambienti a rischio di atmosfere pericolose o contaminazione dell’aria e che devono utilizzare autorespiratori o altri dispositivi di protezione delle vie respiratorie.
+
+        Durata:
+        8 ore di formazione, con moduli teorici ed esercitazioni pratiche.
+
+        Attestato:
+        Al termine del corso, previa partecipazione alle attività formative e verifica dell’apprendimento, viene rilasciato attestato di formazione sull’utilizzo dei dispositivi di protezione delle vie respiratorie, in conformità al Decreto Legislativo 81/2008.
+      `,
+      duration: "8 ore",
+      group: "DPI III Categoria"
+    },
+    {
+      id: "aggiornamento-apvr",
+      title: "Aggiornamento Respirazione e Utilizzo dell’Autorespiratore (APVR) – 4 ore",
+      preview: "Il Corso di Aggiornamento Respirazione e Utilizzo dell’Autorespiratore (APVR) – 4 ore è rivolto ai lavoratori che utilizzano dispositivi di protezione delle vie respiratorie.",
+      fullDescription: `
+        Il Corso di Aggiornamento Respirazione e Utilizzo dell’Autorespiratore (APVR) – 4 ore è rivolto ai lavoratori che utilizzano dispositivi di protezione delle vie respiratorie, in particolare autorespiratori, durante attività svolte in ambienti con atmosfere potenzialmente pericolose o carenza di ossigeno.
+
+        La formazione rientra tra gli obblighi previsti dal Decreto Legislativo 81/2008, in particolare dall’art. 77 relativo all’uso dei Dispositivi di Protezione Individuale (DPI), che stabilisce la necessità di fornire ai lavoratori formazione e addestramento adeguati e aggiornati per l’utilizzo dei DPI di III categoria.
+
+        Il corso di aggiornamento ha l’obiettivo di mantenere e rafforzare le competenze operative degli operatori, attraverso il ripasso delle procedure di utilizzo degli autorespiratori, la verifica delle condizioni di sicurezza e l’addestramento pratico all’impiego dei dispositivi di protezione delle vie respiratorie.
+
+        Durante la formazione vengono inoltre analizzati i principali rischi legati alla presenza di gas tossici, vapori pericolosi o atmosfere contaminate, con particolare attenzione alle procedure di sicurezza e alle modalità di intervento in caso di emergenza.
+
+        Il percorso prevede una significativa componente pratica, con esercitazioni dedicate alla vestizione, al controllo e all’utilizzo degli autorespiratori in condizioni operative simulate.
+
+        Programma del corso:
+        - Aggiornamento normativo sull’utilizzo dei DPI
+        - Ripasso dei rischi legati alle atmosfere pericolose
+        - Tipologie di dispositivi di protezione delle vie respiratorie
+        - Verifica e controllo degli autorespiratori (APVR)
+        - Procedure di utilizzo e manutenzione dei dispositivi
+        - Vestizione e controllo funzionale dell’autorespiratore
+        - Procedure operative in ambienti a rischio
+        - Gestione delle emergenze
+        - Esercitazioni pratiche
+
+        Destinatari:
+        Lavoratori che utilizzano autorespiratori o dispositivi di protezione delle vie respiratorie durante attività svolte in ambienti a rischio.
+
+        Durata:
+        4 ore di aggiornamento, con moduli teorici ed esercitazioni pratiche.
+
+        Attestato:
+        Al termine del corso viene rilasciato attestato di aggiornamento sull’utilizzo dei dispositivi di protezione delle vie respiratorie, in conformità al Decreto Legislativo 81/2008.
+      `,
+      duration: "4 ore",
+      group: "DPI III Categoria"
     }
   ];
 
@@ -1950,7 +2025,7 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
 
       <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
         {courses8108.map((course, index) => {
-          const isSpecialPage = ["1", "2", "3", "4", "5", "6", "ps-a", "ps-bc", "aggiornamento-ps-a", "aggiornamento-ps-bc", "19", "20", "formazione-medio-alto", "corso-spazi-confinati", "corso-spazi-confinati-preposti", "aggiornamento-spazi-confinati", "aggiornamento-spazi-confinati-preposti", "corso-dpi-terza-categoria-lavori-quota", "aggiornamento-dpi-terza-categoria-lavori-quota", "corso-lavoratori-rischio-basso-uffici", "corso-lavoratori-generale-specifica-basso", "corso-lavoratori-generale-specifica-basso-uffici", "aggiornamento-lavoratori", "corso-lavori-su-funi", "aggiornamento-lavori-su-funi", "corso-preposto-lavori-su-funi", "aggiornamento-preposto-lavori-su-funi", "corso-atmosfere-esplosive-atex", "corso-ponteggi", "aggiornamento-corso-ponteggi"].includes(course.id || "");
+          const isSpecialPage = ["1", "2", "3", "4", "5", "6", "ps-a", "ps-bc", "aggiornamento-ps-a", "aggiornamento-ps-bc", "19", "20", "formazione-medio-alto", "corso-spazi-confinati", "corso-spazi-confinati-preposti", "aggiornamento-spazi-confinati", "aggiornamento-spazi-confinati-preposti", "corso-dpi-terza-categoria-lavori-quota", "aggiornamento-dpi-terza-categoria-lavori-quota", "corso-lavoratori-rischio-basso-uffici", "corso-lavoratori-generale-specifica-basso", "corso-lavoratori-generale-specifica-basso-uffici", "aggiornamento-lavoratori", "corso-lavori-su-funi", "aggiornamento-lavori-su-funi", "corso-preposto-lavori-su-funi", "aggiornamento-preposto-lavori-su-funi", "corso-atmosfere-esplosive-atex", "corso-ponteggi", "aggiornamento-corso-ponteggi", "corso-evacuatore-emergenza", "aggiornamento-evacuatore-emergenza", "corso-apvr", "aggiornamento-apvr", "blsd-dae"].includes(course.id || "");
           
           const handleNavigation = () => {
             if (course.id === "1") setCurrentView('antincendio-l1');
@@ -1979,6 +2054,11 @@ const DLGS8108Section = ({ setCurrentView }: { setCurrentView: (view: any) => vo
             else if (course.id === "corso-ponteggi") setCurrentView('corso-ponteggi');
             else if (course.id === "aggiornamento-corso-ponteggi") setCurrentView('aggiornamento-corso-ponteggi');
             else if (course.id === "corso-atmosfere-esplosive-atex") setCurrentView('corso-atmosfere-esplosive-atex');
+            else if (course.id === "corso-evacuatore-emergenza") setCurrentView('corso-evacuatore-emergenza');
+            else if (course.id === "aggiornamento-evacuatore-emergenza") setCurrentView('aggiornamento-evacuatore-emergenza');
+            else if (course.id === "corso-apvr") setCurrentView('corso-apvr');
+            else if (course.id === "aggiornamento-apvr") setCurrentView('aggiornamento-apvr');
+            else if (course.id === "blsd-dae") setCurrentView('corso-blsd');
           };
 
           return (
@@ -2379,6 +2459,9 @@ const CatalogSection = ({
 
   const filteredCourses = useMemo(() => {
     return courses.filter(course => {
+      // Escludi BLSD dal catalogo e-learning
+      if (course.id === "blsd-dae") return false;
+
       const matchesCategory = 
         (selectedCategory === "Tutti i corsi" && course.category !== "Corsi per Professionisti" && course.category !== "Soft Skills") || 
         (selectedCategory === "Corsi E-learning" && course.category !== "Corsi per Professionisti" && course.category !== "Soft Skills") ||
@@ -2467,7 +2550,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto' | 'corso-haccp' | 'corso-haccp-addetto-manipolazione' | 'corso-haccp-responsabile-aggiornamento' | 'corso-haccp-addetto-manipolazione-aggiornamento' | 'corso-haccp-responsabile' | 'corso-haccp-addetto-non-manipolazione' | 'corso-datore-di-lavoro' | 'corso-datore-di-lavoro-rspp-basso' | 'corso-datore-di-lavoro-rspp-medio' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-diisocianati' | 'corso-diisocianati-base' | 'corso-diisocianati-intermedio' | 'corso-diisocianati-avanzato' | 'corso-lavoratori-rischio-basso-uffici' | 'corso-lavoratori-generale-specifica-basso' | 'corso-lavoratori-generale-specifica-basso-uffici' | 'aggiornamento-lavoratori' | 'corso-privacy-incaricato-trattamento-dati' | 'corso-privacy-sanitario' | 'corso-videoterminali' | 'corso-microclima' | 'corso-rumore' | 'corso-vibrazioni' | 'corso-carrelli-elevatori-teorico' | 'corso-ple-teorico' | 'corso-trattori-agricoli-teorico' | 'corso-macchine-movimento-terra-teorico' | 'corso-gru-autocarro-teorico' | 'corso-gru-mobili-teorico' | 'corso-gru-torre-teorico' | 'corso-pompe-calcestruzzo-teorico' | 'corso-pes-pav-pei' | 'aggiornamento-pes-pav-pei' | 'corso-atmosfere-esplosive-atex' | 'corso-spazi-confinati' | 'corso-spazi-confinati-preposti' | 'aggiornamento-spazi-confinati' | 'aggiornamento-spazi-confinati-preposti' | 'corso-dpi-terza-categoria-lavori-quota' | 'aggiornamento-dpi-terza-categoria-lavori-quota' | 'corso-lavori-su-funi' | 'aggiornamento-lavori-su-funi' | 'corso-preposto-lavori-su-funi' | 'corso-stress-lavoro-correlato' | 'corso-rischio-biologico' | 'corso-rischio-chimico' | 'corso-rischio-amianto' | 'corso-movimentazione-manuale-carichi' | 'corso-rischio-elettrico'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto' | 'corso-haccp' | 'corso-haccp-addetto-manipolazione' | 'corso-haccp-responsabile-aggiornamento' | 'corso-haccp-addetto-manipolazione-aggiornamento' | 'corso-haccp-responsabile' | 'corso-haccp-addetto-non-manipolazione' | 'corso-datore-di-lavoro' | 'corso-datore-di-lavoro-rspp-basso' | 'corso-datore-di-lavoro-rspp-medio' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-diisocianati' | 'corso-diisocianati-base' | 'corso-diisocianati-intermedio' | 'corso-diisocianati-avanzato' | 'corso-lavoratori-rischio-basso-uffici' | 'corso-lavoratori-generale-specifica-basso' | 'corso-lavoratori-generale-specifica-basso-uffici' | 'aggiornamento-lavoratori' | 'corso-privacy-incaricato-trattamento-dati' | 'corso-privacy-sanitario' | 'corso-videoterminali' | 'corso-microclima' | 'corso-rumore' | 'corso-vibrazioni' | 'corso-carrelli-elevatori-teorico' | 'corso-ple-teorico' | 'corso-trattori-agricoli-teorico' | 'corso-macchine-movimento-terra-teorico' | 'corso-gru-autocarro-teorico' | 'corso-gru-mobili-teorico' | 'corso-gru-torre-teorico' | 'corso-pompe-calcestruzzo-teorico' | 'corso-pes-pav-pei' | 'aggiornamento-pes-pav-pei' | 'corso-atmosfere-esplosive-atex' | 'corso-spazi-confinati' | 'corso-spazi-confinati-preposti' | 'aggiornamento-spazi-confinati' | 'aggiornamento-spazi-confinati-preposti' | 'corso-dpi-terza-categoria-lavori-quota' | 'aggiornamento-dpi-terza-categoria-lavori-quota' | 'corso-lavori-su-funi' | 'aggiornamento-lavori-su-funi' | 'corso-preposto-lavori-su-funi' | 'corso-stress-lavoro-correlato' | 'corso-rischio-biologico' | 'corso-rischio-chimico' | 'corso-rischio-amianto' | 'corso-movimentazione-manuale-carichi' | 'corso-rischio-elettrico' | 'corso-rischio-legionella' | 'corso-agenti-cancerogeni-mutageni-teratogeni' | 'corso-rischio-rapina' | 'corso-rischio-interferenze' | 'corso-radiazioni-ottiche-artificiali' | 'corso-campi-elettromagnetici' | 'corso-rischio-sismico' | 'corso-radiazioni-uv' | 'corso-scariche-atmosferiche' | 'corso-rischio-incendio' | 'corso-evacuatore-emergenza' | 'aggiornamento-evacuatore-emergenza' | 'corso-apvr' | 'aggiornamento-apvr' | 'corso-blsd'>('home');
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showCookieModal, setShowCookieModal] = useState(false);
@@ -2632,6 +2715,36 @@ export default function App() {
       path = '/corso-movimentazione-manuale-carichi';
     } else if (view === 'corso-rischio-elettrico') {
       path = '/corso-rischio-elettrico';
+    } else if (view === 'corso-rischio-legionella') {
+      path = '/corso-rischio-legionella';
+    } else if (view === 'corso-agenti-cancerogeni-mutageni-teratogeni') {
+      path = '/corso-agenti-cancerogeni-mutageni-teratogeni';
+    } else if (view === 'corso-rischio-rapina') {
+      path = '/corso-rischio-rapina';
+    } else if (view === 'corso-rischio-interferenze') {
+      path = '/corso-rischio-interferenze';
+    } else if (view === 'corso-radiazioni-ottiche-artificiali') {
+      path = '/corso-radiazioni-ottiche-artificiali';
+    } else if (view === 'corso-campi-elettromagnetici') {
+      path = '/corso-campi-elettromagnetici';
+    } else if (view === 'corso-rischio-sismico') {
+      path = '/corso-rischio-sismico';
+    } else if (view === 'corso-radiazioni-uv') {
+      path = '/corso-radiazioni-uv';
+    } else if (view === 'corso-scariche-atmosferiche') {
+      path = '/corso-scariche-atmosferiche';
+    } else if (view === 'corso-rischio-incendio') {
+      path = '/corso-rischio-incendio';
+    } else if (view === 'corso-evacuatore-emergenza') {
+      path = '/corso-evacuatore-emergenza';
+    } else if (view === 'aggiornamento-evacuatore-emergenza') {
+      path = '/aggiornamento-evacuatore-emergenza';
+    } else if (view === 'corso-apvr') {
+      path = '/corso-apvr';
+    } else if (view === 'aggiornamento-apvr') {
+      path = '/aggiornamento-apvr';
+    } else if (view === 'corso-blsd') {
+      path = '/corso-blsd-uso-defibrillatore';
     }
     
     window.history.pushState({ view, category: category || selectedCategory }, '', path);
@@ -2786,6 +2899,36 @@ export default function App() {
       navigateToView('corso-movimentazione-manuale-carichi');
     } else if (course.id === "32") {
       navigateToView('corso-rischio-elettrico');
+    } else if (course.id === "38") {
+      navigateToView('corso-rischio-legionella');
+    } else if (course.id === "27") {
+      navigateToView('corso-agenti-cancerogeni-mutageni-teratogeni');
+    } else if (course.id === "43") {
+      navigateToView('corso-rischio-rapina');
+    } else if (course.id === "36") {
+      navigateToView('corso-rischio-interferenze');
+    } else if (course.id === "41") {
+      navigateToView('corso-radiazioni-ottiche-artificiali');
+    } else if (course.id === "33") {
+      navigateToView('corso-campi-elettromagnetici');
+    } else if (course.id === "45") {
+      navigateToView('corso-rischio-sismico');
+    } else if (course.id === "42") {
+      navigateToView('corso-radiazioni-uv');
+    } else if (course.id === "44") {
+      navigateToView('corso-scariche-atmosferiche');
+    } else if (course.id === "35") {
+      navigateToView('corso-rischio-incendio');
+    } else if (course.id === "corso-evacuatore-emergenza") {
+      navigateToView('corso-evacuatore-emergenza');
+    } else if (course.id === "aggiornamento-evacuatore-emergenza") {
+      navigateToView('aggiornamento-evacuatore-emergenza');
+    } else if (course.id === "corso-apvr") {
+      navigateToView('corso-apvr');
+    } else if (course.id === "aggiornamento-apvr") {
+      navigateToView('aggiornamento-apvr');
+    } else if (course.id === "blsd-dae") {
+      navigateToView('corso-blsd');
     } else if (["65", "64", "68", "69", "70", "71"].includes(course.id)) {
       navigateToView('corso-datore-di-lavoro');
     } else {
@@ -2945,6 +3088,26 @@ export default function App() {
       setCurrentView('corso-movimentazione-manuale-carichi');
     } else if (path === '/corso-rischio-elettrico') {
       setCurrentView('corso-rischio-elettrico');
+    } else if (path === '/corso-rischio-legionella') {
+      setCurrentView('corso-rischio-legionella');
+    } else if (path === '/corso-agenti-cancerogeni-mutageni-teratogeni') {
+      setCurrentView('corso-agenti-cancerogeni-mutageni-teratogeni');
+    } else if (path === '/corso-rischio-rapina') {
+      setCurrentView('corso-rischio-rapina');
+    } else if (path === '/corso-rischio-interferenze') {
+      setCurrentView('corso-rischio-interferenze');
+    } else if (path === '/corso-radiazioni-ottiche-artificiali') {
+      setCurrentView('corso-radiazioni-ottiche-artificiali');
+    } else if (path === '/corso-campi-elettromagnetici') {
+      setCurrentView('corso-campi-elettromagnetici');
+    } else if (path === '/corso-rischio-sismico') {
+      setCurrentView('corso-rischio-sismico');
+    } else if (path === '/corso-radiazioni-uv') {
+      setCurrentView('corso-radiazioni-uv');
+    } else if (path === '/corso-scariche-atmosferiche') {
+      setCurrentView('corso-scariche-atmosferiche');
+    } else if (path === '/corso-rischio-incendio') {
+      setCurrentView('corso-rischio-incendio');
     } else {
       const params = new URLSearchParams(window.location.search);
       const courseId = params.get('corso');
@@ -3424,6 +3587,120 @@ export default function App() {
             if (course) handleCourseOpen(course);
           }}
         />
+      ) : currentView === 'corso-rischio-legionella' ? (
+        <CorsoRischioLegionellaPage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
+      ) : currentView === 'corso-agenti-cancerogeni-mutageni-teratogeni' ? (
+        <CorsoAgentiCancerogeniPage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
+      ) : currentView === 'corso-rischio-rapina' ? (
+        <CorsoRischioRapinaPage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
+      ) : currentView === 'corso-rischio-interferenze' ? (
+        <CorsoRischioInterferenzePage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
+      ) : currentView === 'corso-radiazioni-ottiche-artificiali' ? (
+        <CorsoROAPage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
+      ) : currentView === 'corso-campi-elettromagnetici' ? (
+        <CorsoCEMPage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
+      ) : currentView === 'corso-rischio-sismico' ? (
+        <CorsoRischioSismicoPage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
+      ) : currentView === 'corso-radiazioni-uv' ? (
+        <CorsoRadiazioniUVPage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
+      ) : currentView === 'corso-scariche-atmosferiche' ? (
+        <CorsoScaricheAtmosferichePage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
+      ) : currentView === 'corso-rischio-incendio' ? (
+        <CorsoRischioIncendioPage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
+      ) : currentView === 'corso-evacuatore-emergenza' ? (
+        <CorsoEvacuatoreEmergenzaPage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
+      ) : currentView === 'aggiornamento-evacuatore-emergenza' ? (
+        <AggiornamentoEvacuatoreEmergenzaPage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
+      ) : currentView === 'corso-apvr' ? (
+        <CorsoAPVRPage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
+      ) : currentView === 'aggiornamento-apvr' ? (
+        <AggiornamentoAPVRPage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
+      ) : currentView === 'corso-blsd' ? (
+        <CorsoBLSDPage onNavigate={navigateToView} />
       ) : (
         <DLGS8108Section setCurrentView={navigateToView} />
       )}
