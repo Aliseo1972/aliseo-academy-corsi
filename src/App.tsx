@@ -48,6 +48,8 @@ import AggiornamentoFormazioneLavoratoriPage from './components/AggiornamentoFor
 import FormazioneLavoratoriRischioBassoPage from './components/FormazioneLavoratoriRischioBassoPage';
 import FormazioneSpecificaMedioAltoPage from './components/FormazioneSpecificaMedioAltoPage';
 import CorsoHaccpPage from './components/CorsoHaccpPage';
+import GwoFirstAidPage from './components/GwoFirstAidPage';
+import GwoFirstAidRefreshPage from './components/GwoFirstAidRefreshPage';
 import HaccpAddettoManipolazionePage from './components/HaccpAddettoManipolazionePage';
 import HaccpResponsabileAggiornamentoPage from './components/HaccpResponsabileAggiornamentoPage';
 import HaccpAddettoManipolazioneAggiornamentoPage from './components/HaccpAddettoManipolazioneAggiornamentoPage';
@@ -708,6 +710,16 @@ const GWOTrainingSection = ({ setCurrentView }: { setCurrentView: (view: any) =>
       validity: "2 anni"
     },
     {
+      title: "GWO BST – First Aid Refresher – (FAR)",
+      description: "Aggiornamento biennale Primo Soccorso eolico",
+      content: "Mantenimento e rafforzamento delle competenze di primo soccorso in ambito eolico. Ripasso delle linee guida GWO, RCP, uso del DAE e gestione dei traumi in scenari realistici.",
+      objectives: "Rinnovare la certificazione GWO First Aid e consolidare le abilità pratiche di intervento rapido ed efficace in situazioni di emergenza su turbine eoliche.",
+      target: "Tecnici e operatori già certificati GWO con modulo First Aid in scadenza.",
+      requirements: "Certificazione GWO First Aid valida. Idoneità medica. Età minima 18 anni.",
+      duration: "8 ore",
+      validity: "2 anni"
+    },
+    {
       title: "GWO BST – Manual Handling – (MH)",
       description: "Corso di sicurezza per la movimentazione manuale dei carichi",
       content: "Valutazione e identificazione dei rischi di sviluppo di lesioni muscolo-scheletriche. Comprensione delle pratiche di sicurezza della movimentazione manuale, compresa la corretta movimentazione delle attrezzature in conformità con i requisiti legislativi locali. Identificazione dei segni e dei sintomi di infortuni legati a tecniche di movimentazione manuale inadeguate",
@@ -857,53 +869,61 @@ const GWOTrainingSection = ({ setCurrentView }: { setCurrentView: (view: any) =>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <AnimatePresence mode="popLayout">
           {filteredModules.map((module, index) => (
             <motion.div 
               layout
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              whileHover={{ y: -4 }}
               key={module.title} 
-              className="bg-white rounded-3xl border border-slate-100 p-8 shadow-xl shadow-slate-200/50 flex flex-col h-full"
+              className="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col h-full transition-all hover:shadow-xl hover:border-brand/20 group cursor-default"
             >
-              <div className="flex items-start justify-between mb-6">
-                <div className="w-12 h-12 bg-slate-900 rounded-2xl flex items-center justify-center text-brand shrink-0">
-                  <Shield className="w-6 h-6" />
-                </div>
-                <div className="px-4 py-1.5 bg-slate-900 rounded-full text-[10px] font-bold text-brand uppercase tracking-widest">
-                  {module.duration}
+              <div className="flex justify-between items-start mb-4">
+                <span className="px-3 py-1 bg-slate-900 text-brand text-xs font-semibold rounded-full uppercase tracking-wider">
+                  GWO Training
+                </span>
+                <div className="p-2 bg-slate-900 rounded-lg group-hover:scale-110 transition-transform">
+                  <Shield className="w-5 h-5 text-brand" />
                 </div>
               </div>
               
-              <h2 className="text-xl font-black text-slate-900 uppercase tracking-tight mb-2">
-                {module.title}
-              </h2>
-              <p className="text-slate-900 font-bold text-sm mb-6 uppercase tracking-tight text-outline-yellow">
+              <h3 className="text-lg font-bold text-slate-900 mb-2 flex-grow leading-tight">
+                <span className="group-hover:bg-slate-900 group-hover:text-brand px-2 py-1 -mx-2 rounded-lg transition-all inline-block">
+                  {module.title}
+                </span>
+              </h3>
+              
+              <p className="text-slate-500 text-sm mb-6 line-clamp-2">
                 {module.description}
               </p>
 
-              <div className="space-y-6 flex-grow">
-                <div>
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Contenuto</h4>
-                  <p className="text-slate-600 text-sm leading-relaxed">{module.content}</p>
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center text-slate-500 text-sm">
+                  <Clock className="w-4 h-4 mr-2 text-slate-400" />
+                  <span>{module.duration}</span>
                 </div>
-                <div>
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Obiettivi formativi</h4>
-                  <p className="text-slate-600 text-sm leading-relaxed">{module.objectives}</p>
-                </div>
-                <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-50">
-                  <div>
-                    <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Requisiti</h4>
-                    <p className="text-slate-700 text-xs font-medium">{module.requirements}</p>
-                  </div>
-                  <div>
-                    <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Validità</h4>
-                    <p className="text-slate-700 text-xs font-medium">{module.validity}</p>
-                  </div>
+                <div className="inline-flex items-center bg-slate-900 px-3 py-1.5 rounded-lg text-price-yellow font-bold text-lg w-fit">
+                  <Euro className="w-5 h-5 mr-1" />
+                  <span>Su richiesta</span>
                 </div>
               </div>
+              
+              <button 
+                onClick={() => {
+                  if (module.title.includes("First Aid Refresher")) {
+                    setCurrentView('gwo-first-aid-refresher');
+                  } else if (module.title.includes("First Aid")) {
+                    setCurrentView('gwo-first-aid');
+                  }
+                }}
+                className="w-full py-3 px-4 bg-slate-900 text-white rounded-xl font-medium flex items-center justify-center group/btn hover:bg-brand hover:text-brand-dark transition-all cursor-pointer"
+              >
+                Scopri di più
+                <ChevronRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+              </button>
             </motion.div>
           ))}
         </AnimatePresence>
@@ -2550,7 +2570,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto' | 'corso-haccp' | 'corso-haccp-addetto-manipolazione' | 'corso-haccp-responsabile-aggiornamento' | 'corso-haccp-addetto-manipolazione-aggiornamento' | 'corso-haccp-responsabile' | 'corso-haccp-addetto-non-manipolazione' | 'corso-datore-di-lavoro' | 'corso-datore-di-lavoro-rspp-basso' | 'corso-datore-di-lavoro-rspp-medio' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-diisocianati' | 'corso-diisocianati-base' | 'corso-diisocianati-intermedio' | 'corso-diisocianati-avanzato' | 'corso-lavoratori-rischio-basso-uffici' | 'corso-lavoratori-generale-specifica-basso' | 'corso-lavoratori-generale-specifica-basso-uffici' | 'aggiornamento-lavoratori' | 'corso-privacy-incaricato-trattamento-dati' | 'corso-privacy-sanitario' | 'corso-videoterminali' | 'corso-microclima' | 'corso-rumore' | 'corso-vibrazioni' | 'corso-carrelli-elevatori-teorico' | 'corso-ple-teorico' | 'corso-trattori-agricoli-teorico' | 'corso-macchine-movimento-terra-teorico' | 'corso-gru-autocarro-teorico' | 'corso-gru-mobili-teorico' | 'corso-gru-torre-teorico' | 'corso-pompe-calcestruzzo-teorico' | 'corso-pes-pav-pei' | 'aggiornamento-pes-pav-pei' | 'corso-atmosfere-esplosive-atex' | 'corso-spazi-confinati' | 'corso-spazi-confinati-preposti' | 'aggiornamento-spazi-confinati' | 'aggiornamento-spazi-confinati-preposti' | 'corso-dpi-terza-categoria-lavori-quota' | 'aggiornamento-dpi-terza-categoria-lavori-quota' | 'corso-lavori-su-funi' | 'aggiornamento-lavori-su-funi' | 'corso-preposto-lavori-su-funi' | 'corso-stress-lavoro-correlato' | 'corso-rischio-biologico' | 'corso-rischio-chimico' | 'corso-rischio-amianto' | 'corso-movimentazione-manuale-carichi' | 'corso-rischio-elettrico' | 'corso-rischio-legionella' | 'corso-agenti-cancerogeni-mutageni-teratogeni' | 'corso-rischio-rapina' | 'corso-rischio-interferenze' | 'corso-radiazioni-ottiche-artificiali' | 'corso-campi-elettromagnetici' | 'corso-rischio-sismico' | 'corso-radiazioni-uv' | 'corso-scariche-atmosferiche' | 'corso-rischio-incendio' | 'corso-evacuatore-emergenza' | 'aggiornamento-evacuatore-emergenza' | 'corso-apvr' | 'aggiornamento-apvr' | 'corso-blsd'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto' | 'corso-haccp' | 'corso-haccp-addetto-manipolazione' | 'corso-haccp-responsabile-aggiornamento' | 'corso-haccp-addetto-manipolazione-aggiornamento' | 'corso-haccp-responsabile' | 'corso-haccp-addetto-non-manipolazione' | 'corso-datore-di-lavoro' | 'corso-datore-di-lavoro-rspp-basso' | 'corso-datore-di-lavoro-rspp-medio' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-diisocianati' | 'corso-diisocianati-base' | 'corso-diisocianati-intermedio' | 'corso-diisocianati-avanzato' | 'corso-lavoratori-rischio-basso-uffici' | 'corso-lavoratori-generale-specifica-basso' | 'corso-lavoratori-generale-specifica-basso-uffici' | 'aggiornamento-lavoratori' | 'corso-privacy-incaricato-trattamento-dati' | 'corso-privacy-sanitario' | 'corso-videoterminali' | 'corso-microclima' | 'corso-rumore' | 'corso-vibrazioni' | 'corso-carrelli-elevatori-teorico' | 'corso-ple-teorico' | 'corso-trattori-agricoli-teorico' | 'corso-macchine-movimento-terra-teorico' | 'corso-gru-autocarro-teorico' | 'corso-gru-mobili-teorico' | 'corso-gru-torre-teorico' | 'corso-pompe-calcestruzzo-teorico' | 'corso-pes-pav-pei' | 'aggiornamento-pes-pav-pei' | 'corso-atmosfere-esplosive-atex' | 'corso-spazi-confinati' | 'corso-spazi-confinati-preposti' | 'aggiornamento-spazi-confinati' | 'aggiornamento-spazi-confinati-preposti' | 'corso-dpi-terza-categoria-lavori-quota' | 'aggiornamento-dpi-terza-categoria-lavori-quota' | 'corso-lavori-su-funi' | 'aggiornamento-lavori-su-funi' | 'corso-preposto-lavori-su-funi' | 'corso-stress-lavoro-correlato' | 'corso-rischio-biologico' | 'corso-rischio-chimico' | 'corso-rischio-amianto' | 'corso-movimentazione-manuale-carichi' | 'corso-rischio-elettrico' | 'corso-rischio-legionella' | 'corso-agenti-cancerogeni-mutageni-teratogeni' | 'corso-rischio-rapina' | 'corso-rischio-interferenze' | 'corso-radiazioni-ottiche-artificiali' | 'corso-campi-elettromagnetici' | 'corso-rischio-sismico' | 'corso-radiazioni-uv' | 'corso-scariche-atmosferiche' | 'corso-rischio-incendio' | 'corso-evacuatore-emergenza' | 'aggiornamento-evacuatore-emergenza' | 'corso-apvr' | 'aggiornamento-apvr' | 'corso-blsd' | 'gwo-first-aid' | 'gwo-first-aid-refresher'>('home');
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showCookieModal, setShowCookieModal] = useState(false);
@@ -2745,6 +2765,10 @@ export default function App() {
       path = '/aggiornamento-apvr';
     } else if (view === 'corso-blsd') {
       path = '/corso-blsd-uso-defibrillatore';
+    } else if (view === 'gwo-first-aid') {
+      path = '/corso-gwo-bst-first-aid';
+    } else if (view === 'gwo-first-aid-refresher') {
+      path = '/corso-gwo-bst-first-aid-refresher';
     }
     
     window.history.pushState({ view, category: category || selectedCategory }, '', path);
@@ -3701,6 +3725,10 @@ export default function App() {
         />
       ) : currentView === 'corso-blsd' ? (
         <CorsoBLSDPage onNavigate={navigateToView} />
+      ) : currentView === 'gwo-first-aid' ? (
+        <GwoFirstAidPage onNavigate={navigateToView} />
+      ) : currentView === 'gwo-first-aid-refresher' ? (
+        <GwoFirstAidRefreshPage onNavigate={navigateToView} />
       ) : (
         <DLGS8108Section setCurrentView={navigateToView} />
       )}
