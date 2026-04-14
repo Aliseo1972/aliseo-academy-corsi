@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import DeliveryMethods from './DeliveryMethods';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, HeartPulse, Scale, MapPin, Shield } from 'lucide-react';
+import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, HeartPulse, Scale, MapPin, Shield, Flame } from 'lucide-react';
 
 interface GwoFirstAidPageProps {
   onNavigate: (view: any) => void;
@@ -280,10 +280,10 @@ const GwoFirstAidPage: React.FC<GwoFirstAidPageProps> = ({ onNavigate }) => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
+              { title: "GWO Fire Awareness", desc: "Antincendio eolico", view: 'gwo-fire-awareness', icon: Flame },
               { title: "GWO First Aid Refresher", desc: "Aggiornamento 8 ore", view: 'gwo-first-aid-refresher', icon: Shield },
-              { title: "GWO Working at Heights", desc: "Lavoro in quota eolico", view: 'gwo-training', icon: Shield },
-              { title: "GWO Manual Handling", desc: "Movimentazione carichi", view: 'gwo-training', icon: Users },
-              { title: "Primo Soccorso A", desc: "Aziendale 16 ore", view: 'corso-primo-soccorso-gruppo-a', icon: HeartPulse },
+              { title: "GWO Manual Handling", desc: "Movimentazione carichi", view: 'gwo-manual-handling', icon: Users },
+              { title: "GWO Working at Heights", desc: "Lavoro in quota eolico", view: 'gwo-working-at-heights', icon: Shield },
             ].map((item, i) => (
               <button 
                 key={i}

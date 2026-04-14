@@ -1,23 +1,23 @@
 import React, { useEffect } from 'react';
 import DeliveryMethods from './DeliveryMethods';
 import { motion } from 'motion/react';
-import { Clock, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, HeartPulse, Shield, Flame } from 'lucide-react';
+import { Clock, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Shield, Flame } from 'lucide-react';
 
-interface GwoFirstAidRefreshPageProps {
+interface GwoManualHandlingRefreshPageProps {
   onNavigate: (view: any) => void;
 }
 
-const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavigate }) => {
+const GwoManualHandlingRefreshPage: React.FC<GwoManualHandlingRefreshPageProps> = ({ onNavigate }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "GWO BST First Aid Refresher - Aggiornamento Primo Soccorso Eolico | Aliseo Academy";
+    document.title = "GWO BST Manual Handling Refresher (MH) - Aggiornamento Movimentazione Manuale Carichi | Aliseo Academy";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Corso di aggiornamento GWO BST First Aid Refresher. Rinnova la tua certificazione GWO per il primo soccorso in ambito eolico con formazione pratica e simulazioni.");
+      metaDescription.setAttribute('content', "Corso di aggiornamento GWO BST Manual Handling Refresher (MH). Rinnova la tua certificazione GWO per la movimentazione manuale dei carichi nel settore eolico.");
     }
   }, []);
 
-  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20GWO%20BST%20First%20Aid%20Refresher&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20GWO%20BST%20First%20Aid%20Refresher%20(Aggiornamento%20Primo%20Soccorso).%0APotrei%20avere%20maggiori%20informazioni%20su%20modalit%C3%A0%2C%20prossime%20date%20e%20costi%3F%0A%0AGrazie.";
+  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20GWO%20BST%20Manual%20Handling%20Refresher&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20GWO%20BST%20Manual%20Handling%20Refresher%20(MH).%0APotrei%20avere%20maggiori%20informazioni%20su%20modalit%C3%A0%2C%20prossime%20date%20e%20costi%3F%0A%0AGrazie.";
 
   return (
     <div className="bg-white min-h-screen">
@@ -42,7 +42,7 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6"
             >
-              GWO BST – <span className="text-brand">First Aid Refresher</span>
+              GWO BST – <span className="text-brand">Manual Handling Refresher</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -50,7 +50,7 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Corso di aggiornamento GWO First Aid per mantenere e rafforzare le competenze di primo soccorso in ambito eolico, con focus su pratica, rapidità di intervento e gestione delle emergenze.
+              Corso di aggiornamento GWO Manual Handling (MH) per il rinnovo della certificazione. Consente di mantenere le competenze necessarie per la movimentazione manuale dei carichi in sicurezza nel settore eolico.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -78,7 +78,7 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
               <div className="flex items-center gap-4 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm w-fit">
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5 text-brand" />
-                  <span className="text-white font-bold">8 ore (1 giorno)</span>
+                  <span className="text-white font-bold">3-4 ore (0.5 giorni)</span>
                 </div>
                 <div className="w-px h-6 bg-white/10" />
                 <div className="flex items-center gap-2">
@@ -100,20 +100,20 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  Mantenimento delle competenze di soccorso
+                  Mantenimento delle competenze ergonomiche
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Il corso <strong>GWO BST – First Aid Refresher</strong> è rivolto a tutti i professionisti del settore eolico che necessitano di rinnovare la propria certificazione e mantenere aggiornate le competenze di primo soccorso.
+                    Il corso <strong>GWO BST Manual Handling Refresher (MH)</strong> è il modulo di aggiornamento previsto dagli standard Global Wind Organisation (GWO) per il mantenimento della certificazione relativa alla movimentazione manuale dei carichi.
                   </p>
                   <p>
-                    Durante il corso, i partecipanti riprenderanno e consolideranno le tecniche fondamentali di intervento in caso di emergenza medica, con particolare attenzione alla rapidità decisionale, alla corretta applicazione delle procedure e alla sicurezza operativa.
+                    Questo corso è rivolto a lavoratori che hanno già completato il modulo base e necessitano di rinnovare le proprie competenze entro la scadenza prevista, garantendo così continuità operativa nel settore eolico.
                   </p>
                   <p>
-                    L’approccio è fortemente pratico e basato su scenari realistici, tipici dell’ambiente eolico, dove l’intervento immediato può fare la differenza. Le esercitazioni includono simulazioni di emergenze, utilizzo del defibrillatore (AED), rianimazione cardiopolmonare (RCP) e gestione di traumi e infortuni.
+                    Durante la formazione, i partecipanti ripassano i principi fondamentali della movimentazione manuale, con particolare attenzione alle tecniche corrette di sollevamento, alle posture ergonomiche e alla prevenzione degli infortuni muscolo-scheletrici.
                   </p>
                   <p>
-                    Il corso segue gli standard della <strong>Global Wind Organisation (GWO)</strong> e garantisce il mantenimento della certificazione, assicurando che il personale sia sempre preparato ad affrontare situazioni critiche in modo efficace e sicuro.
+                    Il corso è fortemente orientato alla pratica e prevede esercitazioni mirate, simulazioni di situazioni reali e correzione dei comportamenti non sicuri, al fine di rafforzare le buone abitudini operative.
                   </p>
                 </div>
               </article>
@@ -131,9 +131,9 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                     <ul className="space-y-3">
                       {[
-                        "Tecnici e operatori del settore eolico già certificati GWO",
-                        "Personale con certificazione GWO First Aid in scadenza",
-                        "Lavoratori che devono rinnovare il modulo BST First Aid"
+                        "Lavoratori del settore eolico con certificazione GWO MH in scadenza",
+                        "Tecnici e operatori onshore e offshore",
+                        "Personale che deve rinnovare il modulo BST Manual Handling"
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-3 text-slate-600">
                           <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
@@ -151,12 +151,12 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      "Rinfrescare e consolidare le competenze di primo soccorso",
-                      "Intervenire in modo rapido ed efficace in emergenza",
-                      "Eseguire correttamente la RCP (linee guida aggiornate)",
-                      "Utilizzare il defibrillatore (AED) in sicurezza",
-                      "Gestire traumi, emorragie e situazioni critiche",
-                      "Applicare le procedure GWO in modo corretto"
+                      "Applicare correttamente le tecniche di movimentazione",
+                      "Riconoscere e ridurre i rischi legati ai carichi",
+                      "Mantenere posture ergonomiche corrette",
+                      "Operare in sicurezza secondo standard GWO",
+                      "Rinfrescare le buone abitudini operative",
+                      "Prevenire infortuni muscolo-scheletrici"
                     ].map((obj, i) => (
                       <div key={i} className="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
@@ -171,30 +171,31 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
                     Programma di Aggiornamento
                   </h3>
-                  <div className="space-y-4">
-                    {[
-                      { 
-                        title: "Revisione Linee Guida", 
-                        content: "Ripasso delle linee guida GWO First Aid, valutazione della scena e sicurezza del soccorritore, valutazione primaria e secondaria (ABC)." 
-                      },
-                      { 
-                        title: "Manovre Salvavita", 
-                        content: "Rianimazione cardiopolmonare (RCP), utilizzo del defibrillatore (AED) in sicurezza." 
-                      },
-                      { 
-                        title: "Gestione Emergenze", 
-                        content: "Gestione delle emergenze mediche principali, trattamento di ferite, emorragie e traumi." 
-                      },
-                      { 
-                        title: "Scenari Pratici", 
-                        content: "Esercitazioni pratiche e simulazioni realistiche in ambiente eolico, valutazione finale delle competenze." 
-                      }
-                    ].map((item, i) => (
-                      <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-                        <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
-                        <p className="text-sm text-slate-500 leading-relaxed">{item.content}</p>
-                      </div>
-                    ))}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                      <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <div className="w-1 h-4 bg-brand rounded-full" />
+                        Ripasso Teorico
+                      </h4>
+                      <ul className="space-y-2 text-sm text-slate-500">
+                        <li>• Principi di ergonomia</li>
+                        <li>• Rischi nella movimentazione</li>
+                        <li>• Tecniche corrette di sollevamento</li>
+                        <li>• Analisi degli errori comuni</li>
+                      </ul>
+                    </div>
+                    <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                      <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <div className="w-1 h-4 bg-brand rounded-full" />
+                        Esercitazioni Pratiche
+                      </h4>
+                      <ul className="space-y-2 text-sm text-slate-500">
+                        <li>• Esercizi di movimentazione sicura</li>
+                        <li>• Tecniche individuali e di gruppo</li>
+                        <li>• Simulazioni operative reali</li>
+                        <li>• Correzione posture e movimenti</li>
+                      </ul>
+                    </div>
                   </div>
                 </section>
               </div>
@@ -214,7 +215,7 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">8 ore (1 giorno)</p>
+                      <p className="text-white font-bold">3-4 ore</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -232,7 +233,7 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">GWO First Aid Refresher</p>
+                      <p className="text-white font-bold text-sm">GWO MH Refresher</p>
                     </div>
                   </div>
                 </div>
@@ -261,7 +262,7 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
                   Requisiti
                 </h4>
                 <p className="text-sm text-slate-600">
-                  Per accedere al corso è necessario possedere una certificazione GWO BST First Aid in corso di validità o scaduta da non oltre quanto previsto dagli standard GWO.
+                  Possesso di certificazione GWO BST Manual Handling in corso di validità. Idoneità medica al lavoro.
                 </p>
               </div>
             </div>
@@ -278,10 +279,10 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "GWO Fire Awareness", desc: "Antincendio eolico", view: 'gwo-fire-awareness', icon: Flame },
-              { title: "GWO First Aid (FA)", desc: "Corso base 16 ore", view: 'gwo-first-aid', icon: Shield },
-              { title: "GWO Manual Handling", desc: "Movimentazione carichi", view: 'gwo-manual-handling', icon: Users },
               { title: "GWO Working at Heights", desc: "Lavoro in quota eolico", view: 'gwo-working-at-heights', icon: Shield },
+              { title: "GWO Fire Awareness", desc: "Antincendio eolico", view: 'gwo-fire-awareness', icon: Flame },
+              { title: "GWO Manual Handling (MH)", desc: "Corso base 4-6 ore", view: 'gwo-manual-handling', icon: Shield },
+              { title: "GWO First Aid (FA)", desc: "Corso base 16 ore", view: 'gwo-first-aid', icon: Shield },
             ].map((item, i) => (
               <button 
                 key={i}
@@ -305,4 +306,4 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
   );
 };
 
-export default GwoFirstAidRefreshPage;
+export default GwoManualHandlingRefreshPage;

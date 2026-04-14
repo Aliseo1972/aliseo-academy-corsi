@@ -1,40 +1,40 @@
 import React, { useEffect } from 'react';
 import DeliveryMethods from './DeliveryMethods';
 import { motion } from 'motion/react';
-import { Clock, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, HeartPulse, Shield, Flame } from 'lucide-react';
+import { Clock, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Shield } from 'lucide-react';
 
-interface GwoFirstAidRefreshPageProps {
+interface GwoWorkingAtHeightsManualHandlingPageProps {
   onNavigate: (view: any) => void;
 }
 
-const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavigate }) => {
+const GwoWorkingAtHeightsManualHandlingPage: React.FC<GwoWorkingAtHeightsManualHandlingPageProps> = ({ onNavigate }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "GWO BST First Aid Refresher - Aggiornamento Primo Soccorso Eolico | Aliseo Academy";
+    document.title = "GWO BST Working at Heights + Manual Handling (WAH + MH) | Aliseo Academy";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Corso di aggiornamento GWO BST First Aid Refresher. Rinnova la tua certificazione GWO per il primo soccorso in ambito eolico con formazione pratica e simulazioni.");
+      metaDescription.setAttribute('content', "Corso combinato GWO BST Working at Heights (WAH) e Manual Handling (MH). Formazione completa per la sicurezza nel settore eolico.");
     }
   }, []);
 
-  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20GWO%20BST%20First%20Aid%20Refresher&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20GWO%20BST%20First%20Aid%20Refresher%20(Aggiornamento%20Primo%20Soccorso).%0APotrei%20avere%20maggiori%20informazioni%20su%20modalit%C3%A0%2C%20prossime%20date%20e%20costi%3F%0A%0AGrazie.";
+  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20GWO%20BST%20Working%20at%20Heights%20%2B%20Manual%20Handling&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20combinato%20GWO%20BST%20Working%20at%20Heights%20%2B%20Manual%20Handling%20(WAH%20%2B%20MH).%0APotrei%20avere%20maggiori%20informazioni%20su%20modalit%C3%A0%2C%20prossime%20date%20e%20costi%3F%0A%0AGrazie.";
 
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
       <section className="relative pt-20 pb-16 bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(245,158,11,0.1),transparent_50%)]" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-brand text-xs font-bold uppercase tracking-wider mb-6"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6"
             >
               <Shield className="w-4 h-4" />
-              Aggiornamento Biennale GWO
+              Standard GWO BST - Corso Combinato
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -42,7 +42,7 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6"
             >
-              GWO BST – <span className="text-brand">First Aid Refresher</span>
+              GWO BST – <span className="text-brand">Working at Heights + Manual Handling (WAH + MH)</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -50,7 +50,7 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Corso di aggiornamento GWO First Aid per mantenere e rafforzare le competenze di primo soccorso in ambito eolico, con focus su pratica, rapidità di intervento e gestione delle emergenze.
+              Corso combinato GWO BST Working at Heights (WAH) e Manual Handling (MH). Permette di acquisire competenze fondamentali per lavorare in quota e movimentare carichi in sicurezza nel settore eolico.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -60,11 +60,11 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
             >
               <div>
                 <p className="text-slate-400 text-sm mb-3 font-medium">
-                  Rinnova la tua certificazione prima della scadenza.
+                  Formazione integrata per ottimizzare tempi e costi nel settore wind.
                 </p>
                 <div className="flex flex-col gap-2">
                   <p className="text-brand text-xs font-bold uppercase tracking-wider">
-                    Certificazione internazionale rinnovata per 2 anni
+                    Certificazione internazionale GWO
                   </p>
                   <a 
                     href={mailtoLink}
@@ -78,12 +78,12 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
               <div className="flex items-center gap-4 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm w-fit">
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5 text-brand" />
-                  <span className="text-white font-bold">8 ore (1 giorno)</span>
+                  <span className="text-white font-bold">2 giorni (16 ore)</span>
                 </div>
                 <div className="w-px h-6 bg-white/10" />
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="w-5 h-5 text-brand" />
-                  <span className="text-white font-bold text-sm">Standard GWO BST Refresher</span>
+                  <span className="text-white font-bold text-sm">Standard GWO BST</span>
                 </div>
               </div>
             </motion.div>
@@ -100,20 +100,23 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  Mantenimento delle competenze di soccorso
+                  Corso Combinato Sicurezza Eolico
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Il corso <strong>GWO BST – First Aid Refresher</strong> è rivolto a tutti i professionisti del settore eolico che necessitano di rinnovare la propria certificazione e mantenere aggiornate le competenze di primo soccorso.
+                    Il corso combinato <strong>GWO BST Working at Heights (WAH) + Manual Handling (MH)</strong> integra due moduli fondamentali del Basic Safety Training, fornendo una formazione completa per operare in sicurezza nel settore eolico.
                   </p>
                   <p>
-                    Durante il corso, i partecipanti riprenderanno e consolideranno le tecniche fondamentali di intervento in caso di emergenza medica, con particolare attenzione alla rapidità decisionale, alla corretta applicazione delle procedure e alla sicurezza operativa.
+                    Questa soluzione formativa è ideale per chi deve ottenere entrambe le certificazioni, ottimizzando tempi e costi senza rinunciare alla qualità della formazione.
                   </p>
                   <p>
-                    L’approccio è fortemente pratico e basato su scenari realistici, tipici dell’ambiente eolico, dove l’intervento immediato può fare la differenza. Le esercitazioni includono simulazioni di emergenze, utilizzo del defibrillatore (AED), rianimazione cardiopolmonare (RCP) e gestione di traumi e infortuni.
+                    Il modulo <strong>Working at Heights (WAH)</strong> si concentra sulla sicurezza nei lavori in quota, con particolare attenzione alla prevenzione delle cadute, all’utilizzo dei dispositivi di protezione individuale (DPI) e alle procedure di evacuazione e recupero.
                   </p>
                   <p>
-                    Il corso segue gli standard della <strong>Global Wind Organisation (GWO)</strong> e garantisce il mantenimento della certificazione, assicurando che il personale sia sempre preparato ad affrontare situazioni critiche in modo efficace e sicuro.
+                    Il modulo <strong>Manual Handling (MH)</strong> fornisce invece le competenze necessarie per la movimentazione manuale dei carichi, con focus su ergonomia, tecniche corrette di sollevamento e prevenzione degli infortuni muscolo-scheletrici.
+                  </p>
+                  <p>
+                    Il corso prevede un’ampia componente pratica, con esercitazioni realistiche che simulano le attività tipiche nel settore eolico, permettendo ai partecipanti di sviluppare competenze operative concrete e lavorare in sicurezza.
                   </p>
                 </div>
               </article>
@@ -131,9 +134,10 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                     <ul className="space-y-3">
                       {[
-                        "Tecnici e operatori del settore eolico già certificati GWO",
-                        "Personale con certificazione GWO First Aid in scadenza",
-                        "Lavoratori che devono rinnovare il modulo BST First Aid"
+                        "Tecnici e operatori del settore eolico",
+                        "Lavoratori onshore e offshore",
+                        "Installatori e manutentori di turbine eoliche",
+                        "Nuovi ingressi nel settore wind"
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-3 text-slate-600">
                           <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
@@ -151,12 +155,11 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      "Rinfrescare e consolidare le competenze di primo soccorso",
-                      "Intervenire in modo rapido ed efficace in emergenza",
-                      "Eseguire correttamente la RCP (linee guida aggiornate)",
-                      "Utilizzare il defibrillatore (AED) in sicurezza",
-                      "Gestire traumi, emorragie e situazioni critiche",
-                      "Applicare le procedure GWO in modo corretto"
+                      "Lavorare in sicurezza in quota",
+                      "Utilizzare correttamente i DPI anticaduta",
+                      "Eseguire manovre di evacuazione e recupero",
+                      "Applicare tecniche corrette di movimentazione manuale",
+                      "Prevenire infortuni e ridurre i rischi operativi"
                     ].map((obj, i) => (
                       <div key={i} className="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
@@ -169,32 +172,35 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma di Aggiornamento
+                    Programma del corso
                   </h3>
-                  <div className="space-y-4">
-                    {[
-                      { 
-                        title: "Revisione Linee Guida", 
-                        content: "Ripasso delle linee guida GWO First Aid, valutazione della scena e sicurezza del soccorritore, valutazione primaria e secondaria (ABC)." 
-                      },
-                      { 
-                        title: "Manovre Salvavita", 
-                        content: "Rianimazione cardiopolmonare (RCP), utilizzo del defibrillatore (AED) in sicurezza." 
-                      },
-                      { 
-                        title: "Gestione Emergenze", 
-                        content: "Gestione delle emergenze mediche principali, trattamento di ferite, emorragie e traumi." 
-                      },
-                      { 
-                        title: "Scenari Pratici", 
-                        content: "Esercitazioni pratiche e simulazioni realistiche in ambiente eolico, valutazione finale delle competenze." 
-                      }
-                    ].map((item, i) => (
-                      <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-                        <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
-                        <p className="text-sm text-slate-500 leading-relaxed">{item.content}</p>
-                      </div>
-                    ))}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                      <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <div className="w-1 h-4 bg-brand rounded-full" />
+                        Modulo Working at Heights (WAH)
+                      </h4>
+                      <ul className="space-y-2 text-sm text-slate-500">
+                        <li>• Rischi e prevenzione nei lavori in quota</li>
+                        <li>• DPI anticaduta: utilizzo e ispezione</li>
+                        <li>• Tecniche di lavoro in altezza</li>
+                        <li>• Procedure di emergenza ed evacuazione</li>
+                        <li>• Esercitazioni di recupero</li>
+                      </ul>
+                    </div>
+                    <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                      <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <div className="w-1 h-4 bg-brand rounded-full" />
+                        Modulo Manual Handling (MH)
+                      </h4>
+                      <ul className="space-y-2 text-sm text-slate-500">
+                        <li>• Principi di ergonomia</li>
+                        <li>• Tecniche corrette di sollevamento e trasporto</li>
+                        <li>• Valutazione dei rischi</li>
+                        <li>• Esercitazioni pratiche di movimentazione</li>
+                        <li>• Simulazioni operative</li>
+                      </ul>
+                    </div>
                   </div>
                 </section>
               </div>
@@ -205,7 +211,7 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
               <div className="bg-slate-900 rounded-3xl p-8 sticky top-24">
                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                   <GraduationCap className="w-6 h-6 text-brand" />
-                  Scheda Aggiornamento
+                  Dettagli Corso
                 </h3>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
@@ -214,7 +220,7 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">8 ore (1 giorno)</p>
+                      <p className="text-white font-bold">2 giorni (16 ore)</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -223,7 +229,7 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Destinatari</p>
-                      <p className="text-white font-bold text-sm">Personale già certificato GWO</p>
+                      <p className="text-white font-bold text-sm">Tecnici e operatori eolici</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -232,7 +238,7 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">GWO First Aid Refresher</p>
+                      <p className="text-white font-bold text-sm">GWO BST WAH + MH</p>
                     </div>
                   </div>
                 </div>
@@ -241,7 +247,7 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
                     Ti rispondiamo entro 24 ore
                   </p>
                   <p className="text-white/60 text-[10px] mb-4 text-center uppercase tracking-widest">
-                    Rinnovo certificazione GWO
+                    Certificazione GWO
                   </p>
                   <a 
                     href={mailtoLink}
@@ -258,10 +264,10 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
               <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                 <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
                   <FileText className="w-5 h-5 text-brand" />
-                  Requisiti
+                  Vantaggi Corso Combinato
                 </h4>
                 <p className="text-sm text-slate-600">
-                  Per accedere al corso è necessario possedere una certificazione GWO BST First Aid in corso di validità o scaduta da non oltre quanto previsto dagli standard GWO.
+                  Frequentare i moduli WAH e MH in un'unica sessione permette di ottimizzare la logistica e ridurre i tempi di formazione, ottenendo due certificazioni fondamentali in soli due giorni.
                 </p>
               </div>
             </div>
@@ -278,10 +284,14 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "GWO Fire Awareness", desc: "Antincendio eolico", view: 'gwo-fire-awareness', icon: Flame },
-              { title: "GWO First Aid (FA)", desc: "Corso base 16 ore", view: 'gwo-first-aid', icon: Shield },
+              { title: "GWO Working at Heights", desc: "Corso base 16 ore", view: 'gwo-working-at-heights', icon: Shield },
+              { title: "GWO Working at Heights Refresher", desc: "Aggiornamento 8 ore", view: 'gwo-working-at-heights-refresher', icon: Shield },
               { title: "GWO Manual Handling", desc: "Movimentazione carichi", view: 'gwo-manual-handling', icon: Users },
-              { title: "GWO Working at Heights", desc: "Lavoro in quota eolico", view: 'gwo-working-at-heights', icon: Shield },
+              { title: "GWO Manual Handling Refresher", desc: "Aggiornamento 3-4 ore", view: 'gwo-manual-handling-refresher', icon: Users },
+              { title: "GWO First Aid (FA)", desc: "Corso base 16 ore", view: 'gwo-first-aid', icon: Shield },
+              { title: "GWO First Aid Refresher", desc: "Aggiornamento 8 ore", view: 'gwo-first-aid-refresher', icon: Shield },
+              { title: "GWO Fire Awareness (FA)", desc: "Antincendio eolico", view: 'gwo-fire-awareness', icon: Shield },
+              { title: "GWO Fire Awareness Refresher", desc: "Aggiornamento 4 ore", view: 'gwo-fire-awareness-refresher', icon: Shield },
             ].map((item, i) => (
               <button 
                 key={i}
@@ -305,4 +315,4 @@ const GwoFirstAidRefreshPage: React.FC<GwoFirstAidRefreshPageProps> = ({ onNavig
   );
 };
 
-export default GwoFirstAidRefreshPage;
+export default GwoWorkingAtHeightsManualHandlingPage;
