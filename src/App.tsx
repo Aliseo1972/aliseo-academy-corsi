@@ -50,6 +50,24 @@ import FormazioneSpecificaMedioAltoPage from './components/FormazioneSpecificaMe
 import CorsoHaccpPage from './components/CorsoHaccpPage';
 import GwoFirstAidPage from './components/GwoFirstAidPage';
 import GwoFirstAidRefreshPage from './components/GwoFirstAidRefreshPage';
+import GwoManualHandlingPage from './components/GwoManualHandlingPage';
+import GwoManualHandlingRefreshPage from './components/GwoManualHandlingRefreshPage';
+import GwoFireAwarenessPage from './components/GwoFireAwarenessPage';
+import GwoFireAwarenessRefreshPage from './components/GwoFireAwarenessRefreshPage';
+import GwoWorkingAtHeightsPage from './components/GwoWorkingAtHeightsPage';
+import GwoWorkingAtHeightsRefreshPage from './components/GwoWorkingAtHeightsRefreshPage';
+import GwoWorkingAtHeightsManualHandlingPage from './components/GwoWorkingAtHeightsManualHandlingPage';
+import GwoWorkingAtHeightsManualHandlingRefreshPage from './components/GwoWorkingAtHeightsManualHandlingRefreshPage';
+import GwoSeaSurvivalPage from './components/GwoSeaSurvivalPage';
+import GwoSeaSurvivalRefreshPage from './components/GwoSeaSurvivalRefreshPage';
+import GwoMechanicalPage from './components/GwoMechanicalPage';
+import GwoElectricalPage from './components/GwoElectricalPage';
+import GwoHydraulicPage from './components/GwoHydraulicPage';
+import GwoInstallationPage from './components/GwoInstallationPage';
+import GwoArtHsibrPage from './components/GwoArtHsibrPage';
+import GwoArtNtbrPage from './components/GwoArtNtbrPage';
+import GwoArtSrHsibrPage from './components/GwoArtSrHsibrPage';
+import GwoArtSrNtbrPage from './components/GwoArtSrNtbrPage';
 import HaccpAddettoManipolazionePage from './components/HaccpAddettoManipolazionePage';
 import HaccpResponsabileAggiornamentoPage from './components/HaccpResponsabileAggiornamentoPage';
 import HaccpAddettoManipolazioneAggiornamentoPage from './components/HaccpAddettoManipolazioneAggiornamentoPage';
@@ -700,24 +718,26 @@ const GWOTrainingSection = ({ setCurrentView }: { setCurrentView: (view: any) =>
   
   const trainingModules = [
     {
-      title: "GWO BST – First Aid – (FA)",
-      description: "Corso di sicurezza base Primo Soccorso",
-      content: "Comprensione dell'importanza di eseguire il Primo Soccorso in modo sicuro ed efficace, in conformità con i requisiti legislativi locali. Identificazione dei segnali e dei sintomi di lesioni gravi e minori, nonché di malattie relative al corpo umano. Comprensione e gestione di un'emergenza in turbina eolica. Esecuzione corretta del Primo Soccorso ed uso delle attrezzature, tra cui il Defibrillatore Automatico Esterno (DAE)",
-      objectives: "L'obiettivo del modulo BST è quello di consentire ai partecipanti di effettuare in modo sicuro ed efficace il Primo Soccorso nell'industria eolica, in conformità con gli standard GWO, attraverso una formazione teorica e pratica. Inoltre, questa formazione permetterà al discente di eseguire la rianimazione cardiopolmonare e di utilizzare un defibrillatore automatico esterno (DAE).",
+      title: "GWO BST - Working at Heights – (WAH)",
+      description: "Corso di sicurezza base per attività in quota",
+      content: "I pericoli e i rischi associati al lavoro in altezza, specifici dei generatori di turbine eoliche. Comprendere la legislazione nazionale vigente in materia di lavoro in quota. Identificazione delle marcature standard europee/globali dei DPI. Ispezione, manutenzione e custodia dei DPI. L'uso dei DPI pertinenti",
+      objectives: "Gli obiettivi di questo corso sono quelli di fornire ai partecipanti le conoscenze e le competenze di base necessarie, attraverso una formazione teorica e pratica, per utilizzare i DPI di base ed eseguire un lavoro sicuro in quota. Inoltre, i discenti acquisiranno le competenze basiche per portare a termine un salvataggio in quota in conformità con gli standard GWO",
       target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
-      requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche",
+      requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche.",
       duration: "16 ore",
-      validity: "2 anni"
+      validity: "2 anni",
+      priceLabel: "Richiedi preventivo"
     },
     {
-      title: "GWO BST – First Aid Refresher – (FAR)",
-      description: "Aggiornamento biennale Primo Soccorso eolico",
-      content: "Mantenimento e rafforzamento delle competenze di primo soccorso in ambito eolico. Ripasso delle linee guida GWO, RCP, uso del DAE e gestione dei traumi in scenari realistici.",
-      objectives: "Rinnovare la certificazione GWO First Aid e consolidare le abilità pratiche di intervento rapido ed efficace in situazioni di emergenza su turbine eoliche.",
-      target: "Tecnici e operatori già certificati GWO con modulo First Aid in scadenza.",
-      requirements: "Certificazione GWO First Aid valida. Idoneità medica. Età minima 18 anni.",
+      title: "GWO BST – Working at Heights Refresher – (WAR)",
+      description: "Corso di aggiornamento GWO Working at Heights (WAH) per il rinnovo della certificazione.",
+      content: "Ripasso delle tecniche di utilizzo dei DPI anticaduta, procedure di lavoro in quota e manovre di emergenza. Esercitazioni pratiche di recupero ed evacuazione.",
+      objectives: "Mantenere le competenze necessarie per lavorare in sicurezza in quota nel settore eolico, consolidando le tecniche operative e di salvataggio.",
+      target: "Lavoratori del settore eolico con certificazione GWO WAH in scadenza. Tecnici e operatori onshore e offshore.",
+      requirements: "Certificazione GWO WAH valida. Idoneità medica. Età minima 18 anni.",
       duration: "8 ore",
-      validity: "2 anni"
+      validity: "2 anni",
+      priceLabel: "Richiedi preventivo"
     },
     {
       title: "GWO BST – Manual Handling – (MH)",
@@ -727,27 +747,85 @@ const GWOTrainingSection = ({ setCurrentView }: { setCurrentView: (view: any) =>
       target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
       requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche",
       duration: "4 ore",
-      validity: "2 anni"
+      validity: "2 anni",
+      priceLabel: "Richiedi preventivo"
     },
     {
-      title: "GWO BST – Fire Awareness – (WAV)",
+      title: "GWO BST – Manual Handling Refresher – (MHR)",
+      description: "Aggiornamento biennale Movimentazione Manuale",
+      content: "Mantenimento delle competenze per la movimentazione manuale dei carichi in sicurezza. Ripasso dei principi di ergonomia, tecniche di sollevamento e prevenzione infortuni in ambito eolico.",
+      objectives: "Rinnovare la certificazione GWO Manual Handling e rafforzare le buone abitudini operative per operare in sicurezza secondo gli standard GWO.",
+      target: "Lavoratori del settore eolico con certificazione GWO MH in scadenza.",
+      requirements: "Certificazione GWO MH valida. Idoneità medica. Età minima 18 anni.",
+      duration: "3-4 ore",
+      validity: "2 anni",
+      priceLabel: "Richiedi preventivo"
+    },
+    {
+      title: "GWO BST – Working at Heights + Manual Handling – (WAH + MH)",
+      description: "Corso combinato GWO BST Working at Heights (WAH) e Manual Handling (MH).",
+      content: "Integrazione dei moduli WAH e MH. Sicurezza nei lavori in quota, prevenzione cadute, DPI anticaduta, procedure di evacuazione e recupero. Competenze per la movimentazione manuale dei carichi, ergonomia e tecniche di sollevamento.",
+      objectives: "Acquisire competenze fondamentali per lavorare in quota e movimentare carichi in sicurezza nel settore eolico, ottimizzando tempi e costi di formazione.",
+      target: "Tecnici e operatori del settore eolico, lavoratori onshore e offshore, installatori e manutentori.",
+      requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche.",
+      duration: "16 ore",
+      validity: "2 anni",
+      priceLabel: "Richiedi preventivo"
+    },
+    {
+      title: "GWO BST – Working at Heights + Manual Handling Refresher – (WAH + MH)",
+      description: "Corso di aggiornamento GWO combinato Working at Heights (WAH) e Manual Handling (MH) per il rinnovo delle certificazioni.",
+      content: "Ripasso e consolidamento delle principali tecniche operative, utilizzo dei DPI anticaduta, procedure di evacuazione e recupero, e corrette modalità di movimentazione manuale dei carichi.",
+      objectives: "Mantenere le competenze necessarie per lavorare in sicurezza in quota e nella movimentazione dei carichi, garantendo continuità operativa nel settore eolico.",
+      target: "Lavoratori del settore eolico con certificazioni GWO WAH e MH in scadenza, tecnici e operatori onshore e offshore.",
+      requirements: "Certificazioni GWO WAH e MH valide. Idoneità medica. Età minima 18 anni.",
+      duration: "8 ore",
+      validity: "2 anni",
+      priceLabel: "Richiedi preventivo"
+    },
+    {
+      title: "GWO BST – First Aid – (FA)",
+      description: "Corso di sicurezza base Primo Soccorso",
+      content: "Comprensione dell'importanza di eseguire il Primo Soccorso in modo sicuro ed efficace, in conformità con i requisiti legislativi locali. Identificazione dei segnali e dei sintomi di lesioni gravi e minori, nonché di malattie relative al corpo umano. Comprensione e gestione di un'emergenza in turbina eolica. Esecuzione corretta del Primo Soccorso ed uso delle attrezzature, tra cui il Defibrillatore Automatico Esterno (DAE)",
+      objectives: "L'obiettivo del modulo BST è quello di consentire ai partecipanti di effettuare in modo sicuro ed efficace il Primo Soccorso nell'industria eolica, in conformità con gli standard GWO, attraverso una formazione teorica e pratica. Inoltre, questa formazione permetterà al discente di eseguire la rianimazione cardiopolmonare e di utilizzare un defibrillatore automatico esterno (DAE).",
+      target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
+      requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche",
+      duration: "16 ore",
+      validity: "2 anni",
+      priceLabel: "Richiedi preventivo"
+    },
+    {
+      title: "GWO BST – First Aid Refresher – (FAR)",
+      description: "Aggiornamento biennale Primo Soccorso eolico",
+      content: "Mantenimento e rafforzamento delle competenze di primo soccorso in ambito eolico. Ripasso delle linee guida GWO, RCP, uso del DAE e gestione dei traumi in scenari realistici.",
+      objectives: "Rinnovare la certificazione GWO First Aid e consolidare le abilità pratiche di intervento rapido ed efficace in situazioni di emergenza su turbine eoliche.",
+      target: "Tecnici e operatori già certificati GWO con modulo First Aid in scadenza.",
+      requirements: "Certificazione GWO First Aid valida. Idoneità medica. Età minima 18 anni.",
+      duration: "8 ore",
+      validity: "2 anni",
+      priceLabel: "Richiedi preventivo"
+    },
+    {
+      title: "GWO BST – Fire Awareness – (FA)",
       description: "Corso di sicurezza base per Attività Antincendio",
       content: "Sviluppo e diffusione del fuoco. Cause degli incendi nelle turbine eoliche e pericoli connessi. Identificazione dei segni di incendio in una turbina eolica. Piani di emergenza in turbine eoliche, incluso il rilevamento del fumo e le procedure di evacuazione di emergenza. Azioni, funzionamento ed estinzione degli incendi per mezzo delle attrezzature antincendio in una turbina eolica.",
       objectives: "Il partecipante può utilizzare i dispositivi di protezione individuale per la lotta antincendio come previsto, distinguere le diverse aree di intervento e applicare la corretta modalità per la risoluzione dell’emergenza. Identificazione di situazioni pericolose e uso sicuro dei dispositivi per l’estinzione (DM. 10/03/1998).",
       target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
       requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro, scarpe antinfortunistiche ed antincendio.",
       duration: "4 ore",
-      validity: "2 anni"
+      validity: "2 anni",
+      priceLabel: "Richiedi preventivo"
     },
     {
-      title: "GWO BST - Working at Heights – (WAH)",
-      description: "Corso di sicurezza base per attività in quota",
-      content: "I pericoli e i rischi associati al lavoro in altezza, specifici dei generatori di turbine eoliche. Comprendere la legislazione nazionale vigente in materia di lavoro in quota. Identificazione delle marcature standard europee/globali dei DPI. Ispezione, manutenzione e custodia dei DPI. L'uso dei DPI pertinenti",
-      objectives: "Gli obiettivi di questo corso sono quelli di fornire ai partecipanti le conoscenze e le competenze di base necessarie, attraverso una formazione teorica e pratica, per utilizzare i DPI di base ed eseguire un lavoro sicuro in quota. Inoltre, i discenti acquisiranno le competenze basiche per portare a termine un salvataggio in quota in conformità con gli standard GWO",
-      target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
-      requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche.",
-      duration: "16 ore",
-      validity: "2 anni"
+      title: "GWO BST – Fire Awareness Refresher – (FAR)",
+      description: "Corso di aggiornamento GWO Fire Awareness (FA) per il rinnovo della certificazione.",
+      content: "Ripasso dei principi fondamentali della combustione, cause di incendio e procedure di emergenza. Esercitazioni pratiche sull'uso degli estintori e gestione dell'evacuazione in turbine eoliche.",
+      objectives: "Mantenere le competenze necessarie per prevenire e gestire situazioni di emergenza legate agli incendi nel settore eolico, consolidando l'uso corretto degli estintori e la prontezza operativa.",
+      target: "Lavoratori del settore eolico con certificazione GWO FA in scadenza. Tecnici e operatori onshore e offshore.",
+      requirements: "Certificazione GWO FA valida. Idoneità medica. Età minima 18 anni.",
+      duration: "4 ore",
+      validity: "2 anni",
+      priceLabel: "Richiedi preventivo"
     },
     {
       title: "GWO BST – Sea Survival – (SS)",
@@ -757,47 +835,63 @@ const GWOTrainingSection = ({ setCurrentView }: { setCurrentView: (view: any) =>
       target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
       requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche, tuta di salvataggio e muta",
       duration: "8 ore",
-      validity: "2 anni"
+      validity: "2 anni",
+      priceLabel: "Richiedi preventivo"
     },
     {
-      title: "GWO BTT – Mechanical – (BTTM)",
-      description: "Corso di sicurezza per attività di manutenzione meccanica",
+      title: "GWO BST – Sea Survival Refresher – (SSR)",
+      description: "Corso di aggiornamento GWO Sea Survival (SS) per il rinnovo della certificazione.",
+      content: "Ripasso e consolidamento delle tecniche fondamentali di sopravvivenza in mare, l’utilizzo dei dispositivi di salvataggio e le procedure di evacuazione e recupero. Esercitazioni pratiche in acqua.",
+      objectives: "Mantenere le competenze necessarie per operare in sicurezza in ambiente offshore, garantendo la capacità di affrontare situazioni di emergenza secondo gli standard GWO.",
+      target: "Lavoratori del settore eolico offshore con certificazione GWO SS in scadenza, tecnici e operatori su turbine eoliche offshore.",
+      requirements: "Certificazione GWO SS valida. Idoneità medica. Età minima 18 anni.",
+      duration: "7 ore",
+      validity: "2 anni",
+      priceLabel: "Richiedi preventivo"
+    },
+    {
+      title: "GWO BTT – Mechanical (M)",
+      description: "Corso GWO BTT Mechanical (M) dedicato alle competenze tecniche di base in ambito meccanico per il settore eolico. Ideale per chi vuole operare sulla manutenzione delle turbine.",
       content: "Comprensione dei componenti principali, dei sistemi meccanici e del funzionamento di base delle turbine eoliche. Comprensione dei rischi e dei pericoli associati alla meccanica. Comprensione dei collegamenti bullonati e saldati e relativa ispezione. Istruzione del funzionamento dei sistemi frenanti, del sistema di imbardata, di raffreddamento e lubrificazione e loro relativa ispezione. Uso corretto degli strumenti.",
       objectives: "L'obiettivo di questo modulo BTT Mechanical è quello di fornire ai partecipanti le conoscenze e le competenze per svolgere attività meccaniche di base (sotto la supervisione di un tecnico esperto), utilizzando procedure di lavoro sicure e i corretti DPI.",
-      target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
+      target: "Tecnici e aspiranti tecnici del settore eolico, manutentori meccanici, operatori che vogliono acquisire competenze tecniche di base.",
       requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche",
-      duration: "14 ore",
-      validity: "2 anni"
+      duration: "8 ore",
+      validity: "N/A",
+      priceLabel: "Richiedi preventivo"
     },
     {
-      title: "GWO BTT – Electrical Module – (BTTE)",
-      description: "Corso di sicurezza per attività manutentive elettriche",
+      title: "GWO BTT – Electrical (E)",
+      description: "Corso GWO BTT Electrical (E) dedicato alle competenze di base in ambito elettrico per il settore eolico. Fornisce le conoscenze necessarie per operare in sicurezza sugli impianti.",
       content: "Comprensione dei componenti elettrici, dei diversi tipi di sensori e del funzionamento di base delle turbine eoliche. Comprensione dei rischi e dei pericoli associati al lavoro elettrico. Comprensione teorica di un semplice schema elettrico e pratica del suo montaggio su un circuito. Uso corretto degli strumenti per effettuare misurazioni sicure.",
       objectives: "Lo scopo di questo modulo elettrico BTT è quello di fornire ai partecipanti le conoscenze e le abilità per eseguire operazioni elettriche di base (sotto la supervisione di un tecnico esperto), utilizzando procedure di lavoro sicure e i corretti DPI.",
-      target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
+      target: "Tecnici e aspiranti tecnici del settore eolico, elettricisti e manutentori, operatori che vogliono acquisire competenze elettriche di base.",
       requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche",
-      duration: "10 ore",
-      validity: "2 anni"
+      duration: "8 ore",
+      validity: "N/A",
+      priceLabel: "Richiedi preventivo"
     },
     {
-      title: "GWO BTT – Hydraulic Module – (BTTH)",
-      description: "Corso di sicurezza per attività manutentive Idrauliche",
+      title: "GWO BTT – Hydraulic (H)",
+      description: "Corso GWO BTT Hydraulic (H) dedicato alle competenze di base sui sistemi idraulici delle turbine eoliche. Fornisce le conoscenze per operare in sicurezza sugli impianti.",
       content: "Comprensione dei componenti principali, dei sistemi idraulici e del funzionamento di base delle turbine eoliche. Comprensione dei rischi e dei pericoli associati all'idraulica. Istruzione del funzionamento dei diversi tipi di pompe ed attuatori, valvole, accumulatori e sensori, e loro relativa ispezione. Uso corretto degli strumenti per misurare la pressione idraulica.",
       objectives: "L'obiettivo del Modulo Idraulico BTT è quello di fornire ai partecipanti le conoscenze e le abilità per svolgere attività idrauliche di base (sotto la supervisione di un tecnico esperto), utilizzando procedure di lavoro sicure e i corretti DPI.",
-      target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
+      target: "Tecnici e aspiranti tecnici del settore eolico, manutentori e operatori, personale che vuole acquisire competenze sui sistemi idraulici.",
       requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche",
-      duration: "10 ore",
-      validity: "2 anni"
+      duration: "8 ore",
+      validity: "N/A",
+      priceLabel: "Richiedi preventivo"
     },
     {
-      title: "GWO BTT – Installation – (BTTI)",
-      description: "Corso di sicurezza per attività di installazione e manutenzione",
+      title: "GWO BTT – Installation (I)",
+      description: "Corso GWO BTT Installation (I) dedicato alle competenze di base per le attività di installazione delle turbine eoliche. Ideale per chi opera nei cantieri wind.",
       content: "Comprensione delle principali attività di installazione, delle liste di controllo durante l'intero processo, dei rischi e dei pericoli associati. Principi e norme per la movimentazione e lo stoccaggio di merci in loco o in un'area di stoccaggio prima e dopo l'installazione. Principi di base dell'attrezzatura di sollevamento. Preparazione dei componenti principali prima dell'installazione. Comprensione del completamento meccanico, elettrico ed idraulico. Principi di funzionamento dei generatori esterni durante l'installazione. Comprensione del passaggio di consegne alla messa in servizio.",
       objectives: "Lo scopo di questo modulo di installazione BTT è di fornire ai partecipanti le conoscenze e le abilità per eseguire le attività basiche di installazione (sotto la supervisione di un tecnico esperto), utilizzando procedure di lavoro sicure e i corretti DPI.",
-      target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
+      target: "Tecnici e operatori del settore eolico, personale coinvolto nelle attività di installazione turbine, nuovi ingressi nei cantieri wind.",
       requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche",
-      duration: "18 ore",
-      validity: "2 anni"
+      duration: "17 ore",
+      validity: "N/A",
+      priceLabel: "Richiedi preventivo"
     },
     {
       title: "GWO ART – Nacelle, Tower & Basement Rescue – (NTBR)",
@@ -806,8 +900,20 @@ const GWOTrainingSection = ({ setCurrentView }: { setCurrentView: (view: any) =>
       objectives: "Lo scopo di questo modulo è di permettere al partecipante al corso di eseguire operazioni di salvataggio di persone ferite nella navicella, nella torre e/o nel basamento di una turbina eolica, utilizzando attrezzature, metodi e tecniche di salvataggio standard del settore, che superano quelli del lavoro in quota GWO.",
       target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
       requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche",
-      duration: "14 ore",
-      validity: "2 anni"
+      duration: "16 ore",
+      validity: "2 anni",
+      priceLabel: "Richiedi preventivo"
+    },
+    {
+      title: "GWO ART – Single Rescuer: Nacelle, Tower & Basement Rescue (SR-NTBR)",
+      description: "Corso GWO ART SR-NTBR dedicato alle tecniche avanzate di soccorso in autonomia in navicella, torre e base della turbina.",
+      content: "Il corso è progettato per sviluppare le competenze necessarie a gestire operazioni di soccorso in autonomia nelle principali aree operative della turbina eolica. Il corso si concentra su scenari complessi in navicella, torre e base della turbina, dove il soccorritore deve essere in grado di intervenire rapidamente anche senza supporto diretto.",
+      objectives: "Eseguire operazioni di soccorso in autonomia; Intervenire in navicella, torre e base della turbina; Utilizzare attrezzature di recupero avanzate in modo indipendente; Valutare i rischi e prendere decisioni operative; Operare in sicurezza in scenari complessi.",
+      target: "Tecnici e operatori esperti del settore eolico; Personale coinvolto in attività di soccorso avanzato; Lavoratori con esperienza in ART base; Operatori che devono intervenire in autonomia.",
+      requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche. Certificazione GWO ART base e GWO BST valida.",
+      duration: "16 ore",
+      validity: "2 anni",
+      priceLabel: "Richiedi preventivo"
     },
     {
       title: "GWO ART – Hub, Spinner & Inside Blade – (HSIBR)",
@@ -816,18 +922,20 @@ const GWOTrainingSection = ({ setCurrentView }: { setCurrentView: (view: any) =>
       objectives: "L'obiettivo di questo modulo è quello di permettere ai partecipanti al corso di eseguire operazioni di salvataggio nell’Hub, nello Spinner e all'interno della pala di una turbina eolica, utilizzando attrezzature, metodi e tecniche di salvataggio standard del settore, superiori a quelli del GWO Working at Heights.",
       target: "Proprietari e/o operatori di turbine eoliche. Produttori di turbine eoliche. Subappaltatori di installazione e manutenzione. Aspiranti tecnici eolici.",
       requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche",
-      duration: "8 ore",
-      validity: "2 anni"
+      duration: "16 ore",
+      validity: "2 anni",
+      priceLabel: "Richiedi preventivo"
     },
     {
-      title: "GWO BST – Working at Heights & Manual Handling (Combined)",
-      description: "Corso combinato GWO Working at Heights e Manual Handling",
-      content: "Il modulo Working at Heights fornisce le competenze per lavorare in altezza utilizzando correttamente i DPI anticaduta e applicando le procedure di sicurezza ed evacuazione. Il modulo Manual Handling insegna le corrette tecniche di sollevamento e movimentazione dei carichi per prevenire infortuni e sovraccarichi muscolo-scheletrici.",
-      objectives: "Il corso combina teoria e pratica secondo gli standard Global Wind Organisation (GWO), preparando i partecipanti ad operare in modo sicuro ed efficiente nel settore eolico.",
-      target: "Tecnici che operano nel settore eolico e devono svolgere attività in quota e movimentare carichi in sicurezza durante le operazioni su turbine eoliche.",
-      requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche",
-      duration: "16 ore (2 giorni)",
-      validity: "2 anni"
+      title: "GWO ART – Single Rescuer: Hub, Spinner & Inside Blade Rescue (SR-HSIBR)",
+      description: "Corso GWO ART SR-HSIBR dedicato alle tecniche avanzate di soccorso in autonomia in hub, spinner e all’interno della pala.",
+      content: "Il corso è progettato per sviluppare le competenze necessarie a gestire operazioni di soccorso in autonomia all’interno delle turbine eoliche. Questo corso è specificamente rivolto a operatori che devono essere in grado di intervenire come soccorritori singoli in scenari complessi, come hub, spinner e interno pala, dove l’intervento immediato può essere determinante.",
+      objectives: "Eseguire operazioni di soccorso in autonomia; Intervenire in hub, spinner e all’interno della pala; Utilizzare attrezzature di recupero avanzate in modo indipendente; Valutare i rischi e prendere decisioni operative; Operare in sicurezza in scenari complessi.",
+      target: "Tecnici e operatori esperti del settore eolico; Personale coinvolto in attività di soccorso avanzato; Lavoratori con esperienza in ART base; Operatori che devono intervenire in autonomia.",
+      requirements: "Idoneità medica. Età minima 18 anni. Abbigliam. da lavoro e scarpe antinfortunistiche. Certificazione GWO ART base e GWO BST valida.",
+      duration: "16 ore",
+      validity: "2 anni",
+      priceLabel: "Richiedi preventivo"
     }
   ];
 
@@ -907,16 +1015,52 @@ const GWOTrainingSection = ({ setCurrentView }: { setCurrentView: (view: any) =>
                 </div>
                 <div className="inline-flex items-center bg-slate-900 px-3 py-1.5 rounded-lg text-price-yellow font-bold text-lg w-fit">
                   <Euro className="w-5 h-5 mr-1" />
-                  <span>Su richiesta</span>
+                  <span>{module.priceLabel || "Su richiesta"}</span>
                 </div>
               </div>
               
               <button 
                 onClick={() => {
-                  if (module.title.includes("First Aid Refresher")) {
+                  if (module.title.includes("Working at Heights + Manual Handling Refresher")) {
+                    setCurrentView('gwo-working-at-heights-manual-handling-refresher');
+                  } else if (module.title.includes("Working at Heights + Manual Handling")) {
+                    setCurrentView('gwo-wah-mh');
+                  } else if (module.title.includes("First Aid Refresher")) {
                     setCurrentView('gwo-first-aid-refresher');
                   } else if (module.title.includes("First Aid")) {
                     setCurrentView('gwo-first-aid');
+                  } else if (module.title.includes("Manual Handling Refresher")) {
+                    setCurrentView('gwo-manual-handling-refresher');
+                  } else if (module.title.includes("Manual Handling")) {
+                    setCurrentView('gwo-manual-handling');
+                  } else if (module.title.includes("Fire Awareness Refresher")) {
+                    setCurrentView('gwo-fire-awareness-refresher');
+                  } else if (module.title.includes("Fire Awareness")) {
+                    setCurrentView('gwo-fire-awareness');
+                  } else if (module.title.includes("Working at Heights Refresher")) {
+                    setCurrentView('gwo-working-at-heights-refresher');
+                  } else if (module.title.includes("Working at Heights")) {
+                    setCurrentView('gwo-working-at-heights');
+                  } else if (module.title.includes("Sea Survival Refresher")) {
+                    setCurrentView('gwo-sea-survival-refresher');
+                  } else if (module.title.includes("Sea Survival – (SS)")) {
+                    setCurrentView('gwo-sea-survival');
+                  } else if (module.title.includes("Mechanical (M)")) {
+                    setCurrentView('gwo-mechanical');
+                  } else if (module.title.includes("Electrical (E)")) {
+                    setCurrentView('gwo-electrical');
+                  } else if (module.title.includes("Hydraulic (H)")) {
+                    setCurrentView('gwo-hydraulic');
+                  } else if (module.title.includes("Installation (I)")) {
+                    setCurrentView('gwo-installation');
+                  } else if (module.title.includes("SR-HSIBR")) {
+                    setCurrentView('gwo-art-sr-hsibr');
+                  } else if (module.title.includes("HSIBR")) {
+                    setCurrentView('gwo-art-hsibr');
+                  } else if (module.title.includes("SR-NTBR")) {
+                    setCurrentView('gwo-art-sr-ntbr');
+                  } else if (module.title.includes("NTBR")) {
+                    setCurrentView('gwo-art-ntbr');
                   }
                 }}
                 className="w-full py-3 px-4 bg-slate-900 text-white rounded-xl font-medium flex items-center justify-center group/btn hover:bg-brand hover:text-brand-dark transition-all cursor-pointer"
@@ -2570,7 +2714,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto' | 'corso-haccp' | 'corso-haccp-addetto-manipolazione' | 'corso-haccp-responsabile-aggiornamento' | 'corso-haccp-addetto-manipolazione-aggiornamento' | 'corso-haccp-responsabile' | 'corso-haccp-addetto-non-manipolazione' | 'corso-datore-di-lavoro' | 'corso-datore-di-lavoro-rspp-basso' | 'corso-datore-di-lavoro-rspp-medio' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-diisocianati' | 'corso-diisocianati-base' | 'corso-diisocianati-intermedio' | 'corso-diisocianati-avanzato' | 'corso-lavoratori-rischio-basso-uffici' | 'corso-lavoratori-generale-specifica-basso' | 'corso-lavoratori-generale-specifica-basso-uffici' | 'aggiornamento-lavoratori' | 'corso-privacy-incaricato-trattamento-dati' | 'corso-privacy-sanitario' | 'corso-videoterminali' | 'corso-microclima' | 'corso-rumore' | 'corso-vibrazioni' | 'corso-carrelli-elevatori-teorico' | 'corso-ple-teorico' | 'corso-trattori-agricoli-teorico' | 'corso-macchine-movimento-terra-teorico' | 'corso-gru-autocarro-teorico' | 'corso-gru-mobili-teorico' | 'corso-gru-torre-teorico' | 'corso-pompe-calcestruzzo-teorico' | 'corso-pes-pav-pei' | 'aggiornamento-pes-pav-pei' | 'corso-atmosfere-esplosive-atex' | 'corso-spazi-confinati' | 'corso-spazi-confinati-preposti' | 'aggiornamento-spazi-confinati' | 'aggiornamento-spazi-confinati-preposti' | 'corso-dpi-terza-categoria-lavori-quota' | 'aggiornamento-dpi-terza-categoria-lavori-quota' | 'corso-lavori-su-funi' | 'aggiornamento-lavori-su-funi' | 'corso-preposto-lavori-su-funi' | 'corso-stress-lavoro-correlato' | 'corso-rischio-biologico' | 'corso-rischio-chimico' | 'corso-rischio-amianto' | 'corso-movimentazione-manuale-carichi' | 'corso-rischio-elettrico' | 'corso-rischio-legionella' | 'corso-agenti-cancerogeni-mutageni-teratogeni' | 'corso-rischio-rapina' | 'corso-rischio-interferenze' | 'corso-radiazioni-ottiche-artificiali' | 'corso-campi-elettromagnetici' | 'corso-rischio-sismico' | 'corso-radiazioni-uv' | 'corso-scariche-atmosferiche' | 'corso-rischio-incendio' | 'corso-evacuatore-emergenza' | 'aggiornamento-evacuatore-emergenza' | 'corso-apvr' | 'aggiornamento-apvr' | 'corso-blsd' | 'gwo-first-aid' | 'gwo-first-aid-refresher'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto' | 'corso-haccp' | 'corso-haccp-addetto-manipolazione' | 'corso-haccp-responsabile-aggiornamento' | 'corso-haccp-addetto-manipolazione-aggiornamento' | 'corso-haccp-responsabile' | 'corso-haccp-addetto-non-manipolazione' | 'corso-datore-di-lavoro' | 'corso-datore-di-lavoro-rspp-basso' | 'corso-datore-di-lavoro-rspp-medio' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-diisocianati' | 'corso-diisocianati-base' | 'corso-diisocianati-intermedio' | 'corso-diisocianati-avanzato' | 'corso-lavoratori-rischio-basso-uffici' | 'corso-lavoratori-generale-specifica-basso' | 'corso-lavoratori-generale-specifica-basso-uffici' | 'aggiornamento-lavoratori' | 'corso-privacy-incaricato-trattamento-dati' | 'corso-privacy-sanitario' | 'corso-videoterminali' | 'corso-microclima' | 'corso-rumore' | 'corso-vibrazioni' | 'corso-carrelli-elevatori-teorico' | 'corso-ple-teorico' | 'corso-trattori-agricoli-teorico' | 'corso-macchine-movimento-terra-teorico' | 'corso-gru-autocarro-teorico' | 'corso-gru-mobili-teorico' | 'corso-gru-torre-teorico' | 'corso-pompe-calcestruzzo-teorico' | 'corso-pes-pav-pei' | 'aggiornamento-pes-pav-pei' | 'corso-atmosfere-esplosive-atex' | 'corso-spazi-confinati' | 'corso-spazi-confinati-preposti' | 'aggiornamento-spazi-confinati' | 'aggiornamento-spazi-confinati-preposti' | 'corso-dpi-terza-categoria-lavori-quota' | 'aggiornamento-dpi-terza-categoria-lavori-quota' | 'corso-lavori-su-funi' | 'aggiornamento-lavori-su-funi' | 'corso-preposto-lavori-su-funi' | 'corso-stress-lavoro-correlato' | 'corso-rischio-biologico' | 'corso-rischio-chimico' | 'corso-rischio-amianto' | 'corso-movimentazione-manuale-carichi' | 'corso-rischio-elettrico' | 'corso-rischio-legionella' | 'corso-agenti-cancerogeni-mutageni-teratogeni' | 'corso-rischio-rapina' | 'corso-rischio-interferenze' | 'corso-radiazioni-ottiche-artificiali' | 'corso-campi-elettromagnetici' | 'corso-rischio-sismico' | 'corso-radiazioni-uv' | 'corso-scariche-atmosferiche' | 'corso-rischio-incendio' | 'corso-evacuatore-emergenza' | 'aggiornamento-evacuatore-emergenza' | 'corso-apvr' | 'aggiornamento-apvr' | 'corso-blsd' | 'gwo-first-aid' | 'gwo-first-aid-refresher' | 'gwo-manual-handling-refresher' | 'gwo-fire-awareness' | 'gwo-fire-awareness-refresher' | 'gwo-working-at-heights' | 'gwo-working-at-heights-refresher' | 'gwo-wah-mh' | 'gwo-working-at-heights-manual-handling-refresher' | 'gwo-sea-survival' | 'gwo-sea-survival-refresher' | 'gwo-mechanical' | 'gwo-electrical' | 'gwo-hydraulic' | 'gwo-installation' | 'gwo-art-hsibr' | 'gwo-art-ntbr' | 'gwo-art-sr-hsibr' | 'gwo-art-sr-ntbr'>('home');
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showCookieModal, setShowCookieModal] = useState(false);
@@ -2769,6 +2913,42 @@ export default function App() {
       path = '/corso-gwo-bst-first-aid';
     } else if (view === 'gwo-first-aid-refresher') {
       path = '/corso-gwo-bst-first-aid-refresher';
+    } else if (view === 'gwo-manual-handling') {
+      path = '/corso-gwo-bst-manual-handling';
+    } else if (view === 'gwo-manual-handling-refresher') {
+      path = '/corso-gwo-bst-manual-handling-refresher';
+    } else if (view === 'gwo-fire-awareness') {
+      path = '/corso-gwo-bst-fire-awareness';
+    } else if (view === 'gwo-fire-awareness-refresher') {
+      path = '/corso-gwo-bst-fire-awareness-refresher';
+    } else if (view === 'gwo-working-at-heights') {
+      path = '/corso-gwo-bst-working-at-heights';
+    } else if (view === 'gwo-working-at-heights-refresher') {
+      path = '/corso-gwo-bst-working-at-heights-refresher';
+    } else if (view === 'gwo-working-at-heights-manual-handling-refresher') {
+      path = '/corso-gwo-working-at-heights-manual-handling-refresher';
+    } else if (view === 'gwo-sea-survival') {
+      path = '/corso-gwo-bst-sea-survival';
+    } else if (view === 'gwo-sea-survival-refresher') {
+      path = '/corso-gwo-bst-sea-survival-refresher';
+    } else if (view === 'gwo-mechanical') {
+      path = '/corso-gwo-btt-mechanical';
+    } else if (view === 'gwo-electrical') {
+      path = '/corso-gwo-btt-electrical';
+    } else if (view === 'gwo-hydraulic') {
+      path = '/corso-gwo-btt-hydraulic';
+    } else if (view === 'gwo-installation') {
+      path = '/corso-gwo-btt-installation';
+    } else if (view === 'gwo-art-hsibr') {
+      path = '/corso-gwo-art-hsibr';
+    } else if (view === 'gwo-art-ntbr') {
+      path = '/corso-gwo-art-ntbr';
+    } else if (view === 'gwo-art-sr-hsibr') {
+      path = '/corso-gwo-art-sr-hsibr';
+    } else if (view === 'gwo-art-sr-ntbr') {
+      path = '/corso-gwo-art-sr-ntbr';
+    } else if (view === 'gwo-wah-mh') {
+      path = '/corso-gwo-working-at-heights-manual-handling';
     }
     
     window.history.pushState({ view, category: category || selectedCategory }, '', path);
@@ -3729,6 +3909,42 @@ export default function App() {
         <GwoFirstAidPage onNavigate={navigateToView} />
       ) : currentView === 'gwo-first-aid-refresher' ? (
         <GwoFirstAidRefreshPage onNavigate={navigateToView} />
+      ) : currentView === 'gwo-manual-handling' ? (
+        <GwoManualHandlingPage onNavigate={navigateToView} />
+      ) : currentView === 'gwo-manual-handling-refresher' ? (
+        <GwoManualHandlingRefreshPage onNavigate={navigateToView} />
+      ) : currentView === 'gwo-fire-awareness' ? (
+        <GwoFireAwarenessPage onNavigate={navigateToView} />
+      ) : currentView === 'gwo-fire-awareness-refresher' ? (
+        <GwoFireAwarenessRefreshPage onNavigate={navigateToView} />
+      ) : currentView === 'gwo-working-at-heights' ? (
+        <GwoWorkingAtHeightsPage onNavigate={navigateToView} />
+      ) : currentView === 'gwo-working-at-heights-refresher' ? (
+        <GwoWorkingAtHeightsRefreshPage onNavigate={navigateToView} />
+      ) : currentView === 'gwo-working-at-heights-manual-handling-refresher' ? (
+        <GwoWorkingAtHeightsManualHandlingRefreshPage onNavigate={navigateToView} />
+      ) : currentView === 'gwo-sea-survival' ? (
+        <GwoSeaSurvivalPage onNavigate={navigateToView} />
+      ) : currentView === 'gwo-sea-survival-refresher' ? (
+        <GwoSeaSurvivalRefreshPage onNavigate={navigateToView} />
+      ) : currentView === 'gwo-mechanical' ? (
+        <GwoMechanicalPage onNavigate={navigateToView} />
+      ) : currentView === 'gwo-electrical' ? (
+        <GwoElectricalPage onNavigate={navigateToView} />
+      ) : currentView === 'gwo-hydraulic' ? (
+        <GwoHydraulicPage onNavigate={navigateToView} />
+      ) : currentView === 'gwo-installation' ? (
+        <GwoInstallationPage onNavigate={navigateToView} />
+      ) : currentView === 'gwo-art-hsibr' ? (
+        <GwoArtHsibrPage onNavigate={navigateToView} />
+      ) : currentView === 'gwo-art-ntbr' ? (
+        <GwoArtNtbrPage onNavigate={navigateToView} />
+      ) : currentView === 'gwo-art-sr-hsibr' ? (
+        <GwoArtSrHsibrPage onNavigate={navigateToView} />
+      ) : currentView === 'gwo-art-sr-ntbr' ? (
+        <GwoArtSrNtbrPage onNavigate={navigateToView} />
+      ) : currentView === 'gwo-wah-mh' ? (
+        <GwoWorkingAtHeightsManualHandlingPage onNavigate={navigateToView} />
       ) : (
         <DLGS8108Section setCurrentView={navigateToView} />
       )}
