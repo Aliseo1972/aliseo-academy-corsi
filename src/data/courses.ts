@@ -1142,7 +1142,7 @@ export const courses: Course[] = [
     title: "HSE Specialist - 40 ore",
     lessons: 95,
     duration: "40h",
-    price: "350,00 € + iva",
+    price: "427,00 € + iva",
     category: "Corsi per Professionisti",
     description: "Corso conforme alla Norma UNI 11720:2025 per il profilo professionale HSE Specialist. Sviluppa competenze tecnico-operative nei processi di salute, sicurezza e ambiente.",
     fullDescription: [
@@ -1229,7 +1229,7 @@ export const courses: Course[] = [
     title: "Master HSE Manager – Health, Safety & Environment",
     lessons: 264,
     duration: "120h",
-    price: "700,00 € + iva",
+    price: "854,00 € + iva",
     category: "Corsi per Professionisti",
     description: "Percorso formativo completo per formare professionisti in grado di gestire, coordinare e migliorare i sistemi integrati aziendali HSE.",
     fullDescription: [
@@ -1265,7 +1265,7 @@ export const courses: Course[] = [
     title: "Aggiornamento per RSPP - Responsabile del Servizio Prevenzione e Protezione",
     lessons: 142,
     duration: "40h",
-    price: "170,80 € + iva",
+    price: "280,00 € + iva",
     category: "Corsi per Professionisti",
     description: "Il Corso di Aggiornamento per Responsabile del Servizio Prevenzione e Protezione (RSPP) è progettato per garantire l'adeguato aggiornamento quinquennale richiesto dalla normativa vigente (D.Lgs. 81/2008 e Accordo Stato-Regioni 17/04/2025).",
     fullDescription: [
@@ -1549,7 +1549,7 @@ export const courses: Course[] = [
     title: "La Responsabilità sociale d’impresa e lo standard SA 8000: Principi, requisiti e applicazione",
     lessons: 17,
     duration: "8h",
-    price: "48,80 € + iva",
+    price: "97,60 € + iva",
     category: "Corsi per Professionisti",
     description: "La Responsabilità Sociale d’impresa implica che un’organizzazione certificata SA 8000 abbia verificato che tutti gli attori che si interfacciano con essa adottino comportamenti socialmente responsabili.",
     fullDescription: [
@@ -1591,7 +1591,7 @@ export const courses: Course[] = [
     title: "Responsabilità amministrativa degli enti ex D.Lgs. 231/2001 e progettazione dei modelli organizzativi",
     lessons: 10,
     duration: "8h",
-    price: "67,10 € + iva",
+    price: "134,20 € + iva",
     category: "Corsi per Professionisti",
     description: "Il corso fornisce una panoramica completa sulla responsabilità amministrativa degli enti ai sensi del D.Lgs. 231/2001, analizzandone i principi, gli impatti sulla governance aziendale e le ricadute organizzative.",
     fullDescription: [
@@ -1645,7 +1645,7 @@ export const courses: Course[] = [
     title: "Modulo A - Formazione di base propedeutica per RSPP e ASPP",
     lessons: 116,
     duration: "28h",
-    price: "109,80 € + iva",
+    price: "305,00 € + iva",
     category: "Corsi per Professionisti",
     description: "Il Modulo A fornisce la formazione di base propedeutica per RSPP e ASPP, offrendo le conoscenze fondamentali sulla salute e sicurezza sul lavoro.",
     fullDescription: [
@@ -1960,7 +1960,7 @@ export const courses: Course[] = [
     title: "Aggiornamento per ASPP - Addetto al Servizio Prevenzione e Protezione",
     lessons: 87,
     duration: "20h",
-    price: "85,40 € + iva",
+    price: "244,00 € + iva",
     category: "Corsi per Professionisti",
     description: "Il Corso di Aggiornamento per Addetto al Servizio Prevenzione e Protezione (ASPP) è progettato per garantire l'adeguato aggiornamento quinquennale richiesto dalla normativa vigente.",
     fullDescription: [
