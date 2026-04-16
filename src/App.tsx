@@ -142,6 +142,13 @@ import AggiornamentoEvacuatoreEmergenzaPage from './components/AggiornamentoEvac
 import CorsoAPVRPage from './components/CorsoAPVRPage';
 import AggiornamentoAPVRPage from './components/AggiornamentoAPVRPage';
 import CorsoBLSDPage from './components/CorsoBLSDPage';
+import HseSpecialistPage from './components/HseSpecialistPage';
+import HseManagerPage from './components/HseManagerPage';
+import RsppAggiornamento40Page from './components/RsppAggiornamento40Page';
+import ModuloARsppAsppPage from './components/ModuloARsppAsppPage';
+import Dlgs231Page from './components/Dlgs231Page';
+import Sa8000Page from './components/Sa8000Page';
+import AggiornamentoAspp20Page from './components/AggiornamentoAspp20Page';
 
 const CourseCard = ({ course, onOpen }: { course: Course; onOpen: (course: Course) => void; key?: string | number }) => {
   return (
@@ -2714,7 +2721,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto' | 'corso-haccp' | 'corso-haccp-addetto-manipolazione' | 'corso-haccp-responsabile-aggiornamento' | 'corso-haccp-addetto-manipolazione-aggiornamento' | 'corso-haccp-responsabile' | 'corso-haccp-addetto-non-manipolazione' | 'corso-datore-di-lavoro' | 'corso-datore-di-lavoro-rspp-basso' | 'corso-datore-di-lavoro-rspp-medio' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-diisocianati' | 'corso-diisocianati-base' | 'corso-diisocianati-intermedio' | 'corso-diisocianati-avanzato' | 'corso-lavoratori-rischio-basso-uffici' | 'corso-lavoratori-generale-specifica-basso' | 'corso-lavoratori-generale-specifica-basso-uffici' | 'aggiornamento-lavoratori' | 'corso-privacy-incaricato-trattamento-dati' | 'corso-privacy-sanitario' | 'corso-videoterminali' | 'corso-microclima' | 'corso-rumore' | 'corso-vibrazioni' | 'corso-carrelli-elevatori-teorico' | 'corso-ple-teorico' | 'corso-trattori-agricoli-teorico' | 'corso-macchine-movimento-terra-teorico' | 'corso-gru-autocarro-teorico' | 'corso-gru-mobili-teorico' | 'corso-gru-torre-teorico' | 'corso-pompe-calcestruzzo-teorico' | 'corso-pes-pav-pei' | 'aggiornamento-pes-pav-pei' | 'corso-atmosfere-esplosive-atex' | 'corso-spazi-confinati' | 'corso-spazi-confinati-preposti' | 'aggiornamento-spazi-confinati' | 'aggiornamento-spazi-confinati-preposti' | 'corso-dpi-terza-categoria-lavori-quota' | 'aggiornamento-dpi-terza-categoria-lavori-quota' | 'corso-lavori-su-funi' | 'aggiornamento-lavori-su-funi' | 'corso-preposto-lavori-su-funi' | 'corso-stress-lavoro-correlato' | 'corso-rischio-biologico' | 'corso-rischio-chimico' | 'corso-rischio-amianto' | 'corso-movimentazione-manuale-carichi' | 'corso-rischio-elettrico' | 'corso-rischio-legionella' | 'corso-agenti-cancerogeni-mutageni-teratogeni' | 'corso-rischio-rapina' | 'corso-rischio-interferenze' | 'corso-radiazioni-ottiche-artificiali' | 'corso-campi-elettromagnetici' | 'corso-rischio-sismico' | 'corso-radiazioni-uv' | 'corso-scariche-atmosferiche' | 'corso-rischio-incendio' | 'corso-evacuatore-emergenza' | 'aggiornamento-evacuatore-emergenza' | 'corso-apvr' | 'aggiornamento-apvr' | 'corso-blsd' | 'gwo-first-aid' | 'gwo-first-aid-refresher' | 'gwo-manual-handling-refresher' | 'gwo-fire-awareness' | 'gwo-fire-awareness-refresher' | 'gwo-working-at-heights' | 'gwo-working-at-heights-refresher' | 'gwo-wah-mh' | 'gwo-working-at-heights-manual-handling-refresher' | 'gwo-sea-survival' | 'gwo-sea-survival-refresher' | 'gwo-mechanical' | 'gwo-electrical' | 'gwo-hydraulic' | 'gwo-installation' | 'gwo-art-hsibr' | 'gwo-art-ntbr' | 'gwo-art-sr-hsibr' | 'gwo-art-sr-ntbr'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto' | 'corso-haccp' | 'corso-haccp-addetto-manipolazione' | 'corso-haccp-responsabile-aggiornamento' | 'corso-haccp-addetto-manipolazione-aggiornamento' | 'corso-haccp-responsabile' | 'corso-haccp-addetto-non-manipolazione' | 'corso-datore-di-lavoro' | 'corso-datore-di-lavoro-rspp-basso' | 'corso-datore-di-lavoro-rspp-medio' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-diisocianati' | 'corso-diisocianati-base' | 'corso-diisocianati-intermedio' | 'corso-diisocianati-avanzato' | 'corso-lavoratori-rischio-basso-uffici' | 'corso-lavoratori-generale-specifica-basso' | 'corso-lavoratori-generale-specifica-basso-uffici' | 'aggiornamento-lavoratori' | 'corso-privacy-incaricato-trattamento-dati' | 'corso-privacy-sanitario' | 'corso-videoterminali' | 'corso-microclima' | 'corso-rumore' | 'corso-vibrazioni' | 'corso-carrelli-elevatori-teorico' | 'corso-ple-teorico' | 'corso-trattori-agricoli-teorico' | 'corso-macchine-movimento-terra-teorico' | 'corso-gru-autocarro-teorico' | 'corso-gru-mobili-teorico' | 'corso-gru-torre-teorico' | 'corso-pompe-calcestruzzo-teorico' | 'corso-pes-pav-pei' | 'aggiornamento-pes-pav-pei' | 'corso-atmosfere-esplosive-atex' | 'corso-spazi-confinati' | 'corso-spazi-confinati-preposti' | 'aggiornamento-spazi-confinati' | 'aggiornamento-spazi-confinati-preposti' | 'corso-dpi-terza-categoria-lavori-quota' | 'aggiornamento-dpi-terza-categoria-lavori-quota' | 'corso-lavori-su-funi' | 'aggiornamento-lavori-su-funi' | 'corso-preposto-lavori-su-funi' | 'corso-stress-lavoro-correlato' | 'corso-rischio-biologico' | 'corso-rischio-chimico' | 'corso-rischio-amianto' | 'corso-movimentazione-manuale-carichi' | 'corso-rischio-elettrico' | 'corso-rischio-legionella' | 'corso-agenti-cancerogeni-mutageni-teratogeni' | 'corso-rischio-rapina' | 'corso-rischio-interferenze' | 'corso-radiazioni-ottiche-artificiali' | 'corso-campi-elettromagnetici' | 'corso-rischio-sismico' | 'corso-radiazioni-uv' | 'corso-scariche-atmosferiche' | 'corso-rischio-incendio' | 'corso-evacuatore-emergenza' | 'aggiornamento-evacuatore-emergenza' | 'corso-apvr' | 'aggiornamento-apvr' | 'corso-blsd' | 'gwo-first-aid' | 'gwo-first-aid-refresher' | 'gwo-manual-handling-refresher' | 'gwo-fire-awareness' | 'gwo-fire-awareness-refresher' | 'gwo-working-at-heights' | 'gwo-working-at-heights-refresher' | 'gwo-wah-mh' | 'gwo-working-at-heights-manual-handling-refresher' | 'gwo-sea-survival' | 'gwo-sea-survival-refresher' | 'gwo-mechanical' | 'gwo-electrical' | 'gwo-hydraulic' | 'gwo-installation' | 'gwo-art-hsibr' | 'gwo-art-ntbr' | 'gwo-art-sr-hsibr' | 'gwo-art-sr-ntbr' | 'hse-specialist' | 'hse-manager' | 'rspp-aggiornamento-40' | 'modulo-a-rspp-aspp' | 'dlgs-231-01-8' | 'sa-8000-8' | 'aggiornamento-aspp-20'>('home');
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showCookieModal, setShowCookieModal] = useState(false);
@@ -2949,6 +2956,20 @@ export default function App() {
       path = '/corso-gwo-art-sr-ntbr';
     } else if (view === 'gwo-wah-mh') {
       path = '/corso-gwo-working-at-heights-manual-handling';
+    } else if (view === 'hse-specialist') {
+      path = '/corso-hse-specialist-40-ore';
+    } else if (view === 'hse-manager') {
+      path = '/corso-master-hse-manager-120-ore';
+    } else if (view === 'rspp-aggiornamento-40') {
+      path = '/corso-aggiornamento-rspp-40-ore';
+    } else if (view === 'modulo-a-rspp-aspp') {
+      path = '/corso-modulo-a-rspp-aspp-28-ore';
+    } else if (view === 'dlgs-231-01-8') {
+      path = '/corso-responsabilita-amministrativa-enti-dlgs-231';
+    } else if (view === 'sa-8000-8') {
+      path = '/corso-sa8000-responsabilita-sociale-impresa';
+    } else if (view === 'aggiornamento-aspp-20') {
+      path = '/corso-aggiornamento-aspp-20-ore';
     }
     
     window.history.pushState({ view, category: category || selectedCategory }, '', path);
@@ -2957,7 +2978,21 @@ export default function App() {
   };
 
   const handleCourseOpen = (course: Course) => {
-    if (course.id === "50") {
+    if (course.id === "hse-specialist-40") {
+      navigateToView('hse-specialist');
+    } else if (course.id === "master-hse-manager-120") {
+      navigateToView('hse-manager');
+    } else if (course.id === "aggiornamento-rspp-40") {
+      navigateToView('rspp-aggiornamento-40');
+    } else if (course.id === "modulo-a-rspp-aspp") {
+      navigateToView('modulo-a-rspp-aspp');
+    } else if (course.id === "dlgs-231-01-8") {
+      navigateToView('dlgs-231-01-8');
+    } else if (course.id === "sa-8000-8") {
+      navigateToView('sa-8000-8');
+    } else if (course.id === "aggiornamento-aspp-20") {
+      navigateToView('aggiornamento-aspp-20');
+    } else if (course.id === "50") {
       navigateToView('corso-rls-rappresentante-lavoratori-sicurezza');
     } else if (course.id === "48") {
       navigateToView('rls-update-page');
@@ -3194,6 +3229,20 @@ export default function App() {
       setCurrentView('antincendio-update-l2');
     } else if (path === '/aggiornamento-antincendio-livello-3') {
       setCurrentView('antincendio-update-l3');
+    } else if (path === '/corso-hse-specialist-40-ore') {
+      setCurrentView('hse-specialist');
+    } else if (path === '/corso-master-hse-manager-120-ore') {
+      setCurrentView('hse-manager');
+    } else if (path === '/corso-aggiornamento-rspp-40-ore') {
+      setCurrentView('rspp-aggiornamento-40');
+    } else if (path === '/corso-modulo-a-rspp-aspp-28-ore') {
+      setCurrentView('modulo-a-rspp-aspp');
+    } else if (path === '/corso-responsabilita-amministrativa-enti-dlgs-231') {
+      setCurrentView('dlgs-231-01-8');
+    } else if (path === '/corso-sa8000-responsabilita-sociale-impresa') {
+      setCurrentView('sa-8000-8');
+    } else if (path === '/corso-aggiornamento-aspp-20-ore') {
+      setCurrentView('aggiornamento-aspp-20');
     } else if (path === '/corso-formazione-lavoratori-generale') {
       setCurrentView('corso-formazione-lavoratori-generale');
     } else if (path === '/corso-formazione-lavoratori-rischio-basso') {
@@ -3945,6 +3994,20 @@ export default function App() {
         <GwoArtSrNtbrPage onNavigate={navigateToView} />
       ) : currentView === 'gwo-wah-mh' ? (
         <GwoWorkingAtHeightsManualHandlingPage onNavigate={navigateToView} />
+      ) : currentView === 'hse-specialist' ? (
+        <HseSpecialistPage onNavigate={navigateToView} />
+      ) : currentView === 'hse-manager' ? (
+        <HseManagerPage onNavigate={navigateToView} />
+      ) : currentView === 'rspp-aggiornamento-40' ? (
+        <RsppAggiornamento40Page onNavigate={navigateToView} />
+      ) : currentView === 'modulo-a-rspp-aspp' ? (
+        <ModuloARsppAsppPage onNavigate={navigateToView} />
+      ) : currentView === 'dlgs-231-01-8' ? (
+        <Dlgs231Page onNavigate={navigateToView} />
+      ) : currentView === 'sa-8000-8' ? (
+        <Sa8000Page onNavigate={navigateToView} />
+      ) : currentView === 'aggiornamento-aspp-20' ? (
+        <AggiornamentoAspp20Page onNavigate={navigateToView} />
       ) : (
         <DLGS8108Section setCurrentView={navigateToView} />
       )}
