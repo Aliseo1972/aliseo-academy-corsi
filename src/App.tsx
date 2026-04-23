@@ -185,7 +185,12 @@ const CourseCard = ({ course, onOpen }: { course: Course; onOpen: (course: Cours
         </div>
         <div className="inline-flex items-center bg-slate-900 px-3 py-1.5 rounded-lg text-price-yellow font-bold text-lg w-fit">
           <Euro className="w-5 h-5 mr-1" />
-          <span>{course.price}</span>
+          <span>
+            {course.price}
+            {course.category !== "Corsi per Professionisti" && (
+              <span className="text-[11px] ml-1.5 font-medium text-price-yellow/90 lowercase">iva inclusa</span>
+            )}
+          </span>
         </div>
       </div>
       
