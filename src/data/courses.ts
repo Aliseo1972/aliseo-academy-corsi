@@ -165,7 +165,7 @@ export const courses: Course[] = [
     title: "Aggiornamento Preposto",
     lessons: 22,
     duration: "6h",
-    price: "73,20",
+    price: "122,00",
     category: "Dirigente - Preposto",
     description: "Aggiornamento biennale obbligatorio per la figura del preposto ai sensi del D.Lgs 81/08.",
     objectives: ["Ruolo e responsabilità", "Tecniche di vigilanza", "Gestione delle emergenze"],
@@ -717,15 +717,24 @@ export const courses: Course[] = [
     price: "195,20",
     category: "Datore di lavoro",
     description: "Modulo specifico per datori di lavoro operanti nel settore edile.",
-    objectives: ["Titolo IV D.Lgs. 81/08", "PSC e POS", "Costi della sicurezza"],
-    references: ["D.Lgs. 81/08", "Accordo Stato-Regioni 21/12/2011"],
+    objectives: [
+      "Fornire le competenze necessarie per identificare e prevenire i rischi lavorativi",
+      "Approfondire la normativa sulla sicurezza e le responsabilità del datore di lavoro",
+      "Comprendere gli obblighi previsti dal D.Lgs. 81/08 per le attività di cantiere",
+      "Gestire correttamente interferenze, documentazione e misure di prevenzione",
+      "Applicare un corretto approccio operativo alla sicurezza nei cantieri"
+    ],
+    references: [
+      "D.Lgs. 81/08, art. 18",
+      "D.Lgs. 81/08, art. 97, comma 3-ter",
+      "Accordo Stato-Regioni 17/04/2025"
+    ],
     recipients: "Datori di lavoro edili",
     syllabus: [
       { title: "Documento Progettuale", lessonsCount: 1, duration: "0m" },
-      { title: "Il Titolo IV del D.Lgs. 81/08", lessonsCount: 10, duration: "2h" },
-      { title: "La gestione della sicurezza in cantiere", lessonsCount: 10, duration: "2h" },
-      { title: "POS, PSC e documentazione di cantiere", lessonsCount: 8, duration: "1h 45m" },
-      { title: "Quiz di Verifica", lessonsCount: 1, duration: "15m" }
+      { title: "Formazione Datore di Lavoro | Modulo Cantieri", lessonsCount: 27, duration: "5h 51m" },
+      { title: "Quiz di Verifica", lessonsCount: 1, duration: "31m" },
+      { title: "Questionario di Gradimento", lessonsCount: 1, duration: "9m" }
     ]
   },
   {
@@ -970,6 +979,27 @@ export const courses: Course[] = [
     ]
   },
   {
+    id: "37",
+    title: "Formazione per lavoratori - Rischio Lavori in Quota",
+    lessons: 22,
+    duration: "4h",
+    price: "48,80",
+    category: "Sicurezza lavoratori",
+    description: "Il corso ha una durata di 4 ore. È composto da 19 moduli didattici con contenuti multimediali. Al termine dovrà essere svolto un test finale con domande a risposta multipla, con una sola risposta esatta. L'iscrizione al corso ha una durata di 90 giorni, a partire dal giorno dell'iscrizione stessa.",
+    objectives: [
+      "Fornire ai lavoratori le conoscenze teoriche e pratiche necessarie per svolgere in sicurezza attività che comportano il rischio di caduta dall'alto.",
+      "Comprendere e prevenire i principali rischi legati ai lavori in quota, dalle cadute e all'effetto pendolo fino alla sindrome da sospensione."
+    ],
+    references: ["Artt. 36, 37, 77 all. XV al punto 3.2.1 del D.Lgs. 81/08 e s.m.i."],
+    recipients: "Il corso è destinato a tutti i lavoratori che svolgono attività in quota, nei cantieri o in altri contesti dove sussiste il rischio di caduta da un'altezza superiore a due metri rispetto a un piano stabile.",
+    syllabus: [
+      { title: "Documento Progettuale", lessonsCount: 1, duration: "0m" },
+      { title: "Rischio Lavori in Quota", lessonsCount: 19, duration: "3h 59m" },
+      { title: "Quiz di Verifica", lessonsCount: 1, duration: "15m" },
+      { title: "Questionario di Gradimento", lessonsCount: 1, duration: "9m" }
+    ]
+  },
+  {
     id: "47",
     title: "Formazione per lavoratori - Rischio Vibrazioni",
     lessons: 5,
@@ -1086,55 +1116,18 @@ export const courses: Course[] = [
     duration: "2h",
     price: "24,40",
     category: "Sicurezza lavoratori",
-    description: "Rischi legati a macchinari industriali e trasmettitori.",
-    objectives: ["Effetti termici", "Pacemaker e impianti", "Distanze di sicurezza"],
-    references: ["Capo IV Titolo VIII D.Lgs. 81/08", "Accordo Stato-Regioni 21/12/2011"],
-    recipients: "Addetti saldatura induzione, manutentori",
+    description: "Il corso online di formazione sul rischio di esposizione ai campi elettromagnetici (CEM) è strutturato per offrire una panoramica esaustiva sui rischi associati.",
+    objectives: [
+      "Fornire ai lavoratori le conoscenze di base sui rischi derivanti dall'esposizione ai campi elettromagnetici (CEM), approfondendo le sorgenti, gli effetti sull'organismo e le misure di prevenzione previste dalla normativa vigente.",
+      "Al termine del corso i partecipanti saranno in grado di individuare le situazioni a rischio, applicare le procedure di sicurezza e utilizzare in modo appropriato gli strumenti e i dispositivi di protezione."
+    ],
+    references: ["Art. 37 e Titolo VIII Capo IV D.Lgs. 81/08 e s.m.i."],
+    recipients: "Il corso è destinato a tutti i lavoratori che operano in ambienti dove sono presenti sorgenti elettromagnetiche, come impianti industriali, laboratori, strutture sanitarie o aree con apparecchiature elettriche e radianti.",
     syllabus: [
       { title: "Documento Progettuale", lessonsCount: 1, duration: "0m" },
-      { title: "Sorgenti di CEM", lessonsCount: 3, duration: "30m" },
-      { title: "Effetti biologici e limiti", lessonsCount: 3, duration: "30m" },
-      { title: "Misure di tutela", lessonsCount: 3, duration: "45m" },
-      { title: "Quiz di Verifica", lessonsCount: 1, duration: "15m" }
-    ]
-  },
-  {
-    id: "25",
-    title: "Addetto ai lavori elettrici (PES PAV PEI)",
-    lessons: 58,
-    duration: "16h",
-    price: "195,20",
-    category: "Sicurezza lavoratori",
-    description: "Corso completo per la qualifica di personale esperto o avvertito nei lavori elettrici.",
-    objectives: ["Norma CEI 11-27", "Lavori sotto tensione", "Procedure di sicurezza"],
-    references: ["CEI 11-27"],
-    recipients: "Elettricisti, manutentori",
-    syllabus: [
-      { title: "Legislazione sulla sicurezza elettrica", lessonsCount: 10, duration: "3h" },
-      { title: "Effetti della corrente sul corpo umano", lessonsCount: 10, duration: "3h" },
-      { title: "Norma CEI 11-27: definizioni e ruoli", lessonsCount: 15, duration: "4h" },
-      { title: "Procedure per lavori fuori tensione", lessonsCount: 10, duration: "3h" },
-      { title: "Procedure per lavori sotto tensione", lessonsCount: 10, duration: "2h" },
-      { title: "Test di valutazione finale", lessonsCount: 3, duration: "1h" }
-    ]
-  },
-  {
-    id: "26",
-    title: "Addetto ai lavori elettrici (PES PAV PEI) - Aggiornamento",
-    lessons: 21,
-    duration: "6h",
-    price: "73,20",
-    category: "Sicurezza lavoratori",
-    description: "Aggiornamento periodico per mantenere la qualifica PES PAV PEI.",
-    objectives: ["Revisione Norma CEI 11-27", "Nuove tecnologie", "Casi studio"],
-    references: ["CEI 11-27"],
-    recipients: "Personale qualificato",
-    syllabus: [
-      { title: "Documento Progettuale", lessonsCount: 1, duration: "0m" },
-      { title: "Aggiornamento normativo CEI 11-27", lessonsCount: 10, duration: "3h" },
-      { title: "Analisi di infortuni elettrici", lessonsCount: 5, duration: "1h 30m" },
-      { title: "Nuove procedure di lavoro", lessonsCount: 4, duration: "1h 15m" },
-      { title: "Quiz di Verifica", lessonsCount: 1, duration: "15m" }
+      { title: "Rischio Esposizione ai Campi Elettromagnetici", lessonsCount: 8, duration: "2h 1m" },
+      { title: "Quiz di Verifica", lessonsCount: 1, duration: "4m" },
+      { title: "Questionario di Gradimento", lessonsCount: 1, duration: "9m" }
     ]
   },
   {
@@ -1873,7 +1866,7 @@ export const courses: Course[] = [
     title: "Risk Assessment per la sicurezza sul lavoro: Responsabilità, strumenti e tecniche di analisi",
     lessons: 34,
     duration: "8h",
-    price: "183,00 € iva inclusa",
+    price: "150,00",
     category: "Corsi per Professionisti",
     description: "Il corso per la Valutazione dei Rischi è progettato per fornire ai professionisti della sicurezza le competenze avanzate necessarie per condurre valutazioni dei rischi efficaci.",
     fullDescription: [
@@ -2148,7 +2141,7 @@ export const courses: Course[] = [
     title: "Coordinatori per la Sicurezza in fase di progettazione e di esecuzione - Modulo Giuridico",
     lessons: 139,
     duration: "28h",
-    price: "305,00 € iva inclusa",
+    price: "488,00",
     category: "Corsi per Professionisti",
     description: "Il Modulo Giuridico Coordinatore CSP/CSE fornisce le conoscenze legislative e normative essenziali per chi vuole abilitarsi al ruolo di Coordinatore.",
     fullDescription: [
@@ -2413,7 +2406,7 @@ export const courses: Course[] = [
     title: "Aggiornamento Coordinatori per la Sicurezza nei Cantieri CSP - CSE",
     lessons: 169,
     duration: "40h",
-    price: "488,00 € iva inclusa",
+    price: "305,00",
     category: "Corsi per Professionisti",
     description: "Il corso aggiorna i Coordinatori per la Sicurezza su normative, ruoli e responsabilità nei cantieri, fornendo strumenti pratici per gestire la sicurezza.",
     fullDescription: [
