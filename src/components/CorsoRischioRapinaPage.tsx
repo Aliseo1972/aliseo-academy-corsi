@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Laptop, Award, AlertTriangle } from 'lucide-react';
+import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Laptop, Award, AlertTriangle, Monitor, Scale } from 'lucide-react';
 import { courses } from '../data/courses';
 import OnlineLearningBenefits from './OnlineLearningBenefits';
 
@@ -56,7 +56,7 @@ const CorsoRischioRapinaPage: React.FC<CorsoRischioRapinaPageProps> = ({ onNavig
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Formazione specialistica sulle procedure comportamentali da adottare in caso di rapina o aggressione, finalizzata alla tutela dell'incolumità fisica e alla gestione dello stress post-evento.
+              Formazione specifica sulle misure preventive e sui comportamenti da adottare in caso di rapina, conforme al D.Lgs. 81/08.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -79,12 +79,14 @@ const CorsoRischioRapinaPage: React.FC<CorsoRischioRapinaPageProps> = ({ onNavig
               <div className="flex items-center gap-4 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm w-fit">
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5 text-brand" />
-                  <span className="text-white font-bold">{course.duration}</span>
+                  <span className="text-white font-bold">30m</span>
                 </div>
                 <div className="w-px h-6 bg-white/10" />
                 <div className="flex items-center gap-2">
                   <Euro className="w-5 h-5 text-brand" />
-                  <span className="text-white font-bold">{course.price}</span>
+                  <span className="text-white font-bold text-sm">
+                    € 24,40 <span className="text-[10px] text-brand font-medium lowercase">iva inclusa</span>
+                  </span>
                 </div>
               </div>
             </motion.div>
@@ -98,28 +100,27 @@ const CorsoRischioRapinaPage: React.FC<CorsoRischioRapinaPageProps> = ({ onNavig
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             
             <div className="lg:col-span-2 space-y-16">
-              
-              {/* Descrizione Sviluppata */}
+                            {/* Descrizione del Corso */}
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  La Gestione del Rischio Rapina e Aggressione
+                  Descrizione del Corso
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Il <strong>rischio rapina</strong> rappresenta una minaccia significativa per la sicurezza e la salute dei lavoratori impiegati in settori a contatto con il pubblico e con la gestione di valori, come banche, uffici postali, gioiellerie, farmacie e attività commerciali. Oltre al pericolo immediato per l'incolumità fisica, l'evento criminoso comporta gravi conseguenze psicologiche, tra cui lo stress post-traumatico, che possono compromettere a lungo termine il benessere del lavoratore.
+                    Il corso Formazione per lavoratori – Rischio Rapina è rivolto ai lavoratori e ai soggetti dell’organigramma aziendale che necessitano di formazione specifica sulle misure preventive e successive da adottare in caso di rapina.
                   </p>
                   <p>
-                    Il nostro corso e-learning sul Rischio Rapina è progettato per fornire strumenti pratici e conoscenze teoriche fondamentali per prevenire e gestire situazioni critiche. Il percorso formativo analizza le dinamiche tipiche di una rapina, aiutando i partecipanti a riconoscere i segnali premonitori e a comprendere l'importanza della prevenzione situazionale. La formazione si concentra sulle <strong>procedure comportamentali</strong> da adottare durante l'evento: mantenere la calma, evitare reazioni brusche o eroiche e collaborare con l'aggressore per minimizzare il rischio di violenza.
+                    Il percorso formativo approfondisce le principali tematiche di sicurezza nei luoghi di lavoro, con particolare attenzione alla prevenzione, alla gestione dell’evento e ai comportamenti corretti da mantenere durante situazioni critiche.
                   </p>
                   <p>
-                    Un modulo specifico è dedicato alla gestione del panico e alla comunicazione non verbale, elementi determinanti per non innescare escalation di aggressività. Vengono inoltre fornite indicazioni su come comportarsi immediatamente dopo l'evento, dalla richiesta di soccorso alla conservazione delle prove e alla descrizione dei malviventi, facilitando il lavoro delle forze dell'ordine.
+                    Durante il corso vengono analizzate le procedure comportamentali da adottare in caso di rapina, le modalità di gestione dello stress, la comunicazione durante l’evento e le azioni da attuare nella fase successiva.
                   </p>
                   <p>
-                    La metodologia didattica online permette di affrontare temi delicati attraverso simulazioni, video esplicativi e test di autovalutazione, garantendo un apprendimento efficace e flessibile. La formazione sul rischio rapina non è solo un adempimento normativo ai sensi del <strong>D.Lgs. 81/08</strong>, ma un investimento essenziale nella sicurezza psicofisica dei dipendenti, aumentando la loro consapevolezza e capacità di risposta in situazioni di emergenza.
+                    Il programma è strutturato in moduli didattici con contenuti multimediali, test finale con domande a risposta multipla e questionario di gradimento, per garantire un apprendimento chiaro e verificabile.
                   </p>
                   <p>
-                    Aliseo Academy garantisce una formazione di alto livello, curata da esperti in sicurezza e psicologia dell'emergenza. Al termine del corso, il partecipante sarà in grado di applicare protocolli di sicurezza consolidati, contribuendo a creare un ambiente di lavoro più protetto e resiliente. La prevenzione del rischio rapina richiede una vigilanza costante e una preparazione specifica; questo corso rappresenta il pilastro fondamentale per acquisire le competenze necessarie a gestire l'imprevedibile con professionalità e consapevolezza.
+                    La modalità e-learning consente di seguire il corso in autonomia, con accesso flessibile e continuità formativa.
                   </p>
                 </div>
               </article>
@@ -135,30 +136,18 @@ const CorsoRischioRapinaPage: React.FC<CorsoRischioRapinaPageProps> = ({ onNavig
                   </h3>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Comprendere le dinamiche degli eventi criminosi</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Apprendere tecniche di prevenzione situazionale</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Gestire il panico e lo stress durante l'evento</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Adottare procedure comportamentali di sicurezza</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Gestire correttamente la fase post-rapina</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Conoscere i profili di responsabilità e normativa</span>
-                      </li>
+                      {[
+                        "Fornire ai lavoratori gli elementi formativi sulle tematiche di sicurezza nei luoghi di lavoro",
+                        "Offrire informazioni utili sulle misure preventive e successive da adottare in caso di rapina",
+                        "Comprendere le dinamiche dell’evento criminoso",
+                        "Adottare comportamenti corretti durante e dopo l’evento",
+                        "Gestire lo stress e la fase post-rapina"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-3 text-slate-600">
+                          <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </section>
@@ -173,9 +162,19 @@ const CorsoRischioRapinaPage: React.FC<CorsoRischioRapinaPageProps> = ({ onNavig
                       <Users className="w-8 h-8 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-600 leading-relaxed">
-                        Il corso è rivolto a <strong>lavoratori di banche, uffici postali, farmacie, gioiellerie</strong>, addetti alla vendita in centri commerciali e chiunque operi in attività a rischio di rapina o aggressione.
-                      </p>
+                      <ul className="space-y-2">
+                        {[
+                          "Lavoratori e soggetti dell’organigramma aziendale che necessitano di formazione specifica nella materia oggetto del corso",
+                          "Addetti che operano in attività esposte al rischio rapina",
+                          "Personale di banche, uffici postali, farmacie, gioiellerie e attività commerciali",
+                          "Lavoratori coinvolti nella gestione delle emergenze e delle situazioni critiche"
+                        ].map((item, i) => (
+                          <li key={i} className="text-slate-600 font-medium flex items-center gap-2">
+                            <div className="w-1.5 h-1.5 bg-brand rounded-full" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </section>
@@ -183,10 +182,15 @@ const CorsoRischioRapinaPage: React.FC<CorsoRischioRapinaPageProps> = ({ onNavig
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma Didattico
+                    Programma
                   </h3>
                   <div className="space-y-4">
-                    {course.syllabus?.map((module, i) => (
+                    {[
+                      { title: "Documento Progettuale", duration: "0m" },
+                      { title: "Rischio Rapina", duration: "30m" },
+                      { title: "Quiz di Verifica", duration: "5m" },
+                      { title: "Questionario di Gradimento", duration: "9m" }
+                    ].map((module, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-brand/30 transition-all shadow-sm">
                         <div className="flex justify-between items-start">
                           <div className="flex items-center gap-4">
@@ -195,7 +199,7 @@ const CorsoRischioRapinaPage: React.FC<CorsoRischioRapinaPageProps> = ({ onNavig
                             </div>
                             <h4 className="font-bold text-slate-900 text-lg">{module.title}</h4>
                           </div>
-                          <span className="text-xs font-bold text-slate-400 uppercase tracking-wider bg-slate-50 px-3 py-1 rounded-full border border-slate-100">
+                          <span className="text-slate-500 font-mono text-sm font-bold bg-slate-100 px-2 py-1 rounded-lg shrink-0 ml-4">
                             {module.duration}
                           </span>
                         </div>
@@ -203,12 +207,37 @@ const CorsoRischioRapinaPage: React.FC<CorsoRischioRapinaPageProps> = ({ onNavig
                     ))}
                   </div>
                 </section>
+
+                <section>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <div className="w-1.5 h-6 bg-brand rounded-full" />
+                    Quadro Normativo
+                  </h3>
+                  <div className="bg-slate-900 rounded-3xl p-8 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-brand/20 transition-colors" />
+                    <div className="relative space-y-4">
+                      {[
+                        { title: "Artt. 36, 37 del D.Lgs. 81/2008;", desc: "Formazione e informazione dei lavoratori", icon: Scale }
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl">
+                          <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
+                            <item.icon className="w-5 h-5 text-brand" />
+                          </div>
+                          <div>
+                            <p className="text-white font-bold">{item.title}</p>
+                            <p className="text-slate-400 text-sm font-medium">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </section>
               </div>
             </div>
 
             {/* Sidebar */}
             <div className="space-y-8">
-              <div className="bg-slate-900 rounded-3xl p-8 sticky top-24 shadow-2xl shadow-slate-200">
+              <div className="bg-slate-900 rounded-3xl p-8 sticky top-24 border border-white/5 shadow-2xl">
                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                   <GraduationCap className="w-6 h-6 text-brand" />
                   Scheda Corso
@@ -216,18 +245,18 @@ const CorsoRischioRapinaPage: React.FC<CorsoRischioRapinaPageProps> = ({ onNavig
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Clock className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">{course.duration}</p>
+                      <p className="text-white font-bold">30m</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Laptop className="w-5 h-5 text-brand" />
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Monitor className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
@@ -236,12 +265,34 @@ const CorsoRischioRapinaPage: React.FC<CorsoRischioRapinaPageProps> = ({ onNavig
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Award className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
+                      <p className="text-white font-bold text-sm leading-tight">Attestato valido a norma di legge</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Laptop className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Fruibilità</p>
+                      <p className="text-white font-bold text-sm">90 giorni dalla data di attivazione</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 bg-brand/5 border-brand/20">
+                      <Euro className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
+                      <p className="text-white font-bold text-sm">
+                        € 24,40 <span className="text-[10px] text-brand font-medium lowercase">iva inclusa</span>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -303,13 +354,13 @@ const CorsoRischioRapinaPage: React.FC<CorsoRischioRapinaPageProps> = ({ onNavig
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Rischio Interferenze", desc: "Gestione della sicurezza in presenza di ditte esterne", view: 'corso-rischio-interferenze', icon: AlertTriangle },
-              { title: "Stress Lavoro Correlato", desc: "Valutazione e gestione dello stress occupazionale", view: 'corso-stress-lavoro-correlato', icon: ShieldCheck },
-              { title: "Movimentazione Carichi", desc: "Prevenzione delle patologie muscolo-scheletriche", view: 'corso-movimentazione-manuale-carichi', icon: BookOpen },
+              { id: "36", title: "Rischio Interferenze", desc: "Gestione della sicurezza in presenza di ditte esterne", icon: AlertTriangle },
+              { id: "46", title: "Stress Lavoro Correlato", desc: "Valutazione e gestione dello stress occupazionale", icon: ShieldCheck },
+              { id: "40", title: "Movimentazione Carichi", desc: "Prevenzione delle patologie muscolo-scheletriche", icon: BookOpen },
             ].map((item, i) => (
               <button 
                 key={i}
-                onClick={() => onNavigate(item.view)}
+                onClick={() => onOpenCourse(item.id)}
                 className="group p-6 bg-white rounded-2xl border border-slate-200 hover:border-brand/30 hover:shadow-lg hover:shadow-brand/5 transition-all text-left flex flex-col h-full"
               >
                 <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center mb-4 group-hover:bg-brand/10 transition-colors">

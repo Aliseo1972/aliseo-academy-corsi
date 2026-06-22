@@ -16,14 +16,14 @@ const CorsoRumorePage: React.FC<CorsoRumorePageProps> = ({ onNavigate }) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Corso Formazione Lavoratori Rischio Rumore Online | Aliseo Academy";
+    document.title = "Corso Rischio Esposizione al Rumore | Formazione E-learning Sicurezza";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Corso di formazione specifica per lavoratori sull'esposizione al rumore. Formazione obbligatoria online conforme al D.Lgs 81/08 Titolo VIII Capo II.");
+      metaDescription.setAttribute('content', "Corso di formazione online sui rischi derivanti dall'esposizione al rumore nei luoghi di lavoro. Formazione e-learning certificata D.Lgs 81/08.");
     }
   }, []);
 
-  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Rumore&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20Formazione%20per%20lavoratori%20-%20Rischio%20Esposizione%20al%20Rumore.%0APotrei%20avere%20maggiori%20informazioni%3F%0A%0AGrazie.";
+  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Rischio%20Esposizione%20al%20Rumore&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20e-learning%20sull'esposizione%20al%20rumore.%0APotrei%20avere%20maggiori%20informazioni%3F%0A%0AGrazie.";
 
   return (
     <div className="bg-white min-h-screen">
@@ -48,7 +48,7 @@ const CorsoRumorePage: React.FC<CorsoRumorePageProps> = ({ onNavigate }) => {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6"
             >
-              Corso Formazione <span className="text-brand">Lavoratori Rischio Rumore</span> Online
+              Corso <span className="text-brand">Rischio Esposizione al Rumore</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -56,7 +56,7 @@ const CorsoRumorePage: React.FC<CorsoRumorePageProps> = ({ onNavigate }) => {
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Formazione specifica obbligatoria sulla prevenzione dei rischi derivanti dall'esposizione al rumore professionale ai sensi del D.Lgs. 81/08. Percorso 100% online.
+              Formazione specifica sui rischi derivanti dall’esposizione al rumore nei luoghi di lavoro, conforme al D.Lgs. 81/08.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -96,16 +96,19 @@ const CorsoRumorePage: React.FC<CorsoRumorePageProps> = ({ onNavigate }) => {
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    L'esposizione al rumore negli ambienti di lavoro rappresenta uno dei rischi fisici più diffusi e, purtroppo, spesso sottovalutati. L'ipoacusia da rumore, ovvero la perdita progressiva e irreversibile dell'udito, è una delle malattie professionali più denunciate in Italia. Il rischio rumore non riguarda solo i settori tradizionalmente rumorosi come la metalmeccanica o l'edilizia, ma può interessare una vasta gamma di attività produttive e di servizio.
+                    Il corso Formazione per lavoratori – Rischio Esposizione al Rumore è rivolto a tutti i lavoratori esposti a livelli sonori potenzialmente dannosi, in particolare a chi opera in contesti produttivi, cantieri, officine o altri ambienti caratterizzati da elevata rumorosità.
                   </p>
                   <p>
-                    Questo corso di formazione specialistica, erogato interamente in modalità e-learning da Aliseo Academy, fornisce ai lavoratori le conoscenze necessarie per comprendere i pericoli legati all'esposizione sonora e le misure di prevenzione da adottare. La normativa vigente, il D.Lgs. 81/08 al Titolo VIII Capo II, stabilisce obblighi precisi per la valutazione del rumore e per la formazione dei lavoratori esposti a livelli superiori ai valori inferiori di azione.
+                    Il percorso formativo approfondisce i rischi derivanti dall’esposizione prolungata al rumore, illustrando le conseguenze per la salute, le misure di prevenzione e protezione previste dalla normativa e le corrette modalità di utilizzo dei dispositivi di protezione.
                   </p>
                   <p>
-                    Attraverso il nostro percorso formativo online, i partecipanti approfondiranno la fisica del suono, imparando a distinguere tra intensità e frequenza, e comprenderanno come vengono misurati i livelli di esposizione quotidiana e di picco. Verrà data particolare enfasi all'uso corretto dei Dispositivi di Protezione Individuale (DPI) dell'udito, come tappi e cuffie, analizzando i criteri di scelta, l'indossamento corretto e la manutenzione.
+                    Durante il corso vengono analizzate le fonti di rumore, i valori limite di esposizione, i criteri di valutazione del rischio e i comportamenti corretti da adottare per ridurre l’esposizione.
                   </p>
                   <p>
-                    La formazione e-learning di Aliseo Academy permette di assolvere agli obblighi normativi con la massima flessibilità, garantendo contenuti multimediali di alta qualità e test di verifica dell'apprendimento. Il corso analizza anche gli effetti extra-uditivi del rumore, come lo stress, l'aumento della pressione arteriosa e la riduzione della concentrazione, che possono aumentare il rischio di infortuni sul lavoro. Al termine del percorso, verrà rilasciato un attestato di formazione certificato, valido su tutto il territorio nazionale.
+                    Il programma è strutturato in moduli didattici con contenuti multimediali, test finale con domande a risposta multipla e questionario di gradimento, per garantire un apprendimento chiaro e verificabile.
+                  </p>
+                  <p>
+                    La modalità e-learning consente di seguire il corso in autonomia, con accesso flessibile e continuità formativa.
                   </p>
                 </div>
               </article>
@@ -120,16 +123,13 @@ const CorsoRumorePage: React.FC<CorsoRumorePageProps> = ({ onNavigate }) => {
                     Destinatari
                   </h3>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
-                    <p className="text-slate-600 mb-6">
-                      Il corso è rivolto a tutti i lavoratori esposti a livelli di rumore che superano i valori di azione previsti dalla normativa, indipendentemente dal settore di appartenenza.
-                    </p>
                     <ul className="space-y-3">
                       {[
-                        "Operai del settore metalmeccanico e siderurgico",
-                        "Lavoratori del settore edile e delle costruzioni",
-                        "Addetti alla lavorazione del legno e del marmo",
-                        "Operatori in impianti di produzione rumorosi",
-                        "Personale addetto all'uso di macchinari e attrezzature rumorose"
+                        "Lavoratori esposti a livelli sonori potenzialmente dannosi",
+                        "Operatori in contesti produttivi",
+                        "Lavoratori di cantieri e officine",
+                        "Addetti che operano in ambienti caratterizzati da elevata rumorosità",
+                        "Personale che utilizza macchinari o attrezzature rumorose"
                       ].map((item, i) => (
                         <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
                           <Users className="w-5 h-5 text-brand shrink-0" />
@@ -147,12 +147,11 @@ const CorsoRumorePage: React.FC<CorsoRumorePageProps> = ({ onNavigate }) => {
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      "Comprendere la natura del rischio rumore",
-                      "Conoscere i livelli di esposizione e i valori limite",
-                      "Identificare gli effetti del rumore sull'udito",
-                      "Scegliere e utilizzare correttamente gli otoprotettori",
-                      "Interpretare la segnaletica di sicurezza",
-                      "Adottare comportamenti preventivi sul lavoro"
+                      "Fornire ai lavoratori le conoscenze necessarie per comprendere i rischi derivanti dall’esposizione prolungata al rumore",
+                      "Adottare le corrette misure di prevenzione e protezione previste dalla normativa",
+                      "Riconoscere le fonti di rumore",
+                      "Interpretare i risultati delle valutazioni fonometriche",
+                      "Contribuire alla gestione del rischio nel proprio ambiente di lavoro"
                     ].map((obj, i) => (
                       <div key={i} className="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
@@ -169,15 +168,23 @@ const CorsoRumorePage: React.FC<CorsoRumorePageProps> = ({ onNavigate }) => {
                   </h3>
                   <div className="space-y-4">
                     {[
-                      { title: "Fisica del suono e misurazione", desc: "Concetti di decibel, frequenza e strumenti di misura del rumore." },
-                      { title: "Effetti del rumore sulla salute", desc: "L'ipoacusia professionale e gli effetti extra-uditivi (stress, fatica)." },
-                      { title: "Valutazione dell'esposizione", desc: "Valori limite di esposizione e valori di azione previsti dal D.Lgs. 81/08." },
-                      { title: "DPI dell'udito: otoprotettori", desc: "Tipologie di tappi e cuffie, criteri di scelta, indossamento e manutenzione." },
-                      { title: "Test finale", lessonsCount: 1, duration: "10m" }
-                    ].map((item, i) => (
+                      { title: "Documento Progettuale", duration: "0m" },
+                      { title: "Rischio Esposizione al Rumore", duration: "2h 14m" },
+                      { title: "Quiz di Verifica", duration: "5m" },
+                      { title: "Questionario di Gradimento", duration: "9m" }
+                    ].map((module, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-                        <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
-                        <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                        <div className="flex justify-between items-start">
+                          <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-full bg-slate-900 text-brand flex items-center justify-center font-bold">
+                              {String(i + 1).padStart(2, '0')}
+                            </div>
+                            <h4 className="font-bold text-slate-900 text-lg">{module.title}</h4>
+                          </div>
+                          <span className="text-slate-500 font-mono text-sm font-bold bg-slate-100 px-2 py-1 rounded-lg shrink-0 ml-4">
+                            {module.duration}
+                          </span>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -196,15 +203,8 @@ const CorsoRumorePage: React.FC<CorsoRumorePageProps> = ({ onNavigate }) => {
                       <li className="flex items-start gap-3">
                         <Scale className="w-6 h-6 text-brand shrink-0" />
                         <div>
-                          <p className="font-bold">D.Lgs 81/08 - Titolo VIII Capo II</p>
-                          <p className="text-sm text-slate-400">Protezione dei lavoratori contro i rischi di esposizione al rumore.</p>
-                        </div>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <FileText className="w-6 h-6 text-brand shrink-0" />
-                        <div>
-                          <p className="font-bold">Art. 189 D.Lgs 81/08</p>
-                          <p className="text-sm text-slate-400">Valori limite di esposizione e valori di azione per il rumore.</p>
+                          <p className="font-bold">Artt. 36, 37, 193 e 203, comma 1, lettera f) del D.Lgs 81/08 e s.m.i.</p>
+                          <p className="text-sm text-slate-400">Riferimenti normativi per la formazione dei lavoratori esposti al rumore.</p>
                         </div>
                       </li>
                     </ul>
@@ -222,17 +222,17 @@ const CorsoRumorePage: React.FC<CorsoRumorePageProps> = ({ onNavigate }) => {
                 </h3>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Clock className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">{course.duration}</p>
+                      <p className="text-white font-bold">2h</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Laptop className="w-5 h-5 text-brand" />
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Monitor className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
@@ -240,24 +240,44 @@ const CorsoRumorePage: React.FC<CorsoRumorePageProps> = ({ onNavigate }) => {
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Award className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
+                      <p className="text-white font-bold text-sm leading-tight">Attestato valido a norma di legge</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Laptop className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Fruibilità</p>
+                      <p className="text-white font-bold text-sm">90 giorni dalla data di attivazione</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 bg-brand/5 border-brand/20">
+                      <Euro className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
+                      <p className="text-white font-bold text-sm">
+                        € 24,40 <span className="text-[10px] text-brand font-medium lowercase">iva inclusa</span>
+                      </p>
                     </div>
                   </div>
                 </div>
-                <div className="mt-10 pt-8 border-t border-white/10">
-                  <p className="text-slate-400 text-sm mb-1 text-center">
+                <div className="mt-10 pt-8 border-t border-white/10 text-center">
+                  <p className="text-slate-400 text-sm mb-4 font-bold uppercase tracking-wider">
                     Ti rispondiamo entro 24 ore
                   </p>
                   <a 
                     href={mailtoLink}
-                    className="block w-full py-4 bg-brand text-slate-900 text-center font-black uppercase tracking-tight rounded-2xl hover:bg-brand-light transition-all shadow-lg shadow-brand/20"
+                    className="block w-full py-4 bg-brand text-slate-900 font-black uppercase tracking-tight rounded-2xl hover:bg-brand-light transition-all shadow-lg shadow-brand/20"
                   >
-                    Ricevi informazioni
+                    Ricevi informazioni sul corso
                   </a>
                 </div>
               </div>

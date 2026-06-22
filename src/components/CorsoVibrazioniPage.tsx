@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Laptop, Globe, Award, Activity, Monitor, Thermometer, Volume2 } from 'lucide-react';
+import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, Scale, Laptop, Award, Activity, Monitor, Volume2, Thermometer, ShieldCheck, GraduationCap } from 'lucide-react';
 import { courses } from '../data/courses';
 import OnlineLearningBenefits from './OnlineLearningBenefits';
 
@@ -19,14 +19,14 @@ const CorsoVibrazioniPage: React.FC<CorsoVibrazioniPageProps> = ({ onNavigate })
     document.title = "Corso Formazione Lavoratori Rischio Vibrazioni Online | Aliseo Academy";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Corso di formazione specifica per lavoratori sull'esposizione alle vibrazioni meccaniche. Formazione obbligatoria online conforme al D.Lgs 81/08 Titolo VIII Capo III.");
+      metaDescription.setAttribute('content', "Formazione specifica obbligatoria sulla prevenzione dei rischi derivanti dall’esposizione alle vibrazioni meccaniche trasmesse al sistema mano-braccio e al corpo intero, ai sensi del D.Lgs. 81/08.");
     }
   }, []);
 
   const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Vibrazioni&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20Formazione%20per%20lavoratori%20-%20Rischio%20Vibrazioni.%0APotrei%20avere%20maggiori%20informazioni%3F%0A%0AGrazie.";
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white min-h-screen animate-fade-in">
       {/* Hero Section */}
       <section className="relative pt-20 pb-16 bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
@@ -56,7 +56,7 @@ const CorsoVibrazioniPage: React.FC<CorsoVibrazioniPageProps> = ({ onNavigate })
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Formazione specifica obbligatoria sulla prevenzione dei rischi derivanti dall'esposizione alle vibrazioni meccaniche (sistema mano-braccio e corpo intero) ai sensi del D.Lgs. 81/08. Percorso 100% online.
+              Formazione specifica obbligatoria sulla prevenzione dei rischi derivanti dall’esposizione alle vibrazioni meccaniche trasmesse al sistema mano-braccio e al corpo intero, ai sensi del D.Lgs. 81/08.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -96,16 +96,19 @@ const CorsoVibrazioniPage: React.FC<CorsoVibrazioniPageProps> = ({ onNavigate })
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    L'esposizione alle vibrazioni meccaniche rappresenta un rischio fisico significativo per molte categorie di lavoratori, in particolare per coloro che utilizzano utensili manuali vibranti o che operano su macchine semoventi e mezzi di trasporto. Le vibrazioni possono causare danni permanenti alla salute, interessando il sistema vascolare, nervoso, osteoarticolare e muscolare.
+                    Le vibrazioni meccaniche rappresentano un rischio professionale per numerosi lavoratori che utilizzano utensili vibranti, macchine operatrici, mezzi di trasporto o attrezzature industriali. L’esposizione prolungata a vibrazioni può provocare effetti dannosi sul sistema muscolo-scheletrico, circolatorio e neurologico.
                   </p>
                   <p>
-                    Questo corso di formazione specialistica, erogato interamente in modalità e-learning da Aliseo Academy, approfondisce le due principali tipologie di rischio vibrazioni: il sistema mano-braccio (HAV - Hand-Arm Vibration), derivante dall'uso di martelli pneumatici, smerigliatrici o motoseghe, e il sistema corpo intero (WBV - Whole-Body Vibration), tipico di chi guida trattori, carrelli elevatori o mezzi pesanti su terreni sconnessi.
+                    Il corso approfondisce le principali tipologie di vibrazioni previste dalla normativa: le vibrazioni trasmesse al sistema mano-braccio (HAV) e le vibrazioni trasmesse al corpo intero (WBV), illustrando le attività lavorative maggiormente esposte e i possibili effetti sulla salute.
                   </p>
                   <p>
-                    La normativa vigente, il D.Lgs. 81/08 al Titolo VIII Capo III, impone al datore di lavoro l'obbligo di valutare il rischio vibrazioni e di formare adeguatamente i lavoratori esposti. Attraverso il nostro percorso formativo online, i partecipanti impareranno a riconoscere i sintomi precoci delle patologie correlate, come la sindrome del dito bianco (fenomeno di Raynaud secondario) o le patologie della colonna vertebrale, e a comprendere l'importanza delle misure di prevenzione tecniche e organizzative.
+                    Vengono analizzati i valori limite di esposizione, i criteri di valutazione del rischio e gli obblighi del datore di lavoro previsti dal Titolo VIII Capo III del D.Lgs. 81/08.
                   </p>
                   <p>
-                    Scegliere la formazione online di Aliseo Academy significa accedere a contenuti multimediali aggiornati, fruibili in qualsiasi momento e da qualsiasi dispositivo. Il corso analizza i valori limite di esposizione e i valori di azione, l'importanza della manutenzione delle attrezzature, l'uso corretto dei dispositivi di protezione individuale e le tecniche per ridurre la trasmissione delle vibrazioni all'operatore. Al termine del corso, previo superamento del test finale, verrà rilasciato un attestato di formazione valido ai fini di legge, documentando l'assolvimento degli obblighi formativi previsti dal Testo Unico sulla Sicurezza.
+                    Particolare attenzione viene dedicata alle misure di prevenzione e protezione, alla corretta manutenzione delle attrezzature, all'organizzazione del lavoro e all'utilizzo dei dispositivi di protezione industriale.
+                  </p>
+                  <p>
+                    Il percorso formativo consente ai lavoratori di riconoscere i rischi correlati alle vibrazioni e di adottare comportamenti corretti per ridurre l’esposizione e tutelare la propria salute.
                   </p>
                 </div>
               </article>
@@ -119,40 +122,31 @@ const CorsoVibrazioniPage: React.FC<CorsoVibrazioniPageProps> = ({ onNavigate })
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
                     Destinatari
                   </h3>
-                  <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
-                    <p className="text-slate-600 mb-6">
-                      Il corso è rivolto a tutti i lavoratori esposti a vibrazioni meccaniche durante lo svolgimento delle proprie mansioni, in diversi settori produttivi.
-                    </p>
-                    <ul className="space-y-3">
-                      {[
-                        "Operatori del settore edile e stradale (uso di martelli demolitori, costipatori)",
-                        "Addetti alla manutenzione del verde (uso di motoseghe, decespugliatori)",
-                        "Autisti di mezzi pesanti, trattori agricoli e macchine movimento terra",
-                        "Operai metalmeccanici che utilizzano utensili vibranti manuali",
-                        "Magazzinieri addetti alla conduzione di carrelli elevatori"
-                      ].map((item, i) => (
-                        <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
-                          <Users className="w-5 h-5 text-brand shrink-0" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="bg-white border border-slate-200 rounded-3xl p-8 flex items-center gap-6 shadow-sm">
+                    <div className="w-16 h-16 rounded-2xl bg-brand/10 flex items-center justify-center shrink-0">
+                      <Users className="w-8 h-8 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-600 font-medium">
+                        Il corso è rivolto a tutti i lavoratori che, nello svolgimento delle proprie mansioni, possono essere esposti a vibrazioni meccaniche trasmesse al sistema mano-braccio o al corpo intero.
+                      </p>
+                    </div>
                   </div>
                 </section>
 
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Obiettivi formativi
+                    Obiettivi del corso
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      "Distinguere tra vibrazioni HAV e WBV",
-                      "Conoscere i valori limite di esposizione",
-                      "Identificare gli effetti sulla salute (vascolari, nervosi)",
-                      "Valutare l'importanza della manutenzione",
-                      "Adottare corrette posture e tecniche di lavoro",
-                      "Scegliere e utilizzare i DPI specifici"
+                      "Fornire contenuti specifici sulle tematiche di sicurezza nei luoghi di lavoro",
+                      "Offrire le competenze utili a riconoscere e analizzare le situazioni di rischio",
+                      "Insegnare i corretti comportamenti da adottare durante le attività lavorative",
+                      "Comprendere gli effetti delle vibrazioni sulla salute",
+                      "Conoscere le principali misure di prevenzione e protezione",
+                      "Favorire una maior consapevolezza del rischio professionale"
                     ].map((obj, i) => (
                       <div key={i} className="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
@@ -165,19 +159,27 @@ const CorsoVibrazioniPage: React.FC<CorsoVibrazioniPageProps> = ({ onNavigate })
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma del corso
+                    Programma didattico
                   </h3>
                   <div className="space-y-4">
                     {[
-                      { title: "Introduzione al rischio vibrazioni", desc: "Definizioni, grandezze fisiche e tipologie di vibrazioni meccaniche." },
-                      { title: "Vibrazioni mano-braccio (HAV)", desc: "Sorgenti, effetti sulla salute e misure di prevenzione specifiche." },
-                      { title: "Vibrazioni corpo intero (WBV)", desc: "Sorgenti, rischi per la colonna vertebrale e comfort ergonomico." },
-                      { title: "Misure di prevenzione e protezione", desc: "Interventi sulle macchine, organizzazione del lavoro e DPI." },
-                      { title: "Quiz di Verifica", lessonsCount: 1, duration: "15m" }
-                    ].map((item, i) => (
-                      <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-                        <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
-                        <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                      { title: "Documento Progettuale", duration: "1 lezione - 0m" },
+                      { title: "Rischio Vibrazioni", duration: "2 lezioni - 33m" },
+                      { title: "Quiz di Verifica", duration: "1 lezione - 5m" },
+                      { title: "Questionario di Gradimento", duration: "1 lezione - 9m" }
+                    ].map((module, i) => (
+                      <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-brand/30 transition-all shadow-sm">
+                        <div className="flex justify-between items-start">
+                          <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-full bg-slate-900 text-brand flex items-center justify-center font-bold">
+                              {String(i + 1).padStart(2, '0')}
+                            </div>
+                            <h4 className="font-bold text-slate-900 text-lg">{module.title}</h4>
+                          </div>
+                          <span className="text-slate-500 font-mono text-sm font-bold bg-slate-100 px-2 py-1 rounded-lg shrink-0 ml-4">
+                            {module.duration}
+                          </span>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -186,28 +188,23 @@ const CorsoVibrazioniPage: React.FC<CorsoVibrazioniPageProps> = ({ onNavigate })
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Quadro Normativo
+                    Riferimenti normativi
                   </h3>
-                  <div className="bg-slate-900 text-white rounded-3xl p-8">
-                    <div className="text-slate-400 text-sm mb-6 leading-relaxed">
-                      Il D.Lgs. 81/2008 dedica il Capo III del Titolo VIII alla protezione dei lavoratori contro i rischi derivanti dall'esposizione alle vibrazioni meccaniche. La norma stabilisce l'obbligo di valutazione del rischio e definisce le azioni da intraprendere al superamento dei valori di azione.
+                  <div className="bg-slate-900 rounded-3xl p-8 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-brand/20 transition-colors" />
+                    <div className="relative space-y-4">
+                      <div className="flex items-start gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl">
+                        <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center shrink-0">
+                          <Scale className="w-5 h-5 text-brand" />
+                        </div>
+                        <div>
+                          <p className="text-white font-bold">Quadro legislativo di riferimento</p>
+                          <p className="text-slate-400 text-sm font-medium leading-relaxed">
+                            Artt. 36, 37, 193 e 203 comma 1 lettera f) del D.Lgs. 81/08 e s.m.i.
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                    <ul className="space-y-4">
-                      <li className="flex items-start gap-3">
-                        <Scale className="w-6 h-6 text-brand shrink-0" />
-                        <div>
-                          <p className="font-bold">D.Lgs 81/08 - Titolo VIII Capo III</p>
-                          <p className="text-sm text-slate-400">Protezione dei lavoratori contro i rischi di esposizione a vibrazioni.</p>
-                        </div>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <FileText className="w-6 h-6 text-brand shrink-0" />
-                        <div>
-                          <p className="font-bold">Art. 201 D.Lgs 81/08</p>
-                          <p className="text-sm text-slate-400">Valori limite di esposizione e valori di azione per le vibrazioni.</p>
-                        </div>
-                      </li>
-                    </ul>
                   </div>
                 </section>
               </div>
@@ -215,59 +212,116 @@ const CorsoVibrazioniPage: React.FC<CorsoVibrazioniPageProps> = ({ onNavigate })
 
             {/* Sidebar */}
             <div className="space-y-8">
-              <div className="bg-slate-900 rounded-3xl p-8 sticky top-24">
+              <div className="bg-slate-900 rounded-3xl p-8 sticky top-24 border border-white/5 shadow-2xl">
                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                   <GraduationCap className="w-6 h-6 text-brand" />
                   Scheda Corso
                 </h3>
+                
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Clock className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">{course.duration}</p>
+                      <p className="text-white font-bold">30m</p>
                     </div>
                   </div>
+
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Laptop className="w-5 h-5 text-brand" />
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Monitor className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
                       <p className="text-white font-bold">E-learning</p>
                     </div>
                   </div>
+
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Award className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
+                      <p className="text-white font-bold text-sm leading-tight">Attestato valido a norma di legge</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Laptop className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Fruibilità</p>
+                      <p className="text-white font-bold text-sm">90 giorni dalla data di attivazione</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 bg-brand/5 border-brand/20">
+                      <Euro className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
+                      <p className="text-white font-bold text-sm">
+                        € 24,40 <span className="text-[10px] text-brand font-medium lowercase">iva inclusa</span>
+                      </p>
                     </div>
                   </div>
                 </div>
-                <div className="mt-10 pt-8 border-t border-white/10">
-                  <p className="text-slate-400 text-sm mb-1 text-center">
+
+                <div className="mt-10 pt-8 border-t border-white/10 text-center">
+                  <p className="text-slate-400 text-sm mb-4 font-bold uppercase tracking-wider">
                     Ti rispondiamo entro 24 ore
                   </p>
                   <a 
                     href={mailtoLink}
-                    className="block w-full py-4 bg-brand text-slate-900 text-center font-black uppercase tracking-tight rounded-2xl hover:bg-brand-light transition-all shadow-lg shadow-brand/20"
+                    className="block w-full py-4 bg-brand text-slate-900 font-black uppercase tracking-tight rounded-2xl hover:bg-brand-light transition-all shadow-lg shadow-brand/20"
                   >
-                    Ricevi informazioni
+                    RICEVI INFORMAZIONI SUL CORSO
                   </a>
                 </div>
+              </div>
+
+              <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
+                <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-brand" />
+                  Certificazione
+                </h4>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Al termine del corso e previo superamento del test finale, verrà rilasciato un attestato valido ai sensi del D.Lgs. 81/08.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Final CTA */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6">
+            Hai bisogno di formare i tuoi lavoratori sul rischio vibrazioni?
+          </h2>
+          <p className="text-lg text-slate-600 mb-10">
+            Il nostro team è a disposizione per supportarti nella scelta dei percorsi formativi più adatti alla tua azienda.
+          </p>
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-slate-500 text-sm font-bold">Ti rispondiamo entro 24 ore</span>
+            <a 
+              href={mailtoLink}
+              className="px-12 py-5 bg-slate-900 text-white font-black uppercase tracking-tight rounded-2xl hover:bg-slate-800 transition-all shadow-xl inline-block"
+            >
+              RICEVI INFORMAZIONI SUL CORSO
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Internal Navigation */}
-      <section className="py-16 border-t border-slate-100 bg-slate-50/50">
+      <section className="py-16 border-t border-slate-100 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-black text-slate-900 mb-8 flex items-center gap-3">
             <div className="w-2 h-6 bg-brand rounded-full" />

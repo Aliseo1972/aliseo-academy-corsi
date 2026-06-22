@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, MessageSquare, ShieldCheck, GraduationCap, Briefcase, Scale, Laptop, Award } from 'lucide-react';
+import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, MessageSquare, ShieldCheck, GraduationCap, Briefcase, Scale, Laptop, Award, Monitor } from 'lucide-react';
 import { courses } from '../data/courses';
 import OnlineLearningBenefits from './OnlineLearningBenefits';
 
@@ -56,7 +56,7 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Formazione specifica sulla protezione dagli agenti biologici nel luogo di lavoro. Un percorso completo per prevenire l'esposizione a virus, batteri e parassiti secondo il Titolo X del D.Lgs. 81/08.
+              Formazione specifica per lavoratori esposti ad agenti biologici, conforme al D.Lgs. 81/08.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -103,23 +103,23 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  La Prevenzione del Rischio Biologico
+                  Descrizione del Corso
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Il <strong>Rischio Biologico</strong> rappresenta una minaccia invisibile ma estremamente concreta in molti settori lavorativi. Ai sensi del <strong>Titolo X del D.Lgs. 81/08</strong>, il rischio biologico deriva dall'esposizione ad agenti biologici quali microrganismi (virus, batteri, funghi), colture cellulari ed endoparassiti umani che potrebbero provocare infezioni, allergie o intossicazioni.
+                    Il corso Formazione Lavoratori – Rischio Biologico è rivolto ai lavoratori che possono entrare in contatto con agenti biologici durante lo svolgimento della propria attività lavorativa.
                   </p>
                   <p>
-                    Il nostro corso e-learning è strutturato per fornire ai lavoratori le conoscenze necessarie per identificare le sorgenti di rischio e adottare le misure di prevenzione e protezione più efficaci. La formazione analizza la classificazione degli agenti biologici in quattro gruppi di rischio, basata sulla pericolosità per l'uomo, sulla probabilità di propagazione nella comunità e sulla disponibilità di efficaci misure di profilassi o terapia.
+                    Il percorso formativo approfondisce i principali rischi derivanti dall’esposizione ad agenti biologici come microrganismi, virus, batteri, funghi, colture cellulari ed endoparassiti umani.
                   </p>
                   <p>
-                    In contesti come laboratori, strutture sanitarie, servizi di pulizia, gestione dei rifiuti o agricoltura, la consapevolezza del rischio è la prima linea di difesa. Il corso approfondisce le modalità di trasmissione (per via aerea, per contatto, per ingestione) e l'importanza dell'igiene personale e ambientale. Un focus particolare è dedicato all'uso corretto dei <strong>Dispositivi di Protezione Individuale (DPI)</strong>, come guanti, mascherine e tute protettive, fondamentali per minimizzare l'esposizione.
+                    Durante il corso vengono analizzate le modalità di esposizione, le vie di trasmissione, le misure di prevenzione e protezione, l’utilizzo dei dispositivi di protezione individuale e le procedure igieniche da adottare.
                   </p>
                   <p>
-                    La metodologia didattica online permette di affrontare temi complessi attraverso moduli interattivi, video esplicativi e test di autovalutazione. Questo garantisce un apprendimento efficace e flessibile, permettendo ai lavoratori di formarsi senza allontanarsi dal proprio ambiente operativo. La prevenzione del rischio biologico non è solo un obbligo normativo, ma una componente essenziale della tutela della salute pubblica e della continuità aziendale.
+                    Il programma è strutturato in moduli didattici con contenuti multimediali, test di verifica e questionario finale, per garantire un apprendimento chiaro, pratico e immediatamente applicabile.
                   </p>
                   <p>
-                    Aliseo Academy garantisce una formazione di alto livello, costantemente aggiornata rispetto alle evoluzioni scientifiche e normative. Al termine del percorso, il lavoratore sarà in grado di collaborare attivamente alla gestione della sicurezza biologica in azienda, riconoscendo le situazioni di pericolo e applicando correttamente le procedure di decontaminazione e smaltimento sicuro.
+                    La modalità e-learning consente di seguire il corso in autonomia, con accesso flessibile e continuità formativa.
                   </p>
                 </div>
               </article>
@@ -133,23 +133,18 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
                     Obiettivi del Corso
                   </h3>
-                  <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {course.objectives?.map((obj, i) => (
-                        <li key={i} className="flex items-start gap-3 text-slate-600">
-                          <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                          <span>{obj}</span>
-                        </li>
-                      ))}
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Classificazione degli agenti biologici (Gruppi 1, 2, 3, 4)</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Procedure di emergenza e primo soccorso</span>
-                      </li>
-                    </ul>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {[
+                      "Comprendere i rischi derivanti dall’esposizione ad agenti biologici",
+                      "Conoscere le vie di trasmissione e le misure preventive",
+                      "Applicare comportamenti e procedure di sicurezza",
+                      "Contribuire alla tutela della salute propria e collettiva"
+                    ].map((obj, i) => (
+                      <div key={i} className="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
+                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
+                        <span className="text-sm font-medium text-slate-700">{obj}</span>
+                      </div>
+                    ))}
                   </div>
                 </section>
 
@@ -158,39 +153,67 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
                     Destinatari
                   </h3>
-                  <div className="bg-white border border-slate-200 rounded-3xl p-8 flex items-center gap-6 shadow-sm">
-                    <div className="w-16 h-16 rounded-2xl bg-brand/10 flex items-center justify-center shrink-0">
-                      <Users className="w-8 h-8 text-brand" />
-                    </div>
-                    <div>
-                      <p className="text-slate-600 leading-relaxed">
-                        Il corso è rivolto a <strong>tutti i lavoratori</strong> esposti o potenzialmente esposti ad agenti biologici, inclusi operatori sanitari, addetti alle pulizie, lavoratori del settore agricolo e dei servizi ambientali.
-                      </p>
-                    </div>
+                  <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
+                    <ul className="space-y-3">
+                      {[
+                        "Lavoratori che possono entrare in contatto con agenti biologici",
+                        "Operatori del settore sanitario e laboratoristico",
+                        "Addetti a pulizie, manutenzioni, gestione rifiuti e servizi alla persona",
+                        "Lavoratori del settore agricolo e ambientale"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
+                          <Users className="w-5 h-5 text-brand shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </section>
 
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma Didattico
+                    Programma
                   </h3>
                   <div className="space-y-4">
-                    {course.syllabus?.map((module, i) => (
-                      <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-brand/30 transition-all shadow-sm">
+                    {[
+                      { title: "Documento Progettuale", content: "0m" },
+                      { title: "Rischio Biologico", content: "1h 2m" },
+                      { title: "Quiz di Verifica", content: "5m" },
+                      { title: "Questionario di Gradimento", content: "9m" }
+                    ].map((item, i) => (
+                      <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
                         <div className="flex justify-between items-start">
-                          <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 rounded-full bg-slate-900 text-brand flex items-center justify-center font-bold">
-                              {String(i + 1).padStart(2, '0')}
-                            </div>
-                            <h4 className="font-bold text-slate-900 text-lg">{module.title}</h4>
-                          </div>
-                          <span className="text-xs font-bold text-slate-400 uppercase tracking-wider bg-slate-50 px-3 py-1 rounded-full border border-slate-100">
-                            {module.duration}
-                          </span>
+                          <h4 className="font-bold text-slate-900">{item.title}</h4>
+                          <span className="text-slate-500 font-mono text-sm font-bold bg-slate-100 px-2 py-1 rounded-lg shrink-0 ml-4">{item.content}</span>
                         </div>
                       </div>
                     ))}
+                  </div>
+                </section>
+
+                <section>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <div className="w-1.5 h-6 bg-brand rounded-full" />
+                    Quadro Normativo
+                  </h3>
+                  <div className="bg-slate-900 rounded-3xl p-8 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-brand/20 transition-colors" />
+                    <div className="relative space-y-4">
+                      {[
+                        { title: "Art.36, 37 e 278 del D.Lgs 81/08 e s.m.i.", desc: "Salute e sicurezza sul lavoro", icon: Scale }
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl">
+                          <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
+                            <item.icon className="w-5 h-5 text-brand" />
+                          </div>
+                          <div>
+                            <p className="text-white font-bold">{item.title}</p>
+                            <p className="text-slate-400 text-sm font-medium">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </section>
               </div>
@@ -198,7 +221,7 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
 
             {/* Sidebar */}
             <div className="space-y-8">
-              <div className="bg-slate-900 rounded-3xl p-8 sticky top-24 shadow-2xl shadow-slate-200">
+              <div className="bg-slate-900 rounded-3xl p-8 sticky top-24 border border-white/5 shadow-2xl">
                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                   <GraduationCap className="w-6 h-6 text-brand" />
                   Scheda Corso
@@ -206,18 +229,18 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Clock className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">{course.duration}</p>
+                      <p className="text-white font-bold">1h</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Laptop className="w-5 h-5 text-brand" />
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Monitor className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
@@ -226,12 +249,34 @@ const CorsoRischioBiologicoPage: React.FC<CorsoRischioBiologicoPageProps> = ({ o
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Award className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
+                      <p className="text-white font-bold text-sm leading-tight">Attestato valido ai sensi della normativa vigente</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Laptop className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Fruibilità</p>
+                      <p className="text-white font-bold text-sm">90 giorni dalla data di attivazione</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 bg-brand/5 border-brand/20">
+                      <Euro className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
+                      <p className="text-white font-bold text-sm">
+                        € 24,40 <span className="text-[10px] text-brand font-medium lowercase">iva inclusa</span>
+                      </p>
                     </div>
                   </div>
                 </div>

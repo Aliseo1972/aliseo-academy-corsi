@@ -40,7 +40,7 @@ const FormazioneGeneraleSpecificaBassoUfficiPage: React.FC<FormazioneGeneraleSpe
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6"
             >
               <ShieldCheck className="w-4 h-4" />
-              Percorso Completo 8 Ore - Settore Uffici
+              Art. 37 D.Lgs 81/08 - Settore Uffici
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -54,17 +54,9 @@ const FormazioneGeneraleSpecificaBassoUfficiPage: React.FC<FormazioneGeneraleSpe
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-slate-400 leading-relaxed mb-4"
+              className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              La soluzione formativa completa per il personale amministrativo, 100% online.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.25 }}
-              className="text-lg text-slate-500 leading-relaxed mb-8"
-            >
-              Un unico corso e-learning che copre sia la formazione generale che quella specifica per i rischi del lavoro d'ufficio, garantendo la piena conformità al D.Lgs 81/08.
+              Corso completo per lavoratori del settore uffici, con formazione generale e specifica in modalità e-learning, conforme alla normativa vigente.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -100,23 +92,23 @@ const FormazioneGeneraleSpecificaBassoUfficiPage: React.FC<FormazioneGeneraleSpe
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  Formazione Completa per Lavoratori d'Ufficio: Generale e Specifica
+                  Descrizione del Corso
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Il corso è disponibile online in modalità e-learning. Per aziende o gruppi che desiderano organizzare la formazione anche in presenza con nostro docente, è possibile richiedere una soluzione dedicata contattandoci.
+                    Il corso Formazione Generale e Specifica per Lavoratore Rischio Basso – Settore Uffici è rivolto ai lavoratori dipendenti di aziende classificate a rischio basso che svolgono attività d’ufficio o mansioni assimilabili.
                   </p>
                   <p>
-                    Il **corso di formazione generale e specifica per lavoratori a rischio basso del settore uffici** è il percorso formativo obbligatorio per eccellenza per tutto il personale amministrativo, tecnico e gestionale. Secondo il **D.Lgs 81/08** e l'Accordo Stato-Regioni del 2011, ogni nuovo assunto deve ricevere una formazione completa sulla sicurezza prima di iniziare le proprie attività o comunque entro 60 giorni dall'assunzione.
+                    Il percorso integra la formazione generale sulla salute e sicurezza nei luoghi di lavoro con la formazione specifica sui rischi legati al settore uffici, garantendo un percorso completo e conforme alla normativa vigente.
                   </p>
                   <p>
-                    Questo corso integrato di 8 ore è suddiviso in due moduli fondamentali. Il primo modulo riguarda la **Formazione Generale (4 ore)**, che introduce i concetti base della sicurezza sul lavoro, i diritti e i doveri dei lavoratori, e l'organizzazione della prevenzione in azienda. Il secondo modulo è la **Formazione Specifica (4 ore)**, focalizzata esclusivamente sui rischi dell'ambiente d'ufficio: ergonomia della postazione, uso corretto dei videoterminali, gestione dello stress lavoro-correlato e fattori ambientali come illuminazione e microclima.
+                    Durante il corso vengono affrontati i concetti fondamentali di prevenzione, rischio, danno, protezione, diritti e doveri dei lavoratori, insieme ai rischi specifici connessi all’uso dei videoterminali, alla postura, all’organizzazione degli ambienti di lavoro e alla gestione delle emergenze.
                   </p>
                   <p>
-                    La modalità **e-learning** offerta da Aliseo Academy rappresenta la soluzione ideale per le aziende moderne. Grazie alla nostra piattaforma intuitiva, i lavoratori possono seguire il corso direttamente dalla propria postazione, ottimizzando i tempi e riducendo i costi logistici. Il percorso è arricchito da materiali multimediali, casi pratici e test di autovalutazione che rendono l'apprendimento dinamico e memorabile. La formazione online non è solo una comodità, ma un modo efficace per garantire che ogni dipendente acquisisca le competenze necessarie per proteggere la propria salute a lungo termine.
+                    Il programma è strutturato in moduli didattici progressivi, con contenuti multimediali, quiz intermedi e verifica finale, per garantire un apprendimento efficace e immediatamente applicabile.
                   </p>
                   <p>
-                    L'adempimento a questo obbligo formativo è un pilastro della conformità aziendale. Un personale ben formato è un personale più consapevole, capace di prevenire disturbi comuni come il mal di schiena o l'affaticamento visivo, migliorando così il benessere generale e la produttività. Al termine del corso, Aliseo Academy rilascia un attestato certificato, valido su tutto il territorio nazionale, che documenta l'avvenuta formazione sia generale che specifica per il settore uffici.
+                    La modalità e-learning consente di seguire il corso in autonomia, con accesso flessibile e continuità formativa.
                   </p>
                 </div>
               </article>
@@ -133,10 +125,10 @@ const FormazioneGeneraleSpecificaBassoUfficiPage: React.FC<FormazioneGeneraleSpe
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                     <ul className="space-y-3">
                       {[
-                        "Nuovi assunti in ambito amministrativo e gestionale",
-                        "Personale d'ufficio che deve assolvere l'obbligo formativo completo",
-                        "Apprendisti e stagisti operanti in settori a rischio basso",
-                        "Lavoratori che necessitano di regolarizzare la propria posizione formativa"
+                        "Lavoratori dipendenti del settore uffici",
+                        "Personale amministrativo e gestionale",
+                        "Addetti al front-office e back-office",
+                        "Lavoratori che utilizzano videoterminali"
                       ].map((item, i) => (
                         <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
                           <Users className="w-5 h-5 text-brand shrink-0" />
@@ -154,10 +146,10 @@ const FormazioneGeneraleSpecificaBassoUfficiPage: React.FC<FormazioneGeneraleSpe
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      "Conoscere il sistema istituzionale della prevenzione",
-                      "Identificare i rischi specifici del lavoro d'ufficio",
-                      "Apprendere le corrette posture al videoterminale",
-                      "Gestire i fattori di stress e benessere organizzativo"
+                      "Acquisire le informazioni di base sulla sicurezza sul lavoro",
+                      "Comprendere i rischi specifici del settore uffici",
+                      "Prevenire disturbi legati a postura e videoterminali",
+                      "Operare in sicurezza nello svolgimento delle mansioni"
                     ].map((obj, i) => (
                       <div key={i} className="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
@@ -170,18 +162,24 @@ const FormazioneGeneraleSpecificaBassoUfficiPage: React.FC<FormazioneGeneraleSpe
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma del corso
+                    Programma
                   </h3>
                   <div className="space-y-4">
                     {[
-                      { title: "Modulo Generale (4h)", desc: "Concetti di rischio, danno, prevenzione, protezione, organizzazione della prevenzione aziendale, diritti e doveri." },
-                      { title: "Modulo Specifico Uffici (4h)", desc: "Ergonomia della postazione, uso dei VDT, illuminazione, microclima e stress lavoro-correlato." },
-                      { title: "Salute e Benessere", desc: "Prevenzione dei disturbi muscolo-scheletrici e affaticamento visivo." },
-                      { title: "Procedure di Sicurezza", desc: "Comportamenti sicuri, segnaletica e gestione delle emergenze in ufficio." }
+                      { title: "Documento Progettuale", content: "0m" },
+                      { title: "Formazione Lavoratori Parte Generale", content: "4h 5m" },
+                      { title: "Quiz di Verifica Parte Generale", content: "15m" },
+                      { title: "Formazione Lavoratori Parte Specifica", content: "3h 52m" },
+                      { title: "Quiz di Verifica Parte Specifica", content: "15m" },
+                      { title: "Rischio Lavoro su Videoterminali", content: "1h 3m" },
+                      { title: "Quiz di Verifica Rischio Lavoro su Videoterminali", content: "5m" },
+                      { title: "Questionario di Gradimento", content: "9m" }
                     ].map((item, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-                        <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
-                        <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                        <div className="flex justify-between items-start">
+                          <h4 className="font-bold text-slate-900">{item.title}</h4>
+                          <span className="text-slate-500 font-mono text-sm font-bold bg-slate-100 px-2 py-1 rounded-lg shrink-0 ml-4">{item.content}</span>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -192,23 +190,24 @@ const FormazioneGeneraleSpecificaBassoUfficiPage: React.FC<FormazioneGeneraleSpe
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
                     Quadro Normativo
                   </h3>
-                  <div className="bg-slate-900 text-white rounded-3xl p-8">
-                    <ul className="space-y-4">
-                      <li className="flex items-start gap-3">
-                        <Scale className="w-6 h-6 text-brand shrink-0" />
-                        <div>
-                          <p className="font-bold">D.Lgs 81/08</p>
-                          <p className="text-sm text-slate-400">Artt. 36 e 37: Obblighi di informazione e formazione dei lavoratori.</p>
+                  <div className="bg-slate-900 rounded-3xl p-8 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-brand/20 transition-colors" />
+                    <div className="relative space-y-4">
+                      {[
+                        { title: "Art. 37 D.Lgs. 81/08", desc: "Formazione dei lavoratori", icon: Scale },
+                        { title: "Accordo Stato-Regioni 17/04/2025", desc: "(Rep. Atti n. 59/CSR)", icon: ShieldCheck }
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl">
+                          <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
+                            <item.icon className="w-5 h-5 text-brand" />
+                          </div>
+                          <div>
+                            <p className="text-white font-bold">{item.title}</p>
+                            <p className="text-slate-400 text-sm font-medium">{item.desc}</p>
+                          </div>
                         </div>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <FileText className="w-6 h-6 text-brand shrink-0" />
-                        <div>
-                          <p className="font-bold">Accordo Stato-Regioni 21/12/2011</p>
-                          <p className="text-sm text-slate-400">Standardizzazione dei percorsi formativi per i lavoratori.</p>
-                        </div>
-                      </li>
-                    </ul>
+                      ))}
+                    </div>
                   </div>
                 </section>
               </div>
@@ -223,17 +222,17 @@ const FormazioneGeneraleSpecificaBassoUfficiPage: React.FC<FormazioneGeneraleSpe
                 </h3>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Clock className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">{course.duration}</p>
+                      <p className="text-white font-bold">8h</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Laptop className="w-5 h-5 text-brand" />
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Monitor className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
@@ -241,17 +240,37 @@ const FormazioneGeneraleSpecificaBassoUfficiPage: React.FC<FormazioneGeneraleSpe
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Award className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
+                      <p className="text-white font-bold text-sm leading-tight">Attestato valido ai sensi della normativa vigente</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Laptop className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Fruibilità</p>
+                      <p className="text-white font-bold text-sm">90 giorni dalla data di attivazione</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 bg-brand/5 border-brand/20">
+                      <Euro className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
+                      <p className="text-white font-bold text-sm">
+                        € 97,60 <span className="text-[10px] text-brand font-medium lowercase">iva inclusa</span>
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div className="mt-10 pt-8 border-t border-white/10">
-                  <p className="text-slate-400 text-sm mb-1 text-center">
+                  <p className="text-slate-400 text-sm mb-4 text-center">
                     Ti rispondiamo entro 24 ore
                   </p>
                   <a 

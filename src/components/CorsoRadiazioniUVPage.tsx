@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Laptop, Award, Zap, AlertTriangle, Sun, Radio } from 'lucide-react';
+import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Laptop, Award, Zap, AlertTriangle, Sun, Radio, Scale, Monitor } from 'lucide-react';
 import { courses } from '../data/courses';
 import OnlineLearningBenefits from './OnlineLearningBenefits';
 
@@ -48,7 +48,7 @@ const CorsoRadiazioniUVPage: React.FC<CorsoRadiazioniUVPageProps> = ({ onNavigat
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6"
             >
-              Corso <span className="text-brand">Radiazioni UV</span>
+              Corso Formazione per Lavoratori <span className="text-brand">Rischio Radiazioni UV</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -56,7 +56,7 @@ const CorsoRadiazioniUVPage: React.FC<CorsoRadiazioniUVPageProps> = ({ onNavigat
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Formazione specifica sui rischi derivanti dall'esposizione a radiazioni ultraviolette (solari e artificiali), con focus sulla protezione della pelle e degli occhi.
+              Il corso ha una durata di 30 minuti. È composto da 2 moduli didattici con contenuti multimediali. Al termine dovrà essere svolto un test finale con domande a risposta multipla, con una sola risposta esatta. L'iscrizione al corso ha una durata di 90 giorni, a partire dal giorno dell'iscrizione stessa.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -71,7 +71,7 @@ const CorsoRadiazioniUVPage: React.FC<CorsoRadiazioniUVPageProps> = ({ onNavigat
                     href={mailtoLink}
                     className="px-8 py-4 bg-brand text-slate-900 font-black uppercase tracking-tight rounded-2xl hover:bg-brand-light transition-all flex items-center gap-2 group shadow-xl shadow-brand/20"
                   >
-                    Ricevi informazioni sul corso
+                    RICEVI INFORMAZIONI SUL CORSO
                     <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </a>
                 </div>
@@ -79,12 +79,12 @@ const CorsoRadiazioniUVPage: React.FC<CorsoRadiazioniUVPageProps> = ({ onNavigat
               <div className="flex items-center gap-4 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm w-fit">
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5 text-brand" />
-                  <span className="text-white font-bold">{course.duration}</span>
+                  <span className="text-white font-bold">30 minuti</span>
                 </div>
                 <div className="w-px h-6 bg-white/10" />
                 <div className="flex items-center gap-2">
                   <Euro className="w-5 h-5 text-brand" />
-                  <span className="text-white font-bold">{course.price}</span>
+                  <span className="text-white font-bold">€ 24,40</span>
                 </div>
               </div>
             </motion.div>
@@ -103,23 +103,20 @@ const CorsoRadiazioniUVPage: React.FC<CorsoRadiazioniUVPageProps> = ({ onNavigat
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  La Gestione del Rischio da Radiazioni UV
+                  Descrizione del Corso
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Le <strong>radiazioni ultraviolette (UV)</strong> rappresentano un rischio significativo per molte categorie di lavoratori, sia in ambienti interni che, soprattutto, all'aperto. Sebbene i raggi UV siano invisibili, la loro energia è sufficiente a causare danni biologici immediati e a lungo termine. In ambito lavorativo, distinguiamo tra radiazioni UV di origine <strong>naturale</strong> (esposizione solare per chi lavora outdoor) e <strong>artificiale</strong> (saldatura, lampade germicide, processi industriali).
+                    Le radiazioni ultraviolette (UV) rappresentano un rischio significativo per molte categorie di lavoratori, sia in ambienti interni che, soprattutto, all'aperto. Sebbene i raggi UV siano invisibili, la loro energia è sufficiente a causare danni biologici immediati e a lungo termine.
                   </p>
                   <p>
-                    Il nostro corso e-learning sulle Radiazioni UV approfondisce le misure di prevenzione e protezione necessarie per tutelare la salute dei lavoratori. La normativa vigente (D.Lgs. 81/08) impone una valutazione rigorosa di questo rischio, identificando le mansioni maggiormente esposte e definendo i protocolli di sicurezza per minimizzare l'assorbimento di radiazioni.
+                    Il corso e-learning sulle Radiazioni UV approfondisce le misure di prevenzione e protezione necessarie per tutelare la salute dei lavoratori. La normativa vigente impone una valutazione rigorosa di questo rischio, identificando le mansioni maggiormente esposte e definendo i protocolli di sicurezza per minimizzare l'assorbimento di radiazioni.
                   </p>
                   <p>
-                    Il percorso formativo analizza gli effetti biologici delle radiazioni UV, che colpiscono principalmente la <strong>pelle</strong> (eritemi, ustioni, invecchiamento precoce e tumori cutanei) e gli <strong>occhi</strong> (fotocheratiti, congiuntiviti e danni retinici). Particolare enfasi viene posta sull'importanza della protezione collettiva (schermature, orari di lavoro flessibili per evitare i picchi solari) e individuale (indumenti tecnici, creme solari ad alta protezione, occhiali certificati).
+                    Il percorso formativo analizza gli effetti biologici delle radiazioni UV, che colpiscono principalmente la pelle e gli occhi, includendo fotoinvecchiamento, eritemi e danni oculari. Particolare enfasi viene posta sull'importanza della protezione collettiva e individuale.
                   </p>
                   <p>
-                    La metodologia didattica online permette di affrontare temi tecnici in modo chiaro e accessibile, fornendo consigli pratici su come gestire l'esposizione quotidiana. Per i lavoratori all'aperto, come agricoltori, edili e addetti alla manutenzione del verde, la consapevolezza del rischio è il primo passo per prevenire patologie croniche che possono manifestarsi anche a distanza di anni.
-                  </p>
-                  <p>
-                    Aliseo Academy garantisce una formazione di qualità, curata da esperti in medicina del lavoro e sicurezza industriale. Al termine del corso, il partecipante sarà in grado di riconoscere le situazioni di pericolo e di utilizzare correttamente tutti gli strumenti di protezione a sua disposizione, garantendo una tutela completa della propria salute.
+                    La metodologia didattica online permette di affrontare temi tecnici in modo chiaro e accessibile, fornendo consigli pratici su come gestire l'esposizione quotidiana e adottare comportamenti corretti.
                   </p>
                 </div>
               </article>
@@ -135,30 +132,15 @@ const CorsoRadiazioniUVPage: React.FC<CorsoRadiazioniUVPageProps> = ({ onNavigat
                   </h3>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Comprendere la natura delle radiazioni UV</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Identificare le sorgenti naturali e artificiali</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Conoscere gli effetti biologici su pelle e occhi</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Apprendere l'uso corretto dei DPI specifici</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Gestire l'esposizione solare durante il lavoro</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Conoscere l'importanza dell'idratazione e delle pause</span>
-                      </li>
+                      {[
+                        "Fornire ai lavoratori gli elementi formativi sulle tematiche di sicurezza nei luoghi di lavoro",
+                        "Sviluppare misure di prevenzione e protezione"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-3 text-slate-600">
+                          <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </section>
@@ -173,8 +155,8 @@ const CorsoRadiazioniUVPage: React.FC<CorsoRadiazioniUVPageProps> = ({ onNavigat
                       <Users className="w-8 h-8 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-600 leading-relaxed">
-                        Il corso è rivolto a <strong>lavoratori all'aperto</strong> (agricoltura, edilizia, pesca), addetti alla saldatura, operatori in laboratori con lampade UV e a chiunque sia esposto a radiazioni ultraviolette.
+                      <p className="text-slate-600 leading-relaxed font-medium">
+                        I lavoratori e ogni soggetto dell'organigramma aziendale che abbia la necessità di avere una formazione specifica nella materia oggetto del corso.
                       </p>
                     </div>
                   </div>
@@ -186,7 +168,12 @@ const CorsoRadiazioniUVPage: React.FC<CorsoRadiazioniUVPageProps> = ({ onNavigat
                     Programma Didattico
                   </h3>
                   <div className="space-y-4">
-                    {course.syllabus?.map((module, i) => (
+                    {[
+                      { title: "Documento Progettuale", duration: "1 lezione - 0m" },
+                      { title: "Rischio Radiazioni UV", duration: "2 lezioni - 32m" },
+                      { title: "Quiz di Verifica", duration: "1 lezione - 5m" },
+                      { title: "Questionario di Gradimento", duration: "1 lezione - 9m" }
+                    ].map((module, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-brand/30 transition-all shadow-sm">
                         <div className="flex justify-between items-start">
                           <div className="flex items-center gap-4">
@@ -195,7 +182,7 @@ const CorsoRadiazioniUVPage: React.FC<CorsoRadiazioniUVPageProps> = ({ onNavigat
                             </div>
                             <h4 className="font-bold text-slate-900 text-lg">{module.title}</h4>
                           </div>
-                          <span className="text-xs font-bold text-slate-400 uppercase tracking-wider bg-slate-50 px-3 py-1 rounded-full border border-slate-100">
+                          <span className="text-slate-500 font-mono text-sm font-bold bg-slate-100 px-2 py-1 rounded-lg shrink-0 ml-4">
                             {module.duration}
                           </span>
                         </div>
@@ -203,12 +190,39 @@ const CorsoRadiazioniUVPage: React.FC<CorsoRadiazioniUVPageProps> = ({ onNavigat
                     ))}
                   </div>
                 </section>
+
+                <section>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <div className="w-1.5 h-6 bg-brand rounded-full" />
+                    Quadro Normativo
+                  </h3>
+                  <div className="bg-slate-900 rounded-3xl p-8 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-brand/20 transition-colors" />
+                    <div className="relative space-y-4">
+                      {[
+                        { title: "Art. 37, 28, 26 D. Lgs. 81/08", desc: "Formazione dei lavoratori, obblighi del datore di lavoro e valutazione dei rischi", icon: Scale },
+                        { title: "Capo V del Titolo VIII", desc: "Prescrizioni minime di sicurezza e salute relative all'esposizione dei lavoratori ai rischi derivanti dagli agenti fisici (radiazioni ottiche artificiali)", icon: ShieldCheck },
+                        { title: "Allegato XXXVII del D.Lgs. 81/08", desc: "Indicazioni specifiche sulla valutazione dell'esposizione", icon: Scale }
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl">
+                          <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
+                            <item.icon className="w-5 h-5 text-brand" />
+                          </div>
+                          <div>
+                            <p className="text-white font-bold">{item.title}</p>
+                            <p className="text-slate-400 text-sm font-medium">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </section>
               </div>
             </div>
 
             {/* Sidebar */}
             <div className="space-y-8">
-              <div className="bg-slate-900 rounded-3xl p-8 sticky top-24 shadow-2xl shadow-slate-200">
+              <div className="bg-slate-900 rounded-3xl p-8 sticky top-24 border border-white/5 shadow-2xl">
                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                   <GraduationCap className="w-6 h-6 text-brand" />
                   Scheda Corso
@@ -216,32 +230,64 @@ const CorsoRadiazioniUVPage: React.FC<CorsoRadiazioniUVPageProps> = ({ onNavigat
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Clock className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">{course.duration}</p>
+                      <p className="text-white font-bold">30m</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Laptop className="w-5 h-5 text-brand" />
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <BookOpen className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Lezioni</p>
+                      <p className="text-white font-bold">5</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Monitor className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Formato</p>
                       <p className="text-white font-bold">E-learning</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Laptop className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Lingua / Livello</p>
+                      <p className="text-white font-bold text-sm">Italiano / Intermedio</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Award className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione / Quiz</p>
+                      <p className="text-white font-bold text-sm">Attestato (Sì) / Quiz (Sì)</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 bg-brand/5 border-brand/20">
+                      <Euro className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
+                      <p className="text-white font-bold text-sm">
+                        € 24,40 <span className="text-[10px] text-brand font-medium lowercase">iva inclusa</span>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -253,7 +299,7 @@ const CorsoRadiazioniUVPage: React.FC<CorsoRadiazioniUVPageProps> = ({ onNavigat
                       href={mailtoLink}
                       className="block w-full py-4 bg-brand text-slate-900 text-center font-black uppercase tracking-tight rounded-2xl hover:bg-brand-light transition-all shadow-lg shadow-brand/20"
                     >
-                      Ricevi informazioni sul corso
+                      RICEVI INFORMAZIONI SUL CORSO
                     </a>
                   </div>
                 </div>
@@ -265,7 +311,7 @@ const CorsoRadiazioniUVPage: React.FC<CorsoRadiazioniUVPageProps> = ({ onNavigat
                   Certificazione
                 </h4>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Al termine del corso e al superamento del test finale, verrà rilasciato un attestato di formazione valido ai sensi del D.Lgs. 81/08.
+                  Al termine del corso e previo superamento del test finale verrà rilasciato un attestato valido ai sensi del D.Lgs. 81/08.
                 </p>
               </div>
             </div>
@@ -288,7 +334,7 @@ const CorsoRadiazioniUVPage: React.FC<CorsoRadiazioniUVPageProps> = ({ onNavigat
               href={mailtoLink}
               className="px-12 py-5 bg-slate-900 text-white font-black uppercase tracking-tight rounded-2xl hover:bg-slate-800 transition-all shadow-xl inline-block"
             >
-              Ricevi informazioni sul corso
+              RICEVI INFORMAZIONI SUL CORSO
             </a>
           </div>
         </div>
@@ -303,13 +349,13 @@ const CorsoRadiazioniUVPage: React.FC<CorsoRadiazioniUVPageProps> = ({ onNavigat
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Radiazioni Ottiche Artificiali", desc: "Rischi da lampade, laser e saldatura", view: 'corso-radiazioni-ottiche-artificiali', icon: Radio },
-              { title: "Campi Elettromagnetici", desc: "Rischi da macchinari e trasmettitori", view: 'corso-campi-elettromagnetici', icon: Zap },
-              { title: "Rischio Elettrico", desc: "Prevenzione dei rischi da contatto elettrico", view: 'corso-rischio-elettrico', icon: AlertTriangle },
+              { id: "41", title: "Radiazioni Ottiche Artificiali", desc: "Rischi legati ad apparecchiature laser, lampade e saldatura", icon: Radio },
+              { id: "33", title: "Campi Elettromagnetici", desc: "Prevenzione dei rischi legati all'esposizione a campi elettromagnetici", icon: Zap },
+              { id: "32", title: "Rischio Elettrico", desc: "Informazione sui pericoli legati all'utilizzo dell'energia elettrica", icon: AlertTriangle },
             ].map((item, i) => (
               <button 
                 key={i}
-                onClick={() => onNavigate(item.view)}
+                onClick={() => onOpenCourse(item.id)}
                 className="group p-6 bg-white rounded-2xl border border-slate-200 hover:border-brand/30 hover:shadow-lg hover:shadow-brand/5 transition-all text-left flex flex-col h-full"
               >
                 <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center mb-4 group-hover:bg-brand/10 transition-colors">

@@ -50,14 +50,14 @@ const CorsoMicroclimaPage: React.FC<CorsoMicroclimaPageProps> = ({ onNavigate })
             >
               Corso Formazione <span className="text-brand">Lavoratori Rischio Microclimatico</span> Online
             </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-xl text-slate-400 leading-relaxed mb-8"
-            >
-              Formazione specifica obbligatoria sulla gestione dei rischi legati a temperatura, umidità e correnti d'aria ai sensi del D.Lgs. 81/08. Percorso 100% online.
-            </motion.p>
+             <motion.p
+               initial={{ opacity: 0, y: 20 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ delay: 0.2 }}
+               className="text-xl text-slate-400 leading-relaxed mb-8"
+             >
+               Formazione specifica per lavoratori esposti a condizioni microclimatiche variabili o estreme, conforme al D.Lgs. 81/08.
+             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -90,24 +90,27 @@ const CorsoMicroclimaPage: React.FC<CorsoMicroclimaPageProps> = ({ onNavigate })
             <div className="lg:col-span-2 space-y-16">
               {/* SEO Content Section */}
               <article className="prose prose-slate max-w-none">
-                <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
-                  <div className="w-2 h-8 bg-brand rounded-full" />
-                  Descrizione del corso
-                </h2>
-                <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
-                  <p>
-                    Il rischio microclimatico rappresenta una delle componenti fondamentali della valutazione dei rischi negli ambienti di lavoro, influenzando direttamente il benessere psicofisico, la salute e la produttività dei lavoratori. Il microclima è l'insieme dei parametri fisici (temperatura, umidità, velocità dell'aria) che caratterizzano l'ambiente di lavoro e che determinano gli scambi termici tra l'individuo e l'ambiente circostante.
-                  </p>
-                  <p>
-                    Questo corso di formazione specialistica, erogato interamente in modalità e-learning da Aliseo Academy, approfondisce le dinamiche del comfort termico e dello stress termico. La normativa vigente, in particolare il D.Lgs. 81/08, impone al datore di lavoro l'obbligo di valutare e gestire i rischi derivanti da condizioni microclimatiche sfavorevoli, sia in ambienti "moderati" (uffici, negozi) che in ambienti "severi" (celle frigorifere, fonderie, cantieri all'aperto).
-                  </p>
-                  <p>
-                    Attraverso il nostro percorso formativo online, i lavoratori impareranno a riconoscere i segnali di disagio termico e a comprendere le misure di prevenzione e protezione da adottare. Si analizzeranno i parametri microclimatici fondamentali, come la temperatura dell'aria, l'umidità relativa e la velocità dell'aria, e come questi interagiscano con l'attività metabolica e l'abbigliamento del lavoratore.
-                  </p>
-                  <p>
-                    La formazione e-learning offre il vantaggio di poter gestire i tempi di studio in modo autonomo, garantendo al contempo contenuti aggiornati e certificati. Il corso include moduli dedicati agli effetti sulla salute derivanti dall'esposizione a temperature estreme (colpi di calore, ipotermia) e alle strategie per ottimizzare la ventilazione e il microclima negli spazi chiusi. Al termine del corso, il superamento del test finale permetterà il rilascio di un attestato valido ai fini di legge, documentando l'assolvimento degli obblighi formativi previsti dal Testo Unico sulla Sicurezza.
-                  </p>
-                </div>
+                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
+                   <div className="w-2 h-8 bg-brand rounded-full" />
+                   Descrizione del Corso
+                 </h2>
+                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
+                   <p>
+                     Il corso Formazione Lavoratori – Rischio Microclimatico è rivolto ai lavoratori esposti a condizioni ambientali variabili o estreme durante la propria attività lavorativa.
+                   </p>
+                   <p>
+                     Il percorso formativo approfondisce i principali rischi legati al microclima negli ambienti di lavoro, con particolare attenzione a temperatura, umidità, ventilazione e condizioni ambientali che possono influenzare salute, comfort e sicurezza.
+                   </p>
+                   <p>
+                     Durante il corso vengono analizzati i fattori che determinano il disagio termico, i segnali da riconoscere e le misure di prevenzione e protezione da adottare per garantire condizioni di lavoro più sicure.
+                   </p>
+                   <p>
+                     Il programma è strutturato in moduli didattici con contenuti multimediali, test di verifica e questionario finale, per garantire un apprendimento chiaro, pratico e immediatamente applicabile.
+                   </p>
+                   <p>
+                     La modalità e-learning consente di seguire il corso in autonomia, con accesso flessibile e continuità formativa.
+                   </p>
+                 </div>
               </article>
 
               <OnlineLearningBenefits />
@@ -115,140 +118,152 @@ const CorsoMicroclimaPage: React.FC<CorsoMicroclimaPageProps> = ({ onNavigate })
               {/* Detailed Sections */}
               <div className="space-y-12">
                 <section>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                    <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Destinatari
-                  </h3>
-                  <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
-                    <p className="text-slate-600 mb-6">
-                      Il corso è rivolto a tutti i lavoratori che operano in ambienti dove le condizioni microclimatiche possono rappresentare un rischio per la salute o un fattore di disagio significativo.
-                    </p>
-                    <ul className="space-y-3">
-                      {[
-                        "Lavoratori in ambienti d'ufficio e terziario",
-                        "Operatori in ambienti industriali (officine, magazzini)",
-                        "Lavoratori in ambienti severi caldi (fonderie, lavanderie industriali)",
-                        "Lavoratori in ambienti severi freddi (celle frigorifere, logistica del freddo)",
-                        "Personale che opera in cantieri all'aperto esposto ad agenti atmosferici"
-                      ].map((item, i) => (
-                        <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
-                          <Users className="w-5 h-5 text-brand shrink-0" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                     <div className="w-1.5 h-6 bg-brand rounded-full" />
+                     Destinatari
+                   </h3>
+                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
+                     <ul className="space-y-3">
+                       {[
+                         "Lavoratori esposti a condizioni ambientali variabili o estreme",
+                         "Operatori in ambienti esterni",
+                         "Addetti in celle frigorifere, cucine industriali e reparti produttivi",
+                         "Lavoratori in ambienti con temperatura e umidità non controllate"
+                       ].map((item, i) => (
+                         <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
+                           <Users className="w-5 h-5 text-brand shrink-0" />
+                           {item}
+                         </li>
+                       ))}
+                     </ul>
+                   </div>
                 </section>
 
                 <section>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                    <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Obiettivi formativi
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {[
-                      "Definire i parametri del microclima",
-                      "Valutare il benessere termico globale",
-                      "Prevenire lo stress da calore e da freddo",
-                      "Conoscere le misure di protezione collettiva",
-                      "Gestire correttamente la ventilazione",
-                      "Riconoscere i sintomi di malessere termico"
-                    ].map((obj, i) => (
-                      <div key={i} className="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
-                        <span className="text-sm font-medium text-slate-700">{obj}</span>
-                      </div>
-                    ))}
-                  </div>
+                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                     <div className="w-1.5 h-6 bg-brand rounded-full" />
+                     Obiettivi del Corso
+                   </h3>
+                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                     {[
+                       "Comprendere i rischi legati alle condizioni microclimatiche",
+                       "Riconoscere i principali fattori che influenzano il microclima",
+                       "Valutare i segnali di disagio termico",
+                       "Adottare comportamenti adeguati per garantire comfort e sicurezza"
+                     ].map((obj, i) => (
+                       <div key={i} className="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
+                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
+                         <span className="text-sm font-medium text-slate-700">{obj}</span>
+                       </div>
+                     ))}
+                   </div>
                 </section>
 
                 <section>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                    <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma del corso
-                  </h3>
-                  <div className="space-y-4">
-                    {[
-                      { title: "Introduzione al rischio microclimatico", desc: "Definizioni, concetti di comfort e stress termico negli ambienti di lavoro." },
-                      { title: "Parametri microclimatici", desc: "Temperatura, umidità relativa, velocità dell'aria e calore radiante." },
-                      { title: "Effetti sulla salute", desc: "Patologie da calore (colpo di calore, disidratazione) e da freddo (congelamento, ipotermia)." },
-                      { title: "Misure di prevenzione e protezione", desc: "Interventi tecnici, organizzativi e dispositivi di protezione individuale (DPI)." },
-                      { title: "Quiz di Verifica", lessonsCount: 1, duration: "15m" }
-                    ].map((item, i) => (
-                      <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-                        <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
-                        <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
-                      </div>
-                    ))}
-                  </div>
+                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                     <div className="w-1.5 h-6 bg-brand rounded-full" />
+                     Programma
+                   </h3>
+                   <div className="space-y-4">
+                     {[
+                       { title: "Documento Progettuale", content: "0m" },
+                       { title: "Rischio Microclima", content: "1h 57m" },
+                       { title: "Quiz di Verifica", content: "4m" },
+                       { title: "Questionario di Gradimento", content: "9m" }
+                     ].map((item, i) => (
+                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                         <div className="flex justify-between items-start">
+                           <h4 className="font-bold text-slate-900">{item.title}</h4>
+                           <span className="text-slate-500 font-mono text-sm font-bold bg-slate-100 px-2 py-1 rounded-lg shrink-0 ml-4">{item.content}</span>
+                         </div>
+                       </div>
+                     ))}
+                   </div>
                 </section>
 
                 <section>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                    <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Quadro Normativo
-                  </h3>
-                  <div className="bg-slate-900 text-white rounded-3xl p-8">
-                    <div className="text-slate-400 text-sm mb-6 leading-relaxed">
-                      Il D.Lgs. 81/2008 inquadra il microclima tra gli agenti fisici (Titolo VIII) e ne stabilisce i requisiti minimi per i luoghi di lavoro nell'Allegato IV. Il datore di lavoro ha l'obbligo di garantire condizioni di comfort termico e di proteggere i lavoratori dai rischi di stress termico.
-                    </div>
-                    <ul className="space-y-4">
-                      <li className="flex items-start gap-3">
-                        <Scale className="w-6 h-6 text-brand shrink-0" />
-                        <div>
-                          <p className="font-bold">D.Lgs 81/08 - Titolo VIII</p>
-                          <p className="text-sm text-slate-400">Agenti fisici: valutazione e gestione dei rischi microclimatici.</p>
-                        </div>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <FileText className="w-6 h-6 text-brand shrink-0" />
-                        <div>
-                          <p className="font-bold">Allegato IV D.Lgs 81/08</p>
-                          <p className="text-sm text-slate-400">Requisiti dei luoghi di lavoro: temperatura, umidità e aerazione.</p>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
+                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                     <div className="w-1.5 h-6 bg-brand rounded-full" />
+                     Quadro Normativo
+                   </h3>
+                   <div className="bg-slate-900 rounded-3xl p-8 relative overflow-hidden group">
+                     <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-brand/20 transition-colors" />
+                     <div className="relative space-y-4">
+                       {[
+                         { title: "Art. 37 e Titolo VIII del D.Lgs. 81/08", desc: "Formazione e gestione rischi microclimatici", icon: Scale }
+                       ].map((item, i) => (
+                         <div key={i} className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl">
+                           <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
+                             <item.icon className="w-5 h-5 text-brand" />
+                           </div>
+                           <div>
+                             <p className="text-white font-bold">{item.title}</p>
+                             <p className="text-slate-400 text-sm font-medium">{item.desc}</p>
+                           </div>
+                         </div>
+                       ))}
+                     </div>
+                   </div>
                 </section>
               </div>
             </div>
 
             {/* Sidebar */}
-            <div className="space-y-8">
-              <div className="bg-slate-900 rounded-3xl p-8 sticky top-24">
-                <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                  <GraduationCap className="w-6 h-6 text-brand" />
-                  Scheda Corso
-                </h3>
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Clock className="w-5 h-5 text-brand" />
-                    </div>
-                    <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">{course.duration}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Laptop className="w-5 h-5 text-brand" />
-                    </div>
-                    <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
-                      <p className="text-white font-bold">E-learning</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Award className="w-5 h-5 text-brand" />
-                    </div>
-                    <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
-                    </div>
-                  </div>
-                </div>
+             <div className="space-y-8">
+               <div className="bg-slate-900 rounded-3xl p-8 sticky top-24 border border-white/5 shadow-2xl">
+                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                   <GraduationCap className="w-6 h-6 text-brand" />
+                   Scheda Corso
+                 </h3>
+                 <div className="space-y-6">
+                   <div className="flex items-start gap-4">
+                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                       <Clock className="w-5 h-5 text-brand" />
+                     </div>
+                     <div>
+                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
+                       <p className="text-white font-bold">2h</p>
+                     </div>
+                   </div>
+                   <div className="flex items-start gap-4">
+                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                       <Monitor className="w-5 h-5 text-brand" />
+                     </div>
+                     <div>
+                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
+                       <p className="text-white font-bold">E-learning</p>
+                     </div>
+                   </div>
+                   <div className="flex items-start gap-4">
+                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                       <Award className="w-5 h-5 text-brand" />
+                     </div>
+                     <div>
+                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
+                       <p className="text-white font-bold text-sm leading-tight">Attestato valido ai sensi della normativa vigente</p>
+                     </div>
+                   </div>
+                   <div className="flex items-start gap-4">
+                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                       <Laptop className="w-5 h-5 text-brand" />
+                     </div>
+                     <div>
+                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Fruibilità</p>
+                       <p className="text-white font-bold text-sm">90 giorni dalla data di attivazione</p>
+                     </div>
+                   </div>
+                   <div className="flex items-start gap-4">
+                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 bg-brand/5 border-brand/20">
+                       <Euro className="w-5 h-5 text-brand" />
+                     </div>
+                     <div>
+                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
+                       <p className="text-white font-bold text-sm">
+                         € 24,40 <span className="text-[10px] text-brand font-medium lowercase">iva inclusa</span>
+                       </p>
+                     </div>
+                   </div>
+                 </div>
                 <div className="mt-10 pt-8 border-t border-white/10">
                   <p className="text-slate-400 text-sm mb-1 text-center">
                     Ti rispondiamo entro 24 ore

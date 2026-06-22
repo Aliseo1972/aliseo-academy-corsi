@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Laptop, Award, Zap, Eye, AlertTriangle } from 'lucide-react';
+import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Laptop, Award, Zap, Eye, AlertTriangle, Monitor, Scale } from 'lucide-react';
 import { courses } from '../data/courses';
 import OnlineLearningBenefits from './OnlineLearningBenefits';
 
@@ -56,7 +56,7 @@ const CorsoROAPage: React.FC<CorsoROAPageProps> = ({ onNavigate, onOpenCourse })
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Formazione specifica sui rischi derivanti dall'esposizione a sorgenti di radiazioni ottiche artificiali, con focus sulla protezione di occhi e pelle e l'uso corretto dei DPI.
+              Formazione specifica per lavoratori esposti a radiazioni ottiche artificiali, conforme al D.Lgs. 81/08.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -103,23 +103,23 @@ const CorsoROAPage: React.FC<CorsoROAPageProps> = ({ onNavigate, onOpenCourse })
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  La Gestione del Rischio ROA in Azienda
+                  Descrizione del Corso
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Le <strong>Radiazioni Ottiche Artificiali (ROA)</strong> comprendono tutte le radiazioni elettromagnetiche nella gamma di lunghezze d'onda tra 100 nm e 1 mm, generate da sorgenti artificiali. Queste radiazioni si suddividono in ultraviolette, visibili e infrarosse. In ambito lavorativo, l'esposizione alle ROA è frequente in processi come la saldatura, l'uso di lampade ad alta intensità, laser industriali e forni fusori.
+                    Il corso Formazione per lavoratori – Rischio Radiazioni Ottiche Artificiali è rivolto ai lavoratori che, nello svolgimento della propria attività, possono essere esposti a sorgenti di radiazioni ottiche artificiali.
                   </p>
                   <p>
-                    Il nostro corso e-learning sul Rischio ROA approfondisce gli obblighi previsti dal <strong>Capo V del Titolo VIII del D.Lgs. 81/08</strong>. La normativa impone al datore di lavoro di valutare i rischi derivanti dall'esposizione alle radiazioni ottiche, identificando le sorgenti "non giustificabili" e adottando misure tecniche e organizzative per ridurre l'esposizione al di sotto dei valori limite fissati dalla legge.
+                    Il percorso formativo approfondisce i principali rischi legati all’esposizione a radiazioni ottiche artificiali e fornisce ai lavoratori gli elementi necessari per riconoscere i pericoli presenti nei luoghi di lavoro.
                   </p>
                   <p>
-                    Il percorso formativo analizza dettagliatamente gli effetti biologici delle ROA, con particolare attenzione ai danni acuti e cronici a carico degli <strong>occhi</strong> (fotocheratiti, cataratte, danni retinici) e della <strong>pelle</strong> (eritemi, ustioni, invecchiamento precoce e tumori cutanei). La formazione fornisce indicazioni pratiche sulla scelta e l'uso corretto dei Dispositivi di Protezione Individuale (DPI), come occhiali filtranti, schermi facciali e indumenti protettivi.
+                    Durante il corso vengono analizzati gli effetti biologici derivanti dall’esposizione, con particolare attenzione ai rischi per occhi e cute, alle misure di prevenzione e protezione e ai comportamenti corretti da adottare.
                   </p>
                   <p>
-                    La metodologia didattica online permette di affrontare temi tecnici e normativi complessi attraverso moduli interattivi, video esplicativi e test di autovalutazione. La formazione sul rischio ROA è essenziale per garantire che i lavoratori esposti siano consapevoli dei pericoli invisibili e sappiano adottare i comportamenti corretti per tutelare la propria salute a lungo termine.
+                    Il programma è strutturato in moduli didattici con contenuti multimediali, test finale con domande a risposta multipla e questionario di gradimento, per garantire un apprendimento chiaro e verificabile.
                   </p>
                   <p>
-                    Aliseo Academy garantisce una formazione di alto livello, curata da esperti in igiene industriale e sicurezza sul lavoro. Al termine del corso, il partecipante sarà in grado di identificare le sorgenti di rischio nel proprio ambiente di lavoro e di applicare correttamente i protocolli di sicurezza, contribuendo a un ambiente di lavoro più protetto e conforme alle normative vigenti.
+                    La modalità e-learning consente di seguire il corso in autonomia, con accesso flessibile e continuità formativa.
                   </p>
                 </div>
               </article>
@@ -135,30 +135,17 @@ const CorsoROAPage: React.FC<CorsoROAPageProps> = ({ onNavigate, onOpenCourse })
                   </h3>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Identificare le sorgenti di ROA in azienda</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Comprendere gli effetti biologici su occhi e pelle</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Conoscere i valori limite di esposizione (VLE)</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Apprendere le misure di prevenzione e protezione</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Scegliere e utilizzare correttamente i DPI</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Conoscere gli obblighi normativi del D.Lgs. 81/08</span>
-                      </li>
+                      {[
+                        "Fornire ai lavoratori gli elementi formativi sulle tematiche di sicurezza nei luoghi di lavoro",
+                        "Sviluppare misure di prevenzione e protezione",
+                        "Comprendere i rischi derivanti dall’esposizione a radiazioni ottiche artificiali",
+                        "Adottare comportamenti corretti per la tutela di occhi e cute"
+                      ].map((obj, i) => (
+                        <li key={i} className="flex items-start gap-3 text-slate-600">
+                          <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
+                          <span>{obj}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </section>
@@ -168,25 +155,34 @@ const CorsoROAPage: React.FC<CorsoROAPageProps> = ({ onNavigate, onOpenCourse })
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
                     Destinatari
                   </h3>
-                  <div className="bg-white border border-slate-200 rounded-3xl p-8 flex items-center gap-6 shadow-sm">
-                    <div className="w-16 h-16 rounded-2xl bg-brand/10 flex items-center justify-center shrink-0">
-                      <Users className="w-8 h-8 text-brand" />
-                    </div>
-                    <div>
-                      <p className="text-slate-600 leading-relaxed">
-                        Il corso è rivolto a <strong>lavoratori esposti a ROA</strong>, come saldatori, addetti a laboratori laser, operatori di forni industriali, e a chiunque operi in prossimità di sorgenti artificiali di radiazioni ottiche.
-                      </p>
-                    </div>
+                  <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
+                    <ul className="space-y-3">
+                      {[
+                        "Lavoratori e ogni soggetto dell’organigramma aziendale che abbia necessità di formazione specifica nella materia oggetto del corso",
+                        "Addetti esposti a sorgenti di radiazioni ottiche artificiali",
+                        "Operatori che utilizzano attrezzature, macchinari o processi con possibile emissione di ROA"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
+                          <Users className="w-5 h-5 text-brand shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </section>
 
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma Didattico
+                    Programma
                   </h3>
                   <div className="space-y-4">
-                    {course.syllabus?.map((module, i) => (
+                    {[
+                      { title: "Documento Progettuale", duration: "0m" },
+                      { title: "Rischio Radiazioni Ottiche Artificiali", duration: "32m" },
+                      { title: "Quiz di Verifica", duration: "5m" },
+                      { title: "Questionario di Gradimento", duration: "9m" }
+                    ].map((module, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-brand/30 transition-all shadow-sm">
                         <div className="flex justify-between items-start">
                           <div className="flex items-center gap-4">
@@ -195,12 +191,37 @@ const CorsoROAPage: React.FC<CorsoROAPageProps> = ({ onNavigate, onOpenCourse })
                             </div>
                             <h4 className="font-bold text-slate-900 text-lg">{module.title}</h4>
                           </div>
-                          <span className="text-xs font-bold text-slate-400 uppercase tracking-wider bg-slate-50 px-3 py-1 rounded-full border border-slate-100">
+                          <span className="text-slate-500 font-mono text-sm font-bold bg-slate-100 px-2 py-1 rounded-lg shrink-0 ml-4">
                             {module.duration}
                           </span>
                         </div>
                       </div>
                     ))}
+                  </div>
+                </section>
+
+                <section>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <div className="w-1.5 h-6 bg-brand rounded-full" />
+                    Quadro Normativo
+                  </h3>
+                  <div className="bg-slate-900 rounded-3xl p-8 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-brand/20 transition-colors" />
+                    <div className="relative space-y-4">
+                      {[
+                        { title: "Art. 213 D. Lgs 81/08 e s.m.i.", desc: "Radiazioni ottiche artificiali", icon: Scale }
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl">
+                          <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
+                            <item.icon className="w-5 h-5 text-brand" />
+                          </div>
+                          <div>
+                            <p className="text-white font-bold">{item.title}</p>
+                            <p className="text-slate-400 text-sm font-medium">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </section>
               </div>
@@ -216,18 +237,18 @@ const CorsoROAPage: React.FC<CorsoROAPageProps> = ({ onNavigate, onOpenCourse })
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Clock className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">{course.duration}</p>
+                      <p className="text-white font-bold">30m</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Laptop className="w-5 h-5 text-brand" />
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Monitor className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
@@ -236,12 +257,34 @@ const CorsoROAPage: React.FC<CorsoROAPageProps> = ({ onNavigate, onOpenCourse })
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Award className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
+                      <p className="text-white font-bold text-sm leading-tight">Attestato valido a norma di legge</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Laptop className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Fruibilità</p>
+                      <p className="text-white font-bold text-sm">90 giorni dalla data di attivazione</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 bg-brand/5 border-brand/20">
+                      <Euro className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
+                      <p className="text-white font-bold text-sm">
+                        € 24,40 <span className="text-[10px] text-brand font-medium lowercase">iva inclusa</span>
+                      </p>
                     </div>
                   </div>
                 </div>

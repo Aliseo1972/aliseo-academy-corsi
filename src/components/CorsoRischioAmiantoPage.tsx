@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Laptop, Award } from 'lucide-react';
+import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Laptop, Award, Monitor, Scale } from 'lucide-react';
 import { courses } from '../data/courses';
 import OnlineLearningBenefits from './OnlineLearningBenefits';
 
@@ -56,7 +56,7 @@ const CorsoRischioAmiantoPage: React.FC<CorsoRischioAmiantoPageProps> = ({ onNav
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Formazione specifica sui rischi derivanti dall'esposizione all'amianto. Procedure di sicurezza, riconoscimento dei materiali e corretto utilizzo dei DPI secondo il D.Lgs. 81/08.
+              Formazione specifica sui rischi derivanti dall’esposizione ad amianto, conforme al D.Lgs. 81/08.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -103,23 +103,23 @@ const CorsoRischioAmiantoPage: React.FC<CorsoRischioAmiantoPageProps> = ({ onNav
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  La Gestione del Rischio Amianto
+                  Descrizione del Corso
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    L'<strong>amianto</strong>, o asbesto, è un minerale a struttura fibrosa che è stato ampiamente utilizzato nel settore edile e industriale fino alla sua messa al bando. Nonostante il divieto, la sua presenza in edifici, impianti e manufatti rappresenta ancora oggi uno dei principali rischi per la salute dei lavoratori, specialmente in attività di manutenzione, ristrutturazione e bonifica.
+                    Il corso Formazione per lavoratori – Rischio Amianto è rivolto ai lavoratori che, anche indirettamente, possono entrare in contatto con materiali o strutture che contengono amianto.
                   </p>
                   <p>
-                    Il nostro corso e-learning sul <strong>Rischio Amianto</strong> è progettato per fornire una conoscenza approfondita delle proprietà di questo materiale e dei gravi danni che le sue fibre possono causare all'apparato respiratorio se inalate. La formazione risponde agli obblighi previsti dal <strong>D.Lgs. 81/08</strong>, che impone al datore di lavoro di informare e formare i lavoratori potenzialmente esposti.
+                    Il percorso formativo approfondisce i principali rischi derivanti dalla presenza o dall’esposizione ad amianto, illustrando le caratteristiche del materiale, la normativa vigente e le corrette procedure di prevenzione e gestione.
                   </p>
                   <p>
-                    Durante il percorso didattico, verranno analizzate le diverse tipologie di amianto e i materiali in cui è più probabile riscontrarlo (come l'eternit, le coibentazioni di tubature o i pavimenti in vinil-amianto). Un aspetto cruciale del corso riguarda il riconoscimento dello stato di conservazione dei materiali: l'amianto diventa pericoloso quando è friabile o danneggiato, poiché può rilasciare fibre nell'aria.
+                    Durante il corso vengono analizzate le situazioni in cui può essere presente amianto, le procedure operative di sicurezza, il riconoscimento dei materiali, la gestione del rischio e l’utilizzo dei dispositivi di protezione individuale.
                   </p>
                   <p>
-                    La formazione approfondisce le procedure operative di sicurezza da adottare per minimizzare la dispersione di fibre, l'importanza della delimitazione delle aree di lavoro e l'uso rigoroso dei <strong>Dispositivi di Protezione Individuale (DPI)</strong> specifici, come maschere con filtri P3 e tute monouso. Vengono inoltre illustrate le corrette modalità di decontaminazione e di smaltimento dei rifiuti contenenti amianto.
+                    Il programma è strutturato in moduli didattici con contenuti multimediali, test finale con domande a risposta multipla e questionario di gradimento, per garantire un apprendimento chiaro e verificabile.
                   </p>
                   <p>
-                    Scegliere la formazione online di Aliseo Academy significa accedere a contenuti multimediali interattivi che rendono l'apprendimento immediato ed efficace. Il corso permette ai lavoratori di acquisire consapevolezza e competenze tecniche fondamentali per operare in sicurezza, tutelando la propria salute e quella dei colleghi in ogni contesto lavorativo dove la presenza di amianto sia sospetta o accertata.
+                    La modalità e-learning consente di seguire il corso in autonomia, con accesso flessibile e continuità formativa.
                   </p>
                 </div>
               </article>
@@ -135,20 +135,17 @@ const CorsoRischioAmiantoPage: React.FC<CorsoRischioAmiantoPageProps> = ({ onNav
                   </h3>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {course.objectives?.map((obj, i) => (
+                      {[
+                        "Fornire ai lavoratori le conoscenze essenziali sui rischi derivanti dalla presenza o dall’esposizione ad amianto",
+                        "Illustrare le caratteristiche del materiale, la normativa vigente e le corrette procedure di prevenzione e gestione",
+                        "Riconoscere le possibili situazioni di rischio",
+                        "Adottare comportamenti sicuri e contribuire alla sicurezza del luogo di lavoro"
+                      ].map((obj, i) => (
                         <li key={i} className="flex items-start gap-3 text-slate-600">
                           <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
                           <span>{obj}</span>
                         </li>
                       ))}
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Effetti dell'amianto sulla salute</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Normativa nazionale ed europea</span>
-                      </li>
                     </ul>
                   </div>
                 </section>
@@ -163,9 +160,19 @@ const CorsoRischioAmiantoPage: React.FC<CorsoRischioAmiantoPageProps> = ({ onNav
                       <Users className="w-8 h-8 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-600 leading-relaxed">
-                        Il corso è rivolto a <strong>lavoratori edili, idraulici, manutentori</strong> e tutti i professionisti che operano in contesti dove è possibile la presenza di materiali contenenti amianto.
-                      </p>
+                      <ul className="space-y-2">
+                        {[
+                          "Lavoratori che, anche indirettamente, possono entrare in contatto con materiali o strutture che contengono amianto",
+                          "Addetti alla manutenzione",
+                          "Operatori edili",
+                          "Tecnici, pulitori e personale impegnato in attività di ristrutturazione o smaltimento"
+                        ].map((item, i) => (
+                          <li key={i} className="text-slate-600 font-medium flex items-center gap-2">
+                            <div className="w-1.5 h-1.5 bg-brand rounded-full" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </section>
@@ -173,10 +180,15 @@ const CorsoRischioAmiantoPage: React.FC<CorsoRischioAmiantoPageProps> = ({ onNav
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma Didattico
+                    Programma
                   </h3>
                   <div className="space-y-4">
-                    {course.syllabus?.map((module, i) => (
+                    {[
+                      { title: "Documento Progettuale", duration: "0m" },
+                      { title: "Rischio Amianto", duration: "1h 56m" },
+                      { title: "Quiz di Verifica", duration: "4m" },
+                      { title: "Questionario di Gradimento", duration: "9m" }
+                    ].map((module, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-brand/30 transition-all shadow-sm">
                         <div className="flex justify-between items-start">
                           <div className="flex items-center gap-4">
@@ -185,7 +197,7 @@ const CorsoRischioAmiantoPage: React.FC<CorsoRischioAmiantoPageProps> = ({ onNav
                             </div>
                             <h4 className="font-bold text-slate-900 text-lg">{module.title}</h4>
                           </div>
-                          <span className="text-xs font-bold text-slate-400 uppercase tracking-wider bg-slate-50 px-3 py-1 rounded-full border border-slate-100">
+                          <span className="text-slate-500 font-mono text-sm font-bold bg-slate-100 px-2 py-1 rounded-lg shrink-0 ml-4">
                             {module.duration}
                           </span>
                         </div>
@@ -193,12 +205,37 @@ const CorsoRischioAmiantoPage: React.FC<CorsoRischioAmiantoPageProps> = ({ onNav
                     ))}
                   </div>
                 </section>
+
+                <section>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <div className="w-1.5 h-6 bg-brand rounded-full" />
+                    Quadro Normativo
+                  </h3>
+                  <div className="bg-slate-900 rounded-3xl p-8 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-brand/20 transition-colors" />
+                    <div className="relative space-y-4">
+                      {[
+                        { title: "Art.37 e Capo III Titolo IX del D.Lgs. 81/08;", desc: "Formazione e protezione dei lavoratori dall'amianto", icon: Scale }
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl">
+                          <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
+                            <item.icon className="w-5 h-5 text-brand" />
+                          </div>
+                          <div>
+                            <p className="text-white font-bold">{item.title}</p>
+                            <p className="text-slate-400 text-sm font-medium">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </section>
               </div>
             </div>
 
             {/* Sidebar */}
             <div className="space-y-8">
-              <div className="bg-slate-900 rounded-3xl p-8 sticky top-24 shadow-2xl shadow-slate-200">
+              <div className="bg-slate-900 rounded-3xl p-8 sticky top-24 border border-white/5 shadow-2xl">
                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                   <GraduationCap className="w-6 h-6 text-brand" />
                   Scheda Corso
@@ -206,18 +243,18 @@ const CorsoRischioAmiantoPage: React.FC<CorsoRischioAmiantoPageProps> = ({ onNav
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Clock className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">{course.duration}</p>
+                      <p className="text-white font-bold">2h</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Laptop className="w-5 h-5 text-brand" />
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Monitor className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
@@ -226,12 +263,34 @@ const CorsoRischioAmiantoPage: React.FC<CorsoRischioAmiantoPageProps> = ({ onNav
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Award className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
+                      <p className="text-white font-bold text-sm leading-tight">Attestato valido a norma di legge</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Laptop className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Fruibilità</p>
+                      <p className="text-white font-bold text-sm">90 giorni dalla data di attivazione</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 bg-brand/5 border-brand/20">
+                      <Euro className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
+                      <p className="text-white font-bold text-sm">
+                        € 24,40 <span className="text-[10px] text-brand font-medium lowercase">iva inclusa</span>
+                      </p>
                     </div>
                   </div>
                 </div>

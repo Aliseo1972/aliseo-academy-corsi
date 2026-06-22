@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Laptop, Award } from 'lucide-react';
+import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Laptop, Award, Monitor } from 'lucide-react';
 import { courses } from '../data/courses';
 import OnlineLearningBenefits from './OnlineLearningBenefits';
 
@@ -56,7 +56,7 @@ const CorsoMovimentazioneManualePage: React.FC<CorsoMovimentazioneManualePagePro
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Prevenzione delle patologie muscolo-scheletriche legate al sollevamento e trasporto dei carichi. Tecniche ergonomiche e limiti di peso secondo il Titolo VI del D.Lgs. 81/08.
+              Formazione specifica per lavoratori esposti al rischio da movimentazione manuale dei carichi, conforme al D.Lgs. 81/08.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -103,23 +103,23 @@ const CorsoMovimentazioneManualePage: React.FC<CorsoMovimentazioneManualePagePro
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  Ergonomia e Sicurezza nel Sollevamento Carichi
+                  Descrizione del Corso
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    La <strong>Movimentazione Manuale dei Carichi (MMC)</strong> è una delle attività lavorative più comuni, ma anche una delle principali cause di malattie professionali, in particolare dei disturbi muscolo-scheletrici a carico della colonna vertebrale. Ai sensi del <strong>Titolo VI del D.Lgs. 81/08</strong>, il datore di lavoro è tenuto a valutare i rischi e ad adottare misure per ridurre lo sforzo fisico richiesto ai lavoratori.
+                    Il corso Formazione Lavoratori – Rischio Movimentazione Manuale dei Carichi è rivolto ai lavoratori le cui mansioni prevedono attività di sollevamento, trasporto, spinta, traino o spostamento manuale di carichi.
                   </p>
                   <p>
-                    Il nostro corso e-learning è strutturato per fornire ai lavoratori le competenze necessarie per operare in modo ergonomico e sicuro. La formazione analizza i fattori di rischio legati alle caratteristiche del carico (peso, ingombro, stabilità), allo sforzo fisico richiesto, alle caratteristiche dell'ambiente di lavoro e alle esigenze connesse all'attività.
+                    Il percorso formativo approfondisce i principali rischi connessi alla movimentazione manuale dei carichi, con particolare attenzione alle patologie da sovraccarico biomeccanico e ai rischi per la colonna vertebrale.
                   </p>
                   <p>
-                    Un modulo fondamentale del corso è dedicato all'<strong>anatomia e biomeccanica</strong> della colonna vertebrale, spiegando come posture scorrette e carichi eccessivi possano causare danni permanenti come ernie discali e lombalgie. Vengono illustrate in dettaglio le tecniche di sollevamento corretto: mantenere la schiena dritta, flettere le ginocchia, tenere il carico vicino al corpo e non ruotare il tronco durante lo sforzo.
+                    Durante il corso vengono fornite indicazioni pratiche sulle corrette modalità di sollevamento, trasporto e movimentazione, con l’obiettivo di prevenire disturbi muscolo-scheletrici e situazioni di rischio.
                   </p>
                   <p>
-                    Oltre alle tecniche manuali, il corso approfondisce l'importanza dell'uso di <strong>ausili meccanici</strong> (carrelli, transpallet, sollevatori) che permettono di eliminare o ridurre drasticamente la movimentazione manuale. Vengono inoltre discussi i limiti di peso raccomandati dalle norme tecniche (ISO 11228) in base all'età e al genere del lavoratore, nonché la frequenza e la durata delle operazioni.
+                    Il programma è strutturato in moduli didattici con contenuti multimediali, test di verifica e questionario finale, per garantire un apprendimento chiaro, pratico e immediatamente applicabile.
                   </p>
                   <p>
-                    La flessibilità della formazione online di Aliseo Academy permette ai dipendenti di seguire i moduli didattici secondo le proprie esigenze, garantendo un apprendimento costante e verificabile tramite test interattivi. Al termine del percorso, il lavoratore sarà in grado di riconoscere le situazioni di rischio e di applicare autonomamente le migliori pratiche ergonomiche, contribuendo a un ambiente di lavoro più sano e produttivo.
+                    La modalità e-learning consente di seguire il corso in autonomia, con accesso flessibile e continuità formativa.
                   </p>
                 </div>
               </article>
@@ -131,24 +131,21 @@ const CorsoMovimentazioneManualePage: React.FC<CorsoMovimentazioneManualePagePro
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Obiettivi del Corso
+                    Destinatari
                   </h3>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {course.objectives?.map((obj, i) => (
-                        <li key={i} className="flex items-start gap-3 text-slate-600">
-                          <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                          <span>{obj}</span>
+                    <ul className="space-y-3">
+                      {[
+                        "Lavoratori addetti alla movimentazione manuale dei carichi",
+                        "Addetti alla logistica, magazzino e produzione",
+                        "Operatori che effettuano sollevamento, trasporto o spostamento di carichi",
+                        "Lavoratori esposti a rischio da sovraccarico biomeccanico"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
+                          <Users className="w-5 h-5 text-brand shrink-0" />
+                          {item}
                         </li>
                       ))}
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Valutazione del rischio secondo il metodo NIOSH</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Prevenzione dei disturbi muscolo-scheletrici</span>
-                      </li>
                     </ul>
                   </div>
                 </section>
@@ -156,41 +153,67 @@ const CorsoMovimentazioneManualePage: React.FC<CorsoMovimentazioneManualePagePro
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Destinatari
+                    Obiettivi del Corso
                   </h3>
-                  <div className="bg-white border border-slate-200 rounded-3xl p-8 flex items-center gap-6 shadow-sm">
-                    <div className="w-16 h-16 rounded-2xl bg-brand/10 flex items-center justify-center shrink-0">
-                      <Users className="w-8 h-8 text-brand" />
-                    </div>
-                    <div>
-                      <p className="text-slate-600 leading-relaxed">
-                        Il corso è rivolto a <strong>addetti alla logistica, magazzinieri, operai di produzione</strong> e a tutti i lavoratori che svolgono attività comportanti il sollevamento, il trasporto o lo spostamento di carichi.
-                      </p>
-                    </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {[
+                      "Conoscere i rischi della movimentazione manuale dei carichi",
+                      "Apprendere corrette tecniche di sollevamento",
+                      "Prevenire patologie muscolo-scheletriche",
+                      "Adottare comportamenti sicuri durante la movimentazione"
+                    ].map((obj, i) => (
+                      <div key={i} className="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
+                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
+                        <span className="text-sm font-medium text-slate-700">{obj}</span>
+                      </div>
+                    ))}
                   </div>
                 </section>
 
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma Didattico
+                    Programma
                   </h3>
                   <div className="space-y-4">
-                    {course.syllabus?.map((module, i) => (
-                      <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-brand/30 transition-all shadow-sm">
+                    {[
+                      { title: "Documento Progettuale", content: "0m" },
+                      { title: "Rischio Movimentazione Manuale dei Carichi", content: "59m" },
+                      { title: "Quiz di Verifica", content: "5m" },
+                      { title: "Questionario di Gradimento", content: "9m" }
+                    ].map((item, i) => (
+                      <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
                         <div className="flex justify-between items-start">
-                          <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 rounded-full bg-slate-900 text-brand flex items-center justify-center font-bold">
-                              {String(i + 1).padStart(2, '0')}
-                            </div>
-                            <h4 className="font-bold text-slate-900 text-lg">{module.title}</h4>
-                          </div>
-                          <span className="text-xs font-bold text-slate-400 uppercase tracking-wider bg-slate-50 px-3 py-1 rounded-full border border-slate-100">
-                            {module.duration}
-                          </span>
+                          <h4 className="font-bold text-slate-900">{item.title}</h4>
+                          <span className="text-slate-500 font-mono text-sm font-bold bg-slate-100 px-2 py-1 rounded-lg shrink-0 ml-4">{item.content}</span>
                         </div>
                       </div>
                     ))}
+                  </div>
+                </section>
+
+                <section>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <div className="w-1.5 h-6 bg-brand rounded-full" />
+                    Quadro Normativo
+                  </h3>
+                  <div className="bg-slate-900 rounded-3xl p-8 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-brand/20 transition-colors" />
+                    <div className="relative space-y-4">
+                      {[
+                        { title: "Art. 36, 37 e titolo VI, capo I, art.169, tenuto conto dell'all. XXXIII del D.Lgs. 81/08 e smi", desc: "Movimentazione manuale dei carichi", icon: FileText }
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl">
+                          <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
+                            <item.icon className="w-5 h-5 text-brand" />
+                          </div>
+                          <div>
+                            <p className="text-white font-bold">{item.title}</p>
+                            <p className="text-slate-400 text-sm font-medium">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </section>
               </div>
@@ -198,7 +221,7 @@ const CorsoMovimentazioneManualePage: React.FC<CorsoMovimentazioneManualePagePro
 
             {/* Sidebar */}
             <div className="space-y-8">
-              <div className="bg-slate-900 rounded-3xl p-8 sticky top-24 shadow-2xl shadow-slate-200">
+              <div className="bg-slate-900 rounded-3xl p-8 sticky top-24 border border-white/5 shadow-2xl">
                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                   <GraduationCap className="w-6 h-6 text-brand" />
                   Scheda Corso
@@ -206,18 +229,18 @@ const CorsoMovimentazioneManualePage: React.FC<CorsoMovimentazioneManualePagePro
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Clock className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">{course.duration}</p>
+                      <p className="text-white font-bold">1h</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Laptop className="w-5 h-5 text-brand" />
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Monitor className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
@@ -226,12 +249,34 @@ const CorsoMovimentazioneManualePage: React.FC<CorsoMovimentazioneManualePagePro
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Award className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
+                      <p className="text-white font-bold text-sm leading-tight">Attestato valido ai sensi della normativa vigente</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Laptop className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Fruibilità</p>
+                      <p className="text-white font-bold text-sm">90 giorni dalla data di attivazione</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 bg-brand/5 border-brand/20">
+                      <Euro className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
+                      <p className="text-white font-bold text-sm">
+                        € 24,40 <span className="text-[10px] text-brand font-medium lowercase">iva inclusa</span>
+                      </p>
                     </div>
                   </div>
                 </div>

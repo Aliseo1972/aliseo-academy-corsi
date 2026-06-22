@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Laptop, Globe, Award, RefreshCw } from 'lucide-react';
+import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Laptop, Globe, Award, RefreshCw, Monitor } from 'lucide-react';
 import { courses } from '../data/courses';
 import OnlineLearningBenefits from './OnlineLearningBenefits';
 
@@ -40,7 +40,7 @@ const AggiornamentoLavoratoriPage: React.FC<AggiornamentoLavoratoriPageProps> = 
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6"
             >
               <RefreshCw className="w-4 h-4" />
-              Aggiornamento Quinquennale - 6 Ore
+              Aggiornamento Periodico - 6 Ore
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -54,17 +54,9 @@ const AggiornamentoLavoratoriPage: React.FC<AggiornamentoLavoratoriPageProps> = 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-slate-400 leading-relaxed mb-4"
+              className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Rinnova la tua formazione sulla sicurezza con il corso di aggiornamento obbligatorio, 100% in e-learning.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.25 }}
-              className="text-lg text-slate-500 leading-relaxed mb-8"
-            >
-              Il corso di aggiornamento quinquennale è fondamentale per mantenere attive le competenze in materia di sicurezza e salute sul lavoro, in linea con le evoluzioni normative e tecnologiche.
+              Corso di aggiornamento periodico per lavoratori, obbligatorio in materia di salute e sicurezza sul lavoro, erogato in modalità e-learning.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -100,23 +92,23 @@ const AggiornamentoLavoratoriPage: React.FC<AggiornamentoLavoratoriPageProps> = 
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  L'Importanza dell'Aggiornamento Periodico sulla Sicurezza
+                  Descrizione del Corso
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Il corso è disponibile online in modalità e-learning. Per aziende o gruppi che desiderano organizzare la formazione anche in presenza con nostro docente, è possibile richiedere una soluzione dedicata contattandoci.
+                    Il corso Aggiornamento Lavoratori Online è rivolto a tutti i lavoratori che devono aggiornare periodicamente la propria formazione in materia di salute e sicurezza sul lavoro.
                   </p>
                   <p>
-                    La sicurezza sul lavoro non è un concetto statico, ma un processo in continua evoluzione. Il **D.Lgs 81/08**, all'articolo 37, stabilisce chiaramente l'obbligo per il datore di lavoro di assicurare che ogni lavoratore riceva una formazione adeguata e specifica, che deve essere periodicamente ripetuta in relazione all'evoluzione dei rischi o all'insorgenza di nuovi rischi. L'Accordo Stato-Regioni del 21/12/2011 ha poi definito la periodicità quinquennale e la durata minima di 6 ore per questo aggiornamento.
+                    Il percorso formativo è conforme a quanto previsto dal D.Lgs. 81/08 e dall’Accordo Stato-Regioni 17/04/2025, e consente di mantenere aggiornate le conoscenze sui principali rischi lavorativi, sulle misure di prevenzione e protezione e sulle procedure di sicurezza.
                   </p>
                   <p>
-                    Il **corso di aggiornamento lavoratori online** di Aliseo Academy è progettato per rinfrescare le conoscenze acquisite durante la formazione base e per introdurre le novità normative e tecniche più recenti. Partecipare all'aggiornamento non è solo un adempimento burocratico, ma un'opportunità per analizzare criticamente le proprie abitudini lavorative, identificare potenziali pericoli che potrebbero essere stati sottovalutati nel tempo e apprendere nuove strategie di prevenzione.
+                    Durante il corso vengono approfonditi i concetti fondamentali relativi al rischio, al pericolo, alla protezione e alla prevenzione, insieme ai principali riferimenti normativi in materia di sicurezza e salute nei luoghi di lavoro.
                   </p>
                   <p>
-                    Scegliere la modalità **e-learning** per l'aggiornamento quinquennale offre vantaggi ineguagliabili sia per l'azienda che per il dipendente. La flessibilità della formazione online permette di conciliare l'obbligo formativo con le scadenze lavorative, evitando lunghe assenze dal posto di lavoro. I nostri contenuti multimediali, costantemente aggiornati, garantiscono che le informazioni trasmesse siano sempre attuali e pertinenti. Inoltre, la piattaforma Aliseo Academy consente un monitoraggio trasparente dei progressi, facilitando la gestione della conformità aziendale.
+                    Il programma è strutturato in moduli didattici progressivi, con contenuti multimediali, quiz e verifica finale, per garantire un aggiornamento efficace e immediatamente applicabile.
                   </p>
                   <p>
-                    Un lavoratore aggiornato è un lavoratore più sicuro e consapevole. La formazione continua contribuisce a creare una cultura della sicurezza solida all'interno dell'organizzazione, riducendo il rischio di infortuni e migliorando il clima lavorativo generale. Al termine del corso, previo superamento del test di verifica, viene rilasciato l'attestato di aggiornamento valido su tutto il territorio nazionale. Con Aliseo Academy, rinnovare la tua sicurezza è semplice, veloce e certificato.
+                    La modalità e-learning consente di seguire il corso in autonomia, con accesso flessibile e continuità formativa, senza interrompere l’attività lavorativa.
                   </p>
                 </div>
               </article>
@@ -133,10 +125,10 @@ const AggiornamentoLavoratoriPage: React.FC<AggiornamentoLavoratoriPageProps> = 
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                     <ul className="space-y-3">
                       {[
-                        "Tutti i lavoratori che hanno già completato la formazione generale e specifica",
-                        "Lavoratori che devono rinnovare l'attestato entro la scadenza quinquennale",
-                        "Personale di ogni settore (Rischio Basso, Medio, Alto)",
-                        "Lavoratori che rientrano in attività dopo lunghe assenze"
+                        "Tutti i lavoratori che devono aggiornare la formazione obbligatoria",
+                        "Lavoratori che hanno già completato la formazione generale e specifica",
+                        "Personale soggetto ad aggiornamento periodico in materia di sicurezza",
+                        "Lavoratori rientrati dopo lunghi periodi di assenza"
                       ].map((item, i) => (
                         <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
                           <Users className="w-5 h-5 text-brand shrink-0" />
@@ -154,10 +146,10 @@ const AggiornamentoLavoratoriPage: React.FC<AggiornamentoLavoratoriPageProps> = 
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      "Aggiornare le conoscenze sui rischi specifici",
-                      "Conoscere le novità normative (D.Lgs 81/08)",
-                      "Approfondire le misure di prevenzione e protezione",
-                      "Rafforzare la cultura della sicurezza in azienda"
+                      "Aggiornare le conoscenze in materia di salute e sicurezza",
+                      "Richiamare i principali concetti di rischio, pericolo, protezione e prevenzione",
+                      "Comprendere i riferimenti normativi applicabili",
+                      "Rafforzare comportamenti sicuri nello svolgimento delle mansioni"
                     ].map((obj, i) => (
                       <div key={i} className="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
@@ -170,18 +162,20 @@ const AggiornamentoLavoratoriPage: React.FC<AggiornamentoLavoratoriPageProps> = 
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma del corso
+                    Programma
                   </h3>
                   <div className="space-y-4">
                     {[
-                      { title: "Evoluzione normativa", desc: "Le principali modifiche al Testo Unico Sicurezza e le nuove linee guida." },
-                      { title: "Rischi emergenti", desc: "Analisi dei nuovi rischi legati all'innovazione tecnologica e organizzativa." },
-                      { title: "Approfondimenti tecnici", desc: "Focus su DPI, segnaletica e procedure di emergenza aggiornate." },
-                      { title: "Casi pratici e infortuni", desc: "Analisi di eventi reali per imparare dagli errori e migliorare la prevenzione." }
+                      { title: "Documento Progettuale", content: "0m" },
+                      { title: "Aggiornamento Lavoratori", content: "5h 53m" },
+                      { title: "Quiz di Verifica", content: "10m" },
+                      { title: "Questionario di Gradimento", content: "9m" }
                     ].map((item, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-                        <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
-                        <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                        <div className="flex justify-between items-start">
+                          <h4 className="font-bold text-slate-900">{item.title}</h4>
+                          <span className="text-slate-500 font-mono text-sm font-bold bg-slate-100 px-2 py-1 rounded-lg shrink-0 ml-4">{item.content}</span>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -192,23 +186,24 @@ const AggiornamentoLavoratoriPage: React.FC<AggiornamentoLavoratoriPageProps> = 
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
                     Quadro Normativo
                   </h3>
-                  <div className="bg-slate-900 text-white rounded-3xl p-8">
-                    <ul className="space-y-4">
-                      <li className="flex items-start gap-3">
-                        <Scale className="w-6 h-6 text-brand shrink-0" />
-                        <div>
-                          <p className="font-bold">D.Lgs 81/08 - Art. 37</p>
-                          <p className="text-sm text-slate-400">Obbligo di aggiornamento periodico della formazione dei lavoratori.</p>
+                  <div className="bg-slate-900 rounded-3xl p-8 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-brand/20 transition-colors" />
+                    <div className="relative space-y-4">
+                      {[
+                        { title: "Art. 37 D.Lgs. 81/08", desc: "Formazione dei lavoratori", icon: Scale },
+                        { title: "Accordo Stato-Regioni 17/04/2025", desc: "(Rep. Atti n. 59/CSR)", icon: ShieldCheck }
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl">
+                          <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
+                            <item.icon className="w-5 h-5 text-brand" />
+                          </div>
+                          <div>
+                            <p className="text-white font-bold">{item.title}</p>
+                            <p className="text-slate-400 text-sm font-medium">{item.desc}</p>
+                          </div>
                         </div>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <FileText className="w-6 h-6 text-brand shrink-0" />
-                        <div>
-                          <p className="font-bold">Accordo Stato-Regioni 21/12/2011</p>
-                          <p className="text-sm text-slate-400">Definizione della periodicità quinquennale e della durata di 6 ore.</p>
-                        </div>
-                      </li>
-                    </ul>
+                      ))}
+                    </div>
                   </div>
                 </section>
               </div>
@@ -223,17 +218,17 @@ const AggiornamentoLavoratoriPage: React.FC<AggiornamentoLavoratoriPageProps> = 
                 </h3>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Clock className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">{course.duration}</p>
+                      <p className="text-white font-bold">6h</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Laptop className="w-5 h-5 text-brand" />
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Monitor className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
@@ -241,17 +236,37 @@ const AggiornamentoLavoratoriPage: React.FC<AggiornamentoLavoratoriPageProps> = 
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Award className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
+                      <p className="text-white font-bold text-sm leading-tight">Attestato valido ai sensi della normativa vigente</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Laptop className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Fruibilità</p>
+                      <p className="text-white font-bold text-sm">90 giorni dalla data di attivazione</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 bg-brand/5 border-brand/20">
+                      <Euro className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
+                      <p className="text-white font-bold text-sm">
+                        € 73,20 <span className="text-[10px] text-brand font-medium lowercase">iva inclusa</span>
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div className="mt-10 pt-8 border-t border-white/10">
-                  <p className="text-slate-400 text-sm mb-1 text-center">
+                  <p className="text-slate-400 text-sm mb-4 text-center">
                     Ti rispondiamo entro 24 ore
                   </p>
                   <a 

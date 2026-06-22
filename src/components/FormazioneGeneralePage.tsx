@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import OnlineLearningBenefits from './OnlineLearningBenefits';
-import { Clock, BookOpen, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Truck, MapPin, Monitor, Video, Shield, Laptop, Award } from 'lucide-react';
+import { Clock, BookOpen, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Euro, Laptop, Award, Shield } from 'lucide-react';
 
 interface FormazioneGeneralePageProps {
   onNavigate: (view: any) => void;
@@ -50,7 +50,7 @@ const FormazioneGeneralePage: React.FC<FormazioneGeneralePageProps> = ({ onNavig
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              La base fondamentale della sicurezza sul lavoro: 4 ore di formazione obbligatoria per tutti i lavoratori di ogni settore ATECO.
+              Formazione obbligatoria di base in materia di salute e sicurezza sul lavoro per tutti i lavoratori, conforme alla normativa vigente.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -104,22 +104,19 @@ const FormazioneGeneralePage: React.FC<FormazioneGeneralePageProps> = ({ onNavig
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Il corso è disponibile online in modalità e-learning. Per aziende o gruppi che desiderano organizzare la formazione anche in presenza con nostro docente, è possibile richiedere una soluzione dedicata contattandoci.
+                    Il corso di Formazione Generale per Lavoratore è un percorso formativo obbligatorio rivolto a tutti i lavoratori, finalizzato a fornire le conoscenze di base in materia di salute e sicurezza nei luoghi di lavoro.
                   </p>
                   <p>
-                    Il <strong>corso sicurezza lavoratori obbligatorio</strong> rappresenta il primo passo fondamentale per ogni dipendente che entra a far parte di un'organizzazione. Secondo quanto stabilito dall'<strong>Art. 37 del D.Lgs 81/08</strong> e disciplinato dall'Accordo Stato-Regioni del 21/12/2011, ogni lavoratore deve ricevere una formazione sufficiente ed adeguata in materia di salute e sicurezza.
+                    Il corso è conforme a quanto previsto dal D.Lgs. 81/08 e dagli Accordi Stato-Regioni vigenti, e rappresenta il primo livello della formazione obbligatoria per i lavoratori.
                   </p>
                   <p>
-                    La <strong>formazione lavoratori aziende</strong> si divide in due moduli: la formazione generale (comune a tutti i settori) e la formazione specifica, che può essere una <strong>formazione lavoratori rischio basso</strong> o una <strong>formazione lavoratori rischio medio alto</strong> in base al settore ATECO di appartenenza. Il modulo di formazione generale ha una durata di 4 ore e non ha scadenza, costituendo un credito formativo permanente.
+                    Durante il percorso vengono approfonditi i concetti fondamentali della prevenzione, tra cui rischio, danno, prevenzione e protezione, nonché i diritti, i doveri e le responsabilità dei soggetti coinvolti nel sistema sicurezza aziendale.
                   </p>
                   <p>
-                    Scegliere un <strong>corso sicurezza lavoro D.Lgs 81/08</strong> con Aliseo Academy significa garantire ai propri collaboratori una preparazione di alto livello, capace di trasmettere non solo i concetti normativi, ma una vera e propria cultura della prevenzione. La nostra missione è trasformare un obbligo di legge in un'opportunità di crescita e consapevolezza per l'intera struttura aziendale.
+                    Il programma è strutturato in moduli didattici progressivi, con contenuti multimediali, test intermedi e verifica finale, per garantire un apprendimento efficace e immediatamente applicabile.
                   </p>
                   <p>
-                    La flessibilità è uno dei nostri punti di forza. Per la formazione generale, Aliseo Academy offre una soluzione all'avanguardia che si adatta alle esigenze logistiche delle imprese moderne. Attraverso la nostra piattaforma <strong>e-learning</strong> certificata, i lavoratori possono formarsi in totale autonomia, accedendo ai contenuti da remoto e ottimizzando i tempi di apprendimento senza necessità di spostamenti fisici.
-                  </p>
-                  <p>
-                    La nostra piattaforma online garantisce un tracciamento rigoroso dei progressi e una fruizione interattiva dei contenuti. Questo approccio permette alle aziende di gestire grandi gruppi di lavoratori in modo efficiente, garantendo al contempo la massima efficacia didattica e il pieno rispetto della normativa vigente.
+                    La modalità e-learning consente di seguire il corso in autonomia, con accesso flessibile e continuità didattica, senza interrompere l’attività lavorativa.
                   </p>
                 </div>
               </article>
@@ -134,9 +131,18 @@ const FormazioneGeneralePage: React.FC<FormazioneGeneralePageProps> = ({ onNavig
                     Destinatari
                   </h3>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
-                    <p className="text-slate-600 leading-relaxed">
-                      Il corso di formazione generale è obbligatorio per <strong>tutti i lavoratori</strong> (come definiti dall'art. 2 del D.Lgs 81/08) di qualsiasi settore ATECO, indipendentemente dalla tipologia contrattuale. Deve essere erogato al momento dell'assunzione o comunque entro 60 giorni dalla stessa.
-                    </p>
+                    <ul className="space-y-4">
+                      {[
+                        "Tutti i lavoratori, indipendentemente dal settore di appartenenza",
+                        "Dipendenti di aziende pubbliche e private",
+                        "Collaboratori e figure equiparate ai lavoratori"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-3 text-slate-600">
+                          <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
+                          <span className="text-lg">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </section>
 
@@ -147,12 +153,10 @@ const FormazioneGeneralePage: React.FC<FormazioneGeneralePageProps> = ({ onNavig
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      "Concetti di rischio e danno",
-                      "Prevenzione e protezione",
-                      "Organizzazione della prevenzione aziendale",
-                      "Diritti e doveri dei vari soggetti aziendali",
-                      "Organi di vigilanza, controllo e assistenza",
-                      "Sanzioni per le violazioni"
+                      "Comprendere i concetti base della sicurezza sul lavoro",
+                      "Conoscere diritti e doveri dei lavoratori",
+                      "Apprendere i principi della prevenzione e protezione",
+                      "Acquisire consapevolezza sui rischi lavorativi"
                     ].map((obj, i) => (
                       <div key={i} className="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
@@ -170,20 +174,20 @@ const FormazioneGeneralePage: React.FC<FormazioneGeneralePageProps> = ({ onNavig
                   <div className="space-y-4">
                     {[
                       { 
-                        title: "Modulo 1: Il Sistema Legislativo", 
-                        content: "Evoluzione normativa, il D.Lgs 81/08, il ruolo dell'Accordo Stato-Regioni nella formazione." 
+                        title: "Documento Progettuale", 
+                        content: "0m" 
                       },
                       { 
-                        title: "Modulo 2: Soggetti del Sistema di Prevenzione", 
-                        content: "Datore di Lavoro, Dirigenti, Preposti, Lavoratori, RSPP, Medico Competente e RLS." 
+                        title: "Formazione Lavoratori Parte Generale", 
+                        content: "4h 5m" 
                       },
                       { 
-                        title: "Modulo 3: Concetti Base della Sicurezza", 
-                        content: "Definizione di pericolo, rischio, danno. La gerarchia delle misure di prevenzione." 
+                        title: "Quiz di Verifica", 
+                        content: "3m" 
                       },
                       { 
-                        title: "Modulo 4: Vigilanza e Sanzioni", 
-                        content: "Il ruolo di ASL e INAIL. Quadro sanzionatorio per lavoratori e figure apicali." 
+                        title: "Questionario di Gradimento", 
+                        content: "9m" 
                       }
                     ].map((item, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
@@ -191,6 +195,32 @@ const FormazioneGeneralePage: React.FC<FormazioneGeneralePageProps> = ({ onNavig
                         <p className="text-sm text-slate-500 leading-relaxed">{item.content}</p>
                       </div>
                     ))}
+                  </div>
+                </section>
+
+                <section>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <div className="w-1.5 h-6 bg-brand rounded-full" />
+                    Quadro Normativo
+                  </h3>
+                  <div className="bg-slate-900 rounded-3xl p-8 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-brand/20 transition-colors" />
+                    <div className="relative space-y-4">
+                      {[
+                        { title: "D.Lgs. 81/08", desc: "Art. 37", icon: Scale },
+                        { title: "Accordo Stato-Regioni 17/04/2025", desc: "(Rep. Atti n. 59/CSR)", icon: ShieldCheck }
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl">
+                          <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
+                            <item.icon className="w-5 h-5 text-brand" />
+                          </div>
+                          <div>
+                            <p className="text-white font-bold">{item.title}</p>
+                            <p className="text-slate-400 text-sm font-medium">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </section>
               </div>
@@ -228,7 +258,27 @@ const FormazioneGeneralePage: React.FC<FormazioneGeneralePageProps> = ({ onNavig
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
+                      <p className="text-white font-bold text-sm">Attestato valido ai sensi della normativa vigente</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                      <Clock className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Fruibilità</p>
+                      <p className="text-white font-bold text-sm">90 giorni dalla data di attivazione</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-brand/20">
+                      <Euro className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
+                      <p className="text-white font-bold text-sm">
+                        € 48,80 <span className="text-[10px] text-brand font-medium lowercase">iva inclusa</span>
+                      </p>
                     </div>
                   </div>
                 </div>

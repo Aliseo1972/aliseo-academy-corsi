@@ -56,7 +56,7 @@ const CorsoVideoterminaliPage: React.FC<CorsoVideoterminaliPageProps> = ({ onNav
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Formazione specifica obbligatoria per addetti ai videoterminali ai sensi del D.Lgs. 81/08. Percorso 100% online in modalità e-learning certificata.
+              Formazione specifica per lavoratori che utilizzano videoterminali durante la propria attività lavorativa, conforme al D.Lgs. 81/08.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -96,16 +96,19 @@ const CorsoVideoterminaliPage: React.FC<CorsoVideoterminaliPageProps> = ({ onNav
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Il corso di formazione per lavoratori addetti all'uso di videoterminali (VDT) è un modulo specialistico fondamentale per la tutela della salute e sicurezza negli ambienti di lavoro moderni. Con l'aumento massiccio del lavoro d'ufficio e dello smart working, la gestione dei rischi legati alla postura, all'affaticamento visivo e all'ergonomia è diventata una priorità assoluta per datori di lavoro e dipendenti.
+                    Il corso Formazione Lavoratori – Rischio Lavoro su Videoterminali è rivolto a tutti i lavoratori che, durante la propria attività lavorativa, utilizzano videoterminali come PC, laptop, tablet o smartphone.
                   </p>
                   <p>
-                    Questo percorso formativo, erogato interamente in modalità e-learning, permette di acquisire le competenze necessarie per prevenire i disturbi muscolo-scheletrici e visivi tipici di chi opera per molte ore davanti a uno schermo. La flessibilità della formazione online di Aliseo Academy consente di seguire le lezioni in qualsiasi momento, garantendo al contempo un elevato standard qualitativo e la piena conformità normativa.
+                    Il percorso formativo è conforme a quanto previsto dal D.Lgs. 81/08 e approfondisce i principali rischi legati all’uso prolungato dei videoterminali, con particolare attenzione alla postura, all’affaticamento visivo, all’ergonomia della postazione e all’organizzazione del lavoro.
                   </p>
                   <p>
-                    Investire nella formazione specifica sui videoterminali non è solo un obbligo di legge, ma una scelta strategica per migliorare il benessere organizzativo e la produttività. Un lavoratore che sa come regolare correttamente l'altezza del monitor, come posizionare la tastiera e come gestire l'illuminazione naturale ed artificiale è un lavoratore meno soggetto a mal di testa, dolori cervicali e stress.
+                    Durante il corso vengono fornite indicazioni pratiche per prevenire disturbi muscolo-scheletrici, affaticamento visivo e condizioni di disagio correlate all’utilizzo continuativo delle attrezzature munite di videoterminale.
                   </p>
                   <p>
-                    La nostra piattaforma e-learning offre un'esperienza di apprendimento interattiva, con video esplicativi e test di autovalutazione che rendono i concetti di ergonomia facilmente applicabili nella quotidianità lavorativa. Al termine del percorso, previo superamento del test finale, viene rilasciato un attestato di formazione valido su tutto il territorio nazionale, certificando l'avvenuto adempimento agli obblighi di legge.
+                    Il programma è strutturato in moduli didattici con contenuti multimediali, test di verifica e questionario finale, per garantire un apprendimento chiaro, pratico e immediatamente applicabile.
+                  </p>
+                  <p>
+                    La modalità e-learning consente di seguire il corso in autonomia, con accesso flessibile e continuità formativa.
                   </p>
                 </div>
               </article>
@@ -120,16 +123,13 @@ const CorsoVideoterminaliPage: React.FC<CorsoVideoterminaliPageProps> = ({ onNav
                     Destinatari
                   </h3>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
-                    <p className="text-slate-600 mb-6">
-                      Il corso si rivolge a tutti i lavoratori che utilizzano un'attrezzatura munita di videoterminale in modo sistematico o abituale, per almeno venti ore settimanali dedotte le pause.
-                    </p>
                     <ul className="space-y-3">
                       {[
+                        "Lavoratori che utilizzano videoterminali durante l’attività lavorativa",
                         "Impiegati amministrativi e contabili",
-                        "Quadri e Dirigenti",
                         "Operatori di call center e assistenza clienti",
                         "Programmatori e tecnici informatici",
-                        "Chiunque svolga attività professionale prevalentemente al computer"
+                        "Professionisti che lavorano abitualmente al computer"
                       ].map((item, i) => (
                         <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
                           <Users className="w-5 h-5 text-brand shrink-0" />
@@ -147,12 +147,10 @@ const CorsoVideoterminaliPage: React.FC<CorsoVideoterminaliPageProps> = ({ onNav
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      "Riconoscere i rischi legati all'uso dei VDT",
-                      "Apprendere l'ergonomia della postazione",
-                      "Prevenire l'affaticamento visivo",
-                      "Adottare posture corrette e salutari",
-                      "Gestire correttamente le pause lavorative",
-                      "Conoscere gli esercizi di rilassamento"
+                      "Conoscere i rischi legati all’uso dei videoterminali",
+                      "Prevenire affaticamento visivo e disturbi posturali",
+                      "Apprendere corrette modalità di utilizzo della postazione",
+                      "Sensibilizzare sull’importanza di postura ed ergonomia"
                     ].map((obj, i) => (
                       <div key={i} className="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
@@ -165,19 +163,20 @@ const CorsoVideoterminaliPage: React.FC<CorsoVideoterminaliPageProps> = ({ onNav
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma del corso
+                    Programma
                   </h3>
                   <div className="space-y-4">
                     {[
-                      { title: "Rischi per la salute", desc: "Analisi dei disturbi visivi e dell'apparato muscolo-scheletrico legati all'uso prolungato del computer." },
-                      { title: "Ergonomia della postazione", desc: "Regolazione corretta di sedia, scrivania, monitor, tastiera e mouse." },
-                      { title: "Ambiente di lavoro", desc: "Gestione dell'illuminazione, del microclima e del rumore nell'ufficio." },
-                      { title: "Organizzazione del lavoro", desc: "Importanza delle pause, esercizi di rilassamento e prevenzione dello stress." },
-                      { title: "Test finale", lessonsCount: 1, duration: "15m" }
+                      { title: "Documento Progettuale", content: "0m" },
+                      { title: "Rischio Lavoro su Videoterminali", content: "1h 3m" },
+                      { title: "Quiz di Verifica", content: "5m" },
+                      { title: "Questionario di Gradimento", content: "9m" }
                     ].map((item, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-                        <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
-                        <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                        <div className="flex justify-between items-start">
+                          <h4 className="font-bold text-slate-900">{item.title}</h4>
+                          <span className="text-slate-500 font-mono text-sm font-bold bg-slate-100 px-2 py-1 rounded-lg shrink-0 ml-4">{item.content}</span>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -188,26 +187,24 @@ const CorsoVideoterminaliPage: React.FC<CorsoVideoterminaliPageProps> = ({ onNav
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
                     Quadro Normativo
                   </h3>
-                  <div className="bg-slate-900 text-white rounded-3xl p-8">
-                    <div className="text-slate-400 text-sm mb-6 leading-relaxed">
-                      Il D.Lgs. 81/2008, noto come Testo Unico sulla Salute e Sicurezza sul Lavoro, dedica l'intero Titolo VII alla protezione dei lavoratori che utilizzano videoterminali. L'articolo 173 definisce il \"lavoratore\" addetto ai VDT come colui che utilizza un'attrezzatura munita di videoterminale in modo sistematico o abituale, per almeno venti ore settimanali.
+                  <div className="bg-slate-900 rounded-3xl p-8 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-brand/20 transition-colors" />
+                    <div className="relative space-y-4">
+                      {[
+                        { title: "Art. 36-37 comma 1, lettera b) e comma 3 D.Lgs. 81/08", desc: "Obblighi di informazione e formazione", icon: Scale },
+                        { title: "Art. 177 del D.Lgs. 81/08", desc: "Formazione e informazione specifica VDT", icon: FileText }
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl">
+                          <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
+                            <item.icon className="w-5 h-5 text-brand" />
+                          </div>
+                          <div>
+                            <p className="text-white font-bold">{item.title}</p>
+                            <p className="text-slate-400 text-sm font-medium">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
-                    <ul className="space-y-4">
-                      <li className="flex items-start gap-3">
-                        <Scale className="w-6 h-6 text-brand shrink-0" />
-                        <div>
-                          <p className="font-bold">D.Lgs 81/08 - Titolo VII</p>
-                          <p className="text-sm text-slate-400">Attrezzature munite di videoterminali: obblighi di valutazione e prevenzione.</p>
-                        </div>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <FileText className="w-6 h-6 text-brand shrink-0" />
-                        <div>
-                          <p className="font-bold">Art. 177 D.Lgs 81/08</p>
-                          <p className="text-sm text-slate-400">Obblighi di informazione e formazione specifica per i lavoratori addetti ai VDT.</p>
-                        </div>
-                      </li>
-                    </ul>
                   </div>
                 </section>
               </div>
@@ -215,24 +212,24 @@ const CorsoVideoterminaliPage: React.FC<CorsoVideoterminaliPageProps> = ({ onNav
 
             {/* Sidebar */}
             <div className="space-y-8">
-              <div className="bg-slate-900 rounded-3xl p-8 sticky top-24">
+              <div className="bg-slate-900 rounded-3xl p-8 sticky top-24 border border-white/5 shadow-2xl">
                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                   <GraduationCap className="w-6 h-6 text-brand" />
                   Scheda Corso
                 </h3>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Clock className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">{course.duration}</p>
+                      <p className="text-white font-bold">1h</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Laptop className="w-5 h-5 text-brand" />
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Monitor className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
@@ -240,12 +237,32 @@ const CorsoVideoterminaliPage: React.FC<CorsoVideoterminaliPageProps> = ({ onNav
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Award className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
+                      <p className="text-white font-bold text-sm leading-tight">Attestato valido ai sensi della normativa vigente</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Laptop className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Fruibilità</p>
+                      <p className="text-white font-bold text-sm">90 giorni dalla data di attivazione</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 bg-brand/5 border-brand/20">
+                      <Euro className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
+                      <p className="text-white font-bold text-sm">
+                        € 24,40 <span className="text-[10px] text-brand font-medium lowercase">iva inclusa</span>
+                      </p>
                     </div>
                   </div>
                 </div>

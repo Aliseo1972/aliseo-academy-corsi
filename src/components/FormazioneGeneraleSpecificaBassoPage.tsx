@@ -54,17 +54,9 @@ const FormazioneGeneraleSpecificaBassoPage: React.FC<FormazioneGeneraleSpecifica
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-slate-400 leading-relaxed mb-4"
+              className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              La formazione completa per i nuovi assunti in settori a rischio basso, 100% online.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.25 }}
-              className="text-lg text-slate-500 leading-relaxed mb-8"
-            >
-              Un unico percorso formativo che integra il modulo generale e quello specifico, garantendo la piena conformità normativa per aziende del settore commercio, uffici e servizi.
+              Corso completo per lavoratori di aziende classificate a rischio basso, con formazione generale e specifica in modalità e-learning.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -104,19 +96,19 @@ const FormazioneGeneraleSpecificaBassoPage: React.FC<FormazioneGeneraleSpecifica
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Il corso è disponibile online in modalità e-learning. Per aziende o gruppi che desiderano organizzare la formazione anche in presenza con nostro docente, è possibile richiedere una soluzione dedicata contattandoci.
+                    Il corso Formazione Generale e Specifica per Lavoratore Rischio Basso è rivolto ai lavoratori dipendenti di aziende classificate a rischio basso, come uffici, servizi, commercio, artigianato e turismo.
                   </p>
                   <p>
-                    Il **corso di formazione generale e specifica per lavoratori a rischio basso** rappresenta l'adempimento formativo primario per ogni nuovo inserimento lavorativo in azienda. Secondo quanto stabilito dal **D.Lgs 81/08** e dagli Accordi Stato-Regioni, la formazione sulla sicurezza è un diritto e un dovere del lavoratore, finalizzato a fornire le conoscenze necessarie per operare in modo consapevole e prevenire infortuni e malattie professionali.
+                    Il percorso integra la formazione generale sulla salute e sicurezza nei luoghi di lavoro con la formazione specifica sui rischi propri delle attività a basso rischio.
                   </p>
                   <p>
-                    Questo percorso integrato di 8 ore combina i due pilastri della formazione obbligatoria: il **Modulo Generale (4 ore)**, comune a tutti i settori e focalizzato sui concetti base della prevenzione, e il **Modulo Specifico (4 ore)**, mirato ai rischi tipici delle attività a rischio basso, come uffici, studi professionali, commercio e servizi. La scelta della modalità **e-learning** permette di assolvere a questo obbligo in modo flessibile, garantendo un'elevata qualità didattica e la possibilità di gestire i tempi di studio in base alle necessità organizzative aziendali.
+                    Durante il corso vengono trattati i concetti fondamentali di prevenzione, rischio, danno, protezione, organizzazione della sicurezza aziendale, diritti e doveri dei lavoratori, oltre ai rischi specifici connessi alla mansione.
                   </p>
                   <p>
-                    La formazione online di Aliseo Academy è strutturata per essere coinvolgente ed efficace. Attraverso video-lezioni, materiali di approfondimento e test di verifica, il lavoratore acquisisce una visione chiara del sistema di prevenzione aziendale, dei propri diritti e doveri, e delle misure di protezione da adottare quotidianamente. Temi come l'ergonomia, l'uso dei videoterminali, la gestione delle emergenze e lo stress lavoro-correlato vengono trattati con un linguaggio accessibile ma rigoroso, assicurando che la sicurezza diventi parte integrante della cultura aziendale.
+                    Il programma è strutturato in moduli didattici progressivi con contenuti multimediali, quiz e verifica finale, per garantire un apprendimento efficace e immediatamente applicabile.
                   </p>
                   <p>
-                    Investire in un corso completo e certificato significa per l'azienda mettersi al riparo da sanzioni e, soprattutto, costruire un ambiente di lavoro più sicuro e produttivo. Al termine del percorso, previo superamento del test finale, viene rilasciato un attestato di formazione valido a tutti gli effetti di legge. Con Aliseo Academy, la conformità normativa incontra l'innovazione tecnologica, offrendo una soluzione formativa rapida, efficace e totalmente digitale.
+                    La modalità e-learning consente di seguire il corso in autonomia, con accesso flessibile e continuità formativa.
                   </p>
                 </div>
               </article>
@@ -133,10 +125,10 @@ const FormazioneGeneraleSpecificaBassoPage: React.FC<FormazioneGeneraleSpecifica
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                     <ul className="space-y-3">
                       {[
-                        "Nuovi assunti in aziende a rischio basso",
-                        "Lavoratori che devono completare l'intero percorso formativo",
-                        "Personale di uffici, negozi e studi professionali",
-                        "Addetti ai servizi e al settore amministrativo"
+                        "Lavoratori dipendenti di aziende classificate a rischio basso",
+                        "Personale di uffici, servizi, commercio, artigianato e turismo",
+                        "Nuovi assunti che devono completare il percorso formativo obbligatorio",
+                        "Addetti a mansioni senza esposizione a rischi elevati"
                       ].map((item, i) => (
                         <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
                           <Users className="w-5 h-5 text-brand shrink-0" />
@@ -154,10 +146,10 @@ const FormazioneGeneraleSpecificaBassoPage: React.FC<FormazioneGeneraleSpecifica
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      "Comprendere i concetti di rischio e prevenzione",
-                      "Conoscere il quadro normativo della sicurezza",
-                      "Identificare i rischi specifici del settore uffici/servizi",
-                      "Adottare comportamenti sicuri sul luogo di lavoro"
+                      "Acquisire le informazioni di base in materia di salute e sicurezza",
+                      "Comprendere i principali concetti di rischio, danno, prevenzione e protezione",
+                      "Conoscere i rischi specifici del settore a rischio basso",
+                      "Operare in sicurezza nello svolgimento delle proprie mansioni"
                     ].map((obj, i) => (
                       <div key={i} className="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
@@ -170,18 +162,22 @@ const FormazioneGeneraleSpecificaBassoPage: React.FC<FormazioneGeneraleSpecifica
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma del corso
+                    Programma
                   </h3>
                   <div className="space-y-4">
                     {[
-                      { title: "Modulo Generale (4h)", desc: "Concetti di rischio, danno, prevenzione, protezione e organizzazione della sicurezza." },
-                      { title: "Rischi Specifici Rischio Basso (4h)", desc: "Ergonomia, videoterminali, microclima, illuminazione e stress lavoro-correlato." },
-                      { title: "Diritti e Doveri", desc: "Le responsabilità dei vari soggetti aziendali e il ruolo del lavoratore." },
-                      { title: "Gestione delle Emergenze", desc: "Procedure di evacuazione, primo soccorso e prevenzione incendi." }
+                      { title: "Documento Progettuale", content: "0m" },
+                      { title: "Formazione Lavoratori Parte Generale", content: "4h 5m" },
+                      { title: "Quiz di Verifica Parte Generale", content: "15m" },
+                      { title: "Formazione Lavoratori Parte Specifica", content: "3h 52m" },
+                      { title: "Quiz di Verifica Parte Specifica", content: "15m" },
+                      { title: "Questionario di Gradimento", content: "9m" }
                     ].map((item, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-                        <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
-                        <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                        <div className="flex justify-between items-start">
+                          <h4 className="font-bold text-slate-900">{item.title}</h4>
+                          <span className="text-slate-500 font-mono text-sm font-bold bg-slate-100 px-2 py-1 rounded-lg shrink-0 ml-4">{item.content}</span>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -192,23 +188,24 @@ const FormazioneGeneraleSpecificaBassoPage: React.FC<FormazioneGeneraleSpecifica
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
                     Quadro Normativo
                   </h3>
-                  <div className="bg-slate-900 text-white rounded-3xl p-8">
-                    <ul className="space-y-4">
-                      <li className="flex items-start gap-3">
-                        <Scale className="w-6 h-6 text-brand shrink-0" />
-                        <div>
-                          <p className="font-bold">D.Lgs 81/08</p>
-                          <p className="text-sm text-slate-400">Testo Unico sulla Salute e Sicurezza sul Lavoro (Art. 37).</p>
+                  <div className="bg-slate-900 rounded-3xl p-8 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-brand/20 transition-colors" />
+                    <div className="relative space-y-4">
+                      {[
+                        { title: "Art. 37 D.Lgs. 81/08", desc: "Formazione dei lavoratori", icon: Scale },
+                        { title: "Accordo Stato-Regioni 17/04/2025", desc: "(Rep. Atti n. 59/CSR)", icon: ShieldCheck }
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl">
+                          <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
+                            <item.icon className="w-5 h-5 text-brand" />
+                          </div>
+                          <div>
+                            <p className="text-white font-bold">{item.title}</p>
+                            <p className="text-slate-400 text-sm font-medium">{item.desc}</p>
+                          </div>
                         </div>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <FileText className="w-6 h-6 text-brand shrink-0" />
-                        <div>
-                          <p className="font-bold">Accordo Stato-Regioni 21/12/2011</p>
-                          <p className="text-sm text-slate-400">Disciplina la durata e i contenuti della formazione dei lavoratori.</p>
-                        </div>
-                      </li>
-                    </ul>
+                      ))}
+                    </div>
                   </div>
                 </section>
               </div>
@@ -223,17 +220,17 @@ const FormazioneGeneraleSpecificaBassoPage: React.FC<FormazioneGeneraleSpecifica
                 </h3>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Clock className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">{course.duration}</p>
+                      <p className="text-white font-bold">8h</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Laptop className="w-5 h-5 text-brand" />
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Globe className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
@@ -241,12 +238,32 @@ const FormazioneGeneraleSpecificaBassoPage: React.FC<FormazioneGeneraleSpecifica
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Award className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
+                      <p className="text-white font-bold text-sm leading-tight">Attestato valido ai sensi della normativa vigente</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Laptop className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Fruibilità</p>
+                      <p className="text-white font-bold text-sm">90 giorni dalla data di attivazione</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 bg-brand/5 border-brand/20">
+                      <Euro className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
+                      <p className="text-white font-bold text-sm">
+                        € 97,60 <span className="text-[10px] text-brand font-medium lowercase">iva inclusa</span>
+                      </p>
                     </div>
                   </div>
                 </div>

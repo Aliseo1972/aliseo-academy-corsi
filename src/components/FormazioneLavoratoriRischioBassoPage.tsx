@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import DeliveryMethods from './DeliveryMethods';
-import { Clock, BookOpen, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Monitor, Shield, ArrowRight } from 'lucide-react';
+import OnlineLearningBenefits from './OnlineLearningBenefits';
+import { Clock, BookOpen, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Euro, Laptop, Award, Shield, Monitor } from 'lucide-react';
 
 interface FormazioneLavoratoriRischioBassoPageProps {
   onNavigate: (view: any) => void;
@@ -13,11 +13,11 @@ const FormazioneLavoratoriRischioBassoPage: React.FC<FormazioneLavoratoriRischio
     document.title = "Corso Formazione Specifica Lavoratori Rischio Basso | Aliseo Academy";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Corso formazione specifica lavoratori rischio basso obbligatorio secondo D.Lgs 81/08. Formazione in presenza, presso il cliente o tramite Safety Truck.");
+      metaDescription.setAttribute('content', "Formazione obbligatoria sui rischi specifici per lavoratori impiegati in attività a basso rischio, conforme alla normativa vigente.");
     }
   }, []);
 
-  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Formazione%20Specifica%20Lavoratori%20Rischio%20Basso&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20Corso%20Formazione%20Specifica%20Lavoratori%20Rischio%20Basso%20(4%20ore).%0APotrei%20avere%20maggiori%20informazioni%20su%20modalit%C3%A0%2C%20costi%20e%20prossime%20date%3F%0A%0AGrazie.";
+  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Formazione%20Specifica%20Rischio%20Basso&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20Formazione%20Specifica%20Lavoratori%20Rischio%20Basso%20(4%20ore).%0APotrei%20avere%20maggiori%20informazioni%20su%20modalit%C3%A0%2C%20prossime%20date%20e%20costi%3F%0A%0AGrazie.";
 
   return (
     <div className="bg-white min-h-screen">
@@ -31,10 +31,10 @@ const FormazioneLavoratoriRischioBassoPage: React.FC<FormazioneLavoratoriRischio
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-6"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6"
             >
               <ShieldCheck className="w-4 h-4" />
-              Formazione Obbligatoria D.Lgs 81/08
+              Art. 37 D.Lgs 81/08 - Rischio Basso
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -50,8 +50,7 @@ const FormazioneLavoratoriRischioBassoPage: React.FC<FormazioneLavoratoriRischio
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Percorso formativo specifico di 4 ore per dipendenti di aziende a basso rischio (uffici, commercio, servizi). 
-              Formazione obbligatoria in conformità all'Art. 37 del D.Lgs. 81/08.
+              Formazione obbligatoria sui rischi specifici per lavoratori impiegati in attività a basso rischio, conforme alla normativa vigente.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -61,7 +60,7 @@ const FormazioneLavoratoriRischioBassoPage: React.FC<FormazioneLavoratoriRischio
             >
               <div>
                 <p className="text-slate-400 text-sm mb-3 font-medium">
-                  Validità nazionale e attestato immediato a norma di legge.
+                  Disponibile interamente in modalità E-learning con accesso immediato.
                 </p>
                 <div className="flex flex-col gap-2">
                   <p className="text-brand text-xs font-bold uppercase tracking-wider">
@@ -84,7 +83,7 @@ const FormazioneLavoratoriRischioBassoPage: React.FC<FormazioneLavoratoriRischio
                 <div className="w-px h-6 bg-white/10" />
                 <div className="flex items-center gap-2">
                   <Scale className="w-5 h-5 text-brand" />
-                  <span className="text-white font-bold text-sm">Accordo Stato-Regioni 2011</span>
+                  <span className="text-white font-bold text-sm">D.Lgs 81/08 Art. 37</span>
                 </div>
               </div>
             </motion.div>
@@ -101,43 +100,52 @@ const FormazioneLavoratoriRischioBassoPage: React.FC<FormazioneLavoratoriRischio
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  Sicurezza sul Lavoro: Formazione Specifica Lavoratori Rischio Basso
+                  Formazione Specifica Rischio Basso: Cosa Prevede la Legge
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Il corso è disponibile online in modalità e-learning. Per aziende o gruppi che desiderano organizzare la formazione anche in presenza con nostro docente, è possibile richiedere una soluzione dedicata contattandoci.
+                    Il corso di Formazione Specifica per Lavoratore Rischio Basso è un percorso formativo obbligatorio rivolto a tutti i lavoratori che operano in contesti a basso rischio, finalizzato a fornire le conoscenze sui rischi specifici presenti nei luoghi di lavoro.
                   </p>
                   <p>
-                    Il <strong>Corso Formazione Lavoratori Rischio Basso</strong> rappresenta un pilastro fondamentale della sicurezza sul lavoro in Italia. Ai sensi del <strong>D.Lgs 81/08</strong>, ogni lavoratore deve ricevere una formazione adeguata e specifica in relazione ai rischi presenti nel proprio ambiente di lavoro. Per le aziende classificate a rischio basso, come uffici, studi professionali, negozi e attività di servizi, il percorso formativo è studiato per fornire le competenze necessarie a prevenire infortuni e malattie professionali senza appesantire eccessivamente l'operatività aziendale.
+                    Il corso è conforme a quanto previsto dal D.Lgs. 81/08 e dagli Accordi Stato-Regioni vigenti, e rappresenta il completamento della formazione generale dei lavoratori.
                   </p>
                   <p>
-                    La <strong>formazione lavoratori rischio basso</strong> non è solo un obbligo di legge, ma un'opportunità per migliorare la cultura della sicurezza all'interno dell'organizzazione. Un lavoratore consapevole è un lavoratore più sicuro e produttivo. Il <strong>corso sicurezza lavoratori rischio basso</strong> offerto da Aliseo Academy è progettato per essere estremamente pratico e focalizzato sui rischi reali che si incontrano quotidianamente in questi settori, come l'uso dei videoterminali, la postura corretta, lo stress lavoro-correlato e la gestione delle emergenze di base.
+                    Durante il percorso vengono approfonditi i rischi specifici legati alle attività lavorative, le misure di prevenzione e protezione, l’organizzazione della sicurezza aziendale e le corrette procedure operative.
                   </p>
                   <p>
-                    Il <strong>corso lavoratori D.Lgs 81/08</strong> per il rischio basso ha una durata di 4 ore, che si aggiungono alle 4 ore di formazione generale obbligatoria per tutti i settori. Questo modulo specifico approfondisce le tematiche legate all'ambiente di lavoro "ufficio" o "servizi", analizzando i pericoli meno evidenti ma comunque impattanti sulla salute a lungo termine. La normativa di riferimento, l'Accordo Stato-Regioni del 21/12/2011, definisce chiaramente i contenuti e le modalità di erogazione di questa formazione.
+                    Particolare attenzione è dedicata alla sicurezza negli ambienti di lavoro d’ufficio e alle attività a basso rischio, con esempi pratici e indicazioni operative.
                   </p>
                   <p>
-                    Per le aziende che necessitano di formare il proprio personale, Aliseo Academy propone diverse soluzioni flessibili. La formazione può essere erogata presso i nostri centri formativi, direttamente presso la sede del cliente per ottimizzare i tempi, oppure tramite il nostro esclusivo Safety Truck, un'aula mobile completamente attrezzata che porta la formazione ovunque sia necessario. Questa varietà di opzioni garantisce la massima efficacia didattica e il rispetto rigoroso dei requisiti previsti dalla legge.
+                    Il programma è strutturato in moduli didattici progressivi, con contenuti multimediali, test intermedi e verifica finale, per garantire un apprendimento efficace e immediatamente applicabile.
                   </p>
                   <p>
-                    Investire nella formazione con Aliseo Academy significa scegliere la qualità e l'affidabilità di un partner esperto. La nostra missione è rendere la sicurezza sul lavoro un valore condiviso, accessibile e semplice da gestire. Ogni modulo è curato da esperti del settore per assicurare un apprendimento efficace e duraturo.
+                    La modalità e-learning consente di seguire il corso in autonomia, con accesso flessibile e continuità didattica, senza interrompere l’attività lavorativa.
                   </p>
                 </div>
               </article>
 
-              <DeliveryMethods />
+              <OnlineLearningBenefits onNavigate={onNavigate} />
 
               {/* Detailed Sections */}
               <div className="space-y-12">
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    A chi è rivolto
+                    Destinatari
                   </h3>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
-                    <p className="text-slate-600 leading-relaxed">
-                      Il corso è destinato a tutti i lavoratori, sia neoassunti che già in forza, impiegati in aziende la cui classe di rischio ATECO è definita "bassa". Tra queste rientrano uffici, banche, assicurazioni, commercio al dettaglio, attività artigianali non produttive e servizi alla persona. È fondamentale che la formazione avvenga all'inizio del rapporto di lavoro o in occasione di cambiamenti di mansione.
-                    </p>
+                    <ul className="space-y-4">
+                      {[
+                        "Lavoratori di aziende classificate a rischio basso",
+                        "Dipendenti di uffici, studi professionali e attività amministrative",
+                        "Addetti a mansioni senza esposizione a rischi elevati"
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-3 text-slate-600">
+                          <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
+                          <span className="text-lg">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </section>
 
@@ -148,12 +156,10 @@ const FormazioneLavoratoriRischioBassoPage: React.FC<FormazioneLavoratoriRischio
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      "Conoscenza dei rischi specifici del settore",
-                      "Apprendimento delle procedure di prevenzione",
-                      "Sensibilizzazione sui comportamenti sicuri",
-                      "Conformità normativa D.Lgs 81/08",
-                      "Identificazione dei pericoli in ufficio",
-                      "Gestione corretta delle emergenze"
+                      "Conoscere i rischi specifici legati alle mansioni svolte",
+                      "Apprendere le misure di prevenzione e protezione",
+                      "Migliorare la consapevolezza dei rischi lavorativi",
+                      "Applicare comportamenti corretti in ambito sicurezza"
                     ].map((obj, i) => (
                       <div key={i} className="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
@@ -166,25 +172,25 @@ const FormazioneLavoratoriRischioBassoPage: React.FC<FormazioneLavoratoriRischio
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma dettagliato
+                    Programma
                   </h3>
                   <div className="space-y-4">
                     {[
                       { 
-                        title: "Modulo 1: Rischi dell'ambiente di lavoro", 
-                        content: "Analisi di illuminazione, microclima, ergonomia e spazi di lavoro comuni." 
+                        title: "Documento Progettuale", 
+                        content: "0m" 
                       },
                       { 
-                        title: "Modulo 2: Videoterminali e Postura", 
-                        content: "Corretto utilizzo del PC, regolazione della sedia e prevenzione disturbi muscolo-scheletrici." 
+                        title: "Formazione per Lavoratori Parte Specifica", 
+                        content: "3h 52m" 
                       },
                       { 
-                        title: "Modulo 3: Rischi Elettrici e Incendio", 
-                        content: "Prevenzione dei rischi elettrici di base e comportamento in caso di principio di incendio." 
+                        title: "Quiz di Verifica", 
+                        content: "31m" 
                       },
                       { 
-                        title: "Modulo 4: Stress e Benessere", 
-                        content: "Gestione dello stress lavoro-correlato e promozione del benessere organizzativo." 
+                        title: "Questionario di Gradimento", 
+                        content: "9m" 
                       }
                     ].map((item, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
@@ -198,12 +204,26 @@ const FormazioneLavoratoriRischioBassoPage: React.FC<FormazioneLavoratoriRischio
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Normativa di riferimento
+                    Quadro Normativo
                   </h3>
-                  <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
-                    <p className="text-slate-600 leading-relaxed">
-                      La normativa di riferimento principale è il <strong>D.Lgs 81/08</strong> (Testo Unico sulla Sicurezza), integrato dall'<strong>Accordo Stato-Regioni del 21/12/2011</strong> e successive modifiche. Aliseo Academy assicura che ogni contenuto sia costantemente aggiornato rispetto alle ultime evoluzioni legislative e tecniche.
-                    </p>
+                  <div className="bg-slate-900 rounded-3xl p-8 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-brand/20 transition-colors" />
+                    <div className="relative space-y-4">
+                      {[
+                        { title: "Art. 37 D.Lgs. 81/08", desc: "Formazione dei lavoratori", icon: Scale },
+                        { title: "Accordo Stato-Regioni 17/04/2025", desc: "(Rep. Atti n. 59/CSR)", icon: ShieldCheck }
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl">
+                          <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
+                            <item.icon className="w-5 h-5 text-brand" />
+                          </div>
+                          <div>
+                            <p className="text-white font-bold">{item.title}</p>
+                            <p className="text-slate-400 text-sm font-medium">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </section>
               </div>
@@ -223,25 +243,45 @@ const FormazioneLavoratoriRischioBassoPage: React.FC<FormazioneLavoratoriRischio
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">4 ore</p>
+                      <p className="text-white font-bold">4h</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Users className="w-5 h-5 text-brand" />
+                      <Monitor className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Destinatari</p>
-                      <p className="text-white font-bold text-sm">Lavoratori Rischio Basso</p>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
+                      <p className="text-white font-bold">E-learning</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Scale className="w-5 h-5 text-brand" />
+                      <Award className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Normativa</p>
-                      <p className="text-white font-bold text-sm">D.Lgs 81/08</p>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
+                      <p className="text-white font-bold text-sm">Attestato valido ai sensi della normativa vigente</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                      <Laptop className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Fruibilità</p>
+                      <p className="text-white font-bold text-sm">90 giorni dalla data di attivazione</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-brand/20">
+                      <Euro className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
+                      <p className="text-white font-bold text-sm">
+                        € 48,80 <span className="text-[10px] text-brand font-medium lowercase">iva inclusa</span>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -285,14 +325,12 @@ const FormazioneLavoratoriRischioBassoPage: React.FC<FormazioneLavoratoriRischio
             <div className="w-2 h-6 bg-brand rounded-full" />
             Potrebbero interessarti anche
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { title: "Formazione Generale", desc: "Modulo base 4h", view: 'corso-formazione-lavoratori-generale', icon: GraduationCap },
-              { title: "Rischio Medio", desc: "Formazione Specifica 8h", view: 'corso-formazione-lavoratori-rischio-medio', icon: ShieldCheck },
-              { title: "Rischio Alto", desc: "Formazione Specifica 12h", view: 'corso-formazione-lavoratori-rischio-alto', icon: Shield },
-              { title: "Aggiornamento", desc: "Rinnovo Quinquennale 6h", view: 'aggiornamento-formazione-lavoratori', icon: Clock },
-              { title: "Corso Preposto", desc: "Responsabile Sicurezza", view: 'corso-preposto', icon: Users },
+              { title: "Rischio Medio/Alto", desc: "Formazione Specifica 8-12h", view: 'corso-formazione-lavoratori-rischio-medio-alto', icon: ShieldCheck },
               { title: "Corso RLS", desc: "Rappresentante Lavoratori", view: 'corso-rls-rappresentante-lavoratori-sicurezza', icon: Users },
+              { title: "Antincendio L1", desc: "Rischio Basso", view: 'antincendio-l1', icon: Clock },
             ].map((item, i) => (
               <button 
                 key={i}
@@ -317,3 +355,4 @@ const FormazioneLavoratoriRischioBassoPage: React.FC<FormazioneLavoratoriRischio
 };
 
 export default FormazioneLavoratoriRischioBassoPage;
+

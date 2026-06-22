@@ -1,36 +1,39 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Laptop, Award, Zap, AlertTriangle, Monitor, Scale } from 'lucide-react';
+import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Scale, Laptop, Award, Monitor, Zap, Radio } from 'lucide-react';
 import { courses } from '../data/courses';
 import OnlineLearningBenefits from './OnlineLearningBenefits';
 
-interface CorsoRischioSismicoPageProps {
+interface CorsoRischioLavoriInQuotaPageProps {
   onNavigate: (view: any) => void;
   onOpenCourse: (courseId: string) => void;
 }
 
-const CorsoRischioSismicoPage: React.FC<CorsoRischioSismicoPageProps> = ({ onNavigate, onOpenCourse }) => {
-  const course = courses.find(c => c.id === "45");
+const CorsoRischioLavoriInQuotaPage: React.FC<CorsoRischioLavoriInQuotaPageProps> = ({ onNavigate, onOpenCourse }) => {
+  const course = courses.find(c => c.id === "37") || {
+    id: "37",
+    duration: "4h",
+    price: "48,80",
+    lessons: 22,
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Corso Rischio Sismico | Formazione E-learning Sicurezza sul Lavoro";
+    document.title = "Formazione per lavoratori - Rischio Lavori in Quota | Aliseo Academy";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Corso di formazione online sul rischio sismico. Comportamenti corretti da adottare durante e dopo un terremoto, procedure di evacuazione e gestione dell'emergenza.");
+      metaDescription.setAttribute('content', "Corso e-learning per lavoratori sul rischio lavori in quota. Formazione online conforme alla normativa vigente con attestato finale.");
     }
   }, []);
 
-  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Rischio%20Sismico&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20e-learning%20sul%20Rischio%20Sismico.%0APotrei%20avere%20maggiori%20informazioni%3F%0A%0AGrazie.";
-
-  if (!course) return <div className="py-20 text-center font-bold text-slate-900">Corso non trovato</div>;
+  const mailtoLink = "mailto:commerciale@aliseogroup.it?subject=Richiesta%20informazioni%20corso%20Rischio%20Lavori%20in%20Quota&body=Buongiorno%2C%0A%0ASono%20interessato%20al%20corso%20e-learning%20sul%20Rischio%20Lavori%20in%20Quota.%0APotrei%20avere%20maggiori%20informazioni%3F%0A%0AGrazie.";
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white min-h-screen" id="lavori-quota-page-container">
       {/* Hero Section */}
-      <section className="relative pt-20 pb-16 bg-slate-900 overflow-hidden">
+      <section className="relative pt-20 pb-16 bg-slate-900 overflow-hidden" id="hero-section">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,184,0,0.1),transparent_50%)]" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(245,158,11,0.1),transparent_50%)]" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
@@ -38,6 +41,7 @@ const CorsoRischioSismicoPage: React.FC<CorsoRischioSismicoPageProps> = ({ onNav
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-brand text-xs font-bold uppercase tracking-wider mb-6"
+              id="category-badge"
             >
               <ShieldCheck className="w-4 h-4" />
               Sicurezza sul Lavoro - E-learning
@@ -47,44 +51,48 @@ const CorsoRischioSismicoPage: React.FC<CorsoRischioSismicoPageProps> = ({ onNav
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6"
+              id="hero-title"
             >
-              Corso Formazione per Lavoratori - <span className="text-brand">Rischio Sismico</span>
+              Formazione per lavoratori - <span className="text-brand">Rischio Lavori in Quota</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
+              id="hero-subtitle"
             >
-              Il corso ha una durata di 30 minuti. È composto da 2 moduli didattici con contenuti multimediali. Al termine dovrà essere svolto un test finale con domande a risposta multipla, con una sola risposta esatta. L'iscrizione al corso ha una durata di 90 giorni, a partire dal giorno dell'iscrizione stessa.
+              Il corso ha una durata di 4 ore. È composto da 19 moduli didattici con contenuti multimediali. Al termine dovrà essere svolto un test finale con domande a risposta multipla, con una sola risposta esatta. L'iscrizione al corso ha una durata di 90 giorni, a partire dal giorno dell'iscrizione stessa.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="flex flex-col gap-4"
+              className="flex flex-wrap items-center gap-6"
+              id="hero-actions"
             >
               <div className="flex flex-col gap-2">
-                <span className="text-slate-400 text-sm font-bold ml-2">Ti rispondiamo entro 24 ore</span>
-                <div className="flex flex-wrap gap-4">
-                  <a 
-                    href={mailtoLink}
-                    className="px-8 py-4 bg-brand text-slate-900 font-black uppercase tracking-tight rounded-2xl hover:bg-brand-light transition-all flex items-center gap-2 group shadow-xl shadow-brand/20"
-                  >
-                    RICEVI INFORMAZIONI SUL CORSO
-                    <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                  </a>
-                </div>
+                <p className="text-brand text-xs font-bold uppercase tracking-wider">
+                  Ti rispondiamo entro 24 ore
+                </p>
+                <a
+                  href={mailtoLink}
+                  className="px-8 py-4 bg-brand text-slate-900 font-black uppercase tracking-tight rounded-2xl hover:bg-brand-light transition-all flex items-center gap-2 group shadow-xl shadow-brand/20"
+                  id="cta-hero-button"
+                >
+                  RICEVI INFORMAZIONI SUL CORSO
+                  <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                </a>
               </div>
-              <div className="flex items-center gap-4 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm w-fit">
+              <div className="flex items-center gap-4 px-6 py-4 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm w-fit h-fit mt-6 sm:mt-0" id="hero-quick-data">
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5 text-brand" />
-                  <span className="text-white font-bold">30 minuti</span>
+                  <span className="text-white font-bold">4 ore</span>
                 </div>
                 <div className="w-px h-6 bg-white/10" />
                 <div className="flex items-center gap-2">
                   <Euro className="w-5 h-5 text-brand" />
-                  <span className="text-white font-bold">€ 24,40</span>
+                  <span className="text-white font-bold">€ 48,80</span>
                 </div>
               </div>
             </motion.div>
@@ -93,36 +101,43 @@ const CorsoRischioSismicoPage: React.FC<CorsoRischioSismicoPageProps> = ({ onNav
       </section>
 
       {/* Main Content */}
-      <section className="py-20">
+      <section className="py-20" id="main-content-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             
-            <div className="lg:col-span-2 space-y-16">
+            {/* Left Content Column */}
+            <div className="lg:col-span-2 space-y-16" id="left-column">
               
-              {/* Descrizione Sviluppata */}
-              <article className="prose prose-slate max-w-none">
-                <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
+              {/* Descrizione Corso */}
+              <article className="prose prose-slate max-w-none" id="course-description-article">
+                <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3" id="description-heading">
                   <div className="w-2 h-8 bg-brand rounded-full" />
                   Descrizione del Corso
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Il corso Formazione per Lavoratori - Rischio Sismico fornisce le conoscenze specifiche necessarie per la salute e sicurezza dei lavoratori in caso di eventi sismici. Il programma didattico approfondisce la valutazione del rischio e le misure preventive e protettive da adottare per minimizzare i pericoli in caso di terremoto.
+                    I lavori in quota rappresentano una delle attività professionali a più alto indice di rischio infortunistico. La caduta dall'alto costituisce infatti una delle cause principali di infortuni gravi e mortali sul lavoro. Per questa ragione, la formazione e l'addestramento dei lavoratori esposti sono requisiti normativi inderogabili e fondamentali per garantire la sicurezza sul luogo di lavoro.
                   </p>
                   <p>
-                    Il percorso di apprendimento affronta temi cruciali legati alla dinamica degli eventi sismici, ai comportamenti adeguati da mettere in atto sia durante che dopo un evento tellurico, e alle procedure coordinate all'interno dell'organigramma aziendale delle emergenze.
+                    Questo corso di formazione e-learning è strutturato per fornire una preparazione teorica e metodologica completa sul rischio derivante dall'esecuzione di lavori temporanei in quota. Nel corso dei moduli didattici, verranno analizzate in dettaglio le principali sorgenti di pericolo, i fattori di rischio ambientale e strutturale, e le corrette procedure operative e di emergenza da implementare in cantiere o in stabilimento.
                   </p>
                   <p>
-                    La modalità e-learning flessibile garantisce ai lavoratori la possibilità di formarsi in totale sicurezza e autonomia, con contenuti di alta qualità interattivi e supporti didattici completi.
+                    Particolare rilevanza viene attribuita allo studio delle dinamiche di caduta, all'effetto pendolo e alla prevenzione della pericolosa sindrome da sospensione (trauma da imbracatura). Attraverso spiegazioni chiare e supporti didattici multimediali, i discenti apprenderanno la corretta selezione, l'uso e la manutenzione dei sistemi di arresto caduta, dei sistemi di posizionamento sul lavoro e dei dispositivi di protezione individuale (DPI) salvavita.
+                  </p>
+                  <p>
+                    Punto di forza della modalità multimediale asincrona è la flessibilità di fruizione: il dipendente può seguire le lezioni ovunque e in qualsiasi momento, ottimizzando i tempi aziendali e assicurando l'acquisizione verificata di competenze cruciali per la tutela della propria salute e incolumità.
                   </p>
                 </div>
               </article>
 
+              {/* Online Learning Benefits */}
               <OnlineLearningBenefits />
 
-              {/* Dettagli Corso */}
-              <div className="space-y-12">
-                <section>
+              {/* Detailed Sections */}
+              <div className="space-y-12" id="course-details">
+                
+                {/* Obiettivi */}
+                <section id="objectives-section">
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
                     Obiettivi del Corso
@@ -130,11 +145,10 @@ const CorsoRischioSismicoPage: React.FC<CorsoRischioSismicoPageProps> = ({ onNav
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       {[
-                        "Fornire contenuti specifici sulle tematiche di sicurezza nei luoghi di lavoro",
-                        "Offrire le competenze utili a riconoscere e analizzare le potenziali situazioni di rischio",
-                        "Insegnare i giusti comportamenti da adottare nelle situazioni di emergenza"
+                        "Fornire ai lavoratori le conoscenze teoriche e pratiche necessarie per svolgere in sicurezza attività che comportano il rischio di caduta dall'alto.",
+                        "Comprendere e prevenire i principali rischi legati ai lavori in quota, dalle cadute e all'effetto pendolo fino alla sindrome da sospensione."
                       ].map((item, i) => (
-                        <li key={i} className="flex items-start gap-3 text-slate-600">
+                        <li key={i} className="flex items-start gap-3 text-slate-600 col-span-2">
                           <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
                           <span>{item}</span>
                         </li>
@@ -143,34 +157,36 @@ const CorsoRischioSismicoPage: React.FC<CorsoRischioSismicoPageProps> = ({ onNav
                   </div>
                 </section>
 
-                <section>
+                {/* Destinatari */}
+                <section id="recipients-section">
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
                     Destinatari
                   </h3>
-                  <div className="bg-white border border-slate-200 rounded-3xl p-8 flex items-center gap-6 shadow-sm">
-                    <div className="w-16 h-16 rounded-2xl bg-brand/10 flex items-center justify-center shrink-0">
+                  <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8 flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-2xl bg-brand/10 flex items-center justify-center shrink-0 mt-1">
                       <Users className="w-8 h-8 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-600 leading-relaxed font-medium">
-                        I lavoratori e ogni soggetto dell'organigramma aziendale che abbia la necessità di avere una formazione specifica nella materia oggetto del corso.
+                        Il corso è destinato a tutti i lavoratori che svolgono attività in quota, nei cantieri o in altri contesti dove sussiste il rischio di caduta da un'altezza superiore a due metri rispetto a un piano stabile.
                       </p>
                     </div>
                   </div>
                 </section>
 
-                <section>
+                {/* Programma Didattico */}
+                <section id="syllabus-section">
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
                     Programma Didattico
                   </h3>
                   <div className="space-y-4">
                     {[
-                      { title: "Documento Progettuale", duration: "1 lezione - 0m" },
-                      { title: "Rischio Sismico", duration: "2 lezioni - 30m" },
-                      { title: "Quiz di Verifica", duration: "1 lezione - 5m" },
-                      { title: "Questionario di Gradimento", duration: "1 lezione - 9m" }
+                      { title: "01 Documento Progettuale", duration: "1 lezione - 0m" },
+                      { title: "02 Rischio Lavori in Quota", duration: "19 lezioni - 3h 59m" },
+                      { title: "03 Quiz di Verifica", duration: "1 lezione - 15m" },
+                      { title: "04 Questionario di Gradimento", duration: "1 lezione - 9m" }
                     ].map((module, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-brand/30 transition-all shadow-sm">
                         <div className="flex justify-between items-start">
@@ -189,7 +205,8 @@ const CorsoRischioSismicoPage: React.FC<CorsoRischioSismicoPageProps> = ({ onNav
                   </div>
                 </section>
 
-                <section>
+                {/* Quadro Normativo */}
+                <section id="regulatory-framework-section">
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
                     Quadro Normativo
@@ -198,9 +215,9 @@ const CorsoRischioSismicoPage: React.FC<CorsoRischioSismicoPageProps> = ({ onNav
                     <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-brand/20 transition-colors" />
                     <div className="relative space-y-4">
                       {[
-                        { title: "D.Lgs. 81/2008", desc: "Testo Unico sulla Salute e Sicurezza sul Lavoro", icon: Scale }
+                        { title: "Artt. 36, 37, 77 all. XV al punto 3.2.1 del D.Lgs. 81/08 e s.m.i.", desc: "Disposizioni in materia di informazione, formazione e addestramento all'uso dei dispositivi di protezione individuale per i lavori temporanei in quota.", icon: Scale }
                       ].map((item, i) => (
-                        <div key={i} className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl">
+                        <div key={i} className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl" id={`framework-${i}`}>
                           <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
                             <item.icon className="w-5 h-5 text-brand" />
                           </div>
@@ -216,9 +233,9 @@ const CorsoRischioSismicoPage: React.FC<CorsoRischioSismicoPageProps> = ({ onNav
               </div>
             </div>
 
-            {/* Sidebar */}
-            <div className="space-y-8">
-              <div className="bg-slate-900 rounded-3xl p-8 sticky top-24 border border-white/5 shadow-2xl">
+            {/* Right Sidebar Column */}
+            <div className="space-y-8" id="right-column-sidebar">
+              <div className="bg-slate-900 rounded-3xl p-8 sticky top-24 border border-white/5 shadow-2xl" id="course-info-card">
                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                   <GraduationCap className="w-6 h-6 text-brand" />
                   Scheda Corso
@@ -231,7 +248,7 @@ const CorsoRischioSismicoPage: React.FC<CorsoRischioSismicoPageProps> = ({ onNav
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">30m</p>
+                      <p className="text-white font-bold">4h</p>
                     </div>
                   </div>
 
@@ -241,7 +258,7 @@ const CorsoRischioSismicoPage: React.FC<CorsoRischioSismicoPageProps> = ({ onNav
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Lezioni</p>
-                      <p className="text-white font-bold">5</p>
+                      <p className="text-white font-bold">22</p>
                     </div>
                   </div>
 
@@ -282,18 +299,18 @@ const CorsoRischioSismicoPage: React.FC<CorsoRischioSismicoPageProps> = ({ onNav
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
                       <p className="text-white font-bold text-sm">
-                        € 24,40 <span className="text-[10px] text-brand font-medium lowercase">iva inclusa</span>
+                        € 48,80 <span className="text-[10px] text-brand font-medium lowercase">iva inclusa</span>
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <div className="mt-10 pt-8 border-t border-white/10">
-                  <div className="space-y-2">
-                    <p className="text-slate-400 text-xs font-bold text-center">Ti rispondiamo entro 24 ore</p>
-                    <a 
+                <div className="mt-8 pt-8 border-t border-white/10">
+                  <div className="flex flex-col gap-2">
+                    <a
                       href={mailtoLink}
                       className="block w-full py-4 bg-brand text-slate-900 text-center font-black uppercase tracking-tight rounded-2xl hover:bg-brand-light transition-all shadow-lg shadow-brand/20"
+                      id="sidebar-cta-button"
                     >
                       RICEVI INFORMAZIONI SUL CORSO
                     </a>
@@ -301,34 +318,36 @@ const CorsoRischioSismicoPage: React.FC<CorsoRischioSismicoPageProps> = ({ onNav
                 </div>
               </div>
 
-              <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
-                <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                  <FileText className="w-5 h-5 text-brand" />
+              {/* Box Certificazione sotto la sidebar */}
+              <div className="bg-white border border-slate-100 rounded-3xl p-8 shadow-xl shadow-slate-100/50" id="certification-card-box">
+                <h4 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <Award className="w-5 h-5 text-brand" />
                   Certificazione
                 </h4>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Al termine del corso e previo superamento del test finale verrà rilasciato un attestato valido ai sensi del D.Lgs. 81/08.
+                  Al termine del corso e previo superamento del test finale, verrà rilasciato un attestato valido ai sensi del D.Lgs. 81/08.
                 </p>
               </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6">
-            Hai bisogno di formare i tuoi lavoratori sul rischio sismico?
+      {/* CTA Section */}
+      <section className="py-20 bg-slate-50 border-t border-slate-100" id="bottom-cta-section">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">
+            Assicura la massima protezione per le attività lavorative in quota
           </h2>
-          <p className="text-lg text-slate-600 mb-10">
-            Il nostro team è a disposizione per supportarti nella scelta dei percorsi formativi più adatti alla tua azienda.
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+            Il nostro team di esperti è alla tua completa disposizione per guidarti nell'adempimento degli obblighi di legge.
           </p>
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-slate-500 text-sm font-bold">Ti rispondiamo entro 24 ore</span>
-            <a 
+          <div className="flex justify-center">
+            <a
               href={mailtoLink}
               className="px-12 py-5 bg-slate-900 text-white font-black uppercase tracking-tight rounded-2xl hover:bg-slate-800 transition-all shadow-xl inline-block"
+              id="cta-bottom-button"
             >
               RICEVI INFORMAZIONI SUL CORSO
             </a>
@@ -336,31 +355,33 @@ const CorsoRischioSismicoPage: React.FC<CorsoRischioSismicoPageProps> = ({ onNav
         </div>
       </section>
 
-      {/* Internal Navigation */}
-      <section className="py-16 border-t border-slate-100 bg-white">
+      {/* Related Courses Section */}
+      <section className="py-16 border-t border-slate-100 bg-slate-50/50" id="related-courses-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-black text-slate-900 mb-8 flex items-center gap-3">
+          <h2 className="text-2xl font-black text-slate-900 mb-8 flex items-center gap-3" id="related-heading">
             <div className="w-2 h-6 bg-brand rounded-full" />
             Potrebbero interessarti anche
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { id: "36", title: "Rischio Interferenze", desc: "Gestione della sicurezza in presenza di ditte esterne", icon: AlertTriangle },
-              { id: "46", title: "Stress Lavoro Correlato", desc: "Valutazione e gestione dello stress occupazionale", icon: ShieldCheck },
-              { id: "40", title: "Movimentazione Carichi", desc: "Prevenzione delle patologie muscolo-scheletriche", icon: BookOpen },
+              { id: "32", title: "Rischio Elettrico", desc: "Corso completo sulla sicurezza elettrica nei luoghi di lavoro", icon: Zap },
+              { id: "30", title: "Atmosfere Esplosive", desc: "Formazione sui rischi da atmosfere esplosive (ATEX)", icon: ShieldCheck },
+              { id: "33", title: "Campi Elettromagnetici", desc: "Rischi legati all'esposizione a sorgenti elettromagnetiche", icon: Radio },
             ].map((item, i) => (
               <button 
                 key={i}
                 onClick={() => onOpenCourse(item.id)}
                 className="group p-6 bg-white rounded-2xl border border-slate-200 hover:border-brand/30 hover:shadow-lg hover:shadow-brand/5 transition-all text-left flex flex-col h-full"
+                id={`related-button-${item.id}`}
               >
                 <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center mb-4 group-hover:bg-brand/10 transition-colors">
                   <item.icon className="w-5 h-5 text-slate-400 group-hover:text-brand transition-colors" />
                 </div>
-                <h3 className="font-bold text-slate-900 mb-1 text-sm">{item.title}</h3>
-                <p className="text-xs text-slate-500 mb-4 flex-grow">{item.desc}</p>
-                <div className="flex items-center gap-1 text-brand text-[10px] font-bold uppercase mt-auto">
-                  Vedi <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                <h3 className="font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-sm text-slate-500 leading-relaxed mb-4 flex-grow">{item.desc}</p>
+                <div className="flex items-center gap-1 text-brand text-xs font-bold uppercase tracking-wider mt-auto group-hover:text-brand-dark">
+                  Scopri il Corso
+                  <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </div>
               </button>
             ))}
@@ -371,4 +392,4 @@ const CorsoRischioSismicoPage: React.FC<CorsoRischioSismicoPageProps> = ({ onNav
   );
 };
 
-export default CorsoRischioSismicoPage;
+export default CorsoRischioLavoriInQuotaPage;

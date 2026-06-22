@@ -54,17 +54,9 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-slate-400 leading-relaxed mb-4"
+              className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Corso di formazione specifica per lavoratori a rischio basso del settore uffici, obbligatorio ai sensi del D.Lgs. 81/08. Il percorso è erogato interamente in modalità e-learning certificata, conforme alla normativa vigente.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.25 }}
-              className="text-lg text-slate-500 leading-relaxed mb-8"
-            >
-              Valido per personale amministrativo, impiegati e lavoratori che operano in ambienti d’ufficio.
+              Corso di formazione specifica per lavoratori del settore uffici, obbligatorio ai sensi del D.Lgs. 81/08. Il percorso è erogato interamente in modalità e-learning e conforme alla normativa vigente.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -104,19 +96,19 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Il corso è disponibile online in modalità e-learning. Per aziende o gruppi che desiderano organizzare la formazione anche in presenza con nostro docente, è possibile richiedere una soluzione dedicata contattandoci.
+                    Il corso Formazione Specifica Lavoratori Rischio Basso – Settore Uffici è rivolto ai lavoratori che operano in ambienti a basso rischio, come uffici, studi professionali e attività amministrative.
                   </p>
                   <p>
-                    La sicurezza sul lavoro non riguarda solo i cantieri o le fabbriche. Anche l'ambiente d'ufficio presenta rischi specifici che, se trascurati, possono portare a disturbi muscolo-scheletrici, affaticamento visivo e stress. Il **corso di formazione specifica per lavoratori a rischio basso del settore uffici** è progettato per rispondere a queste esigenze, fornendo ai dipendenti gli strumenti per operare in modo sano e sicuro.
+                    Il percorso formativo è conforme a quanto previsto dal D.Lgs. 81/08 e dagli Accordi Stato-Regioni vigenti, e fornisce le conoscenze necessarie per individuare e gestire i principali rischi connessi alle attività lavorative d’ufficio.
                   </p>
                   <p>
-                    Secondo il **D.Lgs 81/08** e l'Accordo Stato-Regioni, ogni lavoratore deve ricevere una formazione adeguata ai rischi presenti nella propria mansione. Per chi lavora in ufficio, i rischi principali sono legati all'uso prolungato dei **videoterminali (VDT)**, alla postura scorretta e a fattori ambientali come l'illuminazione e il microclima. La formazione online di Aliseo Academy affronta questi temi in modo pratico e interattivo, permettendo ai lavoratori di apprendere come regolare la propria postazione, come gestire le pause e come prevenire l'insorgenza di patologie professionali.
+                    Durante il corso vengono trattati i rischi specifici legati all’uso dei videoterminali (VDT), alla postura, allo stress lavoro-correlato e all’organizzazione degli ambienti di lavoro.
                   </p>
                   <p>
-                    Scegliere la modalità **e-learning** per la formazione sulla sicurezza offre numerosi vantaggi. Le aziende possono formare il proprio personale senza interrompere le attività lavorative, poiché ogni dipendente può seguire le lezioni secondo i propri ritmi e orari. La nostra piattaforma garantisce un monitoraggio costante dell'apprendimento attraverso test intermedi e un quiz finale, assicurando che le competenze vengano effettivamente acquisite.
+                    Il programma è strutturato in moduli didattici con contenuti multimediali, test intermedi e verifica finale, per garantire un apprendimento efficace e immediatamente applicabile.
                   </p>
                   <p>
-                    L'adempimento agli obblighi formativi è fondamentale non solo per la tutela della salute dei lavoratori, ma anche per la conformità legale dell'azienda. La mancanza di formazione specifica può esporre il datore di lavoro a pesanti sanzioni. Con Aliseo Academy, avrai la certezza di un percorso formativo aggiornato alle ultime normative, con il rilascio di un attestato valido su tutto il territorio nazionale. Investire nella sicurezza d'ufficio significa migliorare il benessere dei dipendenti e, di conseguenza, la produttività aziendale.
+                    La modalità e-learning consente di seguire il corso in autonomia, con accesso flessibile e continuità formativa.
                   </p>
                 </div>
               </article>
@@ -133,10 +125,10 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                     <ul className="space-y-3">
                       {[
-                        "Impiegati amministrativi e contabili",
-                        "Addetti al front-office e segreteria",
-                        "Personale che utilizza il computer per più di 20 ore settimanali",
-                        "Lavoratori di aziende classificate a rischio basso (uffici, servizi)"
+                        "Lavoratori impiegati in uffici e ambienti amministrativi",
+                        "Addetti al front-office e back-office",
+                        "Personale che utilizza videoterminali (VDT)",
+                        "Lavoratori di aziende a rischio basso settore uffici"
                       ].map((item, i) => (
                         <li key={i} className="flex items-center gap-3 text-slate-700 font-medium">
                           <Users className="w-5 h-5 text-brand shrink-0" />
@@ -154,10 +146,10 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {[
-                      "Riconoscere i rischi legati all'ambiente d'ufficio",
-                      "Apprendere l'ergonomia della postazione di lavoro",
-                      "Prevenire i disturbi legati all'uso dei VDT",
-                      "Conoscere le procedure di emergenza e primo soccorso"
+                      "Comprendere i rischi specifici del lavoro d’ufficio",
+                      "Prevenire i disturbi legati all’uso dei videoterminali",
+                      "Applicare corrette posture e organizzazione del lavoro",
+                      "Conoscere le procedure di sicurezza e prevenzione"
                     ].map((obj, i) => (
                       <div key={i} className="flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-2xl shadow-sm">
                         <CheckCircle2 className="w-5 h-5 text-brand shrink-0" />
@@ -170,18 +162,22 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma del corso
+                    Programma
                   </h3>
                   <div className="space-y-4">
                     {[
-                      { title: "Ergonomia della postazione", desc: "Regolazione di sedia, scrivania e monitor per una postura corretta." },
-                      { title: "Uso dei videoterminali (VDT)", desc: "Rischi per la vista e l'apparato muscolo-scheletrico, pause obbligatorie." },
-                      { title: "Microclima e illuminazione", desc: "Gestione della temperatura, umidità e luce nell'ambiente di lavoro." },
-                      { title: "Fattori di rischio trasversali", desc: "Stress lavoro-correlato, organizzazione del lavoro e benessere." }
+                      { title: "Documento Progettuale", content: "0m" },
+                      { title: "Formazione Lavoratori Parte Specifica", content: "3h 52m" },
+                      { title: "Quiz di Verifica Parte Specifica", content: "15m" },
+                      { title: "Rischio Lavoro su Videoterminali", content: "1h 3m" },
+                      { title: "Quiz di Verifica Rischio Lavoro su Videoterminali", content: "15m" },
+                      { title: "Questionario di Gradimento", content: "9m" }
                     ].map((item, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-                        <h4 className="font-bold text-slate-900 mb-2">{item.title}</h4>
-                        <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                        <div className="flex justify-between items-start">
+                          <h4 className="font-bold text-slate-900">{item.title}</h4>
+                          <span className="text-slate-500 font-mono text-sm font-bold bg-slate-100 px-2 py-1 rounded-lg shrink-0 ml-4">{item.content}</span>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -192,23 +188,24 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
                     Quadro Normativo
                   </h3>
-                  <div className="bg-slate-900 text-white rounded-3xl p-8">
-                    <ul className="space-y-4">
-                      <li className="flex items-start gap-3">
-                        <Scale className="w-6 h-6 text-brand shrink-0" />
-                        <div>
-                          <p className="font-bold">D.Lgs 81/08 - Testo Unico Sicurezza</p>
-                          <p className="text-sm text-slate-400">Art. 37: Obblighi di formazione e addestramento dei lavoratori.</p>
+                  <div className="bg-slate-900 rounded-3xl p-8 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-brand/20 transition-colors" />
+                    <div className="relative space-y-4">
+                      {[
+                        { title: "Art. 37 D.Lgs. 81/08", desc: "Formazione dei lavoratori", icon: Scale },
+                        { title: "Accordo Stato-Regioni 17/04/2025", desc: "(Rep. Atti n. 59/CSR)", icon: ShieldCheck }
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl">
+                          <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
+                            <item.icon className="w-5 h-5 text-brand" />
+                          </div>
+                          <div>
+                            <p className="text-white font-bold">{item.title}</p>
+                            <p className="text-slate-400 text-sm font-medium">{item.desc}</p>
+                          </div>
                         </div>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <FileText className="w-6 h-6 text-brand shrink-0" />
-                        <div>
-                          <p className="font-bold">Accordo Stato-Regioni</p>
-                          <p className="text-sm text-slate-400">Definizione dei contenuti minimi e della durata della formazione specifica.</p>
-                        </div>
-                      </li>
-                    </ul>
+                      ))}
+                    </div>
                   </div>
                 </section>
               </div>
@@ -223,17 +220,17 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
                 </h3>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Clock className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">{course.duration}</p>
+                      <p className="text-white font-bold">4h</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Laptop className="w-5 h-5 text-brand" />
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Monitor className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
@@ -241,17 +238,37 @@ const CorsoLavoratoriRischioBassoUfficiPage: React.FC<CorsoLavoratoriRischioBass
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Award className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
+                      <p className="text-white font-bold text-sm leading-tight">Attestato valido ai sensi della normativa vigente</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Laptop className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Fruibilità</p>
+                      <p className="text-white font-bold text-sm">90 giorni dalla data di attivazione</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 bg-brand/5 border-brand/20">
+                      <Euro className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
+                      <p className="text-white font-bold text-sm">
+                        € 48,80 <span className="text-[10px] text-brand font-medium lowercase">iva inclusa</span>
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div className="mt-10 pt-8 border-t border-white/10">
-                  <p className="text-slate-400 text-sm mb-1 text-center">
+                  <p className="text-slate-400 text-sm mb-4 text-center">
                     Ti rispondiamo entro 24 ore
                   </p>
                   <a 

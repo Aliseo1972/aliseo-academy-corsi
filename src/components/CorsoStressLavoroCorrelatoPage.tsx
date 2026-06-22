@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, MessageSquare, ShieldCheck, GraduationCap, Briefcase, Scale, Laptop, Award } from 'lucide-react';
+import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, MessageSquare, ShieldCheck, GraduationCap, Briefcase, Scale, Laptop, Award, Monitor } from 'lucide-react';
 import { courses } from '../data/courses';
 import OnlineLearningBenefits from './OnlineLearningBenefits';
 
@@ -56,7 +56,7 @@ const CorsoStressLavoroCorrelatoPage: React.FC<CorsoStressLavoroCorrelatoPagePro
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Formazione specifica per lavoratori sul rischio stress occupazionale. Un percorso interattivo per comprendere, prevenire e gestire il benessere organizzativo secondo il D.Lgs. 81/08.
+              Formazione specifica per lavoratori sul rischio stress lavoro correlato, finalizzata alla prevenzione e gestione del benessere organizzativo.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -103,23 +103,23 @@ const CorsoStressLavoroCorrelatoPage: React.FC<CorsoStressLavoroCorrelatoPagePro
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  La Gestione dello Stress Lavoro Correlato
+                  Descrizione del Corso
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Lo <strong>Stress Lavoro Correlato (SLC)</strong> è definito come una condizione che può essere accompagnata da disturbi o disfunzioni di natura fisica, psicologica o sociale ed è conseguenza del fatto che taluni individui non si sentono in grado di corrispondere alle richieste o alle aspettative riposte in loro. Il <strong>D.Lgs. 81/08</strong>, all'articolo 28, sancisce l'obbligo per il datore di lavoro di valutare tutti i rischi, compresi quelli riguardanti gruppi di lavoratori esposti a rischi particolari, tra cui quelli collegati allo stress lavoro-correlato.
+                    Il corso Formazione Lavoratori – Rischio Stress Lavoro Correlato è rivolto ai lavoratori e ai soggetti dell’organigramma aziendale che necessitano di una formazione specifica sul rischio stress lavoro correlato.
                   </p>
                   <p>
-                    Il nostro corso di formazione online è progettato per fornire ai lavoratori una comprensione approfondita di questo fenomeno, non solo come adempimento normativo, ma come strumento per migliorare la qualità della vita lavorativa. Attraverso una metodologia didattica moderna e interattiva, il corso analizza i fattori di rischio oggettivi (legati all'organizzazione del lavoro, all'ambiente, alla comunicazione) e soggettivi (legati alla percezione individuale e alle capacità di coping).
+                    Il percorso formativo approfondisce il tema dello stress lavoro correlato, i potenziali fattori di rischio e le misure di prevenzione utili a riconoscere e gestire situazioni di disagio in ambito lavorativo.
                   </p>
                   <p>
-                    Affrontare il rischio stress significa investire nel <strong>benessere organizzativo</strong>. Un'azienda che monitora e previene lo stress riduce l'assenteismo, il turnover e gli errori operativi, aumentando al contempo la motivazione e la produttività. La formazione e-learning permette di fruire dei contenuti in modo flessibile, garantendo che ogni lavoratore possa apprendere i concetti fondamentali senza interrompere eccessivamente i flussi di lavoro quotidiani.
+                    Durante il corso vengono analizzati gli aspetti legati alla consapevolezza del rischio, alla comprensione dei fattori che possono incidere sul benessere dei lavoratori e alle strategie utili per prevenire condizioni di stress nell’organizzazione.
                   </p>
                   <p>
-                    Durante il percorso formativo, verranno illustrati gli indicatori di stress (eventi sentinella) e le modalità con cui l'azienda deve procedere alla valutazione del rischio. Forniremo strumenti pratici per riconoscere i primi segnali di disagio e strategie per promuovere un ambiente di lavoro collaborativo e sano. La sicurezza sul lavoro non riguarda solo la prevenzione degli infortuni fisici, ma la tutela della salute nel suo complesso, intesa come stato di completo benessere fisico, mentale e sociale.
+                    Il programma è strutturato in moduli didattici con contenuti multimediali, test di verifica e questionario finale, per garantire un apprendimento chiaro, pratico e immediatamente applicabile.
                   </p>
                   <p>
-                    Aliseo Academy offre una piattaforma certificata e contenuti costantemente aggiornati secondo le ultime linee guida nazionali ed europee. Scegliere la nostra formazione significa garantire ai propri dipendenti un percorso di qualità, supportato da tutor esperti e materiali didattici chiari ed efficaci.
+                    La modalità e-learning consente di seguire il corso in autonomia, con accesso flessibile e continuità formativa.
                   </p>
                 </div>
               </article>
@@ -135,20 +135,17 @@ const CorsoStressLavoroCorrelatoPage: React.FC<CorsoStressLavoroCorrelatoPagePro
                   </h3>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {course.objectives?.map((obj, i) => (
+                      {[
+                        "Accrescere consapevolezza e comprensione del rischio stress lavoro correlato",
+                        "Aiutare i lavoratori a conoscere i potenziali fattori di rischio",
+                        "Forrnire competenze per prevenire e gestire situazioni di stress lavorativo",
+                        "Migliorare la capacità di riconoscere segnali di disagio organizzativo"
+                      ].map((obj, i) => (
                         <li key={i} className="flex items-start gap-3 text-slate-600">
                           <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
                           <span>{obj}</span>
                         </li>
                       ))}
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Conoscenza della normativa vigente (D.Lgs 81/08)</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Sviluppo di strategie di prevenzione collettiva</span>
-                      </li>
                     </ul>
                   </div>
                 </section>
@@ -163,9 +160,18 @@ const CorsoStressLavoroCorrelatoPage: React.FC<CorsoStressLavoroCorrelatoPagePro
                       <Users className="w-8 h-8 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-600 leading-relaxed">
-                        Il corso è rivolto a <strong>tutti i lavoratori</strong>, indipendentemente dal settore di attività, che necessitano di formazione specifica sul rischio stress lavoro-correlato come previsto dal Testo Unico sulla Sicurezza.
-                      </p>
+                      <ul className="space-y-2">
+                        {[
+                          "Lavoratori e soggetti dell’organigramma aziendale",
+                          "Figure che necessitano di formazione specifica sul rischio stress lavoro correlato",
+                          "Personale coinvolto nella prevenzione e gestione del benessere organizzativo"
+                        ].map((item, i) => (
+                          <li key={i} className="text-slate-600 font-medium flex items-center gap-2">
+                            <div className="w-1.5 h-1.5 bg-brand rounded-full" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </section>
@@ -173,10 +179,15 @@ const CorsoStressLavoroCorrelatoPage: React.FC<CorsoStressLavoroCorrelatoPagePro
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma Didattico
+                    Programma
                   </h3>
                   <div className="space-y-4">
-                    {course.syllabus?.map((module, i) => (
+                    {[
+                      { title: "Documento Progettuale", duration: "0m" },
+                      { title: "Rischio Stress Lavoro Correlato", duration: "57m" },
+                      { title: "Quiz di Verifica", duration: "5m" },
+                      { title: "Questionario di Gradimento", duration: "9m" }
+                    ].map((module, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-brand/30 transition-all shadow-sm">
                         <div className="flex justify-between items-start">
                           <div className="flex items-center gap-4">
@@ -185,12 +196,38 @@ const CorsoStressLavoroCorrelatoPage: React.FC<CorsoStressLavoroCorrelatoPagePro
                             </div>
                             <h4 className="font-bold text-slate-900 text-lg">{module.title}</h4>
                           </div>
-                          <span className="text-xs font-bold text-slate-400 uppercase tracking-wider bg-slate-50 px-3 py-1 rounded-full border border-slate-100">
+                          <span className="text-slate-500 font-mono text-sm font-bold bg-slate-100 px-2 py-1 rounded-lg shrink-0 ml-4">
                             {module.duration}
                           </span>
                         </div>
                       </div>
                     ))}
+                  </div>
+                </section>
+
+                <section>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <div className="w-1.5 h-6 bg-brand rounded-full" />
+                    Quadro Normativo
+                  </h3>
+                  <div className="bg-slate-900 rounded-3xl p-8 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-brand/20 transition-colors" />
+                    <div className="relative space-y-4">
+                      {[
+                        { title: "Art. 28 del D.Lgs. 81/08", desc: "Oggetto della valutazione dei rischi", icon: Scale },
+                        { title: "Circolare del 18 Novembre 2010", desc: "del Ministero del Lavoro", icon: FileText }
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl">
+                          <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
+                            <item.icon className="w-5 h-5 text-brand" />
+                          </div>
+                          <div>
+                            <p className="text-white font-bold">{item.title}</p>
+                            <p className="text-slate-400 text-sm font-medium">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </section>
               </div>
@@ -206,18 +243,18 @@ const CorsoStressLavoroCorrelatoPage: React.FC<CorsoStressLavoroCorrelatoPagePro
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Clock className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">{course.duration}</p>
+                      <p className="text-white font-bold">1h</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Laptop className="w-5 h-5 text-brand" />
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Monitor className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
@@ -226,12 +263,34 @@ const CorsoStressLavoroCorrelatoPage: React.FC<CorsoStressLavoroCorrelatoPagePro
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Award className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
+                      <p className="text-white font-bold text-sm leading-tight">Attestato valido ai sensi della normativa vigente</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Laptop className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Fruibilità</p>
+                      <p className="text-white font-bold text-sm">90 giorni dalla data di attivazione</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 bg-brand/5 border-brand/20">
+                      <Euro className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
+                      <p className="text-white font-bold text-sm">
+                        € 24,40 <span className="text-[10px] text-brand font-medium lowercase">iva inclusa</span>
+                      </p>
                     </div>
                   </div>
                 </div>

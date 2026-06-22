@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Laptop, Award, FlaskConical } from 'lucide-react';
+import { Clock, BookOpen, Euro, CheckCircle2, Users, FileText, ChevronRight, ShieldCheck, GraduationCap, Laptop, Award, FlaskConical, Monitor, Scale } from 'lucide-react';
 import { courses } from '../data/courses';
 import OnlineLearningBenefits from './OnlineLearningBenefits';
 
@@ -56,7 +56,7 @@ const CorsoAgentiCancerogeniPage: React.FC<CorsoAgentiCancerogeniPageProps> = ({
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-400 leading-relaxed mb-8"
             >
-              Formazione specifica sulla protezione dai rischi derivanti dall'esposizione ad agenti cancerogeni, mutageni e teratogeni durante il lavoro, ai sensi del Titolo IX del D.Lgs. 81/08.
+              Formazione specifica sui rischi derivanti dall’esposizione ad agenti cancerogeni, mutageni e teratogeni durante il lavoro, conforme al D.Lgs. 81/08.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -103,23 +103,23 @@ const CorsoAgentiCancerogeniPage: React.FC<CorsoAgentiCancerogeniPageProps> = ({
               <article className="prose prose-slate max-w-none">
                 <h2 className="text-3xl font-black text-slate-900 mb-6 flex items-center gap-3">
                   <div className="w-2 h-8 bg-brand rounded-full" />
-                  La Prevenzione dai Rischi Cancerogeni
+                  Descrizione del Corso
                 </h2>
                 <div className="text-slate-600 leading-relaxed space-y-6 text-lg">
                   <p>
-                    Il rischio derivante dall'esposizione ad <strong>agenti cancerogeni, mutageni e teratogeni</strong> rappresenta una delle sfide più critiche per la salute e la sicurezza nei luoghi di lavoro. Ai sensi del <strong>Titolo IX, Capo II del D.Lgs. 81/08</strong>, i datori di lavoro hanno l'obbligo di valutare rigorosamente l'esposizione a queste sostanze e di adottare misure di prevenzione e protezione di massimo livello, privilegiando, ove possibile, la sostituzione della sostanza pericolosa con una meno nociva.
+                    Il corso Formazione per lavoratori – Rischio Agenti Cancerogeni, Mutageni, Teratogeni è rivolto ai lavoratori che, direttamente o indirettamente, possono entrare in contatto con sostanze o miscele classificate come cancerogene, mutagene o teratogene.
                   </p>
                   <p>
-                    Il nostro corso e-learning è strutturato per fornire ai lavoratori e alle figure della sicurezza una panoramica dettagliata sulla natura di questi agenti. Gli agenti cancerogeni sono sostanze o miscele che possono causare il cancro o aumentarne l'incidenza; i mutageni possono produrre difetti genetici ereditari; i teratogeni possono causare danni allo sviluppo dell'embrione o del feto. La comprensione delle schede di sicurezza (SDS) e dell'etichettatura secondo il Regolamento CLP è il punto di partenza fondamentale per una gestione sicura.
+                    Il percorso formativo approfondisce i principali rischi derivanti dall’esposizione ad agenti cancerogeni, mutageni e teratogeni, illustrando le categorie di sostanze, i simboli di pericolo e le attività lavorative a maggior rischio.
                   </p>
                   <p>
-                    Il percorso formativo approfondisce le modalità di esposizione — inalazione, contatto cutaneo o ingestione accidentale — e gli effetti a lungo termine sulla salute, che spesso si manifestano dopo anni o decenni dall'esposizione. Verranno analizzate le misure di prevenzione tecnica, organizzativa e procedurale, come l'uso di sistemi a ciclo chiuso, l'aspirazione localizzata e la limitazione del numero di lavoratori esposti. Un'attenzione particolare è dedicata ai <strong>Dispositivi di Protezione Individuale (DPI)</strong> specifici, come respiratori a filtro o isolanti, e alle procedure di igiene personale e decontaminazione.
+                    Durante il corso vengono analizzate le situazioni di potenziale esposizione, le misure di prevenzione e protezione, le procedure corrette da adottare e i comportamenti sicuri per contribuire alla riduzione del rischio.
                   </p>
                   <p>
-                    Attraverso moduli interattivi e casi studio, il corso guida l'utente nella comprensione degli obblighi di sorveglianza sanitaria e della tenuta del registro degli esposti. La formazione online di Aliseo Academy permette di affrontare questi temi di estrema delicatezza con rigore scientifico e chiarezza espositiva, garantendo che ogni lavoratore acquisisca la consapevolezza necessaria per proteggere la propria salute.
+                    Il programma è strutturato in moduli didattici con contenuti multimediali, test finale con domande a risposta multipla e questionario di gradimento, per garantire un apprendimento chiaro e verificabile.
                   </p>
                   <p>
-                    La prevenzione dei rischi da agenti cancerogeni non è solo un adempimento burocratico, ma un impegno etico e professionale verso la vita. Investire in formazione specifica significa ridurre drasticamente la probabilità di malattie professionali gravi, creando un ambiente di lavoro sano, sicuro e consapevole delle sfide poste dalla chimica industriale moderna. Aliseo Academy garantisce contenuti costantemente aggiornati e conformi alle più recenti normative europee e nazionali.
+                    La modalità e-learning consente di seguire il corso in autonomia, con accesso flessibile e continuità formativa.
                   </p>
                 </div>
               </article>
@@ -135,30 +135,17 @@ const CorsoAgentiCancerogeniPage: React.FC<CorsoAgentiCancerogeniPageProps> = ({
                   </h3>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8">
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Definizione di agenti cancerogeni, mutageni e teratogeni</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Classificazione ed etichettatura (Regolamento CLP)</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Valutazione dell'esposizione e valori limite (VLEP)</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Misure di prevenzione e protezione collettiva</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Uso corretto dei DPI e procedure di igiene</span>
-                      </li>
-                      <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
-                        <span>Sorveglianza sanitaria e registro degli esposti</span>
-                      </li>
+                      {[
+                        "Fornire ai lavoratori le conoscenze fondamentali sui rischi derivanti dall’esposizione ad agenti cancerogeni, mutageni e teratogeni",
+                        "Illustrare le categorie di sostanze, i simboli di pericolo e le attività lavorative a maggior rischio",
+                        "Riconoscere le situazioni di potenziale esposizione",
+                        "Adottare comportamenti sicuri e contribuire attivamente alla riduzione del rischio"
+                      ].map((obj, i) => (
+                        <li key={i} className="flex items-start gap-3 text-slate-600">
+                          <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-0.5" />
+                          <span>{obj}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </section>
@@ -173,9 +160,19 @@ const CorsoAgentiCancerogeniPage: React.FC<CorsoAgentiCancerogeniPageProps> = ({
                       <Users className="w-8 h-8 text-brand" />
                     </div>
                     <div>
-                      <p className="text-slate-600 leading-relaxed">
-                        Il corso è rivolto a <strong>tutti i lavoratori</strong> che operano in ambienti dove sono presenti agenti cancerogeni o mutageni, RSPP, ASPP, RLS e datori di lavoro.
-                      </p>
+                      <ul className="space-y-2">
+                        {[
+                          "Lavoratori che, direttamente o indirettamente, possono entrare in contatto con sostanze o miscele classificate come cancerogene, mutagene o teratogene",
+                          "Addetti ad attività di pulizia, manutenzione o lavorazioni industriali",
+                          "Lavoratori esposti a sostanze chimiche pericolose",
+                          "Figure coinvolte nella gestione della sicurezza e prevenzione del rischio"
+                        ].map((item, i) => (
+                          <li key={i} className="text-slate-600 font-medium flex items-center gap-2">
+                            <div className="w-1.5 h-1.5 bg-brand rounded-full" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </section>
@@ -183,10 +180,15 @@ const CorsoAgentiCancerogeniPage: React.FC<CorsoAgentiCancerogeniPageProps> = ({
                 <section>
                   <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                     <div className="w-1.5 h-6 bg-brand rounded-full" />
-                    Programma Didattico
+                    Programma
                   </h3>
                   <div className="space-y-4">
-                    {course.syllabus?.map((module, i) => (
+                    {[
+                      { title: "Documento Progettuale", duration: "0m" },
+                      { title: "Rischio Agenti Cancerogeni, Mutageni, Teratogeni", duration: "29m" },
+                      { title: "Quiz di Verifica", duration: "5m" },
+                      { title: "Questionario di Gradimento", duration: "9m" }
+                    ].map((module, i) => (
                       <div key={i} className="bg-white border border-slate-200 rounded-2xl p-6 hover:border-brand/30 transition-all shadow-sm">
                         <div className="flex justify-between items-start">
                           <div className="flex items-center gap-4">
@@ -195,7 +197,7 @@ const CorsoAgentiCancerogeniPage: React.FC<CorsoAgentiCancerogeniPageProps> = ({
                             </div>
                             <h4 className="font-bold text-slate-900 text-lg">{module.title}</h4>
                           </div>
-                          <span className="text-xs font-bold text-slate-400 uppercase tracking-wider bg-slate-50 px-3 py-1 rounded-full border border-slate-100">
+                          <span className="text-slate-500 font-mono text-sm font-bold bg-slate-100 px-2 py-1 rounded-lg shrink-0 ml-4">
                             {module.duration}
                           </span>
                         </div>
@@ -203,12 +205,38 @@ const CorsoAgentiCancerogeniPage: React.FC<CorsoAgentiCancerogeniPageProps> = ({
                     ))}
                   </div>
                 </section>
+
+                <section>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                    <div className="w-1.5 h-6 bg-brand rounded-full" />
+                    Quadro Normativo
+                  </h3>
+                  <div className="bg-slate-900 rounded-3xl p-8 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-3xl rounded-full -mr-16 -mt-16 group-hover:bg-brand/20 transition-colors" />
+                    <div className="relative space-y-4">
+                      {[
+                        { title: "Artt. 233-245 D. Lgs. 81/08;", desc: "Protezione da agenti cancerogeni e mutageni", icon: Scale },
+                        { title: "D. Lgs. 135/24;", desc: "Aggiornamenti normativi", icon: Scale }
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-2xl">
+                          <div className="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center">
+                            <item.icon className="w-5 h-5 text-brand" />
+                          </div>
+                          <div>
+                            <p className="text-white font-bold">{item.title}</p>
+                            <p className="text-slate-400 text-sm font-medium">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </section>
               </div>
             </div>
 
             {/* Sidebar */}
             <div className="space-y-8">
-              <div className="bg-slate-900 rounded-3xl p-8 sticky top-24 shadow-2xl shadow-slate-200">
+              <div className="bg-slate-900 rounded-3xl p-8 sticky top-24 border border-white/5 shadow-2xl">
                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                   <GraduationCap className="w-6 h-6 text-brand" />
                   Scheda Corso
@@ -216,18 +244,18 @@ const CorsoAgentiCancerogeniPage: React.FC<CorsoAgentiCancerogeniPageProps> = ({
                 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Clock className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Durata</p>
-                      <p className="text-white font-bold">{course.duration}</p>
+                      <p className="text-white font-bold">30m</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
-                      <Laptop className="w-5 h-5 text-brand" />
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Monitor className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Modalità</p>
@@ -236,12 +264,34 @@ const CorsoAgentiCancerogeniPage: React.FC<CorsoAgentiCancerogeniPageProps> = ({
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
                       <Award className="w-5 h-5 text-brand" />
                     </div>
                     <div>
                       <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Certificazione</p>
-                      <p className="text-white font-bold text-sm">Attestato a norma di legge</p>
+                      <p className="text-white font-bold text-sm leading-tight">Attestato valido a norma di legge</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5">
+                      <Laptop className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Fruibilità</p>
+                      <p className="text-white font-bold text-sm">90 giorni dalla data di attivazione</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 bg-brand/5 border-brand/20">
+                      <Euro className="w-5 h-5 text-brand" />
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase font-bold tracking-wider">Prezzo</p>
+                      <p className="text-white font-bold text-sm">
+                        € 24,40 <span className="text-[10px] text-brand font-medium lowercase">iva inclusa</span>
+                      </p>
                     </div>
                   </div>
                 </div>
