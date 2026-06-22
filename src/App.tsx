@@ -137,6 +137,7 @@ import CorsoRischioSismicoPage from './components/CorsoRischioSismicoPage';
 import CorsoRadiazioniUVPage from './components/CorsoRadiazioniUVPage';
 import CorsoScaricheAtmosferichePage from './components/CorsoScaricheAtmosferichePage';
 import CorsoRischioIncendioPage from './components/CorsoRischioIncendioPage';
+import CorsoRischioLavoriInQuotaPage from './components/CorsoRischioLavoriInQuotaPage';
 import CorsoEvacuatoreEmergenzaPage from './components/CorsoEvacuatoreEmergenzaPage';
 import AggiornamentoEvacuatoreEmergenzaPage from './components/AggiornamentoEvacuatoreEmergenzaPage';
 import CorsoAPVRPage from './components/CorsoAPVRPage';
@@ -187,9 +188,7 @@ const CourseCard = ({ course, onOpen }: { course: Course; onOpen: (course: Cours
           <Euro className="w-5 h-5 mr-1" />
           <span>
             {course.price}
-            {course.category !== "Corsi per Professionisti" && (
-              <span className="text-[11px] ml-1.5 font-medium text-price-yellow/90 lowercase">iva inclusa</span>
-            )}
+            <span className="text-[11px] ml-1.5 font-medium text-price-yellow/90 lowercase">iva inclusa</span>
           </span>
         </div>
       </div>
@@ -251,7 +250,9 @@ const CourseModal = ({ course, onClose }: { course: Course; onClose: () => void 
               <Euro className="w-5 h-5 text-price-yellow" />
               <div className="text-sm">
                 <p className="text-slate-400 font-medium uppercase text-[10px] tracking-wider opacity-60">Prezzo</p>
-                <p className="text-price-yellow font-bold">{course.price}</p>
+                <p className="text-price-yellow font-bold">
+                  € {course.price} <span className="text-[10px] text-price-yellow/70 font-medium lowercase">iva inclusa</span>
+                </p>
               </div>
             </div>
           </div>
@@ -2729,7 +2730,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto' | 'corso-haccp' | 'corso-haccp-addetto-manipolazione' | 'corso-haccp-responsabile-aggiornamento' | 'corso-haccp-addetto-manipolazione-aggiornamento' | 'corso-haccp-responsabile' | 'corso-haccp-addetto-non-manipolazione' | 'corso-datore-di-lavoro' | 'corso-datore-di-lavoro-rspp-basso' | 'corso-datore-di-lavoro-rspp-medio' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-diisocianati' | 'corso-diisocianati-base' | 'corso-diisocianati-intermedio' | 'corso-diisocianati-avanzato' | 'corso-lavoratori-rischio-basso-uffici' | 'corso-lavoratori-generale-specifica-basso' | 'corso-lavoratori-generale-specifica-basso-uffici' | 'aggiornamento-lavoratori' | 'corso-privacy-incaricato-trattamento-dati' | 'corso-privacy-sanitario' | 'corso-videoterminali' | 'corso-microclima' | 'corso-rumore' | 'corso-vibrazioni' | 'corso-carrelli-elevatori-teorico' | 'corso-ple-teorico' | 'corso-trattori-agricoli-teorico' | 'corso-macchine-movimento-terra-teorico' | 'corso-gru-autocarro-teorico' | 'corso-gru-mobili-teorico' | 'corso-gru-torre-teorico' | 'corso-pompe-calcestruzzo-teorico' | 'corso-pes-pav-pei' | 'aggiornamento-pes-pav-pei' | 'corso-atmosfere-esplosive-atex' | 'corso-spazi-confinati' | 'corso-spazi-confinati-preposti' | 'aggiornamento-spazi-confinati' | 'aggiornamento-spazi-confinati-preposti' | 'corso-dpi-terza-categoria-lavori-quota' | 'aggiornamento-dpi-terza-categoria-lavori-quota' | 'corso-lavori-su-funi' | 'aggiornamento-lavori-su-funi' | 'corso-preposto-lavori-su-funi' | 'corso-stress-lavoro-correlato' | 'corso-rischio-biologico' | 'corso-rischio-chimico' | 'corso-rischio-amianto' | 'corso-movimentazione-manuale-carichi' | 'corso-rischio-elettrico' | 'corso-rischio-legionella' | 'corso-agenti-cancerogeni-mutageni-teratogeni' | 'corso-rischio-rapina' | 'corso-rischio-interferenze' | 'corso-radiazioni-ottiche-artificiali' | 'corso-campi-elettromagnetici' | 'corso-rischio-sismico' | 'corso-radiazioni-uv' | 'corso-scariche-atmosferiche' | 'corso-rischio-incendio' | 'corso-evacuatore-emergenza' | 'aggiornamento-evacuatore-emergenza' | 'corso-apvr' | 'aggiornamento-apvr' | 'corso-blsd' | 'gwo-first-aid' | 'gwo-first-aid-refresher' | 'gwo-manual-handling-refresher' | 'gwo-fire-awareness' | 'gwo-fire-awareness-refresher' | 'gwo-working-at-heights' | 'gwo-working-at-heights-refresher' | 'gwo-wah-mh' | 'gwo-working-at-heights-manual-handling-refresher' | 'gwo-sea-survival' | 'gwo-sea-survival-refresher' | 'gwo-mechanical' | 'gwo-electrical' | 'gwo-hydraulic' | 'gwo-installation' | 'gwo-art-hsibr' | 'gwo-art-ntbr' | 'gwo-art-sr-hsibr' | 'gwo-art-sr-ntbr' | 'hse-specialist' | 'hse-manager' | 'rspp-aggiornamento-40' | 'modulo-a-rspp-aspp' | 'dlgs-231-01-8' | 'sa-8000-8' | 'aggiornamento-aspp-20' | 'aggiornamento-coordinatore-sicurezza-40-ore' | 'corso-risk-assessment-valutazione-rischi' | 'corso-coordinatori-sicurezza-csp-cse-modulo-giuridico'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto' | 'corso-haccp' | 'corso-haccp-addetto-manipolazione' | 'corso-haccp-responsabile-aggiornamento' | 'corso-haccp-addetto-manipolazione-aggiornamento' | 'corso-haccp-responsabile' | 'corso-haccp-addetto-non-manipolazione' | 'corso-datore-di-lavoro' | 'corso-datore-di-lavoro-rspp-basso' | 'corso-datore-di-lavoro-rspp-medio' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-diisocianati' | 'corso-diisocianati-base' | 'corso-diisocianati-intermedio' | 'corso-diisocianati-avanzato' | 'corso-lavoratori-rischio-basso-uffici' | 'corso-lavoratori-generale-specifica-basso' | 'corso-lavoratori-generale-specifica-basso-uffici' | 'aggiornamento-lavoratori' | 'corso-privacy-incaricato-trattamento-dati' | 'corso-privacy-sanitario' | 'corso-videoterminali' | 'corso-microclima' | 'corso-rumore' | 'corso-vibrazioni' | 'corso-carrelli-elevatori-teorico' | 'corso-ple-teorico' | 'corso-trattori-agricoli-teorico' | 'corso-macchine-movimento-terra-teorico' | 'corso-gru-autocarro-teorico' | 'corso-gru-mobili-teorico' | 'corso-gru-torre-teorico' | 'corso-pompe-calcestruzzo-teorico' | 'corso-pes-pav-pei' | 'aggiornamento-pes-pav-pei' | 'corso-atmosfere-esplosive-atex' | 'corso-spazi-confinati' | 'corso-spazi-confinati-preposti' | 'aggiornamento-spazi-confinati' | 'aggiornamento-spazi-confinati-preposti' | 'corso-dpi-terza-categoria-lavori-quota' | 'aggiornamento-dpi-terza-categoria-lavori-quota' | 'corso-lavori-su-funi' | 'aggiornamento-lavori-su-funi' | 'corso-preposto-lavori-su-funi' | 'corso-stress-lavoro-correlato' | 'corso-rischio-biologico' | 'corso-rischio-chimico' | 'corso-rischio-amianto' | 'corso-movimentazione-manuale-carichi' | 'corso-rischio-elettrico' | 'corso-rischio-legionella' | 'corso-agenti-cancerogeni-mutageni-teratogeni' | 'corso-rischio-rapina' | 'corso-rischio-interferenze' | 'corso-radiazioni-ottiche-artificiali' | 'corso-campi-elettromagnetici' | 'corso-rischio-sismico' | 'corso-radiazioni-uv' | 'corso-scariche-atmosferiche' | 'corso-rischio-incendio' | 'corso-rischio-lavori-in-quota' | 'corso-evacuatore-emergenza' | 'aggiornamento-evacuatore-emergenza' | 'corso-apvr' | 'aggiornamento-apvr' | 'corso-blsd' | 'gwo-first-aid' | 'gwo-first-aid-refresher' | 'gwo-manual-handling-refresher' | 'gwo-fire-awareness' | 'gwo-fire-awareness-refresher' | 'gwo-working-at-heights' | 'gwo-working-at-heights-refresher' | 'gwo-wah-mh' | 'gwo-working-at-heights-manual-handling-refresher' | 'gwo-sea-survival' | 'gwo-sea-survival-refresher' | 'gwo-mechanical' | 'gwo-electrical' | 'gwo-hydraulic' | 'gwo-installation' | 'gwo-art-hsibr' | 'gwo-art-ntbr' | 'gwo-art-sr-hsibr' | 'gwo-art-sr-ntbr' | 'hse-specialist' | 'hse-manager' | 'rspp-aggiornamento-40' | 'modulo-a-rspp-aspp' | 'dlgs-231-01-8' | 'sa-8000-8' | 'aggiornamento-aspp-20' | 'aggiornamento-coordinatore-sicurezza-40-ore' | 'corso-risk-assessment-valutazione-rischi' | 'corso-coordinatori-sicurezza-csp-cse-modulo-giuridico'>('home');
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showCookieModal, setShowCookieModal] = useState(false);
@@ -2906,6 +2907,8 @@ export default function App() {
       path = '/corso-radiazioni-ottiche-artificiali';
     } else if (view === 'corso-campi-elettromagnetici') {
       path = '/corso-campi-elettromagnetici';
+    } else if (view === 'corso-rischio-lavori-in-quota') {
+      path = '/corsi-e-learning/rischio-lavori-in-quota';
     } else if (view === 'corso-rischio-sismico') {
       path = '/corso-rischio-sismico';
     } else if (view === 'corso-radiazioni-uv') {
@@ -3170,6 +3173,8 @@ export default function App() {
       navigateToView('corso-radiazioni-ottiche-artificiali');
     } else if (course.id === "33") {
       navigateToView('corso-campi-elettromagnetici');
+    } else if (course.id === "37") {
+      navigateToView('corso-rischio-lavori-in-quota');
     } else if (course.id === "45") {
       navigateToView('corso-rischio-sismico');
     } else if (course.id === "42") {
@@ -3325,6 +3330,16 @@ export default function App() {
       setCurrentView('corso-lavoratori-generale-specifica-basso-uffici');
     } else if (path === '/aggiornamento-lavoratori') {
       setCurrentView('aggiornamento-lavoratori');
+    } else if (path === '/corso-videoterminali') {
+      setCurrentView('corso-videoterminali');
+    } else if (path === '/corso-microclima') {
+      setCurrentView('corso-microclima');
+    } else if (path === '/corso-rumore') {
+      setCurrentView('corso-rumore');
+    } else if (path === '/corso-vibrazioni') {
+      setCurrentView('corso-vibrazioni');
+    } else if (path === '/corso-blsd-uso-defibrillatore') {
+      setCurrentView('corso-blsd');
     } else if (path === '/corso-privacy-incaricato-trattamento-dati') {
       setCurrentView('corso-privacy-incaricato-trattamento-dati');
     } else if (path === '/corso-privacy-sanitario') {
@@ -3379,6 +3394,8 @@ export default function App() {
       setCurrentView('corso-radiazioni-ottiche-artificiali');
     } else if (path === '/corso-campi-elettromagnetici') {
       setCurrentView('corso-campi-elettromagnetici');
+    } else if (path === '/corsi-e-learning/rischio-lavori-in-quota' || path === '/corso-rischio-lavori-in-quota') {
+      setCurrentView('corso-rischio-lavori-in-quota');
     } else if (path === '/corso-rischio-sismico') {
       setCurrentView('corso-rischio-sismico');
     } else if (path === '/corso-radiazioni-uv') {
@@ -3793,7 +3810,13 @@ export default function App() {
       ) : currentView === 'aggiornamento-pes-pav-pei' ? (
         <AggiornamentoPesPavPeiPage onNavigate={navigateToView} />
       ) : currentView === 'corso-atmosfere-esplosive-atex' ? (
-        <CorsoAtmosfereEsplosiveAtexPage onNavigate={navigateToView} />
+        <CorsoAtmosfereEsplosiveAtexPage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
       ) : currentView === 'corso-spazi-confinati' ? (
         <CorsoSpaziConfinatiPage onNavigate={navigateToView} />
       ) : currentView === 'corso-spazi-confinati-preposti' ? (
@@ -3908,6 +3931,14 @@ export default function App() {
         />
       ) : currentView === 'corso-campi-elettromagnetici' ? (
         <CorsoCEMPage 
+          onNavigate={navigateToView} 
+          onOpenCourse={(id) => {
+            const course = courses.find(c => c.id === id);
+            if (course) handleCourseOpen(course);
+          }}
+        />
+      ) : currentView === 'corso-rischio-lavori-in-quota' ? (
+        <CorsoRischioLavoriInQuotaPage 
           onNavigate={navigateToView} 
           onOpenCourse={(id) => {
             const course = courses.find(c => c.id === id);
