@@ -153,6 +153,7 @@ import AggiornamentoAspp20Page from './components/AggiornamentoAspp20Page';
 import AggiornamentoCoordinatoreSicurezza40Page from './components/AggiornamentoCoordinatoreSicurezza40Page';
 import CorsoRiskAssessmentPage from './components/CorsoRiskAssessmentPage';
 import CoordinatoreSicurezzaGiuridicoPage from './components/CoordinatoreSicurezzaGiuridicoPage';
+import CaseHistoryRWEMorconePage from './components/CaseHistoryRWEMorconePage';
 
 const CourseCard = ({ course, onOpen }: { course: Course; onOpen: (course: Course) => void; key?: string | number }) => {
   return (
@@ -2730,7 +2731,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto' | 'corso-haccp' | 'corso-haccp-addetto-manipolazione' | 'corso-haccp-responsabile-aggiornamento' | 'corso-haccp-addetto-manipolazione-aggiornamento' | 'corso-haccp-responsabile' | 'corso-haccp-addetto-non-manipolazione' | 'corso-datore-di-lavoro' | 'corso-datore-di-lavoro-rspp-basso' | 'corso-datore-di-lavoro-rspp-medio' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-diisocianati' | 'corso-diisocianati-base' | 'corso-diisocianati-intermedio' | 'corso-diisocianati-avanzato' | 'corso-lavoratori-rischio-basso-uffici' | 'corso-lavoratori-generale-specifica-basso' | 'corso-lavoratori-generale-specifica-basso-uffici' | 'aggiornamento-lavoratori' | 'corso-privacy-incaricato-trattamento-dati' | 'corso-privacy-sanitario' | 'corso-videoterminali' | 'corso-microclima' | 'corso-rumore' | 'corso-vibrazioni' | 'corso-carrelli-elevatori-teorico' | 'corso-ple-teorico' | 'corso-trattori-agricoli-teorico' | 'corso-macchine-movimento-terra-teorico' | 'corso-gru-autocarro-teorico' | 'corso-gru-mobili-teorico' | 'corso-gru-torre-teorico' | 'corso-pompe-calcestruzzo-teorico' | 'corso-pes-pav-pei' | 'aggiornamento-pes-pav-pei' | 'corso-atmosfere-esplosive-atex' | 'corso-spazi-confinati' | 'corso-spazi-confinati-preposti' | 'aggiornamento-spazi-confinati' | 'aggiornamento-spazi-confinati-preposti' | 'corso-dpi-terza-categoria-lavori-quota' | 'aggiornamento-dpi-terza-categoria-lavori-quota' | 'corso-lavori-su-funi' | 'aggiornamento-lavori-su-funi' | 'corso-preposto-lavori-su-funi' | 'corso-stress-lavoro-correlato' | 'corso-rischio-biologico' | 'corso-rischio-chimico' | 'corso-rischio-amianto' | 'corso-movimentazione-manuale-carichi' | 'corso-rischio-elettrico' | 'corso-rischio-legionella' | 'corso-agenti-cancerogeni-mutageni-teratogeni' | 'corso-rischio-rapina' | 'corso-rischio-interferenze' | 'corso-radiazioni-ottiche-artificiali' | 'corso-campi-elettromagnetici' | 'corso-rischio-sismico' | 'corso-radiazioni-uv' | 'corso-scariche-atmosferiche' | 'corso-rischio-incendio' | 'corso-rischio-lavori-in-quota' | 'corso-evacuatore-emergenza' | 'aggiornamento-evacuatore-emergenza' | 'corso-apvr' | 'aggiornamento-apvr' | 'corso-blsd' | 'gwo-first-aid' | 'gwo-first-aid-refresher' | 'gwo-manual-handling-refresher' | 'gwo-fire-awareness' | 'gwo-fire-awareness-refresher' | 'gwo-working-at-heights' | 'gwo-working-at-heights-refresher' | 'gwo-wah-mh' | 'gwo-working-at-heights-manual-handling-refresher' | 'gwo-sea-survival' | 'gwo-sea-survival-refresher' | 'gwo-mechanical' | 'gwo-electrical' | 'gwo-hydraulic' | 'gwo-installation' | 'gwo-art-hsibr' | 'gwo-art-ntbr' | 'gwo-art-sr-hsibr' | 'gwo-art-sr-ntbr' | 'hse-specialist' | 'hse-manager' | 'rspp-aggiornamento-40' | 'modulo-a-rspp-aspp' | 'dlgs-231-01-8' | 'sa-8000-8' | 'aggiornamento-aspp-20' | 'aggiornamento-coordinatore-sicurezza-40-ore' | 'corso-risk-assessment-valutazione-rischi' | 'corso-coordinatori-sicurezza-csp-cse-modulo-giuridico'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'about' | 'mobile-center' | 'case-history-rwe-morcone' | 'gwo-training' | 'dlgs-81-08' | 'gallery' | 'elearning' | 'professionisti' | 'corso-rls-rappresentante-lavoratori-sicurezza' | 'rls-update-page' | 'rls-update-8-page' | 'antincendio-l1' | 'antincendio-l2' | 'antincendio-l3' | 'antincendio-update-l1' | 'antincendio-update-l2' | 'antincendio-update-l3' | 'corso-primo-soccorso-gruppo-a' | 'primo-soccorso-bc' | 'aggiornamento-ps-a' | 'aggiornamento-ps-bc' | 'corso-preposto' | 'corso-dirigente' | 'aggiornamento-dirigente' | 'aggiornamento-preposto' | 'corso-haccp' | 'corso-haccp-addetto-manipolazione' | 'corso-haccp-responsabile-aggiornamento' | 'corso-haccp-addetto-manipolazione-aggiornamento' | 'corso-haccp-responsabile' | 'corso-haccp-addetto-non-manipolazione' | 'corso-datore-di-lavoro' | 'corso-datore-di-lavoro-rspp-basso' | 'corso-datore-di-lavoro-rspp-medio' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-datore-di-lavoro-rspp-alto' | 'aggiornamento-datore-di-lavoro-rspp' | 'corso-formazione-datore-di-lavoro' | 'corso-datore-di-lavoro-modulo-cantieri' | 'corso-diisocianati' | 'corso-diisocianati-base' | 'corso-diisocianati-intermedio' | 'corso-diisocianati-avanzato' | 'corso-lavoratori-rischio-basso-uffici' | 'corso-lavoratori-generale-specifica-basso' | 'corso-lavoratori-generale-specifica-basso-uffici' | 'aggiornamento-lavoratori' | 'corso-privacy-incaricato-trattamento-dati' | 'corso-privacy-sanitario' | 'corso-videoterminali' | 'corso-microclima' | 'corso-rumore' | 'corso-vibrazioni' | 'corso-carrelli-elevatori-teorico' | 'corso-ple-teorico' | 'corso-trattori-agricoli-teorico' | 'corso-macchine-movimento-terra-teorico' | 'corso-gru-autocarro-teorico' | 'corso-gru-mobili-teorico' | 'corso-gru-torre-teorico' | 'corso-pompe-calcestruzzo-teorico' | 'corso-pes-pav-pei' | 'aggiornamento-pes-pav-pei' | 'corso-atmosfere-esplosive-atex' | 'corso-spazi-confinati' | 'corso-spazi-confinati-preposti' | 'aggiornamento-spazi-confinati' | 'aggiornamento-spazi-confinati-preposti' | 'corso-dpi-terza-categoria-lavori-quota' | 'aggiornamento-dpi-terza-categoria-lavori-quota' | 'corso-lavori-su-funi' | 'aggiornamento-lavori-su-funi' | 'corso-preposto-lavori-su-funi' | 'corso-stress-lavoro-correlato' | 'corso-rischio-biologico' | 'corso-rischio-chimico' | 'corso-rischio-amianto' | 'corso-movimentazione-manuale-carichi' | 'corso-rischio-elettrico' | 'corso-rischio-legionella' | 'corso-agenti-cancerogeni-mutageni-teratogeni' | 'corso-rischio-rapina' | 'corso-rischio-interferenze' | 'corso-radiazioni-ottiche-artificiali' | 'corso-campi-elettromagnetici' | 'corso-rischio-sismico' | 'corso-radiazioni-uv' | 'corso-scariche-atmosferiche' | 'corso-rischio-incendio' | 'corso-rischio-lavori-in-quota' | 'corso-evacuatore-emergenza' | 'aggiornamento-evacuatore-emergenza' | 'corso-apvr' | 'aggiornamento-apvr' | 'corso-blsd' | 'gwo-first-aid' | 'gwo-first-aid-refresher' | 'gwo-manual-handling-refresher' | 'gwo-fire-awareness' | 'gwo-fire-awareness-refresher' | 'gwo-working-at-heights' | 'gwo-working-at-heights-refresher' | 'gwo-wah-mh' | 'gwo-working-at-heights-manual-handling-refresher' | 'gwo-sea-survival' | 'gwo-sea-survival-refresher' | 'gwo-mechanical' | 'gwo-electrical' | 'gwo-hydraulic' | 'gwo-installation' | 'gwo-art-hsibr' | 'gwo-art-ntbr' | 'gwo-art-sr-hsibr' | 'gwo-art-sr-ntbr' | 'hse-specialist' | 'hse-manager' | 'rspp-aggiornamento-40' | 'modulo-a-rspp-aspp' | 'dlgs-231-01-8' | 'sa-8000-8' | 'aggiornamento-aspp-20' | 'aggiornamento-coordinatore-sicurezza-40-ore' | 'corso-risk-assessment-valutazione-rischi' | 'corso-coordinatori-sicurezza-csp-cse-modulo-giuridico'>('home');
   const [showCookieBanner, setShowCookieBanner] = useState(true);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showCookieModal, setShowCookieModal] = useState(false);
@@ -2987,6 +2988,8 @@ export default function App() {
       path = '/corso-risk-assessment-valutazione-rischi';
     } else if (view === 'corso-coordinatori-sicurezza-csp-cse-modulo-giuridico') {
       path = '/corso-coordinatori-sicurezza-csp-cse-modulo-giuridico';
+    } else if (view === 'case-history-rwe-morcone') {
+      path = '/case-history/rwe-morcone';
     }
     
     window.history.pushState({ view, category: category || selectedCategory }, '', path);
@@ -3404,6 +3407,8 @@ export default function App() {
       setCurrentView('corso-scariche-atmosferiche');
     } else if (path === '/corso-rischio-incendio') {
       setCurrentView('corso-rischio-incendio');
+    } else if (path === '/case-history/rwe-morcone') {
+      setCurrentView('case-history-rwe-morcone');
     } else {
       const params = new URLSearchParams(window.location.search);
       const courseId = params.get('corso');
@@ -3540,13 +3545,30 @@ export default function App() {
               >
                 Contatti
               </button>
-              <button 
-                onClick={() => navigateToView('mobile-center')}
-                className={`text-[13px] xl:text-sm font-bold transition-colors flex items-center gap-1 whitespace-nowrap ${currentView === 'mobile-center' ? 'text-brand' : 'text-slate-600 hover:text-brand'}`}
-              >
-                Centro Mobile
-                <Play className="w-3 h-3" />
-              </button>
+              <div className="relative group" id="menu-centro-mobile-dropdown">
+                <button 
+                  className={`text-[13px] xl:text-sm font-bold transition-colors flex items-center gap-1 whitespace-nowrap py-2 ${currentView === 'mobile-center' || currentView === 'case-history-rwe-morcone' ? 'text-brand' : 'text-slate-600 hover:text-brand'}`}
+                >
+                  Centro Mobile
+                  <svg className="w-3 h-3 fill-current ml-0.5 transition-transform group-hover:rotate-180" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                  </svg>
+                </button>
+                <div className="absolute left-0 mt-0 w-64 bg-slate-900 border border-slate-800 rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <button
+                    onClick={() => navigateToView('mobile-center')}
+                    className={`w-full text-left px-4 py-2.5 text-xs font-bold uppercase tracking-tight transition-colors ${currentView === 'mobile-center' ? 'text-brand bg-white/5' : 'text-slate-300 hover:text-brand hover:bg-white/5'}`}
+                  >
+                    Centro Formativo Mobile
+                  </button>
+                  <button
+                    onClick={() => navigateToView('case-history-rwe-morcone')}
+                    className={`w-full text-left px-4 py-2.5 text-xs font-bold uppercase tracking-tight transition-colors ${currentView === 'case-history-rwe-morcone' ? 'text-brand bg-white/5' : 'text-slate-300 hover:text-brand hover:bg-white/5'}`}
+                  >
+                    RWE Morcone – GWO Training
+                  </button>
+                </div>
+              </div>
               <button 
                 onClick={() => navigateToView('elearning', "Tutti i corsi")}
                 className={`text-[13px] xl:text-sm font-bold transition-colors whitespace-nowrap ${currentView === 'elearning' ? 'text-brand' : 'text-slate-600 hover:text-brand'}`}
@@ -3628,10 +3650,17 @@ export default function App() {
                 </button>
                 <button 
                   onClick={() => navigateToView('mobile-center')}
-                  className="block w-full text-left text-lg font-bold text-brand flex items-center gap-2"
+                  className={`block w-full text-left text-lg font-bold flex items-center gap-2 ${currentView === 'mobile-center' ? 'text-brand' : 'text-slate-900'}`}
                 >
                   Centro Formativo Mobile
                   <Play className="w-4 h-4" />
+                </button>
+                <button 
+                  onClick={() => navigateToView('case-history-rwe-morcone')}
+                  className={`block w-full text-left text-lg font-bold flex items-center gap-2 ${currentView === 'case-history-rwe-morcone' ? 'text-brand' : 'text-slate-900'}`}
+                >
+                  RWE Morcone – GWO Training
+                  <ChevronRight className="w-4 h-4 text-brand" />
                 </button>
               </div>
             </motion.div>
@@ -3685,6 +3714,8 @@ export default function App() {
         <AboutSection setCurrentView={navigateToView} />
       ) : currentView === 'mobile-center' ? (
         <MobileCenterSection setCurrentView={navigateToView} setActiveVideo={setActiveVideo} />
+      ) : currentView === 'case-history-rwe-morcone' ? (
+        <CaseHistoryRWEMorconePage onNavigate={navigateToView} />
       ) : currentView === 'gwo-training' ? (
         <GWOTrainingSection setCurrentView={navigateToView} />
       ) : currentView === 'gallery' ? (
@@ -4177,10 +4208,19 @@ export default function App() {
                 <li>
                   <button 
                     onClick={() => navigateToView('mobile-center')}
-                    className="hover:text-brand transition-colors flex items-center gap-2 cursor-pointer"
+                    className="hover:text-brand transition-colors flex items-center gap-2 cursor-pointer text-left"
                   >
                     Centro Formativo Mobile
                     <Play className="w-3 h-3" />
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => navigateToView('case-history-rwe-morcone')}
+                    className="hover:text-brand transition-colors flex items-center gap-2 cursor-pointer text-left"
+                  >
+                    RWE Morcone – GWO Training
+                    <ChevronRight className="w-3 h-3" />
                   </button>
                 </li>
                 <li>
